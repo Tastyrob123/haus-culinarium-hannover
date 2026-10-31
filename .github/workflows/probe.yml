@@ -1,0 +1,25 @@
+name: Probe (Werkzeuge laden?)
+on:
+  workflow_dispatch:
+env:
+  PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/ms-playwright
+          key: pw-1.62.1-webkit-chromium
+      - run: bash cloud/vorbereiten.sh "webkit chromium"
+      - run: bash cloud/server.sh
+      - run: node cloud/probe.js _Werkzeuge/messlauf/ziele-culinarium.json probe
+      - if: always()
+        run: mkdir -p probe && cp /tmp/server/*.log probe/ 2>/dev/null; true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe
+          path: probe
+          retention-days: 2
