@@ -43,6 +43,7 @@ for f in glob.glob(os.path.join(LAUF, '*', 'inventar.json')):
     for s in glob.glob(os.path.join(os.path.dirname(f), 'stich-*.json')):
         sj = json.load(open(s, encoding='utf-8')); st[os.path.basename(s)[6:-5]] = {'zustaende': len(sj['zustaende']), 'funde': sum(len(z.get('funde', [])) for z in sj['zustaende']), 'nicht': sum(1 for z in sj['zustaende'] if z.get('nichtErreicht'))}
     inv[k] = {'zustaende': len(j['zustaende']), 'funde': sum(len(z.get('funde', [])) for z in j['zustaende']), 'nicht': len(j.get('nichtErreicht', [])), 'voll': j.get('voll'), 'stich': st}
+json.dump({k: v['zustaende'] for k, v in inv.items()}, open(os.path.join(ERG, 'zustaende.json'), 'w'), indent=1)   # für die Teilgrösse des nächsten Laufs (haus.json «zustaende»)
 ml_funde = [f for f in alle_f if f.get('art') not in ('gekuerzt', 'fehler')]
 
 # ---------- Zeiten aus GitHub (Rechner-Minuten, Gesamtdauer) ----------

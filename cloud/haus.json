@@ -70,19 +70,32 @@
     }
   ],
   "uhr": "2026-10-31T10:00:00+01:00",
-  "teile": {
-    "plakatwerkstatt": 10,
-    "plakatwerkstatt-mail": 2,
-    "plakatarchiv": 4,
-    "plakatarchiv-dateien": 4,
-    "plakatarchiv-pruefung": 3,
-    "plakatarchiv-rundgang": 2,
-    "gaestebuch": 4,
-    "gaestebuch-gefragt": 2,
-    "gaestebuch-rundgang": 2,
-    "schaufenster": 4
-  },
   "namen": {
     "markenbuch": "plakatarchiv"
+  },
+  "zustaende_je_teil": 16,
+  "zustaende": {
+    "besucherliste": 71,
+    "besucherliste-anleitung": 60,
+    "gaestebuch": 122,
+    "gaestebuch-anleitung": 1,
+    "gaestebuch-gefragt": 29,
+    "gaestebuch-rundgang": 10,
+    "pairing-karte": 27,
+    "pairing-karte-anleitung": 25,
+    "plakatarchiv": 145,
+    "plakatarchiv-anleitung": 2,
+    "plakatarchiv-buch": 18,
+    "plakatarchiv-dateien": 76,
+    "plakatarchiv-pruefung": 60,
+    "plakatarchiv-rundgang": 5,
+    "plakatwerkstatt": 464,
+    "plakatwerkstatt-mail": 36,
+    "schaufenster": 246,
+    "schaufenster-anleitung": 9,
+    "tresen": 8,
+    "werkbank": 83,
+    "werkbank-karte": 73,
+    "werkbank-ki": 82
   }
 }

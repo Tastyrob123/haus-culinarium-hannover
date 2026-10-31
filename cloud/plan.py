@@ -9,7 +9,10 @@ nur = [x.strip() for x in roh.split(',') if x.strip()]
 nur += [H.get('namen', {})[n] for n in list(nur) if n in H.get('namen', {})] + [a for a, b in H.get('namen', {}).items() if b in nur]
 passt = lambda k: not nur or any(k == n or k.split('-')[0] == n for n in nur)
 tor = list(dict.fromkeys(z['k'] for z in json.load(open(os.path.join(WS, H['tor_ziele']), encoding='utf-8'))['ziele'] if passt(z['k'])))
-teile = [{'k': k, 'zweig': f'{i}/{n}', 'name': f'{k}-z{i}'} for k in tor for n in [H.get('teile', {}).get(k, 1)] for i in range(1, n + 1)]
+# Teilgrösse aus den zuletzt gemessenen Zuständen (haus.json «zustaende», nach jedem Lauf aus zeiten.json nachgeführt): höchstens «zustaende_je_teil» je Rechner
+import math
+JE = H.get('zustaende_je_teil', 16)
+teile = [{'k': k, 'zweig': f'{i}/{n}', 'name': f'{k}-z{i}'} for k in tor for n in [max(1, math.ceil(H.get('zustaende', {}).get(k, 1) / JE))] for i in range(1, n + 1)]
 mess = json.load(open(os.path.join(WS, H['mess_ziele']), encoding='utf-8'))
 mess = mess['ziele'] if isinstance(mess, dict) else mess
 gruppen = {}
