@@ -1,0 +1,18 @@
+{
+ "kulisse": "kulisse.webp",
+ "kacheln": {
+  "eingang": "k-eingang.webp",
+  "gefragt": "k-gefragt.webp",
+  "wissen": "k-wissen.webp"
+ },
+ "tapete": null,
+ "zeichen": null,
+ "schriftzug": "schriftzug.svg",
+ "quellen": {
+  "kulisse": "assets/img/t-holz-l.webp",
+  "k-eingang": "assets/img/haus-eingang-l.webp",
+  "k-gefragt": "assets/img/wegweiser-l.webp",
+  "k-wissen": "assets/img/stube-l.webp",
+  "schriftzug": "assets/logo/schrift-gasterntal.svg"
+ }
+}

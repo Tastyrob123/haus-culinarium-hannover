@@ -1,0 +1,24 @@
+{
+ "beau-rivage": {
+  "kleid": {
+   "zeichen": "_karten/zeichen.svg",
+   "tapete": "assets/img/tapete-dunkel.webp",
+   "fotos": {
+    "ambiance": "assets/img/rest-ambiance-6-s.webp",
+    "petite-suisse": "assets/img/rest-suisse-3-s.webp",
+    "vieux-rivage": "assets/img/bar-2-s.webp",
+    "weinkarte": "assets/img/food-glaeser-s.webp"
+   },
+   "hinweis": "Zeichen, Tapete und die vier Fotos sind dieselben wie in La Carte am Haus (mission-control/mc.js, FOTO; _karten/zeichen.svg)."
+  }
+ },
+ "gasterntal": {
+  "kleid": {
+   "zeichen": "assets/logo/schrift-berghotel-gasterntal.svg",
+   "fotos": {
+    "karte-2026": "assets/img/e-tafel-s.webp"
+   },
+   "hinweis": "Das Haus hat kein rundes Zeichen als Zeichnung, nur seinen Schriftzug (das runde Emblem ist ein Foto-Bild mit Tippfehler «NAUR»). Eine Tapete hat das Landhaus nicht. Das Foto der Karte (gedeckte Tafel) ist für dieses Werkzeug gewählt, nicht vom Haus vorgegeben."
+  }
+ }
+}

@@ -1,0 +1,249 @@
+{
+ "_lies_mich": "Beschreibung des Hauses für das Werkzeug «website» (Le Bureau · Website pflegen). Culinarium Hannover: Food-Pairing-Abende im Walk on the Wild Side, nur Deutsch. Jeder Text, jede Zahl, jedes Foto wird aus den gebauten Seiten gelesen (website/ des Projekts). Läuft im Rahmen des Hauses: http://127.0.0.1:9082/_werkzeuge/bureau/ (Culinarium Hannover/_werkzeuge/bureau/). Geschrieben von _werkzeuge/bureau/beschreibung.py, nie von Hand ändern.",
+ "seiten": [
+  {
+   "datei": "index.html"
+  },
+  {
+   "datei": "abend.html"
+  },
+  {
+   "datei": "abende.html"
+  },
+  {
+   "datei": "bar.html"
+  },
+  {
+   "datei": "leute.html"
+  },
+  {
+   "datei": "weg.html"
+  },
+  {
+   "datei": "dirty-chicken.html"
+  },
+  {
+   "datei": "impressum.html",
+   "foto": "kanister"
+  },
+  {
+   "datei": "datenschutz.html",
+   "foto": "schildnah"
+  }
+ ],
+ "sprachen": [],
+ "kopie": {
+  "unter": "website",
+  "ordner": [
+   "assets"
+  ]
+ },
+ "gesperrt": [],
+ "auslassen": [
+  "[data-termine]",
+  ".tb-dialog",
+  "img[src^=\"assets/ueberleitung/\"]",
+  "img[src^=\"assets/abend-auftakt/\"]",
+  "img[src*=\"team_alle_vorn\"]"
+ ],
+ "vorschau": {
+  "ohne_skripte": [],
+  "zusatz_css": ".fenster{overflow:clip}@media (hover:none){[data-ws-e],img[data-ws-b]{cursor:pointer}}"
+ },
+ "bereiche": {
+  "zimmer": {
+   "an": false
+  },
+  "preisstufen": {
+   "an": false
+  },
+  "packages": {
+   "an": false
+  },
+  "saele": {
+   "an": false
+  },
+  "unterlagen": {
+   "an": false
+  },
+  "stellen": {
+   "an": false
+  },
+  "abende": {
+   "name": "Archiv der Abende",
+   "satz": "Jeder Abend seit 2023 mit Datum, Preis und Plakat, so wie er auf der Seite «Alle Abende» steht. Was nicht mehr gezeigt werden soll, blendest du aus.",
+   "quellen": [
+    {
+     "seite": "abende.html",
+     "jedes": ".vitrinen figure.vit-p",
+     "felder": [
+      {
+       "key": "datum",
+       "label": "Datum",
+       "art": "text",
+       "wo": ".vit-datum",
+       "titel": true
+      },
+      {
+       "key": "preis",
+       "label": "Preis und Zusatz",
+       "art": "zahl",
+       "wo": ".vit-mono"
+      },
+      {
+       "key": "mit",
+       "label": "Zeile auf dem Plakat",
+       "art": "text",
+       "wo": ".vit-mit"
+      },
+      {
+       "key": "bild",
+       "label": "Plakat",
+       "art": "bild",
+       "wo": ".vit-rahmen img",
+       "kann_fehlen": true
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "zahlen": {
+  "muster": "(CHF|Fr\\.|€|\\bEUR\\b|\\bUhr\\b|\\d+\\s?(Minuten|Min\\.|m²|m2|Personen|Pers\\.|Nächte?|Nacht|Betten|Plätze|Gänge|Drinks|km|m ü\\. M\\.)|\\d{1,2}[.:]\\d{2}\\s?(?:[–-]|bis)\\s?\\d{1,2}[.:]\\d{2}|\\d{1,2}[.:]\\d{2}\\s?Uhr)"
+ },
+ "kleid": {
+  "foto": "fassade"
+ },
+ "website": [
+  {
+   "key": "start",
+   "name": "Startseite",
+   "satz": "Der erste Eindruck: was Culinarium ist, das Haus in Linden, das erste Glas, die Gänge, die Plakate und die Leute.",
+   "seiten": [
+    "index.html"
+   ],
+   "foto": "tafelleer"
+  },
+  {
+   "key": "abend",
+   "name": "Der Abend",
+   "satz": "Wie ein Abend abläuft, was auf den Tisch kommt, wann und wie viel, die nächsten Termine und die Warteliste. Die Termine selbst pflegst du unter «Termine».",
+   "seiten": [
+    "abend.html"
+   ],
+   "foto": "beete"
+  },
+  {
+   "key": "abende",
+   "name": "Alle Abende",
+   "satz": "Jeder Abend seit 2023 mit Plakat, Datum und Preis, in Vitrinen nach Jahr.",
+   "seiten": [
+    "abende.html"
+   ],
+   "foto": "p_DbYnkdkjrNy"
+  },
+  {
+   "key": "haus",
+   "name": "Das Haus",
+   "satz": "Das Walk on the Wild Side: die Bar, ihre Geschichte und ihre Zeiten.",
+   "seiten": [
+    "bar.html"
+   ],
+   "foto": "theke"
+  },
+  {
+   "key": "leute",
+   "name": "Team",
+   "satz": "Die Menschen hinter Culinarium und der Bar, mit ihren Aufgaben.",
+   "seiten": [
+    "leute.html"
+   ],
+   "foto": "team_alle"
+  },
+  {
+   "key": "weg",
+   "name": "Der Weg",
+   "satz": "Adresse, Anfahrt und wann die Bar offen hat.",
+   "seiten": [
+    "weg.html"
+   ],
+   "foto": "wg_schildnacht"
+  },
+  {
+   "key": "dirty-chicken",
+   "name": "Dirty Chicken",
+   "satz": "Das Pop-up aus der Familie der Bar: Essen, Nacht, das erste Pop-up.",
+   "seiten": [
+    "dirty-chicken.html"
+   ],
+   "foto": "dc_tisch"
+  },
+  {
+   "key": "recht",
+   "name": "Rechtliches",
+   "satz": "Impressum und Datenschutz im Wortlaut des Hauses.",
+   "seiten": [
+    "impressum.html",
+    "datenschutz.html"
+   ],
+   "foto": "barneg"
+  }
+ ],
+ "angaben": [
+  {
+   "key": "telefon",
+   "label": "Telefon der Bar",
+   "art": "telefon",
+   "wert": "+49 163 3909578",
+   "link": "tel:+491633909578",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  },
+  {
+   "key": "strasse",
+   "label": "Strasse",
+   "art": "text",
+   "wert": "Haasemannstraße 13",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  },
+  {
+   "key": "ort",
+   "label": "PLZ und Ort",
+   "art": "text",
+   "wert": "30449 Hannover",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  },
+  {
+   "key": "ig-culinariumhannover",
+   "label": "Instagram Culinarium",
+   "art": "link",
+   "wert": "https://www.instagram.com/culinarium_hannover/",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  },
+  {
+   "key": "ig-walkonthewildsidehan",
+   "label": "Instagram der Bar",
+   "art": "link",
+   "wert": "https://www.instagram.com/walkonthewildside_hannover/",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  },
+  {
+   "key": "ig-dirtychickenhannover",
+   "label": "Instagram Dirty Chicken",
+   "art": "link",
+   "wert": "https://www.instagram.com/dirtychicken.hannover/",
+   "quelle": "website/index.html (gebaut aus website/bau.py › fuss(), kopf())"
+  }
+ ],
+ "google": {
+  "an": true
+ },
+ "hochladen": {
+  "an": true,
+  "ordner": "assets/bild"
+ },
+ "funktionen": [
+  "leiste_klar",
+  "team_wer"
+ ],
+ "anleitung": "/_werkzeuge/bureau/anleitung.html"
+}

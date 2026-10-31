@@ -1,0 +1,165 @@
+{
+ "_lies_mich": "Beschreibung des Hauses für das Werkzeug «website». Orte (Selektoren) und Beschriftungen des Werkzeugs. Die Bereiche der Website ergeben sich hier aus den Seiten selbst (Name aus dem Menü, Satz aus den Überschriften, Foto das erste grosse der Seite). Jeder Text, jede Zahl, jedes Foto wird aus den gebauten Seiten gelesen. Hilfe: python3 werkzeuge/website/beschreibe.py",
+ "seiten": [
+  {
+   "datei": "index.html"
+  },
+  {
+   "datei": "zimmer.html"
+  },
+  {
+   "datei": "essen.html"
+  },
+  {
+   "datei": "feste.html"
+  },
+  {
+   "datei": "anreise.html"
+  },
+  {
+   "datei": "rechtliches.html"
+  }
+ ],
+ "sprachen": [],
+ "kopie": {
+  "ordner": [
+   "assets"
+  ]
+ },
+ "gesperrt": [
+  {
+   "wahl": "#k-0, #k-1",
+   "werkzeug": "karten"
+  },
+  {
+   "wahl": "#karte .blatt",
+   "werkzeug": "karten"
+  }
+ ],
+ "auslassen": [],
+ "vorschau": {
+  "ohne_skripte": [
+   "dienste.js",
+   "gast.js",
+   "gast_demo.js"
+  ]
+ },
+ "bereiche": {
+  "zimmer": {
+   "quellen": [
+    {
+     "seite": "zimmer.html",
+     "jedes": "#arten .zstage",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": "h2",
+       "titel": true
+      },
+      {
+       "key": "satz",
+       "label": "Zeile darunter",
+       "art": "text",
+       "wo": "p.lead"
+      },
+      {
+       "key": "bild",
+       "label": "Foto",
+       "art": "bild",
+       "wo": "img"
+      }
+     ]
+    }
+   ]
+  },
+  "preisstufen": {
+   "name": "Zimmerpreise",
+   "satz": "Jede Preiszeile der Zimmer-Seite.",
+   "quellen": [
+    {
+     "seite": "zimmer.html",
+     "jedes": "#arten .preise > div",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Bezeichnung",
+       "art": "text",
+       "wo": "span",
+       "titel": true
+      },
+      {
+       "key": "preis",
+       "label": "Preis",
+       "art": "zahl",
+       "wo": "em"
+      }
+     ]
+    }
+   ]
+  },
+  "packages": {
+   "quellen": [
+    {
+     "seite": "zimmer.html",
+     "jedes": "#package .blatt",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": "h3",
+       "titel": true
+      },
+      {
+       "key": "zusatz",
+       "label": "Zeile darunter",
+       "art": "text",
+       "wo": ".blatt__kopf small"
+      },
+      {
+       "key": "zeilen",
+       "label": "Zeilen und Preise",
+       "art": "liste",
+       "wo": ".gang"
+      }
+     ]
+    }
+   ]
+  },
+  "saele": {
+   "an": false
+  },
+  "unterlagen": {
+   "quellen": [
+    {
+     "seite": "essen.html",
+     "jedes": "a[href$=\".pdf\"]",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Beschriftung",
+       "art": "text",
+       "wo": "",
+       "titel": true
+      },
+      {
+       "key": "link",
+       "label": "Adresse",
+       "art": "link",
+       "wo": ""
+      }
+     ]
+    }
+   ]
+  },
+  "stellen": {
+   "an": false
+  }
+ },
+ "kleid": {
+  "zeichen": "assets/logo/schrift-berghotel-gasterntal.svg",
+  "zeichen_art": "maske"
+ }
+}

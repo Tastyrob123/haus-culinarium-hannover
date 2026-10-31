@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Karte · Satz</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/stamm/welt.css">
+<link rel="stylesheet" href="satz.css">
+</head>
+<body class="kt-druck">
+<div id="kt-mess" aria-hidden="true"></div>
+<div id="kt-rahmen"><main id="kt-seiten"></main></div>
+<script src="satz.js"></script>
+<script>
+/* Druckseite einer Karte. Dieselbe Seite steckt als Vorschau im Werkzeug und wird für die PDF gedruckt: ein Satz, zwei Ausgaben.
+   Sie holt nichts selbst. Wer sie einbettet, ruft KT_DRUCK.zeige(karte, opt):
+     opt.welt         'grand' oder 'land': die Welt des HAUSES (haus.json), nicht der Modus-Knopf des Werkzeugs
+     opt.haus         Name des Hauses (steht auf dem Umschlag und im Kopf jeder Seite)
+     opt.allergene    { schluessel: Wort }
+     opt.zeichen      Zeichnung des Hauses (aus kleid/<haus>/zeichen.svg), steht statt des Namens da · opt.zeichenMass [b, h]
+     opt.tapete       Adresse der Tapete des Hauses (kleid/<haus>/tapete.webp), liegt auf dem Umschlag
+     opt.pfade        jede Stelle trägt ihren Ort (data-k): ein Klick darauf öffnet im Werkzeug den Eintrag
+     opt.bearbeiten   jede Stelle lässt sich anfassen und schreiben (Weg «Fortgeschritten»)
+     opt.breite       verfügbare Breite in px
+     opt.massstab     gewünschte Grösse (1 = wie gedruckt); nie breiter als opt.breite. Nur Ansicht, der Satz bleibt 1:1
+     opt.reihe        Seiten nebeneinander statt untereinander
+     opt.unterschrift «Seite 2 von 5» unter jeder Seite (nur in der Vorschau, nie im Druck)
+   KT_DRUCK.mini(karte, eintrag, opt): ein einzelner Eintrag so, wie er auf der Karte steht (Fenster «bearbeiten»).
+   Rückgabe: { seiten, hoehe, massstab, regeln, ueberlauf, wo } */
+(function () {
+  var mess = document.getElementById('kt-mess'), ziel = document.getElementById('kt-seiten'), rahmen = document.getElementById('kt-rahmen');
+  var bereit = '', letzte = null, zuletzt = {};
+  function welt(karte, opt) {
+    document.documentElement.setAttribute('data-welt', opt.welt === 'land' ? 'land' : 'grand');
+    if (opt.tapete) document.documentElement.style.setProperty('--kt-tapete', 'url("' + String(opt.tapete).replace(/[^A-Za-z0-9_./-]/g, '') + '")'); else document.documentElement.style.removeProperty('--kt-tapete');
+    if (karte.sprache) { document.documentElement.lang = karte.sprache; document.documentElement.dir = karte.sprache === 'ar' ? 'rtl' : 'ltr'; }
+  }
+  function passe(opt) {
+    opt = opt || zuletzt; zuletzt = opt;
+    var blatt = ziel.querySelector('.kt-blatt'); if (!blatt) return { hoehe: 0, massstab: 1 };
+    ziel.style.transform = ''; ziel.style.width = ''; rahmen.style.height = ''; rahmen.style.width = '';
+    var b = blatt.offsetWidth, platz = opt.breite || b, s = Math.min(opt.massstab || 1, platz / b);
+    ziel.classList.toggle('kt-reihe', !!opt.reihe);
+    ziel.style.width = (opt.reihe ? Math.max(b, Math.floor(platz / s)) : b) + 'px';
+    ziel.style.transform = s === 1 ? '' : 'scale(' + s + ')';
+    var h = Math.ceil(ziel.offsetHeight * s);
+    rahmen.style.height = h + 'px'; rahmen.style.width = Math.ceil(ziel.offsetWidth * s) + 'px';
+    return { hoehe: h, massstab: s };
+  }
+  async function zeige(karte, opt) {
+    opt = opt || {};
+    welt(karte, opt);
+    var f = karte.format || [210, 297], st = document.getElementById('kt-seite') || document.head.appendChild(Object.assign(document.createElement('style'), { id: 'kt-seite' }));
+    st.textContent = '@page{size:' + f[0] + 'mm ' + f[1] + 'mm;margin:0}';
+    var schluessel = (opt.welt || '') + '|' + (karte.kl || '');
+    if (bereit !== schluessel) { await KT_SATZ.vorbereiten(karte, mess, opt); bereit = schluessel; }
+    var r = KT_SATZ.setze(karte, mess, Object.assign({}, opt, { bearbeiten: !!(opt.pfade || opt.bearbeiten) }));
+    ziel.innerHTML = opt.unterschrift ? r.seiten.map(function (s, i) { return '<figure class="kt-sw">' + s + '<figcaption class="kt-nr">Seite ' + (i + 1) + ' von ' + r.seiten.length + '</figcaption></figure>'; }).join('') : r.seiten.join('');
+    document.body.classList.toggle('kt-schreiben', !!opt.bearbeiten);
+    document.body.classList.toggle('kt-waehlbar', !!opt.pfade && !opt.bearbeiten);
+    await document.fonts.ready;
+    var m = passe(opt);
+    letzte = { seiten: r.seiten.length, wo: r.wo, hoehe: m.hoehe, massstab: m.massstab, regeln: r.regeln, ueberlauf: KT_SATZ.ueberlauf(ziel) };
+    return letzte;
+  }
+  async function mini(karte, eintrag, opt) {
+    opt = opt || {};
+    welt(karte, opt);
+    var f = karte.format || [210, 297];
+    ziel.innerHTML = '<section class="kt-blatt kt-blatt--mini ' + (karte.kl || '').split(/\s+/).filter(Boolean).map(function (x) { return 'kt-' + x; }).join(' ') + '" style="width:' + f[0] + 'mm"><div class="kt-inhalt"><div class="kt-fluss">' + KT_SATZ.baustein(eintrag, '', opt) + '</div></div></section>';
+    document.body.classList.remove('kt-schreiben', 'kt-waehlbar');
+    await document.fonts.ready;
+    return passe(opt);
+  }
+  window.KT_DRUCK = { zeige: zeige, mini: mini, passe: function (opt) { var m = passe(Object.assign({}, zuletzt, opt || {})); if (letzte) { letzte.hoehe = m.hoehe; letzte.massstab = m.massstab; } return m; }, letzte: function () { return letzte; }, version: KT_SATZ.VERSION };
+  try { if (window.parent !== window && window.parent.KT_VORSCHAU_BEREIT) window.parent.KT_VORSCHAU_BEREIT(window); } catch (e) {}
+})();
+</script>
+</body>
+</html>

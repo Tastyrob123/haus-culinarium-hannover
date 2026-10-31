@@ -1,0 +1,254 @@
+{
+ "_lies_mich": "Beschreibung des Hauses für das Werkzeug «website» (Der Schreibtisch). Wirtschaft am Schlössli, Bottighofen: Restaurant, keine Zimmer, nur Deutsch. Jeder Text, jede Zahl, jedes Foto wird aus den gebauten Seiten gelesen (website/ des Projekts, Station 07). Hilfe: python3 werkzeuge/website/beschreibe.py Das Schlössli läuft im eigenen Rahmen des Hauses: http://127.0.0.1:9035/_werkzeuge/bureau/ (Wirtschaft am Schlössli Bottighofen/_werkzeuge/bureau/). Ein eigenes Kleid hier gibt es nicht (Chef-Chat 19.10.: ein Kleid für alle Werkzeuge).",
+ "seiten": [
+  {
+   "datei": "index.html"
+  },
+  {
+   "datei": "karte.html"
+  },
+  {
+   "datei": "weinkarte.html"
+  },
+  {
+   "datei": "feiern.html"
+  },
+  {
+   "datei": "anlaesse.html"
+  },
+  {
+   "datei": "team.html"
+  },
+  {
+   "datei": "kontakt.html"
+  },
+  {
+   "datei": "gutschein.html"
+  },
+  {
+   "datei": "impressum.html"
+  },
+  {
+   "datei": "datenschutz.html"
+  },
+  {
+   "datei": "agb.html"
+  }
+ ],
+ "sprachen": [],
+ "kopie": {
+  "unter": "website",
+  "ordner": [
+   "assets"
+  ]
+ },
+ "gesperrt": [
+  {
+   "wahl": "#karte .ka14, #mittag-start, #feiern .mk-tisch",
+   "werkzeug": "karten"
+  },
+  {
+   "wahl": "#laender .ka__wechsel, #laender .karte-fuss, #wein-zum-gang .wzg4__r, #mittag .lum__m, #laestermeile .lmk__set",
+   "werkzeug": "karten"
+  },
+  {
+   "wahl": "#berater .keller, #berater .wf-raster, #weine .wl__filter, #weine .wk__gruppe, #weine .karte-fuss, #kopf .wkb__seite",
+   "werkzeug": "karten"
+  },
+  {
+   "wahl": "#etagen .bm, #menues .mk-tisch",
+   "werkzeug": "karten"
+  }
+ ],
+ "auslassen": [
+  ".fz__h.b"
+ ],
+ "vorschau": {
+  "ohne_skripte": [],
+  "zusatz_css": ".fenster{overflow:clip}@media (hover:none){[data-ws-e],img[data-ws-b]{cursor:pointer}}",
+  "_zusatz_css": "Robert 19.10.2026 (Bildschirmfoto): «mit Blick aufs» wird hochgeschoben. Der Rahmen der Vorschau ist hoch (100lvh ≈ 1250 px, Lästermeile 1321 px), so reicht der Text des nächsten Fensters bis über das vorige Bild. Jedes Fenster zeigt nur, was in seinem Rahmen liegt (overflow:clip lässt sticky arbeiten). Dieselbe Lücke hat die Website bei hohen Bildschirmen: an den Website-Chat gemeldet.",
+  "_zusatz_css_tippen": "Demo-Check 21.10.2026: Safari auf iPhone/iPad löst beim Tippen auf ein Element ohne Klick-Merkmal keinen Klick aus, wenn der Hörer am Dokument sitzt (so in der Vorschau). Auf Geräten ohne Maus tragen Texte und Fotos der Vorschau deshalb cursor:pointer (bekannte Abhilfe). Im Prüfbrowser nicht nachstellbar (der Safari-Kern auf dem Mac erzeugt aus Tippen keinen Klick); am echten iPhone ungeprüft."
+ },
+ "bereiche": {
+  "zimmer": {
+   "an": false
+  },
+  "preisstufen": {
+   "an": false
+  },
+  "packages": {
+   "an": false
+  },
+  "saele": {
+   "an": false
+  },
+  "unterlagen": {
+   "an": false
+  },
+  "stellen": {
+   "an": false
+  },
+  "anlaesse": {
+   "name": "Anlässe",
+   "satz": "Der nächste Anlass am Hafen mit Titel, Datum, Text und Fotos.",
+   "quellen": [
+    {
+     "seite": "anlaesse.html",
+     "jedes": "#naechster",
+     "felder": [
+      {
+       "key": "titel",
+       "label": "Titel",
+       "art": "text",
+       "wo": ".tz__titel",
+       "titel": true
+      },
+      {
+       "key": "ort",
+       "label": "Ort und Datum",
+       "art": "text",
+       "wo": "p.mono"
+      },
+      {
+       "key": "namen",
+       "label": "Namen",
+       "art": "text",
+       "wo": ".tz__namen"
+      },
+      {
+       "key": "texte",
+       "label": "Text",
+       "art": "liste",
+       "wo": "p.lauf"
+      },
+      {
+       "key": "zeit",
+       "label": "Zeit",
+       "art": "zahl",
+       "wo": ".tz__zeit"
+      },
+      {
+       "key": "bilder",
+       "label": "Fotos",
+       "art": "bilder",
+       "wo": ".tz__bild"
+      }
+     ]
+    }
+   ],
+   "_warum": "Demo-Check 21.10.2026: Der Jahreskalender (#kalender .ap__gross/.ap__p) ist seit dem Seitenbau vom 20.10. nicht mehr auf anlaesse.html. Der Rückblick (#rueckblick .kbg__s) taugt nicht als Liste: ausser dem ersten Blatt tragen alle aria-hidden und die Schicht liest dort keinen Text. Bleibt die grosse Ankündigung."
+  },
+  "team": {
+   "name": "Team",
+   "satz": "Jeder Mensch auf der Seite Team mit Name, Aufgabe und Foto.",
+   "quellen": [
+    {
+     "seite": "team.html",
+     "jedes": "#menschen .mensch",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": "h3",
+       "titel": true
+      },
+      {
+       "key": "rolle",
+       "label": "Aufgabe",
+       "art": "text",
+       "wo": ".schild p"
+      },
+      {
+       "key": "bild",
+       "label": "Foto",
+       "art": "bild",
+       "wo": "img",
+       "kann_fehlen": true
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "kleid": {
+  "zeichen": "assets/svg/zeichen.svg",
+  "zeichen_art": "maske",
+  "tapete": "assets/svg/tapete-a-hell.svg",
+  "tapete_breite": 168
+ },
+ "website": [
+  {
+   "key": "start",
+   "name": "Startseite",
+   "satz": "Der erste Eindruck am Hafen: Willkommen, Lästermeile, Küche, Keller, Besen, Feiern und der Abend unter der Platane.",
+   "seiten": [
+    "index.html"
+   ],
+   "foto": "start"
+  },
+  {
+   "key": "essen",
+   "name": "Karte & Wein",
+   "satz": "Texte und Fotos rund um Speisekarte, Lunch, Lästermeile und Weinkarte. Gerichte, Preise und Weine pflegt Die Tafel.",
+   "seiten": [
+    "karte.html",
+    "weinkarte.html"
+   ],
+   "foto": "tortelloni"
+  },
+  {
+   "key": "feiern",
+   "name": "Feiern",
+   "satz": "Banketts und Gruppen: die zwei Etagen und die Anfrage. Die Bankettmenüs pflegt Die Tafel.",
+   "seiten": [
+    "feiern.html"
+   ],
+   "foto": "gaststube"
+  },
+  {
+   "key": "anlaesse",
+   "name": "Events & Termine",
+   "satz": "Der nächste Anlass und der Rückblick. Was vorbei ist, blenden Sie aus.",
+   "seiten": [
+    "anlaesse.html"
+   ],
+   "foto": "platanen"
+  },
+  {
+   "key": "team",
+   "name": "Team",
+   "satz": "Die Menschen in Küche und Service, mit Name, Aufgabe und Foto.",
+   "seiten": [
+    "team.html"
+   ],
+   "foto": "team"
+  },
+  {
+   "key": "kontakt",
+   "name": "Kontakt & Gutschein",
+   "satz": "Adresse, Öffnungszeiten, Anfahrt, Weg über das Wasser und der Gutschein.",
+   "seiten": [
+    "kontakt.html",
+    "gutschein.html"
+   ],
+   "foto": "schild"
+  },
+  {
+   "key": "recht",
+   "name": "Rechtliches",
+   "satz": "Impressum, Datenschutz und AGB im Wortlaut des Hauses.",
+   "seiten": [
+    "impressum.html",
+    "datenschutz.html",
+    "agb.html"
+   ],
+   "foto": "haus"
+  }
+ ],
+ "funktionen": [
+  "leiste_klar"
+ ],
+ "_funktionen": "Demo-Check 21.10.2026: Leiste ohne ausgegraute Knöpfe (Fehlerbuch 10a «Untere Leiste: keine ausgegrauten Knöpfe»), Schalter des Stamms aus dem Schäfli-Bau (L18).",
+ "_auslassen": "Demo-Check 21.10.2026 (Oberchef): Im Fuss jeder Seite steht die Karte der Schwester (Taverne zum Schäfli: Adresse, Öffnungszeiten, Telefon). Die pflegt das Schlössli nicht; ohne Auslassen standen ihre Zeiten in «Zeiten & Preise» als zweites «Offen» neben denen des Schlössli. Ausgelassen heisst nur: nicht als Stelle angeboten, die Seite bleibt Byte für Byte gleich."
+}

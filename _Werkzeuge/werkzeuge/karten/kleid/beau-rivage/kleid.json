@@ -1,0 +1,22 @@
+{
+ "zeichen": "zeichen.svg",
+ "zeichen_mass": [
+  1464.0,
+  1452.0
+ ],
+ "tapete": "tapete.webp",
+ "fotos": {
+  "ambiance": "f-ambiance.webp",
+  "petite-suisse": "f-petite-suisse.webp",
+  "vieux-rivage": "f-vieux-rivage.webp",
+  "weinkarte": "f-weinkarte.webp"
+ },
+ "quellen": {
+  "zeichen": "_karten/zeichen.svg",
+  "tapete": "assets/img/tapete-dunkel.webp",
+  "f-ambiance": "assets/img/rest-ambiance-6-s.webp",
+  "f-petite-suisse": "assets/img/rest-suisse-3-s.webp",
+  "f-vieux-rivage": "assets/img/bar-2-s.webp",
+  "f-weinkarte": "assets/img/food-glaeser-s.webp"
+ }
+}

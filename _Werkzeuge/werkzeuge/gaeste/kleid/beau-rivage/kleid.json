@@ -1,0 +1,19 @@
+{
+ "kulisse": "kulisse.webp",
+ "kacheln": {
+  "eingang": "k-eingang.webp",
+  "gefragt": "k-gefragt.webp",
+  "wissen": "k-wissen.webp"
+ },
+ "tapete": "tapete.webp",
+ "zeichen": "zeichen.webp",
+ "schriftzug": null,
+ "quellen": {
+  "kulisse": "maison/img/f5-halle.webp",
+  "k-eingang": "maison/img/f5-halle.webp",
+  "k-gefragt": "maison/img/f5-salon.webp",
+  "k-wissen": "maison/img/f5-treppe.webp",
+  "tapete": "assets/img/tapete-dunkel.webp",
+  "zeichen": "assets/logo/zeichen-gold-240.webp"
+ }
+}

@@ -1,0 +1,287 @@
+/* gaeste.css · Bühne und Anordnung des Werkzeugs «gaeste» (La Réception · Der Gastgeber).
+
+   Jede Farbe, Schrift, Rundung und Fläche kommt aus stamm/welt.css (var(--…)); wo hier ein neuer Ton steht, ist er aus
+   zwei Tönen der Welt gemischt (color-mix). Alle Klassen tragen den Vorsatz ga-.
+
+   Aufbau der Bühne (Robert 12.10.2026: atmosphärischer, hochwertiger bewegt, Luxus im Grandhotel, Wald im Landhaus, 3D):
+     Grund      dunkel. Grandhotel: Marine mit der Tapete des Hauses. Landhaus: Tannendunkel, aus Tanne und Fels gemischt.
+     Kulisse    oben ein Foto des Hauses hinter einem Schleier. Landhaus: Nebel zieht, eine Tannenreihe schliesst unten ab.
+     Inseln     gearbeitet wird weiter auf hellem Papier: Rand, Platten, Leiste liegen als Inseln auf der Bühne.
+     Bewegung   nur transform. Was hereinkommt, ist von Anfang an deckend (kein Einblenden, kein Aufhellen bei Maus).
+     3D         Kacheln der Übersicht neigen sich zur Maus, das Handy im Probe-Chat dreht sich herein, Fenster heben sich.
+   Bilder, Tapete und Zeichen gehören dem Haus (kleid/<haus>/, geholt mit kleid.py). Ohne Kleid bleibt die Bühne der Welt. */
+
+.ga{--ga-rand:clamp(16px,3.4vw,44px);--ga-leiste-b:284px;--ga-buehne:var(--dunkel);--ga-auf:var(--blatt);--ga-leise:var(--metall);--ga-akz:var(--metall);
+  position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-wrap:break-word;
+  background-color:var(--ga-buehne);background-image:var(--ga-tapete,none);background-size:340px auto;background-position:50% 0;color:var(--ga-auf)}
+:root[data-welt="land"] .ga{--ga-buehne:color-mix(in srgb,var(--akzent) 40%,var(--tief));background-image:linear-gradient(180deg,var(--ga-buehne),var(--tief))}
+.ga button{font-family:inherit}
+.ga a{color:inherit}
+/* auf hellem Papier gelten wieder die Töne des Papiers */
+.ga :is(.platte,.kuhle,.liste,.quittung,.ga-fenster__k,.ga-handy__schirm){--ga-leise:var(--klein);--ga-akz:var(--akzent);color:var(--tinte)}
+.ga :is(.kap,.angabe,.ga-leise){color:var(--ga-leise)}
+.ga .t-akzent{color:var(--ga-akz)}
+.ga .feld > label,.ga .feld > span{color:var(--ga-leise)}
+
+/* ---------- Kulisse ---------- */
+/* Die Kulisse füllt den ganzen Bildschirm und bleibt stehen, alles andere gleitet darüber (Robert 12.10.2026: das Bild war mitten im Bildschirm abgeschnitten) */
+.ga-kulisse{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none;background:var(--ga-buehne)}
+.ga-kulisse img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ga-kulisse__tapete{position:absolute;inset:0;background-image:var(--ga-tapete,none);background-size:340px auto;background-position:50% 0}
+:root[data-welt="land"] .ga-kulisse__tapete{display:none}
+.ga-kulisse__schleier{position:absolute;inset:0;background:linear-gradient(180deg,color-mix(in srgb,var(--ga-buehne) 60%,transparent) 0%,color-mix(in srgb,var(--ga-buehne) 80%,transparent) 42%,color-mix(in srgb,var(--ga-buehne) 90%,transparent) 100%)}
+:root[data-welt="land"] .ga-kulisse__schleier{background:linear-gradient(180deg,color-mix(in srgb,var(--tief) 54%,transparent) 0%,color-mix(in srgb,var(--ga-buehne) 66%,transparent) 48%,color-mix(in srgb,var(--ga-buehne) 80%,transparent) 100%)}
+/* Landhaus: Nebel zieht langsam durchs Tal, davor steht die Tannenreihe in der Farbe der Bühne */
+.ga-nebel,.ga-tannen{display:none}
+:root[data-welt="land"] .ga-nebel{display:block;position:absolute;left:-30%;right:-30%;bottom:6%;height:46%;
+  background:radial-gradient(60% 55% at 30% 60%,color-mix(in srgb,var(--blatt) 26%,transparent),transparent 70%),radial-gradient(50% 45% at 72% 40%,color-mix(in srgb,var(--blatt) 18%,transparent),transparent 70%);
+  animation:ga-nebel 64s linear infinite alternate}
+:root[data-welt="land"] .ga-tannen{display:block;position:absolute;left:0;right:0;bottom:-1px;height:clamp(110px,22vh,210px);background:var(--ga-buehne);
+  -webkit-mask:var(--ga-tannen) 0 100%/1200px 100% repeat-x;mask:var(--ga-tannen) 0 100%/1200px 100% repeat-x}
+:root[data-welt="land"] .ga-tannen--hinten{height:clamp(150px,30vh,280px);background:color-mix(in srgb,var(--ga-buehne) 64%,transparent);
+  -webkit-mask-position:-420px 100%;mask-position:-420px 100%;-webkit-mask-size:1500px 100%;mask-size:1500px 100%}
+.ga{--ga-tannen:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'%3E%3Cpath d='M0 200V186H1200V200zM-10 90L-14.2 106.7L-12.2 103.7L-17.6 123.3L-14.0 120.3L-20.7 140.0L-15.6 137.0L-23.7 156.7L-17.1 153.7L-26.6 173.3L-18.6 170.3L-29.4 190.0L-29.4 190.0L-29.4 200H9.4L9.4 190.0L9.4 190.0L-1.4 170.3L6.6 173.3L-2.9 153.7L3.7 156.7L-4.4 137.0L0.7 140.0L-6.0 120.3L-2.4 123.3L-7.8 103.7L-5.8 106.7zM18 12L10.7 41.7L14.0 36.3L5.3 71.3L11.2 66.0L0.2 101.0L8.5 95.7L-4.6 130.7L6.0 125.3L-9.2 160.3L3.6 155.0L-13.7 190.0L-13.7 190.0L-13.7 200H48.8L48.8 190.0L48.8 190.0L31.5 155.0L44.3 160.3L29.1 125.3L39.7 130.7L26.6 95.7L34.9 101.0L23.9 66.0L29.8 71.3L21.1 36.3L24.4 41.7zM62 55L57.1 77.5L59.6 73.5L53.1 100.0L57.4 96.0L49.3 122.5L55.5 118.5L45.7 145.0L53.6 140.9L42.3 167.5L51.8 163.4L38.9 190.0L38.9 190.0L38.9 200H85.4L85.4 190.0L85.4 190.0L72.6 163.4L82.1 167.5L70.8 140.9L78.7 145.0L68.9 118.5L75.1 122.5L66.9 96.0L71.3 100.0L64.8 73.5L67.3 77.5zM102 123L99.5 134.2L100.7 132.2L97.5 145.3L99.7 143.3L95.5 156.5L98.7 154.5L93.7 167.7L97.7 165.7L92.0 178.8L96.8 176.8L90.3 190.0L90.3 190.0L90.3 200H113.8L113.8 190.0L113.8 190.0L107.3 176.8L112.1 178.8L106.4 165.7L110.4 167.7L105.5 154.5L108.6 156.5L104.5 143.3L106.7 145.3L103.4 132.2L104.6 134.2zM142 11L134.7 40.8L138.1 35.5L129.2 70.7L135.2 65.3L124.0 100.5L132.5 95.1L119.2 130.3L130.0 125.0L114.5 160.2L127.5 154.8L109.9 190.0L109.9 190.0L109.9 200H173.4L173.4 190.0L173.4 190.0L155.8 154.8L168.9 160.2L153.4 125.0L164.2 130.3L150.8 95.1L159.3 100.5L148.1 65.3L154.1 70.7L145.3 35.5L148.6 40.8zM175 31L166.9 57.5L170.7 52.7L160.6 84.0L167.4 79.2L154.8 110.5L164.4 105.7L149.2 137.0L161.5 132.2L143.9 163.5L158.7 158.7L138.7 190.0L138.7 190.0L138.7 200H210.9L210.9 190.0L210.9 190.0L190.9 158.7L205.7 163.5L188.1 132.2L200.4 137.0L185.2 105.7L194.8 110.5L182.2 79.2L189.0 84.0L178.9 52.7L182.7 57.5zM219 76L213.6 95.0L216.3 91.6L209.0 114.0L213.9 110.6L204.8 133.0L211.7 129.6L200.8 152.0L209.7 148.6L196.9 171.0L207.7 167.6L193.2 190.0L193.2 190.0L193.2 200H245.3L245.3 190.0L245.3 190.0L230.9 167.6L241.6 171.0L228.9 148.6L237.7 152.0L226.8 129.6L233.7 133.0L224.6 110.6L229.5 114.0L222.2 91.6L224.9 95.0zM247 18L239.7 46.7L243.1 41.5L234.1 75.3L240.2 70.2L228.9 104.0L237.5 98.8L223.9 132.7L234.9 127.5L219.2 161.3L232.4 156.2L214.5 190.0L214.5 190.0L214.5 200H279.0L279.0 190.0L279.0 190.0L261.1 156.2L274.4 161.3L258.6 127.5L269.6 132.7L256.1 98.8L264.6 104.0L253.3 70.2L259.4 75.3L250.4 41.5L253.8 46.7zM277 117L274.4 129.2L275.8 127.0L272.0 141.3L274.6 139.1L269.7 153.5L273.4 151.3L267.6 165.7L272.3 163.5L265.6 177.8L271.2 175.6L263.6 190.0L263.6 190.0L263.6 200H291.1L291.1 190.0L291.1 190.0L283.5 175.6L289.2 177.8L282.4 163.5L287.1 165.7L281.3 151.3L285.0 153.5L280.2 139.1L282.8 141.3L278.9 127.0L280.4 129.2zM329 107L325.8 120.8L327.6 118.3L322.8 134.7L326.0 132.2L320.1 148.5L324.6 146.0L317.4 162.3L323.2 159.8L314.9 176.2L321.9 173.7L312.5 190.0L312.5 190.0L312.5 200H346.5L346.5 190.0L346.5 190.0L337.1 173.7L344.1 176.2L335.8 159.8L341.5 162.3L334.4 146.0L338.9 148.5L333.0 132.2L336.2 134.7L331.4 118.3L333.2 120.8zM376 91L371.6 107.5L373.7 104.5L368.0 124.0L371.8 121.0L364.8 140.5L370.1 137.5L361.7 157.0L368.5 154.0L358.7 173.5L367.0 170.5L355.9 190.0L355.9 190.0L355.9 200H396.0L396.0 190.0L396.0 190.0L384.9 170.5L393.1 173.5L383.3 154.0L390.2 157.0L381.7 137.5L387.1 140.5L380.0 121.0L383.8 124.0L378.2 104.5L380.3 107.5zM404 117L401.0 129.2L402.4 127.0L398.7 141.3L401.2 139.1L396.6 153.5L400.1 151.3L394.5 165.7L399.0 163.5L392.5 177.8L398.0 175.6L390.6 190.0L390.6 190.0L390.6 200H417.3L417.3 190.0L417.3 190.0L409.9 175.6L415.3 177.8L408.8 163.5L413.4 165.7L407.8 151.3L411.3 153.5L406.7 139.1L409.2 141.3L405.5 127.0L406.8 129.2zM452 64L446.5 85.0L449.0 81.2L442.4 106.0L446.9 102.2L438.5 127.0L444.9 123.2L434.9 148.0L443.0 144.2L431.3 169.0L441.1 165.2L427.9 190.0L427.9 190.0L427.9 200H475.5L475.5 190.0L475.5 190.0L462.3 165.2L472.1 169.0L460.5 144.2L468.6 148.0L458.6 123.2L464.9 127.0L456.6 102.2L461.1 106.0L454.4 81.2L456.9 85.0zM496 71L491.6 90.8L493.9 87.3L487.7 110.7L491.9 107.1L484.0 130.5L490.0 126.9L480.6 150.3L488.2 146.8L477.3 170.2L486.5 166.6L474.1 190.0L474.1 190.0L474.1 200H518.8L518.8 190.0L518.8 190.0L506.4 166.6L515.6 170.2L504.7 146.8L512.3 150.3L502.9 126.9L508.9 130.5L501.0 107.1L505.2 110.7L499.0 87.3L501.3 90.8zM548 28L541.4 55.0L544.5 50.1L536.1 82.0L541.8 77.1L531.3 109.0L539.2 104.1L526.7 136.0L536.9 131.1L522.3 163.0L534.6 158.1L518.0 190.0L518.0 190.0L518.0 200H577.8L577.8 190.0L577.8 190.0L561.2 158.1L573.5 163.0L558.9 131.1L569.1 136.0L556.5 104.1L564.5 109.0L554.0 77.1L559.6 82.0L551.3 50.1L554.4 55.0zM592 51L585.5 74.2L588.7 70.0L580.1 97.3L585.9 93.2L575.1 120.5L583.3 116.3L570.3 143.7L580.9 139.5L565.8 166.8L578.5 162.7L561.3 190.0L561.3 190.0L561.3 200H623.2L623.2 190.0L623.2 190.0L606.0 162.7L618.7 166.8L603.7 139.5L614.2 143.7L601.2 116.3L609.4 120.5L598.6 93.2L604.4 97.3L595.8 70.0L599.0 74.2zM642 83L636.3 100.8L638.8 97.6L632.0 118.7L636.6 115.5L628.0 136.5L634.5 133.3L624.3 154.3L632.6 151.1L620.6 172.2L630.7 169.0L617.1 190.0L617.1 190.0L617.1 200H666.1L666.1 190.0L666.1 190.0L652.5 169.0L662.6 172.2L650.6 151.1L658.9 154.3L648.7 133.3L655.2 136.5L646.6 115.5L651.2 118.7L644.4 97.6L646.9 100.8zM671 74L665.9 93.3L668.5 89.9L661.6 112.7L666.3 109.2L657.5 132.0L664.2 128.5L653.7 151.3L662.2 147.9L650.0 170.7L660.2 167.2L646.4 190.0L646.4 190.0L646.4 200H696.4L696.4 190.0L696.4 190.0L682.5 167.2L692.8 170.7L680.6 147.9L689.1 151.3L678.6 128.5L685.2 132.0L676.5 109.2L681.2 112.7L674.2 89.9L676.8 93.3zM702 70L697.7 90.0L699.9 86.4L694.1 110.0L698.0 106.4L690.8 130.0L696.3 126.4L687.6 150.0L694.6 146.4L684.5 170.0L693.0 166.4L681.6 190.0L681.6 190.0L681.6 200H722.9L722.9 190.0L722.9 190.0L711.5 166.4L720.0 170.0L709.9 146.4L716.9 150.0L708.2 126.4L713.7 130.0L706.5 106.4L710.4 110.0L704.6 86.4L706.8 90.0zM750 12L741.7 41.7L745.5 36.3L735.3 71.3L742.2 66.0L729.4 101.0L739.1 95.7L723.8 130.7L736.2 125.3L718.5 160.3L733.4 155.0L713.2 190.0L713.2 190.0L713.2 200H786.0L786.0 190.0L786.0 190.0L765.8 155.0L780.8 160.3L763.0 125.3L775.4 130.7L760.1 95.7L769.8 101.0L757.1 66.0L763.9 71.3L753.7 36.3L757.6 41.7zM804 87L798.9 104.2L801.2 101.1L795.1 121.3L799.2 118.2L791.5 138.5L797.3 135.4L788.2 155.7L795.6 152.6L785.0 172.8L793.9 169.7L781.8 190.0L781.8 190.0L781.8 200H825.4L825.4 190.0L825.4 190.0L813.4 169.7L822.3 172.8L811.7 152.6L819.1 155.7L809.9 135.4L815.7 138.5L808.1 118.2L812.2 121.3L806.1 101.1L808.4 104.2zM849 46L842.5 70.0L845.4 65.7L837.5 94.0L842.8 89.7L832.9 118.0L840.5 113.7L828.5 142.0L838.2 137.7L824.3 166.0L836.0 161.7L820.2 190.0L820.2 190.0L820.2 200H877.1L877.1 190.0L877.1 190.0L861.3 161.7L873.0 166.0L859.1 137.7L868.8 142.0L856.9 113.7L864.4 118.0L854.5 89.7L859.8 94.0L851.9 65.7L854.9 70.0zM902 85L896.7 102.5L899.0 99.3L892.8 120.0L897.0 116.8L889.2 137.5L895.1 134.3L885.8 155.0L893.3 151.8L882.5 172.5L891.6 169.3L879.3 190.0L879.3 190.0L879.3 200H923.8L923.8 190.0L923.8 190.0L911.4 169.3L920.6 172.5L909.7 151.8L917.3 155.0L908.0 134.3L913.9 137.5L906.1 116.8L910.3 120.0L904.1 99.3L906.4 102.5zM930 29L923.0 55.8L926.2 51.0L917.7 82.7L923.4 77.8L912.8 109.5L920.9 104.7L908.1 136.3L918.4 131.5L903.6 163.2L916.1 158.3L899.3 190.0L899.3 190.0L899.3 200H960.0L960.0 190.0L960.0 190.0L943.1 158.3L955.6 163.2L940.8 131.5L951.1 136.3L938.4 104.7L946.5 109.5L935.8 77.8L941.6 82.7L933.1 51.0L936.2 55.8zM974 33L967.7 59.2L970.8 54.5L962.6 85.3L968.1 80.6L957.8 111.5L965.6 106.8L953.3 137.7L963.3 133.0L949.0 163.8L961.0 159.1L944.7 190.0L944.7 190.0L944.7 200H1003.5L1003.5 190.0L1003.5 190.0L987.2 159.1L999.3 163.8L984.9 133.0L994.9 137.7L982.6 106.8L990.4 111.5L980.1 80.6L985.7 85.3L977.4 54.5L980.5 59.2zM1012 35L1006.7 60.8L1009.4 56.2L1002.0 86.7L1007.0 82.0L997.7 112.5L1004.8 107.8L993.6 138.3L1002.7 133.7L989.7 164.2L1000.6 159.5L985.9 190.0L985.9 190.0L985.9 200H1039.0L1039.0 190.0L1039.0 190.0L1024.3 159.5L1035.2 164.2L1022.2 133.7L1031.3 138.3L1020.1 107.8L1027.2 112.5L1017.9 82.0L1022.9 86.7L1015.5 56.2L1018.2 60.8zM1053 99L1049.7 114.2L1051.4 111.4L1046.9 129.3L1049.9 126.6L1044.3 144.5L1048.6 141.8L1041.8 159.7L1047.3 156.9L1039.4 174.8L1046.1 172.1L1037.1 190.0L1037.1 190.0L1037.1 200H1069.3L1069.3 190.0L1069.3 190.0L1060.4 172.1L1067.0 174.8L1059.2 156.9L1064.6 159.7L1057.9 141.8L1062.2 144.5L1056.5 126.6L1059.6 129.3L1055.1 111.4L1056.7 114.2zM1081 16L1074.4 45.0L1077.6 39.8L1069.0 74.0L1074.8 68.8L1064.0 103.0L1072.2 97.8L1059.2 132.0L1069.7 126.8L1054.6 161.0L1067.3 155.8L1050.2 190.0L1050.2 190.0L1050.2 200H1112.0L1112.0 190.0L1112.0 190.0L1094.9 155.8L1107.6 161.0L1092.5 126.8L1103.0 132.0L1090.0 97.8L1098.3 103.0L1087.4 68.8L1093.3 74.0L1084.6 39.8L1087.9 45.0zM1115 69L1110.4 89.2L1112.6 85.5L1106.7 109.3L1110.7 105.7L1103.3 129.5L1108.9 125.9L1100.1 149.7L1107.2 146.0L1096.9 169.8L1105.6 166.2L1093.9 190.0L1093.9 190.0L1093.9 200H1136.2L1136.2 190.0L1136.2 190.0L1124.5 166.2L1133.2 169.8L1122.8 146.0L1130.0 149.7L1121.1 125.9L1126.8 129.5L1119.4 105.7L1123.4 109.3L1117.4 85.5L1119.7 89.2zM1155 54L1148.8 76.7L1152.0 72.6L1143.5 99.3L1149.2 95.3L1138.6 122.0L1146.7 117.9L1133.9 144.7L1144.2 140.6L1129.4 167.3L1141.9 163.3L1125.1 190.0L1125.1 190.0L1125.1 200H1185.7L1185.7 190.0L1185.7 190.0L1168.9 163.3L1181.4 167.3L1166.6 140.6L1176.9 144.7L1164.2 117.9L1172.2 122.0L1161.6 95.3L1167.3 99.3L1158.9 72.6L1162.0 76.7zM1208 12L1200.4 41.7L1203.9 36.3L1194.6 71.3L1200.8 66.0L1189.2 101.0L1198.0 95.7L1184.1 130.7L1195.4 125.3L1179.2 160.3L1192.8 155.0L1174.4 190.0L1174.4 190.0L1174.4 200H1240.9L1240.9 190.0L1240.9 190.0L1222.4 155.0L1236.1 160.3L1219.9 125.3L1231.2 130.7L1217.2 95.7L1226.1 101.0L1214.4 66.0L1220.7 71.3L1211.4 36.3L1214.9 41.7z'/%3E%3C/svg%3E")}
+@keyframes ga-nebel{from{transform:translate3d(-9%,0,0)}to{transform:translate3d(9%,-4%,0)}}
+
+/* ---------- Kopf der Seite: links die Zurück-Taste, rechts Name und Welt ---------- */
+.ga-kopf{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:12px 24px;padding:18px var(--ga-rand) 6px;min-height:82px;background:none}
+.ga-kopf__werk{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-left:auto}
+.ga-zurueck{padding:0 22px 0 6px;margin-right:auto}
+@media (hover:hover) and (pointer:fine){ .ga .ga-zurueck:not([disabled]):hover i{transform:translateX(-3px)} }
+.ga-kopf__zeichen{flex:none;display:none}
+.ga-kopf__zeichen.ga-da{display:block}
+.ga-kopf__zeichen img{display:block;width:64px;height:auto}
+.ga-kopf__zeichen i{display:block;width:170px;height:54px;background:var(--metall);-webkit-mask:var(--ga-schriftzug) 0 50%/contain no-repeat;mask:var(--ga-schriftzug) 0 50%/contain no-repeat}
+:root:not([data-welt="land"]) .ga-kopf__zeichen i,:root[data-welt="land"] .ga-kopf__zeichen img{display:none}
+.ga-kopf__marke{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ga-kopf__name{color:var(--metall)}
+
+/* ---------- Bänder: Hinweis «Anfrage wartet» und die eine Stelle für den Stand der KI, als Inseln ---------- */
+.ga-band{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin:10px var(--ga-rand) 0;padding:14px 16px 14px 24px;
+  border-radius:var(--r-l);background:var(--platte-h);box-shadow:var(--platte-h-s);color:var(--tinte);--ga-leise:var(--klein);overflow:hidden}
+.ga-band > div{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1 1 260px}
+.ga-band b{font-weight:600}
+.ga-band--still{background:var(--platte-d);box-shadow:var(--platte-d-s);color:var(--blatt);--ga-leise:var(--metall);padding-top:10px;padding-bottom:10px}
+.ga-band--still b{color:var(--metall)}
+.ga-band--wartet{animation:ga-herab .7s var(--e1) both}
+.ga-band--wartet::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--strich)}
+.ga-band--wartet::after{content:"";position:absolute;top:0;bottom:0;left:0;width:34%;background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--blatt) 70%,transparent),transparent);transform:translateX(-120%);animation:ga-glanz 1.5s .5s var(--e2) both;pointer-events:none}
+@keyframes ga-herab{from{transform:translate3d(0,-26px,0)}to{transform:none}}
+@keyframes ga-glanz{to{transform:translateX(420%)}}
+
+/* ---------- Leiste links: steht fest und geht über die ganze Höhe durch (Robert 12.10.2026), bewegt sich nicht mit ---------- */
+.ga-rand{position:fixed;inset:0 auto 0 0;width:var(--ga-leiste-b);z-index:3;display:flex;flex-direction:column;gap:26px;padding:26px 16px 20px;overflow-y:auto;
+  background-color:var(--ga-buehne);background-image:var(--ga-tapete,none);background-size:260px auto;color:var(--blatt);--ga-leise:var(--metall);
+  box-shadow:inset -1px 0 0 color-mix(in srgb,var(--metall) 46%,transparent),22px 0 44px -26px color-mix(in srgb,var(--tief) 96%,transparent)}
+:root[data-welt="land"] .ga-rand{background-image:linear-gradient(180deg,color-mix(in srgb,var(--akzent) 30%,var(--tief)),var(--tief));box-shadow:inset -5px 0 0 var(--metall),22px 0 44px -26px color-mix(in srgb,var(--tief) 96%,transparent)}
+.ga-rand__marke{display:flex;flex-direction:column;gap:14px;padding:0 10px}
+.ga-rand__marke .kap::after{display:none}
+.ga-rand__nav{display:flex;flex-direction:column;gap:6px}
+.ga-rand__auf{display:none}
+.ga-nav{display:flex;flex-direction:column;gap:4px}
+.ga-nav button{position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;text-align:left;border:0;background:none;color:var(--blatt);font-size:inherit;line-height:1.3;padding:12px 14px;border-radius:var(--r-m);cursor:pointer;transition:transform .35s var(--e2)}
+.ga-nav button[aria-current="true"]{background:var(--kn-h);box-shadow:var(--kn-h-s);color:var(--tinte)}
+.ga-nav button i{font-style:normal;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--metall)}
+.ga-nav button[aria-current="true"] i{color:var(--klein)}
+@media (hover:hover) and (pointer:fine){ .ga-nav button:not([aria-current="true"]):hover{transform:translateX(4px)} }
+.ga-seite{position:relative;z-index:1;flex:1;min-width:0;margin-left:var(--ga-leiste-b);display:flex;flex-direction:column;overflow-x:clip}
+.ga-ohne-rand .ga-seite{margin-left:0}
+.ga-haupt{flex:1;min-width:0;width:100%;padding:14px var(--ga-rand) 96px;display:flex;flex-direction:column;gap:26px;max-width:calc(1180px + 2 * var(--ga-rand));outline:0}
+
+/* ---------- Titel einer Ansicht (steht auf der Bühne) ---------- */
+.ga-titel{display:flex;flex-direction:column;gap:12px;padding:6px 4px 2px}
+.ga-titel > p:not(.kap){max-width:66ch;color:color-mix(in srgb,var(--blatt) 88%,var(--ga-buehne))}
+.ga-titel h1{text-shadow:0 2px 22px color-mix(in srgb,var(--tief) 70%,transparent)}
+.ga-titel--gruss{align-items:center;text-align:center;padding:clamp(18px,5vh,56px) 0 clamp(8px,2vh,20px)}
+.ga-titel--gruss .kap::before{content:"";height:1px;width:72px;background:currentColor;opacity:.55}
+.ga-gruss{font-size:calc(clamp(38px,5.4vw,68px) * var(--titel-mass));line-height:1.02}
+.ga-titel__kn,.ga-reihe{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.ga-reihe--auseinander{justify-content:space-between}
+.ga-reihe--unten{align-items:flex-end}
+.ga-spalte{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ga-zwischen{padding:8px 4px 0;text-shadow:0 2px 18px color-mix(in srgb,var(--tief) 60%,transparent)}
+.ga-insel{padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ga-buehnentext{max-width:70ch;padding:0 4px;color:color-mix(in srgb,var(--blatt) 88%,var(--ga-buehne))}
+
+/* ---------- Übersicht: drei Kacheln mit Tiefe, sie neigen sich zur Maus ---------- */
+.ga-lage{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(14px,2vw,24px);perspective:1400px}
+.ga-k3{position:relative;display:flex;flex-direction:column;text-align:left;border:0;padding:0;cursor:pointer;color:var(--tinte);font-size:inherit;min-width:0;border-radius:var(--r-xl);
+  background:var(--platte-h);box-shadow:var(--platte-h-s),0 44px 60px -40px color-mix(in srgb,var(--tief) 90%,transparent);transform-style:preserve-3d;
+  transform:rotateX(var(--ga-nx,0deg)) rotateY(var(--ga-ny,0deg));transition:transform .5s var(--e1);--ga-leise:var(--klein);--ga-akz:var(--akzent)}
+.ga-k3.ga-folgt{transition:transform .08s linear}
+.ga-k3__bild{position:relative;display:block;aspect-ratio:16/10;border-radius:var(--r-xl) var(--r-xl) 0 0;overflow:hidden;background:var(--dunkel2)}
+.ga-k3__bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ga-k3__bild::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--tief) 72%,transparent))}
+.ga-k3__kap{position:absolute;left:20px;bottom:14px;z-index:1;transform:translateZ(34px)}
+.ga .ga-k3__kap{color:var(--metall)}
+.ga-k3__zahl{position:absolute;right:16px;top:14px;z-index:1;min-width:46px;height:46px;padding:0 12px;border-radius:999px;display:grid;place-items:center;background:var(--knauf-h);box-shadow:var(--knauf-h-s);color:var(--tinte);font-family:var(--mono);font-variant-numeric:tabular-nums;transform:translateZ(46px)}
+.ga-k3__text{display:flex;flex-direction:column;gap:6px;padding:18px 22px 22px;transform:translateZ(18px)}
+:root[data-welt="land"] .ga-k3__bild{border-bottom:5px solid var(--metall)}
+:root:not([data-welt="land"]) .ga-k3__bild{border-bottom:1px solid var(--strich)}
+
+/* ---------- Einträge: Anfragen, Fragen, Antworten des Teams ---------- */
+.ga-eintraege{display:flex;flex-direction:column;gap:14px}
+.ga-eintrag{padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ga-eintrag__kopf{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px}
+.ga-eintrag p{white-space:pre-wrap}
+.ga-schild{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte);padding:5px 10px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--linie-h);white-space:nowrap}
+.ga-gruppe{display:flex;flex-direction:column;gap:14px}
+.ga-gruppe > header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;padding:8px 4px 0}
+.ga-auf{align-self:flex-start;border:0;background:none;padding:6px 0;cursor:pointer;color:var(--ga-leise);text-decoration:underline;text-underline-offset:4px;font-size:inherit}
+.ga-text{padding:16px 18px;white-space:pre-wrap;min-width:0;border-radius:var(--r-m)}
+.ga-text--lang{max-height:420px;overflow:auto}
+.ga-link{border:0;background:none;padding:6px 0;cursor:pointer;color:inherit;text-decoration:underline;text-underline-offset:4px;font-size:inherit}
+
+/* ---------- Eingang ---------- */
+.ga-eingang{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:22px;align-items:start}
+.ga-anfragen{display:flex;flex-direction:column;gap:10px}
+.ga-anfragen button{display:flex;flex-direction:column;gap:6px;text-align:left;border:0;cursor:pointer;color:var(--tinte);font-size:inherit;padding:14px 18px;min-width:0;transition:transform .35s var(--e2)}
+.ga-anfragen button > *{min-width:0}
+.ga-anfragen button[aria-current="true"]{box-shadow:var(--platte-h-s),0 0 0 2px var(--metall)}
+.ga-anfragen button b{font-weight:500}
+.ga-anfragen button.ga-neu b{font-weight:600}
+.ga-anfrage__vorschau{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;color:color-mix(in srgb,var(--tinte) 78%,var(--blatt))}
+.ga-reihe--eng{gap:8px}
+.ga-schild--voll{background:var(--kn-d);color:var(--blatt);box-shadow:none}
+@media (hover:hover) and (pointer:fine){ .ga-anfragen button:hover{transform:translateY(-3px)} }
+.ga-angaben{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:14px 20px}
+.ga-angaben div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ga-gespraech{display:flex;flex-direction:column;gap:10px}
+
+/* ---------- Sprechblasen ---------- */
+.ga-blase{max-width:min(100%,560px);padding:12px 16px;border-radius:var(--r-m);white-space:pre-wrap;min-width:0}
+.ga-blase--gast{align-self:flex-end;background:var(--kn-d);box-shadow:var(--kn-d-s);color:var(--blatt)}
+.ga-blase--haus{align-self:flex-start;background:var(--platte-h);box-shadow:var(--platte-h-s);color:var(--tinte)}
+.ga-blase.ga-neu-da{animation:ga-blase .55s var(--e1) both}
+.ga-blase--gast.ga-neu-da{--ga-von:26px}
+.ga-blase--haus.ga-neu-da{--ga-von:-26px}
+@keyframes ga-blase{from{transform:translate3d(var(--ga-von,0),14px,0) scale(.94)}to{transform:none}}
+
+/* ---------- Probe-Chat: das Handy des Gastes, daneben was das Team dazu sieht ---------- */
+.ga-probe{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start;perspective:1600px}
+.ga-handy{position:relative;justify-self:center;width:min(100%,388px);border-radius:52px;padding:12px;background:linear-gradient(160deg,var(--dunkel2),var(--tief) 55%);
+  box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--metall) 46%,transparent),inset 0 2px 0 color-mix(in srgb,var(--blatt) 22%,transparent),0 60px 70px -44px color-mix(in srgb,var(--tief) 96%,transparent),0 18px 30px -18px color-mix(in srgb,var(--tief) 80%,transparent);transform-origin:50% 60%}
+.ga-handy.ga-dreht{animation:ga-handy 1.15s var(--e1) both}
+@keyframes ga-handy{from{transform:translate3d(90px,30px,0) rotateY(-34deg) rotateX(8deg)}to{transform:none}}
+.ga-handy::before{content:"";position:absolute;top:22px;left:50%;width:92px;height:24px;margin-left:-46px;border-radius:999px;background:var(--tief);z-index:2}
+.ga-handy__schirm{position:relative;display:flex;flex-direction:column;height:min(680px,74vh);min-height:480px;border-radius:40px;overflow:hidden;background:var(--grund)}
+.ga-handy__kopf{display:flex;align-items:center;gap:12px;padding:46px 18px 14px;background-color:var(--ga-buehne);background-image:var(--ga-tapete,none);background-size:200px auto;color:var(--blatt)}
+.ga-handy__kopf img{width:38px;height:auto;flex:none}
+.ga-handy__kopf > span{display:flex;flex-direction:column;gap:1px;min-width:0}
+.ga-handy__kopf b{font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(22px * var(--titel-mass));line-height:1.1;letter-spacing:var(--titel-ls);color:var(--metall)}
+.ga .ga-handy__kopf .angabe{color:var(--metall)}
+.ga-chat{flex:1;display:flex;flex-direction:column;gap:12px;padding:16px 14px;overflow-y:auto;overscroll-behavior:contain}
+.ga-chat .wahl{flex-direction:column;gap:8px}
+.ga-chat .wahl > *{text-align:left;padding:12px 14px}
+.ga-chat__feld{display:flex;gap:8px;align-items:flex-end;padding:10px 12px 16px;border-top:1px solid var(--linie-h);background:var(--blatt)}
+.ga-chat__feld .feld{flex:1 1 0}
+.ga-chat__feld .feld > label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.ga-chat__feld textarea{min-height:52px;max-height:120px;padding:13px 16px;resize:none}
+.ga-senden{flex:none;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;color:var(--blatt);background:var(--knauf-d);box-shadow:var(--knauf-d-s);transition:transform .25s var(--e2)}
+.ga-senden svg{width:18px;height:18px}
+.ga-senden:active{transform:translateY(2px)}
+.ga-senden[disabled]{opacity:.55;cursor:default}
+.ga-team{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ga-team__zu{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+
+/* ---------- Zahlen und Balken ---------- */
+.ga-zahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:4px 24px;padding:20px 24px}
+.ga-zahlen div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ga-zeilen > div{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:4px 20px;padding:10px 0;border-top:1px solid var(--linie-h)}
+.ga-zeilen > div:first-child{border-top:0;padding-top:0}
+.ga-balken{display:flex;flex-direction:column;gap:14px}
+.ga-balken > div{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) minmax(150px,auto);gap:6px 16px;align-items:center}
+.ga-balken__spur{height:14px;border-radius:999px;background:var(--kuhle-h);box-shadow:var(--kuhle-h-s);overflow:hidden}
+.ga-balken__spur i{display:block;height:100%;border-radius:999px;background:var(--kn-d);transform-origin:0 50%}
+.ga-auftritt .ga-balken__spur i{animation:ga-wachs .9s .3s var(--e1) both}
+@keyframes ga-wachs{from{transform:scaleX(0)}to{transform:none}}
+
+/* ---------- Vorher, nachher ---------- */
+.ga-vn{display:flex;flex-direction:column;gap:18px}
+.ga-vn__stelle{display:flex;flex-direction:column;gap:8px}
+.ga-vn__paar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ga-vn__paar > div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ga-vn mark{background:var(--kante);color:var(--tinte);border-radius:4px;padding:0 2px;box-shadow:inset 0 -2px 0 var(--strich)}
+
+/* ---------- Fenster: hebt sich aus der Tiefe ---------- */
+.ga-fenster{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:12px;background:color-mix(in srgb,var(--tief) 72%,transparent);overflow:auto;perspective:1400px}
+.ga-fenster__k{width:min(760px,100%);max-height:calc(100dvh - 24px);overflow:auto;padding:clamp(20px,4vw,36px);display:flex;flex-direction:column;gap:18px;background:var(--blatt);
+  box-shadow:var(--platte-h-s),0 70px 90px -50px color-mix(in srgb,var(--tief) 96%,transparent);border-radius:var(--r-xl);animation:ga-fenster .6s var(--e1) both;transform-origin:50% 100%}
+@keyframes ga-fenster{from{transform:translate3d(0,46px,0) rotateX(9deg) scale(.95)}to{transform:none}}
+.ga-fenster__kopf{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.ga-fenster__kn{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-end}
+.ga-zu{flex:none;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;color:var(--tinte);background:var(--kn-h);box-shadow:var(--kn-h-s)}
+.ga-zu svg{width:16px;height:16px}
+
+/* ---------- Quittungen ---------- */
+.ga-quittungen{position:fixed;right:14px;bottom:112px;z-index:15;display:flex;flex-direction:column;gap:10px;width:min(520px,calc(100% - 28px));pointer-events:none}
+.ga-quittungen > *{pointer-events:auto}
+.ga-quittung{position:relative;padding-right:58px;box-shadow:var(--platte-h-s),0 30px 40px -26px color-mix(in srgb,var(--tief) 90%,transparent);animation:ga-quittung .6s var(--e1) both}
+@keyframes ga-quittung{from{transform:translate3d(110%,0,0)}to{transform:none}}
+.ga-quittung > .ga-zu{position:absolute;top:10px;right:10px;width:38px;height:38px}
+.ga-quittung__t{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;min-width:0}
+.ga-quittung--fehl{box-shadow:var(--platte-h-s),0 0 0 2px var(--tinte)}
+
+/* ---------- Leer, Leiste ---------- */
+.ga-leer{padding:28px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.entwurfsleiste.ga-leiste{z-index:6;bottom:14px;margin:0 var(--ga-rand) 14px;padding:12px 12px 12px 24px;border-radius:var(--r-xl);box-shadow:var(--platte-d-s),0 0 0 1px color-mix(in srgb,var(--metall) 30%,transparent)}
+.ga-leiste__t{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;min-width:0;flex:1 1 240px;color:var(--blatt)}
+.ga-leiste__kn{display:flex;flex-wrap:wrap;gap:10px}
+.ga-tuer{display:flex;flex-direction:column;gap:14px;padding:28px}
+
+/* ---------- Auftritt einer Ansicht: jedes Stück gleitet deckend herein, gestaffelt ---------- */
+.ga-auftritt > *{animation:ga-hoch .7s var(--e1) both;animation-delay:calc(var(--i,0) * 60ms)}
+.ga-auftritt > .ga-lage,.ga-auftritt > .ga-probe{animation:none}
+.ga-auftritt .ga-k3{animation:ga-rechts .95s var(--e1) backwards;animation-delay:calc(.12s + var(--i,0) * 110ms)}      /* backwards: danach gilt wieder die Neigung zur Maus */
+.ga-auftritt .ga-team{animation:ga-hoch .8s .2s var(--e1) both}
+.ga-leiste.ga-kommt{animation:ga-hoch .8s .15s var(--e1) both}
+@keyframes ga-hoch{from{transform:translate3d(0,34px,0)}to{transform:none}}
+@keyframes ga-rechts{from{transform:translate3d(120px,0,0) rotateY(-26deg)}to{transform:none}}
+
+/* Listen aus dem Stamm: lange Wörter (E-Mail-Adressen, Adressen der Buchung) brechen um, statt die Seite zu verbreitern */
+.ga .liste > * > :first-child{flex:1 1 0;min-width:0;overflow-wrap:anywhere}
+.ga .liste > * > :last-child{flex:0 1 auto;max-width:62%;min-width:0;overflow-wrap:anywhere}
+.ga-text,.ga-blase,.ga-eintrag p,.ga-angaben b,.ga-zeilen span{overflow-wrap:anywhere}
+
+@media (max-width:900px){
+  .ga-rand{position:relative;inset:auto;width:auto;padding:16px var(--ga-rand) 12px;gap:14px;overflow:visible;box-shadow:inset 0 -1px 0 color-mix(in srgb,var(--metall) 46%,transparent)}
+  :root[data-welt="land"] .ga-rand{box-shadow:inset 0 -5px 0 var(--metall)}
+  .ga-rand__marke{flex-direction:row;align-items:center;gap:14px;padding:0}
+  .ga-seite{margin-left:0}
+  .ga-kopf{min-height:0;padding-top:12px}
+  .ga-rand__auf{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;border:0;cursor:pointer;color:var(--tinte);font-size:inherit;padding:11px 16px;border-radius:var(--r-m);background:var(--kn-h);box-shadow:var(--kn-h-s);--ga-leise:var(--klein)}
+  .ga-rand__auf svg{width:16px;height:16px;flex:none}
+  .ga-rand:not(.ga-offen) .ga-nav{display:none}
+  .ga-eingang,.ga-probe{grid-template-columns:minmax(0,1fr)}
+  .ga-balken > div{grid-template-columns:minmax(0,1fr) auto}
+  .ga-balken__spur{grid-column:1 / -1;order:3}
+  .ga-zeilen > div{grid-template-columns:minmax(0,1fr)}
+  .ga-kopf__zeichen img{width:44px}
+  .ga-kopf__zeichen i{width:104px;height:34px}
+  .ga-auftritt .ga-k3{animation-name:ga-hoch}
+  .ga-handy.ga-dreht{animation-name:ga-hoch}
+}
+@media (max-width:560px){
+  .ga-vn__paar{grid-template-columns:minmax(0,1fr)}
+  .ga-eintrag,.ga-leer,.ga-insel{padding:18px 16px}
+  .ga-quittungen{bottom:150px}
+  .ga .kn{max-width:100%}
+  .ga-kopf__werk .kn--ohne{padding:0 18px}
+  #ga-l-vn{display:none}      /* schmal: ein Knopf genügt, «Veröffentlichen» zeigt zuerst Vorher, nachher */
+  .ga-handy{border-radius:40px;padding:9px}
+  .ga-handy__schirm{border-radius:32px;height:min(600px,72vh);min-height:440px}
+  .ga-k3__text{padding:16px 18px 18px}
+}
+@media (max-width:380px){
+  /* ganz schmal: die Knöpfe behalten Schrift und Höhe aus dem Stamm, nur die Luft links wird knapper */
+  .ga .kn{gap:8px}
+  .ga .kn--klein{padding-left:14px}
+  .ga .kn--ohne{padding:0 14px}
+  .ga-eintrag,.ga-leer,.ga-insel{padding:16px 12px}
+  .ga-fenster__k{padding:16px 14px}
+  .ga-band{padding:12px 12px 12px 20px}
+  .entwurfsleiste.ga-leiste{padding:12px 10px 12px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ga *,.ga *::before,.ga *::after{animation:none !important;transition:none !important}
+}

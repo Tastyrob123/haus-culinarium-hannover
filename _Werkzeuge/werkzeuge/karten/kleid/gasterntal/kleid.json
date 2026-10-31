@@ -1,0 +1,15 @@
+{
+ "zeichen": "zeichen.svg",
+ "zeichen_mass": [
+  3242.0,
+  639.0
+ ],
+ "tapete": null,
+ "fotos": {
+  "karte-2026": "f-karte-2026.webp"
+ },
+ "quellen": {
+  "zeichen": "assets/logo/schrift-berghotel-gasterntal.svg",
+  "f-karte-2026": "assets/img/e-tafel-s.webp"
+ }
+}

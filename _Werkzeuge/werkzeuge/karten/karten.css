@@ -1,0 +1,322 @@
+/* karten.css · Anordnung des Werkzeugs «karten» (La Carte · Die Tafel).
+   Aufbau eins zu eins nach La Carte am Grand Beau-Rivage (mission-control: mc.css, Fassung 2, und mc-bureau.css, Fassung 3):
+   dunkler Raum, Kopfleiste als Insel, Seitenleiste als Papierplatte, Kopf mit Zeichen und zweifarbigem Titel, Einträge als
+   Platten, die Karte auf heller Platte, Leiste als schwebende Insel, Fenster und Quittungen wie dort.
+   Hier steht nur, WO etwas liegt und wie gross es ist. Jede Farbe, Schrift, Rundung und Fläche kommt aus stamm/welt.css,
+   deshalb trägt derselbe Bau beide Welten. Was das Original hatte und welt.css nicht kennt (Tapete, Zeichen und Fotos des
+   Hauses, Gold als Knopffarbe, Lichtstreif), fehlt hier bewusst. Alle Klassen mit Vorsatz kt-. */
+
+:root{--kt-rand:300px;--kt-oben:72px;--kt-leiste:96px}
+html,body.kt{background:var(--dunkel) var(--kt-tapete,none) 0 0/340px auto}
+body.kt{min-height:100vh;font-size:15px;line-height:1.5}
+.kt [hidden]{display:none !important}
+.kt i.marke{font-style:normal}
+.kt .t-ansicht,.kt .t-zwischen,.kt h1,.kt h2{font-variant-numeric:lining-nums}
+@keyframes kt-auf{from{transform:translateY(18px)}to{transform:none}}
+@keyframes kt-runter{from{transform:translateY(-100%)}to{transform:none}}
+@keyframes kt-dreh{to{transform:rotate(360deg)}}
+@keyframes kt-blitzzeile{0%,30%{background-color:var(--zwei)}100%{background-color:transparent}}
+
+/* Zeichen des Hauses: bis «marke» das echte liefert, ein Ring mit den Anfangsbuchstaben */
+.kt-zeichen{flex:none;display:grid;place-items:center;aspect-ratio:1;border-radius:50%;color:var(--metall);box-shadow:inset 0 0 0 1px currentColor,inset 0 0 0 4px transparent,inset 0 0 0 5px color-mix(in srgb,currentColor 45%,transparent);
+  font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:.02em;line-height:1;font-variant-numeric:lining-nums}
+
+/* ---------- Kopfleiste: Insel ---------- */
+.kt-oben{position:fixed;inset:0 0 auto 0;height:var(--kt-oben);display:flex;align-items:center;gap:20px;padding:0 18px 0 22px;z-index:40;color:var(--blatt);
+  background:var(--platte-d);box-shadow:inset 0 -1px 0 var(--linie-d),0 18px 34px -20px var(--tief);animation:kt-runter .7s var(--e1) both}
+/* Zeichnung des Hauses statt des Rings: rund als Medaillon, breit als Schriftzug */
+.kt-zeichen--bild{display:block;aspect-ratio:auto;border-radius:0;box-shadow:none}
+.kt-zeichen--bild svg{display:block;width:100%;height:auto}
+.kt-oben::after,.kt-leiste::after,.kt-r--deckel::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--kt-tapete,none) 0 0/340px auto;opacity:.4;pointer-events:none}
+.kt-oben,.kt-leiste,.kt-r--deckel{isolation:isolate}
+.kt-oben__marke{display:flex;align-items:center;gap:13px;min-width:calc(var(--kt-rand) - 22px);text-decoration:none;color:inherit}
+.kt-oben__marke .kt-zeichen{width:42px;font-size:15px}
+.kt-oben__marke .kt-zeichen--breit{width:128px}
+.kt-oben__marke b{display:block;font-family:var(--versal);font-weight:400;font-size:15px;line-height:1.1;letter-spacing:var(--versal-ls);text-transform:uppercase;color:var(--metall)}
+.kt-oben__marke small{display:block;margin-top:6px;font-family:var(--mono);font-size:9.5px;line-height:1;letter-spacing:.26em;text-transform:uppercase;color:color-mix(in srgb,var(--metall) 72%,var(--dunkel))}
+.kt-oben__mitte{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center}
+.kt-oben__titel{font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(23px * var(--titel-mass));line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.kt-oben__stand{margin-top:3px;font-family:var(--mono);font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--metall)}
+.kt-oben__werk{display:flex;align-items:center;gap:10px}
+.kt-oben__trenn{width:1px;height:30px;margin:0 4px;background:var(--linie-d)}
+
+/* Runde Tasten mit Tiefe */
+.kt-rund{flex:none;position:relative;display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:50%;cursor:pointer;font:inherit;font-size:18px;line-height:1;color:var(--tinte);
+  background:var(--kn-h);box-shadow:var(--kn-h-s);transition:transform .25s var(--e2)}
+.kt-rund svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.kt-rund:active{transform:translateY(1px)}
+.kt-rund[disabled]{opacity:.3;cursor:default}
+@media (hover:hover) and (pointer:fine){ .kt-rund:not([disabled]):hover{transform:translateY(-1px)} }
+.kt-oben .kt-rund,.kt-vorschau__z .kt-rund{width:38px;height:38px;color:var(--blatt);background:var(--kn-d);box-shadow:var(--kn-d-s)}
+.kt-oben .kt-rund svg{width:16px;height:16px;stroke-width:1.6}
+.kt-oben .kt-rund[data-tip]::after{content:attr(data-tip);position:absolute;top:calc(100% + 10px);left:50%;transform:translate(-50%,-4px);padding:6px 10px;border-radius:10px;white-space:nowrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tinte);background:var(--platte-h);box-shadow:var(--platte-h-s);visibility:hidden;pointer-events:none;transition:transform .45s var(--e1)}
+@media (hover:hover) and (pointer:fine){ .kt-oben .kt-rund[data-tip]:hover::after{visibility:visible;transform:translate(-50%,0)} }
+
+/* ---------- Seitenleiste: Platte aus Papier ---------- */
+.kt-rand{position:fixed;top:calc(var(--kt-oben) + 14px);bottom:14px;left:14px;width:var(--kt-rand);z-index:20;display:flex;flex-direction:column;gap:20px;padding:18px 14px 20px;border-radius:var(--r-l);overflow-y:auto;
+  color:var(--tinte);background:var(--platte-h);box-shadow:var(--platte-h-s);animation:kt-auf .8s var(--e1) .05s both;scrollbar-width:thin}
+.kt-rand .kt-kap{display:flex;align-items:center;gap:12px;margin:2px 6px 8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--klein)}
+.kt-rand .kt-kap::after{content:"";flex:1;height:1px;background:var(--linie-h)}
+.kt-karten{display:flex;flex-direction:column;gap:10px}
+.kt-kw{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:2px 14px;width:100%;padding:8px 10px 8px 8px;border:0;border-radius:var(--r-m);background:none;text-align:start;cursor:pointer;font:inherit;color:var(--tinte)}
+.kt-kw__f{grid-row:1/3;grid-column:1;width:64px;height:64px;border-radius:14px;display:grid;place-items:center;letter-spacing:.02em;background:var(--dunkel);color:var(--metall);box-shadow:inset 0 0 0 1px var(--linie-d),inset 0 0 0 4px var(--dunkel),inset 0 0 0 5px var(--linie-d);
+  font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(26px * var(--titel-mass));line-height:1}
+.kt-kw__f[data-n="3"]{font-size:calc(19px * var(--titel-mass))}
+.kt-kw__f--foto{background-size:cover;background-position:50% 50%;box-shadow:inset 0 0 0 1px var(--linie-d),0 8px 14px -10px var(--tief)}
+.kt-kw b{grid-column:2;align-self:end;font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(20px * var(--titel-mass));line-height:1.15;overflow-wrap:anywhere}
+.kt-kw small{grid-column:2;align-self:start;font-size:12px;line-height:1.35;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-kw .marke{grid-column:3;grid-row:1/3;font-size:9.5px;padding:5px 9px;border-radius:999px}
+.kt-kw[aria-current="true"]{background:var(--kn-d);box-shadow:var(--kn-d-s);color:var(--blatt)}
+.kt-kw[aria-current="true"] small{color:color-mix(in srgb,var(--blatt) 72%,var(--dunkel))}
+.kt-kw[aria-current="true"] .kt-kw__f:not(.kt-kw__f--foto){background:var(--tief)}
+@media (hover:hover) and (pointer:fine){ .kt-kw:not([aria-current="true"]):hover{background:color-mix(in srgb,var(--strich) 12%,transparent)} }
+.kt-modus{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:var(--r-m);background:var(--kuhle-h);box-shadow:var(--kuhle-h-s)}
+.kt-modus button{border:0;padding:10px 8px;border-radius:calc(var(--r-m) - 4px);background:none;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-modus button[aria-pressed="true"]{color:var(--tinte);background:var(--platte-h);box-shadow:inset 0 1px 0 var(--blatt),inset 0 0 0 1px var(--strich),0 6px 12px -6px color-mix(in srgb,var(--tinte) 35%,transparent)}
+.kt-modus__t{margin:-10px 6px 0;font-size:12.5px;line-height:1.5;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-wege{margin-top:auto;padding-top:10px;border-top:1px solid var(--linie-h);display:flex;flex-direction:column;gap:2px}
+.kt-wege button{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 8px;border:0;border-radius:11px;background:none;cursor:pointer;text-align:start;color:var(--tinte);
+  font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(17px * var(--titel-mass))}
+.kt-wege button span{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-family:var(--sans);font-size:13px;color:var(--blatt);background:var(--knauf-d);box-shadow:var(--knauf-d-s)}
+@media (hover:hover) and (pointer:fine){ .kt-wege button:hover{background:color-mix(in srgb,var(--strich) 12%,transparent)} }
+
+/* ---------- Raum, Kopf ---------- */
+.kt-haupt{padding:calc(var(--kt-oben) + 30px) clamp(22px,2.6vw,46px) calc(var(--kt-leiste) + 50px) calc(var(--kt-rand) + 14px + clamp(26px,2.8vw,50px))}
+.kt-kopf{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;padding-bottom:34px;margin-bottom:34px;color:var(--blatt);border-bottom:1px solid var(--linie-d);animation:kt-auf .55s var(--e1) both}
+.kt-kopf__in{display:flex;flex-direction:column;align-items:center}
+.kt-kopf__in .kt-zeichen{width:76px;font-size:27px}
+.kt-kopf__in .kt-zeichen--breit{width:min(320px,72vw)}
+.kt-kopf h1{margin:14px 0 0;font-size:calc(clamp(40px,4.2vw,66px) * var(--titel-mass));line-height:1.04;color:var(--blatt);overflow-wrap:anywhere}
+.kt-kopf h1 em{font-style:normal;color:var(--metall)}
+.kt-kopf__u{display:flex;align-items:center;gap:14px;margin:14px 0 18px;font-family:var(--versal);font-size:12.5px;letter-spacing:var(--versal-ls);text-transform:uppercase;color:var(--metall)}
+.kt-kopf__u i{flex:none;display:block;width:7px;height:7px;border:1px solid var(--strich);transform:rotate(45deg)}
+.kt-kopf .kt-satz{max-width:66ch;font-size:16px;line-height:1.62;text-wrap:balance;color:color-mix(in srgb,var(--blatt) 80%,var(--dunkel))}
+.kt-kopf__kn{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.kt-arbeit{display:grid;grid-template-columns:minmax(380px,1fr) minmax(360px,1fr);gap:clamp(22px,2.6vw,40px);align-items:start}
+.kt.kt-frei .kt-arbeit{grid-template-columns:minmax(0,1fr)}
+.kt.kt-frei .kt-liste{display:none}
+
+/* ---------- Liste (Einfach): Platten ---------- */
+.kt-liste{min-width:0;animation:kt-auf .6s var(--e1) .06s both}
+.kt-teil{position:relative;margin-bottom:28px;border-radius:var(--r-xl);background:var(--platte-h);box-shadow:var(--platte-h-s);padding:8px;color:var(--tinte)}
+.kt-teil::before{content:"";position:absolute;inset:8px;border:1px solid var(--linie-h);border-radius:calc(var(--r-xl) - 7px);pointer-events:none}
+.kt-teil > *{position:relative}
+.kt-r{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);align-items:center;gap:6px 14px;padding:15px 22px;border-radius:var(--r-m);border-bottom:1px solid var(--linie-h);position:relative}
+.kt-r:last-of-type,.kt-r:has(+ .kt-r--rubrik){border-bottom-color:transparent}
+.kt-r.kt-blitz{animation:kt-blitzzeile 1.8s ease}
+.kt-r__t{min-width:0;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit;text-align:start;display:block;width:100%}
+.kt-r__t b{font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(20px * var(--titel-mass));line-height:1.2}
+.kt-r__t small{margin-inline-start:6px;font-size:12px;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-r__t span{display:block;margin-top:2px;font-size:13.5px;line-height:1.45;color:color-mix(in srgb,var(--tinte) 62%,var(--blatt));overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kt-r__p{min-width:118px;line-height:1.3;text-align:right;font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(19px * var(--titel-mass));font-variant-numeric:lining-nums;color:var(--klein);white-space:nowrap;transition:opacity .2s}
+.kt-r__p small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;line-height:1.5}
+.kt-r__k{display:flex;gap:6px;align-items:center}
+/* Preis steht rechts; die Tasten erscheinen beim Überfahren an seiner Stelle */
+.kt-r:not(.kt-r--rubrik):not(.kt-r--deckel) .kt-r__k{position:absolute;right:16px;top:50%;transform:translateY(-50%);visibility:hidden}
+.kt-r:not(.kt-r--rubrik):not(.kt-r--deckel):is(:hover,:focus-within) .kt-r__k{visibility:visible}
+.kt-r:not(.kt-r--rubrik):not(.kt-r--deckel):is(:hover,:focus-within) .kt-r__p{opacity:0}
+@media (hover:hover) and (pointer:fine){ .kt-r:not(.kt-r--rubrik):not(.kt-r--deckel):hover .kt-r__t b{color:var(--klein)} }
+.kt-r.kt-aus .kt-r__t,.kt-r.kt-aus .kt-r__p{opacity:.42}
+.kt-r.kt-aus .kt-r__t b{text-decoration:line-through;text-decoration-color:var(--strich)}
+.kt-r--rubrik{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 14px;padding:26px 22px 18px;border-radius:0;border-bottom:0}
+.kt-r--rubrik .kt-r__t{flex:1 1 110px;width:auto;min-width:min-content}
+.kt-r--rubrik .kt-r__k{flex:none}
+.kt-r--rubrik .kt-r__t b{display:block;font-size:calc(32px * var(--titel-mass));line-height:1.05}
+.kt-r--rubrik .kt-r__t small{display:flex;align-items:center;gap:10px;margin:8px 0 0;font-family:var(--versal);font-size:11.5px;letter-spacing:var(--versal-ls);text-transform:uppercase;color:var(--klein);white-space:nowrap}
+.kt-r--rubrik .kt-r__t small::after{content:"";flex:none;width:48px;height:1px;background:var(--strich)}
+.kt-r--klein{padding:9px 22px}
+.kt-r--klein .kt-r__t b{font-family:var(--versal);font-weight:400;font-size:12px;letter-spacing:var(--versal-ls);text-transform:uppercase;color:var(--klein)}
+.kt-r--land .kt-r__t b{font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(20px * var(--titel-mass));letter-spacing:var(--titel-ls);text-transform:none;color:var(--tinte)}
+.kt-r--notiz .kt-r__t b{font-family:var(--sans);font-size:13.5px;font-weight:400;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--tinte) 75%,var(--blatt));display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kt-teil:has(.kt-r--deckel){padding:0;background:none;box-shadow:var(--platte-d-s)}
+.kt-teil:has(.kt-r--deckel)::before{display:none}
+.kt-r--deckel{grid-template-columns:auto minmax(0,1fr) auto;padding:18px 22px;border-radius:var(--r-l);border-bottom:0;background:var(--platte-d);color:var(--blatt)}
+.kt-r--deckel .kt-zeichen{width:46px;font-size:16px}
+.kt-r--deckel .kt-zeichen--breit{display:none}
+.kt-r--deckel:has(.kt-zeichen--breit){grid-template-columns:minmax(0,1fr) auto}
+.kt-r--deckel .kt-r__t b{font-family:var(--versal);font-weight:400;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--metall)}
+.kt-r--deckel .kt-r__t span{color:color-mix(in srgb,var(--blatt) 66%,var(--dunkel))}
+.kt-chip{display:inline-block;margin-inline-start:8px;padding:4px 9px;border-radius:999px;font-family:var(--versal);font-style:normal;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;vertical-align:3px;color:var(--klein);background:var(--kuhle-h);box-shadow:var(--kuhle-h-s)}
+.kt-neu-zeile{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:16px 20px 18px}
+
+/* ---------- Vorschau: Werkzeugleiste als Insel, die Seiten auf heller Platte ---------- */
+.kt-vorschau{min-width:0;position:sticky;top:calc(var(--kt-oben) + 24px);max-height:calc(100vh - var(--kt-oben) - var(--kt-leiste) - 60px);display:flex;flex-direction:column}
+.kt.kt-frei .kt-vorschau{position:relative;top:0;max-height:none}
+.kt-vorschau__k{align-self:center;max-width:100%;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 14px;margin:0 auto 14px;padding:7px 8px;border-radius:999px;background:var(--platte-d);box-shadow:var(--platte-d-s);color:var(--blatt)}
+/* Vorschau: Karte oder Website (wie im Original; die Website-Ansicht wartet, bis ein Haus angeschlossen ist) */
+.kt-ansicht{flex:none;display:flex;padding:4px;border-radius:14px;background:var(--kuhle-d);box-shadow:var(--kuhle-d-s)}
+.kt-ansicht button{border:0;padding:7px 14px;border-radius:10px;background:none;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:color-mix(in srgb,var(--blatt) 72%,var(--dunkel))}
+.kt-ansicht button[aria-pressed="true"]{color:var(--tinte);background:var(--platte-h);box-shadow:inset 0 1px 0 var(--blatt),0 6px 12px -6px var(--tief)}
+.kt-web{flex:1;display:flex;flex-direction:column;gap:12px;padding:clamp(22px,3vw,40px);border-radius:var(--r-l);background:var(--platte-h);box-shadow:var(--platte-h-s);color:var(--tinte)}
+.kt-web p{max-width:60ch}.kt-web .kt-mono{margin:0}
+.kt-vzahl{flex:0 1 auto;min-width:0;line-height:1.35;text-wrap:balance;font-family:var(--versal);font-size:12px;letter-spacing:var(--versal-ls);text-transform:uppercase;color:var(--metall);text-align:center}
+@media (min-width:861px){.kt-vorschau__k{flex-wrap:nowrap}}
+.kt-vorschau__z{display:flex;gap:6px}
+.kt-seiten{flex:1;min-height:200px;overflow:auto;padding:22px 14px 30px;border-radius:var(--r-l);background:var(--platte-h);box-shadow:var(--platte-h-s)}
+#kt-vorschau{display:block;border:0;width:100%;height:420px;margin:0 auto;background:transparent}
+.kt-umbruch{margin:0 0 12px;padding:12px 16px;border-radius:var(--r-m);background:var(--blatt);box-shadow:var(--platte-h-s);color:var(--tinte);font-size:14.5px}
+
+/* ---------- Leiste: schwebende Insel unten ---------- */
+.kt-leiste{position:fixed;left:calc(var(--kt-rand) + 14px + clamp(26px,2.8vw,50px));right:clamp(22px,2.6vw,46px);bottom:18px;z-index:30;min-height:68px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;border-radius:999px;
+  background:var(--platte-d);box-shadow:var(--platte-d-s);color:var(--blatt);animation:kt-auf .8s var(--e1) .1s both}
+.kt-leiste__t{flex:1;min-width:0}
+.kt-leiste__t b{display:block;font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(20px * var(--titel-mass));line-height:1.15;font-variant-numeric:lining-nums}
+.kt-leiste__t b .marke{vertical-align:3px;margin-inline-end:8px;font-size:9.5px;padding:5px 9px;border-radius:999px}
+.kt-leiste__t span{font-size:12px;color:color-mix(in srgb,var(--blatt) 66%,var(--dunkel))}
+.kt-ruhig{opacity:.6}
+/* Hauptknopf im Metall der Welt (Gold im Grandhotel, Holz im Landhaus), Knauf dunkel: wie «Veröffentlichen» im Original. Dunkle Knöpfe tragen den Metallknauf. */
+.kt .kt-gold{color:var(--tinte);background:linear-gradient(180deg,color-mix(in srgb,var(--metall) 58%,var(--blatt)) 0%,var(--metall) 46%,color-mix(in srgb,var(--metall) 55%,var(--strich)) 100%);
+  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--blatt) 90%,transparent),inset 0 -3px 0 color-mix(in srgb,var(--klein) 55%,transparent),inset 0 0 0 1px color-mix(in srgb,var(--blatt) 45%,transparent),0 16px 26px -14px var(--tief)}
+.kt .kt-gold i{background:var(--knauf-d);box-shadow:var(--knauf-d-s);color:var(--blatt)}
+.kt .kn--d i{color:var(--tinte);background:linear-gradient(180deg,color-mix(in srgb,var(--metall) 58%,var(--blatt)),color-mix(in srgb,var(--metall) 55%,var(--strich)));box-shadow:inset 0 1px 0 color-mix(in srgb,var(--blatt) 90%,transparent),inset 0 -2px 0 color-mix(in srgb,var(--klein) 55%,transparent),0 3px 6px color-mix(in srgb,var(--tief) 45%,transparent)}
+/* Masse der Knöpfe wie im Original: klein 38 px, in der Leiste der Hauptknopf 48 px (Farben und Schrift bleiben die des Stamms) */
+.kt-liste .kn--klein,.kt-leiste .kn--klein,.kt-fenster .kn--klein{height:38px;padding:0 5px 0 15px;gap:9px}
+.kt-liste .kn--klein i,.kt-leiste .kn--klein i,.kt-fenster .kn--klein i{width:28px;height:28px}
+.kt-liste .kn--klein.kn--ohne,.kt-leiste .kn--klein.kn--ohne,.kt-fenster .kn--klein.kn--ohne{padding:0 16px}
+.kt-leiste .kn:not(.kn--klein),.kt-fenster .kn:not(.kn--klein),.kt-kopf .kn{height:48px;padding:0 6px 0 22px;gap:12px}
+.kt-leiste .kn:not(.kn--klein) i,.kt-fenster .kn:not(.kn--klein) i,.kt-kopf .kn i{width:36px;height:36px}
+.kt .kn i svg{width:14px;height:14px}
+.kt-link{border:0;background:none;padding:0;cursor:pointer;font:inherit;font-size:13px;color:var(--klein);text-decoration:underline;text-underline-offset:3px}
+.kt-leiste .kt-link{color:var(--metall);white-space:nowrap;font-size:12px}
+
+/* ---------- Fenster ---------- */
+.kt-fenster{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;overflow:auto;background:color-mix(in srgb,var(--tief) 66%,transparent)}
+.kt-fenster__k{position:relative;width:min(1040px,100%);max-height:calc(100vh - 48px);overflow:auto;padding:38px clamp(24px,3vw,44px) 30px;border-radius:var(--r-xl);color:var(--tinte);background:var(--grund);
+  box-shadow:inset 0 0 0 1px var(--strich),inset 0 0 0 6px var(--blatt),inset 0 0 0 7px var(--linie-h),0 40px 80px -30px var(--tief);animation:kt-auf .5s var(--e1)}
+.kt-fenster__k.kt-schmal{width:min(620px,100%)}
+.kt-fenster h2{margin:0 0 6px;font-size:calc(40px * var(--titel-mass));line-height:1.05;padding-inline-end:44px;overflow-wrap:anywhere}
+.kt-fenster h2 em{font-style:normal;color:var(--akzent)}
+.kt-fenster .kt-satz{margin:0 0 22px;max-width:64ch;color:color-mix(in srgb,var(--tinte) 72%,var(--grund))}
+.kt-fenster__zu{position:absolute;top:18px;right:18px}
+.kt-zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:start}
+.kt-fenster .feld{margin-bottom:16px}
+.kt-fenster .feld > span,.kt-fenster .feld > label{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em}
+.kt-fenster .feld input,.kt-fenster .feld textarea{font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(18px * var(--titel-mass));line-height:1.4;padding:12px 14px;border-radius:12px;font-variant-numeric:lining-nums}
+.kt-fenster .feld textarea{min-height:76px}
+.kt-fenster .feld small,.kt-klein{font-size:12.5px;line-height:1.45;color:color-mix(in srgb,var(--tinte) 62%,var(--grund))}
+.kt-zw2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.kt-chips{display:flex;flex-wrap:wrap;gap:8px}
+.kt-chips button{padding:9px 15px;border:0;border-radius:999px;cursor:pointer;font:inherit;font-size:13px;color:var(--tinte);background:var(--platte-h);box-shadow:var(--platte-h-s)}
+.kt-chips button[aria-pressed="true"]{box-shadow:var(--platte-h-s),0 0 0 2px var(--tinte)}
+.kt-mono{margin:0 0 8px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--klein)}
+.kt-mini{border-radius:var(--r-m);padding:16px 0;background:var(--kuhle-h);box-shadow:var(--kuhle-h-s);overflow:hidden}
+.kt-mini iframe{display:block;border:0;width:100%;height:120px;background:transparent}
+.kt-schalter{display:flex;align-items:center;gap:10px;margin-top:16px;border:0;background:none;padding:0;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--klein)}
+.kt-schalter i{flex:none;width:18px;height:18px;border-radius:5px;display:grid;place-items:center;background:var(--kuhle-h);box-shadow:var(--kuhle-h-s);color:var(--blatt)}
+.kt-schalter i svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;visibility:hidden}
+.kt-schalter[aria-checked="true"] i{background:var(--kn-d);box-shadow:var(--kn-d-s)}
+.kt-schalter[aria-checked="true"] i svg{visibility:visible}
+.kt-preise{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.kt-preis{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 34px;gap:10px;align-items:end}
+.kt-preis .feld{margin-bottom:0}
+.kt-preis--tafel{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.kt-preis .kt-rund{margin-bottom:7px}
+.kt-fehler{min-height:20px;margin:4px 0 0;font-size:13.5px;font-weight:600;color:var(--tinte)}
+.kt-fenster__kn{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--linie-h)}
+.kt-fenster__kn .kt-link{margin-inline-end:auto}
+.kt-vgl{display:flex;flex-direction:column;gap:12px}
+.kt-vgl__k,.kt-vgl__z{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:16px}
+.kt-vgl__k{padding:0 18px;margin-bottom:8px}
+.kt-vgl__k span{margin:0}
+.kt-vgl__z{padding:16px 18px;border-radius:var(--r-m);background:var(--blatt);box-shadow:var(--platte-h-s)}
+.kt-vgl__z > span{align-self:start;padding-top:4px;margin:0}
+.kt-vgl__z > span small{display:block;margin-top:4px;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:12px;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-vgl__z > div{min-width:0;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.kt-vgl__z > div b{display:block;font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(18px * var(--titel-mass))}
+.kt-vgl__z > div b small{font-family:var(--sans);font-weight:400;font-size:12.5px}
+.kt-vgl__z > div em{display:block;font-style:normal;color:color-mix(in srgb,var(--tinte) 60%,var(--blatt))}
+.kt-vgl__z > div.kt-leer{color:color-mix(in srgb,var(--tinte) 45%,var(--blatt))}
+.kt-vgl__z del{text-decoration-color:var(--strich)}
+.kt mark{background:var(--zwei);color:inherit;border-radius:3px;padding:0 2px;box-shadow:inset 0 -2px 0 var(--strich)}
+.kt-lade{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:30px 0 10px}
+.kt-lade__r{width:56px;height:56px;border-radius:50%;border:2px solid var(--linie-h);border-top-color:var(--strich);animation:kt-dreh 1s linear infinite}
+.kt-lade ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:14px;color:color-mix(in srgb,var(--tinte) 72%,var(--grund))}
+.kt-verlauf{display:flex;flex-direction:column;gap:8px}
+.kt-verlauf__z{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;border-radius:14px;background:var(--blatt);box-shadow:var(--platte-h-s)}
+.kt-verlauf__z > div:first-child{min-width:0;flex:1 1 220px}
+.kt-verlauf__z b{font-family:var(--titel);font-weight:var(--titel-g);font-size:calc(19px * var(--titel-mass));font-variant-numeric:lining-nums}
+.kt-verlauf__z .kt-mono{margin:2px 0 0;letter-spacing:.08em}
+.kt-verlauf__kn{display:flex;gap:12px;align-items:center}
+.kt-daten{width:100%;min-height:52vh;font-family:var(--mono);font-size:12px;line-height:1.5;padding:16px;border:0;border-radius:14px;background:var(--kuhle-d);box-shadow:var(--kuhle-d-s);color:var(--blatt)}
+
+/* ---------- Quittungen: Insel links über der Leiste ---------- */
+.kt-meldung{position:fixed;left:calc(var(--kt-rand) + 14px + clamp(26px,2.8vw,50px));bottom:calc(var(--kt-leiste) + 8px);z-index:70;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+/* Die Quittung liegt über der Liste: nur ihre Knöpfe fangen Klicks, durch den Rest klickt man hindurch */
+.kt-quit{pointer-events:none;display:flex;align-items:center;gap:16px;max-width:600px;padding:14px 16px 14px 20px;border-radius:var(--r-l);color:var(--blatt);background:var(--platte-d);box-shadow:var(--platte-d-s);animation:kt-auf .6s var(--e1)}
+.kt-quit > div{flex:1;min-width:0}
+.kt-quit b{display:block;font-family:var(--titel);font-weight:var(--titel-g);letter-spacing:var(--titel-ls);font-size:calc(19px * var(--titel-mass));color:var(--metall);font-variant-numeric:lining-nums}
+.kt-quit span{font-size:13px;color:color-mix(in srgb,var(--blatt) 78%,var(--dunkel));overflow-wrap:anywhere}
+.kt-quit button,.kt-quit a{pointer-events:auto;flex:none;border:0;cursor:pointer;font:inherit;font-size:12px;padding:8px 13px;border-radius:999px;text-decoration:none;color:var(--metall);background:var(--kuhle-d);box-shadow:var(--kuhle-d-s)}
+.kt-quit.kt-fehl{box-shadow:var(--platte-d-s),0 0 0 2px var(--metall)}
+
+/* ---------- Start misslungen ---------- */
+.kt-tuer{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center;color:var(--blatt)}
+.kt-tuer > div{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:560px}
+.kt-tuer p{color:color-mix(in srgb,var(--blatt) 78%,var(--dunkel))}
+.kt-tuer .angabe{color:var(--metall)}
+
+/* Wird es eng, steht der Text der Leiste über den Knöpfen statt daneben */
+@media (max-width:1360px){
+  :root{--kt-leiste:142px}
+  .kt-leiste{flex-wrap:wrap;border-radius:var(--r-xl);padding:14px 14px 14px 24px}
+  .kt-leiste__t{flex:1 1 100%}
+}
+@media (max-width:1180px){
+  .kt-arbeit{grid-template-columns:minmax(0,1fr)}
+  .kt-vorschau{position:relative;top:0;max-height:none}
+  .kt-zwei{grid-template-columns:minmax(0,1fr)}
+}
+@media (hover:none),(max-width:860px){
+  .kt-r:not(.kt-r--rubrik):not(.kt-r--deckel) .kt-r__k{position:static;transform:none;visibility:visible;grid-column:1/-1;justify-content:flex-end}
+  .kt-r:not(.kt-r--rubrik):not(.kt-r--deckel):is(:hover,:focus-within) .kt-r__p{opacity:1}
+  .kt-r__p{min-width:0;max-width:60vw;white-space:normal;overflow-wrap:anywhere}
+}
+@media (max-width:860px){
+  :root{--kt-rand:0px;--kt-oben:64px}
+  .kt-oben{gap:10px;padding:0 12px}
+  .kt-oben__marke{min-width:0}
+  .kt-oben__marke small,.kt-oben__mitte,.kt-oben__trenn{display:none}
+  .kt-oben__werk{margin-left:auto}
+  .kt-rand{position:relative;top:auto;bottom:auto;left:auto;width:auto;margin:calc(var(--kt-oben) + 12px) 12px 0}
+  .kt-haupt{padding:26px 14px 250px}
+  .kt-kopf h1{font-size:calc(clamp(30px,9vw,44px) * var(--titel-mass))}
+  .kt-r,.kt-r--klein{padding-left:14px;padding-right:14px}
+  .kt-r--rubrik{padding:22px 14px 14px}
+  .kt-r--rubrik .kt-r__t{flex-basis:100%}
+  .kt-r--rubrik .kt-r__t b{font-size:calc(26px * var(--titel-mass))}
+  .kt-r--rubrik .kt-r__k{flex:1 1 100%;min-width:0;flex-wrap:wrap}
+  .kt-r--deckel{grid-template-columns:auto minmax(0,1fr);padding:16px 14px}
+  .kt-r--deckel .kt-r__k{grid-column:1/-1;justify-content:flex-end}
+  .kt-r__t span{white-space:normal}
+  .kt-vorschau__k{gap:8px 10px;border-radius:var(--r-l)}
+  .kt-vzahl{font-size:11px;letter-spacing:.12em;line-height:1.4}
+  .kt-seiten{padding:12px 8px 16px}
+  .kt-leiste{left:10px;right:10px;bottom:10px;border-radius:var(--r-l);padding:12px;flex-wrap:wrap}
+  .kt-leiste__t{flex:1 1 100%;padding-left:4px}
+  .kt-leiste__t b{font-size:calc(17px * var(--titel-mass))}
+  .kt-leiste__t span{display:none}
+  .kt-leiste .kn{flex:1 1 calc(50% - 8px);min-width:0;justify-content:space-between;height:42px;padding-left:14px}
+  .kt-leiste .kn.kn--ohne{justify-content:center;padding:0 10px}
+  .kt-leiste .kn i{width:30px;height:30px}
+  .kt-leiste [data-akt="speichern"],.kt-leiste [data-akt="veroeffentlichen"]{flex-basis:100%}
+  .kt-meldung{left:12px;right:12px;bottom:232px}
+  .kt-quit{flex-wrap:wrap}
+  .kt-fenster{padding:10px}
+  .kt-fenster__k{max-height:calc(100vh - 20px);padding:30px 18px 22px;border-radius:var(--r-l)}
+  .kt-fenster h2{font-size:calc(30px * var(--titel-mass))}
+  .kt-vgl__k{display:none}
+  .kt-vgl__z{grid-template-columns:minmax(0,1fr)}
+  .kt-zw2{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .kt-oben [data-welt-knopf]{height:38px;padding:0 4px 0 12px;gap:8px}
+  .kt-oben [data-welt-knopf] i{width:30px;height:30px}
+  .kt-oben__marke .kt-zeichen{width:34px;font-size:12px}
+  .kt-oben__marke .kt-zeichen--breit{display:none} /* der Schriftzug steht gross im Kopf darunter; hier bleibt Platz für den Namen des Werkzeugs */
+  .kt-oben__marke b{font-size:13px}
+  .kt-preis{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 34px}
+  .kt-fenster__kn .kn{flex:1 1 auto;justify-content:center}
+}
+@media (max-width:360px){ .kt-leiste .kn.kn--ohne{letter-spacing:.03em;padding:0 4px;font-size:10px} }
+@media (prefers-reduced-motion:reduce){ .kt-oben,.kt-rand,.kt-kopf,.kt-liste,.kt-leiste,.kt-fenster__k,.kt-quit{animation:none} .kt-rund{transition:none} }

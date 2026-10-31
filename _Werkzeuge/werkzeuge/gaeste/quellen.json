@@ -1,0 +1,118 @@
+{
+ "_lies": "Woher das Werkzeug «gaeste» den ersten Stand eines Hauses liest. Pfade gelten ab der «quelle» in haeuser/<haus>/haus.json. Die Quellen werden nur gelesen. Ein drittes Haus ist ein weiterer Eintrag hier, kein Umbau des Werkzeugs. Fehlt eine Angabe, steht im Werkzeug «offen».",
+ "beau-rivage": {
+  "wissen_datei": "_gast/gast_wissen.txt",
+  "tal_datei": "_gast/gast_tal.txt",
+  "haus_json": "_gast/gast_haus.json",
+  "chat_skript": "assets/js/gast.js",
+  "konstanten": "_gast/gast.py",
+  "vorlagen": {
+   "ordner": "mails",
+   "zuordnung": [
+    "_gast/rezeption.py",
+    "VORLAGE"
+   ]
+  },
+  "kleid": {
+   "kulisse": {
+    "datei": "maison/img/f5-halle.webp",
+    "ausschnitt": [
+     0,
+     0.06,
+     1,
+     0.52
+    ]
+   },
+   "kacheln": {
+    "eingang": {
+     "datei": "maison/img/f5-halle.webp",
+     "ausschnitt": [
+      0,
+      0.42,
+      1,
+      0.87
+     ]
+    },
+    "gefragt": {
+     "datei": "maison/img/f5-salon.webp",
+     "ausschnitt": [
+      0,
+      0.38,
+      1,
+      0.83
+     ]
+    },
+    "wissen": {
+     "datei": "maison/img/f5-treppe.webp",
+     "ausschnitt": [
+      0,
+      0.1,
+      1,
+      0.55
+     ]
+    }
+   },
+   "tapete": "assets/img/tapete-dunkel.webp",
+   "zeichen": "assets/logo/zeichen-gold-240.webp"
+  }
+ },
+ "gasterntal": {
+  "seiten": {
+   "muster": "*.html",
+   "nicht": "^(varianten|konzept|bildauswahl|mess-|rechtliches)"
+  },
+  "unterlagen": "assets/pdf/*.pdf",
+  "tal_datei": "../Familie Maeder — Vier Häuser/_gast_tal/kandersteg.txt",
+  "haus_py": {
+   "datei": "../Familie Maeder — Vier Häuser/gast_haeuser.py",
+   "schluessel": "gasterntal"
+  },
+  "konstanten": "../Carlton-Europe Interlaken/_gast/gast.py",
+  "probefragen": {
+   "datei": "../Familie Maeder — Vier Häuser/_gast_landing/antworten-gasterntal.json",
+   "tag": "2026-10-10"
+  },
+  "kleid": {
+   "kulisse": {
+    "datei": "assets/img/t-holz-l.webp",
+    "ausschnitt": [
+     0,
+     0.12,
+     1,
+     0.74
+    ]
+   },
+   "kacheln": {
+    "eingang": {
+     "datei": "assets/img/haus-eingang-l.webp",
+     "ausschnitt": [
+      0,
+      0.12,
+      1,
+      0.95
+     ]
+    },
+    "gefragt": {
+     "datei": "assets/img/wegweiser-l.webp",
+     "ausschnitt": [
+      0,
+      0.08,
+      1,
+      0.92
+     ]
+    },
+    "wissen": {
+     "datei": "assets/img/stube-l.webp",
+     "ausschnitt": [
+      0,
+      0,
+      1,
+      1
+     ]
+    }
+   },
+   "schriftzug": "assets/logo/schrift-gasterntal.svg"
+  }
+ },
+ "_lies_kleid": "«kleid»: die wenigen Bilder, die das Werkzeug je Haus zeigt. kleid.py liest sie aus dem Haus (nur lesen) und legt verkleinerte Kopien nach werkzeuge/gaeste/kleid/<haus>/. Ausschnitt = [links, oben, rechts, unten] als Anteil des Bildes. Fehlt ein Eintrag, zeigt das Werkzeug nur die Bühne der Welt."
+}

@@ -28,10 +28,11 @@ _sicherung/
 *.log
 _roh/
 _online/
+_probe/
 EOF
 mkdir -p "$R/_Werkzeuge" "$R/vorgaben" "$R/cloud" "$R/.github/workflows"
 rsync -a --exclude-from=$AUS --exclude='/website.*' --exclude='/_quelle/' "$Q/" "$R/$HAUS/"
-for d in abnahme-tor messlauf stamm unterbau haeuser daten; do rsync -a --exclude-from=$AUS "$WP/_Werkzeuge/$d" "$R/_Werkzeuge/"; done
+for d in abnahme-tor messlauf stamm unterbau haeuser daten werkzeuge; do rsync -a --exclude-from=$AUS "$WP/_Werkzeuge/$d" "$R/_Werkzeuge/"; done
 cp "$WP/_Werkzeuge/"{ROBERTS-KRITERIEN.md,OBERCHEF-PAKET.md,STAND.md,lernauswertung.py} "$R/_Werkzeuge/"
 rsync -a --exclude-from=$AUS "$WP/_Werkbank-Kit" "$R/"
 cp "$VORLAGE/vorgaben/"*.md "$R/vorgaben/"; cp "$VORLAGE/cloud/"*.{sh,py,md} "$R/cloud/" 2>/dev/null; cp "$VORLAGE/.github/workflows/abnahme.yml" "$R/.github/workflows/"

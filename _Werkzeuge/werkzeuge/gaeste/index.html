@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gästen antworten</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/stamm/welt.css">
+<link rel="stylesheet" href="gaeste.css">
+<script src="/stamm/welt.js"></script>
+</head>
+<body class="ga">
+<div class="ga-kulisse" id="ga-kulisse" aria-hidden="true"><span class="ga-kulisse__schleier"></span><span class="ga-kulisse__tapete"></span><span class="ga-tannen ga-tannen--hinten"></span><span class="ga-nebel"></span><span class="ga-tannen"></span></div>
+<aside class="ga-rand" id="ga-rand" aria-label="Bereiche">
+  <div class="ga-rand__marke">
+    <span class="ga-kopf__zeichen" id="ga-zeichen" aria-hidden="true"></span>
+    <div class="ga-kopf__marke">
+      <p class="kap"><span id="ga-haus">Gästen antworten</span></p>
+      <p class="t-ansicht ga-kopf__name"><span data-werkzeug="gaeste"></span></p>
+    </div>
+  </div>
+  <div class="ga-rand__nav" id="ga-nav-ort"></div>
+</aside>
+<div class="ga-seite">
+  <header class="ga-kopf">
+    <button class="kn kn--klein ga-zurueck" type="button" id="ga-zurueck" hidden><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></i><span>Zurück</span></button>
+    <div class="ga-kopf__werk">
+      <button class="kn kn--klein kn--ohne" type="button" id="ga-wer" aria-label="Ihr Name für das Protokoll">Team</button>
+      <button data-welt-knopf></button>
+    </div>
+  </header>
+  <div class="ga-band ga-band--wartet" id="ga-wartet" role="status" hidden></div>
+  <div class="ga-band ga-band--still" id="ga-ki" role="status" hidden></div>
+  <main class="ga-haupt" id="ga-haupt" tabindex="-1">
+    <p class="angabe">Wird geladen.</p>
+  </main>
+  <footer class="entwurfsleiste ga-leiste" id="ga-leiste" aria-live="polite"></footer>
+</div>
+<div class="ga-fenster" id="ga-fenster" hidden></div>
+<div class="ga-quittungen" id="ga-quittungen" aria-live="polite"></div>
+<script src="gaeste.js"></script>
+</body>
+</html>

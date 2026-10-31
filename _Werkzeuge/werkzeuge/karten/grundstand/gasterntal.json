@@ -1,0 +1,1228 @@
+{
+ "schema": 1,
+ "haus": "gasterntal",
+ "karten": [
+  {
+   "id": "karte-2026",
+   "gilt": {
+    "von": "",
+    "bis": ""
+   },
+   "fassungen": {},
+   "herkunft": {
+    "original": "Berghotel Gasterntal/assets/pdf/Karte-2026.pdf",
+    "sha256": "0066c67dfaedde3843fbf98d10b7afa869f313f055a068a6ccaa8110afe53e76",
+    "gelesen_mit": "einlesen/gasterntal_lesen.py"
+   },
+   "offen": [
+    "Zeitraum der Karte: das Original nennt kein «gilt von» und kein «gilt bis» (der Dateiname des Hauses sagt nur «2026»).",
+    "Allergene je Gericht: das Original nennt keine, nur den Satz, dass die Mitarbeiter Auskunft geben.",
+    "Währung: auf der Karte steht bei keinem Preis eine Währung.",
+    "Zeichen auf dem Umschlag (Bild mit Schriftzug): liegt im Original als Bild vor, nicht als Text, und ist nicht übernommen.",
+    "Fettdruck einzelner Wörter (Jugendschutz, Namen der Getränke) und das Aufzählungszeichen vor zwei Zeilen des Jugendschutzes sind Gestaltung des Originals und stehen nicht in den Daten."
+   ],
+   "karte": {
+    "ziel": "karte-2026",
+    "name": "Ässe u trinke",
+    "gruppe": "Karte",
+    "quelle": "assets/pdf/Karte-2026.pdf",
+    "format": [
+     210,
+     297
+    ],
+    "kl": "",
+    "fuss": "",
+    "teile": [
+     {
+      "art": "deckel",
+      "s": 1,
+      "titel": "Ässe u trinke",
+      "unter": "",
+      "zeilen": [
+       "Mail: info@doldenhorn.ch",
+       "www.Berghotelgasterntal ch",
+       "unter gleicher Leitung",
+       "Waldhotel Doldenhorn ****s 3718 Kandersteg",
+       "gehört zu den 100 besten Hotels der Schweiz",
+       "Landgasthof Ruedihus *** 3718 Kandersteg",
+       "Carlton-Europe Hotel 3800 Interlaken our Family affair in Interlaken"
+      ]
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "rubrik",
+        "titel": "Mineral /Süssgetränke",
+        "en": "",
+        "koepfe": [
+         "3dl",
+         "5dl",
+         "1,5 Liter"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Adelbodner Mineral",
+        "zusatz": "mit und ohne",
+        "zeilen": [],
+        "preise": [
+         "4.00",
+         "5.50",
+         "9.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Eistee",
+        "zeilen": [],
+        "preise": [
+         "5.00",
+         "6.00",
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Citron",
+        "zeilen": [],
+        "preise": [
+         "5.00",
+         "6.00",
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Coca Cola / Cola Zero",
+        "zeilen": [],
+        "preise": [
+         "5.00",
+         "6.00",
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Rivella",
+        "zeilen": [],
+        "preise": [
+         "5.00",
+         "6.00",
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Apfelschorlle",
+        "zeilen": [],
+        "preise": [
+         "5.00",
+         "6.00",
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Apfelwein",
+        "zusatz": "mit oder ohne Alkohol",
+        "zeilen": [],
+        "preise": [
+         "",
+         "7.00",
+         ""
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Himbeersirup für Kinder",
+        "zeilen": [],
+        "preise": [
+         "2.00",
+         "",
+         ""
+        ],
+        "s": 1
+       },
+       {
+        "t": "rubrik",
+        "titel": "Bier",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Rugenbräu",
+        "zeilen": [],
+        "preise": [
+         "5.50"
+        ],
+        "s": 1,
+        "einheiten": [
+         "33cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Panaché",
+        "zeilen": [],
+        "preise": [
+         "5.50"
+        ],
+        "s": 1,
+        "einheiten": [
+         "33cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Rugenbräu Alkoholfrei",
+        "zeilen": [],
+        "preise": [
+         "5.50."
+        ],
+        "s": 1,
+        "einheiten": [
+         "33cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Bärner Müntschi",
+        "zeilen": [],
+        "preise": [
+         "7.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "33cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Maeder’s Ämber",
+        "zeilen": [],
+        "preise": [
+         "7.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "33cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Weizen",
+        "zeilen": [],
+        "preise": [
+         "7.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "55cl"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Aperitiv",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Cüpli Mauler Tradition",
+        "zeilen": [],
+        "preise": [
+         "10.00",
+         "54.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "Cüpli",
+         "Flasche"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Appenzeller",
+        "zeilen": [],
+        "preise": [
+         "9.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Pastis Bourquin",
+        "zeilen": [],
+        "preise": [
+         "9.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Campari",
+        "zeilen": [],
+        "preise": [
+         "9.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Aperol Spritz",
+        "zeilen": [],
+        "preise": [
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Gespritzter Weisswein",
+        "zeilen": [],
+        "preise": [
+         "7.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "rubrik",
+        "titel": "Weine offen",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "zw",
+        "text": "Weisse",
+        "koepfe": [
+         "1dl",
+         "2dl",
+         "5dl"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Yvorne",
+        "zeilen": [],
+        "preise": [
+         "5.50",
+         "11.00",
+         "25.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Johannisberg",
+        "zeilen": [],
+        "preise": [
+         "5.50",
+         "11.00",
+         "25.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "zw",
+        "text": "Rote",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Pinot Noir",
+        "zusatz": "du Valais",
+        "zeilen": [],
+        "preise": [
+         "5.50",
+         "11.00",
+         "25.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Maienfelder",
+        "zeilen": [],
+        "preise": [
+         "5.50",
+         "11.00",
+         "25.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Rosé Pink Ladybird",
+        "zeilen": [],
+        "preise": [
+         "6.50",
+         "13.00",
+         "28.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "rubrik",
+        "titel": "Herrliche Tropfen in Flaschen",
+        "en": "",
+        "koepfe": [
+         "75cl"
+        ],
+        "s": 1
+       },
+       {
+        "t": "zw",
+        "text": "Weisse",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "NO 40 Chasselas",
+        "zusatz": "A. Mathier",
+        "zeilen": [],
+        "preise": [
+         "45.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "N0 45 Chardonnay",
+        "zusatz": "A. Mathier",
+        "zeilen": [],
+        "preise": [
+         "45.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Aigle les Murailles",
+        "zeilen": [],
+        "preise": [
+         "62.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "zw",
+        "text": "Rosé",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Rosé Pink Ladybird",
+        "zeilen": [],
+        "preise": [
+         "45.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "zw",
+        "text": "Rote",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "N0 40 Rivola",
+        "zusatz": "Sardo del Duero",
+        "zeilen": [],
+        "preise": [
+         "45.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "NO 45 Merlot del Ticino",
+        "zusatz": "Rigozzi",
+        "zeilen": [],
+        "preise": [
+         "45.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Positivo",
+        "zeilen": [],
+        "preise": [
+         "32.00",
+         "60.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "3/8 Flasche",
+         ""
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Hochprozentiges",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Verschiedene Schnäpsli",
+        "zusatz": "37.5-43%",
+        "zeilen": [],
+        "preise": [
+         "8.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Gin Gordons",
+        "zeilen": [],
+        "preise": [
+         "12.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Gin Hendricks",
+        "zeilen": [],
+        "preise": [
+         "15.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Whisky Famous Grouse",
+        "zeilen": [],
+        "preise": [
+         "12.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Für ds Gmüet",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Baileys",
+        "zusatz": "17%",
+        "zeilen": [],
+        "preise": [
+         "9.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Amaretto",
+        "zusatz": "28%",
+        "zeilen": [],
+        "preise": [
+         "9.00"
+        ],
+        "s": 1,
+        "einheiten": [
+         "4cl"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Warme Getränke",
+        "en": "",
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Espresso",
+        "zeilen": [],
+        "preise": [
+         "4.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Kaffee, Tee, Ovo, Schokolade",
+        "zeilen": [],
+        "preise": [
+         "5.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Kaffee Lutz Kaffee Fertig",
+        "zeilen": [],
+        "preise": [
+         "8.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Ruedihus Kaffee mit Quitte und Rahmhübli",
+        "zeilen": [],
+        "preise": [
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "gericht",
+        "name": "Walliser Kaffee mit Williams und Rahmhübli",
+        "zeilen": [],
+        "preise": [
+         "12.00"
+        ],
+        "s": 1
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Unsere Devise, wenn immer möglich, nur",
+          "fett": true
+         },
+         {
+          "text": "naturgerechte Produkte,",
+          "fett": true
+         },
+         {
+          "text": "direkt vom Produzenten:",
+          "fett": true
+         },
+         {
+          "text": "Kalbsragout, Schweinefleisch aus dem Berner Oberland,"
+         },
+         {
+          "text": "Geflügel aus der Schweiz"
+         },
+         {
+          "text": ". Das frische Wild kommt aus der Schweiz,"
+         },
+         {
+          "text": "Hobelkäse aus Kandersteg"
+         },
+         {
+          "text": "Vogelisi- Kaffee us Adelboden"
+         }
+        ],
+        "s": 1
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Unsere Mitarbeiter informieren Sie gerne über Allergene"
+         },
+         {
+          "text": "Zutaten"
+         }
+        ],
+        "s": 1
+       },
+       {
+        "t": "rubrik",
+        "titel": "Einisch öpis anders",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Suppä",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Tagesssuppe",
+        "zeilen": [
+         {
+          "text": "Soup of the day",
+          "en": true
+         }
+        ],
+        "preise": [
+         "10.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Tagesssuppe mit Schwynswurscht",
+        "zeilen": [
+         {
+          "text": "Soup of day with pork sausage",
+          "en": true
+         }
+        ],
+        "preise": [
+         "16.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Salat u Vorschpiese",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Perlhuhnterrine mit Morcheln",
+        "zeilen": [
+         {
+          "text": "Country Terrine",
+          "en": true
+         }
+        ],
+        "preise": [
+         "16.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Tomatesalat",
+        "zeilen": [
+         {
+          "text": "Bowl of tomato salad",
+          "en": true
+         }
+        ],
+        "preise": [
+         "11.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Randesalat mit Nüss",
+        "zeilen": [
+         {
+          "text": "Bowl of beetroot salad with nuts",
+          "en": true
+         }
+        ],
+        "preise": [
+         "11.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Teigchüssi,",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "notiz",
+        "text": "das sind hausgemachte Ravioli aus der Pastamaufaktur",
+        "s": 2
+       },
+       {
+        "t": "notiz",
+        "text": "Rindisbacher nach unseren Rezepten hergestellt",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Mit Bärgchäs a brunem Anke",
+        "zeilen": [
+         {
+          "text": "Swiss ravioli with mountain cheese and brown",
+          "en": true
+         }
+        ],
+        "preise": [
+         "28.00",
+         "24.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "Portion",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Mit gröichter Blauseforelle",
+        "zeilen": [
+         {
+          "text": "Swiss ravioli with smoked trout from Blausee",
+          "en": true
+         }
+        ],
+        "preise": [
+         "28.00",
+         "24.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "Portion",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Mit Rindfleisch u g’hacketem",
+        "zeilen": [
+         {
+          "text": "Swiss ravioli with minced beef",
+          "en": true
+         }
+        ],
+        "preise": [
+         "28.00",
+         "24.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "Portion",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Grossis Küche",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Neuenburger Saucisson",
+        "zeilen": [
+         {
+          "text": "Mit Lauchgemüse"
+         },
+         {
+          "text": "Neuchâtel saucisson With leek vegetables",
+          "en": true
+         }
+        ],
+        "preise": [
+         "26.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Grosi’s Chalbsragout mit Pilze u Hörnli",
+        "zeilen": [
+         {
+          "text": "Perserving jar with Grandma’s veal ragout with mushrooms and Swiss",
+          "en": true
+         },
+         {
+          "text": "macaroni",
+          "en": true
+         }
+        ],
+        "preise": [
+         "32.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Kuttel a Tomatesosse u Härdöpfelstock",
+        "zeilen": [
+         {
+          "text": "Preserving jar with tripe in tomato sauce and mashed potatoes",
+          "en": true
+         }
+        ],
+        "preise": [
+         "26.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Hüendscheni (Poulet) ir Rotwysosse u Härdöpfelstock",
+        "zeilen": [
+         {
+          "text": "Preserving jar with chicken in a red wine sauce and mashed potatoes",
+          "en": true
+         }
+        ],
+        "preise": [
+         "32.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Gäng guet",
+        "en": "",
+        "zusatz": "ab 2 Personen",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Friburger Chäsefondue",
+        "zeilen": [
+         {
+          "text": "Cheese Fondue from Fribourg",
+          "en": true
+         }
+        ],
+        "preise": [
+         "29.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "pro Person"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Tomatefondue",
+        "zeilen": [
+         {
+          "text": "Tomato cheese fondue",
+          "en": true
+         }
+        ],
+        "preise": [
+         "35.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "pro Person"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Ohni tierische Produkt (Vegan)",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Linseneintopf",
+        "zeilen": [
+         {
+          "text": "Vegan lentil stew",
+          "en": true
+         }
+        ],
+        "preise": [
+         "22.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Öpis chalts",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Hobelchäs",
+        "zeilen": [
+         {
+          "text": "Sliced cheese",
+          "en": true
+         }
+        ],
+        "preise": [
+         "19.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Zvieri Plättli",
+        "zeilen": [
+         {
+          "text": "Wurscht und Chäs zum sälber abhoue"
+         },
+         {
+          "text": "Sausage and cheese for self-cutting",
+          "en": true
+         }
+        ],
+        "preise": [
+         "28.00"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Beleits Schinkebrot",
+        "zeilen": [
+         {
+          "text": "Ham sandwich",
+          "en": true
+         }
+        ],
+        "preise": [
+         "10.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Beleits Chäsbrot",
+        "zeilen": [
+         {
+          "text": "Cheese sandwich",
+          "en": true
+         }
+        ],
+        "preise": [
+         "10.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Für di chline",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Hörnli mit ghacketem und Öpfelmues",
+        "zeilen": [
+         {
+          "text": "Hörnli with minced meat or with applesauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "12.00",
+         "26.00",
+         "22.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "Kinder",
+         "Für Erwachsene",
+         "Kleine Portion"
+        ]
+       },
+       {
+        "t": "rubrik",
+        "titel": "Zum Dessert",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Meringue mit Greyerzer Nydle",
+        "zeilen": [
+         {
+          "text": "Meringue with double cream from Gruyère",
+          "en": true
+         }
+        ],
+        "preise": [
+         "17.00",
+         "13.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Coupe Selden",
+        "zeilen": [
+         {
+          "text": "Vanille Glace, Schoggi und Ärdbeeglace u Beereni"
+         },
+         {
+          "text": "Ice cream coupe: Vanilla, chocolate, strawberry and fruit",
+          "en": true
+         }
+        ],
+        "preise": [
+         "14.00",
+         "11.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Aprikose Sorbet mit Apricotine",
+        "zeilen": [
+         {
+          "text": "Apricot sorbet with apricot liqueur",
+          "en": true
+         }
+        ],
+        "preise": [
+         "14.00",
+         "11.00"
+        ],
+        "s": 2,
+        "einheiten": [
+         "",
+         "Chlini Portion"
+        ]
+       },
+       {
+        "t": "gericht",
+        "name": "Original Zuger Kirschtorte",
+        "zeilen": [
+         {
+          "text": "Original Zug cherry cake",
+          "en": true
+         }
+        ],
+        "preise": [
+         "8.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Rueblitorte",
+        "zeilen": [
+         {
+          "text": "Carrot cake",
+          "en": true
+         }
+        ],
+        "preise": [
+         "7.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Linzertorte",
+        "zeilen": [
+         {
+          "text": "Linzer Cacke",
+          "en": true
+         }
+        ],
+        "preise": [
+         "6.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Früchtechuche “es het wes het”",
+        "zeilen": [
+         {
+          "text": "Fruit Cacke",
+          "en": true
+         }
+        ],
+        "preise": [
+         "8.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "E Kugle Glace",
+        "zusatz": "Vanille, Ärberri, Schoggi, Aprikose",
+        "zeilen": [
+         {
+          "text": "Scoop of ice cream: vanilla, chocolate, strawberry, apricot",
+          "en": true
+         }
+        ],
+        "preise": [
+         "3.50"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Zum Schutz unserer Jugend",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Uns liegt ein verantwortungsvoller Umgang mit Alkohol besonders am Herzen."
+         },
+         {
+          "text": "Daher halten wir uns konsequent an die gesetzlichen"
+         },
+         {
+          "text": "Jugendschutzbestimmungen:"
+         },
+         {
+          "text": "Wein, Bier und Apfelwein geben wir ausschließlich an Personen ab"
+         },
+         {
+          "text": "16 Jahren ab."
+         },
+         {
+          "text": "Spirituosen, Aperitifs und Alcopops erhalten ausschließlich Personen"
+         },
+         {
+          "text": "ab 18 Jahren."
+         },
+         {
+          "text": "Vielen Dank für Ihr Verständnis."
+         },
+         {
+          "text": "Bei Unsicherheiten behalten wir uns vor, einen gültigen Ausweis zu verlangen."
+         }
+        ],
+        "s": 2
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Karten und Preislisten</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/stamm/welt.css">
+<script src="/stamm/welt.js"></script>
+<link rel="stylesheet" href="karten.css">
+</head>
+<!-- Aufbau eins zu eins nach La Carte am Grand Beau-Rivage (mission-control, Fassung 3 «wie Le Bureau»):
+     Kopfleiste als Insel · Seitenleiste als Papierplatte (Ihre Karten, Weg, Wege) · Kopf mit Zeichen und Titel ·
+     links die Einträge als Platten, rechts die Karte, wie sie gedruckt wird · unten die Leiste als schwebende Insel. -->
+<body class="kt">
+<header class="kt-oben" id="kt-oben">
+  <a class="kt-oben__marke" href="./" id="kt-marke"><span class="kt-zeichen" id="kt-zeichen-oben" aria-hidden="true"></span><span><b data-werkzeug="karten"></b><small id="kt-oben-haus">Karten</small></span></a>
+  <div class="kt-oben__mitte"><div class="kt-oben__titel" id="kt-oben-titel"></div><div class="kt-oben__stand" id="kt-oben-stand"></div></div>
+  <div class="kt-oben__werk">
+    <button type="button" class="kt-rund" data-akt="pdf" data-tip="PDF öffnen" aria-label="PDF der veröffentlichten Karte öffnen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h5.5L12 4.5V14H4z"/><path d="M9.5 2v2.5H12M6 8h4M6 10.5h4"/></svg></button>
+    <button type="button" class="kt-rund" data-akt="verlauf" data-tip="Frühere Fassungen" aria-label="Frühere Fassungen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 1 0 1.6-3.7"/><path d="M3 3v3h3M8 5.2V8l2 1.4"/></svg></button>
+    <span class="kt-oben__trenn"></span>
+    <button data-welt-knopf></button>
+  </div>
+</header>
+<aside class="kt-rand" id="kt-rand"></aside>
+<main class="kt-haupt">
+  <header class="kt-kopf" id="kt-kopf"></header>
+  <div class="kt-arbeit" id="kt-arbeit">
+    <section class="kt-liste" id="kt-liste" aria-label="Einträge der Karte"></section>
+    <section class="kt-vorschau" aria-label="Die Karte, wie sie gedruckt wird">
+      <div class="kt-vorschau__k"><div class="kt-ansicht" role="group" aria-label="Vorschau"><button type="button" data-ansicht="karte" aria-pressed="true">Karte</button><button type="button" data-ansicht="website" aria-pressed="false">Website</button></div><span class="kt-vzahl" id="kt-vzahl">Vorschau</span><div class="kt-vorschau__z"><button type="button" class="kt-rund" data-zoom="-1" aria-label="Kleiner">−</button><button type="button" class="kt-rund" data-zoom="1" aria-label="Grösser">+</button></div></div>
+      <p class="kt-umbruch" id="kt-umbruch" hidden></p>
+      <div class="kt-seiten" id="kt-seiten"><iframe id="kt-vorschau" title="Die Karte, wie sie gedruckt wird" src="druck.html"></iframe></div>
+      <div class="kt-web" id="kt-web" hidden><p class="kt-mono">Website</p><h2 class="t-zwischen">Die Website ist noch nicht angeschlossen.</h2><p>Hier steht später die Seite des Hauses mit dem gespeicherten Entwurf, so wie am Grand Beau-Rivage: dieselben Daten für PDF und Website. Dafür müssen die Seiten des Hauses ihre Karte aus diesem Werkzeug lesen. Bis dahin gilt die Ansicht «Karte»: sie zeigt genau, was gedruckt wird.</p></div>
+    </section>
+  </div>
+</main>
+<footer class="kt-leiste" id="kt-leiste" aria-live="polite"></footer>
+<div class="kt-fenster" id="kt-fenster" hidden></div>
+<div class="kt-meldung" id="kt-meldung" aria-live="polite"></div>
+<script src="karten.js"></script>
+</body>
+</html>

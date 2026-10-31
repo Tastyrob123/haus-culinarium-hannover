@@ -1,0 +1,623 @@
+{
+ "_lies_mich": "Beschreibung des Hauses für das Werkzeug «website». Orte (Selektoren), Beschriftungen und Sätze des Werkzeugs; die Bereiche der Website sind aus dem Le Bureau des Hauses übernommen (studio.py, BEREICHE). Jeder Text, jede Zahl, jedes Foto der Website wird aus den gebauten Seiten gelesen. Hilfe: python3 werkzeuge/website/beschreibe.py",
+ "seiten": [
+  {
+   "datei": "index.html"
+  },
+  {
+   "datei": "zimmer.html"
+  },
+  {
+   "datei": "essen-trinken.html"
+  },
+  {
+   "datei": "restaurant-lambiance.html"
+  },
+  {
+   "datei": "terrasse-la-belle-riviere.html"
+  },
+  {
+   "datei": "restaurant-la-petite-suisse.html"
+  },
+  {
+   "datei": "bar-le-vieux-rivage.html"
+  },
+  {
+   "datei": "spa.html"
+  },
+  {
+   "datei": "feiern-tagen.html"
+  },
+  {
+   "datei": "angebote.html"
+  },
+  {
+   "datei": "haus.html"
+  },
+  {
+   "datei": "karriere.html"
+  },
+  {
+   "datei": "veranstaltungen.html"
+  },
+  {
+   "datei": "region.html"
+  },
+  {
+   "datei": "anreise.html"
+  },
+  {
+   "datei": "abreise.html"
+  },
+  {
+   "datei": "kontakt.html"
+  },
+  {
+   "datei": "rechtliches.html"
+  },
+  {
+   "datei": "zimmer-doppelzimmer-comfort.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-doppelzimmer-first-class.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-doppelzimmer-flussblick.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-doppelzimmer-king-size.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-doppelzimmer-queen-size.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-einzelzimmer.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-familienzimmer.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-interlaken-suite.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-junior-suite-first-class.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-junior-suite.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-pyramid-suite.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-royal-suite.html",
+   "unter": "zimmer.html"
+  },
+  {
+   "datei": "zimmer-spa-junior-suite.html",
+   "unter": "zimmer.html"
+  }
+ ],
+ "sprachen": [
+  {
+   "code": "en",
+   "ordner": "en",
+   "name": "Englisch"
+  },
+  {
+   "code": "fr",
+   "ordner": "fr",
+   "name": "Französisch"
+  },
+  {
+   "code": "zh",
+   "ordner": "zh",
+   "name": "Chinesisch"
+  },
+  {
+   "code": "ko",
+   "ordner": "ko",
+   "name": "Koreanisch"
+  },
+  {
+   "code": "ar",
+   "ordner": "ar",
+   "name": "Arabisch"
+  }
+ ],
+ "kopie": {
+  "ordner": [
+   "assets"
+  ]
+ },
+ "gesperrt": [
+  {
+   "wahl": ".rt-karte",
+   "werkzeug": "karten"
+  }
+ ],
+ "auslassen": [
+  "[data-spiegel]",
+  "[data-fest]"
+ ],
+ "vorschau": {
+  "ohne_skripte": [
+   "dienste.js",
+   "gast.js",
+   "messung.js",
+   "zur-werkbank.js"
+  ]
+ },
+ "bereiche": {
+  "zimmer": {
+   "name": "Zimmer & Suiten",
+   "quellen": [
+    {
+     "seite": "zimmer.html",
+     "jedes": "article.gz",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": ".gz__name",
+       "titel": true
+      },
+      {
+       "key": "klein",
+       "label": "Zeile darunter",
+       "art": "text",
+       "wo": ".gz__klein"
+      },
+      {
+       "key": "lead",
+       "label": "Einleitung",
+       "art": "lang",
+       "wo": ".gz__lead"
+      },
+      {
+       "key": "text",
+       "label": "Text",
+       "art": "lang",
+       "wo": "p.lauf",
+       "kann_fehlen": true
+      },
+      {
+       "key": "fakten",
+       "label": "Angaben",
+       "art": "liste",
+       "wo": ".gz__fakten",
+       "kann_fehlen": true
+      },
+      {
+       "key": "bilder",
+       "label": "Fotos",
+       "art": "bilder",
+       "wo": ".gz__bilder"
+      },
+      {
+       "key": "bildtexte",
+       "label": "Zeilen unter den Fotos",
+       "art": "liste",
+       "wo": ".gz__cap",
+       "kann_fehlen": true
+      }
+     ]
+    },
+    {
+     "seite": "zimmer-*",
+     "jedes": "#zimmer-auftakt",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": ".zd__name",
+       "titel": true
+      },
+      {
+       "key": "lead",
+       "label": "Einleitung",
+       "art": "lang",
+       "wo": ".zd__lead"
+      },
+      {
+       "key": "text",
+       "label": "Text",
+       "art": "lang",
+       "wo": ".zd__rest",
+       "kann_fehlen": true
+      },
+      {
+       "key": "fakten",
+       "label": "Angaben",
+       "art": "liste",
+       "wo": ".zd__fakten"
+      }
+     ]
+    },
+    {
+     "seite": "zimmer-*",
+     "jedes": "#ausstattung .zd__liste",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Überschrift",
+       "art": "text",
+       "wo": "span",
+       "titel": true
+      },
+      {
+       "key": "liste",
+       "label": "Ausstattung",
+       "art": "liste",
+       "wo": "ul"
+      }
+     ]
+    },
+    {
+     "seite": "zimmer-*",
+     "jedes": "#fotos .zd__galerie",
+     "felder": [
+      {
+       "key": "bilder",
+       "label": "Fotos",
+       "art": "bilder",
+       "wo": ""
+      },
+      {
+       "key": "bildtexte",
+       "label": "Zeilen unter den Fotos",
+       "art": "liste",
+       "wo": "figcaption",
+       "kann_fehlen": true
+      }
+     ]
+    }
+   ]
+  },
+  "saele": {
+   "quellen": [
+    {
+     "seite": "feiern-tagen.html",
+     "jedes": "article.fk-saal",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": ".gz__name",
+       "titel": true
+      },
+      {
+       "key": "klein",
+       "label": "Zeile darunter",
+       "art": "text",
+       "wo": ".gz__klein"
+      },
+      {
+       "key": "lead",
+       "label": "Einleitung",
+       "art": "lang",
+       "wo": ".gz__lead"
+      },
+      {
+       "key": "text",
+       "label": "Text",
+       "art": "lang",
+       "wo": "p.lauf",
+       "kann_fehlen": true
+      },
+      {
+       "key": "fakten",
+       "label": "Angaben",
+       "art": "liste",
+       "wo": ".gz__fakten"
+      },
+      {
+       "key": "bilder",
+       "label": "Fotos",
+       "art": "bilder",
+       "wo": ".gz__bilder"
+      }
+     ]
+    },
+    {
+     "seite": "feiern-tagen.html",
+     "jedes": ".fk-reihe a.kachel",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": "b",
+       "titel": true
+      },
+      {
+       "key": "angaben",
+       "label": "Angaben",
+       "art": "liste",
+       "wo": "small"
+      },
+      {
+       "key": "bild",
+       "label": "Foto",
+       "art": "bild",
+       "wo": "img"
+      }
+     ]
+    }
+   ]
+  },
+  "preisstufen": {
+   "name": "Pauschalen",
+   "satz": "Die Tagungspauschalen mit Preis und Leistungen.",
+   "quellen": [
+    {
+     "seite": "feiern-tagen.html",
+     "jedes": "article.tp",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": ".tp__name",
+       "titel": true
+      },
+      {
+       "key": "titel",
+       "label": "Überschrift",
+       "art": "text",
+       "wo": "h3"
+      },
+      {
+       "key": "preis",
+       "label": "Preis",
+       "art": "liste",
+       "wo": ".tp__preis"
+      },
+      {
+       "key": "liste",
+       "label": "Leistungen",
+       "art": "liste",
+       "wo": ".tp__liste"
+      },
+      {
+       "key": "bild",
+       "label": "Foto",
+       "art": "bild",
+       "wo": "img"
+      }
+     ]
+    }
+   ]
+  },
+  "packages": {
+   "quellen": [
+    {
+     "seite": "angebote.html",
+     "jedes": "section.ag-pk",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Name",
+       "art": "text",
+       "wo": ".ag-titel",
+       "titel": true
+      },
+      {
+       "key": "text",
+       "label": "Text",
+       "art": "lang",
+       "wo": ".kopfzeile p.lauf",
+       "kann_fehlen": true
+      },
+      {
+       "key": "karte",
+       "label": "Karte mit Preis und Leistungen",
+       "art": "liste",
+       "wo": "article.ag-pk__karte"
+      },
+      {
+       "key": "bilder",
+       "label": "Fotos",
+       "art": "bilder",
+       "wo": ".ag-gf",
+       "kann_fehlen": true
+      }
+     ]
+    }
+   ]
+  },
+  "unterlagen": {
+   "quellen": [
+    {
+     "seite": "essen-trinken.html",
+     "jedes": "a[href$=\".pdf\"]",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Beschriftung",
+       "art": "text",
+       "wo": "",
+       "titel": true,
+       "kann_fehlen": true
+      },
+      {
+       "key": "link",
+       "label": "Adresse",
+       "art": "link",
+       "wo": ""
+      }
+     ]
+    },
+    {
+     "seite": "spa.html",
+     "jedes": "a[href$=\".pdf\"]",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Beschriftung",
+       "art": "text",
+       "wo": "",
+       "titel": true,
+       "kann_fehlen": true
+      },
+      {
+       "key": "link",
+       "label": "Adresse",
+       "art": "link",
+       "wo": ""
+      }
+     ]
+    }
+   ]
+  },
+  "stellen": {
+   "quellen": [
+    {
+     "seite": "karriere.html",
+     "jedes": ".kr-quer",
+     "felder": [
+      {
+       "key": "name",
+       "label": "Überschrift",
+       "art": "text",
+       "wo": ".kr-gold__caps",
+       "titel": true
+      },
+      {
+       "key": "satz",
+       "label": "Text",
+       "art": "lang",
+       "wo": ".kr-gold__satz"
+      },
+      {
+       "key": "link",
+       "label": "Wohin der Knopf führt",
+       "art": "link",
+       "wo": "a.kn"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "kleid": {
+  "zeichen": "assets/logo/zeichen-gold.webp",
+  "zeichen_art": "bild",
+  "tapete": "assets/img/tapete-dunkel.webp",
+  "tapete_breite": 340
+ },
+ "website": [
+  {
+   "key": "start",
+   "name": "Startseite",
+   "satz": "Der erste Eindruck: Auftakt, Zimmer, Restaurants, SPA, Zahlen und Ausflüge.",
+   "seiten": [
+    "index.html"
+   ],
+   "foto": "haus-front"
+  },
+  {
+   "key": "zimmer",
+   "name": "Zimmer & Suiten",
+   "satz": "Dreizehn Kategorien mit Grösse, Belegung, Text und Fotos, dazu die Seite jedes Zimmers.",
+   "seiten": [
+    "zimmer.html",
+    "zimmer-*"
+   ],
+   "foto": "z-king"
+  },
+  {
+   "key": "essen",
+   "name": "Restaurants & Bar",
+   "satz": "Texte, Zeiten und Fotos der vier Lokale. Die Karten selbst pflegt das Werkzeug für Karten.",
+   "seiten": [
+    "essen-trinken.html",
+    "restaurant-lambiance.html",
+    "terrasse-la-belle-riviere.html",
+    "restaurant-la-petite-suisse.html",
+    "bar-le-vieux-rivage.html"
+   ],
+   "foto": "rest-ambiance-2"
+  },
+  {
+   "key": "spa",
+   "name": "La Vallée SPA",
+   "satz": "Öffnungszeiten der Stationen, Tickets, Behandlungen mit Dauer und Preis.",
+   "seiten": [
+    "spa.html"
+   ],
+   "foto": "spa-pool-3"
+  },
+  {
+   "key": "feiern",
+   "name": "Feiern & Tagen",
+   "satz": "Säle mit Fläche und Personenzahl, Pauschalen, Hochzeit.",
+   "seiten": [
+    "feiern-tagen.html"
+   ],
+   "foto": "saal"
+  },
+  {
+   "key": "angebote",
+   "name": "Angebote",
+   "satz": "Packages, Festtage und Anlässe. Was abgelaufen ist, blenden Sie aus.",
+   "seiten": [
+    "angebote.html"
+   ],
+   "foto": "ev-weihnacht"
+  },
+  {
+   "key": "termine",
+   "name": "Veranstaltungen",
+   "satz": "Was im Haus und in der Region los ist, mit Datum.",
+   "seiten": [
+    "veranstaltungen.html"
+   ],
+   "foto": "reg-harder"
+  },
+  {
+   "key": "karriere",
+   "name": "Karriere",
+   "satz": "Offene Stellen und was das Haus seinen Leuten bietet.",
+   "seiten": [
+    "karriere.html"
+   ],
+   "foto": "team"
+  },
+  {
+   "key": "haus",
+   "name": "Das Haus & die Region",
+   "satz": "Geschichte, Halle, Garten, Ausflüge in der Jungfrauregion.",
+   "seiten": [
+    "haus.html",
+    "region.html"
+   ],
+   "foto": "haus-fluss"
+  },
+  {
+   "key": "kontakt",
+   "name": "Kontakt & Anreise",
+   "satz": "Kontakt, Anreise, vor und nach dem Aufenthalt, Rechtliches.",
+   "seiten": [
+    "kontakt.html",
+    "anreise.html",
+    "abreise.html",
+    "rechtliches.html"
+   ],
+   "foto": "kopf-kontakt"
+  }
+ ]
+}
