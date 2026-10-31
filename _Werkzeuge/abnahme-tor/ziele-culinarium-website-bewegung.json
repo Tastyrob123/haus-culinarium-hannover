@@ -1,0 +1,86 @@
+{
+ "haus": "Culinarium Hannover",
+ "quelle": "Website online DE und EN (Auftrag Oberchef 30.10.2026), ohne /wildside/",
+ "gefahr": "l[öo]sch|entfern|senden|abschick|verschick|ver[öo]ffentlich|hochlad|online stellen|abmeld|zur[üu]cksetz|leeren|drucken|druckfertig|herunterlad|download|speicher|[üu]bernehm|best[äa]tig|freigeb|bezahl|verwerf|archivier|logout|ausloggen|ki fragen|erzeugen|generier|neu laden|entw[üu]rfe anlegen|f[üu]nf entw|anlegen und|export|als tabelle|als pdf|probe-pdf|pdf|zip|kopieren|in die zwischenablage|teilen|anrufen|ausprobieren|chat ausprobieren|abbrechen|r[üu]ckg[äa]ngig|wiederholen|undo|redo",
+ "dokument": "\\s(blatt|papier|bogen|dokument|druckseite|a4-seite|brief-seite|karte-blatt|seite-blatt)\\s",
+ "dokumentNicht": "\\sfl\\s",
+ "stil": {
+  "trenner": "|",
+  "trennerFalsch": "[A-Za-zÄÖÜäöü]\\s+/\\s+[A-Za-zÄÖÜäöü]",
+  "versalienNur": "Mono",
+  "versalienErlaubt": "Mono|plakat|marke|wortmarke"
+ },
+ "stilblatt": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_werkzeuge/imprimerie/haeuser/culinarium/stilblatt.json",
+ "ziele": [
+  {
+   "k": "website-de",
+   "name": "index",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/index.html"
+  },
+  {
+   "k": "website-en",
+   "name": "index",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/index.html"
+  },
+  {
+   "k": "website-de",
+   "name": "abend",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/abend.html"
+  },
+  {
+   "k": "website-en",
+   "name": "abend",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/abend.html"
+  },
+  {
+   "k": "website-de",
+   "name": "abende",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/abende.html"
+  },
+  {
+   "k": "website-en",
+   "name": "abende",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/abende.html"
+  },
+  {
+   "k": "website-de",
+   "name": "leute",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/leute.html"
+  },
+  {
+   "k": "website-en",
+   "name": "leute",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/leute.html"
+  },
+  {
+   "k": "website-de",
+   "name": "weg",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/weg.html"
+  },
+  {
+   "k": "website-en",
+   "name": "weg",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/weg.html"
+  },
+  {
+   "k": "website-de",
+   "name": "bar",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/bar.html"
+  },
+  {
+   "k": "website-en",
+   "name": "bar",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/bar.html"
+  },
+  {
+   "k": "website-de",
+   "name": "dirty-chicken",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/dirty-chicken.html"
+  },
+  {
+   "k": "website-en",
+   "name": "dirty-chicken",
+   "url": "https://culinarium-hannover-entwurf.vercel.app/en/dirty-chicken.html"
+  }
+ ]
+}

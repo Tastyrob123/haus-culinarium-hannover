@@ -1,0 +1,58 @@
+{
+ "port": 9088,
+ "base": "http://127.0.0.1:9088/",
+ "kurz": "culinarium",
+ "seiten": [
+  [
+   "index.html",
+   "Startseite",
+   8
+  ],
+  [
+   "abend.html",
+   "Der Abend",
+   4
+  ],
+  [
+   "abende.html",
+   "Alle Abende",
+   3
+  ],
+  [
+   "bar.html",
+   "Das Haus",
+   3
+  ],
+  [
+   "leute.html",
+   "Das Team",
+   3
+  ],
+  [
+   "weg.html",
+   "Der Weg",
+   2
+  ],
+  [
+   "dirty-chicken.html",
+   "Dirty Chicken",
+   4
+  ],
+  [
+   "impressum.html",
+   "Rechtliches",
+   1
+  ]
+ ],
+ "wahl": "main > section",
+ "start_ms": 4200,
+ "heute": "https://www.instagram.com/culinarium_hannover/",
+ "etiketten_ordner": "untersetzer",
+ "name": "Culinarium",
+ "gold": "#ef7649",
+ "punkt": "#ef7649",
+ "tinte": "#26242d",
+ "chat_frage": "Bis wann gibt es etwas zu essen?",
+ "chat_frage_h": "Kann ich meinen Hund mitbringen?",
+ "mappe": false
+}

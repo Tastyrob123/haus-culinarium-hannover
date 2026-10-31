@@ -1,0 +1,235 @@
+/* Culinarium · «Jeder Abend hat sein Plakat» in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.plw{--papier:#F7F0EB;--holz:#2A2018;--holz2:#3A2C21}
+.plw img{display:block;width:100%;height:100%;object-fit:cover}
+.plw figure{margin:0}
+:where(.plw) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.pk-tk{display:flex;flex-direction:column;gap:16px}
+.pk-tk .titel{font-family:var(--titel);font-weight:340;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.016em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.pk-tk .titel em{font-style:italic;color:var(--kerze-hell)}
+.pk-satz{max-width:40ch;color:var(--fg2);font-size:17px}
+.pk-kn{margin-top:6px}
+.pk-tk.mitte{align-items:center;text-align:center}.pk-tk.mitte .pk-satz{margin-inline:auto}
+.pk-z{display:flex;flex-direction:column;gap:2px;font-size:13.5px;line-height:1.3}
+.pk-z b{font-weight:400;color:var(--fg)}
+.pk-z em{font:400 12px/1.2 var(--mono);font-style:normal;letter-spacing:.06em;color:var(--fg2)}
+.pk-z.gross b{font:340 clamp(24px,2.3vw,36px)/1.08 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.pk-z.gross em{font-size:13px;margin-top:8px}
+.pk-hinweis{font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+.pk-pfeile{display:inline-flex;gap:8px;margin-left:14px;vertical-align:middle}
+.pk-pfeile button{width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--linie);font-size:22px;line-height:1;color:var(--fg);transition:background .3s}
+.pk-pfeile button:hover{background:rgba(250,244,244,.08)}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .plw .auf:not(.zl):not(.sw){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*80ms)}
+html.js .plw .auf.da:not(.zl):not(.sw){transform:none}
+/* gewählte Bilder liegen übereinander und wechseln weich */
+.pk-04-b,.pk-08-b,.pk-09-b,.pk-11-b,.pk-12-b{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--k)}
+.pk-04-b.an,.pk-08-b.an,.pk-09-b.an,.pk-11-b.an,.pk-12-b.an{opacity:1}
+.pk-07-a,.pk-08-a,.pk-09-a,.pk-11-a,.pk-12-a{display:none}
+.pk-07-a.an,.pk-08-a.an,.pk-09-a.an,.pk-11-a.an,.pk-12-a.an{display:block}
+
+/* ---------- 1 Die Plakatwand */
+.pk-01{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:clamp(30px,4vw,70px);align-items:center}
+.pk-01-wand{position:relative;aspect-ratio:100/70}
+.pk-01-p{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);width:calc(var(--w)*1%);aspect-ratio:1;rotate:calc(var(--r)*1deg);box-shadow:0 18px 30px -18px rgba(0,0,0,.85)}
+.pk-01-p.gross{z-index:5;box-shadow:0 40px 60px -30px rgba(0,0,0,.95)}
+.pk-01-l{display:flex;flex-direction:column;gap:34px}
+.pk-01-oben{display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--linie)}
+html.js:not(.ruhig) .plw .pk-01-p.auf{transform:translate(-18px,-34px) rotate(7deg) scale(1.05);transition:transform 1.1s cubic-bezier(.2,.9,.25,1) calc(var(--i)*70ms)}
+html.js .plw .pk-01-p.auf.da{transform:none}
+
+/* ---------- 2 Das Zeitband */
+.pk-02-kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(30px,5vh,54px)}
+.pk-02-r{display:flex;flex-direction:column;gap:22px}
+.pk-02-kn{display:flex;align-items:center}
+.pk-02-linie{height:1px;background:var(--kerze);transform-origin:left;margin-bottom:-1px}
+html.js:not(.ruhig) .plw .pk-02-linie.auf{transform:scaleX(0);transition:transform 1.8s var(--k)}
+html.js .plw .pk-02-linie.auf.da{transform:none}
+.pk-02-band{display:flex;gap:clamp(16px,1.8vw,26px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-top:46px;margin-right:calc(var(--rand)*-1);padding-right:var(--rand)}
+.pk-02-band::-webkit-scrollbar{display:none}
+.pk-02-p{position:relative;flex:none;width:clamp(200px,21vw,290px);scroll-snap-align:start;display:flex;flex-direction:column;gap:14px}
+.pk-02-p.neu{width:clamp(250px,30vw,420px)}
+.pk-02-p img{aspect-ratio:1;height:auto;box-shadow:0 22px 34px -22px rgba(0,0,0,.9)}
+.pk-02-jahr{position:absolute;top:-46px;left:0;font:340 26px/1 var(--titel);color:var(--kerze-hell);padding-top:12px;border-left:1px solid var(--kerze);padding-left:10px}
+
+/* ---------- 3 Der Stapel */
+.pk-03{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(40px,6vw,110px);align-items:center}
+.pk-03-stapel{position:relative;aspect-ratio:1;width:min(100%,620px);margin:30px 0 0 10px}
+.pk-03-p{position:absolute;inset:0;z-index:calc(20 - var(--p));transform:translate(calc(min(var(--p),5)*-9px),calc(min(var(--p),5)*-9px)) rotate(calc(min(var(--p),5)*-1.1deg));transition:transform .7s var(--k),opacity .5s;box-shadow:0 24px 40px -26px rgba(0,0,0,.95)}
+.pk-03-p.weg{transform:translate(70%,8%) rotate(9deg);z-index:30}
+.pk-03-r{display:flex;flex-direction:column;gap:30px}
+.pk-03-jetzt{display:flex;flex-direction:column;gap:6px;padding-top:20px;border-top:1px solid var(--linie)}
+.pk-03-jetzt b{font:340 clamp(24px,2.2vw,34px)/1.1 var(--titel)}
+.pk-03-jetzt em{font:400 13px/1 var(--mono);font-style:normal;color:var(--fg2);letter-spacing:.06em}
+
+/* ---------- 4 Das Heft */
+.pk-04{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,5vw,90px);align-items:start}
+.pk-04-cover{position:sticky;top:90px;aspect-ratio:1;box-shadow:0 40px 60px -34px rgba(0,0,0,.95)}
+.pk-04-b{transform:scale(1.03);transition:opacity .6s var(--k),transform 1.2s var(--k)}
+.pk-04-b.an{transform:none}
+.pk-04-r{display:flex;flex-direction:column;gap:20px}
+.pk-04-k{margin-top:14px;color:var(--kerze-hell)}
+.pk-04-inhalt{border-top:1px solid var(--linie)}
+.pk-04-z{display:flex;justify-content:space-between;align-items:baseline;gap:20px;width:100%;padding:11px 0;border-bottom:1px solid var(--linie);font:340 clamp(18px,1.5vw,23px)/1.2 var(--titel);color:rgba(250,244,244,.55);transition:color .35s}
+.pk-04-z em{font:400 12px/1 var(--mono);font-style:normal;letter-spacing:.06em;white-space:nowrap}
+.pk-04-z span{transition:transform .5s var(--k)}
+.pk-04-z:hover,.pk-04-z.an{color:#FAF4F4}
+.pk-04-z.an span{transform:translateX(12px)}
+.pk-04-z.an em{color:var(--kerze-hell)}
+
+/* ---------- 5 Der Zeitschriftenständer */
+.pk-05{display:flex;flex-direction:column;gap:clamp(36px,6vh,60px)}
+.pk-05-staender{display:flex;flex-direction:column;gap:18px;width:min(100%,1080px);margin:0 auto;padding:20px 26px 26px;background:linear-gradient(var(--holz2),var(--holz));border-radius:6px;box-shadow:0 50px 80px -50px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.08)}
+.pk-05-fach{position:relative;padding-top:8px}
+.pk-05-reihe{display:flex;justify-content:center;gap:clamp(10px,1.4vw,20px)}
+.pk-05-p{position:relative;width:calc((100% - 4*clamp(10px,1.4vw,20px))/5);aspect-ratio:1;box-shadow:0 14px 22px -14px rgba(0,0,0,.9)}
+.pk-05-p figcaption{position:absolute;z-index:3;left:0;right:0;bottom:-30px;text-align:center;font:400 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#E9D9C9}
+.pk-05-kante{position:absolute;z-index:2;left:-26px;right:-26px;bottom:-12px;height:44px;background:linear-gradient(#4A3828,#2E2219);border-top:1px solid rgba(255,255,255,.12);box-shadow:0 -10px 18px -8px rgba(0,0,0,.6)}
+.pk-05-fach+.pk-05-fach{margin-top:30px}
+html.js:not(.ruhig) .plw .pk-05-fach.auf .pk-05-p{transform:translateY(-30px);transition:transform 1.1s var(--k) calc(var(--i)*140ms)}
+html.js .plw .pk-05-fach.auf.da .pk-05-p{transform:none}
+
+/* ---------- 6 Jahrgänge */
+.pk-06{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:start}
+.pk-06>.pk-tk{position:sticky;top:110px}
+.pk-06-jahre{display:flex;flex-direction:column}
+.pk-06-jg{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--linie)}
+.pk-06-zahl{display:flex;flex-direction:column;gap:8px;font:300 clamp(40px,4vw,62px)/1 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.pk-06-zahl span{font:400 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+.pk-06-reihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pk-06-p{display:flex;flex-direction:column;gap:10px}
+.pk-06-p img{aspect-ratio:1;height:auto;box-shadow:0 16px 26px -18px rgba(0,0,0,.9)}
+.pk-06-p .pk-z{font-size:12.5px}
+html.js:not(.ruhig) .plw .pk-06-jg.auf{transform:translateX(60px)}
+
+/* ---------- 7 Der Fächer */
+.pk-07{display:flex;flex-direction:column;align-items:center;gap:20px}
+.pk-07-buehne{position:relative;width:100%;height:clamp(380px,48vw,600px);overflow:hidden}
+.pk-07-faecher{position:absolute;left:50%;bottom:-6%;width:clamp(200px,24vw,330px);aspect-ratio:1}
+.pk-07-p{position:absolute;inset:0;z-index:var(--z);transform-origin:50% 230%;transition:transform 1.3s var(--k) calc((var(--w) + 6)*40ms);box-shadow:0 20px 30px -18px rgba(0,0,0,.9);translate:-50% 0}
+.plw .pk-07-faecher.da .pk-07-p,html.ruhig .plw .pk-07-p{transform:rotate(calc(var(--w)*7.4deg))}
+.plw .pk-07-faecher.da .pk-07-p.an{transform:rotate(calc(var(--w)*7.4deg)) translateY(-16%);z-index:30;transition-delay:0s}
+.pk-07-unten{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.pk-07-unten .pk-z{align-items:center}
+
+/* ---------- 8 Die Farbe des Abends */
+.pk-08-flaeche{position:relative;border-radius:var(--r);overflow:hidden;padding:clamp(30px,5vw,70px);display:flex;flex-direction:column;gap:clamp(30px,5vh,50px);background:#2A2833}
+.pk-08-farbe{position:absolute;inset:0;background:color-mix(in srgb,var(--akz) 58%,#17151C);opacity:0;transition:opacity .9s var(--k)}
+.pk-08-farbe.an{opacity:1}
+.pk-08-innen{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.pk-08-plakat{position:relative;aspect-ratio:1;box-shadow:0 50px 70px -40px rgba(0,0,0,.95)}
+.pk-08-b{transform:translateY(14px) rotate(-1.5deg);transition:opacity .6s var(--k),transform 1s var(--k)}
+.pk-08-b.an{transform:none}
+.pk-08-r{display:flex;flex-direction:column;gap:36px}
+.pk-08-r .pk-tk .titel em{color:#fff}
+.pk-08-flaeche .pk-satz,.pk-08-flaeche .pk-z em{color:rgba(255,255,255,.82)}
+.pk-08-wahl{position:relative;display:flex;flex-wrap:wrap;gap:4px 22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22)}
+.pk-08-q{position:relative;padding:6px 0;font:400 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+.pk-08-q::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--akz);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--k)}
+.pk-08-q:hover,.pk-08-q.an{color:#fff}
+.pk-08-q.an::after{transform:none}
+
+/* ---------- 9 Der Wandkalender */
+.pk-09{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(36px,5vw,90px);align-items:center}
+.pk-09-gross{position:relative;aspect-ratio:1;box-shadow:0 40px 60px -34px rgba(0,0,0,.95)}
+.pk-09-gross figcaption{position:absolute;left:0;top:calc(100% + 16px)}
+.pk-09-r{display:flex;flex-direction:column;gap:40px}
+.pk-09-kal{display:flex;flex-direction:column;gap:6px}
+.pk-09-zeile{display:grid;grid-template-columns:52px repeat(12,minmax(0,1fr));gap:6px;align-items:center}
+.pk-09-zeile.kopf span{font:400 11px/1 var(--mono);color:var(--fg2);text-align:center}
+.pk-09-jahr{font:340 18px/1 var(--titel);color:var(--kerze-hell)}
+.pk-09-zelle{aspect-ratio:1;border-radius:3px;box-shadow:inset 0 0 0 1px var(--linie);overflow:hidden}
+.pk-09-zelle.voll{box-shadow:0 8px 14px -8px rgba(0,0,0,.9);transition:transform .45s var(--k)}
+.pk-09-zelle.voll.an{transform:scale(1.18);box-shadow:0 0 0 2px var(--kerze),0 10px 18px -8px rgba(0,0,0,.9);position:relative;z-index:2}
+
+/* ---------- 10 Die Litfasssäule */
+.pk-10{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(20px,3vw,50px);align-items:center}
+.pk-10-buehne{height:clamp(420px,46vw,620px);perspective:2200px;display:grid;place-items:center}
+.pk-10-buehne{height:clamp(560px,52vw,700px)}
+.pk-10-skala{position:relative;width:200px;height:404px;transform-style:preserve-3d;transform:rotateX(-5deg)}
+.pk-10-ring{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(var(--dreh,0deg))}
+.pk-10-p{position:absolute;left:0;top:calc(var(--e)*204px);width:200px;height:200px;backface-visibility:hidden;transform:rotateY(calc((var(--n) + var(--e)*.5)*360deg/7)) translateZ(206px)}
+.pk-10-hut,.pk-10-fuss{position:absolute;left:50%;width:470px;height:58px;margin-left:-235px;border-radius:50%;background:radial-gradient(ellipse at 50% 40%,#34313E,#141318);box-shadow:0 14px 24px -10px rgba(0,0,0,.8)}
+.pk-10-hut{top:-40px}.pk-10-fuss{bottom:-34px;width:430px;margin-left:-215px;height:46px;background:radial-gradient(ellipse at 50% 30%,#1D1C23,#0E0D11)}
+
+/* ---------- 11 Durchblättern */
+.pk-11{height:calc(var(--n)*26vh + 70vh)}
+.pk-11-buehne{position:sticky;top:90px;height:calc(100vh - 130px);min-height:520px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(36px,5vw,90px);align-items:center}
+.pk-11-plakat{position:relative;aspect-ratio:1;max-height:100%;justify-self:center;width:min(100%,calc(100vh - 160px));box-shadow:0 40px 60px -34px rgba(0,0,0,.95)}
+.pk-11-b{transform:translateY(22px);transition:opacity .45s var(--k),transform .7s var(--k)}
+.pk-11-b.an{transform:none}
+.pk-11-r{display:flex;flex-direction:column;gap:36px}
+.pk-11-lauf{display:flex;flex-direction:column;gap:10px}
+.pk-11-strich{height:2px;background:var(--linie);position:relative;overflow:hidden}
+.pk-11-strich::after{content:"";position:absolute;inset:0;background:var(--kerze);transform-origin:left;transform:scaleX(var(--lauf,0))}
+.pk-11-von{display:flex;justify-content:space-between;font-size:11px}
+
+/* ---------- 12 Die Rücken im Regal */
+.pk-12{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(36px,5vw,90px);align-items:center}
+.pk-12-cover{position:relative;aspect-ratio:1;box-shadow:0 40px 60px -34px rgba(0,0,0,.95)}
+.pk-12-cover figcaption{position:absolute;left:0;top:calc(100% + 16px)}
+.pk-12-b{transform:translateX(-26px);transition:opacity .5s var(--k),transform .9s var(--k)}
+.pk-12-b.an{transform:none}
+.pk-12-r{display:flex;flex-direction:column;gap:46px}
+.pk-12-regal{position:relative;display:flex;align-items:flex-end;gap:3px;height:clamp(260px,26vw,360px);padding:0 10px}
+.pk-12-ruecken{position:relative;flex:1;height:calc(var(--h)*1%);background:var(--akz);color:#fff;border-radius:2px 2px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 0 12px;box-shadow:inset -3px 0 0 rgba(0,0,0,.18),inset 2px 0 0 rgba(255,255,255,.14);transition:transform .55s var(--k)}
+.pk-12-ruecken.dunkel{color:#26242D}
+.pk-12-ruecken span{writing-mode:vertical-rl;rotate:180deg;white-space:nowrap}
+.pk-12-wm{font:800 clamp(12px,1vw,15px)/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase}
+.pk-12-d{font:400 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.pk-12-ruecken:hover{transform:translateY(-8px)}
+.pk-12-ruecken.an{transform:translateY(-34px)}
+.pk-12-brett{position:absolute;left:0;right:0;bottom:-16px;height:16px;background:linear-gradient(#4A3828,#2A2018);border-radius:2px;box-shadow:0 20px 30px -16px rgba(0,0,0,.9)}
+
+/* ---------- 13 Die Leine */
+.pk-13{display:flex;flex-direction:column;gap:clamp(20px,4vh,40px)}
+.pk-13>.pk-tk{margin-bottom:10px}
+.pk-13-leine{position:relative;height:clamp(250px,24vw,340px);margin:0 calc(var(--rand)*-.5)}
+.pk-13-leine svg{position:absolute;left:0;top:0;width:100%;height:80px;overflow:visible}
+.pk-13-leine path{fill:none;stroke:#C9B49A;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.pk-13-p{position:absolute;left:calc(var(--t)*100%);top:calc(var(--y)*.8px);width:clamp(110px,11vw,166px);translate:-50% 0;transform-origin:50% 0;rotate:calc(var(--r)*1deg)}
+.pk-13-p img{aspect-ratio:1;height:auto;box-shadow:0 18px 26px -16px rgba(0,0,0,.95)}
+.pk-13-p figcaption{margin-top:10px;text-align:center;font:400 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+.pk-13-klammer{position:absolute;z-index:2;left:50%;top:-10px;width:9px;height:24px;margin-left:-4.5px;background:linear-gradient(90deg,#D8BF9A,#B89A72);border-radius:2px;box-shadow:0 3px 4px rgba(0,0,0,.4)}
+html.js:not(.ruhig) .plw .pk-13-leine.auf{transform:none}
+html.js:not(.ruhig) .plw .pk-13-leine.auf .pk-13-p{transform:rotate(calc(var(--s)*14deg))}
+html.js .plw .pk-13-leine.auf.da .pk-13-p{transform:none;transition:transform 1.9s cubic-bezier(.25,1.7,.45,1) calc(var(--i)*90ms)}
+
+/* ---------- 14 Die Salonhängung */
+.pk-14{display:flex;flex-direction:column;gap:clamp(30px,5vh,56px)}
+.pk-14-wand{position:relative;aspect-ratio:100/56}
+.pk-14-rahmen{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*100%/56);width:calc(var(--w)*1%);aspect-ratio:1;padding:clamp(5px,.7vw,10px);background:#F3ECE4;border:clamp(5px,.75vw,11px) solid #1B1714;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),0 22px 30px -18px rgba(0,0,0,.95),0 0 0 1px #6E5A3E}
+.pk-14-rahmen.mitte{border-color:#2A221B;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),0 36px 50px -26px rgba(0,0,0,.95),0 0 0 2px #9C7E52}
+.pk-14-schild{text-align:center;font:400 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+
+/* ---------- 15 Die Untersetzer */
+.pk-15-tisch{position:relative;border-radius:var(--r);overflow:hidden;height:clamp(620px,62vw,820px);background:#141218}
+.pk-15-foto{position:absolute;inset:0;opacity:.55}
+.pk-15-tisch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,16,22,.92) 0%,rgba(18,16,22,.55) 40%,rgba(18,16,22,.2) 100%);pointer-events:none}
+.pk-15-kopf{position:relative;z-index:3;padding:clamp(28px,4vw,60px);max-width:620px}
+.pk-15-ebene{position:absolute;z-index:2;left:-8%;right:-8%;bottom:-6%;height:66%;perspective:1100px}
+.pk-15-platte{position:absolute;inset:0;transform:rotateX(50deg);transform-origin:50% 100%}
+.pk-15-d{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);width:calc(var(--w)*1%);aspect-ratio:1;rotate:calc(var(--r)*1deg);border-radius:6px;overflow:hidden;box-shadow:0 10px 14px -6px rgba(0,0,0,.9)}
+html.js:not(.ruhig) .plw .pk-15-tisch.auf{transform:none}
+html.js:not(.ruhig) .plw .pk-15-tisch.auf .pk-15-d{transform:translate(-60px,40px) rotate(-18deg)}
+html.js .plw .pk-15-tisch.auf.da .pk-15-d{transform:none;transition:transform 1.3s cubic-bezier(.2,.85,.25,1) calc(var(--i)*90ms)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .pk-01,.pk-02-kopf,.pk-03,.pk-04,.pk-06,.pk-08-innen,.pk-09,.pk-10,.pk-11-buehne,.pk-12{grid-template-columns:1fr}
+  .pk-01-wand{margin-bottom:60px}
+  .pk-03-stapel{width:86%;margin:30px auto 0}
+  .pk-04-cover{position:relative;top:0}
+  .pk-05-staender{padding:14px 12px 20px}.pk-05-kante{left:-12px;right:-12px}
+  .pk-05-reihe{flex-wrap:wrap}.pk-05-p{width:calc((100% - 2*10px)/3)}
+  .pk-06>.pk-tk{position:static}
+  .pk-06-jg{grid-template-columns:1fr;gap:14px}.pk-06-zahl{flex-direction:row;align-items:baseline;gap:14px}
+  .pk-06-reihe{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pk-09-gross{margin-bottom:60px}.pk-09-zeile{grid-template-columns:34px repeat(12,minmax(0,1fr));gap:3px}.pk-09-jahr{font-size:13px}
+  .pk-10-buehne{height:440px}.pk-10-skala{scale:.66}
+  .pk-11-buehne{top:70px;height:calc(100vh - 170px);grid-template-rows:auto auto;align-content:center;gap:20px}
+  .pk-11-plakat{width:min(100%,46vh)}.pk-11-r .pk-satz,.pk-11-r .pk-kn{display:none}
+  .pk-12-cover{margin-bottom:60px}.pk-12-regal{height:240px;gap:2px;padding:0}.pk-12-wm{font-size:10px}.pk-12-d{display:none}
+  .pk-13-leine{height:210px}.pk-13-p{width:22vw}.pk-13-p figcaption{display:none}
+  .pk-14-wand{margin-inline:calc(var(--rand)*-.6)}
+  .pk-15-tisch{height:700px}.pk-15-ebene{height:52%;left:-30%;right:-30%}
+}

@@ -1,0 +1,10 @@
+ok   E02 Filter Neu / Offen / Erledigt zählen wie der Server · {"neu":0,"offen":6,"erledigt":1}
+ok   E05/E28 «Text kopieren»: Betreff und Brief als reiner Text, kein Mailprogramm · Betreff: Dein Platz an der Tafel
+ok   E13 Löschen über den Knopf: erster Klick fragt, zweiter löscht, Quittung · gelöscht
+ok   E27 «Abteilung fragen»: offen vermerken, Antwort eintragen, steht im Wissen, kein Mailprogramm · offen → beantwortet → im Wissen
+ok   E09 Angabe anlegen, neu laden, noch da, dann entfernen · gespeichert, neu geladen, entfernt
+ok   E19 Alle Daten als eine ZIP (Prüfseite) · 14017 Byte, "La-Reception-Culinarium-2026-10-28.zip"
+ok   E20 Prüfseite: Zustand ohne Rot, Lexikon mit Stichworten, keine Fehler · 24 Stichworte, kein Rot
+ok   R13 Verlassen mit ungespeicherter Eingabe: der Browser fragt nach · Rückfrage beim Verlassen
+
+zusatz webkit 390: 8 von 8 grün

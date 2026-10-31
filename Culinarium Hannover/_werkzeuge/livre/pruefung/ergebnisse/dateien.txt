@@ -1,0 +1,14 @@
+/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_werkzeuge/livre/pruefung/dateien_pruef.py:106: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  px = [q[:3] for q in im.getdata() if q[3] > 250]
+✓ A1 20 Farben = culinarium.css bzw. Plakate (marke.json); CSS, JSON, ASE gleich · #16151A #0F0E13 #1C1B21 #222028 #26252E #3A3845 #FAF4F4 #2A2833 #5B5763 #EF7649 #F5A689 #B15736 #8953A9 #FFF7EF #B3EBFC #EF7649 #94B253 #112D43 #881301 #4D3321
+✓ A2 Schriften Byte für Byte die der Website, TTF lesbar, Lizenzen dabei · Fraunces, Urbanist, Instrument Sans, DM Mono
+✓ A3 Wortmarke, Zeile und beides zusammen Pfad für Pfad Rudis Original, nur in Original, Schiefer, Warmweiss; ebenso im Markenbuch · 
+✓ A4 Rudis PDF, Dirty Chicken (Logo und D), Profilbild und Tapeten Byte für Byte die Originale (nie umgefärbt) · 9 Dateien
+✓ A6 Jede PNG der Wortmarke gefüllt, deckende Bildpunkte in der angegebenen Farbe · 
+✓ A7 ZIP «Alle Dateien» = alle Einzeldateien, Byte für Byte · 33 Dateien
+✓ B1 Alle 232 Fotos in vier Grössen: Masse, JPEG, Name, KI-Kennzeichen, Druck = Original (mit Ausschnitt) · 928 Dateien in 65 s
+✓ B2 Ausschnitt wirkt (links/rechts verschieden) · 
+✓ B3 Herkunft: jedes Foto mit Satz, nichts «offen»; fremde Rechte genau die Fotos der Bar Walk on the Wild Side · 38 fremd (Bar), 194 von Culinarium
+✓ B4 Vorher-Bilder: eines je nachgeschärftem Foto, gleiche Grösse wie das Foto der Website · 24 mit Vorher
+✓ C1 Probe ohne Claude: läuft durch, Farben gemessen, als Probe beschriftet, kein Schlüssel gelesen, keine Anfrage nach aussen · 18 Töne
+11 von 11 ok

@@ -1,0 +1,23 @@
+{
+  "station": "15a",
+  "name": "Übersetzung",
+  "rolle": "Übersetzer + Prüfer je Sprache",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "sprachen/<kürzel>/pruefung.md"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

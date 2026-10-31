@@ -1,0 +1,9 @@
+
+webkit ungebremst · Rechnerlast 9.3
+ok     Karte «abend-2025-02-21» steht nach · 260 ms
+ok     Karte «abend» steht nach · 365 ms
+ok     Karte «abend-2023-09-15» steht nach · 258 ms
+ok     Tippen → Vorschau folgt nach · 31 ms
+ok     Scrollen der Liste: 60 Bilder/s · schlechtestes Bild 19 ms, 95 % unter 19 ms
+ok     Scrollen der Vorschau: 60 Bilder/s · schlechtestes Bild 19 ms, 95 % unter 19 ms
+ok     Lange Aufgaben (über 50 ms) · Safari-Kern kennt die Messung nicht

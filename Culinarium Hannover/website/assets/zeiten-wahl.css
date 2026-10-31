@@ -1,0 +1,202 @@
+/* Culinarium · Öffnungszeiten in 15 Fassungen, zweite Runde (nur Wahlseite). Gebaut aus der Sprache der Seite:
+   .foto (deckend von unten, Zoom in den Rahmen), .paar (Anstossen), .flaeche, .staffel, .aw-kerbe (Einkerbung), .vz, .knopf.
+   Fuge 4 px wie die Bildwände der Seite, Fraunces leicht, Zeiten in DM Mono. Nur transform. */
+.zw .foto{min-height:0}
+.zw .foto>img{position:absolute;inset:0}
+.zw-in{max-width:var(--max);margin:0 auto;padding:0 var(--rand)}
+.zw-kopf .zl{margin:0}
+.zw-satz{margin-top:18px;max-width:46ch;color:var(--fg2);font-size:18px;line-height:1.55}
+.zw-mono{font:400 13px/1.7 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+.zw .knoepfe{margin-top:30px}
+.zw-kopf.mitte,.zw-fuss.mitte{text-align:center}
+.zw-kopf.mitte .zw-satz{margin-inline:auto}
+.zw-kopf{margin-bottom:clamp(30px,4vw,52px)}
+.zw-fuss{margin-top:clamp(26px,3vw,40px)}
+.zw-fuss.mitte .knoepfe{justify-content:center;margin-top:20px}
+.zw-vz{max-width:none}
+.zw-vz div.an dt{color:var(--kerze-hell)}
+.zw-vz small{display:block;margin-top:3px;font:400 13px/1.35 var(--text);letter-spacing:0;color:var(--fg2)}
+.zw-vz .zu dd{color:var(--fg2)}
+
+/* 1 Die Antwort zuerst */
+.zw01{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,90px);align-items:end}
+.zw01 .mittel{font-size:clamp(40px,4.4vw,72px)}
+.zw01 .zw-mono{margin-top:24px;max-width:36ch}
+.zw01-wand{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--fuge);height:clamp(480px,46vw,680px)}
+
+/* 2 Drei Nächte */
+.zw02-reihe{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--fuge)}
+.zw02-n .foto{aspect-ratio:4/5.2}
+.zw02-n .aw-kerbe{font-size:clamp(20px,1.9vw,30px)}
+.zw02-n.an .aw-kerbe{color:var(--kerze-hell)}
+.zw02-was{margin-top:14px;font-size:15px;color:var(--fg2)}
+
+/* 3 Ankommen bei Nacht */
+.zw03{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--fuge);min-height:clamp(640px,86vh,900px)}
+.zw03-gross{height:100%}
+.zw03-r{display:flex;flex-direction:column;gap:clamp(30px,3vw,46px)}
+.zw03-schild{flex:1 1 auto;min-height:240px}
+.zw03-block{padding:0 0 0 clamp(20px,2.4vw,40px)}
+.zw03-block .zw-vz{margin-top:24px}
+
+/* 4 Anstossen */
+.zw04-paar{max-width:1080px;margin:0 auto;height:clamp(480px,52vw,720px)}
+.zw04-paar .foto{height:100%}
+.zw04-unter{max-width:1080px;margin:clamp(24px,3vw,36px) auto 0;display:grid;grid-template-columns:1fr 1fr;gap:var(--fuge)}
+.zw04-unter>div{padding:22px 0 0;border-top:1px solid var(--linie)}
+.zw04-unter>div:last-child{padding-left:clamp(20px,2.4vw,36px)}
+.zw04-zeit{margin-top:8px;font:340 clamp(34px,3.4vw,54px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;letter-spacing:-.01em}
+.zw04-was{margin-top:10px;font-size:15px;color:var(--fg2)}
+.zw04-unter .an{border-top-color:var(--kerze)}
+
+/* 5 Über Eck */
+.zw05-band{position:relative;height:clamp(440px,46vw,640px)}
+.zw05-g{position:absolute;top:0;bottom:0;width:53%;display:grid;grid-template-columns:1fr 1fr;gap:var(--fuge)}
+.zw05-g .foto{height:100%}
+.zw05-g.l{left:0;clip-path:polygon(0 0,calc(100% - 3px) 0,calc(88.68% - 3px) 100%,0 100%)}
+.zw05-g.r{right:0;clip-path:polygon(calc(11.32% + 3px) 0,100% 0,100% 100%,3px 100%)}
+.zw05-naht{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.zw05-naht line{stroke:var(--kerze);stroke-width:3;vector-effect:non-scaling-stroke}
+.zw05-naht{z-index:3}
+.zw05-unter{display:grid;grid-template-columns:1fr 3px 1fr;gap:clamp(24px,3vw,48px);margin-top:0;padding-top:clamp(24px,3vw,36px)}
+.zw05-unter>div:first-child{text-align:right}
+.zw05-strich{background:var(--kerze);transform:skewX(-8deg)}
+.zw05-zeit{margin-top:6px;font:340 clamp(34px,3.4vw,54px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+
+/* 6 Wie eine Karte */
+.zw06-z{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:center;padding:clamp(18px,2vw,28px) 0;border-top:1px solid var(--linie)}
+.zw06-z.um{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.zw06-z.um .foto{order:2}
+.zw06-z .foto{aspect-ratio:16/10}
+.zw06-name{font-size:clamp(40px,4.8vw,78px);letter-spacing:.01em}
+.zw06-t .zw-mono{margin-top:14px;font-size:15px}
+.zw06-was{margin-top:8px;font-size:17px;color:var(--fg2)}
+.zw06-z.an .zw06-name{color:var(--kerze-hell)}
+
+/* 7 Heute */
+.zw07{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,90px);align-items:end}
+.zw07-heute{max-width:none}
+.zw07-heute b{font-weight:inherit;color:var(--kerze-hell)}
+.zw07 .zw-vz{margin-top:30px}
+.zw07-gruppe{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:var(--fuge);height:clamp(520px,52vw,720px)}
+.zw07-gruppe .a{grid-row:1/3}.zw07-gruppe .foto{height:100%}
+
+/* 8 Die Tafel im Bildband */
+.zw08{display:grid;grid-template-columns:1fr 1.7fr 1fr 1fr 1fr;gap:var(--fuge);height:clamp(600px,62vw,800px);padding:0 var(--fuge)}
+.zw08 .foto{height:100%}
+.zw08-tafel{background:var(--nacht-tief);border-radius:var(--r);padding:clamp(28px,2.6vw,46px);display:flex;flex-direction:column;justify-content:flex-end;box-shadow:inset 0 0 0 1px var(--linie)}
+.zw08-tafel .zw-satz{font-size:16px}
+.zw08-tafel .zw-vz{margin-top:20px}
+.zw08-tafel .knoepfe{margin-top:24px}
+html.js:not(.ruhig) .zw08.staffel>.zw08-tafel{transform:translateY(60px);transition:transform 1.4s var(--k) .11s}
+html.js .zw08.staffel.da>.zw08-tafel{transform:none}
+
+/* 9 Laufband an der Naht */
+.zw09-kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.zw09-kopf .zw-satz{margin-top:0}.zw09-kopf .knoepfe{margin-top:22px}
+.zw09-reihe{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--fuge);height:clamp(260px,26vw,380px);padding:0 var(--fuge)}
+.zw09-reihe .foto{height:100%}
+.zw09-lauf{overflow:hidden;padding:clamp(18px,2vw,26px) 0}
+.zw09-spur{display:flex;width:max-content;animation:zw09-lauf 70s linear infinite}
+.zw09-spur>div{display:flex;align-items:baseline;flex:none}
+.zw09-spur span{font:340 clamp(34px,3.6vw,58px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;white-space:nowrap}
+.zw09-spur .sl{font:300 clamp(34px,3.6vw,58px)/1 var(--titel);font-style:normal;color:var(--kerze);padding:0 .45em}
+@keyframes zw09-lauf{to{transform:translateX(-50%)}}
+
+/* 10 Die Plakatwand der Bar */
+.zw10{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,90px);align-items:end}
+.zw10-wand{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--fuge)}
+.zw10-p{aspect-ratio:4/5;border-radius:4px}
+.zw10-p::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-130%);pointer-events:none}
+html.js .zw10-wand.da .zw10-p::after{transform:translateX(130%);transition:transform 1.6s ease .8s}
+.zw10 .zw-vz{margin-top:26px}
+
+/* 11 Die nächsten Abende */
+.zw11-kopf{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+.zw11-kopf .zw-kopf{margin-bottom:0}
+.zw11-r{display:flex;flex-direction:column;align-items:flex-end;gap:22px}
+.zw11-r .knoepfe{margin-top:0}
+.zw11-pfeile{display:flex;gap:8px}
+.zw11-pfeile button{width:54px;height:54px;border:0;border-radius:50%;background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--linie);font-size:24px;cursor:pointer;transition:background .3s}
+.zw11-pfeile button:hover{background:var(--kerze);color:#fff}
+.zw11-band{display:flex;gap:var(--fuge);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:clamp(30px,4vw,48px);padding:0 var(--rand);scroll-padding:0 var(--rand)}
+@media (min-width:1360px){.zw11-band{padding-left:calc((100vw - var(--max)) / 2 + var(--rand));scroll-padding-left:calc((100vw - var(--max)) / 2 + var(--rand))}}
+.zw11-band::-webkit-scrollbar{display:none}
+.zw11-k{flex:none;width:clamp(280px,26vw,400px);scroll-snap-align:start}
+.zw11-k .foto{aspect-ratio:4/5.4}
+.zw11-k .aw-kerbe .zw-mono{font-size:11.5px;letter-spacing:.1em;line-height:1.4}
+.zw11-k.heute .aw-kerbe [data-k-tag]{color:var(--kerze-hell)}
+.zw11-fuss{display:flex;align-items:center;gap:30px;margin-top:24px}
+.zw11-balken{flex:1;height:2px;background:var(--linie);overflow:hidden}
+.zw11-balken i{display:block;height:100%;width:100%;background:var(--kerze);transform-origin:left;transform:scaleX(.3)}
+
+/* 12 Lage mit heller Tafel */
+.zw12-wand{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--fuge);height:clamp(420px,46vw,640px);padding:0 var(--fuge)}
+.zw12-wand .foto{height:100%}
+.zw12-tafel{position:relative;z-index:2;margin:clamp(-180px,-12vw,-110px) auto 0;width:min(1120px,100%);background:#FAF4F4;color:#2A2833;border-radius:var(--r);padding:clamp(28px,3vw,48px) clamp(26px,3.4vw,56px);box-shadow:0 50px 80px -40px rgba(0,0,0,.85);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,3vw,56px);align-items:end}
+.zw12-tafel .zl,.zw12-tafel .zw12-z dd{color:#2A2833}
+.zw12-tafel .zw-satz{color:#5A5662;font-size:16px}
+.zw12-z{margin:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(42,40,51,.16)}
+.zw12-z div{padding:16px 14px 0 0}
+.zw12-z div+div{padding-left:14px;border-left:1px solid rgba(42,40,51,.16)}
+.zw12-z dt{font:600 12px/1.3 var(--etikett);letter-spacing:.06em}
+.zw12-z dd{margin:8px 0 0;white-space:nowrap;font:340 clamp(20px,1.8vw,28px)/1.05 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36}
+.zw12-z .zu dd{color:#6A6572!important}
+.zw12-z div.an dt{color:var(--kerze-tief)}
+.zw12-tafel .knoepfe{grid-column:1/-1;margin-top:4px}
+
+/* 13 Die Einkerbung */
+.zw13-kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.zw13-kopf .zw-satz{margin-top:0}.zw13-kopf .knoepfe{margin-top:22px}
+.zw13-bild{aspect-ratio:16/9.2}
+.zw13-kerbe{--e:clamp(20px,2vw,30px);max-width:min(560px,80%);padding:clamp(22px,2.4vw,36px) clamp(26px,3vw,46px) clamp(14px,1.4vw,22px) clamp(18px,2vw,30px)}
+.zw13-kerbe p[data-tag]{display:flex;justify-content:space-between;gap:30px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--linie)}
+.zw13-kerbe p[data-tag] span{font:600 13px/1.3 var(--etikett);letter-spacing:.06em}
+.zw13-kerbe p[data-tag] b{font-weight:340;font-size:clamp(24px,2.2vw,34px)}
+.zw13-kerbe p.an span{color:var(--kerze-hell)}
+.zw13-kerbe .zw-mono{margin-top:12px;font-size:12px;color:var(--fg2)}
+
+/* 14 Zwei Säulen */
+.zw14{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:var(--fuge);height:clamp(640px,84vh,860px)}
+.zw14-s{overflow:hidden;border-radius:var(--r)}
+.zw14-spur{display:flex;flex-direction:column;gap:var(--fuge);animation:zw14-hoch 60s linear infinite;animation-play-state:paused}
+.zw14.da .zw14-spur{animation-play-state:running}
+.zw14-s.runter .zw14-spur{animation-name:zw14-runter}
+.zw14-spur .foto{aspect-ratio:4/5;flex:none;transform:none!important}
+.zw14-spur .foto img{transform:none!important}
+@keyframes zw14-hoch{from{transform:translateY(0)}to{transform:translateY(calc(-50% - var(--fuge) / 2))}}
+@keyframes zw14-runter{from{transform:translateY(calc(-50% - var(--fuge) / 2))}to{transform:translateY(0)}}
+.zw14-tafel{background:var(--nacht-tief);border-radius:var(--r);padding:clamp(30px,3vw,52px);display:flex;flex-direction:column;justify-content:center;box-shadow:inset 0 0 0 1px var(--linie)}
+.zw14-tafel .zw-vz{margin-top:22px}
+
+/* 15 Ziegelverband */
+.zw15{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(36px,5vw,90px);align-items:end}
+.zw15-gruppe{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:var(--fuge);height:clamp(560px,56vw,760px)}
+.zw15-gruppe .foto{height:100%}
+.zw15-gruppe .a{grid-row:1/3}.zw15-gruppe .b{grid-column:2/4}.zw15-gruppe .c{grid-column:2}.zw15-gruppe .d{grid-column:3}
+.zw15 .zw-vz{margin-top:26px}
+
+@media (prefers-reduced-motion:reduce){.zw09-spur,.zw14-spur{animation:none}}
+
+/* Handy */
+@media (max-width:860px){
+  .zw-satz{font-size:16px}
+  .zw01,.zw07,.zw10,.zw15,.zw09-kopf,.zw13-kopf,.zw11-kopf{grid-template-columns:1fr;gap:26px}
+  .zw01-wand{height:62vw}
+  .zw02-reihe{grid-template-columns:1fr;gap:28px}
+  .zw03{grid-template-columns:1fr;min-height:0}.zw03-gross{height:70svh}.zw03-schild{display:none}.zw03-block{padding:28px 0 0}
+  .zw04-paar{height:64vw}.zw04-unter>div:last-child{padding-left:14px}
+  .zw05-band{height:66vw}.zw05-unter{gap:16px}
+  .zw06-z,.zw06-z.um{grid-template-columns:1fr;gap:16px}.zw06-z.um .foto{order:0}
+  .zw07-gruppe{height:110vw}
+  .zw08{grid-template-columns:1fr 1fr;grid-template-rows:auto 56vw 56vw;height:auto;padding:0 var(--rand)}.zw08-tafel{grid-column:1/3;grid-row:1}.zw08 .z5{display:none}
+  .zw09-reihe{grid-template-columns:repeat(3,1fr);height:44vw}.zw09-reihe .foto:nth-child(n+4){display:none}
+  .zw10-wand{grid-template-columns:repeat(3,1fr)}
+  .zw11-r{align-items:flex-start}.zw11-k{width:78vw}
+  .zw12-wand{grid-template-columns:1fr 1fr;height:96vw}.zw12-wand .foto:nth-child(n+3){display:none}
+  .zw12-tafel{grid-template-columns:1fr;margin-top:-60px}.zw12-z{grid-template-columns:1fr 1fr}.zw12-z div:nth-child(3){border-left:0;padding-left:0}
+  .zw13-bild{aspect-ratio:4/5}.zw13-kerbe{max-width:92%}
+  .zw14{grid-template-columns:1fr 1fr;grid-template-rows:auto 70vw;height:auto}.zw14-tafel{grid-column:1/3;grid-row:1}
+  .zw15-gruppe{height:110vw}
+}

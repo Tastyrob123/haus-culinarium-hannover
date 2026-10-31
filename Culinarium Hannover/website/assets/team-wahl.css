@@ -1,0 +1,158 @@
+/* Culinarium · «Drei Leute, ein Haus.» in 15 Fassungen (team-wahl.html, nur für Robert). Nur transform und opacity bewegen sich. */
+.tw img{display:block;width:100%;height:100%;object-fit:cover}
+.tw figure{margin:0}
+.tw .vk{margin-bottom:clamp(26px,4vh,44px)}
+.tw-mini{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.tw-mini h3{font:340 clamp(22px,2vw,30px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;margin:0}
+.tw-mini .mono{font-size:11px;letter-spacing:.14em;margin:0}
+.tw-rund{display:block;width:clamp(84px,7.6vw,112px);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 4px #FAF4F4,0 16px 28px -16px rgba(38,36,45,.55);margin-bottom:6px}
+.tw-zeile{display:grid;grid-template-columns:64px 1fr;column-gap:16px;row-gap:2px;align-items:center;text-align:left;padding:12px 0;border-bottom:1px solid var(--linie)}
+.tw-zeile .tw-rund{grid-row:1/3;width:64px;margin:0}
+.tw-zeile .mono{align-self:end}.tw-zeile h3{align-self:start;font-size:24px}
+
+/* 1 Vor der Mannschaft */
+.tw-01-bild{border-radius:var(--r);overflow:hidden;aspect-ratio:21/9}
+.tw-01-reihe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,26px);margin:clamp(-90px,-7vw,-50px) auto 0;max-width:1040px;position:relative;z-index:2;padding:0 clamp(12px,3vw,40px)}
+.tw-01-k{background:#F1E9E8;border-radius:var(--r);padding:clamp(18px,2vw,28px) 16px;box-shadow:0 30px 50px -30px rgba(38,36,45,.55)}
+
+/* 2 Drei Leute, ein Haus */
+.tw-02-paar{display:grid;grid-template-columns:1.333fr 1fr;gap:4px;position:relative}
+.tw-02-paar::after{content:"";position:absolute;top:0;bottom:clamp(70px,9vw,120px);left:calc(57.14% - 2px);width:4px;background:var(--kerze);z-index:2}
+.tw-02-paar figure>img{aspect-ratio:auto;height:clamp(320px,34vw,520px);border-radius:0}
+.tw-02-l>img{border-radius:var(--r) 0 0 var(--r)}.tw-02-r>img{border-radius:0 var(--r) var(--r) 0}
+.tw-02-paar figcaption{padding-top:16px;display:flex;flex-direction:column;gap:6px}
+.tw-02-r figcaption{padding-left:18px}
+.tw-02-paar .zl{font:340 clamp(40px,5vw,84px)/1 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.tw-02-paar small{font:400 13px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg2)}
+html.js .tw-02-l.auf:not(.da){transform:translateY(40px)}html.js .tw-02-r.auf:not(.da){transform:translateY(80px)}
+.tw-02-l,.tw-02-r{transition:transform 1.3s var(--k)}
+
+/* 3 Zoom zurück */
+.tw-03{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.tw-03-l .vk{margin-bottom:18px}
+.tw-03-liste{border-top:1px solid var(--linie)}
+.tw-03-bild{aspect-ratio:1;border-radius:var(--r);overflow:hidden;box-shadow:0 30px 50px -36px rgba(38,36,45,.55)}
+.tw-03-bild img{transform-origin:var(--ox) var(--oy);transform:scale(var(--s,2.2));will-change:transform}
+
+/* 4 Licht an */
+.tw .tw-04-bild{position:relative;aspect-ratio:1;max-width:760px;margin:0 auto;border-radius:var(--r);overflow:hidden}
+.tw-04-dunkel{position:absolute;inset:0;background:#0F0E13;opacity:.86;-webkit-mask-composite:source-in;mask-composite:intersect;transition:opacity 1.8s var(--k) .9s}
+.tw-04-bild.da .tw-04-dunkel{opacity:0}
+html:not(.js) .tw-04-dunkel{opacity:0}
+.tw-04-namen{display:flex;justify-content:center;gap:clamp(20px,4vw,60px);margin-top:20px}
+.tw-04-namen p{display:flex;flex-direction:column;align-items:center;gap:4px;font:340 22px/1.1 var(--titel);font-variation-settings:"SOFT" 100}
+.tw-04-namen .mono{font-size:11px;letter-spacing:.14em}
+
+/* 5 Gesichter und Hände */
+.tw-05-reihe{display:flex;justify-content:center;gap:clamp(30px,6vw,110px);margin-bottom:clamp(30px,5vh,56px)}
+.tw-gross .tw-rund{width:clamp(110px,11vw,160px)}
+.tw-05-band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--fuge)}
+.tw-05-band figure{aspect-ratio:3/4;overflow:hidden}
+.tw-05-band figure:first-child{border-radius:var(--r) 0 0 var(--r)}.tw-05-band figure:last-child{border-radius:0 var(--r) var(--r) 0}
+
+/* 6 Filmstreifen */
+.tw-06-streifen{overflow:hidden;margin:0 calc(var(--rand) * -1);background:#16151A;padding:30px 0;position:relative}
+.tw-06-streifen::before,.tw-06-streifen::after{content:"";position:absolute;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,transparent 0 10px,#FAF4F4 10px 22px,transparent 22px 34px);opacity:.85}
+.tw-06-streifen::before{top:9px}.tw-06-streifen::after{bottom:9px}
+.tw-06-bahn{display:flex;gap:10px;width:max-content;transform:translateX(var(--x,0px));will-change:transform;padding-left:var(--rand)}
+.tw-06-k{position:relative;width:clamp(200px,20vw,290px);aspect-ratio:1;overflow:hidden;border-radius:3px;flex:none}
+.tw-06-k figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(15,14,19,.75));color:#FAF4F4;font:340 20px/1.1 var(--titel);font-variation-settings:"SOFT" 100}
+
+/* 7 Das Plakat */
+.tw-07{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.tw-07-plakat{background:#3A3845;color:#FAF4F4;border-radius:6px;padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;gap:14px;box-shadow:0 40px 60px -40px rgba(22,20,27,.8);transform:rotate(-1.2deg)}
+.tw-07-oben,.tw-07-unten{font:400 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.8);margin:0;text-align:center}
+.tw-07-h{font:340 clamp(34px,3.6vw,58px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;text-align:center;margin:0}
+.tw-07-h i{font-style:normal;color:var(--kerze-hell)}
+.tw-07-plakat figure{aspect-ratio:1;overflow:hidden;border-radius:3px}
+.tw-07-r .vk{margin-bottom:18px}.tw-07-liste{border-top:1px solid var(--linie)}
+
+/* 8 Mittendrin */
+.tw-08-wand{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--fuge);border-radius:var(--r);overflow:hidden}
+.tw-08-wand figure{aspect-ratio:1;overflow:hidden;position:relative}
+.tw-08-ich::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 5px var(--kerze)}
+.tw-08-satz{text-align:center;color:var(--fg2);margin:18px auto 0;font-size:16px}
+
+/* 9 Umdrehen */
+.tw-09-reihe{perspective:1600px}
+.tw-09-k{all:unset;cursor:pointer;display:grid;transform-style:preserve-3d}
+.tw-09-vorn{transform:perspective(1400px) rotateY(0)}
+.tw-09-k>span{grid-area:1/1;transition:transform .9s var(--k),opacity 0s .3s;border-radius:var(--r)}
+.tw-09-vorn .kp{height:100%;box-sizing:border-box}
+.tw-09-vorn .kp-name{display:block}.tw-09-vorn .kp-text{display:block}
+.tw-09-hinten{transform:perspective(1400px) rotateY(180deg);opacity:0;overflow:hidden;position:relative}
+.tw-09-hinten img{position:absolute;inset:0}
+.tw-09-hinten b{position:absolute;left:0;right:0;bottom:0;padding:40px 22px 20px;background:linear-gradient(transparent,rgba(15,14,19,.8));color:#FAF4F4;font:340 24px/1.15 var(--titel);font-variation-settings:"SOFT" 100}
+.tw-09-k.um .tw-09-vorn{transform:perspective(1400px) rotateY(-180deg);opacity:0}.tw-09-k.um .tw-09-hinten{transform:perspective(1400px) rotateY(0);opacity:1}
+.tw-09-hinten img{transform:scaleX(1)}
+.tw-09-hinweis{text-align:center;margin-top:16px}
+
+/* 10 Fächer */
+.tw-10-reihe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(30px,4vw,60px);padding-top:clamp(90px,10vw,150px)}
+.tw-10-platz{position:relative;display:grid}
+.tw-10-platz>.kp{position:relative;z-index:2}
+.tw-10-f{position:absolute;inset:-4% 16% 46%;border-radius:var(--r);overflow:hidden;box-shadow:0 24px 40px -26px rgba(38,36,45,.6);transition:transform 1.4s var(--k) .3s}
+.tw-10-f.a{transform:rotate(-3deg)}.tw-10-f.b{transform:rotate(3deg)}
+.tw-10-platz.da .tw-10-f.a{transform:translate(-30%,-16%) rotate(-11deg)}.tw-10-platz.da .tw-10-f.b{transform:translate(30%,-20%) rotate(10deg)}
+
+/* 11 Laufband */
+.tw-11-buehne{position:relative;padding:clamp(30px,5vh,60px) 0;overflow:hidden;margin:0 calc(var(--rand) * -1)}
+.tw-11-lauf{position:absolute;left:0;top:50%;margin:0;display:flex;white-space:nowrap;transform:translateY(-50%);font:300 clamp(70px,10vw,170px)/1 var(--titel);color:#E8D6D2;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.02em}
+.tw-11-lauf span{animation:twlauf 60s linear infinite}
+@keyframes twlauf{to{transform:translateX(-100%)}}
+.tw-11-reihe{position:relative;display:flex;justify-content:center;gap:clamp(30px,7vw,120px)}
+.tw-riesig .tw-rund{width:clamp(130px,14vw,210px)}
+@media (prefers-reduced-motion:reduce){.tw-11-lauf span{animation:none}}
+
+/* 12 Der Film */
+.tw-12{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:center}
+.tw-12-film{aspect-ratio:1;border-radius:var(--r);overflow:hidden;background:#16151A url(film/familie.webp) center/cover}
+.tw-12-film video{display:block;width:100%;height:100%;object-fit:cover}
+.tw-12-r .vk{margin-bottom:18px}.tw-12-liste{border-top:1px solid var(--linie)}
+
+/* 13 Durchwischen */
+.tw-13-band{display:flex;gap:var(--fuge);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--rand) * -1);padding:0 var(--rand);scroll-padding:0 var(--rand)}
+.tw-13-band::-webkit-scrollbar{display:none}
+.tw-13-k{flex:none;width:clamp(240px,24vw,340px);aspect-ratio:3/4;position:relative;overflow:hidden;scroll-snap-align:start;border-radius:4px}
+.tw-13-k.ich{width:clamp(280px,28vw,400px)}
+.tw-13-k figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 16px;background:linear-gradient(transparent,rgba(15,14,19,.78));color:#FAF4F4;display:flex;flex-direction:column;gap:4px;font:340 26px/1.1 var(--titel);font-variation-settings:"SOFT" 100}
+.tw-13-k figcaption .mono{color:rgba(250,244,244,.82);font-size:11px;letter-spacing:.14em}
+.tw-13-hinweis{text-align:center;margin-top:14px}
+
+/* 14 Triptychon und Streifen */
+.tw-14-drei{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--fuge)}
+.tw-14-drei figure>img{aspect-ratio:3/4;height:auto}
+.tw-14-drei figure:first-child>img{border-radius:var(--r) 0 0 0}.tw-14-drei figure:last-child>img{border-radius:0 var(--r) 0 0}
+.tw-14-drei figcaption{padding:12px 4px 0;display:flex;flex-direction:column;gap:4px;font:340 24px/1.1 var(--titel);font-variation-settings:"SOFT" 100}
+.tw-14-drei figcaption .mono{font-size:11px;letter-spacing:.14em}
+.tw-14-streifen{margin-top:clamp(20px,3vh,32px);aspect-ratio:24/7;overflow:hidden;border-radius:0 0 var(--r) var(--r)}
+.tw-14-satz{text-align:center;font:340 clamp(24px,2.4vw,36px)/1.2 var(--titel);font-variation-settings:"SOFT" 100;margin:18px 0 0}
+
+/* 15 Markiert */
+.tw-15{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr);gap:clamp(28px,5vw,80px);align-items:center}
+.tw-15-bild{position:relative;aspect-ratio:1;border-radius:var(--r);overflow:hidden}
+.tw-15-ring{position:absolute;width:8.5%;aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 3px var(--kerze),0 0 0 7px rgba(239,118,73,.22);transform:translate(-50%,-50%) scale(1);transition:transform .5s var(--k),opacity .5s}
+.tw-15-bild:not(.da) .tw-15-ring{transform:translate(-50%,-50%) scale(1.6)}
+.tw-15-bild .tw-15-ring{transition-delay:calc(.6s + var(--i) * .18s)}
+.tw-15.wahl-r .tw-15-ring{opacity:.3}.tw-15.wahl-r .tw-15-ring.an{opacity:1;transform:translate(-50%,-50%) scale(1.15);transition-delay:0s}
+.tw-15-r .vk{margin-bottom:18px}
+.tw-15-name{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid var(--linie);cursor:default}
+.tw-15-name:first-child{border-top:1px solid var(--linie)}
+.tw-15-name b{font:340 28px/1.1 var(--titel);font-variation-settings:"SOFT" 100}
+.tw-15-name .mono{font-size:11px;letter-spacing:.14em}
+.tw-15-name.an b{color:var(--kerze-tief)}
+
+@media (max-width:860px){
+  .tw-01-reihe,.tw-10-reihe{grid-template-columns:1fr;margin-top:-30px}
+  .tw-01-bild{aspect-ratio:4/3}
+  .tw-02-paar{grid-template-columns:1fr}.tw-02-paar::after{display:none}
+  .tw-02-paar figure>img{height:auto;aspect-ratio:4/3;border-radius:var(--r)!important}.tw-02-r figcaption{padding-left:0}
+  .tw-03,.tw-07,.tw-12,.tw-15{grid-template-columns:1fr}
+  .tw-03-bild,.tw-12-film,.tw-15-bild{order:-1}
+  .tw-05-reihe,.tw-11-reihe{gap:18px}.tw-gross .tw-rund,.tw-riesig .tw-rund{width:92px}
+  .tw-05-band{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tw-08-wand{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tw-14-drei figcaption{font-size:18px}
+  .tw-14-streifen{aspect-ratio:16/9}
+  .tw-04-namen{gap:14px}.tw-04-namen p{font-size:18px}
+}

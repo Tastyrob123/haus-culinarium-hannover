@@ -1,0 +1,14 @@
+[
+ {
+  "k": "reception",
+  "name": "reception",
+  "adresse": "http://127.0.0.1:9084/_werkzeuge/reception/",
+  "fehler": []
+ },
+ {
+  "k": "reception",
+  "name": "reception-chat",
+  "adresse": "http://127.0.0.1:9084/_werkzeuge/reception/",
+  "fehler": []
+ }
+]

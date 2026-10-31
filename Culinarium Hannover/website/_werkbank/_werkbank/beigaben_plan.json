@@ -1,0 +1,151 @@
+{
+ "druck": [
+  {
+   "id": "menuerolle",
+   "name": "Menü-Rolle mit Banderole",
+   "format": "Banderole 210 × 40 mm, Menü A5 quer zum Rollen",
+   "vorschau": [
+    [
+     "rolle-band",
+     1
+    ],
+    [
+     "rolle-menue",
+     2
+    ]
+   ],
+   "satz": "Das Menü liegt gerollt auf jedem Teller, eine Banderole mit dem C hält es zusammen. Der Gast öffnet es selbst.",
+   "seiten": 2,
+   "karton": [
+    [
+     "rolle-band",
+     90,
+     "Banderole"
+    ],
+    [
+     "rolle-menue",
+     70,
+     "Menü zum Rollen"
+    ]
+   ],
+   "titel": [
+    "Das Menü",
+    "als Rolle."
+   ]
+  },
+  {
+   "id": "streichholz",
+   "name": "Streichholzbriefchen",
+   "format": "Briefchen 50 × 110 mm (gefalzt 50 × 40)",
+   "vorschau": [
+    [
+     "streichholz",
+     1
+    ]
+   ],
+   "satz": "Für die Kerzen an der Tafel, zum Mitnehmen nach dem Abend. Außen das C auf der Nacht.",
+   "seiten": 1,
+   "karton": [
+    [
+     "streichholz",
+     30,
+     ""
+    ]
+   ],
+   "titel": [
+    "Streichhölzer",
+    "für die Kerzen."
+   ]
+  },
+  {
+   "id": "faehnchen",
+   "name": "Drink-Fähnchen",
+   "format": "Fähnchen 30 × 20 mm, gefalzt am Stäbchen",
+   "vorschau": [
+    [
+     "faehnchen",
+     1
+    ]
+   ],
+   "satz": "Am Stäbchen im Glas: welche Technik in diesem Drink steckt. Drei Fähnchen für Momos drei Techniken.",
+   "seiten": 1,
+   "karton": [
+    [
+     "faehnchen",
+     80,
+     ""
+    ]
+   ],
+   "titel": [
+    "Ein Fähnchen",
+    "am Glas."
+   ]
+  },
+  {
+   "id": "rezept",
+   "name": "Rezeptkarte eines Drinks",
+   "format": "A6 quer, 148 × 105 mm",
+   "vorschau": [
+    [
+     "rezept",
+     1
+    ]
+   ],
+   "satz": "Die Technik eines Drinks in vier Schritten, zum Nachmachen zu Hause. Momo erklärt sie am Tisch.",
+   "seiten": 1,
+   "karton": [
+    [
+     "rezept",
+     50,
+     ""
+    ]
+   ],
+   "titel": [
+    "Ein Rezept",
+    "zum Mitnehmen."
+   ]
+  },
+  {
+   "id": "gutschein",
+   "name": "Gutschein für einen Abend",
+   "format": "DL quer, 210 × 99 mm, zwei Seiten, Umschlag DL",
+   "vorschau": [
+    [
+     "gs-vorn",
+     1
+    ],
+    [
+     "gs-hinten",
+     2
+    ],
+    [
+     "gs-umschlag",
+     3
+    ]
+   ],
+   "satz": "Vorne Rudis Plakat ganz mit seiner Wortmarke und «Ein Abend an der langen Tafel», hinten für wen, von wem, wie viele, gültig bis und die Nummer. Wert und Gültigkeit stehen in Klammern, bis das Haus sie festlegt. Dazu ein Umschlag auf der Nacht, auch als PDF zum Verschicken.",
+   "seiten": 3,
+   "karton": [
+    [
+     "gs-vorn",
+     90,
+     "Vorderseite"
+    ],
+    [
+     "gs-hinten",
+     90,
+     "Rückseite"
+    ],
+    [
+     "gs-umschlag",
+     90,
+     "Umschlag"
+    ]
+   ],
+   "titel": [
+    "Einen Abend",
+    "verschenken."
+   ]
+  }
+ ]
+}

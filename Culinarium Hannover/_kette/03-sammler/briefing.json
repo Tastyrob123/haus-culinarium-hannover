@@ -1,0 +1,17 @@
+{
+  "titel": "Recherche",
+  "untertitel": "Culinarium Hannover · Station 03 · Sammler",
+  "stand": "Sammlung liegt als Seite vor (sammlung.html): Instagram von Culinarium, Team, Fotografen und Gästen in voller Grösse, die Bar mit Falstaff, Google und Portalen, Dirty Chicken, Commons, Fakten, Sprachen, Bau-Prompt. Rudis eigene Dateien fehlen noch.",
+  "luecken": [],
+  "bilder": [],
+  "messwerte": [],
+  "abschnitte": [],
+  "links": [
+    {"text": "Sammlung öffnen", "ziel": "sammlung.html"},
+    {"text": "Material-Übersicht", "ziel": "../../_quelle/material.html"},
+    {"text": "Bau-Prompt", "ziel": "../../Prompt — Culinarium Hannover.md"}
+  ],
+  "frage": "",
+  "knopf_ja": "Bestätigen",
+  "knopf_nein": "Zurückschicken"
+}

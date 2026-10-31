@@ -1,0 +1,14 @@
+[
+ {
+  "k": "bureau",
+  "name": "bureau",
+  "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+  "fehler": []
+ },
+ {
+  "k": "bureau",
+  "name": "bureau-2",
+  "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+  "fehler": []
+ }
+]

@@ -1,0 +1,44 @@
+{
+ "groesse": [
+  2000,
+  1673
+ ],
+ "schirm": [
+  0.097242,
+  0.020296,
+  0.805516,
+  0.623256
+ ],
+ "fenster": [
+  1440,
+  932
+ ],
+ "bilder": [
+  "maison",
+  "bureau",
+  "bureau-2",
+  "bureau-3",
+  "carte",
+  "carte-2",
+  "carte-3",
+  "imprimerie",
+  "imprimerie-2",
+  "imprimerie-3",
+  "reception",
+  "reception-2",
+  "reception-3",
+  "livre",
+  "livre-2",
+  "livre-3"
+ ],
+ "radius": 0.01786,
+ "render": {
+  "schirm_px": [
+   514,
+   218,
+   2786,
+   1686
+  ],
+  "schief_px": 0
+ }
+}

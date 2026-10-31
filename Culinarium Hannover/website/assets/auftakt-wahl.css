@@ -1,0 +1,264 @@
+/* Culinarium · 15 neue Auftakte zur Wahl (26.10.2026). Nur für die Wahlseite; jede Fassung ein eigenes Gerüst und ein eigener Moment. */
+.vx .fassung{padding-top:64px}
+.vb{position:relative;margin:0;overflow:clip;background:var(--lq) center/cover no-repeat}
+.vb img{width:100%;height:100%;object-fit:cover}
+.vx-text{position:absolute;z-index:4;left:var(--rand);bottom:clamp(26px,5.5vh,60px);max-width:430px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.vx-text.statisch,.vx-text.unten{position:static}
+.vx .zl .z>span{display:block}
+.vx-satz{font-size:17px;line-height:1.5;color:rgba(250,244,244,.9)}
+.at-marke.mitte{position:absolute;left:50%;top:52%;width:min(84vw,1180px);transform:translate(-50%,-50%);filter:drop-shadow(0 6px 30px rgba(12,10,14,.55))}
+.fz-name{min-width:300px}
+.fz-name em{font-style:normal;font-size:12px;opacity:.5;margin-left:8px}
+
+/* 1 Durchs Wort: Deckel mit Buchstaben-Löchern, Scrollen fährt durch das I */
+.fassung.v-wort{height:250vh;overflow:visible;padding-top:0}
+.vw-buehne{position:sticky;top:0;height:100svh;min-height:600px;overflow:clip}
+.vw-foto{position:absolute;inset:0}
+.vw-deckel{position:absolute;left:50%;top:50%;width:min(90vw,1400px);height:auto;overflow:visible;transform:translate(-50%,-50%);transform-origin:36.24% 50.2%}
+.vw-zeile{position:absolute;z-index:3;left:50%;top:calc(50% + min(90vw,1400px)*.075);width:min(52vw,780px);transform:translateX(-50%);color:#FAF4F4}
+.vw-zeile .z{display:block}.vw-zeile .marke{width:100%;height:auto}
+.v-wort .vx-text{z-index:5;text-shadow:0 1px 18px rgba(12,10,14,.6)}
+
+/* 2 Fünf Gläser: abgestellt auf die Tresenkante, von links */
+.v-glaeser{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;padding:calc(64px + clamp(16px,3vh,32px)) var(--rand) clamp(18px,3.4vh,36px)}
+.v-glaeser .at-marke{width:100%}
+.v-glaeser .at-zeile{width:46%;margin:clamp(10px,1.3vw,18px) 0 0 auto}
+.vg-reihe{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:minmax(0,1fr);gap:var(--fuge);margin-top:clamp(16px,3vh,30px);overflow:clip;min-height:0}
+.vg-reihe .vb{height:100%;border-radius:var(--r) var(--r) 0 0}
+html.js:not(.ruhig) .vg-reihe .vb{transform:translateY(46%);transition:transform 1.3s var(--k) calc(.25s + var(--i)*.13s)}
+html.js .v-glaeser.offen .vg-reihe .vb{transform:none}
+.vg-kante{height:2px;background:var(--kerze);transform-origin:0 50%}
+html.js:not(.ruhig) .vg-kante{transform:scaleX(.08);transition:transform 1.6s var(--k)}
+html.js .v-glaeser.offen .vg-kante{transform:none}
+.vg-fuss{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-top:clamp(14px,2.4vh,24px)}
+.vg-zahl{font:400 13px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--kerze-hell);white-space:nowrap}
+.v-glaeser .vx-text{position:static;flex-direction:row;align-items:center;max-width:none;gap:30px}
+.v-glaeser .vx-satz{max-width:470px;font-size:16px}
+
+/* 3 Was zum Abend gehört: vier Zeilen, Zeigen tauscht das Bild */
+.v-liste{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr)}
+.vl-links{display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,3.2vh,34px);padding:clamp(16px,3vh,40px) clamp(24px,4vw,72px) clamp(16px,3vh,40px) var(--rand)}
+.v-liste .at-marke{width:100%}
+.v-liste .at-zeile{margin-left:0;width:70%}
+.vl-zeilen{list-style:none;margin:0;padding:0;border-top:1px solid var(--linie)}
+.vl-zeilen li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:clamp(7px,1.3vh,14px) 0;border-bottom:1px solid var(--linie);cursor:pointer}
+.vl-zeilen b{font-family:var(--titel);font-weight:340;font-size:clamp(28px,min(3.3vw,6vh),54px);line-height:1.02;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:rgba(250,244,244,.34);transition:color .5s}
+.vl-zeilen span{font:400 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2);transition:color .5s}
+.vl-zeilen li.an b{color:var(--weiss)}
+.vl-zeilen li.an span{color:var(--kerze-hell)}
+.v-liste .vx-text{flex-direction:row;align-items:center;max-width:none;gap:24px}
+.v-liste .vx-satz{font-size:15px;color:var(--fg2)}
+.v-liste .knopf{white-space:nowrap}
+.vl-bild{position:relative;overflow:clip}
+.vl-bild .vb{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+.vl-bild .vb img{transform:scale(1.06);transition:transform 2.4s var(--k2)}
+.vl-bild .vb.an{opacity:1;z-index:2}
+.vl-bild .vb.an img{transform:none}
+.vl-bild .vb.war{opacity:1;z-index:1;transition:none}
+
+/* 4 Das Plakat: der Auftakt ist das Plakat des nächsten Abends */
+.vp-blatt{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:clamp(12px,2.2vh,24px);padding:clamp(14px,2.4vh,26px) var(--rand) clamp(18px,3.4vh,36px)}
+.vp-kopf{display:flex;justify-content:space-between;gap:20px;font:400 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#5B5763;border-bottom:1px solid rgba(38,36,45,.16);padding-bottom:12px}
+.v-plakat .at-marke{color:#3A3845;width:100%}
+.v-plakat .at-zeile{width:50%}
+.vp-mitte{display:grid;grid-template-columns:1fr clamp(220px,25vw,400px) 1fr;grid-template-rows:minmax(0,1fr);gap:clamp(20px,3vw,52px);min-height:0;align-items:end}
+.vp-bild{height:100%;border-radius:var(--r)}
+html.js:not(.ruhig) .vp-bild img{transform:scale(1.16);transition:transform 2.6s var(--k2) .2s}
+html.js .v-plakat.offen .vp-bild img{transform:none}
+.vp-spalte{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.vp-gross{font-family:var(--titel);font-weight:340;font-size:clamp(26px,2.5vw,42px);line-height:1.08;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.vp-daten{margin:0;border-top:1px solid rgba(38,36,45,.18)}
+.vp-daten div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid rgba(38,36,45,.18)}
+.vp-daten dt{font:400 11.5px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#5B5763}
+.vp-daten dd{margin:0;font:500 15px/1.3 var(--text);text-align:right}
+.vp-daten div:first-child dd{color:var(--kerze-tief)}
+
+/* 5 Kerzenlicht: der Raum im Dunkeln, die Maus trägt das Licht */
+.vk-dunkel{position:absolute;inset:0}
+.vk-dunkel img{filter:brightness(.17) saturate(.45)}
+.vk-licht{position:absolute;left:0;top:0;z-index:1;width:min(64vmin,640px);aspect-ratio:1;border-radius:50%;overflow:hidden;will-change:transform;
+  -webkit-mask-image:radial-gradient(circle closest-side,#000 46%,rgba(0,0,0,.55) 70%,transparent 100%);mask-image:radial-gradient(circle closest-side,#000 46%,rgba(0,0,0,.55) 70%,transparent 100%)}
+.vk-innen{position:absolute;left:0;top:0;will-change:transform}
+.vk-hell{position:absolute;inset:0}
+.v-licht .vx-text{text-shadow:0 1px 14px rgba(12,10,14,.7)}
+
+/* 6 Die lange Tafel: ein Band treibt am Tisch entlang */
+.v-tafel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(64px + clamp(16px,3vh,32px)) 0 clamp(18px,3.4vh,36px)}
+.vt-oben{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding:0 var(--rand)}
+.v-tafel .at-marke{width:min(64vw,980px)}
+.v-tafel .at-zeile{margin-left:0;width:62%}
+.vt-zahl{display:flex;align-items:baseline;gap:.35em;font-family:var(--titel);font-size:18px;line-height:1.1;color:var(--fg2);font-variation-settings:"SOFT" 100,"opsz" 48;max-width:9em}
+.vt-zahl b{font-weight:300;font-size:clamp(60px,7.4vw,118px);line-height:.8;color:var(--kerze-hell)}
+.vt-band{overflow:clip;margin:clamp(16px,3vh,30px) 0}
+.vt-lauf{display:flex;gap:var(--fuge);padding-right:var(--fuge);height:100%;width:max-content;animation:vt-lauf 110s linear infinite;animation-play-state:paused}
+html.js .v-tafel.offen .vt-lauf{animation-play-state:running}
+.vt-lauf .vb{height:100%;aspect-ratio:4/5;flex:none;border-radius:var(--r)}
+@keyframes vt-lauf{to{transform:translateX(-50%)}}
+.v-tafel .vx-text{flex-direction:row;justify-content:space-between;align-items:center;max-width:none;padding:0 var(--rand)}
+.v-tafel .vx-satz{max-width:540px}
+
+/* 7 Das x: Glas x Teller, die Naht schräg durchs Bild */
+.vx-l,.vx-r{position:absolute;inset:0}
+.vx-l{clip-path:polygon(0 0,62% 0,40% 100%,0 100%)}
+.vx-r{clip-path:polygon(62% 0,100% 0,100% 100%,40% 100%)}
+.vx-l .vb{position:absolute;inset:0 32% 0 0}
+.vx-r .vb{position:absolute;inset:0 0 0 34%}
+.vx-l::after,.vx-r::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,14,.6),transparent 34%,transparent 62%,rgba(12,10,14,.55))}
+.vx-naht{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.vx-naht line{stroke:var(--kerze);stroke-width:2;vector-effect:non-scaling-stroke}
+.vx-kreuz{position:absolute;z-index:3;left:51%;top:50%;font-family:var(--titel);font-weight:250;font-size:clamp(150px,34vh,340px);line-height:.6;color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144;text-shadow:0 10px 40px rgba(12,10,14,.5);transform:translate(-50%,-50%)}
+html.js:not(.ruhig) .vx-kreuz{transform:translate(-50%,-50%) rotate(-135deg) scale(.55);transition:transform 1.8s var(--k) .2s}
+html.js .v-x.offen .vx-kreuz{transform:translate(-50%,-50%)}
+.at-marke.oben{position:absolute;left:50%;top:calc(64px + clamp(18px,4vh,40px));width:min(62vw,900px);transform:translateX(-50%);filter:drop-shadow(0 6px 26px rgba(12,10,14,.6))}
+.vx-eck{position:absolute;z-index:3;font:400 12.5px/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#FAF4F4;text-shadow:0 1px 12px rgba(12,10,14,.7)}
+.vx-eck::before{content:"";display:block;width:28px;height:1px;background:var(--kerze);margin-bottom:10px}
+.vx-eck1{left:var(--rand);top:46%}
+.vx-eck2{right:var(--rand);bottom:clamp(26px,5.5vh,60px);text-align:right}
+.vx-eck2::before{margin-left:auto}
+.v-x .vx-text{text-shadow:0 1px 14px rgba(12,10,14,.6)}
+
+/* 8 Ebenen: der Name zwischen den Bildern, jede Ebene mit eigener Tiefe */
+.v-ebenen{background:radial-gradient(ellipse 70% 60% at 50% 55%,#24222B,#16151A 70%)}
+.ve-e{position:absolute;inset:0;pointer-events:none;will-change:transform}
+.ve-e .vb{position:absolute;border-radius:var(--r);box-shadow:0 40px 70px -40px rgba(0,0,0,.9)}
+.ve-a{left:var(--rand);top:calc(64px + 4vh);width:33vw;height:43vh}
+.ve-b{right:var(--rand);bottom:5vh;width:30vw;height:40vh}
+.ve-a img,.ve-b img{filter:brightness(.62) saturate(.8)}
+.ve-c{left:31vw;bottom:5vh;width:min(15vw,24vh);aspect-ratio:3/4}
+.ve-d{right:15vw;top:calc(64px + 6vh);width:min(16vw,26vh);aspect-ratio:3/4}
+.v-ebenen .at-marke.mitte{z-index:3}
+
+/* 9 Der Stapel: Abzüge landen auf dem Tisch */
+.v-stapel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:4vw;padding:64px var(--rand) 0;background:radial-gradient(ellipse 60% 70% at 72% 55%,#2A2730,#16151A 72%)}
+.vs-links{display:flex;flex-direction:column;gap:clamp(24px,4.4vh,48px)}
+.v-stapel .at-zeile{margin-left:0;width:72%}
+.vs-stapel{position:relative;height:min(72vh,660px);aspect-ratio:4/5;justify-self:center;border:0;padding:0;background:none;cursor:pointer}
+.vs-stapel .vb{position:absolute;inset:0;padding:clamp(8px,.9vw,14px) clamp(8px,.9vw,14px) clamp(30px,3vw,48px);background:#F3EEEA;border-radius:3px;box-shadow:0 34px 60px -30px rgba(0,0,0,.85),0 2px 6px rgba(0,0,0,.25);transform:rotate(var(--rot));transition:transform 1.1s var(--k)}
+.vs-stapel .vb:nth-child(6n+1){--rot:-4deg}.vs-stapel .vb:nth-child(6n+2){--rot:3deg}.vs-stapel .vb:nth-child(6n+3){--rot:-1.5deg}
+.vs-stapel .vb:nth-child(6n+4){--rot:5deg}.vs-stapel .vb:nth-child(6n+5){--rot:-6deg}.vs-stapel .vb:nth-child(6n){--rot:1.5deg}
+.vs-stapel .vb img{border-radius:1px}
+html.js:not(.ruhig) .v-stapel:not(.offen) .vb:not(:first-child),.vs-stapel .vb.weg{transform:translate(26vw,-105vh) rotate(calc(var(--rot) + 28deg));transition:none}
+.v-stapel.offen:not(.gespielt) .vb{transition-delay:calc(.2s + var(--i,0)*.38s)}
+
+/* 10 Laufband: Rudis und Momos Wörter laufen hinter dem Glas */
+.v-band{display:grid;grid-template-rows:minmax(0,1fr) auto}
+.vb-feld{position:relative;overflow:clip}
+.vb-reihen{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:1.4vh}
+.vb-reihe{display:flex;width:max-content;white-space:nowrap;font-family:var(--titel);font-weight:300;font-size:clamp(54px,12vh,150px);line-height:1;letter-spacing:.01em;color:#4A4756;font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 144;animation:vb-links 80s linear infinite;animation-play-state:paused}
+.vb-reihe span{padding-right:.3em}
+.vb-reihe i{font-style:normal;color:var(--kerze-tief)}
+.vb-reihe.r1{animation-name:vb-rechts;animation-duration:95s}
+.vb-reihe.r2{animation-duration:70s}
+html.js .v-band.offen .vb-reihe{animation-play-state:running}
+@keyframes vb-links{to{transform:translateX(-50%)}}
+@keyframes vb-rechts{from{transform:translateX(-50%)}to{transform:none}}
+.vb-bild{position:absolute;z-index:2;left:50%;top:5%;height:90%;aspect-ratio:3/4;border-radius:var(--r);transform:translateX(-50%);box-shadow:0 40px 80px -40px rgba(0,0,0,.9)}
+.v-band .at-marke{position:absolute;left:50%;bottom:8%;width:min(86vw,1200px);transform:translateX(-50%);filter:drop-shadow(0 6px 26px rgba(12,10,14,.6))}
+.vb-fuss{padding:clamp(14px,2.4vh,24px) var(--rand) clamp(16px,2.8vh,28px);border-top:1px solid var(--linie)}
+.v-band .vx-text{position:static;flex-direction:row;justify-content:space-between;align-items:center;max-width:none}
+.v-band .vx-satz{max-width:620px}
+
+/* 11 Draussen, drinnen: die Naht folgt der Hand */
+.vd-draussen{position:absolute;inset:0}
+.vd-drinnen{position:absolute;inset:0;overflow:hidden;transform:translateX(calc(var(--p,50%) - 100%));will-change:transform}
+.vd-innen{position:absolute;inset:0;transform:translateX(calc(100% - var(--p,50%)));will-change:transform}
+.vd-innen .vb{position:absolute;inset:0}
+.vd-griff{position:absolute;inset:0;z-index:2;pointer-events:none;transform:translateX(var(--p,50%));will-change:transform}
+.vd-griff span{position:absolute;left:-1px;top:0;bottom:0;width:2px;background:#FAF4F4}
+.vd-griff span::after{content:"‹ ›";position:absolute;left:50%;top:76%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--kerze);color:#fff;display:grid;place-items:center;font:500 18px/1 var(--text);letter-spacing:.2em;box-shadow:0 10px 24px -8px rgba(0,0,0,.7)}
+.v-tuer{cursor:ew-resize;touch-action:pan-y}
+.vd-wort{position:absolute;z-index:3;top:calc(64px + clamp(18px,3.6vh,36px));font:400 12.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#FAF4F4;text-shadow:0 1px 12px rgba(12,10,14,.8)}
+.vd-w1{left:var(--rand)}.vd-w2{right:var(--rand)}
+.v-tuer .vx-text{text-shadow:0 1px 14px rgba(12,10,14,.75)}
+
+/* 12 Ein Satz: der Satz erklärt den Abend, die Bilder stehen in den Zeilen */
+.v-satz{display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:calc(64px + clamp(18px,3.4vh,40px)) var(--rand) clamp(22px,4vh,44px)}
+.vi-kopf{width:min(30vw,400px);color:#3A3845}
+.vi-kopf .z{display:block}.vi-kopf .marke{width:100%;height:auto}
+.vi-gross{font-family:var(--titel);font-weight:330;font-size:clamp(40px,min(8.2vw,13.4vh),140px);line-height:1.04;letter-spacing:-.022em;color:#26242D;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.vi-gross .z{display:block}
+.vi-b{display:inline-block;vertical-align:-.06em;width:1.55em;height:.8em;margin:0 .04em;border-radius:.14em;overflow:clip}
+.vi-b .vb{display:block;width:100%;height:100%}
+html.js:not(.ruhig) .vi-b img{transform:scale(1.35);transition:transform 2.4s var(--k2) .5s}
+html.js .v-satz.offen .vi-b img{transform:none}
+.vi-fuss{display:flex;justify-content:space-between;align-items:center;gap:30px;color:#5B5763;font-size:16px}
+
+/* 13 Die Karte: die Menükarte liegt auf der Tafel */
+.vc-foto{position:absolute;inset:0}
+.vc-hof{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(12,10,14,.84),rgba(12,10,14,.42) 52%,rgba(12,10,14,.18))}
+.vc-links{position:absolute;z-index:3;left:var(--rand);top:64px;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(22px,4vh,40px);max-width:min(46vw,620px)}
+.vc-titel{font-family:var(--titel);font-weight:340;font-size:clamp(46px,min(6.4vw,11vh),108px);line-height:.98;letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.vc-titel .z{display:block}
+.vc-karte{position:absolute;z-index:3;right:clamp(28px,9vw,150px);top:calc(50% + 32px);width:clamp(290px,26vw,400px);background:#F6F0EC;color:#26242D;padding:clamp(22px,2.3vw,34px);border-radius:3px;box-shadow:0 50px 90px -30px rgba(0,0,0,.9),0 2px 6px rgba(0,0,0,.3);display:flex;flex-direction:column;gap:clamp(10px,1.6vh,15px);text-align:center;transform:translateY(-50%) rotate(-3.5deg)}
+html.js:not(.ruhig) .vc-karte{transform:translate(60px,calc(-50% + 140px)) rotate(6deg);transition:transform 1.7s var(--k) .25s}
+html.js .v-karte.offen .vc-karte{transform:translateY(-50%) rotate(-3.5deg)}
+.vc-wm,.vc-zeile{color:#3A3845}
+.vc-wm .marke,.vc-zeile .marke{width:100%;height:auto}
+.vc-zeile{width:84%;margin:0 auto}
+.vc-klein{font:400 10.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#6B6672;padding-top:clamp(8px,1.4vh,14px);border-top:1px solid rgba(38,36,45,.16)}
+.vc-karte ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(8px,1.4vh,13px)}
+.vc-karte li{font-family:var(--titel);font-weight:360;font-size:clamp(15px,1.3vw,20px);line-height:1.22;letter-spacing:.03em;font-variation-settings:"SOFT" 100,"opsz" 36}
+.vc-karte li i{font-style:normal;color:var(--kerze-tief)}
+.vc-fuss{display:flex;justify-content:space-between;font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#6B6672;padding-top:clamp(8px,1.4vh,14px);border-top:1px solid rgba(38,36,45,.16)}
+
+/* 14 Randlos: ein Bild, der Name kantenbündig unten */
+.vr-rahmen{position:absolute;inset:0;overflow:clip}
+.vr-foto{position:absolute;inset:0;will-change:transform;transform-origin:50% 70%}
+.vr-hof{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,10,14,.72),rgba(12,10,14,.1) 34%,rgba(12,10,14,0) 55%,rgba(12,10,14,.5))}
+.vr-oben{position:absolute;z-index:3;top:calc(64px + clamp(20px,4vh,44px));left:var(--rand);right:var(--rand);display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.vr-oben .vx-satz{max-width:460px;font-size:18px}
+.vr-name{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:0 clamp(10px,1.3vw,22px) clamp(8px,1.3vw,20px);color:#FAF4F4}
+.vr-name .z{display:block}.vr-name .marke{width:100%;height:auto}
+
+/* 15 Pairing: links steigen die Gläser, rechts sinken die Teller */
+.v-pairing{display:grid;grid-template-columns:minmax(0,23vw) minmax(0,1fr) minmax(0,23vw);grid-template-rows:minmax(0,1fr)}
+.vq-s{overflow:clip;grid-row:1}
+.vq-l{grid-column:1}.vq-r{grid-column:3}
+.vq-lauf{display:flex;flex-direction:column;gap:var(--fuge);padding-bottom:var(--fuge);animation:vq-hoch 90s linear infinite;animation-play-state:paused}
+.vq-r .vq-lauf{animation-name:vq-runter}
+html.js .v-pairing.offen .vq-lauf{animation-play-state:running}
+.vq-lauf .vb{aspect-ratio:4/5;flex:none}
+@keyframes vq-hoch{to{transform:translateY(-50%)}}
+@keyframes vq-runter{from{transform:translateY(-50%)}to{transform:none}}
+.vq-mitte{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:clamp(18px,3.4vh,36px);padding:0 clamp(24px,3vw,56px)}
+.v-pairing .at-marke{width:100%}
+.vq-x{font-family:var(--titel);font-weight:320;font-size:clamp(30px,3.4vw,58px);line-height:1;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.vq-x .z{display:block}.vq-x i{font-style:normal;color:var(--kerze)}
+.v-pairing .vx-text{align-items:center}
+.v-pairing .vx-satz{color:var(--fg2);max-width:420px}
+
+@media (min-width:861px) and (max-width:1200px){.ve-c{left:calc(var(--rand) + 440px)}}
+/* Handy */
+@media (max-width:860px){
+  .fz-name{min-width:0;font-size:13px}.fz-name em{display:none}
+  .vx-text{right:var(--rand);max-width:none}
+  .v-glaeser .vx-text,.v-liste .vx-text,.v-tafel .vx-text,.v-band .vx-text{flex-direction:column;align-items:flex-start;gap:16px}
+  .v-glaeser .at-zeile{width:70%}
+  .vg-fuss{flex-direction:column;align-items:flex-start;gap:14px}
+  .v-liste{grid-template-columns:1fr;grid-template-rows:30vh auto}
+  .vl-bild{grid-row:1}.vl-links{grid-row:2;padding:20px var(--rand) 28px}
+  .v-plakat .at-zeile{width:80%}
+  .vp-mitte{grid-template-columns:1fr 1fr;align-items:stretch}
+  .vp-spalte{grid-column:1 / -1;order:2}.vp-daten{order:1}.vp-bild{order:0;height:auto;min-height:180px}
+  .vp-kopf span:last-child{display:none}
+  .vt-oben{flex-direction:column;align-items:flex-start;gap:14px}
+  .v-tafel .at-marke{width:100%}
+  .vx-eck1{top:auto;bottom:calc(100% - 64px - 26vh)}
+  .vx-eck2{display:none}
+  .ve-a{width:58vw;height:24vh;top:calc(64px + 3vh)}.ve-d{right:var(--rand);top:calc(64px + 9vh);width:28vw}.ve-b{width:46vw;height:17vh;top:56%;bottom:auto}.ve-c{left:var(--rand);top:54%;bottom:auto;width:24vw}.f-ebenen .at-marke,.v-ebenen .at-marke.mitte{top:47%;width:90vw}
+  .v-stapel{grid-template-columns:1fr;grid-template-rows:auto auto;padding-top:84px;align-content:center}
+  .vs-stapel{height:42vh;order:-1}
+  .vb-reihe{font-size:12vw}
+  .vb-bild{height:64%;top:8%}
+  .v-band .at-marke{bottom:10%}
+  .vi-kopf{width:60vw}
+  .vi-fuss{flex-direction:column;align-items:flex-start;gap:16px}
+  .vc-links{top:64px;bottom:auto;padding-top:24px;max-width:none;right:var(--rand)}
+  .vc-links .vx-text{display:none}
+  .vc-karte{right:auto;left:50%;top:auto;bottom:6vh;width:72vw}
+html.js .v-karte.offen .vc-karte,html.js:not(.ruhig) .vc-karte{transform:translateX(-50%) rotate(-3deg)}
+  .vr-oben{flex-direction:column;gap:20px}
+  .v-pairing{grid-template-columns:22vw minmax(0,1fr) 22vw}
+  .vq-mitte{padding:0 12px}
+  .v-pairing .vx-satz{display:none}
+}

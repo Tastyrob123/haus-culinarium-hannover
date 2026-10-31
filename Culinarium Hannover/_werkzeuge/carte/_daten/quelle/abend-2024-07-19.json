@@ -1,0 +1,27 @@
+{
+ "ziel": "abend-2024-07-19",
+ "art": "satz",
+ "key": "C8cgYVSouVT",
+ "name": "19./20. Juli 2024",
+ "unter": "Erdig",
+ "gruppe": "Frühere Abende",
+ "ab": "2024-07-19",
+ "datum": "Fr 19. und Sa 20. Juli 2024",
+ "preis": "69,00 EUR",
+ "mit": "BY MOMO X RUDI",
+ "zusatz": "12 Plätze",
+ "motto": "Erdig",
+ "titel": "",
+ "plakat": "C8cgYVSouVT",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "Sauerteigbrot | geröstete Kürbisbutter | Senfkaviar",
+   "drink": "Vodka | Bergamotte | Champagner-Säure | Gurke | Dill"
+  }
+ ],
+ "upgrade": [],
+ "voll": false,
+ "foto_der_karte": "Foto der Karte in der Story vom 20.07.2024, nur der Anfang lesbar",
+ "quelle": "website/abende_info.py KARTEN['C8cgYVSouVT'] · website/bau.py ABENDE (Foto der Karte in der Story vom 20.07.2024, nur der Anfang lesbar)"
+}

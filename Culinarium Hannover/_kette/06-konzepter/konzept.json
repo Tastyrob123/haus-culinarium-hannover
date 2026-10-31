@@ -1,0 +1,592 @@
+{
+ "geschichte": "Einer kocht, einer mixt und erklärt, vierzehn Gäste sitzen an einer langen Tafel in einer Bar in Linden: Die Seite läuft wie ein Culinarium-Abend, Gang für Gang, und jeder Gang ist ein Paar aus Teller und Glas. Die Konzepte und die Menschen bekommen keine eigenen Abteilungen, sie kommen in der Reihenfolge des Abends an den Tisch: erst die Strasse und die Tür, dann Momo mit dem ersten Glas, dann Rudis Teller, dann die Tafel, die Plakate aller bisherigen Abende, die Leute dahinter und zum Schluss Rudis zweite Küche, Dirty Chicken. Am Ende steht der nächste Abend. Ordnung gibt, was Culinarium selbst schon hat: das Paar (Momo x Rudi, Teller und Drink), das warmweisse Band mit der doppelt gerahmten Wortmarke von den Plakaten und Rudis Art, ein Gericht in vier Wörtern zu schreiben.",
+ "geschichte_satz": "Einer kocht, einer mixt und erklärt, vierzehn Gäste sitzen an einer langen Tafel in einer Bar in Linden: Die Seite läuft wie ein Culinarium-Abend, Gang für Gang, und jeder Gang ist ein Paar aus Teller und Glas.",
+ "wege": [
+  {
+   "stand": "Empfohlen",
+   "name": "Ein Abend, Gang für Gang",
+   "satz": "Die Startseite ist der Abend selbst: ankommen, Aperitif, drei Gänge, die Tafel, der Absacker. Jedes Konzept und jeder Mensch sitzt an der Stelle, an der er an so einem Abend dran ist: Momo beim ersten Glas, Rudi beim Teller, alle zusammen an der Tafel, Dirty Chicken als zweite Küche nach dem Dessert. Wer die Seite einmal herunterscrollt, war einmal da.",
+   "bilder": [
+    "_quelle/vom-kunden/drive/4568.jpg",
+    "_quelle/vom-kunden/drive/5301.jpg"
+   ]
+  },
+  {
+   "stand": "Überlegt",
+   "name": "Die Ausgaben",
+   "satz": "Die Seite als Zeitschrift, jedes Konzept eine Ausgabe mit eigenem Plakat. Trägt nicht die ganze Seite: Die Plakate gibt es nur in Instagram-Grösse, die Rechte an den Illustrationen sind offen, und eine Grafik statt eines echten Fotos im Auftakt ist bei Robert noch nie durchgegangen. Bleibt als eigenes Kapitel, die Plakatwand.",
+   "bilder": [
+    "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg",
+    "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg"
+   ]
+  },
+  {
+   "stand": "Überlegt",
+   "name": "Die Menschen führen",
+   "satz": "Rudi, Momo und Derya je ein Kapitel mit ihrem Konzept. Scheitert heute am Material: Es gibt keine einzige Zeile über die drei ausserhalb von Instagram, die Texte entstehen erst im Gespräch, und wer auf welchem Foto ist, ist nicht belegt. Die Menschen tragen deshalb die Gänge, statt eigene Abteilungen zu bekommen; das Familien-Video ist ihr Kapitel.",
+   "bilder": [
+    "_quelle/vom-kunden/drive/63873.jpg"
+   ]
+  }
+ ],
+ "ideen": [
+  {
+   "art": "Darstellung",
+   "name": "Das Paar",
+   "satz": "Was Culinarium verkauft, ist ein Paar: ein Teller von Rudi, ein Glas von Momo. Die Seite zeigt deshalb fast nie ein Bild allein, sondern zwei nebeneinander, Wand an Wand, links das Essen, rechts das Glas oder links Momo, rechts Rudi. Die Naht zwischen beiden ist die Mitte jedes Kapitels."
+  },
+  {
+   "art": "Bewegung",
+   "name": "Anstossen",
+   "satz": "Die beiden Hälften eines Paars steigen getrennt von unten herauf, die zweite eine Achtelsekunde später, und treffen sich an der Naht mit einem gemeinsamen, einzigen Puls, wie zwei Gläser, die sich berühren. Nichts kommt von der Seite, nichts geht auf wie eine Tür. Die Fotos 4024, 4026, 5376 und 4574 zeigen genau diesen Moment."
+  },
+  {
+   "art": "Beschriftung",
+   "name": "Das Band",
+   "satz": "Auf jedem Plakat seit 2023 sitzt die Wortmarke in einem warmweissen Band mit doppeltem Rahmen. Dieses Band beschriftet die Seite: Namen der Gänge, Datum, Menschen, der nächste Abend. Es ersetzt Einkerbungen, Etiketten und Kicker, und es kommt vom Haus, nicht aus unserem Fundus."
+  },
+  {
+   "art": "Satz",
+   "name": "Vier Wörter",
+   "satz": "Rudi schreibt ein Gericht als Zutatenzeile: «AUBERGINE / KOKOS / LIMETTE / SESAM». Diese Zeile ist die Überschrift der Gänge, gross in der Titelschrift, und Momos Techniken bekommen dieselbe Form: «FATWASHING / MILKWASHING / ENZYME»."
+  }
+ ],
+ "seiten": [
+  {
+   "seite": "index.html",
+   "titel": "Startseite",
+   "szenen": [
+    {
+     "teil": "auftakt",
+     "titel": "Momo x Rudi.",
+     "satz": "Zwei Hochformate Wand an Wand über die ganze Breite, links der Shaker an der Bar, rechts der Koch am Tisch, über der Naht das Band mit CULINARIUM und der Zeile der Plakate. Darunter der nächste Abend und ein Knopf.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/4568.jpg",
+      "_quelle/vom-kunden/drive/5301.jpg"
+     ],
+     "baustein": "Das Paar",
+     "quelle": "neu",
+     "skizze": "Paare zur Wahl, Robert entscheidet: A Momo | Rudi (4568 | 5301, Tageslicht, beide über 5000 Pixel), B Glas | Teller (5369 | 5379, dunkel, 7952 Pixel), C die leere Tafel mit Kerzen allein (4972, nur 1638 Pixel breit). Kein Preis im Auftakt; steht ein Datum fest, kommt es ins Band unter die Wortmarke, sonst führt der Knopf auf die Warteliste.",
+     "bewegung": "Anstossen: links von unten, rechts eine Achtelsekunde später, ein Puls an der Naht; Band aus dem Schlitz.",
+     "flaeche": "dunkel",
+     "einfall": "Die Zeile der Plakate heisst «A UNiQUE EXPERiENCE BY MOMO X RUDI». Der Auftakt nimmt sie wörtlich: zwei Menschen, ein x dazwischen.",
+     "komposition": "Zwei Hälften, kein Gebäude, kein Teller allein. Das Band liegt quer über der Naht und hält beide zusammen. Am Handy stehen die Hälften schmal nebeneinander, das Band darüber, der Knopf im ersten Bildschirm.",
+     "moment": "Beim Öffnen steigen beide Hälften herauf und stossen an der Naht an, das Band rollt aus dem Schlitz, im selben Takt.",
+     "unterschied": "Kein Haus hatte einen Auftakt aus zwei gleichwertigen Bildern. Die Hälften öffnen nicht wie Türflügel (das Carlton), sie kommen von unten zusammen.",
+     "bisher": {
+      "Carlton-Europe": "Türflügel, Bild zuerst",
+      "Grand Beau-Rivage": "Foto mit Name über die ganze Fläche",
+      "Waldhotel Doldenhorn": "Foto mit Name, Satz zuerst",
+      "Hotel Seiler au Lac": "Dunst über dem See",
+      "Taverne zum Schäfli": "Gegenstand gross, Name zuerst, Ortsname",
+      "Salt & Silver": "Vorhang mit Zeichen"
+     },
+     "ueberleitung": "Die beiden laden ein, also geht es zuerst dorthin, wo sie kochen und mixen."
+    },
+    {
+     "teil": "strasse",
+     "titel": "Haasemannstraße 13.",
+     "satz": "Der Weg hinein in drei Bildern, die von draussen nach drinnen wärmer werden: das Schild in der Nacht, der Flur mit der offenen Tür, der gedeckte Tisch.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/4096.jpg",
+      "_quelle/vom-kunden/drive/3887.jpg",
+      "_quelle/vom-kunden/drive/4951.jpg"
+     ],
+     "baustein": "Wand an Wand",
+     "quelle": "fundus",
+     "bewegung": "Hochschweben als Fläche gemeinsam, leiser Zoom.",
+     "flaeche": "hell",
+     "einfall": "Der Abend beginnt auf der Strasse: Die Plakate stehen unter dem Kopf «WALK ON THE WILD SIDE», die Bar ist der Gastgeber. Der Ortsname ist die Überschrift, geschrieben wie bei Google Maps (Haasemannstraße), nicht wie in den Beiträgen.",
+     "komposition": "Drei Hochformate Wand an Wand rechts, Ortsname und eine Zeile links. Die Bilder werden von links nach rechts wärmer: Blau der Strasse, Orange im Flur.",
+     "moment": "Die drei Bilder kommen als eine Fläche gemeinsam herauf, ohne Staffel, und zoomen leise in ihre Rahmen.",
+     "unterschied": "Ein Weg von draussen nach drinnen in drei Schritten, über die Farbe des Lichts erzählt. Die Bar wird als Gastgeber genannt, nicht als eigenes Haus gezeigt.",
+     "bisher": {
+      "Taverne zum Schäfli": "Region als Strassenzug, langes Band mit Abzügen",
+      "Berghotel Gasterntal": "Der Weg hinauf als Faden der ganzen Seite",
+      "Zurbriggen Wellness": "Anreise als Mittelachse"
+     },
+     "ueberleitung": "Wer drin ist, sieht den Tisch zuerst durch die Wand."
+    },
+    {
+     "teil": "fenster",
+     "titel": "Durch die Wand.",
+     "satz": "Das einzige Fenster der Seite ist ein echtes Loch in der Wand der Bar, durch das man auf einen Tisch mit Kerzen sieht.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/4029.jpg"
+     ],
+     "baustein": "Fenster",
+     "quelle": "fundus",
+     "bewegung": "Fenster, Bild steht, Satz aus dem Schlitz.",
+     "flaeche": "bild",
+     "einfall": "Das Foto 4029 ist schon ein Fenster: ein Durchbruch im Putz, dahinter Kerzen und Flaschen.",
+     "komposition": "Fenster mit stehendem Bild, Satz rechts unten im weichen Hof.",
+     "moment": "Der Ausschnitt geht auf, der Satz rollt zeilenweise.",
+     "unterschied": "Nur ein Fenster auf der ganzen Startseite, und das Bild ist selbst eine Öffnung in der Wand. Fenster als Übergang steht bei sieben Häusern; die anderen Übergänge laufen hier über das Paar.",
+     "bisher": {
+      "Grand Beau-Rivage": "fünf Fenster",
+      "Carlton-Europe": "drei Fenster",
+      "Landgasthof Ruedihus": "drei Fenster, Bild wandert gegen die Scrollrichtung",
+      "Waldhotel Doldenhorn": "drei Fenster"
+     },
+     "ueberleitung": "Bevor gegessen wird, kommt das erste Glas."
+    },
+    {
+     "teil": "aperitif",
+     "titel": "FATWASHING / MILKWASHING / ENZYME",
+     "satz": "Momos Kapitel. Die drei Techniken aus den Beiträgen stehen als Zutatenzeile in Rudis Schreibweise; wer ein Wort antippt, tauscht das grosse Bild an derselben Stelle.",
+     "bilder": [
+      "_quelle/vom-kunden/4313.jpg",
+      "_quelle/vom-kunden/3937.jpg",
+      "_quelle/vom-kunden/drive/63963.jpg",
+      "_quelle/vom-kunden/drive/3823.jpg"
+     ],
+     "baustein": "neu: Zutatenzeile mit Bildtausch",
+     "quelle": "neu",
+     "skizze": "Drei Wörter in der Titelschrift, getrennt durch Schrägstriche wie auf Rudis Tellern. Das aktive Wort in Kerzenlicht-Orange, die anderen im Ton der Fläche. Unter dem Bild ein Band mit dem Namen der Technik.",
+     "bewegung": "Paar steigt herauf und stösst an; Tippen tauscht das Bild; Wörter rollen zeilenweise.",
+     "flaeche": "dunkel",
+     "einfall": "«Hierbei kannst du in eine Welt spannender Techniken wie Fatwashing, Milkwashing und Klärung von Drinks durch Enzyme eintauchen» (Beitrag DbYnkdkjrNy, 29.07.2026). Das ist das, was sonst niemand in Hannover so vorführt.",
+     "komposition": "Ein Paar: das Bild der Technik gross, Momo an der Bar daneben. Rechts die Zeile aus drei Wörtern und sein Satz. Welches Foto zu welcher Technik gehört, sagt Momo; bis dahin stehen die Bilder ohne Zuordnung.",
+     "moment": "Ein Wort antippen, das Bild links tauscht an Ort und Stelle; nichts springt, die Fläche bleibt gleich gross.",
+     "unterschied": "Kein Haus hatte ein Kapitel über eine Technik hinter der Bar. Die Überschrift ist eine Zeile aus Zutaten, keine Frage an den Gast, kein Zeichen-Titel-Untertitel.",
+     "bisher": {
+      "Salt & Silver": "Karte als Erkunder: Drinks, Essen, Wein",
+      "Grand Beau-Rivage": "Bar als Kachel im Kapitel «im Haus»",
+      "Taverne zum Schäfli": "Bar und Humidor als Bildgruppe"
+     },
+     "ueberleitung": "Nach dem Glas der Teller, in Rudis Schreibweise."
+    },
+    {
+     "teil": "gaenge",
+     "titel": "AUBERGINE / KOKOS / LIMETTE / SESAM",
+     "satz": "Rudis Kapitel. Erst der Pass mit den angerichteten Tellern über die ganze Breite, dann drei Paare aus Teller und Glas, je eines pro Gang, im Wechsel links und rechts.",
+     "bilder": [
+      "_quelle/vom-kunden/36740.png",
+      "_quelle/vom-kunden/drive/4298.jpg",
+      "_quelle/vom-kunden/drive/4921.jpg",
+      "_quelle/vom-kunden/drive/5045.jpg",
+      "_quelle/vom-kunden/drive/4858.jpg",
+      "_quelle/vom-kunden/drive/4890.jpg",
+      "_quelle/vom-kunden/drive/4893.jpg"
+     ],
+     "baustein": "Das Paar",
+     "quelle": "neu",
+     "skizze": "Welche Teller zu welchem Menü gehören, ist nicht belegt; die Paare auf dem Board zeigen nur das Prinzip mit echten Bildern aus Rudis Ordner (4298 mit 4921, 5045 mit 4858, 4890 mit 4893).",
+     "bewegung": "Anstossen je Paar; Zeile aus dem Schlitz.",
+     "flaeche": "hell",
+     "einfall": "Rudi schreibt seine Teller in vier Wörtern (Beiträge DW4V45ujR0B, De1pn9ttMoX, DZIlJu-N0w4). Die Zeile der nächsten Ausgabe steht oben, gross; jedes Paar trägt darunter seine eigene, sobald Rudi das Menü schickt.",
+     "komposition": "Ein Querformat vom Pass (36740), darunter Paare: Teller breit, Glas schmal, Wand an Wand. Drei Paare für drei Gänge, das zweite gespiegelt. Am Handy steht jedes Paar als eigenes Hochformat-Paar.",
+     "moment": "Jedes Paar stösst an, wenn es den Rand berührt; die Vier-Wörter-Zeile darüber rollt aus dem Schlitz.",
+     "unterschied": "Die Gänge stehen als Paare, nicht als Stapel. Beim Zurbriggen Wellness landen die Gänge als Stapel untereinander; hier sitzt zu jedem Teller sein Glas Wand an Wand daneben.",
+     "bisher": {
+      "Zurbriggen Wellness": "Gang für Gang als Stapel, der landet",
+      "Salt & Silver": "Karte mit Gruppen zum Aufklappen",
+      "Taverne zum Schäfli": "Karten-Erkunder mit Wahlschalter",
+      "Wirtschaft am Schlössli": "Teller im Auftakt, Makro"
+     },
+     "ueberleitung": "Aus drei Gängen wird ein Abend, wenn vierzehn Leute daran sitzen."
+    },
+    {
+     "teil": "tafel",
+     "titel": "Vierzehn an einem Tisch.",
+     "satz": "Vierzehn Plätze, vierzehn Bilder: zwei Reihen zu sieben Hochformaten Wand an Wand, dazwischen ein schmales Band wie die Tischplatte, mit Tag und Uhrzeit.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/5005.jpg",
+      "_quelle/vom-kunden/drive/5022.jpg",
+      "_quelle/vom-kunden/drive/3842.jpg",
+      "_quelle/vom-kunden/drive/3916.jpg",
+      "_quelle/vom-kunden/drive/3858.jpg",
+      "_quelle/vom-kunden/drive/5376.jpg",
+      "_quelle/vom-kunden/drive/36543.jpg",
+      "_quelle/vom-kunden/drive/36913.jpg",
+      "_quelle/vom-kunden/drive/4024.jpg",
+      "_quelle/vom-kunden/drive/3855.jpg",
+      "_quelle/vom-kunden/drive/3901.jpg",
+      "_quelle/vom-kunden/drive/4004.jpg",
+      "_quelle/vom-kunden/drive/4574.jpg",
+      "_quelle/vom-kunden/drive/37016.jpg"
+     ],
+     "baustein": "neu: Die Tafel",
+     "quelle": "neu",
+     "skizze": "Am Handy wird die Tafel ein Band zum Wischen, eine Reihe, das Band mit Tag und Uhrzeit bleibt stehen. Ob 14 noch stimmt: 2023 waren es 15, die Bar nennt für ihre Tafel bis 12 oder bis 14 (fakten.json › plaetze).",
+     "bewegung": "Als Fläche gemeinsam, keine Staffel; Zahl zählt einmal.",
+     "flaeche": "dunkel",
+     "einfall": "«nur 14 Plätze pro Abend» (Beitrag DFqbLG2s_dc, 04.02.2025). Die Zahl der Bilder ist die Zahl der Stühle.",
+     "komposition": "Oben sieben, unten sieben, wie die beiden Seiten einer langen Tafel. Das Band in der Mitte ist die Tischplatte. Alles Gäste-Bilder aus Rudis eigenem Ordner, keine Fotos von Gästen aus Instagram.",
+     "moment": "Beide Reihen kommen als eine Fläche gemeinsam herauf, die 14 im Band zählt einmal hoch.",
+     "unterschied": "Die Anzahl der Bilder trägt eine Tatsache des Hauses. Bildwände anderer Häuser sind Mosaike ohne Ordnung; hier sitzen zwei Reihen gegenüber, wie am Tisch.",
+     "bisher": {
+      "Castell Son Claret": "Bildwand mit Fächern, Mosaik dicht",
+      "Grand Beau-Rivage": "Mosaik und Filmstreifen",
+      "Waldhotel Doldenhorn": "Mosaik",
+      "Carlton-Europe": "grosse Zahlen zählen hoch"
+     },
+     "ueberleitung": "Jeder dieser Abende hatte sein eigenes Plakat."
+    },
+    {
+     "teil": "plakate",
+     "titel": "Jeder Abend hat sein Plakat.",
+     "satz": "Die Plakatwand: alle Plakate seit 2024 Wand an Wand geklebt, das neueste gross, darunter je ein Band in der Akzentfarbe dieses Abends mit dem Datum.",
+     "bilder": [
+      "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg",
+      "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+      "_quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg",
+      "_quelle/extern/ig/2025-05-17_culinarium_hannover_DJw8OqGMY1G-1.jpg",
+      "_quelle/extern/ig/2025-02-04_culinarium_hannover_DFqbLG2s_dc-1.jpg",
+      "_quelle/extern/ig/2024-11-06_culinarium_hannover_DCCf-ikoaGs-1.jpg"
+     ],
+     "baustein": "neu: Die Plakatwand",
+     "quelle": "neu",
+     "skizze": "Die Akzentfarbe der Seite folgt dem Plakat des nächsten Abends (Kundenprofil Blatt 5: Eisblau, Orange, Grasgrün, Nachtblau, Ochsenblut, Sepia). Rechte und Herkunft der Illustrationen sind offen; ohne Rudis Bestätigung kommt die Wand nicht online.",
+     "bewegung": "Als Fläche gemeinsam; Glanzstreif einmal je Plakat.",
+     "flaeche": "tapete",
+     "einfall": "«Jedes Plakat seit 2023 folgt demselben System» (befund.md): Illustration oben, das Band mit der Wortmarke unten, eine Akzentfarbe je Abend. Im Profil sieht das aus wie eine Sammlung. Die Seite nimmt die Sammlung ernst.",
+     "komposition": "Ein grosses Plakat, fünf kleine, ohne Lücke geklebt wie an einer Litfasssäule. Ein Plakat antippen: Datum, Menü und Drinks dieses Abends, soweit belegt.",
+     "moment": "Die Wand kommt gemeinsam herauf, danach läuft einmal ein Glanzstreif über das Papier, Plakat für Plakat.",
+     "unterschied": "Kein Haus hatte ein Archiv seiner eigenen Ankündigungen. Es sind keine losen Abzüge auf Tapete, sondern geklebte Plakate ohne Lücke, keines gekippt.",
+     "bisher": {
+      "Carlton-Europe": "Abzüge als Stapel",
+      "Landgasthof Ruedihus": "Abzüge landen, Chronik",
+      "Hotel Seiler au Lac": "Abzüge",
+      "Berghotel Gasterntal": "Abzüge landen"
+     },
+     "ueberleitung": "Hinter den Plakaten stehen dieselben Leute, Abend für Abend."
+    },
+    {
+     "teil": "familie",
+     "titel": "Wenn aus Freunden und Kollegen Familie wird.",
+     "satz": "Der Film mit der ganzen Mannschaft an der Theke steht in der Mitte, quadratisch und gross; daneben das Bild der drei vor dem Negroni-Schriftzug und die Namen mit ihren Aufgaben im Band.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/63873.jpg",
+      "_quelle/dirty-chicken/video/2026-06-03_dirtychicken.hannover_DZIjZWNCGZT-3.mp4"
+     ],
+     "baustein": "Das Paar, mit Film",
+     "quelle": "neu",
+     "skizze": "Der Film ist von Dirty Chicken, die Leute sind dieselben. Wer auf dem Foto 63873 wer ist, ist nicht belegt; Derya als «Gastgeberin» steht so in fakten.json für 2024, ihre heutige Rolle ist offen.",
+     "bewegung": "Anstossen; Film spielt einmal beim Sichtbarwerden, steht dann.",
+     "flaeche": "hell",
+     "einfall": "«Wenn aus Freunden und Kollegen Familie wird. Dann haste allet richtig jemacht!» (Rudi mit Dirty Chicken, Beitrag DZIjZWNCGZT, 03.06.2026). Der Satz ist die Überschrift, der Film ist das Gruppenbild.",
+     "komposition": "Ein bewegtes Gruppenbild statt drei Porträts nebeneinander. Der Film läuft einmal, wenn er ganz zu sehen ist, und bleibt auf dem letzten Bild stehen; antippen spielt ihn noch einmal. Ton aus.",
+     "moment": "Film und Foto stossen aneinander an; das Band mit den Namen rollt.",
+     "unterschied": "Die Menschen kommen als Film, nicht als Porträt-Trio. Beim Schäfli steht die Familie als Bildgruppe mit drei Porträts.",
+     "bisher": {
+      "Taverne zum Schäfli": "Familie: drei Porträts, verschränkt",
+      "Salt & Silver": "Gründer im Willkommen",
+      "Grand Beau-Rivage": "Gastgeber im Willkommen"
+     },
+     "ueberleitung": "Und dieselben Leute haben noch eine zweite Küche."
+    },
+    {
+     "teil": "dirtychicken",
+     "titel": "Dit is wahre Liebe.",
+     "satz": "Rudis zweite Küche als eingelegtes Blatt in eigener Farbe: der Eröffnungsfilm hochkant wie ein Handy in der Mitte, links und rechts je ein Bild aus dem Profil, darunter ein Knopf zu Dirty Chicken.",
+     "bilder": [
+      "_quelle/dirty-chicken/ig/2026-06-03_dirtychicken.hannover_DZId0KMoAtq-1.jpg",
+      "_quelle/dirty-chicken/ig/2026-06-13_dirtychicken.hannover_DZiug6EoMRr-1.jpg",
+      "_quelle/dirty-chicken/ig/2026-06-03_dirtychicken.hannover_DZIo4FHIqRR-1.jpg",
+      "_quelle/dirty-chicken/video/2026-06-06_dirtychicken.hannover_DZPYEOJIfVb-1.mp4"
+     ],
+     "baustein": "neu: Die Beilage",
+     "quelle": "neu",
+     "skizze": "Der Film trägt das Logo von Dirty Chicken am Anfang und am Ende eingebrannt; das passt hier, weil das Kapitel Dirty Chicken heisst. Ob es dazu eine eigene Seite oder eine eigene Adresse gibt, ist offen (Robert bot im Juli beides an). Farben und Logo als Vektor: offen.",
+     "bewegung": "Hochschweben, Film spielt beim Sichtbarwerden; Anstossen der Bilder an den Film.",
+     "flaeche": "dc",
+     "einfall": "«Dit is wahre Liebe!» und «Dirty Food & Dirty Drinks. Jenau meen Ding wa» (Beiträge DZiug6EoMRr, DZIo4FHIqRR). Dirty Chicken spricht anders als Culinarium; das Kapitel darf das auch.",
+     "komposition": "Ein Blatt in der Farbe von Dirty Chicken mitten in der Culinarium-Seite, wie eine Beilage in einem Heft. Der Film ist das Herz, die Bilder rahmen ihn.",
+     "moment": "Der Film steigt herauf und startet, die beiden Bilder stossen links und rechts an ihn an.",
+     "unterschied": "Zum ersten Mal ein zweites Konzept mit eigener Farbe mitten auf der Seite, nicht als Schwesterhaus im Fuss.",
+     "bisher": {
+      "Taverne zum Schäfli": "Schwesterhaus als Kapitel und im Fuss",
+      "Salt & Silver": "Bühne der Häuser, je Haus andere Anordnung",
+      "Wirtschaft am Schlössli": "Familie im Fuss"
+     },
+     "ueberleitung": "Was sie sonst noch machen, steht hier, sobald sie es erzählen."
+    },
+    {
+     "teil": "betriebe",
+     "titel": "Für Betriebe.",
+     "satz": "Platz gehalten für «Schulungen, Events, Consulting», die heute nur im Namen des Instagram-Profils stehen. Kommt erst auf die Seite, wenn Rudi sagt, was dahinter steht.",
+     "bilder": [
+      "_quelle/vom-kunden/36829.jpg",
+      "_quelle/vom-kunden/drive/52799.mp4"
+     ],
+     "baustein": "offen",
+     "quelle": "neu",
+     "bewegung": "offen",
+     "flaeche": "matt",
+     "einfall": "Name des Profils: «Food Pairing | Schulungen | Events | Consulting» (_qa/spaeher/ig-profil-rechner.txt). Belegt ist davon nur die Schulung als Teil des Abends.",
+     "komposition": "Nur als Platzhalter auf dem Board. Rudis Film 52799 (Tageslicht, Teller zum Teilen mit Auster und Ente) und das Küchenbild 36829 könnten hierher gehören; zu welchem Konzept sie gehören, ist offen.",
+     "moment": "keiner, solange kein Inhalt da ist",
+     "unterschied": "Hier steht noch nichts; es wird nichts dazuerfunden.",
+     "bisher": {
+      "Taverne zum Schäfli": "Feiern als Rechner",
+      "Wirtschaft am Schlössli": "Feiern als Rechner nach Anlass"
+     },
+     "ueberleitung": "Zum Schluss das Wichtigste: der nächste Abend."
+    },
+    {
+     "teil": "naechster",
+     "titel": "Der nächste Abend.",
+     "satz": "Zum Schluss wieder ein Paar: zwei Gläser, die sich berühren, und das Licht der Bar von draussen. Dazwischen das Band mit dem nächsten Datum, dem Preis und dem Knopf.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/4026.jpg",
+      "_quelle/vom-kunden/drive/3998.jpg"
+     ],
+     "baustein": "Das Paar mit Band",
+     "quelle": "neu",
+     "skizze": "Welches Ticketsystem kommt, entscheidet Robert mit Rudi (Vergleich in Kundenprofil Blatt 9). Stornoregel im Wortlaut aus den Beiträgen, rechtlich erst mit AGB.",
+     "bewegung": "Anstossen; Band aus dem Schlitz; Knopf ohne Verzögerung.",
+     "flaeche": "dunkel",
+     "einfall": "Heute: «Tickets ausschließlich per Vorverkauf über PayPal. Schreibt uns hierzu gerne eine Nachricht» (DbYnkdkjrNy). Die Seite macht daraus einen Knopf; ausgebucht führt er auf die Warteliste.",
+     "komposition": "Paar aus Anstossen (4026) und Fenster der Bar bei Nacht (3998), in der Mitte das Band. Preis nur zusammen mit dem Datum, aus einer Quelle für Seite und Ticket; zuletzt 89,00 EUR (März und September 2026).",
+     "moment": "Die Gläser links stossen an das Fenster rechts an; das Band rollt, der Knopf ist sofort da.",
+     "unterschied": "Der Schluss ist ein Termin, kein Abschied und keine zweite Buchungsleiste eines Hotels.",
+     "bisher": {
+      "Grand Beau-Rivage": "Einladung mit zweiter Buchungsleiste, Bewertungen",
+      "Carlton-Europe": "Einladung, Ticket",
+      "Taverne zum Schäfli": "«Wir fahren Sie wieder zurück.»"
+     },
+     "ueberleitung": null
+    }
+   ]
+  },
+  {
+   "seite": "abend.html",
+   "titel": "Der Abend",
+   "szenen": [
+    {
+     "teil": "Kopf",
+     "satz": "Ein Paar im Kopf wie auf der Startseite, andere Bilder: Teller und Glas des nächsten Menüs.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/5045.jpg",
+      "_quelle/vom-kunden/drive/4858.jpg"
+     ]
+    },
+    {
+     "teil": "Ablauf",
+     "satz": "Was an so einem Abend passiert, in der Reihenfolge, wie Culinarium es schreibt: drei Gänge, fünf Drinks, Tasting und Schulung. Nur Belegtes.",
+     "bilder": []
+    },
+    {
+     "teil": "Menü",
+     "satz": "Rudis Zeilen in vier Wörtern, je Gang mit dem Drink daneben; eine Quelle für Seite, PDF und Plakat.",
+     "bilder": []
+    },
+    {
+     "teil": "Buchen",
+     "satz": "Datum, Plätze, Preis, Platz sichern oder Warteliste, Stornoregel im Wortlaut.",
+     "bilder": []
+    }
+   ]
+  },
+  {
+   "seite": "plakate.html",
+   "titel": "Alle Abende",
+   "szenen": [
+    {
+     "teil": "Kopf",
+     "satz": "Die Plakatwand gross, alle Plakate seit 2023, auch die Pop-ups «BY MOMO X CHRISTOPH».",
+     "bilder": [
+      "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg"
+     ]
+    },
+    {
+     "teil": "Je Abend",
+     "satz": "Datum, Plakat, Menü und Drinks, soweit belegt; Preise nur mit Datum.",
+     "bilder": [
+      "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+      "_quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "leute.html",
+   "titel": "Momo x Rudi",
+   "szenen": [
+    {
+     "teil": "Kopf",
+     "satz": "Das Paar Bar | Küche wie im Auftakt, in anderen Bildern.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/3823.jpg",
+      "_quelle/vom-kunden/36740.png"
+     ]
+    },
+    {
+     "teil": "Wer was macht",
+     "satz": "Texte erst aus dem Gespräch mit Rudi; keine Zeile aus Instagram-Bios übernehmen.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/63873.jpg"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "dirty-chicken.html",
+   "titel": "Dirty Chicken",
+   "szenen": [
+    {
+     "teil": "Kopf",
+     "satz": "In der Farbe von Dirty Chicken; Opening-Film, Bilder aus dem Profil.",
+     "bilder": [
+      "_quelle/dirty-chicken/ig/2026-06-03_dirtychicken.hannover_DZIo4FHIqRR-1.jpg"
+     ]
+    },
+    {
+     "teil": "Offen",
+     "satz": "Kapitel, eigene Unterseite oder eigene Adresse: entscheidet Robert mit Rudi.",
+     "bilder": []
+    }
+   ]
+  },
+  {
+   "seite": "anfahrt.html",
+   "titel": "Haasemannstraße 13",
+   "szenen": [
+    {
+     "teil": "Kopf",
+     "satz": "Das Schild der Bar bei Nacht, Adresse gross.",
+     "bilder": [
+      "_quelle/vom-kunden/drive/4096.jpg"
+     ]
+    },
+    {
+     "teil": "Weg",
+     "satz": "Adresse und Plus Code; Anreise-Angaben gibt es heute keine, also nur, was Rudi liefert.",
+     "bilder": []
+    }
+   ]
+  },
+  {
+   "seite": "impressum.html · datenschutz.html · agb.html",
+   "titel": "Rechtstexte",
+   "szenen": [
+    {
+     "teil": "Inhalt",
+     "satz": "Erst mit Vertragspartner, Anschrift und Stornoregel; heute gibt es keine Rechtstexte.",
+     "bilder": []
+    }
+   ]
+  }
+ ],
+ "gestrichen": [
+  {
+   "was": "Die Seite als Zeitschrift mit Ausgaben",
+   "grund": "Plakate nur in Instagram-Grösse, Rechte an den Illustrationen offen, Grafik statt Foto im Auftakt. Bleibt als Kapitel «Plakatwand»."
+  },
+  {
+   "was": "Jeder Mensch ein eigenes Kapitel",
+   "grund": "Keine Texte über die drei, wer auf welchem Foto ist, ist nicht belegt. Die Menschen tragen die Gänge, das Familien-Video ist ihr Kapitel."
+  },
+  {
+   "was": "Ein Plakat als Auftakt",
+   "grund": "Zu klein für die volle Breite, Rechte offen, und Robert will im Auftakt echte Fotos."
+  },
+  {
+   "was": "Plakate als Fächer, leicht gekippt",
+   "grund": "Kacheln und Bilder werden nie gekippt (Website-Bau Kern, Abschnitt 4)."
+  },
+  {
+   "was": "Mehr als ein Fenster",
+   "grund": "Fenster als Übergang steht bei sieben Häusern; hier reicht das eine Loch in der Wand, die übrigen Übergänge macht das Paar."
+  },
+  {
+   "was": "Preis im Auftakt",
+   "grund": "Kein Preis im Auftakt (Website-Bau Kern, Abschnitt 4). Der Preis steht nur beim nächsten Abend, mit Datum."
+  },
+  {
+   "was": "Falstaff-Punkte als Siegel oder Laufband",
+   "grund": "Die 91 Punkte gehören der Bar, nicht Culinarium; nur mit Freigabe der Bar und dann als Satz, nie als Siegel."
+  },
+  {
+   "was": "Kerzen, die flackern",
+   "grund": "Erfundener Effekt; die Kerzen leuchten auf den Fotos schon."
+  },
+  {
+   "was": "Filme als Hintergrund einer Fläche",
+   "grund": "Regel 55: Filme stehen als Bild, spielen einmal, nie in Dauerschleife hinter Text."
+  },
+  {
+   "was": "Bilder von Gästen aus Instagram",
+   "grund": "Luisa Verfürth, Hannover Eats und Gäste nie auf der Seite; die Tafel nimmt nur Bilder aus Rudis Ordner."
+  },
+  {
+   "was": "Das Private Dining der Bar",
+   "grund": "Fremdes Angebot am selben Tisch; gehört nicht auf die Seite von Culinarium."
+  }
+ ],
+ "offen": [
+  {
+   "punkt": "Leitbild-Paar für den Auftakt",
+   "wo": "Robert wählt: A Momo | Rudi (4568 | 5301), B Glas | Teller (5369 | 5379), C Tafel allein (4972)."
+  },
+  {
+   "punkt": "Wer ist wer auf den Fotos",
+   "wo": "Rudi, Momo, Derya sind auf vielen Bildern, aber nirgends benannt; Zuordnung vor jeder Bildzeile mit Rudi klären."
+  },
+  {
+   "punkt": "Rechte an Rudis Bildern",
+   "wo": "Fotograf je Datei unbekannt (focusonbiz_hannover, Irina Voronov oder andere); _quelle/vom-kunden/drive/herkunft.json."
+  },
+  {
+   "punkt": "Rechte und Herkunft der Plakat-Illustrationen",
+   "wo": "Kundenprofil Blatt 5; ohne Bestätigung keine Plakatwand online."
+  },
+  {
+   "punkt": "Nächster Termin und Ticketsystem",
+   "wo": "Profil 25.10.2026 ohne Ankündigung; Vergleich in Kundenprofil Blatt 9."
+  },
+  {
+   "punkt": "Dirty Chicken: Kapitel, Unterseite oder eigene Adresse",
+   "wo": "Beide Filme sind von @dirtychicken.hannover, Logo im Opening-Film eingebrannt; Logo als Vektor und Farben fehlen."
+  },
+  {
+   "punkt": "Film 52799.mp4",
+   "wo": "Tageslicht, Teller zum Teilen mit Auster und Ente am Fenster: zu welchem Konzept er gehört, ist nicht belegt."
+  },
+  {
+   "punkt": "Schulungen, Events, Consulting",
+   "wo": "Nur der Profilname; Inhalte von Rudi."
+  },
+  {
+   "punkt": "Vegetarisch als fester Standard",
+   "wo": "Dezember 2025 Ente, «auch in Veggie möglich» (DSnlBLECGyD)."
+  },
+  {
+   "punkt": "Freigabe der Bar",
+   "wo": "Bilder mit dem Schild WILD SIDE, Falstaff, Nennung als Gastgeber."
+  },
+  {
+   "punkt": "Vertragspartner und Impressum",
+   "wo": "fakten.json › rechtstraeger."
+  },
+  {
+   "punkt": "Fünf Dateien fehlen",
+   "wo": "115351, 115389, 115442, 115445, 36541 (.jpg): nicht freigegeben, nicht im Ordner «Robert tasty»."
+  },
+  {
+   "punkt": "4128.jpg ist ein HEIC-Bild",
+   "wo": "Aus Mail 1a16c05a4695979d, Endung .jpg, Inhalt HEIC; öffnet mit sips, nicht mit jedem Werkzeug."
+  },
+  {
+   "punkt": "Markenbuch fehlt",
+   "wo": "Stationen 04 und 05 liegen nicht vor; Farben vorläufig aus den Plakaten (#FAF4F4, #3A3845), Akzent aus den Fotos gemessen, Titelschrift Fraunces wie beim Späher."
+  }
+ ],
+ "farbwelt": "vorläufig aus den Plakaten: Warmweiss #FAF4F4, Schiefer-Violett #3A3845; Akzent Kerzenlicht #CF7233 aus den Fotos 4004, 3887, 3858 gemessen (Station 05 fehlt)",
+ "familie_machart": null,
+ "bisherige_haeuser": {
+  "Grand Beau-Rivage": "http://localhost:8940/",
+  "Carlton-Europe": "https://carlton-europe-entwurf.vercel.app/",
+  "Hotel Seiler au Lac": "http://localhost:8921/",
+  "Waldhotel Doldenhorn": "https://waldhotel-doldenhorn-entwurf.vercel.app/",
+  "Landgasthof Ruedihus": "https://landgasthof-ruedihus-entwurf.vercel.app/",
+  "Berghotel Gasterntal": "https://berghotel-gasterntal-entwurf.vercel.app/",
+  "Salt & Silver": "https://salt-and-silver-studie.vercel.app/",
+  "Taverne zum Schäfli": "http://127.0.0.1:8978/haus/Taverne%20zum%20Sch%C3%A4fli%20Wigoltingen/_kette/06-konzepter/konzept.html",
+  "Wirtschaft am Schlössli": "http://127.0.0.1:8978/haus/Wirtschaft%20am%20Schl%C3%B6ssli%20Bottighofen/_kette/06-konzepter/konzept.html",
+  "Zurbriggen Wellness": "http://127.0.0.1:8978/haus/Zurbriggen%20Wellnesshotel%20Saas-Almagell/_kette/06-konzepter/konzept.html",
+  "Zurbriggen Monte-Moro": "http://127.0.0.1:8978/haus/Zurbriggen%20Hotel%20Monte-Moro%20Saas-Almagell/_kette/06-konzepter/konzept.html"
+ },
+ "stand": "26.10.2026, auf Roberts Auftrag im Chat vor den Stationen 04 und 05"
+}

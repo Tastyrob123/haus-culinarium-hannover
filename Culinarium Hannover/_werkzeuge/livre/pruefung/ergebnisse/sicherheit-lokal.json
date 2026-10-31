@@ -1,0 +1,77 @@
+[
+ {
+  "t": "Fremder Host → 421",
+  "ok": true,
+  "m": "421"
+ },
+ {
+  "t": "Fremde Herkunft (Origin) → 403",
+  "ok": true,
+  "m": "403"
+ },
+ {
+  "t": "Fremde Herkunft (Sec-Fetch-Site) → 403",
+  "ok": true,
+  "m": "403"
+ },
+ {
+  "t": "Fehlerbericht über 8 KB → 413",
+  "ok": true,
+  "m": "413"
+ },
+ {
+  "t": "Prüfung über 46 MB → 413",
+  "ok": true,
+  "m": "413"
+ },
+ {
+  "t": "Kein JSON → 415",
+  "ok": true,
+  "m": "415"
+ },
+ {
+  "t": "Kaputtes JSON → 400 mit Stichwort",
+  "ok": true,
+  "m": "(400, b'{\"fehler\":\"EINGABE \\xc2\\xb7 Die Anfrage ist kein lesbares JSON.\"}')"
+ },
+ {
+  "t": "Leere Prüfung → 400 «DATEI · Keine Datei angekommen»",
+  "ok": true,
+  "m": "(400, '{\"fehler\":\"DATEI · Keine Datei angekommen.\"}')"
+ },
+ {
+  "t": "Unbekanntes Foto → 400 «BILD · …»",
+  "ok": true,
+  "m": "(400, '{\"fehler\":\"BILD · Dieses Foto gibt es nicht.\"}')"
+ },
+ {
+  "t": "Unbekannte Grösse → 400 «FORMAT · …»",
+  "ok": true,
+  "m": "400"
+ },
+ {
+  "t": "Unbekannter Weg → 400/404 mit Stichwort",
+  "ok": true,
+  "m": "400"
+ },
+ {
+  "t": "Gesperrte Pfade (24) → 404",
+  "ok": true,
+  "m": "alle 404"
+ },
+ {
+  "t": "Erlaubte Wege (9) → 200",
+  "ok": true,
+  "m": "alle 200"
+ },
+ {
+  "t": "Sicherheitskopfzeilen (nosniff, SAMEORIGIN, Referrer)",
+  "ok": true,
+  "m": "{'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN'}"
+ },
+ {
+  "t": "Zu viele Prüfungen → 429 mit Retry-After",
+  "ok": true,
+  "m": "16× 415, dann 7× 429, Retry-After 60"
+ }
+]

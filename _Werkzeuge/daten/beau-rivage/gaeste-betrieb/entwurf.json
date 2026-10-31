@@ -1,0 +1,221 @@
+{
+ "fassung": 1,
+ "anfragen": [
+  {
+   "id": "b-hochzeit",
+   "v": 1,
+   "zeit": "2026-10-12T21:27:35+07:00",
+   "art": "feier",
+   "name": "Nicole und Stefan Brunner",
+   "kontakt": "n.brunner@example.ch",
+   "datum": "Samstag, 12. Juni 2027",
+   "personen": 90,
+   "anliegen": "Hochzeit mit rund 90 Gästen: Apéro im Garten, Abendessen im Ballsaal «La Belle Epoque», Zimmer für etwa 20 Gäste. Wünschen ein Angebot und einen Termin zur Besichtigung.",
+   "sprache": "de",
+   "gespraech": "bspbhochzeit",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Guten Tag, wir heiraten am Samstag, 12. Juni 2027, und suchen einen Ort für rund 90 Gäste. Uns gefällt der Ballsaal «La Belle Epoque». Ist ein Apéro im Garten davor möglich? Etwa 20 Gäste würden auch übernachten."
+    },
+    {
+     "rolle": "assistant",
+     "text": "Gerne gebe ich Ihre Anfrage an das Team weiter. Nennen Sie mir dafür bitte Ihren Namen und eine E-Mail-Adresse oder Telefonnummer."
+    },
+    {
+     "rolle": "user",
+     "text": "Nicole und Stefan Brunner, n.brunner@example.ch. Wir würden den Saal gern vorher ansehen."
+    },
+    {
+     "rolle": "assistant",
+     "text": "Danke, Ihre Anfrage liegt beim Team des Grand Beau-Rivage Interlaken. Wir melden uns persönlich bei Ihnen."
+    }
+   ],
+   "status": "neu",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-tisch",
+   "v": 1,
+   "zeit": "2026-10-12T19:43:35+07:00",
+   "art": "tisch",
+   "name": "Hiroshi Tanaka",
+   "kontakt": "h.tanaka@example.com",
+   "datum": "Samstag, 14. November 2026, 19 Uhr",
+   "personen": 4,
+   "anliegen": "Tisch für vier im Restaurant «La Petite Suisse», Käsefondue. Eine Person isst vegetarisch, ein Fensterplatz wäre schön.",
+   "sprache": "en",
+   "gespraech": "bspbtisch",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Good evening, could we have a table for four at La Petite Suisse on Saturday, 14 November, at 7 pm? We would love to try the cheese fondue. One of us is vegetarian. A table by the window would be wonderful."
+    },
+    {
+     "rolle": "assistant",
+     "text": "I will gladly pass your request on to the team. May I have your name and an e-mail address or phone number?"
+    },
+    {
+     "rolle": "user",
+     "text": "Hiroshi Tanaka, h.tanaka@example.com"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Thank you, your request is with the team of the Grand Beau-Rivage Interlaken. We will get back to you personally."
+    }
+   ],
+   "status": "neu",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-tagung",
+   "v": 2,
+   "zeit": "2026-10-12T00:01:35+07:00",
+   "art": "tagung",
+   "name": "Andrea Keller",
+   "kontakt": "andrea.keller@example.ch",
+   "datum": "3. und 4. Februar 2027",
+   "personen": 18,
+   "anliegen": "Zweitägige Klausur mit 18 Personen, Ganztagespauschale, am liebsten im Raum «Jungfrau». Dazu zwölf Einzelzimmer für eine Nacht und ein gemeinsames Abendessen.",
+   "sprache": "de",
+   "gespraech": "bspbtagung",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Guten Tag, wir planen am 3. und 4. Februar 2027 eine Klausur mit 18 Personen. Uns interessiert die Ganztagespauschale, am liebsten im Raum «Jungfrau». Wir bräuchten zwölf Einzelzimmer für die Nacht dazwischen und ein gemeinsames Abendessen. Andrea Keller, andrea.keller@example.ch"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Danke, Ihre Anfrage liegt beim Team des Grand Beau-Rivage Interlaken. Wir melden uns persönlich bei Ihnen."
+    }
+   ],
+   "status": "gelesen",
+   "entwurf": {
+    "betreff": "Ihre Anfrage für die Klausur am 3. und 4. Februar 2027",
+    "text": "Guten Tag Frau Keller\n\nVielen Dank für Ihre Anfrage und Ihr Interesse am Grand Beau-Rivage. Gerne unterbreiten wir Ihnen ein Angebot für Ihre Klausur.\n\nDer Raum «Jungfrau» liegt in der 6. Etage und bietet Platz für bis zu 50 Personen. Er hat Tageslicht und einen offenen Dachstuhl, ist schallisoliert und mit einem Belüftungssystem ausgestattet. Für 18 Personen eignet sich je nach Bestuhlung zum Beispiel die U-Form (bis 32 Personen) oder die parlamentarische Bestuhlung (bis 40 Personen). Ob der Raum an Ihren beiden Tagen frei ist: [VERFÜGBARKEIT PRÜFEN]\n\nDie Ganztagespauschale kostet CHF 94 pro Person. Sie umfasst:\n- den Tagungsraum mit der gewünschten Bestuhlung\n- pro Person einen Block mit Stift\n- Mineralwasser im Tagungsraum\n- Kaffeepause am Vormittag und am Nachmittag\n- Mittagessen als 3-Gänge-Menü\n- auf Ihre Bedürfnisse abgestimmte Technik im Raum\n\nBeamer, Leinwand, Flipchart und Pinnwand sind in der Pauschale enthalten.\n\nFür die Nacht vom 3. auf den 4. Februar 2027 prüfen wir zwölf Einzelzimmer (16 m², Grand-Lit 1,40 x 2,00 m, teilweise mit Balkon): [VERFÜGBARKEIT PRÜFEN]. Den Zimmerpreis nennt das Buchungssystem des Hauses zu Ihrem Datum: [Zimmerpreis für 3. Februar 2027 ergänzen]\n\nFür das gemeinsame Abendessen stellen wir Ihnen gerne einen Vorschlag zusammen. Im Winter ist ein Abendessen neben dem offenen Kaminfeuer möglich, ganzjährig im Restaurant «L'Ambiance». [Ort, Menü und Preis für das Abendessen festlegen]\n\nDamit wir Ihnen ein vollständiges Angebot machen können, bräuchten wir noch einige Angaben:\n- Wie viele Tage soll die Ganztagespauschale gelten: nur am 3. Februar, an beiden Tagen oder je nach Programm auch nur halbtags?\n- Welche Bestuhlung wünschen Sie (zum Beispiel U-Form oder parlamentarisch)?\n- Welche Technik oder welches Equipment brauchen Sie über Beamer, Leinwand, Flipchart und Pinnwand hinaus?\n- Wie viele Personen nehmen am Abendessen teil, und gibt es Unverträglichkeiten oder besondere Wünsche?\n- Wann reisen Ihre Gäste an und wann wird am 4. Februar abgereist?\n\nSie erreichen unser Event-Team unter +41 33 826 70 21 oder meeting@grandbeaurivage.ch.\n\nFreundliche Grüsse\n\n[Name], Grand Beau-Rivage Interlaken, Höheweg 211, 3800 Interlaken, +41 33 826 70 07, info@grandbeaurivage.ch",
+    "team": "Grundlage: feiern-tagen.html (Raum «Jungfrau», Ganztagespauschale CHF 94, Inhalte der Pauschale, Bestuhlung); zimmer.html (Einzelzimmer, Hinweis zu Zimmerpreisen); essen-trinken.html und feiern-tagen.html (Abendessen im Winter am Kamin oder im «L'Ambiance»); Vorlage 07-anfrage-feiern-tagen (Anrede, Ton, Kontakt des Event-Teams).\n\nOffen:\n- Verfügbarkeit des Raums «Jungfrau» am 3. und 4. Februar 2027 und von zwölf Einzelzimmern prüfen.\n- Zimmerpreis für den 3. Februar 2027 aus dem Buchungssystem ergänzen. Ich habe keinen Gesamtpreis gerechnet.\n- Abendessen: Ort, Menü und Preis festlegen. In WISSEN gibt es dafür keine Pauschale.\n- Unklar, ob die Ganztagespauschale für einen oder beide Tage gilt. In der Anfrage steht nur «Ganztagespauschale», daher die Rückfrage. Gesamtpreis daher nicht genannt.\n- Nach dem Dank für die Anfrage ist die Mail ein Entwurf für ein Angebot. Angebot vor dem Senden freigeben.\n- Die Anrede «Guten Tag Frau Keller» ist angenommen, weil Anrede und Geschlecht in der Anfrage nicht angegeben sind. Bitte prüfen.\n- Absender-Name eintragen.",
+    "vorlage": "07-anfrage-feiern-tagen",
+    "absender": "meeting@grandbeaurivage.ch",
+    "art": "ki",
+    "zeit": "2026-10-12T21:51:53+07:00"
+   },
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-zimmer",
+   "v": 1,
+   "zeit": "2026-10-10T23:51:35+07:00",
+   "art": "zimmer",
+   "name": "Claire Dubois",
+   "kontakt": "claire.dubois@example.fr",
+   "datum": "27. bis 30. Dezember 2026",
+   "personen": 2,
+   "anliegen": "Drei Nächte zu zweit zum Hochzeitstag, wünscht ein persönliches Angebot für eine SPA Junior Suite mit einem Abendessen.",
+   "sprache": "fr",
+   "gespraech": "bspbzimmer",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Bonjour, nous souhaitons fêter notre anniversaire de mariage chez vous du 27 au 30 décembre. Pourriez-vous nous faire une offre pour une SPA Junior Suite avec un dîner ? Claire Dubois, claire.dubois@example.fr"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Merci, votre demande est transmise à l’équipe du Grand Beau-Rivage Interlaken. Nous reviendrons vers vous personnellement."
+    }
+   ],
+   "status": "erledigt",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  }
+ ],
+ "fragen": [
+  {
+   "id": "f-b-hochzeit",
+   "zeit": "2026-10-12T21:27:35+07:00",
+   "frage": "Guten Tag, wir heiraten am Samstag, 12. Juni 2027, und suchen einen Ort für rund 90 Gäste. Uns gefällt der Ballsaal «La Belle Epoque». Ist ein Apéro im Garten davor möglich? Etwa 20 Gäste würden auch übernachten.",
+   "antwort": "Danke, Ihre Anfrage liegt beim Team des Grand Beau-Rivage Interlaken. Wir melden uns persönlich bei Ihnen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Feiern und Tagen",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "b-hochzeit",
+   "gespraech": "bspbhochzeit",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-tisch",
+   "zeit": "2026-10-12T19:43:35+07:00",
+   "frage": "Good evening, could we have a table for four at La Petite Suisse on Saturday, 14 November, at 7 pm? We would love to try the cheese fondue. One of us is vegetarian. A table by the window would be wonderful.",
+   "antwort": "Thank you, your request is with the team of the Grand Beau-Rivage Interlaken. We will get back to you personally.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Essen und Trinken",
+   "sprache": "en",
+   "buchung": false,
+   "anfrage": "b-tisch",
+   "gespraech": "bspbtisch",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-tagung",
+   "zeit": "2026-10-12T00:01:35+07:00",
+   "frage": "Guten Tag, wir planen am 3. und 4. Februar 2027 eine Klausur mit 18 Personen. Uns interessiert die Ganztagespauschale, am liebsten im Raum «Jungfrau». Wir bräuchten zwölf Einzelzimmer für die Nacht dazwischen und ein gemeinsames Abendessen. Andrea Keller, [E-Mail]",
+   "antwort": "Danke, Ihre Anfrage liegt beim Team des Grand Beau-Rivage Interlaken. Wir melden uns persönlich bei Ihnen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Essen und Trinken",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "b-tagung",
+   "gespraech": "bspbtagung",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-zimmer",
+   "zeit": "2026-10-10T23:51:35+07:00",
+   "frage": "Bonjour, nous souhaitons fêter notre anniversaire de mariage chez vous du 27 au 30 décembre. Pourriez-vous nous faire une offre pour une SPA Junior Suite avec un dîner ? Claire Dubois, [E-Mail]",
+   "antwort": "Merci, votre demande est transmise à l’équipe du Grand Beau-Rivage Interlaken. Nous reviendrons vers vous personnellement.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Feiern und Tagen",
+   "sprache": "fr",
+   "buchung": false,
+   "anfrage": "b-zimmer",
+   "gespraech": "bspbzimmer",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  }
+ ],
+ "zaehler": {
+  "tag": "2026-10-12",
+  "gesamt": 0,
+  "entwurf": 1,
+  "gespraeche": {},
+  "monate": {
+   "2026-10": {
+    "aufrufe": 1,
+    "ein": 1018,
+    "schreiben": 62207,
+    "lesen": 0,
+    "aus": 1792,
+    "usd": 0.175474,
+    "ohne_preis": 0
+   }
+  },
+  "ki": {
+   "stand": "ok",
+   "text": "",
+   "zeit": "2026-10-12T21:51:53+07:00"
+  }
+ }
+}

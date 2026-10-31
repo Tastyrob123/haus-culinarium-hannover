@@ -1,0 +1,230 @@
+/* Culinarium · Hero der Seite Dirty Chicken in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.dw{z-index:3;background:#8953A9}
+.dw>.wv[hidden]{display:none!important}
+.dwv{padding:0;background:#16141B}
+.dwv figure{margin:0}
+.dwv img{display:block;width:100%;height:100%;object-fit:cover}
+.dw .tap,.dw .dh.tap{background-color:#8953A9;background-image:url(zeichen/tapete-dc.svg);background-size:240px 240px}
+
+/* Grundform: randlos, ganzer erster Bildschirm */
+.dh{position:relative;height:max(100svh,640px);overflow:hidden;color:#FFF7EF;isolation:isolate}
+.dh-voll{position:absolute;inset:0}
+.dh-grund{position:absolute;inset:0;z-index:1;pointer-events:none}
+.dh-grund.unten{background:linear-gradient(to top,rgba(22,12,30,.86),rgba(22,12,30,.35) 36%,rgba(22,12,30,0) 62%),linear-gradient(to bottom,rgba(22,12,30,.5),rgba(22,12,30,0) 22%)}
+.dh-grund.unten.stark{background:linear-gradient(to top,rgba(22,12,30,.92),rgba(22,12,30,.5) 40%,rgba(22,12,30,0) 70%),linear-gradient(to bottom,rgba(22,12,30,.55),rgba(22,12,30,0) 24%)}
+.dh-grund.links{background:linear-gradient(to right,rgba(16,12,20,.9),rgba(16,12,20,.55) 40%,rgba(16,12,20,.1) 75%),linear-gradient(to top,rgba(16,12,20,.85),rgba(16,12,20,0) 45%)}
+.dh-t{font-family:var(--titel);font-weight:380;font-size:clamp(64px,9.4vw,168px);line-height:.88;letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;text-shadow:0 2px 40px rgba(20,8,30,.35);margin:0}
+.dh-satz{font-size:18px;line-height:1.5;max-width:520px;margin:22px 0 0;color:rgba(255,247,239,.9);text-shadow:0 1px 18px rgba(0,0,0,.4)}
+.dh .knoepfe{margin-top:26px}
+.dh-text{position:absolute;z-index:3;display:flex;flex-direction:column}
+.dh-text.unten-links{left:var(--rand);right:var(--rand);bottom:clamp(36px,7vh,84px)}
+.dh-text.unten-rechts{right:var(--rand);bottom:clamp(36px,7vh,84px);width:min(640px,52vw)}
+.dh-text.unten-mitte{left:50%;bottom:clamp(36px,6vh,72px);transform:translateX(-50%);width:min(980px,calc(100% - 2*var(--rand)));align-items:center;text-align:center}
+.dh-text.unten-mitte .dh-satz{margin-left:auto;margin-right:auto}
+
+/* 1 Die Platte */
+.d01-platte{position:absolute;left:calc(50% - 61vmax);top:calc(50% - 61vmax);width:122vmax;height:122vmax;animation:d01-dreh 160s linear infinite;will-change:transform}
+.d01-platte img{border-radius:50%}
+@keyframes d01-dreh{to{transform:rotate(360deg)}}
+
+/* 2 Der Biss */
+.d02-zoom img{transform-origin:50% 64%}
+html.js:not(.ruhig) .d02-zoom img{transform:scale(2.6);transition:transform 3.4s cubic-bezier(.65,0,.18,1) .25s}
+html.js .d02-zoom.da img{transform:none}
+.d02-zitat{position:absolute;z-index:3;left:0;right:0;top:calc(64px + clamp(28px,6vh,64px));text-align:center;font-family:var(--titel);font-weight:340;font-size:clamp(22px,2.3vw,36px);line-height:1.15;font-variation-settings:"SOFT" 100,"opsz" 72;color:#FFF7EF;text-shadow:0 1px 24px rgba(0,0,0,.6)}
+
+/* 3 Die Ansage */
+.d03{display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.4vh,16px);padding:64px 0 clamp(24px,5vh,56px)}
+.d03-r{overflow:hidden;white-space:nowrap}
+.d03-lauf{display:inline-flex;align-items:center;gap:.32em;font:340 clamp(44px,7.4vw,124px)/1 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:#E4CDF0;animation:d03-lauf 46s linear infinite;will-change:transform;padding-right:.32em}
+.r2 .d03-lauf{animation-direction:reverse;animation-duration:52s}
+.d03-b{display:inline-block;width:1.5em;height:.86em;border-radius:.16em;overflow:hidden;flex:none;box-shadow:0 10px 26px -12px rgba(30,10,40,.8)}
+.r2 .d03-b{width:.86em;height:.86em;border-radius:50%}
+@keyframes d03-lauf{to{transform:translateX(-50%)}}
+.d03>.dh-t{text-align:center;font-size:clamp(76px,13.2vw,230px);line-height:.92;color:#FFF7EF;margin:clamp(2px,1vh,10px) 0}
+.d03-fuss{display:flex;justify-content:center;align-items:center;gap:40px;padding:clamp(14px,3vh,34px) var(--rand) 0}
+.d03-fuss .dh-satz{margin:0;max-width:560px}
+.d03-fuss .knoepfe{margin:0;flex:none}
+
+/* 4 Durch das D */
+.d04{height:auto;min-height:0;overflow:visible}
+.dwv:has(.d04){overflow:clip}
+.d04{height:230vh}
+.d04-kleb{position:sticky;top:0;height:max(100svh,640px);overflow:hidden}
+.d04-zoom{position:absolute;inset:0;z-index:2;transform-origin:calc(50% + 12.9vh) calc(52% + 7.9vh);will-change:transform}
+.d04-deck{position:absolute;left:50%;top:52%;height:54vh;width:auto;aspect-ratio:652/712;transform:translate(-50%,-50%);overflow:visible}
+.d04-titel{position:absolute;inset:0;margin:0;font-family:var(--titel);font-weight:380;font-size:clamp(56px,8.6vw,150px);line-height:1;letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;pointer-events:none}
+.d04-titel .z{position:absolute;top:52%;translate:0 -58%}
+.d04-titel .l{right:calc(50% + 27vh + 2.2vw)}
+.d04-titel .r{left:calc(50% + 27vh + 2.2vw)}
+.d04-unten{position:absolute;left:50%;bottom:clamp(20px,4vh,44px);transform:translateX(-50%);width:min(900px,calc(100% - 2*var(--rand)));display:flex;align-items:center;justify-content:center;gap:34px}
+.d04-unten .dh-satz{margin:0;font-size:16px;max-width:520px;text-shadow:none}
+.d04-unten .knoepfe{margin:0;flex:none}
+.d04-tipp{position:absolute;z-index:3;left:50%;top:calc(64px + 18px);transform:translateX(-50%);color:rgba(255,247,239,.75);margin:0}
+
+/* 5 Die Bildspur */
+.d05{cursor:crosshair}
+.d05-spur{position:absolute;inset:0;z-index:1}
+.d05-k{position:absolute;width:clamp(130px,13vw,220px);aspect-ratio:4/5;padding:7px 7px 26px;background:#FFF7EF;border-radius:3px;box-shadow:0 26px 40px -22px rgba(25,6,40,.85);transform:rotate(var(--d));pointer-events:none}
+.d05-k img{border-radius:1px}
+.d05-k.neu{transform:translate(-50%,-50%) rotate(var(--d)) scale(.55);transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.d05-k.neu.da{transform:translate(-50%,-50%) rotate(var(--d))}
+.d05-mitte{position:absolute;z-index:3;left:50%;top:52%;transform:translate(-50%,-50%);width:min(860px,calc(100% - 2*var(--rand)));text-align:center;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.d05-mitte .dh-t{font-size:clamp(76px,12vw,210px);text-shadow:0 4px 50px rgba(40,10,60,.55)}
+.d05-mitte .dh-satz{margin-left:auto;margin-right:auto;background:#8953A9;padding:6px 10px;border-radius:4px;text-shadow:none}
+.d05-mitte .knoepfe{pointer-events:auto}
+.d05-tipp{position:absolute;z-index:3;right:var(--rand);bottom:22px;margin:0;color:rgba(255,247,239,.8)}
+
+/* 6 Der Bon */
+.d06 .dh-voll img{object-position:70% 50%}
+.d06-schlitz{position:absolute;z-index:3;left:calc(var(--rand) - 14px);top:64px;width:clamp(290px,25vw,380px);height:20px;background:linear-gradient(#08070A,#1E1C24);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(0,0,0,.6),inset 0 -2px 0 rgba(255,255,255,.07)}
+.d06-bon{position:absolute;z-index:2;left:var(--rand);top:72px;width:clamp(262px,23vw,352px);filter:drop-shadow(0 24px 30px rgba(0,0,0,.55))}
+html.js:not(.ruhig) .d06-bon{transform:translateY(-62%);transition:transform 2.6s steps(14,end) .3s}
+html.js .d06-bon.da{transform:none}
+.d06-papier{background:#FBF8F2;color:#2A2230;font:400 13px/1.55 var(--mono);padding:22px 22px 30px;rotate:-1.2deg;transform-origin:50% 0;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 9px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 9px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 9px repeat-x}
+.d06-papier p{margin:0 0 10px}
+.d06-papier b{font-weight:400}
+.d06-papier span{padding-left:2.2em;color:#6B5E73}
+.d06-papier hr{border:0;border-top:1.5px dashed #B9AFBF;margin:12px 0}
+.d06-kopf{text-align:center;font:400 24px/1 var(--titel)!important;letter-spacing:.08em;font-variation-settings:"SOFT" 100,"opsz" 72;color:#6A3A8C;margin-bottom:8px!important}
+.d06-mitte{text-align:center}
+.d06-summe{display:flex;justify-content:space-between;text-transform:uppercase;color:#6A3A8C}
+.d06-gruss{margin-top:16px!important;color:#6A3A8C}
+.d06 .dh-text .dh-t{font-size:clamp(64px,8.6vw,150px)}
+
+/* 7 Hingeknallt */
+.d07-k{position:absolute;z-index:1;aspect-ratio:4/5;border-radius:6px;overflow:hidden;box-shadow:0 34px 50px -26px rgba(25,6,40,.95);transform:rotate(var(--d))}
+html.js:not(.ruhig) .d07-k{transform:translateY(-34vh) rotate(calc(var(--d)*-2.4)) scale(1.18);transition:transform .9s cubic-bezier(.34,1.42,.5,1) calc(.25s + var(--i)*.16s)}
+html.js .d07-k.da{transform:rotate(var(--d))}
+.d07-mitte{position:absolute;z-index:3;left:50%;top:54%;transform:translate(-50%,-50%);width:min(820px,calc(100% - 2*var(--rand)));text-align:center;display:flex;flex-direction:column;align-items:center}
+.d07-mitte .dh-t{font-size:clamp(76px,11.6vw,200px);text-shadow:0 4px 50px rgba(40,10,60,.55)}
+.d07-mitte .dh-satz{margin-left:auto;margin-right:auto;background:#8953A9;padding:6px 10px;border-radius:4px;text-shadow:none}
+
+/* 8 Familie */
+.d08-bild{transform-origin:50% 42%;will-change:transform}
+.d08-zitat{position:absolute;z-index:3;right:var(--rand);bottom:clamp(40px,8vh,92px);width:min(420px,34vw);margin:0}
+.d08-zitat p{margin:0;font-family:var(--titel);font-weight:340;font-size:clamp(22px,2.1vw,32px);line-height:1.18;font-variation-settings:"SOFT" 100,"opsz" 72;text-shadow:0 1px 20px rgba(0,0,0,.6)}
+.d08 .dh-text.unten-links{right:auto;width:min(640px,55vw)}
+
+/* 9 Food & Drinks */
+.d09-h{position:absolute;top:0;bottom:0;width:50%;overflow:hidden}
+.d09-h.l{left:0}.d09-h.r{right:0}
+html.js:not(.ruhig) .d09-h.l{transform:translateX(-14%);transition:transform 1.5s cubic-bezier(.5,0,.15,1) .3s}
+html.js:not(.ruhig) .d09-h.r{transform:translateX(14%);transition:transform 1.5s cubic-bezier(.5,0,.15,1) .42s}
+html.js .d09-h.l.da,html.js .d09-h.r.da{transform:none}
+.d09-h figcaption{position:absolute;z-index:3;top:calc(64px + clamp(22px,4vh,44px));font:340 clamp(30px,3.6vw,58px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.d09-h.l figcaption{left:var(--rand)}.d09-h.r figcaption{right:var(--rand)}
+.d09-und{position:absolute;z-index:4;left:50%;top:31%;width:clamp(110px,12.5vw,200px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:#8953A9;color:#FFF7EF;font:300 clamp(72px,8.4vw,140px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;box-shadow:0 30px 60px -24px rgba(20,6,30,.9);transform:translate(-50%,-50%)}
+.d09-und{padding-bottom:.08em}
+
+/* 10 Der Automat */
+.d10-saeulen{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#16141B}
+.d10-s{overflow:hidden}
+.d10-zug{display:flex;flex-direction:column;gap:8px;animation:d10-hoch 40s linear infinite;will-change:transform}
+.d10-s.s1 .d10-zug,.d10-s.s3 .d10-zug{animation-name:d10-runter;animation-duration:46s}
+.d10-zug figure{aspect-ratio:4/5;flex:none;border-radius:4px;overflow:hidden}
+@keyframes d10-hoch{from{transform:translateY(0)}to{transform:translateY(calc(-50% - 4px))}}
+@keyframes d10-runter{from{transform:translateY(calc(-50% - 4px))}to{transform:translateY(0)}}
+.d10-schild{position:absolute;z-index:3;left:50%;top:calc(50% + 32px);transform:translate(-50%,-50%);width:min(720px,calc(100% - 2*var(--rand)));padding:clamp(30px,5vh,56px) clamp(26px,4vw,60px);border-radius:10px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:0 40px 90px -30px rgba(0,0,0,.9),0 0 0 8px #16141B}
+.d10-schild .dh-t{font-size:clamp(64px,8.4vw,140px);text-shadow:none}
+.d10-schild .dh-satz{margin-left:auto;margin-right:auto;text-shadow:none;font-size:17px}
+
+/* 11 Die Durchreiche */
+.d11{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:calc(64px + 2vh) var(--rand) 3vh;text-align:center}
+.d11>.dh-t{font-size:clamp(60px,8.4vw,146px);margin-bottom:clamp(14px,2.6vh,30px)}
+.d11-luke{position:relative;width:min(64vw,calc((100svh - 64px - 330px)*1.75),1040px);min-width:300px;aspect-ratio:16/9;padding:12px;border-radius:6px;background:linear-gradient(145deg,#C9C6CF,#77737E 45%,#A9A6B0);box-shadow:0 30px 60px -26px rgba(20,6,30,.9),inset 0 1px 0 rgba(255,255,255,.6)}
+.d11-film{width:100%;height:100%;overflow:hidden;border-radius:2px;background:#16141B;box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)}
+.d11-film video{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.d11-brett{width:min(70vw,calc((100svh - 64px - 330px)*1.75 + 80px),1120px);min-width:340px;height:14px;border-radius:3px;background:linear-gradient(#D8D5DD,#8D8994);box-shadow:0 16px 26px -10px rgba(20,6,30,.8)}
+.d11-unten{display:flex;align-items:center;gap:34px;margin-top:clamp(16px,3vh,34px);text-align:left}
+.d11-unten .dh-satz{margin:0;max-width:520px;font-size:16px;text-shadow:none}
+.d11-unten .knoepfe{margin:0;flex:none}
+
+/* 12 Leuchtschrift */
+.d12-bild img{transform:scale(1.04)}
+.d12-bild::after{content:"";position:absolute;inset:0;background:rgba(12,8,16,.68)}
+.d12-neon{position:absolute;z-index:2;left:50%;top:calc(50% - 30px);transform:translate(-50%,-50%);display:flex;align-items:center;gap:clamp(18px,2.4vw,40px);white-space:nowrap}
+.d12-d{height:clamp(110px,18vh,190px);width:auto;aspect-ratio:652/712;fill:none;stroke:#F6E3FF;stroke-width:95;stroke-linejoin:round;filter:drop-shadow(0 0 4px #E2B5FF) drop-shadow(0 0 18px #B266F0) drop-shadow(0 0 46px #8953A9)}
+.d12-neon .dh-t{font-weight:300;font-size:clamp(70px,10.4vw,180px);color:#FBF1FF;text-shadow:0 0 6px #F0CCFF,0 0 22px #C27BF5,0 0 60px #8953A9,0 0 110px rgba(137,83,169,.8)}
+.d12-neon .zl .z>span{transform:none!important}
+html.js:not(.ruhig) .d12-neon{opacity:.08}
+html.js .d12-neon.da{animation:d12-an 2.2s steps(1,end) .4s forwards}
+@keyframes d12-an{0%{opacity:.08}8%{opacity:1}11%{opacity:.15}20%{opacity:1}24%{opacity:.3}30%{opacity:.9}33%{opacity:.2}46%{opacity:1}100%{opacity:1}}
+.d12-unten{position:absolute;z-index:3;left:50%;bottom:clamp(30px,6vh,70px);transform:translateX(-50%);width:min(900px,calc(100% - 2*var(--rand)));display:flex;align-items:center;justify-content:center;gap:34px}
+.d12-unten .dh-satz{margin:0;font-size:16px;max-width:520px}
+.d12-unten .knoepfe{margin:0;flex:none}
+
+/* 13 Stories */
+.d13{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(20px,4vw,70px);padding:calc(64px + 3vh) var(--rand) 4vh}
+.d13-text .dh-t{font-size:clamp(64px,8vw,140px)}
+.d13-stapel{position:relative;height:min(calc(100svh - 64px - 8vh),760px);display:flex;align-items:center;justify-content:center}
+.d13-k{position:absolute;aspect-ratio:9/16;border-radius:16px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(20,6,30,.95),0 0 0 1px rgba(255,255,255,.1)}
+.d13-k.m{z-index:2;height:100%}
+.d13-k.l,.d13-k.r{height:68%}
+.d13-k.l{right:calc(50% + 3%);transform:rotate(-7deg)}
+.d13-k.r{left:calc(50% + 3%);transform:rotate(7deg)}
+html.js:not(.ruhig) .d13-k.l{transform:translateX(30%) rotate(-2deg);transition:transform 1.2s var(--k) .4s}
+html.js:not(.ruhig) .d13-k.r{transform:translateX(-30%) rotate(2deg);transition:transform 1.2s var(--k) .5s}
+html.js .d13-k.l.da{transform:rotate(-7deg)}html.js .d13-k.r.da{transform:rotate(7deg)}
+.d13-k video{display:block;width:100%;height:100%;object-fit:cover}
+.d13-balken{position:absolute;z-index:2;left:12px;right:12px;top:12px;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.d13-balken i{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0)}
+.d13-wer{position:absolute;z-index:2;left:12px;right:12px;top:24px;display:flex;align-items:center;gap:8px;margin:0;font:600 13px/1.1 var(--etikett);color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.d13-wer svg{width:30px;height:30px;padding:5px;border-radius:50%;background:#8953A9;fill:#FFF7EF;box-shadow:0 0 0 2px #fff}
+.d13-wer span{font-weight:400;opacity:.8}
+
+/* 14 Ausgepackt */
+.d14-papier{position:absolute;z-index:2;left:-2%;right:-2%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;filter:drop-shadow(0 18px 24px rgba(20,6,30,.7))}
+.d14-papier.o{top:0;height:56%;padding-top:64px;clip-path:polygon(0 0,100% 0,100% 88%,96% 96%,91% 89%,86% 98%,80% 90%,74% 97%,69% 88%,63% 95%,57% 89%,52% 100%,46% 90%,41% 96%,35% 88%,29% 97%,24% 90%,18% 98%,12% 89%,7% 95%,3% 88%,0 94%)}
+.d14-papier.u{bottom:0;height:56%;clip-path:polygon(0 6%,4% 12%,9% 4%,14% 11%,20% 2%,25% 10%,31% 3%,37% 12%,42% 4%,48% 10%,53% 0,59% 11%,64% 5%,70% 12%,75% 3%,81% 10%,87% 2%,92% 11%,97% 5%,100% 12%,100% 100%,0 100%)}
+.d14-papier.u{padding-top:6vh}
+html.js:not(.ruhig) .d14-papier.o{transform:translateY(3%);transition:transform 1.8s cubic-bezier(.7,0,.2,1) .5s}
+html.js:not(.ruhig) .d14-papier.u{transform:translateY(-3%);transition:transform 1.8s cubic-bezier(.7,0,.2,1) .5s}
+html.js .d14-papier.o.da,html.ruhig .d14-papier.o{transform:translateY(-38%)}
+html.js .d14-papier.u.da,html.ruhig .d14-papier.u{transform:translateY(40%)}
+.d14-papier.o .dh-t{position:absolute;bottom:11%;font-size:clamp(56px,8vw,140px)}
+.d14-papier.u .dh-satz{position:absolute;top:13%;margin:0;max-width:600px;text-shadow:none}
+.d14-papier.u .knoepfe{position:absolute;top:calc(13% + 92px);margin:0}
+
+/* 15 Das Wort */
+.d15{background:#16141B;display:flex;flex-direction:column;justify-content:center;padding:calc(64px + 2vh) var(--rand) 4vh}
+.d15-wort{display:block;width:100%;height:auto;max-height:58vh}
+.d15-wort text{font-family:"Fraunces",Georgia,serif;font-size:520px;font-weight:560;letter-spacing:-18px;font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 144}
+.d15-zug{animation:d15-zug 36s linear infinite;will-change:transform}
+@keyframes d15-zug{to{transform:translateX(-3200px)}}
+.d15-unten{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:clamp(4px,1.6vh,20px)}
+.d15-unten .dh-t{font-size:clamp(70px,10.6vw,190px);color:#C9A0E2}
+.d15-unten>div{max-width:520px;padding-bottom:10px}
+.d15-unten .dh-satz{margin:0;font-size:16px;text-shadow:none;color:rgba(255,247,239,.82)}
+
+/* Handy */
+@media (max-width:860px){
+  .dh-satz{font-size:16px}
+  .dh-text.unten-rechts{left:var(--rand);width:auto}
+  .d03-fuss,.d04-unten,.d11-unten,.d12-unten{flex-direction:column;gap:16px;text-align:center}
+  .d03-fuss .dh-satz{text-align:center}
+  .d04-deck{height:38vh}.d04-titel{font-size:clamp(40px,11vw,70px)}
+  .d04-titel .z{top:auto;translate:none}
+  .d04-titel .l{right:auto;left:var(--rand);top:calc(64px + 7vh)}.d04-titel .r{left:auto;right:var(--rand);top:calc(64px + 7vh)}
+  .d04-zoom{transform-origin:calc(50% + 9.1vh) calc(52% + 5.5vh)}
+  .d04-tipp{display:none}
+  .d05-k{width:30vw}
+  .d06-bon{width:60vw;left:50%;margin-left:-30vw}.d06-papier{font-size:10.5px;line-height:1.45;padding:14px 14px 22px}.d06-papier p{margin-bottom:6px}.d06-papier hr{margin:8px 0}.d06-kopf{font-size:18px!important}.d06-gruss{display:none}.d06-schlitz{left:50%;width:70vw;margin-left:-35vw}
+  .d06 .dh-grund.links{background:linear-gradient(to top,rgba(16,12,20,.95),rgba(16,12,20,.5) 50%,rgba(16,12,20,.2))}
+  .d07-k{width:34vw!important}
+  .d08-zitat{display:none}.d08 .dh-text.unten-links{width:auto;right:var(--rand)}
+  .d10-saeulen{grid-template-columns:repeat(2,1fr)}.d10-s.s2,.d10-s.s3{display:none}
+  .d11-luke{width:calc(100vw - 2*var(--rand));min-width:0}.d11-brett{width:calc(100vw - var(--rand));min-width:0}
+  .d12-neon{flex-direction:column;top:42%}.d12-neon .dh-t{font-size:15vw}
+  .d13{grid-template-columns:1fr;grid-template-rows:auto 1fr;padding-bottom:3vh}
+  .d13-text .dh-t{font-size:15vw}.d13-text .dh-satz,.d13-text .knoepfe{display:none}
+  .d13-stapel{height:min(64svh,560px)}
+  .d14-papier.u .knoepfe{top:calc(13% + 130px)}
+  .d15-unten{flex-direction:column;align-items:flex-start}
+}
+@media (max-height:720px) and (min-width:861px){
+  .dh .dh-satz{font-size:16px;margin-top:14px}
+  .dh .knoepfe{margin-top:16px}
+}

@@ -1,0 +1,282 @@
+/* Culinarium · 15 Fassungen von Footer 6 «Das ×» (26.10.2026). Grundlagen aus fuss-wahl.css (.ff, .ff-k, .zn, .marke).
+   Kern: drei Zeichen nach Gewicht, verbunden durch das x; aus dem + wird beim Hinscrollen ein ×. Nur transform und opacity. */
+.xm{--xg:clamp(40px,5vw,90px);--spur:minmax(0,7fr) var(--xg) minmax(0,1.6fr) var(--xg) minmax(0,1.3fr);padding:clamp(70px,10vh,120px) var(--rand) 28px}
+
+/* ---------- Bausteine: das Trio, die Spalten darunter, die Fusszeile */
+.xt,.xs{display:grid;grid-template-columns:var(--spur);max-width:var(--max);margin:0 auto}
+.xt{align-items:end}
+.xt-cul{color:var(--weiss)}
+.xt-ws .zn-ws{width:100%;height:auto;color:var(--weiss)}
+.xt-dc .zn-dc{width:82%;height:auto}
+.xt-x{display:block;align-self:center;justify-self:center;font:300 clamp(46px,5vw,92px)/1 var(--titel);color:var(--kerze);transform:rotate(0deg);transition:transform 1.4s var(--k) .25s}
+.xt-x+div+.xt-x,.x8-n2 .xt-x{transition-delay:.45s}
+.xm.offen .xt-x{transform:rotate(45deg)}
+.xs{align-items:start;margin-top:clamp(30px,5vh,56px);padding-top:clamp(20px,3vh,30px);border-top:1px solid rgba(250,244,244,.14);color:rgba(250,244,244,.76)}
+.xs-1{grid-column:1;padding-right:clamp(20px,6vw,120px)}
+.xs-2{grid-column:3/5}
+.xs-3{grid-column:5}
+.xs-gross{font:330 clamp(26px,2.6vw,40px)/1.12 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--weiss);margin-bottom:14px!important;max-width:22ch}
+.xs-1 .knopf{margin-top:22px}
+.xu{max-width:var(--max);margin:clamp(48px,7vh,80px) auto 0;display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center}
+.xu .ff-recht{flex:1 1 100%;border-top:1px solid rgba(250,244,244,.1);padding-top:16px}
+.xu.mitte{justify-content:center;text-align:center}
+.xu.mitte .ff-nav,.xu.mitte .ff-ig{justify-content:center}
+
+/* ---------- 1 Grundlinie */
+.x1-linie{max-width:var(--max);height:3px;margin:clamp(18px,2.6vh,28px) auto 0;background:var(--kerze);transform-origin:0 50%;transform:scaleX(.1);transition:transform 1.8s var(--k) .1s}
+.xm-linie.offen .x1-linie{transform:none}
+.xm-linie .xs{border-top:0;margin-top:clamp(20px,3vh,30px)}
+
+/* ---------- 2 Riesen-× */
+.xm-riese{position:relative}
+.x2-riese{position:absolute;right:-6vw;top:50%;font:200 min(118vh,90vw)/.7 var(--titel);color:#3A2420;transform:translateY(-46%) rotate(0deg);transition:transform 2.4s var(--k) .1s;pointer-events:none}
+.xm-riese.offen .x2-riese{transform:translateY(-46%) rotate(45deg)}
+.x2-innen{position:relative;z-index:1}
+
+/* ---------- 3 Kerzenfeld */
+.xm-kerze{background:var(--kerze);color:#16151A}
+.xm-kerze .xt-cul,.xm-kerze .xt-ws .zn-ws{color:#16151A}
+.xm-kerze .xt-dc .zn-dc{color:#16151A}
+.xm-kerze .xt-x{color:var(--weiss)}
+.xm-kerze .xs{border-color:rgba(22,21,26,.25);color:#2A1A10}
+.xm-kerze .xs-gross{color:#16151A}
+.xm-kerze .ff-k{color:#16151A;opacity:.7}
+.xm-kerze .xu,.xm-kerze .ff-ig,.xm-kerze .ff-recht{color:#2A1A10}
+.xm-kerze .xu .ff-recht{border-color:rgba(22,21,26,.25)}
+
+/* ---------- 4 Gestapelt */
+.x4-cul{max-width:var(--max);margin:0 auto;color:var(--weiss)}
+.x4-gross{font-size:clamp(70px,9vw,150px);margin:clamp(10px,2vh,24px) auto}
+.x4-paar{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(20px,4vw,70px)}
+.x4-ws,.x4-dc{display:flex;align-items:center;gap:clamp(16px,2vw,30px);color:rgba(250,244,244,.76)}
+.x4-dc{flex-direction:row-reverse;text-align:right}
+.x4-ws .zn-ws{width:clamp(80px,9vw,140px);flex:none;color:var(--weiss)}
+.x4-dc .zn-dc{width:clamp(66px,7vw,110px);flex:none}
+.x4-ws b,.x4-dc b{font-weight:500;color:var(--weiss)}
+.x4-paar .xt-x{font-size:clamp(36px,3.6vw,60px)}
+.x4-cul2{max-width:var(--max);margin:clamp(30px,5vh,56px) auto 0;padding-top:24px;border-top:1px solid rgba(250,244,244,.14);display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap;color:var(--kerze-hell);font:400 13px/1.4 var(--mono);letter-spacing:.06em}
+
+/* ---------- 5 Die Kreuzung */
+.xm-kreuz{position:relative;min-height:min(100svh,880px);padding:0}
+.x5-linien{position:absolute;inset:0;width:100%;height:100%;color:var(--kerze);transform:scale(.08);transition:transform 1.8s var(--k) .1s}
+.xm-kreuz.offen .x5-linien{transform:none}
+.x5-oben,.x5-links,.x5-rechts,.x5-unten{position:absolute}
+.x5-oben{left:50%;top:clamp(46px,8%,80px);width:min(44%,600px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;color:rgba(250,244,244,.76)}
+.x5-wm{width:100%;color:var(--weiss)}
+.x5-links,.x5-rechts{top:50%;transform:translateY(-50%);width:min(26%,320px);color:rgba(250,244,244,.76)}
+.x5-links{left:var(--rand)}
+.x5-rechts{right:var(--rand);text-align:right;display:flex;flex-direction:column;align-items:flex-end}
+.x5-links .zn-ws{width:clamp(64px,6vw,96px);color:var(--weiss);margin-bottom:16px}
+.x5-rechts .zn-dc{width:clamp(52px,5vw,80px);margin-bottom:16px}
+.x5-unten{left:50%;bottom:28px;transform:translateX(-50%);width:min(56%,760px);margin:0;justify-content:center;text-align:center}
+.x5-unten .ff-nav,.x5-unten .ff-ig{justify-content:center}
+.x5-unten .ff-recht{border:0;padding-top:4px;justify-content:center}
+.x5-unten .ff-recht span{margin-right:0}
+
+/* ---------- 6 Abspann */
+.xm-abspann{display:flex;flex-direction:column;align-items:center;text-align:center}
+.x6-wm{width:min(640px,100%);color:var(--weiss)}
+.xm-abspann>.xt-x{font-size:clamp(34px,3vw,52px);margin:clamp(14px,2.4vh,26px) 0}
+.x6-haus{display:flex;flex-direction:column;align-items:center;gap:12px;font:600 12px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.x6-haus .zn-ws{width:clamp(76px,6.6vw,104px);color:var(--weiss)}
+.x6-haus .zn-dc{width:clamp(56px,5vw,78px)}
+.x6-zeilen{width:min(760px,100%);margin:clamp(40px,7vh,72px) 0 0;padding-top:clamp(24px,4vh,40px);border-top:1px solid rgba(250,244,244,.14);display:flex;flex-direction:column;gap:10px}
+.x6-zeilen div{display:grid;grid-template-columns:1fr 1fr;gap:28px;text-align:left}
+.x6-zeilen dt{text-align:right;font:600 11px/1.9 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.x6-zeilen dd{margin:0;color:rgba(250,244,244,.82)}
+.x6-k{margin-top:clamp(30px,5vh,48px)}
+
+/* ---------- 7 Ein Satz */
+.x7-satz{max-width:var(--max);margin:0 auto;font:320 clamp(34px,4.6vw,78px)/1.22 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:rgba(250,244,244,.5)}
+.x7-satz .xt-x{display:inline-block;font-size:1em;line-height:1;vertical-align:-.08em;margin:0 .12em}
+.x7-g{white-space:nowrap}
+.x7-satz{text-wrap:balance}
+.x7-g>span{display:inline-block;vertical-align:-.12em;color:var(--weiss)}
+.x7-wm .marke{height:.82em;width:auto}
+.x7-ws .zn-ws{height:1.25em;width:auto;color:var(--weiss)}
+.x7-dc .zn-dc{height:1.05em;width:auto}
+.x7-sp{grid-template-columns:2fr 1.2fr 1fr;gap:clamp(20px,3vw,50px)}
+.x7-sp .xs-1,.x7-sp .xs-2,.x7-sp .xs-3{grid-column:auto;padding:0}
+
+/* ---------- 8 Drei Farben */
+.xm-farben{padding:0 0 28px}
+.x8-felder{position:relative;display:grid;grid-template-columns:minmax(0,58fr) minmax(0,24fr) minmax(0,18fr);min-height:min(78svh,720px)}
+.x8-felder>div{display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding:clamp(40px,7vh,80px) clamp(22px,3vw,48px)}
+.x8-cul{background:var(--nacht-tief);padding-left:var(--rand)!important;color:rgba(250,244,244,.76)}
+.x8-cul .marke{color:var(--weiss);margin-bottom:auto}
+.x8-cul .knopf{align-self:flex-start;margin-top:6px}
+.x8-ws{background:#050505;color:rgba(250,244,244,.76)}
+.x8-ws .zn-ws{width:72%;color:var(--weiss);margin-bottom:auto}
+.x8-dc{background:var(--dc);color:#FFF7EF}
+.x8-dc .zn-dc{width:62%;color:#FFF7EF;margin-bottom:auto}
+.x8-naht{position:absolute;top:50%;z-index:3;width:clamp(54px,4.6vw,72px);aspect-ratio:1;margin:calc(clamp(54px,4.6vw,72px)/-2) 0 0 calc(clamp(54px,4.6vw,72px)/-2);border-radius:50%;background:var(--kerze);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.8)}
+.x8-n1{left:58%}.x8-n2{left:82%}
+.x8-naht .xt-x{color:#fff;font-size:clamp(34px,3vw,48px);line-height:.8}
+.xm-farben .xu{padding:0 var(--rand)}
+
+/* ---------- 9 Hell */
+.xm-hell{background:var(--weiss);color:#26242D}
+.xm-hell .xt-cul,.xm-hell .xt-ws .zn-ws{color:#16151A}
+.xm-hell .xt-dc .zn-dc{color:var(--dc)}
+.xm-hell .xs{border-color:rgba(38,36,45,.18);color:#4A4652}
+.xm-hell .xs-gross{color:#16151A}
+.xm-hell .ff-k{color:var(--kerze-tief)}
+.xm-hell .ff-sp p,.xm-hell .ff-ig,.xm-hell .ff-recht{color:#5B5763}
+.xm-hell .xu .ff-recht{border-color:rgba(38,36,45,.14)}
+
+/* ---------- 10 Mit Fotos */
+.x10-bilder{display:grid;grid-template-columns:var(--spur);max-width:var(--max);margin:clamp(20px,3vh,32px) auto 0;height:clamp(220px,34vh,360px)}
+.x10-bilder .fb{height:100%;border-radius:var(--r)}
+.x10-bilder .fb img{position:absolute;inset:0}
+/* D so hoch wie das Schild: Schild 1296 × 1600, D 652 × 712, also Spalte 1,6 × 1,131 */
+.xm-fotos{--spur:minmax(0,7fr) var(--xg) minmax(0,1.6fr) var(--xg) minmax(0,1.81fr)}
+.xm-fotos .xt-dc .zn-dc{width:100%}
+.xm-fotos .xs{border-top:0;margin-top:clamp(18px,3vh,28px);padding-top:0}
+
+/* Texte von 10: drei gleich gebaute Spalten auf einem gemeinsamen Zeilenraster (Unterraster), jede Linie läuft quer durch.
+   Zeilen: Etikett · Name mit Satz (oben bündig) · zwei Zeilen mit Haarlinie · Handlung (mittig) */
+.xe{grid-template-rows:repeat(4,auto);margin-top:clamp(34px,5vh,56px)!important;padding-top:0!important;border-top:0!important;color:rgba(250,244,244,.86)}
+.xe>div{display:grid;grid-row:1/span 4;grid-template-rows:subgrid;padding-right:0}
+.xe .xs-1{padding-right:0}
+.xe .xs-2{padding-right:clamp(14px,1.6vw,28px)}
+.xe .ff-k{font-size:11px;letter-spacing:.24em;margin:0 0 18px;align-self:end}
+.xe-kopf{align-self:start;padding-bottom:26px}
+.xe-name{margin:0 0 12px!important;font:340 clamp(21px,1.62vw,28px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--weiss)}
+.xe-gross{font-size:clamp(30px,2.9vw,46px);line-height:1.06;max-width:17ch;text-wrap:balance}
+.xe-text{margin:0!important;font-size:16px;line-height:1.6;color:rgba(250,244,244,.78)}
+.xe-zeiten{margin:0;border-top:1px solid rgba(250,244,244,.14)}
+.xe-zeiten div{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid rgba(250,244,244,.14)}
+.xe-zeiten dt{font:600 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:rgba(250,244,244,.5);white-space:nowrap}
+.xe-zeiten dd{margin:0;font:400 16px/1.3 var(--text);color:var(--weiss);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.xe-tat{align-self:center;padding-top:28px}
+.xe-tat .knopf{margin:0}
+/* Knopf scharf in Safari: er liegt auf halben Pixeln; jede Verschiebung beim Überfahren macht ihn zur Bildebene und weich.
+   Darum hebt er sich hier nicht, nur der Pfeil läuft und der Knauf hellt auf. */
+.xe .knopf,.xe .knopf:hover,.xe .knopf:active{transform:none!important;transition:box-shadow .3s}
+.xe .knopf i{transition:background-color .3s}
+.xe .knopf:hover i{background:#F28A62}
+/* Culinarium-Zeiten nicht über die ganze Bildbreite: so breit wie ein Block, die Linien stehen trotzdem auf Höhe der Nachbarn */
+.xe .xs-1 .xe-zeiten{max-width:352px}
+.xe-link{display:inline-block;padding-bottom:6px;font:500 15px/1 var(--text);letter-spacing:.01em;color:var(--weiss)!important;border-bottom:1px solid var(--kerze);text-decoration:none!important;transition:border-color .3s}
+.xe-link:hover{border-color:var(--weiss)}
+@media (max-width:860px){
+  .xm .xe{grid-template-rows:repeat(8,auto);row-gap:0}
+  .xe .xs-1{grid-row:1/span 4;grid-column:1/-1}
+  .xe .xs-1 .xe-tat{padding-bottom:44px}
+  .xe .xs-2{grid-row:5/span 4;grid-column:1;padding-right:0}
+  .xe .xs-3{grid-row:5/span 4;grid-column:2}
+  .xe-gross{font-size:30px}
+  .xe-name{font-size:22px}
+  .xe-text{font-size:15px}
+  .xe-zeiten div{flex-direction:column;gap:6px}
+  .xe .xs-1 .xe-zeiten div{flex-direction:row}
+  .xe-zeiten dd{text-align:left}
+  .xe-tat{padding-top:20px}
+}
+
+/* ---------- 11 Langsame Drehung */
+.xm-dreh{--spur:minmax(0,5fr) var(--xg) minmax(0,1.3fr) var(--xg) minmax(0,1.05fr);--xg:clamp(70px,9vw,150px)}
+.xm-dreh .xt{align-items:center}
+.xm-dreh .xt-x{transform:none;transition:none;animation:x11-dreh 26s linear infinite}
+.xm-dreh .xt-x+div+.xt-x{animation-direction:reverse;animation-duration:32s}
+@keyframes x11-dreh{to{transform:rotate(360deg)}}
+
+/* ---------- 12 Schilder */
+.xm-schild{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(30px,5vw,90px)}
+.x12-links{display:flex;flex-direction:column;align-items:flex-start;gap:26px;color:rgba(250,244,244,.76)}
+.x12-sp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.x12-stange{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-top:2px}
+.x12-rohr{position:absolute;left:-14px;right:-14px;top:0;height:6px;border-radius:3px;background:linear-gradient(#5A5662,#2A2830)}
+.x12-s{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0}
+.xm-schild.offen .x12-s{animation:x12-schwing 3.2s var(--k) calc(var(--i)*.15s) both}
+@keyframes x12-schwing{0%{transform:rotate(-7deg)}25%{transform:rotate(5deg)}50%{transform:rotate(-2.5deg)}72%{transform:rotate(1deg)}100%{transform:rotate(0)}}
+.x12-kette{width:2px;height:clamp(30px,5vh,56px);background:repeating-linear-gradient(#8A8692 0 5px,transparent 5px 8px)}
+.x12-tafel{width:clamp(260px,24vw,380px);padding:22px 24px;background:var(--weiss);color:#16151A;border-radius:6px;box-shadow:0 24px 40px -20px #000}
+.x12-ws .zn-ws{width:clamp(90px,8vw,124px);color:var(--weiss)}
+.x12-rund{display:grid;place-items:center;width:clamp(96px,8vw,124px);aspect-ratio:1;border-radius:50%;background:var(--dc);box-shadow:0 18px 30px -16px #000}
+.x12-rund .zn-dc{width:52%;color:#FFF7EF}
+.x12-stange>.xt-x{font-size:clamp(30px,2.6vw,44px);align-self:flex-start;margin-top:clamp(50px,8vh,90px)}
+.xm-schild .xu{grid-column:1/-1}
+
+/* ---------- 13 5 × 3 × 14 */
+.x13-rechnung{max-width:var(--max);margin:0 auto clamp(40px,7vh,72px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.x13-rechnung div{display:flex;flex-direction:column;align-items:center;gap:12px}
+.x13-rechnung b{font:300 clamp(90px,13vw,220px)/.85 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--weiss)}
+.x13-rechnung span{font:600 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.x13-rechnung .xt-x{font-size:clamp(50px,6vw,110px)}
+.x13-trio{--spur:minmax(0,5fr) var(--xg) minmax(0,1.2fr) var(--xg) minmax(0,1fr);--xg:clamp(30px,3vw,56px);max-width:860px;padding-top:clamp(26px,4vh,40px);border-top:1px solid rgba(250,244,244,.14)}
+.x13-trio .xt-x{font-size:clamp(30px,2.6vw,48px)}
+.xm-rechnung .xs{border-top:0}
+
+/* ---------- 14 Kompakt */
+.xm-kompakt{padding-top:clamp(40px,6vh,64px)}
+.x14-reihe{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.x14-reihe .xt{--spur:minmax(0,5fr) 44px minmax(0,1fr) 44px minmax(0,.85fr);align-items:center;margin:0}
+.x14-reihe .xt-x{font-size:36px}
+.x14-info{display:flex;flex-direction:column;gap:8px;font:400 13px/1.5 var(--mono);color:rgba(250,244,244,.7)}
+.x14-info a{white-space:nowrap}
+.x14-info b{font:600 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell);margin-right:10px}
+.xm-kompakt .xu{margin-top:clamp(30px,4vh,44px)}
+
+/* ---------- 15 Schräges Band */
+.xm-band{padding-top:clamp(90px,13vh,150px)}
+.x15-band{margin:0 calc(var(--rand)*-1 - 4vw);background:var(--kerze);transform:rotate(-3.5deg);padding:clamp(22px,3.4vw,46px) calc(var(--rand) + 4vw);box-shadow:0 30px 60px -30px #000}
+.x15-zug{transform:translateX(-7%);transition:transform 2s var(--k) .1s}
+.xm-band.offen .x15-zug{transform:none}
+.x15-band .xt{--spur:minmax(0,5fr) var(--xg) minmax(0,1.2fr) var(--xg) minmax(0,1fr)}
+.x15-band .xt-cul,.x15-band .zn-ws,.x15-band .zn-dc{color:#16151A!important}
+.x15-band .xt-x{color:var(--weiss);transform:rotate(45deg)}
+.xm-band .xs{margin-top:clamp(56px,9vh,96px)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .xm{--xg:30px}
+  .xt{--spur:minmax(0,5fr) var(--xg) minmax(0,1.4fr) var(--xg) minmax(0,1.1fr)}
+  .xt-x{font-size:30px}
+  .xs{grid-template-columns:1fr 1fr;gap:24px 18px}
+  .xs-1{grid-column:1/-1;padding:0}
+  .xs-2{grid-column:1}.xs-3{grid-column:2}
+  .xu .ff-recht{flex-wrap:wrap;gap:10px 20px}
+  .xu .ff-recht span{flex-basis:100%}
+  .x4-paar{grid-template-columns:1fr;justify-items:start}
+  .x4-dc{flex-direction:row;text-align:left}
+  .x4-paar .xt-x{justify-self:start;margin-left:30px}
+  .xm-kreuz{min-height:0;padding:70px var(--rand) 28px;display:flex;flex-direction:column;gap:40px}
+  .x5-linien{display:none}
+  .x5-oben,.x5-links,.x5-rechts,.x5-unten{position:static;transform:none;width:auto}
+  .x5-oben{align-items:flex-start;text-align:left}
+  .x5-rechts{text-align:left;align-items:flex-start}
+  .x5-unten{justify-content:flex-start;text-align:left}
+  .x5-unten .ff-nav,.x5-unten .ff-ig,.x5-unten .ff-recht{justify-content:flex-start}
+  .x6-zeilen div{gap:14px}
+  .x7-sp{grid-template-columns:1fr 1fr}
+  .x7-sp .xs-1{grid-column:1/-1}
+  .x8-felder{grid-template-columns:1fr;min-height:0}
+  .x8-naht{display:none}
+  .x8-ws,.x8-dc{flex-direction:row!important;align-items:center}
+  .x8-ws .zn-ws{width:76px;margin:0}.x8-dc .zn-dc{width:64px;margin:0}
+  .x8-cul .marke{margin-bottom:20px}
+  .x10-bilder{height:150px}
+  .xm-fotos .xt,.xm-fotos .x10-bilder,.xm-fotos .xs{--spur:minmax(0,5fr) var(--xg) minmax(0,1.4fr) var(--xg) minmax(0,1.58fr)}
+  .xm-dreh{--xg:26px}
+  .xm-schild{grid-template-columns:minmax(0,1fr)}
+  .x12-sp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .x7-g{white-space:normal}
+  .x12-stange{order:-1;margin:0 10px 20px}
+  .x12-stange{gap:4px}
+  .x12-tafel{width:38vw;padding:10px}
+  .x12-ws .zn-ws{width:52px}.x12-rund{width:54px}
+  .x12-stange>.xt-x{font-size:20px;margin-top:40px}
+  .x13-rechnung b{font-size:64px}
+  .x13-rechnung span{font-size:9px;letter-spacing:.1em;text-align:center}
+  .x13-rechnung .xt-x{font-size:30px}
+  .x14-reihe{grid-template-columns:1fr}
+  .x14-reihe .xt-x{font-size:26px}
+}
+
+/* ---------- Ruhig */
+html.ruhig .xm .xt-x,html.ruhig .x2-riese{transition:none;animation:none}
+html.ruhig .xm .xt-x{transform:rotate(45deg)}
+html.ruhig .x2-riese{transform:translateY(-46%) rotate(45deg)}
+html.ruhig .x1-linie,html.ruhig .x5-linien,html.ruhig .x15-zug{transform:none;transition:none}
+html.ruhig .xm-schild .x12-s{transform:none;animation:none}

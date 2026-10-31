@@ -1,0 +1,6 @@
+Le Livre · Culinarium · Fehlerbuch 10a · webkit · 30.10.2026, 05:12:04
+ok   58 Kein roher Vorlagen-Code in Ansichten, Foto-Fenstern, Markenbuch, Anleitung · 7 Seiten, 4 Fenster
+ok   66 Titelzeilen auf dunkler Fläche (Kopf, Startbild) hell · 246 253 246
+ok   127 Titel im Kopf überdeckt bei 920, 1000, 1100, 1240 px nie einen Knopf · 16 Messungen
+ok   115 Rundgang-Schild fest über der Leiste unten rechts, wandert beim Scrollen nicht, sitzt nach neuer Fenstergrösse wieder über der Leiste · [[24,14],[24,14],[24,14]]
+4 von 4 ok

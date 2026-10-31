@@ -1,0 +1,16 @@
+✓ Fremder Host → 421 · 421
+✓ Fremde Herkunft (Origin) → 403 · 403
+✓ Fremde Herkunft (Sec-Fetch-Site) → 403 · 403
+✓ Fehlerbericht über 8 KB → 413 · 413
+✓ Prüfung über 46 MB → 413 · 413
+✓ Kein JSON → 415 · 415
+✓ Kaputtes JSON → 400 mit Stichwort · (400, b'{"fehler":"EINGABE \xc2\xb7 Die Anfrage ist kein lesbares JSON."}')
+✓ Leere Prüfung → 400 «DATEI · Keine Datei angekommen» · (400, '{"fehler":"DATEI · Keine Datei angekommen."}')
+✓ Unbekanntes Foto → 400 «BILD · …» · (400, '{"fehler":"BILD · Dieses Foto gibt es nicht."}')
+✓ Unbekannte Grösse → 400 «FORMAT · …» · 400
+✓ Unbekannter Weg → 400/404 mit Stichwort · 400
+✓ Gesperrte Pfade (24) → 404 · alle 404
+✓ Erlaubte Wege (9) → 200 · alle 200
+✓ Sicherheitskopfzeilen (nosniff, SAMEORIGIN, Referrer) · {'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN'}
+✓ Zu viele Prüfungen → 429 mit Retry-After · 16× 415, dann 7× 429, Retry-After 60
+Summe: 15/15

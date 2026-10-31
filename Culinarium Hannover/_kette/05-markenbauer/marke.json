@@ -1,0 +1,577 @@
+{
+ "farben": [
+  {
+   "name": "Warmweiss",
+   "hex": "#FAF4F4",
+   "rolle": "flaeche-hell",
+   "belegt": "Logo, Drucksache",
+   "fundstelle": "Band unter dem Bild, Plakat Mondfrau · _quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg, Ausschnitt x 121–1893, y 1542–1943 (von 2014 × 2003)",
+   "auch": "Auf allen sechs Plakaten seit 11/2024 derselbe Ton (Modus und Median; März 2026 #F9F5F4). Leicht rosé.",
+   "foto": "marke/bilder/plakat-2026-09.jpg"
+  },
+  {
+   "name": "Schiefer-Violett",
+   "hex": "#3A3845",
+   "rolle": "schrift",
+   "belegt": "Logo, Drucksache",
+   "fundstelle": "Wortmarke CULINARIUM, Plakat Mondfrau · _quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg, Ausschnitt x 242–1772, y 1602–1743 (von 2014 × 2003)",
+   "auch": "Auf allen sechs Plakaten exakt gleich; ebenso die Zeile A UNiQUE EXPERiENCE und das Profilbild.",
+   "foto": "marke/bilder/plakat-2026-03.jpg"
+  },
+  {
+   "name": "Rahmengrau",
+   "hex": "#B1ADAC",
+   "rolle": "linie",
+   "belegt": "Drucksache",
+   "fundstelle": "die doppelte Linie um Wortmarke und Zeile, Plakat Panther mit Eisbecher; nur Grau ohne Farbstich · _quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg, Ausschnitt x 43–1397, y 1045–1418 (von 1440 × 1432)",
+   "auch": "Median #B1ADAD. Im Kundenprofil «geschätzt #B0B0B0», hier gemessen.",
+   "foto": "marke/bilder/plakat-2026-03.jpg"
+  },
+  {
+   "name": "Eisblau",
+   "hex": "#B3EBFC",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Ski (29./30.11.2024) · _quelle/extern/ig/2024-11-06_culinarium_hannover_DCCf-ikoaGs-1.jpg, Ausschnitt x 72–1382, y 43–1045 (von 1440 × 1432)",
+   "auch": "Median #C2E8F8; im Kundenprofil #B8E9FC (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2024-11.jpg",
+   "abend": "eisblau"
+  },
+  {
+   "name": "Orange",
+   "hex": "#EF7649",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Panther auf dem Thron (21./22.02.2025) · _quelle/extern/ig/2025-02-04_culinarium_hannover_DFqbLG2s_dc-1.jpg, Ausschnitt x 72–1382, y 43–1045 (von 1440 × 1432)",
+   "auch": "Median #EF7744; im Kundenprofil #ED7748 (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2025-02.jpg",
+   "abend": "orange"
+  },
+  {
+   "name": "Grasgrün",
+   "hex": "#94B253",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Gärtnerin (13./14.06.2025) · _quelle/extern/ig/2025-05-17_culinarium_hannover_DJw8OqGMY1G-1.jpg, Ausschnitt x 72–1382, y 43–1045 (von 1440 × 1432)",
+   "auch": "Median #A9B887; im Kundenprofil #99B456 (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2025-06.jpg",
+   "abend": "gruen"
+  },
+  {
+   "name": "Nachtblau",
+   "hex": "#112D43",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Kürbis (14./15.11.2025) · _quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg, Ausschnitt x 72–1382, y 43–1045 (von 1440 × 1432)",
+   "auch": "Median #213142; im Kundenprofil #15354A (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2025-11.jpg",
+   "abend": "nachtblau"
+  },
+  {
+   "name": "Ochsenblut",
+   "hex": "#881301",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Panther mit Eisbecher (27./28.03.2026) · _quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg, Ausschnitt x 72–1382, y 43–1045 (von 1440 × 1432)",
+   "auch": "Median #88191B; im Kundenprofil #881301 (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2026-03.jpg",
+   "abend": "ochsenblut"
+  },
+  {
+   "name": "Sepia",
+   "hex": "#4D3321",
+   "rolle": "akzent",
+   "belegt": "Drucksache",
+   "fundstelle": "häufigster Ton der Illustration, Plakat Mondfrau (25./26.09.2026) · _quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg, Ausschnitt x 101–1933, y 60–1462 (von 2014 × 2003)",
+   "auch": "Median #4C3448; im Kundenprofil #553827 (andere Rechnung, gleiche Farbe).",
+   "foto": "marke/bilder/plakat-2026-09.jpg",
+   "abend": "sepia"
+  },
+  {
+   "name": "Putz",
+   "hex": "#E3BB7D",
+   "rolle": "flaeche-hell",
+   "belegt": "Foto",
+   "fundstelle": "warme Wand hinter dem Tisch mit Kerze und Apothekerflasche · _quelle/vom-kunden/drive/4029.jpg, Ausschnitt x 154–614, y 410–1024 (von 1536 × 2048)",
+   "auch": "Median #DCAC67",
+   "foto": "marke/bilder/putz.jpg"
+  },
+  {
+   "name": "Flurorange",
+   "hex": "#EB6C23",
+   "rolle": "akzent",
+   "belegt": "Foto",
+   "fundstelle": "orange Wand im Flur zur Bar, Licht der Hängelampe · _quelle/vom-kunden/drive/3887.jpg, Ausschnitt x 31–154, y 410–819 (von 1536 × 2048)",
+   "auch": "Median #E66522. Liegt nah am Orange des Plakats vom Februar 2025.",
+   "foto": "marke/bilder/flur.jpg"
+  },
+  {
+   "name": "Kerzenlicht",
+   "hex": "#FFCC64",
+   "rolle": "akzent",
+   "belegt": "Foto",
+   "fundstelle": "Kerze auf der Tafel, beleuchtetes Wachs · _quelle/vom-kunden/drive/3855.jpg, Ausschnitt x 645–768, y 1516–1761 (von 1536 × 2048)",
+   "auch": "Median #FFCA5E. Nur Wachs im Licht, überstrahlte Pixel ausgenommen.",
+   "foto": "marke/bilder/kerzen.jpg"
+  },
+  {
+   "name": "Honig",
+   "hex": "#A35C1C",
+   "rolle": "akzent",
+   "belegt": "Foto",
+   "fundstelle": "Glasballon mit hellem Sirup an der Bar · _quelle/vom-kunden/drive/3937.jpg, Ausschnitt x 461–645, y 1126–1536 (von 1536 × 2048)",
+   "auch": "Median #B06B21",
+   "foto": "marke/bilder/ballons.jpg"
+  },
+  {
+   "name": "Schiefertisch",
+   "hex": "#231B13",
+   "rolle": "flaeche-dunkel",
+   "belegt": "Foto",
+   "fundstelle": "dunkle Tischplatte unter dem Glas · _quelle/vom-kunden/drive/5369.jpg, Ausschnitt x 265–5039, y 6521–7793 (von 5304 × 7952)",
+   "auch": "Median #2D241B",
+   "foto": "marke/bilder/glas-dunkel.jpg"
+  },
+  {
+   "name": "Barnacht",
+   "hex": "#0A0705",
+   "rolle": "flaeche-dunkel",
+   "belegt": "Foto",
+   "fundstelle": "Dunkel hinter dem Glas, ebd. · _quelle/vom-kunden/drive/5369.jpg, Ausschnitt x 265–5039, y 159–1590 (von 5304 × 7952)",
+   "auch": "Median #0A0706",
+   "foto": "marke/bilder/glas-dunkel.jpg"
+  },
+  {
+   "name": "Klinker",
+   "hex": "#442D32",
+   "rolle": "flaeche-dunkel",
+   "belegt": "Foto",
+   "fundstelle": "Klinker an der Ecke Haasemannstraße, über den Schildern · _quelle/vom-kunden/drive/5541.jpg, Ausschnitt x 0–424, y 795–3976 (von 5304 × 7952)",
+   "auch": "Median #483336. Liegt nah am Schiefer-Violett der Wortmarke.",
+   "foto": "marke/bilder/ecke.jpg"
+  },
+  {
+   "name": "Campari",
+   "hex": "#D44032",
+   "rolle": "punkt",
+   "belegt": "Foto",
+   "fundstelle": "roter Drink im Stielglas, gereicht über den Tisch · _quelle/vom-kunden/drive/4026.jpg, Ausschnitt x 1212–1409, y 1475–1761 (von 1638 × 2048)",
+   "auch": "Modus #8B1424. Hier der Median: der Drink ist ein Verlauf, der häufigste Ton (#8B1424) ist nur sein dunkelster Teil.",
+   "foto": "marke/bilder/anstossen.jpg"
+  }
+ ],
+ "abendfarben": [
+  {
+   "kennung": "eisblau",
+   "name": "Eisblau",
+   "plakat": "29./30.11.2024",
+   "motiv": "Ski",
+   "hex": "#B3EBFC",
+   "toene": {
+    "gold": "#B3EBFC",
+    "gold_h": "#CEF2FD",
+    "gold_h2": "#EAF9FE",
+    "gold_t": "#6F929C",
+    "taupe": "#6F929C",
+    "akzent": "#59757E",
+    "taupe_tief": "#59757E"
+   },
+   "bild": "marke/bilder/plakat-2024-11.jpg"
+  },
+  {
+   "kennung": "orange",
+   "name": "Orange",
+   "plakat": "21./22.02.2025",
+   "motiv": "Panther auf dem Thron",
+   "hex": "#EF7649",
+   "toene": {
+    "gold": "#EF7649",
+    "gold_h": "#F5A689",
+    "gold_h2": "#FBD9CC",
+    "gold_t": "#DC6D43",
+    "taupe": "#DC6D43",
+    "akzent": "#B15736",
+    "taupe_tief": "#B15736"
+   },
+   "bild": "marke/bilder/plakat-2025-02.jpg"
+  },
+  {
+   "kennung": "gruen",
+   "name": "Grasgrün",
+   "plakat": "13./14.06.2025",
+   "motiv": "Gärtnerin",
+   "hex": "#94B253",
+   "toene": {
+    "gold": "#94B253",
+    "gold_h": "#B9CD8F",
+    "gold_h2": "#E1E9CF",
+    "gold_t": "#7C9646",
+    "taupe": "#7C9646",
+    "akzent": "#627537",
+    "taupe_tief": "#627537"
+   },
+   "bild": "marke/bilder/plakat-2025-06.jpg"
+  },
+  {
+   "kennung": "nachtblau",
+   "name": "Nachtblau",
+   "plakat": "14./15.11.2025",
+   "motiv": "Kürbis",
+   "hex": "#112D43",
+   "toene": {
+    "gold": "#7E8E99",
+    "gold_h": "#ABB6BD",
+    "gold_h2": "#BCC4CA",
+    "gold_t": "#112D43",
+    "taupe": "#112D43",
+    "akzent": "#112D43",
+    "taupe_tief": "#112D43"
+   },
+   "bild": "marke/bilder/plakat-2025-11.jpg"
+  },
+  {
+   "kennung": "ochsenblut",
+   "name": "Ochsenblut",
+   "plakat": "27./28.03.2026",
+   "motiv": "Panther mit Eisbecher",
+   "hex": "#881301",
+   "toene": {
+    "gold": "#BA766C",
+    "gold_h": "#D2A69F",
+    "gold_h2": "#DEBDB8",
+    "gold_t": "#881301",
+    "taupe": "#881301",
+    "akzent": "#881301",
+    "taupe_tief": "#881301"
+   },
+   "bild": "marke/bilder/plakat-2026-03.jpg"
+  },
+  {
+   "kennung": "sepia",
+   "name": "Sepia",
+   "plakat": "25./26.09.2026",
+   "motiv": "Mondfrau",
+   "hex": "#4D3321",
+   "toene": {
+    "gold": "#94857A",
+    "gold_h": "#B9B0A9",
+    "gold_h2": "#CDC6C1",
+    "gold_t": "#4D3321",
+    "taupe": "#4D3321",
+    "akzent": "#4D3321",
+    "taupe_tief": "#4D3321"
+   },
+   "bild": "marke/bilder/plakat-2026-09.jpg"
+  }
+ ],
+ "abendfarbe_vorgabe": {
+  "kennung": "orange",
+  "grund": "nächster Termin nicht angekündigt (Profil 25.10.2026); Orange vom Februar 2025 liegt nah am gemessenen Flur der Bar"
+ },
+ "farbwelten": [
+  {
+   "kennung": "a",
+   "name": "Plakat",
+   "satz": "Das Schiefer-Violett der Wortmarke, abgedunkelt, trägt die dunklen Flächen; das Warmweiss des Plakatbands die hellen. Betont wird mit der Farbe des Abends: jedes Plakat hat seine eigene, die Seite nimmt die des nächsten Abends. Solange kein Termin steht, Orange vom Februar 2025, dasselbe Orange wie im Flur der Bar.",
+   "flaechen": [
+    "#222028",
+    "#26252E",
+    "#3A3845",
+    "#FAF4F4",
+    "#EEE9E8"
+   ],
+   "akzent": "Abendfarbe",
+   "betonung": "#EF7649",
+   "betonung_auf_hell": "#B15736",
+   "schrift": "#3A3845",
+   "linie": "#B1ADAC",
+   "punkt": "#D44032",
+   "css": {
+    "weiss": "#FDFAFA",
+    "papier": "#FAF4F4",
+    "tinte": "#3A3845",
+    "rahmen": "#B1ADAC",
+    "rot": "#D44032",
+    "creme": "#EEE9E8",
+    "sand": "#D9D4D4",
+    "marine": "#222028",
+    "d0": "#16151A",
+    "d1": "#1C1B21",
+    "d2": "#26252E",
+    "d3": "#2C2B34",
+    "blau": "#3A3845",
+    "aare": "#52505B",
+    "aare_h": "#A6A5AB",
+    "gold": "#EF7649",
+    "gold_h": "#F5A689",
+    "gold_h2": "#FBD9CC",
+    "gold_t": "#DC6D43",
+    "taupe": "#DC6D43",
+    "akzent": "#B15736",
+    "taupe_tief": "#B15736"
+   },
+   "tapete": [
+    "marke/zeichen/tapete-dunkel-a.svg",
+    "marke/zeichen/tapete-hell-a.svg"
+   ],
+   "probe": "marke/probe.html?welt=a"
+  },
+  {
+   "kennung": "b",
+   "name": "Kerzenlicht",
+   "satz": "Die dunkle Tischplatte unter Rudis Tellern trägt die dunklen Flächen, Klinker und Barnacht geben die Tiefe. Betont wird mit dem Licht der Kerzen auf der Tafel und dem Honig der Glasballons an der Bar. Warmweiss und die Schrift in Schiefer-Violett bleiben vom Plakat. Campari nur als Punkt.",
+   "flaechen": [
+    "#231B13",
+    "#2B201B",
+    "#372626",
+    "#FAF4F4",
+    "#F5E7DA"
+   ],
+   "akzent": "Kerzenlicht und Honig",
+   "betonung": "#FFCC64",
+   "betonung_auf_hell": "#A35C1C",
+   "schrift": "#3A3845",
+   "linie": "#B1ADAC",
+   "punkt": "#D44032",
+   "css": {
+    "weiss": "#FDFAFA",
+    "papier": "#FAF4F4",
+    "tinte": "#3A3845",
+    "rahmen": "#B1ADAC",
+    "rot": "#D44032",
+    "creme": "#F5E7DA",
+    "sand": "#EED8B8",
+    "marine": "#231B13",
+    "d0": "#0A0705",
+    "d1": "#16110C",
+    "d2": "#2B201B",
+    "d3": "#30221F",
+    "blau": "#372626",
+    "aare": "#442D32",
+    "aare_h": "#A29698",
+    "gold": "#FFCC64",
+    "gold_h": "#FFE0A2",
+    "gold_h2": "#FFF1D4",
+    "gold_t": "#A35C1C",
+    "taupe": "#BA782E",
+    "akzent": "#A35C1C",
+    "taupe_tief": "#A35C1C"
+   },
+   "tapete": [
+    "marke/zeichen/tapete-dunkel-b.svg",
+    "marke/zeichen/tapete-hell-b.svg"
+   ],
+   "probe": "marke/probe.html?welt=b"
+  }
+ ],
+ "farbwelt_gewaehlt": {
+  "k": "a",
+  "name": "Plakat",
+  "wort": "Robert 26.10.2026: «a» (weitergegeben von der Sitzung «Culinarium · Rudis Dateien aus Mail und Drive holen»)"
+ },
+ "farbwelt_verworfen": {
+  "k": "b",
+  "name": "Kerzenlicht",
+  "wo": "marke/markenbuch.html#welten"
+ },
+ "abendfarbe_gewaehlt": null,
+ "schriften": [
+  {
+   "rolle": "titel",
+   "name": "Fraunces Soft",
+   "schnitt": "leicht: 340 für Titel, 300 für Rudis Zeilen in Versalien, Weichheit 100 (SOFT 100), optische Grösse 144; nie fett, nie kursiv",
+   "datei": "website/assets/schrift/fraunces-soft.woff2",
+   "quelle": "Google Fonts (github.com/google/fonts, ofl/fraunces), 26.10.2026, als feste Instanz gerechnet (_bau, fontTools)",
+   "lizenz": "SIL Open Font License 1.1 (marke/schriften/OFL-fraunces.txt)",
+   "wofuer": "Titel, Rudis Zeilen, grosse Zahlen (wie website/assets/culinarium.css .gross, .rudi)"
+  },
+  {
+   "rolle": "etikett",
+   "name": "Urbanist",
+   "schnitt": "600 und 700, Versalien, 0,12 em gesperrt",
+   "datei": "website/assets/schrift/urbanist.woff2",
+   "quelle": "Google Fonts (ofl/urbanist), 26.10.2026",
+   "lizenz": "SIL Open Font License 1.1 (marke/schriften/OFL-urbanist.txt)",
+   "wofuer": "Etiketten, Kapitelzeilen, Knöpfe"
+  },
+  {
+   "rolle": "lauf",
+   "name": "Instrument Sans",
+   "schnitt": "400, 17 px, Zeilenabstand 1,62",
+   "datei": "website/assets/schrift/instrument.woff2",
+   "quelle": "Werkbank-Kit (Google Fonts), über Späher 02",
+   "lizenz": "SIL Open Font License 1.1",
+   "wofuer": "Lesetext der Website"
+  },
+  {
+   "rolle": "mono",
+   "name": "DM Mono",
+   "schnitt": "400",
+   "datei": "website/assets/schrift/dmmono.woff2",
+   "quelle": "Werkbank-Kit (Google Fonts), über Späher 02",
+   "lizenz": "SIL Open Font License 1.1",
+   "wofuer": "Zeiten, Preise, Plätze: gesetzt wie ein Bon aus der Küche"
+  }
+ ],
+ "schriftwahl": {
+  "titel": [
+   {
+    "name": "Fraunces Soft",
+    "urteil": "gewählt",
+    "satz": "Eine Antiqua der 70er mit weichen, tropfenförmigen Enden wie in der Wortmarke; auf der Website leicht gesetzt (340), nie fett. Liegt in der Website."
+   },
+   {
+    "name": "Gravitas One",
+    "urteil": "zweite Wahl",
+    "satz": "Die einzige freie Schrift, die so breit läuft wie CULINARIUM und dünne Diagonalen gegen dicke Stämme setzt (Breite 1.11). Mit Füsschen, ohne Tropfen."
+   },
+   {
+    "name": "Bagel Fat One",
+    "urteil": "nicht",
+    "satz": "Höchste Deckung (0.55), aber rund und weich wie ein Spielzeug; das Haus ist scharf geschnitten."
+   },
+   {
+    "name": "Dela Gothic One",
+    "urteil": "nicht",
+    "satz": "Fett und breit wie ein Plakat (Deckung 0.54), aber eine Groteske. Titel in Groteske wirken bei uns nie fertig."
+   }
+  ],
+  "zeile": [
+   {
+    "name": "Urbanist 900",
+    "urteil": "gewählt",
+    "satz": "Deckung 0.54 bei 0.06 em Sperrung; geometrisch wie die Zeile, ohne Kugelenden. Liegt schon in der Website."
+   },
+   {
+    "name": "Fredoka 700 schmal",
+    "urteil": "nicht",
+    "satz": "Höchste Deckung (0.57), aber durchweg gerundet; die Zeile des Hauses hat gerade Enden."
+   },
+   {
+    "name": "Lexend 800",
+    "urteil": "möglich",
+    "satz": "Deckung 0.49; ruhiger, etwas schmaler."
+   }
+  ],
+  "messung": "_bau/match.json, _bau/match_zeile.json (Deckung Buchstabe für Buchstabe gegen die Original-Pixel des Plakats)"
+ },
+ "wortmarke": {
+  "status": "original",
+  "quelle": "Rudis Original-Logo, als Vektor-PDF geschickt am 28.10.2026 (_quelle/logo/original/culinarium-logo-original-rudi-2026-10-28.pdf), Farbe #383944",
+  "datei": "_quelle/logo/original/culinarium-logo-original.svg",
+  "art": "svg",
+  "auf_der_website": "website/assets/zeichen/marke.svg (Symbole wm, wmz, zeile; gebaut von website/bau.py zeichen() aus dem Original)",
+  "zeile": "A UNiQUE EXPERiENCE (linksbündig unter der Wortmarke)",
+  "auf_den_plakaten": "darunter «BY MOMO X RUDI» (2023 «BY MOMO X CHRISTOPH», 2024 «BY MOMO»), im doppelt gerahmten warmweissen Feld",
+  "farben": "Schiefer #3A3845 auf Warmweiss, Warmweiss #FAF4F4 auf Dunkel; nie neu gesetzt, nie mit Schatten",
+  "vorher": "bis 28.10.2026 Platzhalter, aus dem Plakat nachgezogen (_quelle/logo/nachgezogen/), nach Rudi nicht sein Logo"
+ },
+ "zeichen": [
+  "marke/zeichen/c.svg",
+  "marke/zeichen/x.svg",
+  "marke/zeichen/icon.svg"
+ ],
+ "zeichen_satz": "Das C ist der erste Buchstabe der Wortmarke (formgleich mit Rudis Original, Zeichen der Werkzeuge im Ring); das x kommt aus «MOMO X RUDI» der Plakate. Auf der Website trägt die Tapete das C.",
+ "tapete": {
+  "was": "Gitter aus der doppelten Linie der Plakate, Rapport 176 px, an jeder Kreuzung das x, in jedem Feld das C, Ton in Ton",
+  "dateien": [
+   "marke/zeichen/tapete-dunkel-a.svg",
+   "marke/zeichen/tapete-hell-a.svg",
+   "marke/zeichen/tapete-dunkel-b.svg",
+   "marke/zeichen/tapete-hell-b.svg"
+  ]
+ },
+ "knopf": {
+  "form": "Platte mit Radius 10 px, Etikettschrift Urbanist 700 in Versalien, rechts runder Knauf in Kerze mit dem Pfeil als Linie (wie website/assets/culinarium.css .knopf)",
+  "tiefe": "Verlauf in drei Stufen, Lichtkante oben, dunkle Kante unten, weicher Schatten; Glanzstreif beim Überfahren, hebt sich 2 px, gibt beim Drücken nach"
+ },
+ "band": {
+  "was": "Merkmal der Plakate: auf jedem Plakat seit Oktober 2023 die Wortmarke im doppelt gerahmten warmweissen Feld, darunter die Zeile",
+  "beleg": [
+   "marke/bilder/plakat-2023-10.jpg",
+   "marke/bilder/plakat-2024-04.jpg",
+   "marke/bilder/plakat-2025-02.jpg",
+   "marke/bilder/plakat-2026-09.jpg"
+  ],
+  "nur": "auf den Plakaten",
+  "nie": "kein Baustein für Website und Drucksachen (Robert 26.10.2026 abgelehnt als Beschriftung; Oberchef 28.10.2026), kein gerahmtes Schild auf einem Foto, keine Plakette, keine Einkerbung"
+ },
+ "darstellungsidee": "Die Abendfarbe: die Betonung der ganzen Seite wechselt mit dem Plakat des nächsten Abends. Dunkle Flächen wie die Bar, Warmweiss wie das Plakat. Keine Schrift auf dem Foto, kein Schild darüber.",
+ "bewegungsidee": "Anstossen: zwei Bilder steigen getrennt von unten herauf, das zweite eine Achtelsekunde später, und treffen sich an der Naht mit einem gemeinsamen, einzigen Puls, wie zwei Gläser. Nur transform, nichts kommt von der Seite.",
+ "merkmale_nicht": [
+  "vegetarisch (Rudi 26.10.2026: Culinarium ist nicht mehr rein vegetarisch)",
+  "das warmweisse Band mit doppelter Linie als Beschriftung auf Website und Drucksachen (Robert 26.10.2026 abgelehnt; bleibt Merkmal der Plakate)"
+ ],
+ "ton": {
+  "charakter": [
+   "Zwei teilen einen Abend: Rudi kocht ein Drei-Gänge-Menü, Momo mixt fünf Signature Drinks dazu und erklärt jeden selbst, mit Fatwashing, Milkwashing und Klärung durch Enzyme.",
+   "Der Ort ist eine Bar in Linden, das Walk on the Wild Side in der Haasemannstraße 13: draussen Klinker, Schilder und Graffiti, drinnen Kerzen, Kupferlicht und eine lange Tafel. Ein Freitag um 19 Uhr, ein Samstag um 17 Uhr, zuletzt «AUSGEBUCHT!».",
+   "Jeder Abend kündigt sich mit einem eigenen Plakat an, Pin-up oder Art déco in einer eigenen Farbe, darunter immer dasselbe warmweisse Band mit CULINARIUM. Der Ton ist herzlich, im Du, mit einer Knappheit, die stimmt."
+  ],
+  "eigene_worte": [
+   "A UNiQUE EXPERiENCE BY MOMO X RUDI",
+   "geht in die nächste Runde",
+   "Signature Drinks",
+   "Cocktail Tasting",
+   "dazugehörige Schulung",
+   "Momo wird persönlich jeden Drink für dich erklären",
+   "nur 14 Plätze pro Abend",
+   "AUSGEBUCHT!",
+   "Vorverkauf",
+   "Walk on the Wild Side",
+   "AUBERGINE / KOKOS / LIMETTE / SESAM",
+   "Food Pairing"
+  ],
+  "nicht": [
+   "Geschmacksexplosionen (steht in jeder Ankündigung, bleibt dort)",
+   "kulinarische Reise",
+   "unvergesslich",
+   "Genuss pur",
+   "ein Fest für die Sinne",
+   "Geheimtipp",
+   "Emojis aus den Beiträgen",
+   "«Hasemannstrasse» (richtig: Haasemannstraße)",
+   "Sie-Ansprache",
+   "«vegetarisch» als Merkmal der Marke (Rudi 26.10.2026: nicht mehr rein vegetarisch)",
+   "Fakten der Bar als Fakten von Culinarium (Falstaff, Google-Noten)"
+  ],
+  "quellen": [
+   "_quelle/extern/ig/beitraege.md (Beiträge 2023–2026)",
+   "_quelle/extern/ig-team/beitraege.md (Rudi)",
+   "_kette/03-sammler/fakten.json",
+   "_kette/02-spaeher/befund.md",
+   "_quelle/recherche/Kundenprofil.md Blatt 5"
+  ]
+ },
+ "welt": "grand",
+ "eigene_welt": {
+  "satz": [
+   "Culinarium ist die Welt eines Abends in einer Bar: eine lange Tafel bei Kerzenlicht, ein Tresen voller Flaschen und Glasballons, zwei Leute, die kochen und mixen und dabei erzählen, vierzehn Gäste, die zusammen anstossen.",
+   "Die Marke ist ein Plakat-System: oben jedes Mal ein neues Bild in einer neuen Farbe, unten immer das Band mit der Wortmarke. Daraus kommt die Ordnung der Seite: das Bild wechselt, das Band bleibt, die Farbe gehört dem nächsten Abend.",
+   "Urban ist es von aussen, Klinker, Schilder, Graffiti an der Ecke in Linden; warm von innen, Kupfer, Kerze, dunkler Tisch. Die Seite spielt beides: dunkle Flächen wie die Bar, warmweisse Bänder wie das Plakat, und Bilder, die paarweise ankommen wie Teller und Glas."
+  ],
+  "unterschied_zu": {
+   "Grand Beau-Rivage": "Belle Époque, Portier, Ballsaal, Marine und Gold, Medaillon-Tapete; hier eine Bar in Linden, Schiefer-Violett, Abendfarbe statt Gold, die Tapete aus der doppelten Plakatlinie.",
+   "Carlton-Europe": "Vintage-Hotel mit Dachterrasse, Kissen, Weinkeller, Türflügel im Auftakt; hier kein Hotel, ein Abend an einer Tafel, zwei Bilder, die sich treffen statt aufgehen.",
+   "Hotel Seiler au Lac · Waldhotel Doldenhorn · Landgasthof Ruedihus · Berghotel Gasterntal": "See, Wald, Berg und Weg; hier Stadt, Klinker und Kerzenlicht, keine Landschaft.",
+   "Zurbriggen (vier Häuser)": "Berg, Schnee, Lärche, Grat als Naht; hier die doppelte Linie des Plakats als einzige Linie.",
+   "Taverne zum Schäfli · Wirtschaft am Schlössli": "Riegelhaus und Hafen, Wappen und Zeiger, Petrona und Open Sans; hier eine Display-Antiqua der 70er und eine Zeile mit kleinem i.",
+   "Salt & Silver": "Hamburger Taco-Bar mit Reise-Erzählung und Vorhang; hier kein Vorhang, die Wechselfarbe des Abends und Zutatenzeilen in Rudis Schreibweise.",
+   "Tasty Grand Hotel": "erfundenes Hotel; hier ein echtes Paar aus Küche und Bar mit eigenen Fotos."
+  }
+ },
+ "familie_machart": null,
+ "bilder": "marke/bilder/herkunft.json (nur Rudis Dateien und die Plakate des eigenen Kontos)",
+ "seiten": {
+  "markenbuch": "marke/markenbuch.html",
+  "probe": "marke/probe.html",
+  "logo_richtig_falsch": "marke/logo-richtig-falsch/index.html"
+ },
+ "stand": "28.10.2026; auf dem Stand der Website: Rudis Original-Logo, Fraunces leicht, Farben und Lesetext der Website, Band nur auf den Plakaten (vorher 26.10.2026, Platzhalter)",
+ "website_stand": {
+  "datum": "2026-10-28",
+  "farben": "website/assets/culinarium.css: Nacht #16151A, Strasse #1C1B21, Bar #222028, Tafel #26252E, Schiefer #3A3845, Warmweiss #FAF4F4, Tinte #2A2833, Kerze #EF7649 (hell #F5A689, tief #B15736), Dirty Chicken #8953A9; = Farbwelt A, Abendfarbe Orange",
+  "lesetext": "Instrument Sans (body), Urbanist für Etiketten",
+  "von": "culinarium-livre auf Auftrag des Oberchefs"
+ }
+}

@@ -1,0 +1,81 @@
+{
+  "station": "06",
+  "name": "Konzept-Board",
+  "rolle": "Konzepter",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-26T12:20+08:00",
+  "ende": "2026-10-26T12:20+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [
+    {
+      "punkt": "Leitbild-Paar für den Auftakt",
+      "wo": "Robert wählt: A Momo | Rudi (4568 | 5301), B Glas | Teller (5369 | 5379), C Tafel allein (4972)."
+    },
+    {
+      "punkt": "Wer ist wer auf den Fotos",
+      "wo": "Rudi, Momo, Derya sind auf vielen Bildern, aber nirgends benannt; Zuordnung vor jeder Bildzeile mit Rudi klären."
+    },
+    {
+      "punkt": "Rechte an Rudis Bildern",
+      "wo": "Fotograf je Datei unbekannt (focusonbiz_hannover, Irina Voronov oder andere); _quelle/vom-kunden/drive/herkunft.json."
+    },
+    {
+      "punkt": "Rechte und Herkunft der Plakat-Illustrationen",
+      "wo": "Kundenprofil Blatt 5; ohne Bestätigung keine Plakatwand online."
+    },
+    {
+      "punkt": "Nächster Termin und Ticketsystem",
+      "wo": "Profil 25.10.2026 ohne Ankündigung; Vergleich in Kundenprofil Blatt 9."
+    },
+    {
+      "punkt": "Dirty Chicken: Kapitel, Unterseite oder eigene Adresse",
+      "wo": "Beide Filme sind von @dirtychicken.hannover, Logo im Opening-Film eingebrannt; Logo als Vektor und Farben fehlen."
+    },
+    {
+      "punkt": "Film 52799.mp4",
+      "wo": "Tageslicht, Teller zum Teilen mit Auster und Ente am Fenster: zu welchem Konzept er gehört, ist nicht belegt."
+    },
+    {
+      "punkt": "Schulungen, Events, Consulting",
+      "wo": "Nur der Profilname; Inhalte von Rudi."
+    },
+    {
+      "punkt": "Vegetarisch als fester Standard",
+      "wo": "Dezember 2025 Ente, «auch in Veggie möglich» (DSnlBLECGyD)."
+    },
+    {
+      "punkt": "Freigabe der Bar",
+      "wo": "Bilder mit dem Schild WILD SIDE, Falstaff, Nennung als Gastgeber."
+    },
+    {
+      "punkt": "Vertragspartner und Impressum",
+      "wo": "fakten.json › rechtstraeger."
+    },
+    {
+      "punkt": "Fünf Dateien fehlen",
+      "wo": "115351, 115389, 115442, 115445, 36541 (.jpg): nicht freigegeben, nicht im Ordner «Robert tasty»."
+    },
+    {
+      "punkt": "4128.jpg ist ein HEIC-Bild",
+      "wo": "Aus Mail 1a16c05a4695979d, Endung .jpg, Inhalt HEIC; öffnet mit sips, nicht mit jedem Werkzeug."
+    },
+    {
+      "punkt": "Markenbuch fehlt",
+      "wo": "Stationen 04 und 05 liegen nicht vor; Farben vorläufig aus den Plakaten (#FAF4F4, #3A3845), Akzent aus den Fotos gemessen, Titelschrift Fraunces wie beim Späher."
+    }
+  ],
+  "paket": [
+    "konzept.html",
+    "konzept.json"
+  ],
+  "adresse": "http://127.0.0.1:8978/haus/Culinarium%20Hannover/_kette/06-konzepter/konzept.html",
+  "briefing": "briefing.html",
+  "notiz": "Konzept-Board auf Roberts Wort vom 26.10.2026 vor den Stationen 04 und 05: die Startseite als ein Culinarium-Abend, Gang für Gang, jeder Gang ein Paar aus Teller und Glas; Dirty Chicken mit beiden Filmen als eigenes Kapitel.",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

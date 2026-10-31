@@ -1,0 +1,45 @@
+{
+ "art": "abend",
+ "ziel": "abend",
+ "name": "Der nächste Abend",
+ "unter": "Menü und Drinks",
+ "gruppe": "Der nächste Abend",
+ "quelle": "Beispiel aus abend-2025-02-21 (website/abende_info.py KARTEN['DFqbLG2s_dc'] · website/bau.py ABENDE (Foto der Karte in der Story vom 22.02.2025))",
+ "schema": 1,
+ "format": [
+  210,
+  297
+ ],
+ "abend": {
+  "ab": "2026-10-30",
+  "titel": "Menü",
+  "motto": "",
+  "mit": "BY MOMO X RUDI",
+  "preis": "79,00 EUR",
+  "zusatz": "",
+  "hinweis": "",
+  "fuss": "",
+  "tage": [
+   {
+    "zu": false,
+    "hinweis": "",
+    "amuse": "",
+    "amuse_z": "",
+    "aperitif": "",
+    "aperitif_z": "",
+    "vorspeise": "",
+    "vorspeise_z": "",
+    "haupt": "",
+    "haupt_z": "",
+    "dessert": "",
+    "dessert_z": "",
+    "absacker": "",
+    "absacker_z": ""
+   }
+  ]
+ },
+ "seiten": [],
+ "teile": [],
+ "wer": "Team Culinarium",
+ "gespeichert": "2026-10-28 13:05:25"
+}

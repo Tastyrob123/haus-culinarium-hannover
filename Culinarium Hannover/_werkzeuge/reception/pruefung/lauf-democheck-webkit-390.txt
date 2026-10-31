@@ -1,0 +1,7 @@
+ok   Chat ausprobieren: 14 Gästefragen nacheinander, jede mit Antwort, Demo-Wort, Feld bleibt sichtbar, kein Programm · 14 Antworten, Feld unten 806/844, Anfrage warteliste weggeräumt · letzte: Probe-Antwort ohne KI: Dies ist ein Entwurf, deine Anfrage geht nicht an das Team. Für ein
+ok   Eingang: jede Anfrage geöffnet, kein Programm-Link, kein roher Code, kein Überlaufen · 7 Anfragen geöffnet
+ok   Links in allen Ansichten, Anleitung, Prüfseite: kein mailto/tel/sms, jedes Ziel erreichbar · 32 Ziele, alle erreichbar · nach aussen: http://127.0.0.1:9082/_werkzeuge/bureau/, http://127.0.0.1:9083/_werkzeuge/carte/, http://127.0.0.1:9084/_werkzeuge/reception/, http://127.0.0.1:9085/_werkzeuge/livre/, http://127.0.0.1:9086/_werkzeug
+ok   Anleitung: alle Bilder geladen, jeder Kapitel-Sprung trifft, kein Überlaufen · 11 Bilder geladen, Sprünge ok
+ok   Prüfseite: kein Rot, Bild · Alles in Ordnung. Gelb heisst: bewusst so, kein Fehler.
+
+democheck webkit 390: 5 von 5 grün

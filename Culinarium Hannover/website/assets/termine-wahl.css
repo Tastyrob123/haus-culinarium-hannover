@@ -1,0 +1,598 @@
+/* Culinarium · «Wann und wie viel» in 20 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.tew{--papier:#F7F0EB;--tinte:#2A2833;--tinte2:#5A5562;--gold:rgba(176,140,90,.55);--zahl:300 1em/.9 var(--titel);background:var(--nacht);color:#FAF4F4;
+  --fg:#FAF4F4;--fg2:rgba(250,244,244,.74);--linie:rgba(250,244,244,.16)}
+.tw-in{max-width:var(--max);margin:0 auto;padding:var(--abstand) var(--rand)}
+.tew img{display:block;width:100%;height:100%;object-fit:cover}
+:where(.tew figure){margin:0;position:relative;overflow:hidden;border-radius:var(--r);background:#0F0E13}
+:where(.tew) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.tew p{margin:0}
+.tw-h{font-family:var(--titel);font-weight:340;font-size:clamp(42px,5vw,84px);line-height:.96;letter-spacing:-.016em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.tw-h.tw-mi{text-align:center}
+.tw-satz{margin-top:20px;max-width:52ch;color:var(--fg2);font-size:15.5px;line-height:1.65}
+.tw-mit{font:600 9.5px/1.3 var(--etikett);letter-spacing:.2em}
+.tw-x{font-style:normal;color:var(--kerze);margin:0 .45em;font-family:var(--titel)}
+.tw-kick{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.tew b{font-weight:inherit}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .tew .auf:where(:not(.zl):not(.sw):not(.eigen)){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .tew .auf.da:where(:not(.zl):not(.sw):not(.eigen)){transform:none}
+/* Zahl in der Titelschrift */
+.tw-zahl,.tw01-tage b,.tw02-zeilen b,.tw03-zahl b,.tw03-kopf b,.tw04-f b,.tw05-legende b,.tw09-mark b,.tw09-zahl b,.tw10-preis,.tw11-summe b,.tw12-in b,.tw13-z b,.tw14-zeit b,.tw16-z{
+  font-family:var(--titel);font-weight:300;font-variation-settings:"SOFT" 100,"opsz" 144;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+/* ---------- 1 Das Ticket */
+.tw01{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,88px);align-items:center}
+.tw01-buehne{position:relative;padding:clamp(30px,5vh,60px) 0}
+.tw01-f{height:clamp(480px,74vh,760px);width:78%;margin-left:auto}
+.tw01-ticket{position:absolute;left:0;top:50%;width:min(620px,92%);display:grid;grid-template-columns:1fr 150px;transform:translateY(-50%) rotate(-4deg);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))}
+.tw01-haupt,.tw01-abriss{background:var(--papier);color:var(--tinte);position:relative}
+.tw01-haupt{padding:30px 32px 26px;border-radius:6px 0 0 6px;
+  -webkit-mask:radial-gradient(circle at 100% 0,#0000 12px,#000 12.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 12px,#000 12.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 100% 0,#0000 12px,#000 12.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 12px,#000 12.5px) bottom/100% 51% no-repeat}
+.tw01-abriss{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:20px 16px;border-radius:0 6px 6px 0;border-left:2px dashed rgba(42,40,51,.3);transform-origin:0 100%;
+  -webkit-mask:radial-gradient(circle at 0 0,#0000 12px,#000 12.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 12px,#000 12.5px) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at 0 0,#0000 12px,#000 12.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 12px,#000 12.5px) bottom/100% 51% no-repeat}
+html.js:not(.ruhig) .tw01-abriss{transition:transform 1.4s var(--feder) .5s}
+html.js .tw01-ticket.da .tw01-abriss{transform:translate(14px,6px) rotate(7deg)}
+.tw01-marke{width:62%;color:var(--schiefer)}.tw01-marke .marke{width:100%;height:auto;display:block}
+.tw01-haupt .tw-mit{margin-top:10px;color:var(--schiefer)}
+.tw01-tage{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;padding-top:18px;border-top:1px solid rgba(42,40,51,.16)}
+.tw01-tage span,.tw01-preis span,.tw01-abriss span,.tw01-abriss em{display:block;font:500 10px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tinte2);font-style:normal}
+.tw01-tage b{display:block;margin-top:4px;font-size:clamp(30px,3vw,44px);line-height:1}
+.tw01-preis{display:flex;align-items:baseline;gap:14px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(42,40,51,.16)}
+.tw01-preis b{font:300 clamp(36px,3.6vw,54px)/1 var(--titel);color:var(--kerze-tief)}
+.tw01-ort{margin-top:14px;font:600 10px/1.4 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--tinte2)}
+.tw01-abriss b{font:300 64px/.9 var(--titel);color:var(--kerze-tief)}
+.tw01-abriss em{color:var(--kerze-tief)}
+
+/* ---------- 2 Plakat des Abends */
+.tw02{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,88px);align-items:center}
+.tw02-wand{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);align-items:start}
+.tw02-plakat,.tw02-leer{aspect-ratio:4/5.4;border-radius:4px;padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.tw02-plakat{background:var(--schiefer);color:#FAF4F4;box-shadow:0 40px 60px -30px rgba(0,0,0,.8)}
+.tw02-plakat .tw-mit{color:#F5D3C4}
+.tw02-marke{margin-top:14px;color:#FAF4F4}.tw02-marke .marke{width:100%;height:auto;display:block}
+.tw02-datum{margin-top:auto;padding-bottom:10px;border-bottom:3px solid var(--kerze);font:300 clamp(26px,2.6vw,40px)/1 var(--titel);letter-spacing:-.01em}
+.tw02-zeilen{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.tw02-zeilen span{display:block;font:500 9.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw02-zeilen b{display:block;font-size:clamp(22px,2vw,30px);line-height:1.05}
+.tw02-ort{margin-top:16px;font:600 9px/1.4 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw02-quer{position:absolute;right:-56px;bottom:30px;transform:rotate(-38deg);background:var(--kerze);color:#fff;padding:7px 60px;font:600 10px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase}
+.tw02-leer{margin-top:clamp(40px,8vh,90px);border:1.5px dashed rgba(250,244,244,.3);color:rgba(250,244,244,.55)}
+.tw02-leer .tw02-marke{color:rgba(250,244,244,.18)}
+.tw02-frage{margin-top:auto;font:300 clamp(24px,2.4vw,36px)/1.05 var(--titel);color:#FAF4F4}
+.tw02-folgt{margin-top:10px;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+html.js:not(.ruhig) .tw02-leer{transform:translateX(38%) rotate(4deg);transition:transform 1.6s var(--k) .3s}
+html.js .tw02-leer.da{transform:none}
+
+/* ---------- 3 Die Tafel von oben */
+.tw03-tisch{margin-top:clamp(30px,6vh,64px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(12px,2vw,28px);align-items:center}
+.tw03-svg{width:100%;height:auto;display:block}
+.tw03-holz{fill:#3B2A22;stroke:rgba(239,118,73,.35);stroke-width:1.5}
+.tw03-t{fill:#F7F0EB}.tw03-ti{fill:none;stroke:rgba(42,40,51,.18);stroke-width:1.5}
+.tw03-gl{fill:none;stroke:rgba(250,244,244,.6);stroke-width:2}
+.tw03-b{stroke:rgba(250,244,244,.45);stroke-width:3;stroke-linecap:round}
+.tw03-k{fill:#FFE2B8}.tw03-schein{fill:rgba(239,118,73,.22)}
+.tw03-g{transform-box:fill-box;transform-origin:center}
+html.js:not(.ruhig) .tw03-g{transform:scale(.55);transition:transform 1s var(--feder) calc(var(--i)*70ms)}
+html.js .tw03-svg.da .tw03-g{transform:none}
+.tw03-kopf{text-align:center;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;gap:10px;align-items:center}
+.tw03-kopf.r{transform:none}
+.tw03-kopf span{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.tw03-kopf b{font-size:clamp(32px,3.4vw,54px);line-height:1}
+.tw03-unten{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start;border-top:1px solid rgba(239,118,73,.6);padding-top:24px}
+.tw03-zahl b{display:block;font-size:clamp(56px,6vw,96px);line-height:.9}
+.tw03-zahl span{display:block;margin-top:10px;max-width:22ch;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+.tw03-s{margin-top:0}
+
+/* ---------- 4 Freitag und Samstag */
+.tw04-kopf{display:grid;grid-template-columns:auto minmax(0,52ch);justify-content:space-between;gap:clamp(24px,4vw,60px);align-items:end}
+.tw04-kopf .tw-satz{margin:0}
+.tw04-paar{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:1fr 1fr;gap:0}
+.tw04-f{height:clamp(480px,78vh,820px)}
+.tw04-f.a{border-radius:var(--r) 0 0 var(--r)}.tw04-f.b{border-radius:0 var(--r) var(--r) 0}
+.tw04-f::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(10,8,10,.72))}
+.tw04-f figcaption{position:absolute;z-index:2;left:clamp(18px,2.4vw,36px);bottom:clamp(18px,3vh,34px)}
+.tw04-f figcaption span{display:block;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.82)}
+.tw04-f figcaption b{display:block;margin-top:10px;font-size:clamp(64px,8.4vw,150px);line-height:.85}
+html.js:not(.ruhig) .tw04-f.a{transform:translateY(70px);transition:transform 1.5s var(--k)}
+html.js:not(.ruhig) .tw04-f.b{transform:translateY(140px);transition:transform 1.5s var(--k) .12s}
+html.js .tw04-f.da{transform:none}
+.tw04-fuss{margin-top:22px;display:flex;gap:clamp(24px,5vw,80px);flex-wrap:wrap;font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+.tw04-fuss b{font:300 clamp(30px,2.8vw,44px)/1 var(--titel);letter-spacing:-.01em;text-transform:none;color:#FAF4F4;margin-right:10px;vertical-align:-.12em}
+
+/* ---------- 5 Das Zifferblatt */
+.tw05{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,110px);align-items:center}
+.tw05-uhr svg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto;overflow:visible}
+.tw05-rand{fill:#1E1C22;stroke:rgba(250,244,244,.1);stroke-width:1.5}
+.tw05-s{stroke:rgba(250,244,244,.35);stroke-width:1.5}.tw05-s.dick{stroke:rgba(250,244,244,.7);stroke-width:2.5}
+.tw05-bogen{fill:none;stroke-width:16;stroke-linecap:round}
+.tw05-bogen.t-sa{stroke:var(--kerze)}.tw05-bogen.t-fr{stroke:var(--kerze-hell);opacity:.75}
+.tw05-z{font:300 22px/1 var(--titel);fill:#FAF4F4}
+.tw05-zeiger{transform:rotate(150deg);transform-origin:200px 200px;stroke:#FAF4F4;stroke-width:3;stroke-linecap:round;fill:#FAF4F4}
+html.js:not(.ruhig) .tw05-zeiger{transition:transform 2.2s var(--k) .3s}
+html.js:not(.ruhig) .tw05-uhr:not(.da) .tw05-zeiger{transform:rotate(0)}
+.tw05-legende{margin-top:30px;display:grid;gap:14px}
+.tw05-legende p{display:grid;grid-template-columns:34px auto 1fr;gap:14px;align-items:baseline;padding-top:14px;border-top:1px solid var(--linie)}
+.tw05-legende i{height:6px;border-radius:3px;background:var(--kerze);align-self:center}.tw05-legende .t-fr i{background:var(--kerze-hell);opacity:.75}
+.tw05-legende span{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+.tw05-legende b{font-size:clamp(40px,4vw,64px);line-height:.9;justify-self:end}
+.tw05-mehr{margin-top:24px;font-size:15px;color:rgba(250,244,244,.82)}
+.tw05-mehr b{font:300 26px/1 var(--titel);color:#FAF4F4}
+
+/* ---------- 6 Das Kalenderblatt */
+.tw06{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(30px,6vw,110px);align-items:center}
+.tw06-block{position:relative;max-width:560px;width:100%;margin:0 auto;perspective:1600px}
+.tw06-unter,.tw06-blatt{background:var(--papier);color:var(--tinte);border-radius:4px;padding:clamp(22px,3vw,40px)}
+.tw06-unter{position:absolute;inset:0;transform:translate(14px,14px) rotate(2deg);background:#E9DFD8;display:flex;flex-direction:column;justify-content:flex-end}
+.tw06-folgt{margin-top:8px;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-tief)}
+.tw06-blatt{position:relative;transform-origin:50% 0;box-shadow:0 40px 60px -30px rgba(0,0,0,.8)}
+html.js:not(.ruhig) .tw06-blatt{transition:transform 1.8s var(--k) .4s}
+html.js .tw06-block.da .tw06-blatt{transform:rotateX(-9deg) translateY(-6px)}
+.tw06-loch{position:absolute;top:12px;left:0;right:0;display:flex;justify-content:center;gap:120px}
+.tw06-loch i{width:12px;height:12px;border-radius:50%;background:var(--nacht)}
+.tw06-monat{font:300 clamp(34px,3.6vw,54px)/1 var(--titel);letter-spacing:-.015em}
+.tw06-monat span{color:var(--kerze-tief)}
+.tw06-wt,.tw06-tage{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
+.tw06-wt{margin-top:22px;padding-bottom:8px;border-bottom:1px solid rgba(42,40,51,.2);font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tinte2)}
+.tw06-tage span{position:relative;padding:12px 0;font:400 15px/1 var(--text);font-variant-numeric:tabular-nums;color:var(--tinte)}
+.tw06-tage .we{color:var(--kerze-tief)}
+.tw06-tage .an{font-weight:600}
+.tw06-tage .an::before{content:"";position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-26px 0 0 -23px;border:2px solid var(--kerze);border-radius:50%}
+.tw06-tage em{position:absolute;left:0;right:0;bottom:-6px;font:500 8.5px/1 var(--mono);font-style:normal;color:var(--kerze-tief)}
+.tw06-stempel{position:absolute;right:8%;bottom:16%;transform:rotate(-12deg);border:3px solid var(--kerze);color:var(--kerze);padding:6px 14px;border-radius:6px;font:600 15px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.tw06-zahlen{margin-top:26px;display:grid;gap:0;border-top:1px solid var(--linie)}
+.tw06-zahlen span{padding:12px 0;border-bottom:1px solid var(--linie);color:rgba(250,244,244,.8);font-size:15px}
+.tw06-zahlen b{font:300 26px/1 var(--titel);color:#FAF4F4;margin-right:10px}
+
+/* ---------- 7 Unter dem Negroni */
+.tw07{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,88px);align-items:stretch}
+.tw07-f{min-height:clamp(560px,86vh,880px)}
+.tw07-wand{display:flex;flex-direction:column;justify-content:center}
+.tw07-neon{margin:clamp(26px,5vh,50px) 0 6px;display:grid;gap:clamp(8px,1.4vh,16px)}
+.tw07-neon p{display:flex;align-items:baseline;justify-content:space-between;gap:20px;font:200 clamp(46px,5vw,84px)/1 var(--etikett);letter-spacing:.04em;color:#FFE7DA;
+  text-shadow:0 0 6px rgba(255,170,130,.9),0 0 18px rgba(239,118,73,.75),0 0 42px rgba(239,118,73,.45)}
+.tw07-neon span{font:500 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.62);text-shadow:none}
+html.js:not(.ruhig) .tw07-neon p{opacity:.22}
+html.js .tw07-neon.da p{animation:tw07-an 1.1s steps(1,end) calc(.2s + var(--i)*.38s) forwards}
+@keyframes tw07-an{0%{opacity:.22}12%{opacity:.9}22%{opacity:.3}34%{opacity:1}46%{opacity:.5}58%,100%{opacity:1}}
+
+/* ---------- 8 Die Anzeigetafel */
+.tw08-tafel{margin-top:clamp(28px,5vh,56px);background:#0B0A0E;border-radius:12px;padding:clamp(16px,2.4vw,34px);box-shadow:inset 0 0 0 1px rgba(250,244,244,.08);overflow-x:auto}
+.tw08-kopf,.tw08-z{display:grid;grid-template-columns:8fr 9fr 12fr;gap:clamp(14px,2vw,30px);min-width:640px}
+.tw08-kopf{padding-bottom:12px;font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.5)}
+.tw08-z{padding:7px 0;border-top:1px solid rgba(250,244,244,.05)}
+.tw08-z p{display:flex;gap:3px;perspective:400px}
+.tw08-z span{position:relative;flex:1;max-width:34px;display:grid;place-items:center;height:clamp(34px,3.4vw,48px);border-radius:4px;background:#1B1A20;color:#F4EEE6;font:500 clamp(15px,1.5vw,22px)/1 var(--mono);transform-origin:50% 50%}
+.tw08-z span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.65)}
+.tw08-z.warm span{color:var(--kerze-hell)}
+html.js:not(.ruhig) .tw08-z span{transform:rotateX(-80deg);transition:transform .6s cubic-bezier(.3,1.5,.5,1) calc(var(--i)*45ms + 120ms)}
+html.js .tw08-tafel.da .tw08-z span{transform:none}
+.tw08-s{max-width:72ch}
+
+/* ---------- 9 Die Kerze */
+.tw09{display:grid;grid-template-columns:minmax(0,.9fr) auto minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.tw09-f{height:clamp(520px,80vh,820px)}
+.tw09-mitte{--brand:0;position:relative;width:210px;height:clamp(460px,70vh,700px)}
+.tw09-kerze{position:absolute;left:24px;bottom:0;width:62px;height:86%}
+.tw09-wachs{position:absolute;left:0;right:0;bottom:0;height:100%;border-radius:8px 8px 4px 4px;background:linear-gradient(90deg,#E9DCCD,#FBF3E9 40%,#D9C7B4);transform-origin:50% 100%}
+.tw09-flamme{position:absolute;left:50%;top:-58px;width:26px;height:56px;transform:translate3d(-50%,0,0)}
+.tw09-flamme::before{content:"";position:absolute;left:50%;top:50%;width:160px;height:160px;margin:-80px 0 0 -80px;border-radius:50%;background:radial-gradient(rgba(239,118,73,.38),rgba(239,118,73,0) 65%)}
+.tw09-flamme i{position:absolute;inset:0;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(ellipse at 50% 72%,#FFF6E0 18%,#FFC56E 45%,#EF7649 80%)}
+html.js:not(.ruhig) .tw09-flamme i{animation:tw09-flackern 2.6s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes tw09-flackern{0%{transform:scale(1,1)}40%{transform:scale(.94,1.06) rotate(-2deg)}100%{transform:scale(1.04,.96) rotate(2deg)}}
+.tw09-mark{position:absolute;left:110px;right:0;padding-top:8px;border-top:1px solid var(--kerze)}
+.tw09-mark::before{content:"";position:absolute;left:-30px;top:-1px;width:24px;border-top:1px solid var(--kerze)}
+.tw09-mark.t-sa{top:14%}.tw09-mark.t-fr{top:36%}
+.tw09-mark b{display:block;font-size:36px;line-height:1}
+.tw09-mark span{display:block;margin-top:6px;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw09-zahl{margin-top:24px;display:flex;align-items:baseline;gap:16px;padding-top:16px;border-top:1px solid var(--linie)}
+.tw09-zahl b{font-size:clamp(46px,4.6vw,72px);line-height:.9}
+.tw09-zahl span{font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+
+/* ---------- 10 Der Stempel */
+.tw10{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,110px);align-items:center}
+.tw10-liste{margin-top:30px;border-top:1px solid var(--linie)}
+.tw10-liste p{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:14px 0;border-bottom:1px solid var(--linie)}
+.tw10-liste span{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw10-liste b{font:300 clamp(24px,2.2vw,34px)/1 var(--titel)}
+.tw10-r{position:relative;min-height:clamp(480px,74vh,760px);display:grid;place-items:center}
+.tw10-f{position:absolute;right:0;top:0;bottom:0;width:58%;opacity:.55}
+.tw10-mitte{position:relative}
+.tw10-preis{position:relative;font-size:clamp(130px,17vw,290px);line-height:.85;color:#FAF4F4}
+.tw10-stempel{position:absolute;left:50%;top:52%;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 26px 12px;border:4px solid var(--kerze);border-radius:10px;color:var(--kerze);transform:translate(-50%,-50%) rotate(-11deg);
+  box-shadow:inset 0 0 0 3px #16151A,inset 0 0 0 5px var(--kerze)}
+.tw10-stempel span{font:700 clamp(26px,2.8vw,44px)/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase}
+.tw10-stempel em{font:500 11px/1 var(--mono);font-style:normal;letter-spacing:.14em;text-transform:uppercase}
+html.js:not(.ruhig) .tw10-stempel{transform:translate(-50%,-50%) rotate(-4deg) scale(1.7);opacity:.25;transition:transform .55s cubic-bezier(.5,0,.75,0) .5s,opacity .3s .5s}
+html.js .tw10-stempel.da{transform:translate(-50%,-50%) rotate(-11deg);opacity:1}
+
+/* ---------- 11 Was drin ist */
+.tw11-kopf{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);align-items:end}
+.tw11-zeit{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 32px;font-size:15px;color:rgba(250,244,244,.8)}
+.tw11-zeit b{font:300 24px/1 var(--titel);color:#FAF4F4;margin-right:8px}
+.tw11-rechnung{margin-top:clamp(30px,6vh,64px);display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr auto 1.25fr;align-items:center;gap:clamp(6px,1vw,14px)}
+.tw11-t{aspect-ratio:3/4}
+.tw11-t figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;background:linear-gradient(transparent,rgba(10,8,10,.8));font:500 10.5px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.tw11-op{font:300 clamp(30px,3vw,48px)/1 var(--titel);color:var(--kerze);text-align:center}
+.tw11-summe b{display:block;font-size:clamp(64px,7vw,124px);line-height:.85}
+.tw11-summe span{display:block;margin-top:12px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.72)}
+html.js:not(.ruhig) .tw11-rechnung>*{transform:translateX(calc((var(--i,2) - 2) * 26px));transition:transform 1.5s var(--k) .2s}
+html.js:not(.ruhig) .tw11-rechnung>.tw11-op{--i:2}
+html.js .tw11-rechnung.da>*{transform:none}
+.tw11-s{max-width:72ch;margin-top:30px}
+
+/* ---------- 12 Zahlen im Bild */
+.tw12{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,88px);align-items:center}
+.tw12-bild{position:relative;aspect-ratio:1638/2048;max-height:88vh;margin-left:auto;width:100%;max-width:calc(88vh*.8)}
+.tw12-f{position:absolute;inset:0}
+.tw12-f::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.18)}
+.tw12-in{position:absolute;color:#FAF4F4;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.tw12-in span{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.85)}
+.tw12-in b{display:block;line-height:.9}
+.tw12-in.kerzen{left:50%;top:15%;display:grid;grid-template-columns:auto auto;gap:4px 18px;align-items:end}
+.tw12-in.kerzen span{grid-row:1}.tw12-in.kerzen b{grid-row:2;font-size:clamp(34px,3.4vw,56px)}
+.tw12-in.tafel{left:46%;top:48%;transform:rotate(-14deg)}
+.tw12-in.tafel b{font-size:clamp(70px,8vw,140px)}
+.tw12-in.karte{left:5%;top:58%;color:#2A2833;text-shadow:none;background:rgba(247,240,235,.94);padding:10px 14px;border-radius:3px;transform:rotate(12deg)}
+.tw12-in.karte span{color:#5A5562}.tw12-in.karte b{font-size:clamp(34px,3.2vw,52px);color:var(--kerze-tief)}
+html.js:not(.ruhig) .tw12-in.tafel{transform:translateY(40px) rotate(-14deg)}html.js .tw12-in.tafel.da{transform:rotate(-14deg)}
+html.js:not(.ruhig) .tw12-in.karte{transform:translateY(40px) rotate(12deg)}html.js .tw12-in.karte.da{transform:rotate(12deg)}
+
+/* ---------- 13 Das Türschild */
+.tw13{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,88px);align-items:center}
+.tw13-f{min-height:clamp(560px,86vh,880px)}
+.tw13-haken{width:min(360px,100%);margin-bottom:clamp(30px,5vh,50px);transform-origin:50% 0}
+.tw13-schnur{display:block;width:56%;margin:0 auto -2px;height:auto;overflow:visible}
+.tw13-schnur path{fill:none;stroke:#B9A28A;stroke-width:2}.tw13-schnur circle{fill:#8A7A6A}
+.tw13-schild{position:relative;background:#2E2A31;border:1px solid rgba(239,118,73,.5);border-radius:10px;padding:24px 26px 20px;box-shadow:0 30px 40px -24px rgba(0,0,0,.8),inset 0 0 0 5px #2E2A31,inset 0 0 0 6px rgba(250,244,244,.14)}
+.tw13-marke{width:72%;color:#FAF4F4}.tw13-marke .marke{width:100%;height:auto;display:block}
+.tw13-z{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px solid rgba(250,244,244,.14)}
+.tw13-z span{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw13-z b{font-size:40px;line-height:1}
+.tw13-unten{margin-top:18px;padding-top:12px;border-top:1px solid rgba(250,244,244,.14);font:600 10px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.tw13-zettel{position:absolute;right:-18px;bottom:-16px;transform:rotate(6deg);background:var(--papier);color:var(--kerze-tief);padding:8px 12px;font:600 10px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+html.js .tw13-haken.da{animation:tw13-pendel 3.2s cubic-bezier(.36,0,.3,1) .2s both}
+@keyframes tw13-pendel{0%{transform:rotate(9deg)}22%{transform:rotate(-6deg)}44%{transform:rotate(3.5deg)}64%{transform:rotate(-1.8deg)}82%{transform:rotate(.7deg)}100%{transform:none}}
+html.js:not(.ruhig) .tw13-haken:not(.da){transform:rotate(9deg)}
+.tw13-preis{margin-top:22px;font-size:15px;color:rgba(250,244,244,.82)}
+.tw13-preis b{font:300 30px/1 var(--titel);color:#FAF4F4;margin-right:6px}
+
+/* ---------- 14 Freitag oder Samstag? */
+.tw14{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,88px);align-items:center}
+.tw14-frage{font:300 clamp(40px,4.6vw,76px)/1 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"opsz" 144}
+.tw14-wahl{margin-top:30px;display:flex;gap:clamp(18px,3vw,40px)}
+.tw14-wahl button{font:340 clamp(28px,2.8vw,44px)/1 var(--titel);color:rgba(250,244,244,.4);padding-bottom:10px;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
+.tw14-wahl button:hover{color:rgba(250,244,244,.75)}.tw14-wahl button.an{color:#FAF4F4;border-color:var(--kerze)}
+.tw14-zeiten{position:relative;height:clamp(120px,15vw,210px);margin-top:20px}
+.tw14-zeit{position:absolute;inset:0;opacity:0;transition:opacity .5s}.tw14-zeit.an{opacity:1}
+.tw14-zeit span{display:block;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.tw14-zeit b{display:block;margin-top:10px;font-size:clamp(90px,11vw,190px);line-height:.85}
+.tw14-mehr{font-size:15px;color:rgba(250,244,244,.82)}
+.tw14-mehr b{font:300 26px/1 var(--titel);color:#FAF4F4}
+.tw14-bild{position:relative;height:clamp(540px,84vh,860px)}
+.tw14-f{position:absolute;inset:0;opacity:0;transition:opacity .7s}.tw14-f.an{opacity:1}
+
+/* ---------- 15 Vierzehn */
+.tw15-zahl svg{display:block;width:100%;height:auto;margin-top:-3%}
+.tw15-t{font:300 820px/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.04em}
+.tw15-unten{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,5vw,80px);align-items:start;margin-top:clamp(10px,2vh,24px);padding-top:22px;border-top:1px solid rgba(239,118,73,.6)}
+.tw15-was{font:300 clamp(28px,2.8vw,44px)/1.05 var(--titel)}
+.tw15-zeile{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:15px;color:rgba(250,244,244,.8)}
+.tw15-zeile b{font:300 24px/1 var(--titel);color:#FAF4F4;margin-right:6px}
+[data-tw-drift]{transform-box:fill-box}
+
+/* ---------- 16 Der Untersetzer */
+.tw16{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,5vw,88px);align-items:center}
+.tw16-buehne{position:relative;min-height:clamp(540px,82vh,840px)}
+.tw16-f{position:absolute;right:0;top:0;bottom:0;width:72%}
+.tw16-deckel{position:absolute;left:0;top:50%;width:clamp(260px,26vw,380px);aspect-ratio:1;margin-top:calc(clamp(260px,26vw,380px)/-2);perspective:1400px}
+.tw16-dreh{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1.3s var(--k)}
+.tw16-deckel.um .tw16-dreh{transform:rotateY(180deg)}
+html.js .tw16-deckel.da .tw16-dreh{transform:rotateY(180deg);transition-delay:.6s}
+html.js .tw16-deckel.da.um .tw16-dreh{transform:none;transition-delay:0s}
+
+.tw16-s{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  box-shadow:0 30px 40px -20px rgba(0,0,0,.8),inset 0 0 0 10px rgba(255,255,255,.0),inset 0 0 0 12px rgba(42,40,51,.18)}
+.tw16-s.vorn{background:#3A3845;color:#FAF4F4;box-shadow:0 30px 40px -20px rgba(0,0,0,.8),inset 0 0 0 12px #3A3845,inset 0 0 0 13.5px rgba(250,244,244,.3)}
+.tw16-s.hinten{background:#EFE4D8;color:#2A2833;transform:rotateY(180deg);gap:6px}
+.tw16-marke{display:block;width:62%;color:#FAF4F4}.tw16-marke .marke{width:100%;height:auto;display:block}
+.tw16-mit{display:block;margin-top:12px;font:600 8px/1.3 var(--etikett);letter-spacing:.2em;color:#F5D3C4}
+.tw16-k{font:600 9px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-tief)}
+.tw16-z{display:flex;flex-direction:column;align-items:center;font-size:clamp(34px,3.2vw,48px);line-height:1}
+.tw16-z em{font:500 9px/1 var(--mono);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#5A5562;margin-bottom:3px}
+.tw16-kl{margin:4px 0;font:300 18px/1 var(--titel)}
+
+/* ---------- 17 Ein Satz */
+.tw17-satz{margin-top:22px;font:300 clamp(40px,5.6vw,96px)/1.04 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"opsz" 144}
+.tw17-satz b{color:var(--kerze);font-variant-numeric:tabular-nums}
+.tw17-unten{margin-top:clamp(34px,6vh,64px);display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.tw17-f{aspect-ratio:4/3}
+.tw17-zul{font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* ---------- 18 Vierzehn Streifen */
+.tw18-kopf{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);align-items:end}
+.tw18-zeile{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 30px;font-size:15px;color:rgba(250,244,244,.8)}
+.tw18-zeile b{font:300 24px/1 var(--titel);color:#FAF4F4;margin-right:6px}
+.tw18-streifen{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:repeat(14,1fr);gap:4px;height:clamp(420px,66vh,700px)}
+.tw18-s{border-radius:6px}
+html.js:not(.ruhig) .tw18-s.o{transform:translateY(-60px)}html.js:not(.ruhig) .tw18-s.u{transform:translateY(60px)}
+html.js:not(.ruhig) .tw18-s{transition:transform 1.4s var(--k) calc(var(--i)*55ms)}
+html.js .tw18-streifen.da .tw18-s{transform:none}
+.tw18-fuss{margin-top:22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.tw18-14{max-width:16ch;font:300 clamp(22px,2vw,30px)/1.15 var(--titel)}
+.tw18-14 b{display:block;font-size:clamp(70px,7vw,120px);line-height:.85}
+.tw18-fuss .tw-satz{margin-top:0}
+
+/* ---------- 19 Der Zeitstrahl */
+.tw19-kopf{display:grid;grid-template-columns:auto minmax(0,52ch);justify-content:space-between;gap:clamp(24px,4vw,60px);align-items:end}
+.tw19-kopf .tw-satz{margin:0}
+.tw19-strahl{--tag:150px;margin-top:clamp(34px,6vh,64px)}
+.tw19-stunden{position:relative;height:22px;margin-left:var(--tag);border-bottom:1px solid var(--linie)}
+.tw19-stunden span{position:absolute;left:calc(var(--h)/8*100%);transform:translateX(-50%);font:500 10.5px/1 var(--mono);letter-spacing:.08em;color:rgba(250,244,244,.6)}
+.tw19-stunden span:last-child{transform:translateX(-100%)}
+.tw19-bahn{display:grid;grid-template-columns:var(--tag) 1fr;align-items:center;padding:14px 0;border-bottom:1px solid var(--linie)}
+.tw19-tag b{display:block;font:300 clamp(26px,2.4vw,38px)/1 var(--titel)}
+.tw19-tag span{display:block;margin-top:6px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+.tw19-spur{position:relative;height:clamp(110px,16vh,170px);background:repeating-linear-gradient(90deg,rgba(250,244,244,.07) 0 1px,transparent 1px calc(100%/8))}
+.tw19-abend{position:absolute;top:0;bottom:0;left:calc(var(--ab)/8*100%);right:0;border-radius:var(--r) 0 0 var(--r);overflow:hidden;transform-origin:0 50%;
+  -webkit-mask:linear-gradient(90deg,#000 60%,transparent);mask:linear-gradient(90deg,#000 60%,transparent)}
+.tw19-abend::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kerze);z-index:2}
+html.js:not(.ruhig) .tw19-abend{transform:scaleX(.18);transition:transform 1.8s var(--k) .2s}
+html.js .tw19-strahl.da .tw19-abend{transform:none}
+html.js .tw19-strahl.da .tw19-bahn+.tw19-bahn .tw19-abend{transition-delay:.4s}
+.tw19-fuss{margin-top:24px;display:flex;gap:clamp(24px,5vw,80px);flex-wrap:wrap;font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+.tw19-fuss b{font:300 clamp(30px,2.8vw,44px)/1 var(--titel);letter-spacing:-.01em;text-transform:none;color:#FAF4F4;margin-right:10px;vertical-align:-.12em}
+
+/* ---------- 20 Laufband */
+.tw20-buehne{position:relative;margin:0 calc(var(--rand)*-1);height:clamp(480px,76vh,800px);overflow:hidden}
+.tw-f20 .tw-in{padding-top:0}
+.tw20-f{position:absolute;inset:0;border-radius:0}
+.tw20-f::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.5)}
+.tw20-baender{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(4px,1vh,14px)}
+.tw20-band{display:flex;white-space:nowrap;font:300 clamp(56px,8vw,140px)/1.05 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"opsz" 144;color:#FAF4F4}
+.tw20-band span{flex:none;padding-right:.4em}
+.tw20-band.zur{color:transparent;-webkit-text-stroke:1.2px rgba(250,244,244,.85)}
+.tw20-band.zur .tw-x{-webkit-text-stroke:0;color:var(--kerze)}
+html.js:not(.ruhig) .tw20-band span{animation:tw20-lauf 46s linear infinite}
+html.js:not(.ruhig) .tw20-band.zur span{animation-direction:reverse;animation-duration:54s}
+@keyframes tw20-lauf{from{transform:translate3d(0,0,0)}to{transform:translate3d(-100%,0,0)}}
+.tw20-unten{margin-top:clamp(34px,6vh,64px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.tw20-zul{font:500 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .tw01,.tw02,.tw05,.tw06,.tw07,.tw09,.tw10,.tw12,.tw13,.tw14,.tw16{grid-template-columns:minmax(0,1fr)}
+  .tw01-f{width:86%;height:440px}.tw01-ticket{width:100%;grid-template-columns:1fr 96px;top:auto;bottom:-10px;transform:rotate(-3deg)}
+  .tw01-buehne{padding-bottom:150px}.tw01-haupt{padding:22px 20px}.tw01-abriss b{font-size:44px}.tw01-tage b{font-size:30px}
+  .tw02-wand{grid-template-columns:1fr .8fr}.tw02-leer{margin-top:60px}.tw02-zeilen b{font-size:20px}
+  .tw03-tisch{grid-template-columns:minmax(0,1fr);gap:10px}.tw03-kopf,.tw03-kopf.r{writing-mode:horizontal-tb;transform:none;justify-content:space-between}
+  .tw03-kopf.r{order:3}.tw03-unten{grid-template-columns:1fr 1fr}.tw03-unten .tw-satz{grid-column:1/-1}
+  .tw04-kopf,.tw11-kopf,.tw18-kopf,.tw19-kopf,.tw15-unten,.tw17-unten,.tw18-fuss,.tw20-unten{grid-template-columns:minmax(0,1fr)}
+  .tw04-f{height:420px}.tw04-f figcaption b{font-size:56px}
+  .tw05-uhr svg{max-width:340px}
+  .tw06-tage .an::before{width:36px;height:36px;margin:-21px 0 0 -18px}.tw06-loch{gap:80px}
+  .tw07-f{min-height:420px}.tw07-neon p{font-size:44px}
+  .tw08-kopf,.tw08-z{min-width:560px}
+  .tw09{grid-template-columns:minmax(0,1fr);gap:28px}.tw09-f{display:none}.tw09-mitte{width:100%;height:380px}.tw09-r{order:-1}.tw09-mark{left:96px}.tw09-mark b{font-size:28px}
+  .tw10-r{min-height:420px}.tw10-preis{font-size:34vw}
+  .tw11-zeit,.tw18-zeile{justify-content:flex-start}
+  .tw11-rechnung{grid-template-columns:1fr auto 1fr}.tw11-rechnung>.tw11-op:nth-of-type(2){display:none}
+  .tw11-rechnung .tw11-op.gleich{grid-column:1/-1;justify-self:start}.tw11-summe{grid-column:1/-1}
+  .tw12-bild{max-width:none}
+  .tw13-f{min-height:380px}
+  .tw14-bild{height:420px;order:-1}
+  .tw16-buehne{min-height:520px}.tw16-f{width:82%;bottom:120px}.tw16-deckel{top:auto;bottom:0;margin-top:0;width:260px}
+  .tw18-streifen{grid-template-columns:repeat(7,1fr);height:auto;grid-auto-rows:150px}
+  .tw19-strahl{--tag:84px}.tw19-tag b{font-size:22px}.tw19-stunden span:nth-child(even){visibility:hidden}
+  .tw20-band{font-size:56px}
+}
+
+/* ================================================================ Runde 2: 21 bis 35, ruhiger, Foto und Schrift */
+.tew [class^="tw2"] p b,.tew [class^="tw3"] p b{font-family:var(--titel);font-weight:300;font-variation-settings:"SOFT" 100,"opsz" 144;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tw-etk{font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+
+/* ---------- 21 Vier Ecken */
+.tw-f21 .tw-in{padding-top:0;padding-bottom:0;max-width:none}
+.tw21{position:relative;margin:0 calc(var(--rand)*-1)}
+.tw21-weg{height:70vh}
+.tw21-buehne{position:sticky;top:0;height:100vh;overflow:hidden}
+.tw21-f{position:absolute;inset:0;border-radius:0;transform:scale(.42);transform-origin:50% 50%}
+.tw21-f::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.45)}
+.tw21-e{position:absolute;z-index:2;max-width:22ch}
+.tw21-e b{display:block;font-size:clamp(54px,6.4vw,112px);line-height:.88}
+.tw21-e span{display:block;margin-top:10px;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.8)}
+.tw21-e.e0{left:var(--rand);top:clamp(80px,12vh,120px)}.tw21-e.e1{right:var(--rand);top:clamp(80px,12vh,120px);text-align:right}
+.tw21-e.e2{left:var(--rand);bottom:clamp(30px,6vh,60px)}.tw21-e.e3{right:var(--rand);bottom:clamp(30px,6vh,60px);text-align:right}
+.tw21-titel{position:absolute;z-index:2;inset:0;display:grid;place-items:center;pointer-events:none}
+.tw21-unten{position:relative;z-index:3;background:var(--nacht);padding:clamp(40px,7vh,72px) var(--rand) var(--abstand);display:flex;justify-content:center}
+.tw21-unten .tw-satz{text-align:center}
+
+/* ---------- 22 Vier Hochformate */
+.tw22-kopf,.tw30-kopf,.tw34-kopf{display:grid;grid-template-columns:auto minmax(0,52ch);justify-content:space-between;gap:clamp(24px,4vw,60px);align-items:end}
+.tw22-kopf .tw-satz,.tw30-kopf .tw-satz,.tw34-kopf .tw-satz{margin:0}
+.tw22-reihe{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tw22-f{height:clamp(440px,70vh,720px);border-radius:0}
+.tw22-f:first-child{border-radius:var(--r) 0 0 var(--r)}.tw22-f:last-child{border-radius:0 var(--r) var(--r) 0}
+.tw22-f::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(10,8,10,.78))}
+.tw22-f figcaption{position:absolute;z-index:2;left:clamp(14px,1.6vw,24px);right:clamp(14px,1.6vw,24px);bottom:clamp(16px,2.6vh,28px)}
+.tw22-f figcaption b{display:block;font-size:clamp(46px,5vw,86px);line-height:.88}
+.tw22-f figcaption span{display:block;margin-top:10px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.82)}
+
+/* ---------- 23 Ein Bild in vier Bahnen */
+.tw23-bahnen{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:repeat(4,1fr);gap:6px;height:clamp(460px,74vh,760px)}
+.tw23-b{position:relative;overflow:hidden;border-radius:var(--r);background:#0F0E13}
+.tw23-bild{position:absolute;inset:0;background-size:calc(400% + 18px) auto;background-position:calc(var(--n)*33.333%) 55%;background-repeat:no-repeat}
+.tw23-bild::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(10,8,10,.72))}
+.tw23-b p{position:absolute;z-index:2;left:clamp(14px,1.6vw,22px);right:12px;bottom:clamp(16px,2.6vh,26px)}
+.tw23-b b{display:block;font-size:clamp(42px,4.6vw,80px);line-height:.88}
+.tw23-b span{display:block;margin-top:10px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.82)}
+html.js:not(.ruhig) .tw23-b{transform:translateY(calc(40px + var(--n)*34px));transition:transform 1.6s var(--k) calc(var(--n)*80ms)}
+html.js .tw23-b.da{transform:none}
+.tw23-s{max-width:72ch}
+
+/* ---------- 24 Bühne mit Tausch */
+.tw-f24 .tw-in{padding-top:0;padding-bottom:0}
+.tw24{position:relative}
+.tw24-steh{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,88px);align-items:center;padding:clamp(70px,10vh,100px) 0 clamp(30px,5vh,50px)}
+.tw24-bilder{position:relative;height:100%}
+.tw24-f{position:absolute;inset:0;opacity:0;transition:opacity .8s}.tw24-f.an{opacity:1}
+.tw24-zahlen{position:relative;height:clamp(150px,20vw,260px);margin-top:clamp(24px,4vh,44px);border-top:1px solid rgba(239,118,73,.6)}
+.tw24-z{position:absolute;inset:18px 0 0;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .8s var(--k)}
+.tw24-z.an{opacity:1;transform:none}
+.tw24-z b{display:block;font-size:clamp(90px,10vw,170px);line-height:.85}
+.tw24-z span{display:block;margin-top:14px;font:500 11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.8)}
+.tw24-zaehler{display:flex;gap:6px;margin:8px 0 6px}
+.tw24-zaehler i{width:26px;height:2px;background:rgba(250,244,244,.2);transition:background .4s}.tw24-zaehler i.an{background:var(--kerze)}
+.tw24-schritte{margin-top:-100vh;pointer-events:none}
+.tw24-schritt{height:70vh}.tw24-schritt:last-child{height:100vh}
+
+/* ---------- 25 Über die Kante */
+.tw25-paar{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center;margin-top:clamp(40px,7vh,80px)}
+.tw25-f{grid-row:1;height:clamp(420px,66vh,700px)}
+.tw25-paar.l .tw25-f{grid-column:1/8}.tw25-paar.r .tw25-f{grid-column:6/13}
+.tw25-t{grid-row:1;position:relative;z-index:2}
+.tw25-paar.l .tw25-t{grid-column:6/13}.tw25-paar.r .tw25-t{grid-column:1/8}
+.tw25-zahl{font:300 clamp(110px,15vw,260px)/.82 var(--titel);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"opsz" 144;font-variant-numeric:tabular-nums;text-shadow:0 10px 50px rgba(0,0,0,.45)}
+.tw25-paar.r .tw25-zahl{text-align:right;padding-right:6%}
+.tw25-k{margin-top:18px;max-width:34ch;font-size:16px;line-height:1.55;color:rgba(250,244,244,.85)}
+.tw25-paar.l .tw25-k{margin-left:clamp(70px,13vw,220px)}
+.tw25-paar.r .tw25-k{margin-left:auto;margin-right:6%;text-align:right}
+.tw25-k b{font:300 1.6em/1 var(--titel);color:#FAF4F4}
+.tw25-s{margin-top:clamp(30px,5vh,56px)}
+
+/* ---------- 26 Die Preisliste, hell */
+.tw-f26{background:#F5EEE8;--fg:#2A2833;--fg2:#5A5662;--linie:rgba(42,40,51,.18);color:#2A2833}
+.tw-f26 .tw-satz{color:#5A5662}
+.tw26{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,110px);align-items:center}
+.tw26-f{height:clamp(520px,80vh,820px)}
+.tw26-liste .tw-kick{color:var(--kerze-tief);margin-bottom:22px}
+.tw26-zeilen{margin-top:clamp(26px,4vh,40px)}
+.tw26-zeilen p{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid rgba(42,40,51,.14)}
+.tw26-zeilen span{font-size:16px;color:#3A3845}
+.tw26-zeilen i{flex:1}
+.tw26-zeilen b{font-size:clamp(26px,2.4vw,38px);line-height:1;color:#2A2833;white-space:nowrap}
+.tw26-zeilen p:last-child b{color:var(--kerze-tief);font-size:clamp(36px,3.4vw,54px)}
+.tw26-zul{margin-top:18px;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-tief)}
+
+/* ---------- 27 Wie im Kino */
+.tw27-f{margin-top:clamp(28px,5vh,50px);aspect-ratio:2.35/1;max-height:76vh;width:100%}
+html.js:not(.ruhig) .tw27-f img{transform:scale(1.14);transition:transform 2.4s var(--k)}
+html.js .tw27-f.da img{transform:none}
+.tw27-abspann{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.6vw,40px);padding:22px 0;border-bottom:1px solid var(--linie)}
+.tw27-abspann p{display:flex;flex-direction:column;gap:8px}
+.tw27-abspann span{font:500 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(250,244,244,.6)}
+.tw27-abspann b{font-size:clamp(34px,3.4vw,56px);line-height:.95}
+.tw27-s{max-width:72ch}
+
+/* ---------- 28 Das Band */
+.tw28-kopf{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.tw28-pfeile{display:flex;gap:8px}
+.tw28-pfeile button{width:48px;height:48px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(250,244,244,.3);font-size:24px;line-height:1;text-align:center;transition:background .3s}
+.tw28-pfeile button:hover{background:var(--kerze)}
+.tw28-band{margin:clamp(28px,5vh,50px) calc(var(--rand)*-1) 0;padding:0 var(--rand);display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scroll-padding:0 var(--rand)}
+.tw28-f,.tw28-t{flex:none;height:clamp(420px,66vh,680px);scroll-snap-align:start}
+.tw28-f{width:clamp(260px,26vw,400px)}
+.tw28-t{width:clamp(220px,20vw,300px);border-radius:var(--r);background:#201E25;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(18px,2vw,28px)}
+.tw28-t b{font-size:clamp(56px,5.4vw,92px);line-height:.88}
+.tw28-t span{margin-top:12px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+.tw28-s{max-width:72ch}
+
+/* ---------- 29 Fenster mit Tafel */
+.tw-f29 .tw-in{padding-top:0;max-width:none}
+.tw29{position:relative;margin:0 calc(var(--rand)*-1)}
+.tw29-f{position:sticky;top:0;height:100vh;border-radius:0}
+.tw29-f::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.2)}
+.tw29-tafel{position:relative;z-index:2;width:min(560px,calc(100% - 2*var(--rand)));margin:-58vh var(--rand) 0 auto;background:#16151A;border-radius:var(--r);padding:clamp(28px,3.4vw,52px);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.tw29-zeilen{margin-top:26px;border-top:1px solid rgba(239,118,73,.6)}
+.tw29-zeilen p{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:14px 0;border-bottom:1px solid var(--linie)}
+.tw29-zeilen span{max-width:24ch;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+.tw29-zeilen b{font-size:clamp(34px,3.2vw,52px);line-height:1}
+
+/* ---------- 30 Schachbrett */
+.tw30-brett{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tw30-f,.tw30-t{aspect-ratio:1}
+.tw30-f{border-radius:0}.tw30-in{position:absolute;inset:0}
+.tw30-t{background:#201E25;padding:clamp(16px,2vw,28px);display:flex;flex-direction:column;justify-content:flex-end}
+.tw30-t b{font-size:clamp(48px,5vw,86px);line-height:.88}
+.tw30-t span{margin-top:12px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+.tw30-brett>:first-child{border-radius:var(--r) 0 0 0}.tw30-brett>:nth-child(4){border-radius:0 var(--r) 0 0}
+.tw30-brett>:nth-child(5){border-radius:0 0 0 var(--r)}.tw30-brett>:last-child{border-radius:0 0 var(--r) 0}
+
+/* ---------- 31 Verstreut */
+.tw31{position:relative;min-height:clamp(760px,110vh,1100px);display:grid;place-items:center}
+.tw31-f{position:absolute;aspect-ratio:4/5;border-radius:6px}
+.tw31-mitte{position:relative;z-index:2;max-width:620px;text-align:center}
+.tw31-zahlen{margin-top:clamp(26px,4vh,40px);display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:clamp(18px,2.6vw,40px)}
+.tw31-zahlen b{display:block;font-size:clamp(40px,4vw,64px);line-height:.9}
+.tw31-zahlen span{display:block;margin-top:8px;max-width:14ch;font:500 9.5px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+.tw31-mitte .tw-satz{margin-inline:auto}
+
+/* ---------- 32 Flankiert */
+.tw-f32 .tw-in{max-width:none;padding-left:0;padding-right:0}
+.tw32{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.tw32-f{height:clamp(560px,86vh,880px)}
+.tw32-f.l{border-radius:0 var(--r) var(--r) 0}.tw32-f.r{border-radius:var(--r) 0 0 var(--r)}
+.tw32-mitte{text-align:center}
+.tw32-zeilen{margin-top:30px;border-top:1px solid rgba(239,118,73,.6)}
+.tw32-zeilen p{padding:16px 0;border-bottom:1px solid var(--linie)}
+.tw32-zeilen span{display:block;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.tw32-zeilen b{display:block;margin-top:6px;font-size:clamp(40px,4vw,64px);line-height:.95}
+.tw32-mitte .tw-satz{margin-inline:auto}
+
+/* ---------- 33 Gross und schmal */
+.tw33{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(250px,.8fr);grid-template-rows:auto auto;gap:clamp(24px,3.6vw,56px)}
+.tw33-f{grid-row:1/3;min-height:clamp(600px,92vh,920px)}
+html.js:not(.ruhig) .tw33-f img{transform:scale(1.13);transition:transform 2.2s var(--k)}
+html.js .tw33-f.da img{transform:none}
+.tw33-spalte{display:flex;flex-direction:column}
+.tw33-zeilen{margin-top:26px}
+.tw33-zeilen p{padding:14px 0;border-top:1px solid var(--linie)}
+.tw33-zeilen b{display:block;font-size:clamp(40px,3.6vw,60px);line-height:.9}
+.tw33-zeilen span{display:block;margin-top:8px;font:500 10px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.72)}
+.tw33-klein{margin-top:auto;aspect-ratio:4/3}
+.tw33-satz{grid-column:2;align-self:end}.tw33-satz .tw-satz{margin-top:0;font-size:14.5px}
+
+/* ---------- 34 Dichtes Mosaik */
+.tw34-feld{margin-top:clamp(30px,5vh,56px);display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(110px,15vh,170px);gap:4px;
+  grid-template-areas:"a a b c c d" "a a e c c d" "f g g h i i" "f j j h i i"}
+.tw34-f{border-radius:6px}
+.tw34-t{border-radius:6px;background:#201E25;padding:clamp(12px,1.4vw,22px);display:flex;flex-direction:column;justify-content:flex-end}
+.tw34-t b{font-size:clamp(36px,3.6vw,62px);line-height:.88}
+.tw34-t span{margin-top:8px;font:500 9.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(250,244,244,.78)}
+
+/* ---------- 35 Ein Satz, dann Ruhe */
+.tw-f35 .tw-in{padding-top:0;max-width:none}
+.tw35-buehne{position:relative;margin:0 calc(var(--rand)*-1);height:clamp(560px,92vh,940px);overflow:hidden;display:flex;align-items:flex-end}
+.tw35-f{position:absolute;inset:0;border-radius:0}
+.tw35-f::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(14,12,16,.1),rgba(14,12,16,.65))}
+html.js:not(.ruhig) .tw35-f img{transform:scale(1.12);transition:transform 2.6s var(--k)}
+html.js .tw35-f.da img{transform:none}
+.tw35-satz{position:relative;z-index:2;padding:0 var(--rand) clamp(40px,8vh,90px);font:300 clamp(54px,7.6vw,140px)/.98 var(--titel);letter-spacing:-.025em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.tw35-ruhe{max-width:var(--max);margin:0 auto;padding:var(--abstand) var(--rand) 0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,110px)}
+.tw35-zeilen p{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:16px 0;border-bottom:1px solid var(--linie)}
+.tw35-zeilen p:first-child{border-top:1px solid rgba(239,118,73,.6)}
+.tw35-zeilen span{max-width:30ch;font:500 10.5px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.75)}
+.tw35-zeilen b{font-size:clamp(34px,3.2vw,52px);line-height:1}
+.tw35-zeilen .tw-satz{margin-top:26px}
+
+/* ---------- Handy, Runde 2 */
+@media (max-width:860px){
+  .tw21-e b{font-size:46px}.tw21-e{max-width:46vw}
+  .tw22-kopf,.tw30-kopf,.tw34-kopf,.tw24-steh,.tw26,.tw35-ruhe{grid-template-columns:minmax(0,1fr)}
+  .tw22-reihe,.tw23-bahnen{grid-template-columns:1fr 1fr}.tw22-f{height:300px;border-radius:6px!important}.tw23-bahnen{height:auto;grid-auto-rows:300px}
+  .tw23-bild{background-size:calc(200% + 6px) auto;background-position:calc(var(--n)%2*100%) 55%}
+  .tw24-steh{grid-template-rows:42vh auto;align-items:start;gap:18px;padding-top:70px}.tw24-zahlen{height:150px}.tw24-z b{font-size:84px}.tw24-text .tw-satz{display:none}
+  .tw25-paar{grid-template-columns:minmax(0,1fr)}.tw25-f,.tw25-t{grid-column:1!important}.tw25-t{grid-row:2;margin-top:-60px}.tw25-f{height:400px}
+  .tw25-zahl{font-size:110px}.tw25-paar.l .tw25-k{margin-left:0}
+  .tw26-f{height:340px}
+  .tw27-f{aspect-ratio:4/3}.tw27-abspann{grid-template-columns:1fr 1fr}
+  .tw28-f,.tw28-t{height:420px}.tw28-f{width:72vw}.tw28-t{width:60vw}
+  .tw29-tafel{margin:-70vh 16px 0}
+  .tw30-brett{grid-template-columns:1fr 1fr}.tw30-brett>*{border-radius:6px!important}
+  .tw31{min-height:auto;display:block}.tw31-f{display:none}.tw31-zahlen{grid-template-columns:1fr 1fr}
+  .tw32{grid-template-columns:minmax(0,1fr);padding:0 var(--rand)}.tw32-f{height:300px;border-radius:var(--r)!important}.tw32-f.r{display:none}
+  .tw33{grid-template-columns:minmax(0,1fr)}.tw33-f{grid-row:auto;min-height:420px}.tw33-satz{grid-column:1}.tw33-klein{display:none}
+  .tw34-feld{grid-template-columns:1fr 1fr;grid-auto-rows:150px;grid-template-areas:"a b" "a c" "e d" "f d" "g h" "i j"}
+  .tw35-satz{font-size:54px}
+}

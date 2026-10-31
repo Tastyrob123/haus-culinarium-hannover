@@ -1,0 +1,247 @@
+/* Dirty Chicken · Wahlseite «Zitate», Runde 3 (dc_zitate_wahl_3.py), 28.10.2026: 15 weitere Fassungen, Rahmen = echte dirty-chicken.html.
+   Gemeinsame Teile (ek, et, ex, nx-kopf) aus culinarium.css. Nur transform und opacity, nativer Scroll. */
+
+.ess[data-ton=hell]{--lila:#8953A9}
+.zt-datum{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2)}
+
+/* 1 Das Interview */
+.zv1{display:flex;flex-direction:column;gap:clamp(30px,5vh,56px);margin-top:clamp(10px,2vh,24px)}
+.zv1-e{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:clamp(24px,4vw,72px);align-items:center;padding-top:clamp(24px,4vh,40px);border-top:1px solid var(--linie)}
+.zv1-e.r{grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr)}
+.zv1-e.r .zv1-bild{order:-1}
+.zv1-qa{display:flex;flex-direction:column;gap:clamp(14px,2vh,22px)}
+.zv1-f{display:flex;align-items:baseline;gap:16px;font:400 clamp(17px,1.3vw,20px)/1.4 var(--text);color:var(--fg2)}
+.zv1-f b,.zv1-wer{flex:none;font:600 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--violett)}
+.zv1-a{display:flex;flex-direction:column;gap:12px}
+.zv1-wer{color:var(--fg)}
+.zv1-satz{margin:0;font:340 clamp(34px,4vw,66px)/1.04 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zv1-bild .foto{aspect-ratio:4/5;border-radius:6px;max-width:340px}
+.zv1-e.r .zv1-bild .foto{margin-left:0}
+.zv1-e.l .zv1-bild .foto{margin-left:auto}
+
+/* 2 Gesprächsfetzen */
+.zv2-raum{position:relative;height:clamp(640px,96vh,1000px);overflow:clip;margin-top:clamp(10px,2vh,24px)}
+.zv2-f{position:absolute;inset:0;height:100%;border-radius:0}
+.zv2-f img{transform:none!important}
+.zv2-dunkel{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,18,.15) 0%,rgba(14,12,18,.05) 35%,rgba(14,12,18,.7) 70%,rgba(14,12,18,.88) 100%),linear-gradient(90deg,rgba(14,12,18,.55),transparent 45%)}
+.zv2-s{position:absolute;max-width:min(44%,560px);display:flex;flex-direction:column;gap:8px;will-change:transform;z-index:2}
+.zv2-s p{margin:0;font:340 clamp(22px,2.1vw,34px)/1.14 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96;color:#FFF7EF;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.zv2-s.g p{font-size:clamp(30px,3.2vw,54px)}
+.zv2-s.k p{font-size:clamp(19px,1.6vw,26px);color:rgba(255,247,239,.82)}
+.zv2-s .zt-datum{color:rgba(255,247,239,.6)}
+
+/* 3 Bilder im Satz */
+.zv3{display:flex;flex-direction:column;gap:clamp(26px,4.5vh,48px);margin-top:clamp(10px,2vh,24px)}
+.zv3-e{display:flex;flex-direction:column;gap:12px;padding-top:clamp(20px,3vh,30px);border-top:1px solid var(--linie)}
+.zv3-s{margin:0;font:340 clamp(38px,5vw,84px)/1.12 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zv3-b{display:inline-block;vertical-align:-.12em;width:1.6em;height:.9em;margin:0 .06em;border-radius:.45em;overflow:clip;transform:rotate(calc(var(--j,0) * 4deg - 2deg))}
+.zv3-b .foto{height:100%;border-radius:.45em}
+html.js:not(.ruhig) .zv3-b{transform:rotate(-14deg) scale(.6);transition:transform 1.1s cubic-bezier(.34,1.45,.64,1) calc(.35s + var(--j,0)*180ms)}
+html.js .zv3-e.da .zv3-b{transform:rotate(calc(var(--j,0) * 4deg - 2deg))}
+
+/* 4 Die Wendetafel */
+.zv4{position:relative;display:flex;width:100%;aspect-ratio:16/8;cursor:pointer;margin-top:clamp(10px,2vh,24px);outline:none}
+.zv4:focus-visible{outline:2px solid var(--kerze-hell);outline-offset:6px}
+.zv4-s{position:relative;flex:1 1 0;overflow:hidden;background:#0C0B0F}
+.zv4-f{position:absolute;inset:0;overflow:hidden;transition:transform .36s cubic-bezier(.5,0,.6,1);will-change:transform}
+.zv4-f.zu{transform:scaleX(0)}
+.zv4-s+.zv4-s .zv4-f{box-shadow:inset 1px 0 0 rgba(0,0,0,.5)}
+.zv4-voll{position:absolute;top:0;bottom:0;width:calc(100% * 12)}
+.zv4-img{width:100%;height:100%;object-fit:cover;display:block}
+.zv4-tafel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:0 10%;text-align:center;background:var(--violett);color:#FFF7EF}
+.zv4-tafel.t1{background:#F3EBD4;color:var(--pflaume)}
+.zv4-tafel.t2{background:#EF7649;color:#1B1A20}
+.zv4-tafel p{margin:0;font:340 clamp(34px,4.2vw,72px)/1.06 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;max-width:20ch}
+.zv4-tafel .zt-datum{color:inherit;opacity:.75}
+.zv4-unten{display:flex;justify-content:flex-end;margin-top:12px}
+.zv4-nr{color:var(--fg2)}
+html.ruhig .zv4-f{transition:none}
+
+/* 5 Die Litfasssäule */
+.zv5{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,5vw,96px);align-items:center}
+.zv5-saeule{--b:clamp(330px,30vw,460px);width:var(--b);margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.zv5-dach{width:112%;height:clamp(40px,4vw,58px);border-radius:50% 50% 8px 8px/100% 100% 8px 8px;background:linear-gradient(90deg,#1E3A2F,#3B6A55 45%,#24463A 70%,#14281F);box-shadow:0 10px 20px -8px rgba(0,0,0,.7)}
+.zv5-koerper{position:relative;width:100%;height:min(74vh,700px);overflow:clip;background:linear-gradient(90deg,#0E0D11,#2A2832 50%,#0E0D11)}
+.zv5-p{position:absolute;top:2%;bottom:2%;left:50%;width:58%;margin-left:-29%;display:flex;flex-direction:column;background:#F3EBD4;color:var(--pflaume);will-change:transform,opacity;backface-visibility:hidden}
+.zv5-p.p1{background:var(--violett);color:#FFF7EF}
+.zv5-p.p2{background:#EF7649;color:#1B1A20}
+.zv5-bild{height:52%;overflow:clip}
+.zv5-bild img{width:100%;height:100%;object-fit:cover}
+.zv5-text{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:8% 9%}
+.zv5-text p{margin:0;font:340 clamp(18px,1.6vw,26px)/1.14 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.zv5-text .zt-datum{color:inherit;opacity:.7;font-size:10.5px}
+.zv5-sockel{width:118%;height:clamp(26px,2.6vw,38px);border-radius:6px 6px 2px 2px;background:linear-gradient(90deg,#14281F,#3B6A55 45%,#1E3A2F);box-shadow:0 20px 30px -14px rgba(0,0,0,.8)}
+
+/* 6 Das Schaufenster */
+.zv6{margin-top:clamp(10px,2vh,24px);background:#1E2420;padding:0 clamp(10px,1.4vw,20px) clamp(10px,1.4vw,20px);border-radius:6px 6px 0 0;box-shadow:0 50px 80px -40px rgba(0,0,0,.95)}
+.zv6-schild{margin:0 calc(clamp(10px,1.4vw,20px) * -1) clamp(10px,1.4vw,20px);background:var(--violett);color:#FFF7EF;padding:clamp(16px,2vw,26px) 20px;display:flex;flex-direction:column;align-items:center;gap:8px;border-radius:6px 6px 0 0;box-shadow:inset 0 -6px 0 rgba(0,0,0,.25)}
+.zv6-schild b{font:800 clamp(36px,5vw,84px)/.9 var(--etikett);letter-spacing:.06em;text-transform:uppercase}
+.zv6-schild span{font:600 11px/1 var(--etikett);letter-spacing:.26em;text-transform:uppercase;opacity:.85}
+.zv6-rahmen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1vw,14px)}
+.zv6-scheibe{position:relative;aspect-ratio:3/5;overflow:clip;box-shadow:inset 0 0 0 3px #2E3830}
+.zv6-scheibe .foto{position:absolute;inset:0;height:100%;border-radius:0}
+.zv6-scheibe .foto img{transform:none!important}
+.zv6-glas{position:absolute;left:0;right:0;bottom:0;padding:60% 10% 10%;background:linear-gradient(180deg,transparent,rgba(12,14,13,.82) 55%);display:flex;flex-direction:column;gap:8px;text-align:center;align-items:center}
+.zv6-glas p{margin:0;font:400 clamp(17px,1.5vw,25px)/1.16 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 72;color:#F7E9C8;text-shadow:0 1px 0 #8C6A2B,0 2px 10px rgba(0,0,0,.6)}
+.zv6-glas .zt-datum{color:rgba(247,233,200,.7);font-size:10.5px}
+.zv6-licht{position:absolute;top:-20%;bottom:-20%;left:0;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22) 50%,transparent);transform:translateX(-160%) skewX(-12deg);pointer-events:none}
+html.js:not(.ruhig) .zv6.da .zv6-licht{transition:transform 1.6s cubic-bezier(.5,0,.3,1) calc(.4s + var(--j,0)*140ms);transform:translateX(360%) skewX(-12deg)}
+.zv6-sims{height:16px;margin:0 calc(clamp(10px,1.4vw,20px) * -1) calc(clamp(10px,1.4vw,20px) * -1);background:linear-gradient(#2E3830,#141816);border-radius:0 0 4px 4px}
+
+/* 7 Das Prägeband */
+.zv7{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(30px,4vw,72px);align-items:center;margin-top:clamp(10px,2vh,24px)}
+.zv7-baender{display:flex;flex-direction:column;gap:clamp(18px,3vh,30px)}
+.zv7-g{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.zv7-band{display:inline-block;padding:9px 16px 8px;border-radius:3px;font:700 clamp(17px,1.65vw,27px)/1 var(--etikett);letter-spacing:.16em;color:#FFFFFF;text-shadow:0 -1px 0 rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.25);box-shadow:0 8px 14px -8px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.18),inset 0 -2px 0 rgba(0,0,0,.25);transform:rotate(var(--r))}
+.zv7-band.b-lila{background:linear-gradient(#9A63BA,#7C4A9C)}
+.zv7-band.b-schwarz{background:linear-gradient(#2C2B31,#141317)}
+.zv7-band.b-kerze{background:linear-gradient(#F1845A,#D9603A)}
+.zv7-g .zt-datum{margin-top:2px}
+.zv7-bild .foto{aspect-ratio:4/5;border-radius:6px}
+html.js:not(.ruhig) .zv7-band{transform:rotate(calc(var(--r) * 3)) scale(1.14) translateX(-18px);transition:transform .7s cubic-bezier(.2,.9,.3,1.2) calc(.25s + var(--n,0)*130ms)}
+html.js .zv7-baender.da .zv7-band{transform:rotate(var(--r))}
+
+/* 8 Die Schablone */
+.zws08{background:#D9D5CF;background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.35),transparent 40%),radial-gradient(circle at 80% 70%,rgba(0,0,0,.06),transparent 45%),repeating-radial-gradient(circle at 37% 61%,rgba(0,0,0,.025) 0 1px,transparent 1px 4px);--fg:#26242D;--fg2:#4E4A55;--linie:rgba(38,36,45,.18)}
+.zv8{display:flex;flex-direction:column;gap:clamp(26px,4vh,46px);margin-top:clamp(10px,2vh,24px)}
+.zv8-e{display:flex;flex-direction:column;gap:10px;width:min(100%,900px)}
+.zv8-e.r{margin-left:auto;align-items:flex-end}
+.zv8-feld{position:relative;width:100%}
+.zv8-farbe,.zv8-blatt{display:block;width:100%;height:auto;overflow:visible}
+.zv8-blatt{position:absolute;inset:0;filter:drop-shadow(0 18px 18px rgba(0,0,0,.28))}
+.zv8-farbe text,.zv8-blatt text{font:900 84px var(--etikett);letter-spacing:2px}
+.zv8-spray{fill:#7B47A0;filter:drop-shadow(0 0 3px rgba(123,71,160,.55)) drop-shadow(0 0 10px rgba(123,71,160,.3))}
+html.js:not(.ruhig) .zv8-blatt{transition:transform 1.3s cubic-bezier(.5,0,.3,1),opacity 1s .35s}
+html.js:not(.ruhig) .zv8.da .zv8-e .zv8-blatt{transform:translate(4%,-120%) rotate(-7deg);opacity:0}
+.zv8.da .zv8-e:nth-child(2) .zv8-blatt{transition-delay:.35s,.7s}
+.zv8.da .zv8-e:nth-child(3) .zv8-blatt{transition-delay:.7s,1.05s}
+.zv8.da .zv8-e:nth-child(4) .zv8-blatt{transition-delay:1.05s,1.4s}
+.zv8.da .zv8-e:nth-child(5) .zv8-blatt{transition-delay:1.4s,1.75s}
+html.ruhig .zv8-blatt{display:none}
+
+/* 9 Der Wegweiser */
+.zv9{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,4vw,72px);align-items:center}
+.zv9-pfahl{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(14px,2vh,22px);padding-bottom:60px}
+.zv9-stange{position:absolute;left:50%;top:40px;bottom:0;width:12px;margin-left:-6px;border-radius:4px;background:linear-gradient(90deg,#9C9AA6,#E4E2EA 45%,#7E7C88)}
+.zv9-kopf{position:relative;z-index:2;width:80px;height:80px;border-radius:50%;background:#FFF7EF;display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(0,0,0,.5)}
+.zv9-z{width:42px;height:46px;color:var(--violett)}
+.zv9-schild{--c:#FFF7EF;--t:#3B1F4D;position:relative;z-index:1;width:min(calc(50% + 70px),480px);background:var(--c);color:var(--t);padding:16px 64px 14px 26px;display:flex;flex-direction:column;gap:6px;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);transform-origin:0 50%;margin-left:calc(50% - 70px);align-self:flex-start;box-shadow:0 14px 24px -14px rgba(0,0,0,.6)}
+.zv9-schild.l{clip-path:polygon(40px 0,100% 0,100% 100%,40px 100%,0 50%);padding:16px 26px 14px 64px;margin-left:0;margin-right:calc(50% - 70px);align-self:flex-end;transform-origin:100% 50%;text-align:right;align-items:flex-end}
+.zv9-schild.s1{--c:#1B1A20;--t:#FFF7EF}
+.zv9-schild.s2{--c:#EF7649;--t:#1B1A20}
+.zv9-schild p{margin:0;font:340 clamp(18px,1.55vw,25px)/1.18 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.zv9-schild .zt-datum{color:inherit;opacity:.7;font-size:10.5px}
+.zv9-schild.r{transform:rotate(-2deg)}.zv9-schild.l{transform:rotate(2deg)}
+html.js:not(.ruhig) .zv9-schild.r{transform:rotate(-24deg);transition:transform 1.4s cubic-bezier(.34,1.5,.5,1) calc(.3s + var(--j,0)*150ms)}
+html.js:not(.ruhig) .zv9-schild.l{transform:rotate(24deg);transition:transform 1.4s cubic-bezier(.34,1.5,.5,1) calc(.3s + var(--j,0)*150ms)}
+html.js .zv9-pfahl.da .zv9-schild.r{transform:rotate(-2deg)}
+html.js .zv9-pfahl.da .zv9-schild.l{transform:rotate(2deg)}
+
+/* 10 Das Filmplakat */
+.zv10{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,4vw,72px);align-items:center}
+.zv10-plakat{width:min(100%,600px);margin:0 auto;background:#0C0B0F;color:#FFF7EF;padding:clamp(20px,2.4vw,34px);display:flex;flex-direction:column;align-items:center;gap:clamp(12px,1.6vw,20px);box-shadow:0 50px 90px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.06)}
+.zv10-stimmen{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;width:100%;text-align:center}
+.zv10-st p{margin:0;font:340 clamp(14px,1.15vw,18px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.zv10-st span{display:block;margin-top:6px;font:600 9.5px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zv10-bild{width:100%;aspect-ratio:4/4.2;overflow:clip}
+.zv10-bild img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;will-change:transform}
+.zv10-titel{margin:0;font:900 clamp(46px,5.6vw,92px)/.86 var(--etikett);letter-spacing:-.02em;text-transform:uppercase;text-align:center;color:#FFF7EF}
+.zv10-unter{margin:0;font:340 clamp(20px,1.8vw,28px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--lila)}
+.zv10-abspann{margin:6px 0 0;font:600 clamp(8.5px,.72vw,10.5px)/1.7 var(--etikett);letter-spacing:.16em;text-transform:uppercase;text-align:center;color:rgba(255,247,239,.62);transform:scaleY(1.35);transform-origin:50% 0}
+
+/* 11 Der Scheinwerfer */
+.zv11{position:relative;display:flex;flex-direction:column;gap:clamp(70px,14vh,150px);padding:clamp(40px,8vh,90px) 0 clamp(60px,10vh,110px);margin-top:clamp(10px,2vh,24px)}
+.zv11-licht{position:absolute;left:0;top:0;width:clamp(520px,52vw,820px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,214,170,.3) 0,rgba(239,118,73,.16) 38%,transparent 68%);will-change:transform;pointer-events:none;z-index:0}
+.zv11-s{position:relative;z-index:1;width:min(78%,860px);display:flex;flex-direction:column;gap:10px;opacity:.28;transition:opacity .7s}
+.zv11-s.r{margin-left:auto;text-align:right;align-items:flex-end}
+.zv11-s.an{opacity:1}
+.zv11-s p{margin:0;font:340 clamp(34px,4.2vw,72px)/1.06 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+html.ruhig .zv11-s{opacity:1}
+
+/* 12 Unter der Glocke */
+.zv12{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,4vw,72px);align-items:center}
+.zv12-links{display:flex;flex-direction:column;gap:clamp(18px,3vh,28px);align-items:flex-start}
+.zv12-knopf{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 22px;border-radius:999px;background:#2C2A33;color:#FFF7EF;font:500 15px/1 var(--text);letter-spacing:.02em;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.zv12-knopf i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--kerze);color:#fff}
+.zv12-knopf svg{width:20px;height:20px}
+.zv12-knopf:focus-visible{outline:2px solid var(--kerze-hell);outline-offset:4px}
+.zv12-nr{color:var(--fg2)}
+.zv12-tisch{position:relative;width:min(100%,600px);aspect-ratio:1/1;margin:clamp(40px,8vh,90px) 0 0 auto}
+.zv12-teller{position:absolute;left:4%;right:4%;top:14%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#FBFAF7 0 58%,#EDEAE3 59% 62%,#F7F5F0 63% 86%,#D9D5CC 87% 88%,#F1EEE8 89%);box-shadow:0 40px 60px -30px rgba(0,0,0,.85),0 0 0 1px rgba(0,0,0,.06)}
+.zv12-saetze{position:absolute;inset:22%;display:grid}
+.zv12-s{grid-area:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:#26242D;transition:transform .6s var(--k)}
+.zv12-s p{margin:0;font:340 clamp(20px,2vw,32px)/1.14 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 72}
+.zv12-s .zt-datum{color:#6B6475;font-size:11px}
+.zv12-tisch[data-akt="0"] .zv12-s:not([data-s="0"]),.zv12-tisch[data-akt="1"] .zv12-s:not([data-s="1"]),.zv12-tisch[data-akt="2"] .zv12-s:not([data-s="2"]),.zv12-tisch[data-akt="3"] .zv12-s:not([data-s="3"]),.zv12-tisch[data-akt="4"] .zv12-s:not([data-s="4"]){transform:scale(0);pointer-events:none}
+.zv12-glocke{position:absolute;left:6%;width:88%;top:3%;z-index:2;filter:drop-shadow(0 26px 24px rgba(0,0,0,.55));transition:transform 1s cubic-bezier(.6,0,.2,1);transform-origin:80% 100%}
+.zv12-tisch.offen .zv12-glocke{transform:translate(9%,-40%) rotate(11deg)}
+.zv12-bild{position:absolute;right:-2%;bottom:-2%;width:30%;aspect-ratio:4/5;border-radius:6px;overflow:clip;z-index:3;box-shadow:0 30px 40px -20px rgba(0,0,0,.8)}
+.zv12-b{position:absolute;inset:0;transition:transform .9s var(--k)}
+.zv12-b .foto{height:100%;border-radius:0}
+.zv12-tisch[data-akt="0"] .zv12-b:not([data-s="0"]),.zv12-tisch[data-akt="1"] .zv12-b:not([data-s="1"]),.zv12-tisch[data-akt="2"] .zv12-b:not([data-s="2"]),.zv12-tisch[data-akt="3"] .zv12-b:not([data-s="3"]),.zv12-tisch[data-akt="4"] .zv12-b:not([data-s="4"]){transform:translateY(101%)}
+html.ruhig .zv12-glocke{display:none}
+
+/* 13 Der Flash-Bogen */
+.zv13-bogen{margin-top:clamp(10px,2vh,24px);background:#F6EFE0;padding:clamp(22px,3vw,44px);box-shadow:0 40px 60px -40px rgba(30,20,40,.5),inset 0 0 0 1px rgba(0,0,0,.05)}
+.zv13-kopf{color:#6B6475;margin-bottom:clamp(16px,2.4vh,28px);text-align:center}
+.zv13-feld{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(26px,4vh,46px) clamp(30px,4vw,64px)}
+.zv13-m{display:flex;flex-direction:column;align-items:center;gap:8px;width:min(100%,500px);transform:rotate(calc((var(--i,0) - 2) * 1.6deg))}
+.zv13-motiv{width:clamp(80px,8vw,124px);height:auto;margin-bottom:6px;fill:var(--violett);stroke:#16151A;stroke-width:4;stroke-linejoin:round}
+.zv13-m.m2 .zv13-motiv{fill:#EF7649}
+.zv13-m.m3 .zv13-motiv{fill:#F3D36B}
+.zv13-d{fill:none;stroke:none;color:#16151A;width:clamp(60px,6vw,86px)}
+.zv13-band{display:block;width:min(100%,calc(var(--w) * .92px));height:auto;overflow:visible}
+.zv13-ende{fill:#5E3478;stroke:#16151A;stroke-width:3;stroke-linejoin:round}
+.zv13-form{fill:#FFF7EF;stroke:#16151A;stroke-width:3.5}
+.zv13-m.m2 .zv13-ende{fill:#B4502C}.zv13-m.m3 .zv13-ende{fill:#C79A28}
+.zv13-band text{font:800 34px var(--etikett);letter-spacing:2px;fill:#16151A}
+.zv13-m .zt-datum{color:#6B6475;margin-top:4px}
+html.js:not(.ruhig) .zv13-m{transform:rotate(calc((var(--i,0) - 2) * 1.6deg + 10deg)) scale(1.15);transition:transform .8s cubic-bezier(.2,.9,.3,1.15) calc(.2s + var(--i,0)*170ms)}
+html.js .zv13-bogen.da .zv13-m{transform:rotate(calc((var(--i,0) - 2) * 1.6deg))}
+
+/* 14 Das Typoplakat */
+.zv14{display:flex;flex-direction:column;gap:clamp(2px,.6vh,8px);margin-top:clamp(6px,1vh,14px);overflow:clip}
+.zv14-z{position:relative;white-space:nowrap;line-height:.98}
+.zv14-t{display:inline-block;font-size:var(--fs,60px)}
+.zv14-z.a .zv14-t{font-family:var(--titel);font-weight:320;letter-spacing:-.025em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:#FFF7EF}
+.zv14-z.b .zv14-t{font-family:var(--etikett);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:var(--lila)}
+.zv14-z.c .zv14-t{font-family:var(--etikett);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1.6px #F3DDFF}
+.zv14-d{display:block;text-align:right;margin:2px 0 4px;font-size:10.5px;color:rgba(250,244,244,.5)}
+html.js:not(.ruhig) .zv14-z.l{transform:translateX(-7%)}
+html.js:not(.ruhig) .zv14-z.r{transform:translateX(7%)}
+html.js:not(.ruhig) .zv14-z{transition:transform 1.4s var(--k) calc(.15s + var(--j,0)*80ms)}
+html.js .zv14.da .zv14-z{transform:none}
+
+/* 15 Die Schreibmaschine */
+.zv15{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,4vw,72px);align-items:start}
+.zv15-links{position:sticky;top:110px}
+.zv15-papier{background:#FBF8F1;color:#1E1C22;padding:clamp(28px,3.4vw,56px) clamp(26px,3.6vw,60px) clamp(34px,4vw,60px);box-shadow:0 40px 70px -40px rgba(0,0,0,.95);display:flex;flex-direction:column;gap:clamp(16px,2.4vh,26px)}
+.zv15-kopf{display:flex;align-items:center;gap:16px;padding-bottom:18px;border-bottom:2px solid var(--violett)}
+.zv15-z{width:46px;height:50px;color:var(--violett)}
+.zv15-kopf div{display:flex;flex-direction:column;gap:6px}
+.zv15-kopf b{font:800 22px/1 var(--etikett);letter-spacing:.06em;text-transform:uppercase;color:var(--violett)}
+.zv15-kopf span{font:600 10.5px/1 var(--etikett);letter-spacing:.22em;text-transform:uppercase;color:#6B6475}
+.zv15-ort{color:#6B6475;text-align:right}
+.zv15-text{display:flex;flex-direction:column;gap:clamp(14px,2.2vh,24px)}
+.zv15-s{margin:0;font:400 clamp(19px,1.7vw,27px)/1.45 var(--mono);letter-spacing:-.01em}
+.zv15-s span{opacity:.14;transition:opacity .12s}
+.zv15-s span.an{opacity:1}
+html.ruhig .zv15-s span{opacity:1}
+.zv15-gruss{margin:10px 0 0;font:340 26px/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 72;color:var(--violett)}
+
+@media (max-width:860px){
+  .zv1-e,.zv1-e.r{grid-template-columns:1fr;gap:16px}.zv1-e .zv1-bild,.zv1-e.r .zv1-bild{order:-1}.zv1-bild .foto,.zv1-e.l .zv1-bild .foto{max-width:64%;margin:0}.zv1-satz{font-size:24px}
+  .zv2-raum{height:118vh}.zv2-s{max-width:80%;left:6%!important}.zv2-s.r{left:auto}.zv2-s p{font-size:21px!important}
+  .zv3-s{font-size:31px}
+  .zv4{aspect-ratio:4/5}.zv4-tafel p{font-size:28px}
+  .zv5{grid-template-columns:1fr}.zv5-saeule{--b:76vw}.zv5-koerper{height:62vh}
+  .zv6-rahmen{grid-template-columns:repeat(2,minmax(0,1fr))}.zv6-scheibe:last-child{grid-column:1/-1;aspect-ratio:4/3}.zv6-schild b{font-size:34px}
+  .zv7{grid-template-columns:1fr}.zv7-band{font-size:14px;letter-spacing:.1em;padding:8px 11px 7px}
+  .zv8-farbe text,.zv8-blatt text{font-size:84px}
+  .zv9{grid-template-columns:1fr}.zv9-schild{width:86%}.zv9-schild,.zv9-schild.l{margin:0;align-self:center}
+  .zv10{grid-template-columns:1fr}
+  .zv11-s{width:92%}.zv11-s p{font-size:28px}.zv11-licht{width:120vw}
+  .zv12{grid-template-columns:1fr}.zv12-tisch{margin:0 auto}.zv12-s p{font-size:17px}
+  .zv13-band text{font-size:34px}
+  .zv15{grid-template-columns:1fr}.zv15-links{position:static}.zv15-s{font-size:16px}
+}

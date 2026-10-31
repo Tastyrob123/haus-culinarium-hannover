@@ -1,0 +1,62 @@
+[
+ {
+  "k": "bureau",
+  "name": "bureau",
+  "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+  "fehler": []
+ },
+ {
+  "k": "bureau",
+  "name": "bureau-2",
+  "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+  "fehler": []
+ },
+ {
+  "k": "carte",
+  "name": "carte",
+  "adresse": "http://127.0.0.1:9083/_werkzeuge/carte/",
+  "fehler": []
+ },
+ {
+  "k": "imprimerie",
+  "name": "imprimerie",
+  "adresse": "http://127.0.0.1:9087/_werkzeuge/imprimerie/",
+  "fehler": []
+ },
+ {
+  "k": "reception",
+  "name": "reception",
+  "adresse": "http://127.0.0.1:9084/_werkzeuge/reception/",
+  "fehler": []
+ },
+ {
+  "k": "reception",
+  "name": "reception-chat",
+  "adresse": "http://127.0.0.1:9084/_werkzeuge/reception/",
+  "fehler": []
+ },
+ {
+  "k": "livre",
+  "name": "livre-fotos",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ },
+ {
+  "k": "livre",
+  "name": "livre-fotos",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ },
+ {
+  "k": "livre",
+  "name": "livre-marke",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ },
+ {
+  "k": "registre",
+  "name": "registre",
+  "adresse": "http://127.0.0.1:9086/_werkzeuge/registre/",
+  "fehler": []
+ }
+]

@@ -1,0 +1,82 @@
+/* Hover Reveal — Basis-Styles. Farben bewusst über Custom Properties, damit sie pro Projekt
+   auf die Tasty-Studios-Palette (oder eine Kundenpalette) gesetzt werden können. */
+
+[data-hover-reveal] {
+  --hr-fg: #ffffff;
+  --hr-dim: rgba(255, 255, 255, 0.28);
+  --hr-rule: rgba(255, 255, 255, 0.12);
+  --hr-radius: 4px;
+  position: relative;
+}
+
+/* Liste */
+[data-hover-reveal] .hr-item {
+  position: relative;
+  z-index: 2;                     /* Text bleibt über der Bildkarte */
+  border-top: 1px solid var(--hr-rule);
+  list-style: none;
+}
+[data-hover-reveal] .hr-item:last-child {
+  border-bottom: 1px solid var(--hr-rule);
+}
+[data-hover-reveal] .hr-item > a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(0.9rem, 2.2vw, 1.6rem) 0;
+  color: var(--hr-fg);
+  text-decoration: none;
+  transition: color 0.4s ease, opacity 0.4s ease;
+}
+[data-hover-reveal] .hr-item.is-dimmed > a {
+  color: var(--hr-dim);
+}
+
+/* Bildkarte, die dem Cursor folgt */
+[data-hover-reveal] .hr-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--hr-radius);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: opacity 0.35s ease, scale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  scale: 0.92;
+}
+[data-hover-reveal] .hr-card.is-visible {
+  opacity: 1;
+  scale: 1;
+}
+[data-hover-reveal] .hr-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+[data-hover-reveal] .hr-card img.is-active {
+  opacity: 1;
+}
+
+/* Touch: kein Cursor, kein Nachlauf — Karte bleibt aus, die Liste funktioniert normal. */
+@media (hover: none) {
+  [data-hover-reveal] .hr-card {
+    display: none;
+  }
+  [data-hover-reveal] .hr-item.is-dimmed > a {
+    color: var(--hr-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hover-reveal] .hr-card {
+    transition: opacity 0.2s linear;
+    scale: 1;
+  }
+}

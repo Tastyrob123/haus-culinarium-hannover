@@ -1,0 +1,20 @@
+[
+ {
+  "k": "livre",
+  "name": "livre-fotos",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ },
+ {
+  "k": "livre",
+  "name": "livre-fotos",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ },
+ {
+  "k": "livre",
+  "name": "livre-marke",
+  "adresse": "http://127.0.0.1:9085/_werkzeuge/livre/",
+  "fehler": []
+ }
+]

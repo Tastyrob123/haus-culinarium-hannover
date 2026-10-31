@@ -1,0 +1,334 @@
+/* Startseite · Wahlseite «Bildwand Dirty Chicken» (index_dc_wahl.py), 28.10.2026: 15 Fassungen für die Fläche unter Zeichen, Titel und Stickern.
+   Alles auf dem violetten Grund mit Tapete. Nur transform und opacity, nativer Scroll. */
+
+.sdc{position:relative;color:#FFF7EF}
+.sdc .foto{--weg:0px}
+.sdc .filmw{box-shadow:0 40px 70px -36px rgba(20,6,30,.95)}
+html.js .mit-stk:has(.sdc.da) .stk{opacity:1;scale:1}
+.sdc .mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* 1 Das D aus Bildern */
+.sdc1{display:grid;grid-template-columns:minmax(0,1.3fr) clamp(240px,24vw,340px);gap:clamp(24px,3.4vw,56px);align-items:center}
+.sdc1-d{display:block;width:100%;height:auto;max-height:min(80vh,780px);filter:drop-shadow(0 40px 60px rgba(20,6,30,.5))}
+.sdc1-k{transform-box:fill-box;transform-origin:center;transition:transform 1.3s var(--feder) calc(var(--i,0)*80ms)}
+html.js:not(.ruhig) .sdc1:not(.da) .sdc1-k{transform:scale(.3)}
+.sdc1-f{width:100%;border-radius:10px}
+
+/* 2 Der Sticker-Bogen */
+.sdc2-bogen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.6vw,40px);padding:clamp(24px,3vw,48px);border-radius:14px;background:#F7F0EB;background-image:radial-gradient(circle,rgba(137,83,169,.12) 1px,transparent 1.5px);background-size:22px 22px;box-shadow:0 40px 70px -40px rgba(20,6,30,.9),inset 0 0 0 1px rgba(137,83,169,.15)}
+.sdc2-s{display:flex;flex-direction:column;transform:rotate(var(--r,0deg));padding:7px;background:#fff;border-radius:16px;box-shadow:0 14px 24px -14px rgba(20,6,30,.6),0 2px 0 rgba(0,0,0,.08)}
+.sdc2-s .foto,.sdc2-s .filmw{border-radius:10px;box-shadow:none}
+.sdc2-s .foto{flex:1;min-height:0}
+.sdc2-s .filmw{aspect-ratio:9/16!important}
+html.js:not(.ruhig) .sdc2-s{transform:rotate(var(--r,0deg)) scale(.72);transition:transform 1.2s var(--feder) calc(var(--i,0)*110ms)}
+html.js .sdc2.da .sdc2-s{transform:rotate(var(--r,0deg)) scale(1)}
+
+/* 3 Der Comic */
+.sdc3-seite{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(180px,20vw,300px);gap:10px;padding:10px;background:#1F1B24;border-radius:6px}
+.sdc3-p{position:relative;min-width:0;min-height:0;overflow:visible}
+.sdc3-p.w{grid-column:span 2}.sdc3-p.h2{grid-row:span 2}
+.sdc3-p .foto{height:100%;border-radius:3px;box-shadow:inset 0 0 0 2px #1F1B24}
+.sdc3-f{height:100%;width:auto;border-radius:3px;margin:0 auto}
+.sdc3-p.h2{display:flex;justify-content:center;background:#2A2433;border-radius:3px}
+.sdc3-b{position:absolute;z-index:3;left:12px;bottom:-14px;max-width:80%;padding:10px 14px;border-radius:14px;background:#F7F0EB;color:#1F1B24;font:340 clamp(16px,1.3vw,21px)/1.15 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;box-shadow:0 10px 20px -10px rgba(0,0,0,.6)}
+.sdc3-b::after{content:"";position:absolute;left:22px;bottom:-9px;width:14px;height:14px;background:#F7F0EB;transform:rotate(45deg)}
+html.js:not(.ruhig) .sdc3-b{transform:scale(.5);transform-origin:left bottom;transition:transform .9s var(--feder) calc(var(--i,0)*160ms + .6s)}
+html.js .sdc3.da .sdc3-b{transform:none}
+
+/* 4 Die Fussspur */
+.sdc4-weg{position:relative;height:min(80vh,760px)}
+.sdc4-f{position:absolute;left:var(--x);top:var(--y);width:clamp(18px,2vw,30px);transform:translate(-50%,-50%) rotate(var(--r,0deg));color:#FFF7EF}
+.sdc4-f svg{display:block;width:100%;height:auto;fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+html.js:not(.ruhig) .sdc4-f{transform:translate(-50%,-50%) rotate(var(--r,0deg)) scale(.2);transition:transform .6s var(--feder) calc(var(--i,0)*120ms)}
+html.js .sdc4.da .sdc4-f{transform:translate(-50%,-50%) rotate(var(--r,0deg)) scale(1)}
+.sdc4-b{position:absolute;width:clamp(150px,17vw,250px);left:calc(6% + var(--i,0)*20%);transform:translateX(-50%)}
+.sdc4-b.o{top:0}.sdc4-b.u{bottom:0}
+.sdc4-b .foto{aspect-ratio:4/5}
+.sdc4-film{width:100%}
+.sdc4-b .foto,.sdc4-film{--d:calc(var(--i,0)*240ms + .5s)}
+
+/* 5 Das Regal */
+.sdc5{padding-bottom:26px}
+.sdc5-brett{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,1.4vw,22px);height:min(74vh,700px);padding:0 2%}
+.sdc5-b{flex:1 1 0;min-width:0;max-width:220px}
+.sdc5-b.h1{height:52%}.sdc5-b.h2{height:64%}.sdc5-b.h3{height:78%}.sdc5-b.h4{height:100%;max-width:300px;flex:1.3 1 0}
+.sdc5-b .foto{height:100%;border-radius:6px 6px 0 0;box-shadow:0 30px 40px -24px rgba(20,6,30,.9)}
+.sdc5-f{height:100%;width:auto;margin:0 auto;border-radius:8px 8px 0 0}
+.sdc5-kante{display:block;height:4px;border-radius:2px;background:#FFF7EF;box-shadow:0 10px 30px rgba(20,6,30,.6)}
+html.js:not(.ruhig) .sdc5-b{transform:translateY(-40px);transition:transform 1.3s var(--feder) calc(var(--i,0)*120ms)}
+html.js .sdc5.da .sdc5-b{transform:none}
+
+/* 6 Der Kontaktbogen */
+.sdc6-bogen{display:flex;flex-direction:column;gap:14px;padding:18px;background:#0F0E13;border-radius:6px;box-shadow:0 40px 70px -40px rgba(0,0,0,.9)}
+.sdc6-streifen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:22px 8px;position:relative;background:#171419}
+.sdc6-streifen::before,.sdc6-streifen::after{content:"";position:absolute;left:0;right:0;height:8px;background:radial-gradient(circle,rgba(250,244,244,.8) 0 2px,transparent 2.5px) 0 50%/18px 8px repeat-x;opacity:.5}
+.sdc6-streifen::before{top:7px}.sdc6-streifen::after{bottom:7px}
+.sdc6-b{position:relative;display:flex;flex-direction:column;gap:5px}
+.sdc6-b .mono{color:#EF7649;font-size:10px}
+.sdc6-b .foto{aspect-ratio:4/5;border-radius:2px}
+.sdc6-b.kreis::after{content:"";position:absolute;inset:-8px -10px -6px;border:3px solid #EF7649;border-radius:50%;transform:rotate(-4deg);pointer-events:none}
+.sdc6-film .sdc6-f{aspect-ratio:9/16;border-radius:2px;width:auto;height:100%}
+.sdc6-film{display:flex;flex-direction:column}
+.sdc6-film .sdc6-f{flex:1}
+.sdc6-b .foto,.sdc6-f{--d:calc(var(--i,0)*90ms)}
+
+/* 7 Das Profil */
+.sdc7{max-width:900px;margin:0 auto}
+.sdc7-kopf{display:flex;align-items:center;gap:18px;padding:0 4px 18px}
+.sdc7-d{width:64px;height:64px;border-radius:50%;background:#FFF7EF;display:grid;place-items:center;flex:none}
+.sdc7-dz{width:40px;height:40px;color:#8953A9}
+.sdc7-kopf div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sdc7-kopf b{font:600 15px/1.2 var(--text)}
+.sdc7-kopf div>span{font-size:13.5px;color:rgba(255,247,239,.8)}
+.sdc7-folgen{margin-left:auto;padding:9px 16px;border-radius:8px;background:#FFF7EF;color:#3B1F4D;font:600 13px/1 var(--text);text-decoration:none}
+.sdc7-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.sdc7-q .foto,.sdc7-f{aspect-ratio:1;border-radius:2px}
+.sdc7-f{aspect-ratio:1!important;width:100%;box-shadow:none}
+.sdc7-q .foto{--d:calc(var(--i,0)*80ms)}
+
+/* 8 Die Taschenlampe */
+.sdc8-wand{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;overflow:hidden;border-radius:8px;background:#1A0F24;cursor:crosshair}
+.sdc8-b .foto{aspect-ratio:4/5;border-radius:0}
+.sdc8-licht{position:absolute;left:-100%;top:-100%;width:300%;height:300%;pointer-events:none;background:radial-gradient(circle at center,transparent 0 clamp(120px,14vw,220px),rgba(26,15,36,.86) clamp(180px,20vw,320px));will-change:transform;animation:sdc8-wandern 11s ease-in-out infinite alternate}
+.sdc8-wand.maus .sdc8-licht{animation:none}
+@keyframes sdc8-wandern{0%{transform:translate(-30%,-14%)}33%{transform:translate(8%,10%)}66%{transform:translate(28%,-8%)}100%{transform:translate(-12%,14%)}}
+html.ruhig .sdc8-licht{display:none}
+
+/* 9 Aufräumen */
+.sdc9-raster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.sdc9-b .foto{aspect-ratio:4/5;border-radius:6px}
+.sdc9-f{width:100%}
+html.js:not(.ruhig) .sdc9-b{transform:translate(var(--x,0px),var(--y,0px)) rotate(var(--r,0deg));transition:transform 1.5s var(--feder) calc(var(--i,0)*90ms + .3s)}
+html.js .sdc9.da .sdc9-b{transform:none}
+
+/* 10 Die Jalousie */
+.sdc10{display:grid;grid-template-columns:minmax(0,1.6fr) clamp(240px,22vw,320px);gap:clamp(16px,2vw,32px);align-items:stretch}
+.sdc10-bild{position:relative;overflow:hidden;border-radius:8px;min-height:min(70vh,660px)}
+.sdc10-bild .foto{position:absolute;inset:0;height:100%;border-radius:0;transform:none!important}
+.sdc10-lamellen{position:absolute;inset:0;display:grid;grid-auto-rows:1fr}
+.sdc10-lamellen i{display:block;background:#8953A9 url(zeichen/tapete-dc.svg) 0 0/240px 240px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.25);transition:transform 1.4s var(--k) calc(var(--i,0)*110ms)}
+.sdc10-lamellen i:nth-child(2n){transform-origin:right}
+html.js .sdc10.da .sdc10-lamellen i{transform:translateX(102%)}
+html.js .sdc10.da .sdc10-lamellen i:nth-child(2n){transform:translateX(-102%)}
+html:not(.js) .sdc10-lamellen,html.ruhig .sdc10-lamellen{display:none}
+.sdc10-f{height:100%;width:100%;border-radius:8px}
+
+/* 11 Der Diaprojektor */
+.sdc11{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,20vw,300px);grid-template-rows:auto auto;gap:14px clamp(16px,2vw,32px)}
+.sdc11-rahmen{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:8px;background:#1F1B24;box-shadow:0 40px 70px -40px rgba(20,6,30,.95),inset 0 0 0 12px #1F1B24}
+.sdc11-d{position:absolute;inset:12px;transition:transform 1s var(--k)}
+.sdc11-d .foto{height:100%;border-radius:2px;transform:none!important}
+.sdc11-d{transform:translateX(104%)}
+.sdc11[data-akt="0"] .sdc11-d[data-s="0"],.sdc11[data-akt="1"] .sdc11-d[data-s="1"],.sdc11[data-akt="2"] .sdc11-d[data-s="2"],.sdc11[data-akt="3"] .sdc11-d[data-s="3"],.sdc11[data-akt="4"] .sdc11-d[data-s="4"],.sdc11[data-akt="5"] .sdc11-d[data-s="5"],.sdc11[data-akt="6"] .sdc11-d[data-s="6"]{transform:none}
+.sdc11[data-akt="1"] .sdc11-d[data-s="0"],.sdc11[data-akt="2"] .sdc11-d[data-s="0"],.sdc11[data-akt="2"] .sdc11-d[data-s="1"],.sdc11[data-akt="3"] .sdc11-d[data-s="0"],.sdc11[data-akt="3"] .sdc11-d[data-s="1"],.sdc11[data-akt="3"] .sdc11-d[data-s="2"],.sdc11[data-akt="4"] .sdc11-d:not([data-s="4"]):not([data-s="5"]):not([data-s="6"]),.sdc11[data-akt="5"] .sdc11-d:not([data-s="5"]):not([data-s="6"]),.sdc11[data-akt="6"] .sdc11-d:not([data-s="6"]){transform:translateX(-104%)}
+.sdc11-film{grid-column:2;grid-row:1/3}
+.sdc11-f{width:100%;border-radius:8px}
+.sdc11-leiste{grid-column:1;display:flex;gap:8px}
+.sdc11-k{all:unset;cursor:pointer;flex:1 1 0;min-width:0;aspect-ratio:1;border-radius:4px;overflow:clip;opacity:.45;transition:opacity .4s;box-shadow:0 0 0 2px transparent}
+.sdc11-k img{display:block;width:100%;height:100%;object-fit:cover}
+.sdc11-k.an{opacity:1;box-shadow:0 0 0 2px #FFF7EF}
+.sdc11-k:focus-visible{outline:2px solid #FFF7EF;outline-offset:2px}
+
+/* 12 Das Band */
+.sdc12-band{display:flex;gap:var(--fuge);overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;height:min(66vh,620px);padding-bottom:4px}
+.sdc12-band::-webkit-scrollbar{display:none}
+.sdc12-k{flex:none;display:flex;flex-direction:column;gap:12px;height:100%;scroll-snap-align:start}
+.sdc12-k .foto{height:calc(100% - 34px);aspect-ratio:4/5;width:auto;border-radius:6px}
+.sdc12-f{height:calc(100% - 34px);width:auto;border-radius:6px}
+.sdc12-z{margin:0;font:340 clamp(17px,1.4vw,22px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.sdc12-fuss{display:flex;align-items:center;gap:20px;margin-top:16px}
+.sdc12-lauf{flex:1;height:2px;background:rgba(255,247,239,.3);border-radius:2px;overflow:hidden}
+.sdc12-lauf i{display:block;height:100%;width:100%;background:#FFF7EF;transform:scaleX(.12);transform-origin:left;transition:transform .3s}
+.sdc12-pfeile{display:flex;gap:8px}
+.sdc12-pfeile button{width:44px;height:44px;border-radius:50%;border:0;background:#FFF7EF;color:#3B1F4D;font-size:22px;line-height:1;cursor:pointer}
+
+/* 13 Die Wand gleitet */
+.sdc13-wand{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sdc13-f{overflow:hidden;border-radius:6px;aspect-ratio:4/5;background:#3B1F4D}
+.sdc13-f .foto{height:100%;border-radius:0;transform:none!important}
+.sdc13-f .foto img{transform:none!important;scale:1.26;translate:0 var(--g,0px)}
+.sdc13-film{height:100%;width:auto;margin:0 auto;border-radius:0;box-shadow:none}
+.sdc13-f:nth-child(2){display:flex;justify-content:center;align-items:center}
+
+/* 14 Die Bons am Pass */
+.sdc14{padding-top:12px}
+.sdc14-schiene{display:block;height:10px;border-radius:5px;background:linear-gradient(#F3E9E4,#B9AFB8 60%,#8E8390);box-shadow:0 6px 14px rgba(20,6,30,.5)}
+.sdc14-zettel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(12px,1.6vw,26px);padding:0 2%;margin-top:-4px}
+.sdc14-z{position:relative;padding-top:22px;transform-origin:50% 0}
+.sdc14-klammer{position:absolute;left:50%;top:-6px;width:26px;height:34px;transform:translateX(-50%);background:linear-gradient(#FBF6F0,#D9D0D5);border-radius:4px 4px 6px 6px;box-shadow:0 4px 8px rgba(20,6,30,.45);z-index:2}
+.sdc14-klammer::after{content:"";position:absolute;left:50%;top:8px;width:8px;height:8px;border-radius:50%;background:#8953A9;transform:translateX(-50%)}
+.sdc14-z .foto{aspect-ratio:4/5;border-radius:0 0 4px 4px;clip-path:polygon(0 3%,5% 0,10% 3%,15% 0,20% 3%,25% 0,30% 3%,35% 0,40% 3%,45% 0,50% 3%,55% 0,60% 3%,65% 0,70% 3%,75% 0,80% 3%,85% 0,90% 3%,95% 0,100% 3%,100% 100%,0 100%)}
+.sdc14-f{width:100%;border-radius:0 0 4px 4px}
+html.js:not(.ruhig) .sdc14-z{transform:rotate(-7deg);transition:transform 1.8s var(--feder) calc(var(--i,0)*110ms)}
+html.js .sdc14.da .sdc14-z{transform:none}
+
+/* 15 Die Theke */
+.sdc15{overflow:hidden;margin:0 calc(-1*var(--rand));padding:0 0 6px}
+.sdc15-zug{display:flex;gap:clamp(12px,1.6vw,24px);width:max-content;animation:sdc15-lauf 70s linear infinite;will-change:transform}
+.sdc15:hover .sdc15-zug{animation-play-state:paused}
+.sdc15-t{display:flex;flex-direction:column;gap:10px;flex:none;height:min(62vh,580px)}
+.sdc15-t .foto{height:calc(100% - 26px);aspect-ratio:4/5;width:auto;border-radius:6px;transform:none!important}
+.sdc15-t .foto img{transform:none!important}
+.sdc15-f{height:calc(100% - 26px);width:auto;border-radius:6px}
+.sdc15-t .mono{color:rgba(255,247,239,.85)}
+@keyframes sdc15-lauf{to{transform:translateX(-50%)}}
+html.ruhig .sdc15-zug{animation:none}
+
+/* Handy und schmale Fenster */
+@media (max-width:860px){
+  .sdc1{grid-template-columns:1fr;gap:20px}.sdc1-film{width:min(100%,300px);margin:0 auto}
+  .sdc2-bogen{grid-template-columns:1fr 1fr;gap:16px;padding:16px}
+  .sdc3-seite{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(150px,36vw,220px);gap:6px;padding:6px}.sdc3-p.w{grid-column:span 2}.sdc3-b{font-size:15px;padding:8px 10px;bottom:-10px}
+  .sdc4-weg{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}.sdc4-f{display:none}.sdc4-b{position:static;width:auto;transform:none}
+  .sdc5-brett{height:56svh;gap:6px}.sdc5-b.h4{flex:1.6 1 0}
+  .sdc6-streifen{grid-template-columns:repeat(3,1fr)}.sdc6-film{grid-column:span 1}
+  .sdc8-wand{grid-template-columns:1fr 1fr}
+  .sdc9-raster{grid-template-columns:1fr 1fr}
+  .sdc10{grid-template-columns:1fr}.sdc10-bild{min-height:52svh}.sdc10-film{width:min(100%,300px);margin:0 auto}
+  .sdc11{grid-template-columns:1fr}.sdc11-film{grid-column:1;grid-row:3;width:min(100%,300px);margin:0 auto}.sdc11-leiste{grid-row:2}
+  .sdc12-band{height:56svh}
+  .sdc13-wand{grid-template-columns:1fr 1fr}
+  .sdc14-zettel{grid-template-columns:repeat(3,1fr);gap:10px}
+  .sdc15{margin:0 calc(-1*var(--rand))}.sdc15-t{height:48svh}
+}
+
+/* ================================================================== Zweite Runde (28.10.2026), Fassungen 16 bis 30 */
+/* 16 Ein Bild */
+.sdc16 .foto{aspect-ratio:21/9;border-radius:8px;box-shadow:0 50px 80px -40px rgba(20,6,30,.95)}
+.sdc16-z{margin:14px 0 0;color:rgba(255,247,239,.8)}
+
+/* 17 Zwei Filme */
+.sdc17{--h:clamp(380px,58vh,600px);display:flex;gap:10px;height:var(--h)}
+.sdc17 .filmw{height:100%;width:auto;flex:none;border-radius:8px}
+.sdc17-col{flex:1;min-width:0;display:grid;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.sdc17-col .foto{height:100%;min-height:0;border-radius:8px}
+
+/* 18 Das Karussell */
+.sdc18{position:relative;height:min(84vh,820px);overflow:hidden}
+.sdc18-ring{position:absolute;left:50%;top:50%;width:0;height:0;animation:sdc18-dreh 70s linear infinite}
+.sdc18-arm{position:absolute;left:0;top:0;transform:rotate(var(--a,0deg)) translateY(calc(-1*clamp(190px,30vh,330px)))}
+.sdc18-b{width:clamp(96px,11vw,160px);margin:-50% 0 0 -50%;animation:sdc18-dreh 70s linear infinite reverse}
+.sdc18-b .foto{aspect-ratio:1;border-radius:50%;box-shadow:0 30px 40px -24px rgba(20,6,30,.95)}
+.sdc18-mitte{position:absolute;left:50%;top:50%;width:clamp(170px,20vh,230px);transform:translate(-50%,-50%)}
+.sdc18-f{width:100%;border-radius:12px}
+@keyframes sdc18-dreh{to{transform:rotate(360deg)}}
+html.ruhig .sdc18-ring,html.ruhig .sdc18-b{animation:none}
+
+/* 19 Die Pyramide */
+.sdc19{display:flex;flex-direction:column-reverse;align-items:center;gap:12px}
+.sdc19-r{display:flex;justify-content:center;gap:12px;width:100%}
+.sdc19-b{width:clamp(150px,22vw,320px)}
+.sdc19-b .foto{aspect-ratio:4/5;border-radius:6px}
+.sdc19-f{width:100%;border-radius:6px}
+.sdc19-r.r1 .sdc19-b{width:clamp(130px,16vw,230px)}
+html.js:not(.ruhig) .sdc19-b{transform:translateY(60px);transition:transform 1.4s var(--feder) calc(var(--i,0)*140ms)}
+html.js .sdc19.da .sdc19-b{transform:none}
+
+/* 20 Das Kreuz */
+.sdc20{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,24vw,340px) minmax(0,1fr);grid-template-rows:auto auto auto;gap:12px;align-items:center;justify-items:center}
+.sdc20-o{grid-column:2;grid-row:1;width:100%}.sdc20-u{grid-column:2;grid-row:3;width:100%}
+.sdc20-l{grid-column:1;grid-row:2;width:100%;max-width:360px;justify-self:end}.sdc20-r{grid-column:3;grid-row:2;width:100%;max-width:360px;justify-self:start}
+.sdc20-m{grid-column:2;grid-row:2;width:100%}
+.sdc20-o .foto,.sdc20-u .foto{aspect-ratio:3/2;border-radius:6px}
+.sdc20-l .foto,.sdc20-r .foto{aspect-ratio:4/5;border-radius:6px}
+.sdc20-f{width:100%;border-radius:8px}
+
+/* 21 Der Bogen */
+.sdc21-bogen{position:relative;height:min(76vh,720px);overflow:hidden}
+.sdc21-b{position:absolute;left:50%;top:clamp(10px,2vh,24px);width:clamp(110px,13vw,190px);transform-origin:50% clamp(600px,80vw,1100px);transform:translateX(-50%) rotate(var(--a,0deg))}
+.sdc21-b .foto{aspect-ratio:4/5;border-radius:8px;box-shadow:0 30px 40px -24px rgba(20,6,30,.95)}
+.sdc21-f{width:100%;border-radius:8px}
+html.js:not(.ruhig) .sdc21-b{transform:translateX(-50%) rotate(0deg);transition:transform 1.6s var(--feder) calc(var(--i,0)*70ms)}
+html.js .sdc21.da .sdc21-b{transform:translateX(-50%) rotate(var(--a,0deg))}
+
+/* 22 Das Daumenkino */
+.sdc22{display:grid;grid-template-columns:clamp(240px,26vw,360px) minmax(0,1fr);gap:12px;align-items:stretch}
+.sdc22-kino{position:relative;aspect-ratio:9/16;border-radius:10px;overflow:hidden;background:#0F0E13;box-shadow:0 40px 70px -36px rgba(20,6,30,.95)}
+.sdc22-bl{position:absolute;inset:0;margin:0;visibility:hidden}
+.sdc22-bl img{width:100%;height:100%;object-fit:cover}
+.sdc22-kino[data-s="0"] .sdc22-bl[data-s="0"],.sdc22-kino[data-s="1"] .sdc22-bl[data-s="1"],.sdc22-kino[data-s="2"] .sdc22-bl[data-s="2"],.sdc22-kino[data-s="3"] .sdc22-bl[data-s="3"],.sdc22-kino[data-s="4"] .sdc22-bl[data-s="4"],.sdc22-kino[data-s="5"] .sdc22-bl[data-s="5"],.sdc22-kino[data-s="6"] .sdc22-bl[data-s="6"],.sdc22-kino[data-s="7"] .sdc22-bl[data-s="7"]{visibility:visible}
+.sdc22-fotos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
+.sdc22-fotos .foto{height:100%;border-radius:8px}
+.sdc22-fotos .foto:last-child{grid-column:1/-1}
+
+/* 23 Blinklicht */
+.sdc23-wand{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.sdc23-k{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,247,239,.18),0 30px 50px -30px rgba(20,6,30,.95)}
+.sdc23-k .foto{aspect-ratio:4/5;border-radius:0}
+.sdc23-k i{position:absolute;inset:0;background:#2A1437;opacity:0;pointer-events:none;animation:sdc23-flackern var(--t,8s) linear var(--d,0s) infinite}
+@keyframes sdc23-flackern{0%,90%{opacity:0}91%{opacity:.85}93%{opacity:0}95%{opacity:.7}96%{opacity:0}100%{opacity:0}}
+html.ruhig .sdc23-k i{animation:none}
+
+/* 24 Der Tausch */
+.sdc24-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:10px}
+.sdc24-k{position:relative;transition:transform 1.4s var(--k);will-change:transform;border-radius:6px;overflow:hidden}
+.sdc24-k .foto{aspect-ratio:4/5;border-radius:0}
+.sdc24-f{width:100%;aspect-ratio:4/5!important;border-radius:0;box-shadow:none;background:#3B1F4D}
+.sdc24-f video{height:100%;width:auto;margin:0 auto;object-fit:contain}
+
+/* 25 Die Lupe */
+.sdc25{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,22vw,320px);gap:12px;align-items:stretch}
+.sdc25-buehne{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:8px;cursor:crosshair}
+.sdc25-a,.sdc25-b{position:absolute;inset:0}
+.sdc25-a .foto,.sdc25-b .foto{height:100%;border-radius:0;transform:none!important}
+.sdc25-b{clip-path:circle(clamp(90px,11vw,170px) at var(--x,50%) var(--y,50%));animation:sdc25-wandern 12s ease-in-out infinite alternate}
+.sdc25-buehne.maus .sdc25-b{animation:none}
+@keyframes sdc25-wandern{0%{--x:20%;--y:30%}50%{--x:70%;--y:60%}100%{--x:35%;--y:75%}}
+@property --x{syntax:'<length-percentage>';inherits:false;initial-value:50%}
+@property --y{syntax:'<length-percentage>';inherits:false;initial-value:50%}
+.sdc25-f{height:100%;width:100%;border-radius:8px}
+html.ruhig .sdc25-b{animation:none}
+
+/* 26 Mauerwerk */
+.sdc26-mauer{columns:3;column-gap:12px}
+.sdc26-s{break-inside:avoid;margin-bottom:12px}
+.sdc26-s .foto{border-radius:6px;height:auto}
+.sdc26-f{width:100%;border-radius:6px}
+
+/* 27 Der Zug */
+.sdc27{overflow:hidden;margin:0 calc(-1*var(--rand))}
+.sdc27-zug{display:flex;gap:10px;width:max-content;height:min(62vh,600px);padding:0 var(--rand);will-change:transform}
+.sdc27-w{flex:none;height:100%}
+.sdc27-w .foto{height:100%;aspect-ratio:4/5;width:auto;border-radius:6px}
+.sdc27-f{height:100%;width:auto;border-radius:6px}
+
+/* 28 Die Kreise */
+.sdc28-reihe{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,26px);min-height:min(70vh,660px)}
+.sdc28-b{flex:none}
+.sdc28-b .foto{border-radius:50%;box-shadow:0 30px 50px -28px rgba(20,6,30,.95)}
+.sdc28-b.g .foto{width:clamp(150px,20vw,300px);aspect-ratio:1}
+.sdc28-b.m .foto{width:clamp(110px,15vw,220px);aspect-ratio:1}
+.sdc28-b.k .foto{width:clamp(80px,10vw,150px);aspect-ratio:1}
+.sdc28-b:nth-child(odd){margin-top:clamp(-60px,-6vh,-20px)}.sdc28-b:nth-child(even){margin-top:clamp(20px,6vh,60px)}
+.sdc28-f{width:clamp(130px,15vw,220px);border-radius:999px}
+
+/* 29 Näher ran */
+.sdc29{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,22vw,320px);gap:12px;align-items:stretch}
+.sdc29-rahmen{overflow:clip;border-radius:8px;aspect-ratio:16/10}
+.sdc29-zoom{height:100%;transform:scale(var(--z,1.04));transform-origin:50% 60%;will-change:transform}
+.sdc29-zoom .foto{height:100%;border-radius:0}
+.sdc29-f{height:100%;width:100%;border-radius:8px}
+
+/* 30 Die Galerie */
+.sdc30-wand{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);align-items:end}
+.sdc30-r{display:flex;flex-direction:column;gap:10px;min-width:0}
+.sdc30-r .foto,.sdc30-f{width:100%;aspect-ratio:4/5;border:10px solid #FAF4F4;border-radius:2px;box-shadow:0 30px 50px -30px rgba(20,6,30,.95);background:#FAF4F4}
+.sdc30-f{aspect-ratio:9/16!important}
+.sdc30-r .mono{color:rgba(255,247,239,.85);text-align:center}
+
+@media (max-width:860px){
+  .sdc16 .foto{aspect-ratio:4/5}
+  .sdc17{flex-wrap:wrap;height:auto;--h:52svh}.sdc17 .filmw{height:var(--h)}.sdc17-col{flex:1 1 100%;grid-template-rows:none;grid-template-columns:1fr 1fr}.sdc17-col .foto{aspect-ratio:4/5}
+  .sdc18{height:min(80svh,560px)}.sdc18-arm{transform:rotate(var(--a,0deg)) translateY(-150px)}.sdc18-b{width:76px}.sdc18-mitte{width:120px}
+  .sdc19-b,.sdc19-r.r1 .sdc19-b{width:30vw}
+  .sdc20{grid-template-columns:1fr 1fr;gap:8px}.sdc20-o,.sdc20-u{grid-column:1/-1}.sdc20-l{grid-column:1;grid-row:2;max-width:none}.sdc20-r{grid-column:2;grid-row:2;max-width:none}.sdc20-m{grid-column:1/-1;grid-row:3;width:min(100%,280px)}.sdc20-u{grid-row:4}
+  .sdc21-bogen{height:48svh}.sdc21-b{width:92px;transform-origin:50% 420px}.sdc21-b:nth-child(1),.sdc21-b:nth-child(7){display:none}
+  .sdc22{grid-template-columns:1fr}.sdc22-kino{width:min(100%,300px);margin:0 auto}.sdc22-fotos .foto{aspect-ratio:4/5;height:auto}
+  .sdc23-wand,.sdc24-raster{grid-template-columns:1fr 1fr}
+  .sdc25{grid-template-columns:1fr}.sdc25-film{width:min(100%,300px);margin:0 auto}
+  .sdc26-mauer{columns:2;column-gap:8px}
+  .sdc27-zug{height:50svh}
+  .sdc28-reihe{flex-wrap:wrap;min-height:0;gap:14px}.sdc28-b:nth-child(odd),.sdc28-b:nth-child(even){margin-top:0}
+  .sdc29{grid-template-columns:1fr}.sdc29-rahmen{aspect-ratio:4/5}.sdc29-film{width:min(100%,300px);margin:0 auto}
+  .sdc30-wand{grid-template-columns:1fr 1fr;align-items:start}.sdc30-r .foto,.sdc30-f{border-width:6px}
+}

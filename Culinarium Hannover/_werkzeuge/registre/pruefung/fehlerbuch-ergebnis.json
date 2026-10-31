@@ -1,0 +1,91 @@
+{
+ "Roher Vorlagen-Code nirgends": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kopf-Titel überdeckt keinen Knopf (920/1000/1100/1240/1440)": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Titel auf dunkler Bühne hell": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Unter der Bühne mindestens 30 px (Handy 24)": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Überschrift nie ohne Luft auf Inhalt (< 10 px)": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kacheln gleichmässig auf Reihen, keine allein": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kein seitliches Verrutschen": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Jeder Eintrag einer Liste mit Bild": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Listenbilder nie unter 72 px": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kein Element ragt aus dem Fenster (jedes Element gemessen)": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kein abgeschnittener Text, keine Auslassungspunkte im Inhalt": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Vergleich: Name stösst nie an die Zahl": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kein mailto: und kein tel: im Werkzeug": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Titel des Startbilds passt in sein Kopfbild": {
+  "gruen": 144,
+  "von": 144,
+  "rot": []
+ },
+ "Kein Foto zweimal auf einem Bildschirm (ausser Besuchsliste, so festgelegt)": {
+  "gruen": 126,
+  "von": 144,
+  "rot": [
+   "chromium 1440 besuche /assets/bild/beete-640.webp",
+   "chromium 1366 besuche /assets/bild/beete-640.webp",
+   "chromium 1240 besuche /assets/bild/beete-640.webp",
+   "chromium 1180 besuche /assets/bild/beete-640.webp",
+   "chromium 1100 besuche /assets/bild/beete-640.webp",
+   "chromium 1000 besuche /assets/bild/beete-640.webp",
+   "chromium 920 besuche /assets/bild/beete-640.webp",
+   "chromium 390 besuche /assets/bild/beete-640.webp"
+  ]
+ },
+ "Rundgang-Schild steht fest beim Scrollen": {
+  "gruen": 18,
+  "von": 18,
+  "rot": []
+ }
+}

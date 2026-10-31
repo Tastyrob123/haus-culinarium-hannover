@@ -1,0 +1,31 @@
+{"zeit":"2026-10-28T05:24:10.237Z","last":7.3,"ansicht":"start","cpu":4,"fenster":"1440x900","lade_ms":363,"bilder":82,"p50":8.3,"p95":9.3,"max":25,"ueber33":0,"cls":0.0044,"kb":923,"kacheln":0,"wo":["296ms 0.004 leiste"]}
+{"zeit":"2026-10-28T05:24:19.787Z","last":7.6,"ansicht":"bilder","cpu":4,"fenster":"1440x900","lade_ms":230,"bilder":912,"p50":8.3,"p95":9.2,"max":34.1,"ueber33":1,"cls":0.0053,"kb":9200,"kacheln":231,"wo":["173ms 0.004 leiste","214ms 0.001 BUTTON,BUTTON,BUTTON,BUTTON,BUTTON"]}
+{"zeit":"2026-10-28T05:24:24.266Z","last":7.4,"ansicht":"dateien","cpu":4,"fenster":"1440x900","lade_ms":269,"bilder":309,"p50":8.3,"p95":9.3,"max":24.5,"ueber33":0,"cls":0.0044,"kb":3697,"kacheln":0,"wo":["193ms 0.004 leiste","249ms 0.000 I"]}
+{"zeit":"2026-10-28T05:24:27.231Z","last":7.4,"ansicht":"pruefung","cpu":4,"fenster":"1440x900","lade_ms":211,"bilder":137,"p50":8.3,"p95":9.2,"max":25.1,"ueber33":0,"cls":0.0044,"kb":736,"kacheln":0,"wo":["157ms 0.004 leiste"]}
+{"zeit":"2026-10-28T05:24:41.196Z","last":7.2,"ansicht":"buch","cpu":4,"fenster":"1440x900","lade_ms":257,"bilder":1178,"p50":8.4,"p95":17,"max":49.5,"ueber33":1,"cls":0.0003,"kb":4985,"kacheln":0,"wo":["5807ms 0.000 SMALL,SMALL,SMALL,SMALL,SMALL","5823ms 0.000 SMALL,SMALL","5832ms 0.000 SMALL,SMALL","5849ms 0.000 SMALL,SMALL,SMALL"]}
+{"zeit":"2026-10-28T05:24:43.802Z","last":7.1,"ansicht":"start","cpu":6,"fenster":"1440x900","lade_ms":295,"bilder":81,"p50":8.3,"p95":9.3,"max":24.9,"ueber33":0,"cls":0.0044,"kb":923,"kacheln":0,"wo":["247ms 0.004 leiste"]}
+{"zeit":"2026-10-28T05:27:24.146Z","last":11.7,"ansicht":"bilder","cpu":6,"fenster":"1440x900","lade_ms":365,"bilder":887,"p50":8.3,"p95":10.3,"max":142,"ueber33":7,"cls":0.0053,"kb":9200,"kacheln":231,"wo":["273ms 0.004 leiste","339ms 0.001 BUTTON,BUTTON,BUTTON,BUTTON,BUTTON"]}
+{"zeit":"2026-10-28T05:27:33.598Z","last":12,"ansicht":"dateien","cpu":6,"fenster":"1440x900","lade_ms":358,"bilder":435,"p50":8.3,"p95":16.5,"max":258.4,"ueber33":6,"cls":0.0044,"kb":3697,"kacheln":0,"wo":["255ms 0.004 leiste","326ms 0.000 I"]}
+{"zeit":"2026-10-28T05:27:39.076Z","last":14.8,"ansicht":"pruefung","cpu":6,"fenster":"1440x900","lade_ms":1091,"bilder":275,"p50":8.3,"p95":9.9,"max":125,"ueber33":1,"cls":0.0048,"kb":736,"kacheln":0,"wo":["643ms 0.004 leiste","705ms 0.000 li-waehle,I"]}
+{"zeit":"2026-10-28T05:31:12.115Z","last":28.3,"ansicht":"buch","cpu":6,"fenster":"1440x900","lade_ms":1274,"bilder":1688,"p50":9.8,"p95":42.8,"max":166.3,"ueber33":217,"cls":0.0005,"kb":4985,"kacheln":0,"wo":["915ms 0.000 bu-pdf","5191ms 0.000 ","9919ms 0.000 ","10117ms 0.000 "]}
+{"zeit":"2026-10-28T05:31:15.079Z","last":26.5,"ansicht":"start","cpu":4,"fenster":"390x844","lade_ms":189,"bilder":139,"p50":8.3,"p95":9.9,"max":24.7,"ueber33":0,"cls":0,"kb":923,"kacheln":0,"wo":[]}
+{"zeit":"2026-10-28T05:31:38.416Z","last":25.8,"ansicht":"bilder","cpu":4,"fenster":"390x844","lade_ms":336,"bilder":2024,"p50":8.3,"p95":10,"max":207.9,"ueber33":10,"cls":0,"kb":9200,"kacheln":231,"wo":[]}
+{"zeit":"2026-10-28T05:31:48.749Z","last":24.4,"ansicht":"dateien","cpu":4,"fenster":"390x844","lade_ms":905,"bilder":907,"p50":8.3,"p95":9.9,"max":83.3,"ueber33":1,"cls":0,"kb":3697,"kacheln":0,"wo":[]}
+{"zeit":"2026-10-28T05:31:52.890Z","last":22.7,"ansicht":"pruefung","cpu":4,"fenster":"390x844","lade_ms":598,"bilder":212,"p50":8.3,"p95":9.9,"max":57.8,"ueber33":1,"cls":0,"kb":736,"kacheln":0,"wo":[]}
+{"zeit":"2026-10-28T05:45:34.172Z","last":32.1,"ansicht":"buch","cpu":4,"fenster":"390x844","lade_ms":501,"bilder":11693,"p50":8.3,"p95":10.2,"max":491.6,"ueber33":66,"cls":0.0032,"kb":4985,"kacheln":0,"wo":["23520ms 0.000 ","23756ms 0.000 ","23769ms 0.000 ","23785ms 0.000 "]}
+node:internal/process/promises:332
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://127.0.0.1:9085/_werkzeuge/livre/#start", waiting until "load"
+
+    at /Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_werkzeuge/livre/pruefung/fluss.js:19:13 {
+  log: [
+    '  - navigating to "http://127.0.0.1:9085/_werkzeuge/livre/#start", waiting until "load"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v25.9.0

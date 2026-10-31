@@ -1,0 +1,174 @@
+{
+ "haus": "Culinarium Hannover",
+ "quelle": "Werkzeuge und Ports aus _Werkzeuge/messlauf/ziele-culinarium.json (Messlauf), Werkbank-Bereich ganze Werkbank",
+ "gefahr": "l[öo]sch|entfern|senden|abschick|verschick|ver[öo]ffentlich|hochlad|online stellen|abmeld|zur[üu]cksetz|leeren|drucken|druckfertig|herunterlad|download|speicher|[üu]bernehm|best[äa]tig|freigeb|bezahl|verwerf|archivier|logout|ausloggen|ki fragen|erzeugen|generier|neu laden|entw[üu]rfe anlegen|f[üu]nf entw|anlegen und|export|als tabelle|als pdf|probe-pdf|pdf|zip|kopieren|in die zwischenablage|teilen|anrufen|ausprobieren|chat ausprobieren|abbrechen|r[üu]ckg[äa]ngig|wiederholen|undo|redo",
+ "dokument": "\\s(blatt|papier|bogen|dokument|druckseite|a4-seite|brief-seite|karte-blatt|seite-blatt)\\s",
+ "dokumentNicht": "\\sfl\\s",
+ "stil": {
+  "trenner": "|",
+  "trennerFalsch": "[A-Za-zÄÖÜäöü]\\s+/\\s+[A-Za-zÄÖÜäöü]",
+  "versalienNur": "Mono",
+  "versalienErlaubt": "Mono|plakat|marke|wortmarke"
+ },
+ "stilblatt": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_werkzeuge/imprimerie/haeuser/culinarium/stilblatt.json",
+ "ziele": [
+  {
+   "k": "tresen",
+   "name": "Der Tresen",
+   "url": "http://127.0.0.1:9081/_werkzeuge/maison/",
+   "tiefe": 7
+  },
+  {
+   "k": "schaufenster",
+   "name": "Das Schaufenster",
+   "url": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+   "startExtra": [
+    "http://127.0.0.1:9082/_werkzeuge/bureau/?rundgang"
+   ],
+   "einstiegWarte": ".rdg-karte",
+   "tiefe": 6
+  },
+  {
+   "k": "schaufenster-anleitung",
+   "name": "Das Schaufenster · Anleitung",
+   "url": "http://127.0.0.1:9082/_werkzeuge/bureau/anleitung.html",
+   "nav": 0
+  },
+  {
+   "k": "pairing-karte",
+   "name": "Die Pairing-Karte",
+   "url": "http://127.0.0.1:9083/_werkzeuge/carte/",
+   "startExtra": [
+    "http://127.0.0.1:9083/_werkzeuge/carte/?rundgang"
+   ],
+   "einstiegWarte": ".rdg-karte",
+   "tiefe": 6
+  },
+  {
+   "k": "pairing-karte-anleitung",
+   "name": "Die Pairing-Karte · Anleitung",
+   "url": "http://127.0.0.1:9083/_werkzeuge/carte/anleitung.html",
+   "nav": 0
+  },
+  {
+   "k": "gaestebuch",
+   "name": "Das Gästebuch",
+   "url": "http://127.0.0.1:9084/_werkzeuge/reception/",
+   "startExtra": [
+    "http://127.0.0.1:9084/_werkzeuge/reception/?rundgang"
+   ],
+   "einstiegWarte": ".rdg-karte",
+   "tiefe": 6
+  },
+  {
+   "k": "gaestebuch-anleitung",
+   "name": "Das Gästebuch · Anleitung",
+   "url": "http://127.0.0.1:9084/_werkzeuge/reception/anleitung.html",
+   "nav": 0
+  },
+  {
+   "k": "plakatarchiv",
+   "name": "Das Markenbuch",
+   "url": "http://127.0.0.1:9085/_werkzeuge/livre/"
+  },
+  {
+   "k": "plakatarchiv-buch",
+   "name": "Das Markenbuch · Hausregeln",
+   "url": "http://127.0.0.1:9085/_werkzeuge/livre/buch.html"
+  },
+  {
+   "k": "plakatarchiv-anleitung",
+   "name": "Das Markenbuch · Anleitung",
+   "url": "http://127.0.0.1:9085/_werkzeuge/livre/anleitung.html",
+   "nav": 0
+  },
+  {
+   "k": "besucherliste",
+   "name": "Die Besucherliste",
+   "url": "http://127.0.0.1:9086/_werkzeuge/registre/",
+   "startExtra": [
+    "http://127.0.0.1:9086/_werkzeuge/registre/?rundgang"
+   ],
+   "einstiegWarte": ".rdg-karte",
+   "tiefe": 6
+  },
+  {
+   "k": "besucherliste-anleitung",
+   "name": "Die Besucherliste · Anleitung",
+   "url": "http://127.0.0.1:9086/_werkzeuge/registre/anleitung.html",
+   "nav": 0
+  },
+  {
+   "k": "plakatwerkstatt",
+   "name": "Die Plakatwerkstatt",
+   "url": "http://127.0.0.1:9087/_werkzeuge/imprimerie/",
+   "localStorage": {
+    "ds-culinarium-willkommen": "1"
+   },
+   "max": 700,
+   "gefahrExtra": "führung am studio",
+   "gefahrExtra_grund": "Die Führung sperrt alle Klicks ausser Weiter/Beenden; das Inventar bleibt dort hängen. Führung wird gesondert geprüft (Tor 1, 30.10.)"
+  },
+  {
+   "k": "plakatwerkstatt-mail",
+   "name": "Die Plakatwerkstatt · Mail",
+   "url": "http://127.0.0.1:9087/_werkzeuge/imprimerie/mail.html"
+  },
+  {
+   "k": "werkbank",
+   "name": "Die Werkbank",
+   "url": "http://127.0.0.1:9088/werkbank/index.html",
+   "bereich": "http://127.0.0.1:9088/"
+  },
+  {
+   "k": "werkbank-ki",
+   "name": "Die Werkbank · KI",
+   "url": "http://127.0.0.1:9088/werkbank/ki.html"
+  },
+  {
+   "k": "werkbank-karte",
+   "name": "Die Werkbank · Karte",
+   "url": "http://127.0.0.1:9088/werkbank/karte.html"
+  },
+  {
+   "k": "werkbank-geprueft",
+   "name": "Die Werkbank · Geprüft",
+   "url": "http://127.0.0.1:9088/werkbank/geprueft/index.html"
+  },
+  {
+   "k": "werkbank-befund",
+   "name": "Die Werkbank · Befund",
+   "url": "http://127.0.0.1:9088/befund/index.html"
+  },
+  {
+   "k": "werkbank-unterlagen",
+   "name": "Die Werkbank · Unterlagen",
+   "url": "http://127.0.0.1:9088/unterlagen/index.html"
+  },
+  {
+   "k": "werkbank-drucksachen",
+   "name": "Die Werkbank · Drucksachen",
+   "url": "http://127.0.0.1:9088/drucksachen/index.html"
+  },
+  {
+   "k": "werkbank-untersetzer",
+   "name": "Die Werkbank · Untersetzer",
+   "url": "http://127.0.0.1:9088/untersetzer/index.html"
+  },
+  {
+   "k": "werkbank-feed",
+   "name": "Die Werkbank · Feed",
+   "url": "http://127.0.0.1:9088/feed/index.html"
+  },
+  {
+   "k": "werkbank-mails",
+   "name": "Die Werkbank · Mails",
+   "url": "http://127.0.0.1:9088/mails/index.html"
+  },
+  {
+   "k": "werkbank-material",
+   "name": "Die Werkbank · Material",
+   "url": "http://127.0.0.1:9088/material/index.html"
+  }
+ ]
+}

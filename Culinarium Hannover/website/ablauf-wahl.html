@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ablauf wählen · Culinarium</title>
+<meta name="theme-color" content="#16151A">
+<style>
+@font-face{font-family:"Fraunces";src:url(assets/schrift/fraunces-soft.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Urbanist";src:url(assets/schrift/urbanist.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(assets/schrift/instrument.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(assets/schrift/dmmono.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{
+  --nacht:#16151A;--tief:#0F0E13;--schiefer:#3A3845;--weiss:#FAF4F4;--kerze:#EF7649;--kerze-hell:#F5A689;
+  --linie:rgba(250,244,244,.16);--leise:rgba(250,244,244,.62);
+  --titel:"Fraunces",Georgia,serif;--text:"Instrument Sans",system-ui,sans-serif;--etikett:"Urbanist",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;
+  --rand:clamp(16px,4.4vw,72px);--h:min(78vh,720px);--k:cubic-bezier(.22,.68,.26,1)
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--nacht);color:var(--weiss);font:400 16px/1.6 var(--text);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.t{font-family:var(--titel);font-weight:340;font-variation-settings:"SOFT" 100;letter-spacing:-.01em;line-height:1.05}
+.m{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.leise{color:var(--leise)}
+.foto{position:relative;overflow:hidden;background:var(--schiefer)}
+.foto img{width:100%;height:100%;object-fit:cover}
+
+/* Seitenkopf */
+.seitenkopf{max-width:1280px;margin:0 auto;padding:clamp(48px,9vh,110px) var(--rand) 40px}
+.seitenkopf h1{font-size:clamp(40px,6vw,84px)}
+.seitenkopf p{max-width:640px;margin-top:20px;color:var(--leise)}
+.inhalt{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:32px;max-width:900px}
+.inhalt a{text-decoration:none;font-family:var(--etikett);font-size:15px;color:var(--leise);border-bottom:1px solid transparent}
+.inhalt a:hover{color:var(--weiss);border-color:var(--kerze)}
+.inhalt a span{font-family:var(--mono);font-size:11px;color:var(--kerze);margin-right:6px}
+
+/* Fassung */
+.fassung{max-width:1280px;margin:0 auto;padding:clamp(56px,10vh,120px) var(--rand) 0;scroll-margin-top:20px}
+.kopf{display:grid;grid-template-columns:56px 1fr minmax(220px,300px);gap:8px 28px;align-items:start;margin-bottom:22px;border-top:1px solid var(--linie);padding-top:22px}
+.kopf .nr{font-family:var(--mono);color:var(--kerze);font-size:14px;padding-top:8px}
+.kopf h2{font-size:clamp(30px,3.6vw,46px)}
+.kopf .satz{margin-top:10px;color:var(--leise);max-width:620px}
+.kopf dl{font-size:13px;line-height:1.5;color:var(--leise);display:grid;gap:8px;padding-top:6px}
+.kopf dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--kerze-hell)}
+.kopf dd a{text-decoration:underline;text-decoration-color:var(--kerze);text-underline-offset:3px}
+.buehne{position:relative;height:var(--h);border-radius:10px;overflow:hidden;background:var(--tief);box-shadow:0 0 0 1px var(--linie)}
+.scroller{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--schiefer) transparent}
+.hinweis{margin-top:12px;font-size:13px;color:var(--leise)}
+.hinweis b{font-weight:500;color:var(--kerze-hell)}
+.wisch{position:absolute;right:16px;bottom:14px;z-index:5;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--leise)}
+.ab-t{font-size:clamp(28px,3vw,44px)}
+.ab-s{margin-top:12px;color:var(--leise);max-width:420px}
+
+/* 01 Dein Platz */
+.platz{display:grid;grid-template-columns:1.35fr 1fr}
+.platz-bild{position:sticky;top:0;height:var(--h);align-self:start}
+.platz-bild img{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--k)}
+.platz-bild img.an{opacity:1}
+.platz-text>div{height:var(--h);display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,4vw,64px);opacity:.32;transition:opacity .5s}
+.platz-text>div.an{opacity:1}
+
+/* 02 Bonschiene */
+.bons{height:100%;overflow-x:auto;overflow-y:hidden;display:flex;gap:28px;padding:64px clamp(24px,4vw,56px) 40px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--kerze) var(--schiefer);position:relative}
+.schiene{position:absolute;left:0;right:0;top:40px;height:10px;background:linear-gradient(#77737f,#3b3943 60%,#24222a);box-shadow:0 2px 6px rgba(0,0,0,.5);min-width:1800px}
+.bon{flex:0 0 min(330px,78vw);background:#F3EEE6;color:#1d1b20;padding:16px 16px 20px;position:relative;scroll-snap-align:start;box-shadow:0 14px 28px rgba(0,0,0,.45);align-self:flex-start}
+.bon:nth-child(odd){transform:rotate(-1.2deg)}
+.bon:nth-child(even){transform:rotate(.9deg);margin-top:10px}
+.bon:before{content:"";position:absolute;left:50%;top:-22px;width:46px;height:30px;margin-left:-23px;background:linear-gradient(#9a96a2,#55525d);border-radius:3px}
+.bon .m{color:#6d6873;display:flex;justify-content:space-between;border-bottom:1px dashed #b9b2aa;padding-bottom:8px;margin-bottom:12px}
+.bon .foto{aspect-ratio:4/5}
+.bon h3{font-family:var(--titel);font-weight:380;font-size:28px;margin-top:14px;text-transform:uppercase;letter-spacing:.02em}
+.bon p{font-size:14px;color:#4b4650;margin-top:6px}
+
+/* 03 Momo x Rudi */
+.mxr{height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;position:relative}
+.mxr .feld{position:relative}
+.mxr .feld .foto{position:absolute;inset:0}
+.mxr .feld .foto:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(15,14,19,.86))}
+.mxr .feld .txt{position:absolute;left:24px;right:24px;bottom:20px;z-index:2}
+.mxr .wer{font-family:var(--etikett);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+.mxr .ab-t{font-size:clamp(24px,2.6vw,36px);margin-top:4px}
+.mxr .ab-s{font-size:14px;margin-top:6px}
+.x-zeichen{position:absolute;left:50%;top:50%;z-index:4;width:clamp(110px,14vw,190px);height:clamp(110px,14vw,190px);margin:calc(clamp(110px,14vw,190px)/-2) 0 0 calc(clamp(110px,14vw,190px)/-2);display:grid;place-items:center;background:var(--nacht);border-radius:50%;font-family:var(--titel);font-weight:300;font-size:clamp(90px,11vw,150px);line-height:1;color:var(--kerze);padding-bottom:.12em}
+
+/* 04 Kerze */
+.kerze-raster{display:grid;grid-template-columns:clamp(90px,12vw,170px) 1fr}
+.kerze-spalte{position:sticky;top:0;height:var(--h);align-self:start;display:flex;align-items:flex-end;justify-content:center;padding-bottom:40px;border-right:1px solid var(--linie)}
+.kerze-ding{position:relative;width:34px;height:340px}
+.wachs{position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(90deg,#e9dfd2,#fbf6ee 45%,#d8cbbb);border-radius:4px 4px 2px 2px;transform-origin:bottom;transform:scaleY(calc(1 - var(--p,0)*.78))}
+.flamme{position:absolute;left:50%;bottom:300px;width:16px;height:30px;margin-left:-8px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff3d0,#f6b660 45%,var(--kerze) 75%);box-shadow:0 0 40px 12px rgba(239,118,73,.35);transform:translateY(calc(var(--p,0)*234px))}
+.kerze-panel{height:var(--h);position:relative}
+.kerze-panel .foto{position:absolute;inset:0}
+.kerze-panel .foto:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,14,19,.8),transparent 60%)}
+.kerze-panel .txt{position:absolute;left:clamp(24px,4vw,64px);bottom:clamp(28px,6vh,64px);z-index:2;max-width:420px}
+
+/* 05 Uhr */
+.uhr-stage{position:sticky;top:0;height:var(--h);margin-bottom:calc(var(--h)*-1);overflow:hidden}
+.uhr-stage .foto{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--k)}
+.uhr-stage .foto.an{opacity:1}
+.uhr-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,14,19,.9),rgba(15,14,19,.1) 60%);pointer-events:none}
+.uhr-zeit{position:absolute;left:clamp(20px,4vw,56px);bottom:clamp(20px,5vh,48px);z-index:2;display:flex;gap:clamp(20px,4vw,60px);align-items:flex-end}
+.uhr-ziffer{position:relative;height:clamp(84px,13vw,180px);overflow:hidden;width:clamp(230px,36vw,500px)}
+.uhr-ziffer span{position:absolute;inset:0;font-family:var(--mono);font-size:clamp(80px,12.5vw,170px);line-height:1;letter-spacing:-.04em;transform:translateY(100%);transition:transform .7s var(--k)}
+.uhr-ziffer span.an{transform:none}
+.uhr-ziffer span.weg{transform:translateY(-100%)}
+.uhr-txt{position:relative;width:min(360px,36vw);height:150px}
+.uhr-txt div{position:absolute;inset:auto 0 0 0;opacity:0;transition:opacity .5s}
+.uhr-txt div.an{opacity:1}
+.uhr-txt .ab-t{font-size:clamp(24px,2.4vw,34px)}
+.uhr-txt .ab-s{font-size:14px}
+.leer{height:var(--h)}
+
+/* 06 Zahlen */
+.zahlen{height:100%;display:grid;grid-template-columns:1fr 1.15fr 1.3fr 1fr;gap:4px;align-items:end;padding:0}
+.zahl{position:relative;height:100%;display:flex;flex-direction:column}
+.zahl .foto{flex:1;min-height:0}
+.zahl:nth-child(1) .foto{margin-top:18%}
+.zahl:nth-child(2) .foto{margin-top:6%}
+.zahl:nth-child(4) .foto{margin-top:12%}
+.zahl-fuss{padding:0 18px 22px;background:var(--tief);position:relative}
+.zahl-linie{height:clamp(96px,11vw,150px);overflow:hidden;border-top:1px solid var(--kerze);margin-top:-1px}
+.zahl-linie b{display:block;font-family:var(--titel);font-weight:300;font-size:clamp(96px,11vw,150px);line-height:.95;color:var(--kerze);transform:translateY(102%);transition:transform 1s var(--k)}
+.zahlen.da .zahl-linie b{transform:none}
+.zahlen.da .zahl:nth-child(2) b{transition-delay:.12s}
+.zahlen.da .zahl:nth-child(3) b{transition-delay:.24s}
+.zahlen.da .zahl:nth-child(4) b{transition-delay:.36s}
+.zahl h3{font-family:var(--titel);font-weight:360;font-size:clamp(20px,1.9vw,28px)}
+.zahl p{font-size:13.5px;color:var(--leise);margin-top:4px}
+
+/* 07 Fotos im Satz */
+.satzbild{height:100%;display:flex;align-items:center;padding:0 clamp(24px,5vw,80px);position:relative}
+.satzbild p{font-family:var(--titel);font-weight:320;font-variation-settings:"SOFT" 100;font-size:clamp(30px,4.3vw,64px);line-height:1.22;letter-spacing:-.015em}
+.satzbild button{display:inline-block;vertical-align:-.08em;width:1.5em;height:.9em;border-radius:.45em;overflow:hidden;margin:0 .08em;box-shadow:0 0 0 2px transparent;transition:box-shadow .3s}
+.satzbild button:hover{box-shadow:0 0 0 2px var(--kerze)}
+.satzbild button img{width:100%;height:100%;object-fit:cover}
+.satzbild .gross{position:absolute;inset:0;z-index:5;display:grid;grid-template-columns:1.3fr 1fr;background:var(--tief);opacity:0;pointer-events:none;transition:opacity .45s var(--k)}
+.satzbild .gross.an{opacity:1;pointer-events:auto}
+.satzbild .gross .txt{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,4vw,56px)}
+.satzbild .zu{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--kerze-hell);align-self:flex-start}
+
+/* 08 Mappe */
+.mappe-tisch{height:100%;display:grid;place-items:center;perspective:2200px;background:radial-gradient(ellipse at 50% 60%,#2a2530,var(--tief) 70%);cursor:pointer}
+.buch{position:relative;width:min(880px,88%);aspect-ratio:1.5;transform:translateX(-25%);transition:transform 1.2s var(--k);transform-style:preserve-3d}
+.offen .buch{transform:none}
+.seite-r{position:absolute;right:0;top:0;width:50%;height:100%;background:#F3EEE6;color:#1d1b20;padding:clamp(18px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.6vw,20px);border-radius:0 6px 6px 0}
+.seite-r .m{color:#8b6f5e}
+.seite-r h3{font-family:var(--titel);font-weight:380;font-size:clamp(18px,2vw,28px);text-transform:uppercase;letter-spacing:.03em;line-height:1}
+.seite-r p{font-size:clamp(11.5px,1vw,13.5px);color:#55505a;line-height:1.45;margin-top:3px}
+.deckel{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.4s var(--k)}
+.offen .deckel{transform:rotateY(-180deg)}
+.deckel>div{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:0 6px 6px 0}
+.deckel .vorn{background:linear-gradient(135deg,#232029,#121015);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 0 1px rgba(250,244,244,.06)}
+.deckel .vorn .t{font-size:clamp(26px,3vw,44px);text-align:center}
+.deckel .vorn .t i{font-style:normal;color:var(--kerze)}
+.deckel .hinten{transform:rotateY(180deg);border-radius:6px 0 0 6px;overflow:hidden}
+.deckel .hinten img{width:100%;height:100%;object-fit:cover}
+.mappe-ruf{position:absolute;left:0;right:0;bottom:18px;text-align:center;z-index:3}
+
+/* 09 Kontaktabzug */
+.kontakt{height:100%;display:grid;grid-template-columns:1.25fr 1fr}
+.bogen{background:#0b0a0d;padding:clamp(14px,2vw,28px);display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(6px,.8vw,12px) clamp(4px,.6vw,8px);align-content:center;overflow:hidden}
+.bild-k{position:relative}
+.bild-k .foto{aspect-ratio:3/4;filter:saturate(.85)}
+.bild-k .m{font-size:9px;color:#8f8a7e;margin-top:3px;display:block}
+.bild-k.kreis{cursor:pointer}
+.bild-k.kreis:before{content:"";position:absolute;inset:-9px -7px 6px -8px;border:2.5px solid var(--kerze);border-radius:52% 46% 55% 44%/48% 55% 45% 52%;z-index:2;transform:rotate(-6deg) scale(.92);transition:transform .4s var(--k);pointer-events:none}
+.bild-k.kreis:nth-child(odd):before{transform:rotate(8deg) scale(.92);border-radius:46% 54% 44% 56%/55% 45% 52% 48%}
+.bild-k.kreis.an:before{transform:rotate(-3deg) scale(1)}
+.kontakt-gross{position:relative}
+.kontakt-gross .foto{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.kontakt-gross .foto.an{opacity:1}
+.kontakt-gross .foto:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(15,14,19,.9))}
+.kontakt-gross .txt{position:absolute;left:28px;right:28px;bottom:24px;z-index:3}
+
+/* 10 Kapitel */
+.kapitel{height:var(--h);position:relative;overflow:hidden}
+.kapitel .foto{position:absolute;inset:0}
+.kapitel .foto img{transform:scale(calc(1.13 - .13*var(--v,0)))}
+.kapitel:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,14,19,.85),transparent 55%)}
+.kapitel .txt{position:absolute;left:clamp(24px,5vw,72px);bottom:clamp(28px,7vh,72px);z-index:2;max-width:760px}
+.kapitel .txt .t{font-size:clamp(34px,4.6vw,68px)}
+.kapitel .txt .m{color:var(--kerze-hell);margin-bottom:14px;display:block}
+
+/* 11 Davor und dahinter */
+.dd{height:100%;display:flex;flex-direction:column;padding:26px clamp(18px,3vw,40px) 28px;gap:20px}
+.schalter{display:flex;gap:28px;font-family:var(--titel);font-size:clamp(22px,2.4vw,32px);font-weight:340}
+.schalter button{color:var(--leise);padding-bottom:6px;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
+.schalter button[aria-pressed=true]{color:var(--weiss);border-color:var(--kerze)}
+.dd-reihe{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;min-height:0}
+.dd-st{display:flex;flex-direction:column;min-height:0}
+.dd-st .foto{flex:1;min-height:0}
+.dd-st .foto img{position:absolute;inset:0;transition:opacity .6s var(--k)}
+.dd-st .foto img+img{opacity:0}
+.dd.hinten .dd-st .foto img+img{opacity:1}
+.dd-st h3{font-family:var(--titel);font-weight:360;font-size:clamp(19px,1.8vw,26px);margin-top:12px}
+.dd-st p{position:relative;height:3.2em;font-size:13.5px;color:var(--leise);margin-top:2px}
+.dd-st p span{position:absolute;inset:0;transition:opacity .4s}
+.dd-st p span+span,.dd.hinten .dd-st p span:first-child{opacity:0}
+.dd.hinten .dd-st p span+span{opacity:1}
+
+/* 12 Weg */
+.weg{height:100%;display:grid;grid-template-columns:1.1fr 1fr}
+.plan{display:grid;place-items:center;padding:24px;background:#121116}
+.plan svg{width:100%;height:100%;max-height:640px}
+.plan .wand{fill:none;stroke:rgba(250,244,244,.55);stroke-width:2}
+.plan .duenn{fill:none;stroke:rgba(250,244,244,.28);stroke-width:1.2}
+.plan .stuhl{fill:none;stroke:rgba(250,244,244,.4);stroke-width:1.2}
+.plan .pfad{fill:none;stroke:var(--kerze);stroke-width:2.2;stroke-dasharray:6 7}
+.plan text{fill:rgba(250,244,244,.55);font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em}
+.plan .ort{cursor:pointer}
+.plan .ort circle{fill:var(--tief);stroke:var(--kerze);stroke-width:2;transition:fill .3s}
+.plan .ort.an circle{fill:var(--kerze)}
+.plan .ort text{fill:var(--weiss);font-family:"Fraunces",serif;font-size:17px;letter-spacing:0}
+.weg-bild{position:relative}
+.weg-bild .foto{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.weg-bild .foto.an{opacity:1}
+.weg-bild .foto:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(15,14,19,.9))}
+.weg-bild .txt{position:absolute;left:28px;right:28px;bottom:24px;z-index:3}
+
+/* 13 Was übrig bleibt */
+.rest{height:100%;position:relative;overflow:hidden}
+.rest .mitte{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(400px,40%);text-align:center;z-index:2}
+.rest .mitte .t{font-size:clamp(28px,3.2vw,46px)}
+.rest .mitte p{color:var(--leise);margin-top:14px;font-size:15px}
+.rest figure{position:absolute;transform:translateY(calc(var(--d,0)*1px))}
+.rest figure .foto{width:100%;height:100%}
+.rest figcaption{margin-top:8px}
+.rest figcaption b{display:block;font-family:var(--titel);font-weight:360;font-size:18px}
+.rest figcaption span{font-size:12.5px;color:var(--leise)}
+.r1{left:4%;top:7%;width:20%;height:44%}
+.r2{right:5%;top:5%;width:16%;height:36%}
+.r3{left:12%;bottom:4%;width:14%;height:30%}
+.r4{right:10%;bottom:6%;width:22%;height:40%}
+
+/* 14 Brief */
+.brief{padding:clamp(40px,7vh,80px) clamp(24px,6vw,100px) 80px;max-width:900px;margin:0 auto}
+.brief p{font-family:var(--titel);font-weight:320;font-variation-settings:"SOFT" 100;font-size:clamp(21px,2vw,27px);line-height:1.5;margin-bottom:1.05em}
+.brief p:first-of-type:first-letter{color:var(--kerze)}
+.brief figure{width:clamp(130px,19vw,210px);aspect-ratio:4/5;margin:6px 28px 14px 0;float:left;transform:rotate(-2deg);box-shadow:0 18px 30px rgba(0,0,0,.55)}
+.brief figure.r{float:right;margin:6px 0 14px 28px;transform:rotate(2.2deg)}
+.brief figure .foto{width:100%;height:100%;border:6px solid #F3EEE6}
+.unterschrift{clear:both;padding-top:18px;font-family:var(--titel);font-size:42px;font-weight:300;color:var(--kerze)}
+.unterschrift small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--leise);margin-top:6px}
+
+/* 15 Gang auf Gang */
+.stapel{padding:16px clamp(14px,2.4vw,32px) calc(var(--h)*.5)}
+.karte{position:sticky;height:calc(var(--h) - 120px);margin-bottom:44px;display:grid;grid-template-columns:1.2fr 1fr;background:#1d1b22;border-radius:8px;overflow:hidden;box-shadow:0 -18px 40px rgba(0,0,0,.5);transform-origin:top center;transform:scale(var(--s,1))}
+.karte:nth-child(1){top:16px}.karte:nth-child(2){top:34px}.karte:nth-child(3){top:52px}.karte:nth-child(4){top:70px}
+.karte .txt{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(22px,3.6vw,56px)}
+.karte .m{color:var(--kerze-hell);margin-bottom:14px}
+
+.fuss{max-width:1280px;margin:0 auto;padding:120px var(--rand) 80px;color:var(--leise);font-size:14px}
+
+/* Handy */
+@media (max-width:760px){
+  :root{--h:min(80vh,640px)}
+  .kopf{grid-template-columns:1fr;gap:6px}
+  .kopf .nr{padding:0}
+  .platz{grid-template-columns:1fr}
+  .platz-bild{height:calc(var(--h)*.55);z-index:1}
+  .platz-text{margin-top:calc(var(--h)*-.55)}
+  .platz-text>div{height:var(--h);justify-content:flex-end;padding:0 20px 28px;opacity:0}
+  .platz-text>div:before{content:"";display:block}
+  .platz-text>div.an{opacity:1}
+  .mxr .ab-s{display:none}
+  .mxr .feld .txt{left:14px;right:14px;bottom:12px}
+  .x-zeichen{width:84px;height:84px;margin:-42px 0 0 -42px;font-size:72px}
+  .zahlen{grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr)}
+  .zahl{min-height:0}
+  .zahl h3{font-size:18px}
+  .zahl .foto{margin-top:0!important}
+  .zahl-linie{height:72px}.zahl-linie b{font-size:72px}
+  .zahl p{display:none}
+  .zahl-fuss{padding:0 10px 10px}
+  .uhr-zeit{flex-direction:column;align-items:flex-start;gap:10px}
+  .uhr-txt{width:calc(100vw - 80px);height:130px}
+  .satzbild .gross{grid-template-columns:1fr;grid-template-rows:1.2fr 1fr}
+  .kontakt{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .bogen{grid-template-columns:repeat(6,1fr)}
+  .dd-reihe{grid-template-columns:1fr 1fr}
+  .dd-st p{display:none}
+  .weg{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+  .rest .mitte{width:62%}
+  .rest .mitte p{display:none}
+  .r1{width:30%;height:28%;left:3%;top:4%}.r2{width:28%;height:24%;right:3%;top:6%}.r3{width:28%;height:24%;left:4%;bottom:4%}.r4{width:32%;height:28%;right:3%;bottom:3%}
+  .rest figcaption span{display:none}
+  .brief figure{width:120px}
+  .karte{grid-template-columns:1fr;grid-template-rows:1.3fr 1fr}
+  .karte .ab-s{font-size:14px}
+  .mxr{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="seitenkopf">
+  <p class="m" style="color:var(--kerze)">Culinarium · Startseite · Teil «So läuft ein Abend»</p>
+  <h1 class="t">Fünfzehn Fassungen für den Ablauf.</h1>
+  <p>Grobe Skizzen mit Rudis Fotos, nicht fertig gebaut. Rahmen mit eigenem Laufbalken lassen sich darin scrollen. Was ein Platzhalter ist, steht unter der Skizze.</p>
+  <nav class="inhalt" aria-label="Fassungen" id="inhalt"></nav>
+</header>
+
+<main>
+
+<!-- 01 -->
+<section class="fassung" id="f01" data-name="Dein Platz">
+  <div class="kopf"><span class="nr">01</span>
+    <div><h2 class="t">Dein Platz</h2><p class="satz">Ein Bild, als sässe man an der Tafel. Beim Scrollen wechselt, was vor einem steht: Aperitif, Teller, die fünf Gläser, Momo am Tisch.</p></div>
+    <dl><dt>Bewegung</dt><dd>Bühne steht, Bild tauscht (Deckkraft)</dd><dt>Am Handy</dt><dd>Bild oben, Satz darunter, gleicher Tausch</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-steps="4">
+    <div class="platz">
+      <div class="platz-bild foto">
+        <img data-s="0" src="assets/bild/g2-1000.webp" alt="">
+        <img data-s="1" src="assets/bild/roq2-1000.webp" alt="">
+        <img data-s="2" src="assets/bild/m3-1000.webp" alt="">
+        <img data-s="3" src="assets/bild/momo-1000.webp" alt="">
+      </div>
+      <div class="platz-text">
+        <div data-s="0"><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div>
+        <div data-s="1"><h3 class="t ab-t">Drei Gänge</h3><p class="ab-s">Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.</p></div>
+        <div data-s="2"><h3 class="t ab-t">Fünf Drinks</h3><p class="ab-s">Zu den Gängen kommen fünf Signature Drinks von Momo, gemacht für genau dieses Essen.</p></div>
+        <div data-s="3"><h3 class="t ab-t">Tasting und Schulung</h3><p class="ab-s">Momo erklärt jeden Drink am Tisch, damit man die Aromen nicht nur schmeckt, sondern auch versteht.</p></div>
+      </div>
+    </div>
+  </div><span class="wisch">Im Rahmen scrollen</span></div>
+  <p class="hinweis"><b>Lücke:</b> Am stärksten wäre es mit vier Fotos aus genau demselben Blickwinkel, von einem Platz an der Tafel aus. Solche Fotos gibt es noch nicht.</p>
+</section>
+
+<!-- 02 -->
+<section class="fassung" id="f02" data-name="Die Bonschiene">
+  <div class="kopf"><span class="nr">02</span>
+    <div><h2 class="t">Die Bonschiene</h2><p class="satz">Die vier Stationen hängen als Bons an der Schiene am Pass, jeder mit grossem Foto. Man zieht sie seitwärts durch.</p></div>
+    <dl><dt>Bewegung</dt><dd>Natives Seitwärts-Blättern mit Laufbalken</dd><dt>Am Handy</dt><dd>Ein Bon pro Breite, wischen</dd><dt>Vorlage</dt><dd><a href="https://www.hotel-royal.it/en" target="_blank" rel="noopener">Hotel Royal</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="bons">
+    <div class="schiene"></div>
+    <article class="bon"><div class="m"><span>Bon · Ankommen</span><span>14 P.</span></div><div class="foto"><img src="assets/bild/g2-640.webp" alt=""></div><h3>Ankommen</h3><p>Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></article>
+    <article class="bon"><div class="m"><span>Bon · Küche</span><span>14 P.</span></div><div class="foto"><img src="assets/bild/pass3-640.webp" alt=""></div><h3>Drei Gänge</h3><p>Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.</p></article>
+    <article class="bon"><div class="m"><span>Bon · Bar</span><span>5 ×</span></div><div class="foto"><img src="assets/bild/glaeser-640.webp" alt=""></div><h3>Fünf Drinks</h3><p>Fünf Signature Drinks von Momo, gemacht für genau dieses Essen.</p></article>
+    <article class="bon"><div class="m"><span>Bon · Momo</span><span>am Tisch</span></div><div class="foto"><img src="assets/bild/klaeren-640.webp" alt=""></div><h3>Tasting</h3><p>Momo erklärt jeden Drink am Tisch. Dazu ein Blick auf seine Techniken.</p></article>
+    <div style="flex:0 0 40px"></div>
+  </div><span class="wisch">Seitwärts ziehen →</span></div>
+</section>
+
+<!-- 03 -->
+<section class="fassung" id="f03" data-name="Momo x Rudi">
+  <div class="kopf"><span class="nr">03</span>
+    <div><h2 class="t">Momo x Rudi</h2><p class="satz">Das «x» des Plakats sitzt mitten im Schachbrett. Glas und Teller teilen sich die vier Felder, der Abend als Gespräch der beiden.</p></div>
+    <dl><dt>Bewegung</dt><dd>Das x dreht sich beim Scrollen langsam mit</dd><dt>Am Handy</dt><dd>2 × 2 bleibt, kurze Sätze darunter</dd><dt>Vorlage</dt><dd><a href="https://www.maisonmastrorelli.com" target="_blank" rel="noopener">Maison Mastrorelli</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="mxr">
+    <div class="feld"><div class="foto"><img src="assets/bild/g2-1000.webp" alt=""></div><div class="txt"><span class="wer">Momo</span><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen ein Aperitif, die Kerzen brennen schon.</p></div></div>
+    <div class="feld"><div class="foto"><img src="assets/bild/anrichten-1000.webp" alt=""></div><div class="txt"><span class="wer">Rudi</span><h3 class="t ab-t">Drei Gänge</h3><p class="ab-s">Teller für Teller für die ganze Tafel.</p></div></div>
+    <div class="feld"><div class="foto"><img src="assets/bild/t03-1000.webp" alt=""></div><div class="txt"><span class="wer">Momo</span><h3 class="t ab-t">Fünf Drinks</h3><p class="ab-s">Gemacht für genau dieses Essen.</p></div></div>
+    <div class="feld"><div class="foto"><img src="assets/bild/momo-1000.webp" alt=""></div><div class="txt"><span class="wer">Momo x Rudi</span><h3 class="t ab-t">Tasting und Schulung</h3><p class="ab-s">Jeder Drink wird am Tisch erklärt.</p></div></div>
+    <div class="x-zeichen" aria-hidden="true">x</div>
+  </div></div>
+</section>
+
+<!-- 04 -->
+<section class="fassung" id="f04" data-name="Die Kerze">
+  <div class="kopf"><span class="nr">04</span>
+    <div><h2 class="t">Die Kerze</h2><p class="satz">Am Rand steht eine Kerze, die herunterbrennt, während die vier Stationen bildschirmfüllend vorbeiziehen. Am Ende ist sie fast unten.</p></div>
+    <dl><dt>Bewegung</dt><dd>Wachs wird kürzer (scaleY), Flamme sinkt mit</dd><dt>Am Handy</dt><dd>Kerze als schmaler Streifen links</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-fortschritt>
+    <div class="kerze-raster">
+      <div class="kerze-spalte"><div class="kerze-ding"><div class="flamme"></div><div class="wachs"></div></div></div>
+      <div>
+        <div class="kerze-panel"><div class="foto"><img src="assets/bild/kerze2-1000.webp" alt=""></div><div class="txt"><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div></div>
+        <div class="kerze-panel"><div class="foto"><img src="assets/bild/r01-1000.webp" alt=""></div><div class="txt"><h3 class="t ab-t">Drei Gänge</h3><p class="ab-s">Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.</p></div></div>
+        <div class="kerze-panel"><div class="foto"><img src="assets/bild/m3-1000.webp" alt=""></div><div class="txt"><h3 class="t ab-t">Fünf Drinks</h3><p class="ab-s">Fünf Signature Drinks von Momo, gemacht für genau dieses Essen.</p></div></div>
+        <div class="kerze-panel"><div class="foto"><img src="assets/bild/kerze1-1000.webp" alt=""></div><div class="txt"><h3 class="t ab-t">Tasting und Schulung</h3><p class="ab-s">Momo erklärt jeden Drink am Tisch. Dazu ein Blick auf seine Techniken.</p></div></div>
+      </div>
+    </div>
+  </div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<!-- 05 -->
+<section class="fassung" id="f05" data-name="Die Uhr des Abends">
+  <div class="kopf"><span class="nr">05</span>
+    <div><h2 class="t">Die Uhr des Abends</h2><p class="satz">Statt römischer Ziffern läuft die Uhrzeit. Ein randloses Bild je Uhrzeit, die Ziffern rollen weiter wie am Bahnhof.</p></div>
+    <dl><dt>Bewegung</dt><dd>Ziffern rollen (translateY), Bild tauscht</dd><dt>Am Handy</dt><dd>Zeit gross oben, Satz darunter</dd><dt>Vorlage</dt><dd><a href="https://www.palazzosogni.com" target="_blank" rel="noopener">Palazzo Sogni</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-steps="4">
+    <div class="uhr-stage">
+      <div class="foto an" data-s="0"><img src="assets/bild/flur-1000.webp" alt=""></div>
+      <div class="foto" data-s="1"><img src="assets/bild/r01-1000.webp" alt=""></div>
+      <div class="foto" data-s="2"><img src="assets/bild/t03-1000.webp" alt=""></div>
+      <div class="foto" data-s="3"><img src="assets/bild/kerze1-1000.webp" alt=""></div>
+      <div class="uhr-zeit">
+        <div class="uhr-ziffer"><span data-s="0" class="an">19:00</span><span data-s="1">19:45</span><span data-s="2">20:30</span><span data-s="3">22:00</span></div>
+        <div class="uhr-txt">
+          <div data-s="0" class="an"><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Ein Aperitif, die Kerzen brennen.</p></div>
+          <div data-s="1"><h3 class="t ab-t">Drei Gänge</h3><p class="ab-s">Teller für Teller für die ganze Tafel.</p></div>
+          <div data-s="2"><h3 class="t ab-t">Fünf Drinks</h3><p class="ab-s">Von Momo, gemacht für genau dieses Essen.</p></div>
+          <div data-s="3"><h3 class="t ab-t">Tasting und Schulung</h3><p class="ab-s">Jeder Drink wird am Tisch erklärt.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="leer"></div><div class="leer"></div><div class="leer"></div><div class="leer"></div>
+  </div><span class="wisch">Im Rahmen scrollen</span></div>
+  <p class="hinweis"><b>Platzhalter:</b> 19:00, 19:45, 20:30 und 22:00 sind erfunden. Die echten Zeiten muss Rudi nennen.</p>
+</section>
+
+<!-- 06 -->
+<section class="fassung" id="f06" data-name="1 · 3 · 5 · 14">
+  <div class="kopf"><span class="nr">06</span>
+    <div><h2 class="t">1 · 3 · 5 · 14</h2><p class="satz">Der Abend in seinen echten Zahlen. Jede Zahl steigt aus einer Linie in Kerzenfarbe, darüber das grosse Foto.</p></div>
+    <dl><dt>Bewegung</dt><dd>Zahlen steigen aus der Linie</dd><dt>Am Handy</dt><dd>2 × 2, Zahl und Wort</dd><dt>Vorlage</dt><dd><a href="https://nakalodge.co.za" target="_blank" rel="noopener">Naka Lodge</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="zahlen" data-da>
+    <div class="zahl"><div class="foto"><img src="assets/bild/g2-1000.webp" alt=""></div><div class="zahl-fuss"><div class="zahl-linie"><b>1</b></div><h3>Aperitif</h3><p>Zum Ankommen, die Kerzen brennen schon.</p></div></div>
+    <div class="zahl"><div class="foto"><img src="assets/bild/r08-1000.webp" alt=""></div><div class="zahl-fuss"><div class="zahl-linie"><b>3</b></div><h3>Gänge</h3><p>Teller für Teller, jeden Abend ein anderes Menü.</p></div></div>
+    <div class="zahl"><div class="foto"><img src="assets/bild/m3-1000.webp" alt=""></div><div class="zahl-fuss"><div class="zahl-linie"><b>5</b></div><h3>Drinks, jeder erklärt</h3><p>Momo erklärt am Tisch, was drin ist und wie.</p></div></div>
+    <div class="zahl"><div class="foto"><img src="assets/bild/t06-1000.webp" alt=""></div><div class="zahl-fuss"><div class="zahl-linie"><b>14</b></div><h3>Plätze</h3><p>Am Ende sitzt man mit Leuten, die man vorher nicht kannte.</p></div></div>
+  </div></div>
+  <p class="hinweis"><b>Anders als heute:</b> Das Tasting geht in die «5» ein, dafür kommen die vierzehn Plätze als Schluss dazu, so wie es der Einleitungssatz schon sagt.</p>
+</section>
+
+<!-- 07 -->
+<section class="fassung" id="f07" data-name="Fotos im Satz">
+  <div class="kopf"><span class="nr">07</span>
+    <div><h2 class="t">Fotos im Satz</h2><p class="satz">Der Einleitungssatz wird selbst zum Ablauf. Kleine Fotos sitzen zwischen den Wörtern, und ein angetipptes wird an derselben Stelle gross.</p></div>
+    <dl><dt>Bewegung</dt><dd>Angetipptes Foto füllt den Rahmen</dd><dt>Am Handy</dt><dd>Satz bricht um, Fotos bleiben im Satz</dd><dt>Vorlage</dt><dd><a href="https://hotelgarden-ks.com/" target="_blank" rel="noopener">Hotel Garden</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="satzbild">
+    <p>Ungefähr so: ankommen <button data-g="0" aria-label="Ankommen"><img src="assets/bild/flur-640.webp" alt=""></button>, anstossen <button data-g="1" aria-label="Anstossen"><img src="assets/bild/anstossen-640.webp" alt=""></button>, essen <button data-g="2" aria-label="Essen"><img src="assets/bild/roq2-640.webp" alt=""></button>, probieren <button data-g="3" aria-label="Probieren"><img src="assets/bild/t03-640.webp" alt=""></button>, zuhören <button data-g="4" aria-label="Zuhören"><img src="assets/bild/momo-640.webp" alt=""></button>, und am Ende mit Leuten am Tisch sitzen <button data-g="5" aria-label="Am Tisch"><img src="assets/bild/t06-640.webp" alt=""></button>, die man vorher nicht kannte.</p>
+    <div class="gross" data-gross><div class="foto"><img src="assets/bild/flur-1000.webp" alt=""></div><div class="txt"><h3 class="t ab-t"></h3><p class="ab-s"></p><button class="zu" type="button">Zurück zum Satz</button></div></div>
+  </div><span class="wisch">Foto antippen</span></div>
+</section>
+
+<!-- 08 -->
+<section class="fassung" id="f08" data-name="Die Mappe">
+  <div class="kopf"><span class="nr">08</span>
+    <div><h2 class="t">Die Mappe</h2><p class="satz">Eine geschlossene Menümappe mit «Momo x Rudi». Sie schlägt sich auf: links ein Foto vom gedeckten Tisch, rechts der Ablauf wie eine Karte gesetzt.</p></div>
+    <dl><dt>Bewegung</dt><dd>Deckel dreht um den Rücken (rotateY)</dd><dt>Am Handy</dt><dd>Nur die rechte Seite, Deckel klappt nach oben</dd><dt>Flüssigkeit</dt><dd>schwer, auf gedrosseltem Handy messen</dd></dl>
+  </div>
+  <div class="buehne"><div class="mappe-tisch" data-mappe>
+    <div class="buch">
+      <div class="seite-r">
+        <span class="m">Ein Abend</span>
+        <div><h3>Ankommen</h3><p>Ein Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div>
+        <div><h3>Drei Gänge</h3><p>Teller für Teller für die ganze Tafel. Wechselt mit jedem Abend.</p></div>
+        <div><h3>Fünf Drinks</h3><p>Signature Drinks von Momo, gemacht für genau dieses Essen.</p></div>
+        <div><h3>Tasting und Schulung</h3><p>Momo erklärt jeden Drink am Tisch.</p></div>
+      </div>
+      <div class="deckel"><div class="vorn"><span class="m leise">A unique experience by</span><span class="t">Momo <i>x</i> Rudi</span></div><div class="hinten"><img src="assets/bild/kartglas-1000.webp" alt=""></div></div>
+    </div>
+    <span class="mappe-ruf m leise">Antippen zum Auf- und Zuklappen</span>
+  </div></div>
+</section>
+
+<!-- 09 -->
+<section class="fassung" id="f09" data-name="Kontaktabzug">
+  <div class="kopf"><span class="nr">09</span>
+    <div><h2 class="t">Kontaktabzug</h2><p class="satz">Ein Abend als Filmrolle auf dem Kontaktbogen. Vier Bilder sind mit Fettstift eingekreist, und genau diese vier werden gross.</p></div>
+    <dl><dt>Bewegung</dt><dd>Kreis zieht sich ums gewählte Bild zusammen</dd><dt>Am Handy</dt><dd>Bogen oben als Streifen, grosses Bild darunter</dd></dl>
+  </div>
+  <div class="buehne"><div class="kontakt">
+    <div class="bogen" data-bogen></div>
+    <div class="kontakt-gross" data-kgross>
+      <div class="foto an" data-s="0"><img src="assets/bild/g2-1000.webp" alt=""></div>
+      <div class="foto" data-s="1"><img src="assets/bild/pass3-1000.webp" alt=""></div>
+      <div class="foto" data-s="2"><img src="assets/bild/m3-1000.webp" alt=""></div>
+      <div class="foto" data-s="3"><img src="assets/bild/kerze1-1000.webp" alt=""></div>
+      <div class="txt"><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div>
+    </div>
+  </div><span class="wisch">Eingekreistes antippen</span></div>
+</section>
+
+<!-- 10 -->
+<section class="fassung" id="f10" data-name="Vier Kapitel">
+  <div class="kopf"><span class="nr">10</span>
+    <div><h2 class="t">Vier Kapitel</h2><p class="satz">Jede Station füllt einen ganzen Bildschirm, darauf ein einziger Satz. Wie ein Film in vier Szenen.</p></div>
+    <dl><dt>Bewegung</dt><dd>Foto fährt im Rahmen von 113 auf 100 %</dd><dt>Am Handy</dt><dd>Gleich, Hochformat passt besser</dd><dt>Vorlage</dt><dd><a href="https://white-desert.com/" target="_blank" rel="noopener">White Desert</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-kapitel>
+    <div class="kapitel"><div class="foto"><img src="assets/bild/flur-1000.webp" alt=""></div><div class="txt"><span class="m">Ankommen</span><p class="t">Ein Aperitif, und die Kerzen brennen schon.</p></div></div>
+    <div class="kapitel"><div class="foto"><img src="assets/bild/lauch-1600.webp" alt=""></div><div class="txt"><span class="m">Drei Gänge</span><p class="t">Teller für Teller, für die ganze Tafel.</p></div></div>
+    <div class="kapitel"><div class="foto"><img src="assets/bild/m3-1000.webp" alt=""></div><div class="txt"><span class="m">Fünf Drinks</span><p class="t">Fünf Gläser, gemacht für genau dieses Essen.</p></div></div>
+    <div class="kapitel"><div class="foto"><img src="assets/bild/kerze1-1000.webp" alt=""></div><div class="txt"><span class="m">Tasting und Schulung</span><p class="t">Momo erklärt, was man da gerade schmeckt.</p></div></div>
+  </div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<!-- 11 -->
+<section class="fassung" id="f11" data-name="Davor und dahinter">
+  <div class="kopf"><span class="nr">11</span>
+    <div><h2 class="t">Davor und dahinter</h2><p class="satz">Ein Schalter zwischen «Am Tisch» und «Hinter dem Tresen». Dieselben vier Stationen, einmal vom Gast aus, einmal von Momo und Rudi aus.</p></div>
+    <dl><dt>Bewegung</dt><dd>Bild tauscht an derselben Stelle</dd><dt>Am Handy</dt><dd>2 × 2, Schalter oben</dd></dl>
+  </div>
+  <div class="buehne"><div class="dd" data-dd>
+    <div class="schalter" role="group" aria-label="Blickwinkel"><button type="button" aria-pressed="true" data-seite="vorn">Am Tisch</button><button type="button" aria-pressed="false" data-seite="hinten">Hinter dem Tresen</button></div>
+    <div class="dd-reihe">
+      <div class="dd-st"><div class="foto"><img src="assets/bild/g2-640.webp" alt=""><img src="assets/bild/bar-640.webp" alt=""></div><h3>Ankommen</h3><p><span>Ein Aperitif, die Kerzen brennen.</span><span>Momo giesst schon ein, bevor die Tür aufgeht.</span></p></div>
+      <div class="dd-st"><div class="foto"><img src="assets/bild/roq2-640.webp" alt=""><img src="assets/bild/anrichten-640.webp" alt=""></div><h3>Drei Gänge</h3><p><span>Teller für Teller für die ganze Tafel.</span><span>Vierzehn Teller auf einmal am Pass.</span></p></div>
+      <div class="dd-st"><div class="foto"><img src="assets/bild/t03-640.webp" alt=""><img src="assets/bild/klaeren-640.webp" alt=""></div><h3>Fünf Drinks</h3><p><span>Fünf Drinks, gemacht für dieses Essen.</span><span>Geklärt, gewaschen, Tage vorher angesetzt.</span></p></div>
+      <div class="dd-st"><div class="foto"><img src="assets/bild/m7-640.webp" alt=""><img src="assets/bild/schaum-640.webp" alt=""></div><h3>Tasting und Schulung</h3><p><span>Momo erklärt jeden Drink am Tisch.</span><span>Die Technik hinter dem Glas.</span></p></div>
+    </div>
+  </div></div>
+  <p class="hinweis"><b>Platzhalter:</b> Die Sätze hinter dem Tresen sind von mir geschrieben. Ob die Drinks wirklich Tage vorher angesetzt werden, muss Momo bestätigen.</p>
+</section>
+
+<!-- 12 -->
+<section class="fassung" id="f12" data-name="Der Weg durch die Bar">
+  <div class="kopf"><span class="nr">12</span>
+    <div><h2 class="t">Der Weg durch die Bar</h2><p class="satz">Ein gezeichneter Grundriss mit Tür, Tresen, Pass und der Tafel mit vierzehn Stühlen. Eine Linie in Kerzenfarbe zeigt den Weg, ein angetippter Ort zeigt sein Foto.</p></div>
+    <dl><dt>Bewegung</dt><dd>Ort antippen, Foto tauscht</dd><dt>Am Handy</dt><dd>Plan oben, Foto darunter</dd><dt>Vorlage</dt><dd><a href="https://tengilemalamala.com/" target="_blank" rel="noopener">Tengile</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="weg" data-weg>
+    <div class="plan">
+      <svg viewBox="0 0 600 460" role="img" aria-label="Grundriss, Skizze">
+        <rect class="wand" x="40" y="30" width="520" height="380"/>
+        <line class="duenn" x1="40" y1="300" x2="200" y2="300"/>
+        <line class="duenn" x1="200" y1="300" x2="200" y2="410"/>
+        <rect class="duenn" x="60" y="60" width="44" height="210" rx="3"/>
+        <text x="64" y="54">TRESEN</text>
+        <rect class="duenn" x="420" y="30" width="140" height="120"/>
+        <text x="440" y="24">KÜCHE · PASS</text>
+        <rect class="duenn" x="250" y="210" width="230" height="44" rx="3"/>
+        <g class="stuehle"></g>
+        <text x="300" y="320">TAFEL · 14 PLÄTZE</text>
+        <line x1="110" y1="410" x2="160" y2="410" stroke="#0F0E13" stroke-width="5"/>
+        <text x="72" y="440">HAASEMANNSTRASSE</text>
+        <path class="pfad" d="M135 405 L135 330 L150 250 L150 160 Q250 140 300 205 L360 205 Q400 120 460 150 L430 205"/>
+        <g class="ort an" data-o="0"><circle cx="150" cy="190" r="11"/><text x="112" y="166">Ankommen</text></g>
+        <g class="ort" data-o="1"><circle cx="450" cy="150" r="11"/><text x="372" y="182">Drei Gänge</text></g>
+        <g class="ort" data-o="2"><circle cx="300" cy="205" r="11"/><text x="262" y="178">Fünf Drinks</text></g>
+        <g class="ort" data-o="3"><circle cx="400" cy="262" r="11"/><text x="418" y="282">Tasting</text></g>
+      </svg>
+    </div>
+    <div class="weg-bild">
+      <div class="foto an" data-s="0"><img src="assets/bild/flur-1000.webp" alt=""></div>
+      <div class="foto" data-s="1"><img src="assets/bild/pass2-1000.webp" alt=""></div>
+      <div class="foto" data-s="2"><img src="assets/bild/t03-1000.webp" alt=""></div>
+      <div class="foto" data-s="3"><img src="assets/bild/kerze1-1000.webp" alt=""></div>
+      <div class="txt"><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div>
+    </div>
+  </div><span class="wisch">Ort antippen</span></div>
+  <p class="hinweis"><b>Platzhalter:</b> Der Grundriss ist frei erfunden. Für diese Fassung bräuchte es eine Skizze des echten Raums von Rudi.</p>
+</section>
+
+<!-- 13 -->
+<section class="fassung" id="f13" data-name="Was übrig bleibt">
+  <div class="kopf"><span class="nr">13</span>
+    <div><h2 class="t">Was übrig bleibt</h2><p class="satz">Jede Station zeigt, was danach auf dem Tisch liegt. Vier stille Bilder in verschiedenen Grössen um einen Satz in der Mitte.</p></div>
+    <dl><dt>Bewegung</dt><dd>Bilder wandern leicht gegeneinander</dd><dt>Am Handy</dt><dd>Vier Ecken, Satz in der Mitte</dd><dt>Vorlage</dt><dd><a href="https://www.kimptonlosmonterosmarbella.com/en/" target="_blank" rel="noopener">Kimpton Los Monteros</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="rest" data-drift>
+    <figure class="r1" data-f="-.08"><div class="foto"><img src="assets/bild/hok2-640.webp" alt=""></div><figcaption><b>Nach dem Aperitif</b><span>Ankommen</span></figcaption></figure>
+    <figure class="r2" data-f=".1"><div class="foto"><img src="assets/bild/w7-640.webp" alt=""></div><figcaption><b>Nach dem dritten Gang</b><span>Drei Gänge</span></figcaption></figure>
+    <figure class="r3" data-f=".06"><div class="foto"><img src="assets/bild/glas-640.webp" alt=""></div><figcaption><b>Nach dem fünften Glas</b><span>Fünf Drinks</span></figcaption></figure>
+    <figure class="r4" data-f="-.12"><div class="foto"><img src="assets/bild/tafelleer-640.webp" alt=""></div><figcaption><b>Wenn alle gegangen sind</b><span>Tasting und Schulung</span></figcaption></figure>
+    <div class="mitte"><p class="t">Was von einem Abend auf dem Tisch bleibt.</p><p>Ein Aperitif, drei Gänge, fünf Drinks, jeder erklärt. Und vierzehn Leute, die vorher Fremde waren.</p></div>
+  </div></div>
+  <p class="hinweis"><b>Platzhalter:</b> Die echten Bilder (leeres Glas, Teller mit Saucenspur, fünf leere Gläser, Serviette) gibt es noch nicht. Sie müssten an einem Abend aufgenommen werden. Die Fotos hier sind nur ungefähr passend.</p>
+</section>
+
+<!-- 14 -->
+<section class="fassung" id="f14" data-name="Rudis Brief">
+  <div class="kopf"><span class="nr">14</span>
+    <div><h2 class="t">Rudis Brief</h2><p class="satz">Der Ablauf als kurzer Brief in Rudis Ton, mit eingesteckten Abzügen am Rand und seiner Unterschrift.</p></div>
+    <dl><dt>Bewegung</dt><dd>Zeilen schieben sich herein</dd><dt>Am Handy</dt><dd>Abzüge zwischen den Absätzen</dd><dt>Vorlage</dt><dd><a href="https://thelargo.com/" target="_blank" rel="noopener">The Largo</a></dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller"><div class="brief">
+    <figure><div class="foto"><img src="assets/bild/g2-640.webp" alt=""></div></figure>
+    <p>Du kommst rein, und erstmal gibt’s einen Aperitif. Die Tafel ist schon gedeckt, die Kerzen brennen, keiner kennt keinen.</p>
+    <figure class="r"><div class="foto"><img src="assets/bild/roq2-640.webp" alt=""></div></figure>
+    <p>Dann komm ich mit dem ersten Teller. Drei Gänge, für alle gleichzeitig, und jeden Abend was anderes.</p>
+    <figure><div class="foto"><img src="assets/bild/t03-640.webp" alt=""></div></figure>
+    <p>Momo stellt dir zu den Gängen fünf Drinks hin, gemacht für genau dieses Essen. Und er erzählt dir, was drin ist und wie er’s gemacht hat: Fatwashing, Milkwashing, Klärung mit Enzymen.</p>
+    <figure class="r"><div class="foto"><img src="assets/bild/t06-640.webp" alt=""></div></figure>
+    <p>Wenn du am Ende mit Leuten quatschst, die du vorher nicht kanntest: Dann haste allet richtig jemacht!</p>
+    <div class="unterschrift">Rudi<small>Unterschrift von Rudi einscannen</small></div>
+  </div></div><span class="wisch">Im Rahmen scrollen</span></div>
+  <p class="hinweis"><b>Platzhalter:</b> Der Brief ist mein Entwurf in Rudis Ton. Echt ist nur «Dann haste allet richtig jemacht!», das ist Rudis Satz. Den Rest müsste Rudi selbst schreiben oder freigeben.</p>
+</section>
+
+<!-- 15 -->
+<section class="fassung" id="f15" data-name="Gang auf Gang">
+  <div class="kopf"><span class="nr">15</span>
+    <div><h2 class="t">Gang auf Gang</h2><p class="satz">Jede Station schiebt sich über die vorige und bleibt leicht versetzt liegen, wie abgestellte Teller. Am Ende liegt der ganze Abend als Stapel da.</p></div>
+    <dl><dt>Bewegung</dt><dd>Karte schiebt sich darüber, die untere wird etwas kleiner</dd><dt>Am Handy</dt><dd>Gleich, Foto oben auf der Karte</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-stapel><div class="stapel">
+    <article class="karte"><div class="foto"><img src="assets/bild/g2-1000.webp" alt=""></div><div class="txt"><span class="m">Zuerst</span><h3 class="t ab-t">Ankommen</h3><p class="ab-s">Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.</p></div></article>
+    <article class="karte"><div class="foto"><img src="assets/bild/roq2-1000.webp" alt=""></div><div class="txt"><span class="m">Dann</span><h3 class="t ab-t">Drei Gänge</h3><p class="ab-s">Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.</p></div></article>
+    <article class="karte"><div class="foto"><img src="assets/bild/t03-1000.webp" alt=""></div><div class="txt"><span class="m">Dazu</span><h3 class="t ab-t">Fünf Drinks</h3><p class="ab-s">Zu den Gängen kommen fünf Signature Drinks von Momo, gemacht für genau dieses Essen.</p></div></article>
+    <article class="karte"><div class="foto"><img src="assets/bild/m7-1000.webp" alt=""></div><div class="txt"><span class="m">Und</span><h3 class="t ab-t">Tasting und Schulung</h3><p class="ab-s">Momo erklärt jeden Drink am Tisch, damit man die Aromen nicht nur schmeckt, sondern auch versteht.</p></div></article>
+  </div></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+</main>
+<p class="fuss">Skizzen, nicht gebaut. Bilder: Rudis Ordner. Ausgewählt wird hier nur die Form, die Fotos lassen sich in jeder Fassung tauschen.</p>
+
+<script>
+(function(){
+  var $=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var raf=window.requestAnimationFrame||function(f){setTimeout(f,16)};
+
+  // Inhaltsverzeichnis
+  var nav=document.getElementById('inhalt');
+  $('.fassung').forEach(function(f,i){var a=document.createElement('a');a.href='#'+f.id;a.innerHTML='<span>'+String(i+1).padStart(2,'0')+'</span>'+f.dataset.name;nav.appendChild(a)});
+
+  function setze(root,i){$('[data-s]',root).forEach(function(el){var k=+el.dataset.s;el.classList.toggle('an',k===i);el.classList.toggle('weg',k<i)})}
+
+  // Schritte nach Scrollstand im Rahmen
+  $('[data-steps]').forEach(function(sc){
+    var n=+sc.dataset.steps,last=-1;
+    function lauf(){var i=sc.clientHeight?Math.min(n-1,Math.max(0,Math.round(sc.scrollTop/sc.clientHeight))):0;if(i!==last){last=i;setze(sc,i)}}
+    sc.addEventListener('scroll',function(){raf(lauf)},{passive:true});addEventListener('resize',lauf);lauf();
+  });
+
+  // Fortschritt 0..1 (Kerze)
+  $('[data-fortschritt]').forEach(function(sc){
+    function lauf(){var p=sc.scrollTop/Math.max(1,sc.scrollHeight-sc.clientHeight);sc.style.setProperty('--p',p.toFixed(3))}
+    sc.addEventListener('scroll',function(){raf(lauf)},{passive:true});lauf();
+  });
+
+  // Kapitel: Sichtbarkeit je Bild
+  $('[data-kapitel]').forEach(function(sc){
+    var k=$('.kapitel',sc);
+    function lauf(){k.forEach(function(el){var d=Math.abs(el.offsetTop-sc.scrollTop)/sc.clientHeight;el.style.setProperty('--v',Math.max(0,1-d).toFixed(3))})}
+    sc.addEventListener('scroll',function(){raf(lauf)},{passive:true});lauf();
+  });
+
+  // Stapel: untere Karte wird kleiner
+  $('[data-stapel]').forEach(function(sc){
+    var k=$('.karte',sc);
+    function lauf(){k.forEach(function(el,i){var nx=k[i+1];if(!nx)return;var d=(nx.offsetTop-sc.scrollTop-(34+18*i))/sc.clientHeight;var t=Math.max(0,Math.min(1,1-d));el.style.setProperty('--s',(1-.05*t).toFixed(4))})}
+    sc.addEventListener('scroll',function(){raf(lauf)},{passive:true});lauf();
+  });
+
+  // Seitenscroll: x dreht, Bilder driften
+  var x=$('.x-zeichen'),drift=$('[data-drift] figure');
+  function seite(){
+    var vh=innerHeight;
+    x.forEach(function(el){var r=el.getBoundingClientRect();el.style.transform='rotate('+((r.top+r.height/2-vh/2)/vh*-40).toFixed(2)+'deg)'});
+    drift.forEach(function(el){var r=el.parentNode.getBoundingClientRect();el.style.setProperty('--d',((r.top+r.height/2-vh/2)*(+el.dataset.f)).toFixed(1))});
+  }
+  addEventListener('scroll',function(){raf(seite)},{passive:true});seite();
+
+  // Zahlen steigen beim Hereinkommen
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('da');if(e.target.dataset.mappe!==undefined&&!e.target.dataset.einmal){e.target.dataset.einmal=1;setTimeout(function(){e.target.parentNode.classList.add('offen')},500)}}})},{threshold:.55}):null;
+  $('[data-da],[data-mappe]').forEach(function(el){io?io.observe(el):el.classList.add('da')});
+
+  // Mappe auf/zu
+  $('[data-mappe]').forEach(function(m){m.addEventListener('click',function(){m.parentNode.classList.toggle('offen')})});
+
+  // Fotos im Satz
+  var gText=[['Ankommen','Die Tafel ist gedeckt, die Kerzen brennen.'],['Anstossen','Zum Ankommen gibt es einen Aperitif.'],['Drei Gänge','Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.'],['Fünf Drinks','Fünf Signature Drinks von Momo, gemacht für genau dieses Essen.'],['Tasting und Schulung','Momo erklärt jeden Drink am Tisch, damit man die Aromen auch versteht.'],['Am Tisch','Vierzehn Plätze an einer Tafel.']];
+  $('.satzbild').forEach(function(sb){
+    var g=sb.querySelector('[data-gross]');
+    $('button[data-g]',sb).forEach(function(b){b.addEventListener('click',function(){var i=+b.dataset.g;g.querySelector('img').src=b.querySelector('img').src.replace('-640','-1000');g.querySelector('h3').textContent=gText[i][0];g.querySelector('p').textContent=gText[i][1];g.classList.add('an')})});
+    g.querySelector('.zu').addEventListener('click',function(){g.classList.remove('an')});
+  });
+
+  // Kontaktabzug
+  var rolle=['t01','barnacht','g2','anstossen','t02','lachen','kueche','pass3','r04','anrichten','t04','t05','glaeser','m3','d3','kartglas','t09','klaeren','kerze1','momo','t12','t13','tafelleer','loch'];
+  var kreise={g2:0,pass3:1,m3:2,kerze1:3};
+  var kText=[['Ankommen','Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.'],['Drei Gänge','Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.'],['Fünf Drinks','Fünf Signature Drinks von Momo, gemacht für genau dieses Essen.'],['Tasting und Schulung','Momo erklärt jeden Drink am Tisch. Dazu ein Blick auf seine Techniken.']];
+  $('[data-bogen]').forEach(function(bg){
+    var gross=bg.parentNode.querySelector('[data-kgross]');
+    rolle.forEach(function(n,j){var d=document.createElement('div');d.className='bild-k'+(n in kreise?' kreis':'')+(kreise[n]===0?' an':'');d.innerHTML='<div class="foto"><img loading="lazy" src="assets/bild/'+n+'-640.webp" alt=""></div><span class="m">'+(12+Math.floor(j/2))+(j%2?'A':'')+'</span>';
+      if(n in kreise)d.addEventListener('click',function(){var i=kreise[n];$('.bild-k',bg).forEach(function(e){e.classList.remove('an')});d.classList.add('an');setze(gross,i);gross.querySelector('h3').textContent=kText[i][0];gross.querySelector('p').textContent=kText[i][1]});
+      bg.appendChild(d)});
+  });
+
+  // Davor und dahinter
+  $('[data-dd]').forEach(function(dd){$('[data-seite]',dd).forEach(function(b){b.addEventListener('click',function(){var h=b.dataset.seite==='hinten';dd.classList.toggle('hinten',h);$('[data-seite]',dd).forEach(function(o){o.setAttribute('aria-pressed',String(o===b))})})})});
+
+  // Weg: Stühle und Orte
+  $('.stuehle').forEach(function(g){var s='';for(var i=0;i<7;i++){var cx=268+i*32;s+='<circle class="stuhl" cx="'+cx+'" cy="198" r="7"/><circle class="stuhl" cx="'+cx+'" cy="266" r="7"/>'}g.innerHTML=s});
+  var wText=[['Ankommen','Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.'],['Drei Gänge','Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel.'],['Fünf Drinks','Fünf Signature Drinks von Momo, gemacht für genau dieses Essen.'],['Tasting und Schulung','Momo erklärt jeden Drink am Tisch.']];
+  $('[data-weg]').forEach(function(w){var bild=w.querySelector('.weg-bild');$('.ort',w).forEach(function(o){o.addEventListener('click',function(){var i=+o.dataset.o;$('.ort',w).forEach(function(e){e.classList.toggle('an',e===o)});setze(bild,i);bild.querySelector('h3').textContent=wText[i][0];bild.querySelector('p').textContent=wText[i][1]})})});
+})();
+</script>
+</body>
+</html>

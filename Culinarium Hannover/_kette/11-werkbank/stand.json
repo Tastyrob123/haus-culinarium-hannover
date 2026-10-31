@@ -1,0 +1,24 @@
+{
+  "station": "11",
+  "name": "Werkbank und Werkzeuge",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:43+08:00",
+  "ende": "2026-10-28T16:58+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

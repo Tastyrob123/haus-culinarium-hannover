@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Culinarium · Abend und Haus · 15 Fassungen</title>
+<meta name="robots" content="noindex">
+<style>
+/* Culinarium · Abschnitt «Abend und Haus» (unter dem Auftakt), 15 Fassungen zur Wahl, 26.10.2026.
+   Nur Wahlseite. Bewegung nur transform und opacity, nichts startet unsichtbar. */
+@font-face{font-family:"Fraunces";src:url(assets/schrift/fraunces-soft.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(assets/schrift/instrument.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(assets/schrift/dmmono.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--nacht:#16151A;--nacht2:#1C1B21;--nacht3:#222028;--schiefer:#3A3845;--weiss:#FAF4F4;--kerze:#EF7649;--fg2:rgba(250,244,244,.72);--linie:rgba(250,244,244,.22);
+--titel:"Fraunces",Georgia,serif;--text:"Instrument Sans",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--rand:clamp(16px,4.4vw,72px);--r:10px;--k:cubic-bezier(.22,.68,.26,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--nacht);color:var(--weiss);font:400 16px/1.55 var(--text);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+h2,h3,p{margin:0}
+.ti{font-family:var(--titel);font-weight:340;line-height:1;letter-spacing:-.014em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.h2{font-size:clamp(34px,3.7vw,60px)}
+.h3{font-size:clamp(28px,2.6vw,42px);line-height:1.04}
+.tx{color:var(--fg2);font-size:17px;line-height:1.6;max-width:44ch}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2)}
+.blk{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.blk.mitte{align-items:center;text-align:center}
+.ph{position:relative;margin:0;overflow:hidden;border-radius:var(--r);background:var(--nacht3)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.knopf{display:inline-flex;align-items:center;gap:16px;height:54px;padding:0 7px 0 24px;border-radius:999px;background:var(--weiss);color:var(--nacht);font:500 14px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;box-shadow:0 16px 32px -16px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.85);transition:transform .45s var(--k);margin-top:6px}
+.knopf i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--kerze);color:#fff}
+.knopf svg{width:19px;height:19px}
+.knopf:hover{transform:translateY(-2px)}
+.knopf.leise{background:transparent;color:var(--weiss);box-shadow:inset 0 0 0 1px var(--linie)}
+.knopf.leise i{background:transparent;box-shadow:inset 0 0 0 1px var(--linie)}
+.knopf.dunkel{background:var(--nacht);color:var(--weiss);box-shadow:none}
+
+/* Wahlseite: Kopf, Fassungs-Etikett, Leiste unten */
+.wk{padding:56px var(--rand) 40px;max-width:1100px}
+.wk h1{font:340 clamp(30px,3.4vw,50px)/1.05 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;margin:0 0 14px}
+.wk p{color:var(--fg2);max-width:70ch}
+.fk{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;padding:72px var(--rand) 26px;border-top:1px solid rgba(250,244,244,.1);margin-top:40px}
+.fk b{font:400 13px/1.6 var(--mono);color:var(--kerze);letter-spacing:.08em;grid-row:span 3}
+.fk h2{font:340 clamp(24px,2.2vw,32px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96}
+.fk p{color:var(--fg2);max-width:80ch;font-size:15px}
+.fk p.m{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:rgba(250,244,244,.5);text-transform:uppercase}
+.wl{position:fixed;z-index:50;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px;border-radius:14px;background:rgba(22,21,26,.92);box-shadow:0 10px 30px -10px rgba(0,0,0,.8),inset 0 0 0 1px rgba(250,244,244,.12);font:400 12.5px/1 var(--mono);letter-spacing:.05em;max-width:calc(100vw - 24px)}
+.wl button{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;border-radius:9px;color:var(--weiss)}
+.wl button:hover{background:rgba(250,244,244,.08)}
+.wl span{padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wl em{font-style:normal;color:var(--kerze);margin-right:8px}
+.kopf{padding:0 var(--rand) clamp(28px,4vh,48px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.kopf .tx{max-width:52ch}
+
+/* 01 Haus im Haus */
+.v01{position:relative;height:min(100svh,920px);min-height:640px;margin:0 var(--rand);border-radius:var(--r);overflow:hidden}
+.v01 .aussen{position:absolute;inset:0}
+.v01 .aussen img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.v01 .aussen::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,16,.86) 0%,rgba(14,12,16,.5) 38%,rgba(14,12,16,.25) 100%)}
+.v01 .haus{position:absolute;left:clamp(20px,3.4vw,52px);bottom:clamp(22px,4vh,48px);z-index:2;max-width:340px}
+.v01 .haus .h3{font-size:clamp(24px,2vw,32px)}
+.v01 .innen{position:absolute;z-index:2;right:clamp(20px,4vw,64px);top:50%;transform:translateY(-50%);width:min(44%,560px);background:rgba(18,16,22,.94);border-radius:calc(var(--r) + 4px);padding:12px 12px 26px;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.v01 .innen .ph{aspect-ratio:5/4}
+.v01 .innen .ph img{transform:scale(calc(1.14 - .14 * var(--p,1)));object-position:50% 60%}
+.v01 .innen .blk{padding:22px 14px 0}
+@media (max-width:860px){.v01{height:auto;min-height:0;display:flex;flex-direction:column}.v01 .aussen{position:relative;height:56vh}.v01 .haus{position:absolute;top:18px;bottom:auto}.v01 .innen{position:relative;inset:auto;transform:none;width:auto;margin:-18vh 12px 12px}}
+
+/* 02 Zwei Abende im selben Raum */
+.v02{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(24px,3vw,56px);align-items:center;padding:0 var(--rand)}
+.v02 .buehne{position:relative;aspect-ratio:4/3.4}
+.v02 .buehne .ph{position:absolute;inset:0;transition:opacity .7s var(--k)}
+.v02 .buehne .ph img{transition:transform 1.2s var(--k)}
+.v02[data-an="bar"] .ph.abend,.v02[data-an="abend"] .ph.bar{opacity:0}
+.v02[data-an="bar"] .ph.abend img,.v02[data-an="abend"] .ph.bar img{transform:scale(1.06)}
+.v02 .wahl{display:flex;gap:28px;margin-bottom:30px;border-bottom:1px solid var(--linie)}
+.v02 .wahl button{all:unset;cursor:pointer;padding:0 0 14px;font:340 clamp(20px,1.7vw,26px)/1.1 var(--titel);font-variation-settings:"SOFT" 100;color:rgba(250,244,244,.45);position:relative}
+.v02 .wahl button[aria-pressed="true"]{color:var(--weiss)}
+.v02 .wahl button[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--kerze)}
+.v02 .texte{display:grid}
+.v02 .texte>.blk{grid-area:1/1;transition:opacity .5s var(--k),transform .7s var(--k)}
+.v02[data-an="bar"] .texte .abend,.v02[data-an="abend"] .texte .bar{opacity:0;transform:translateY(10px);pointer-events:none}
+.v02 .hinweis{margin-top:30px;padding-top:18px;border-top:1px solid var(--linie);color:var(--fg2);font-size:14.5px;max-width:44ch}
+@media (max-width:860px){.v02{grid-template-columns:1fr}.v02 .buehne{aspect-ratio:4/4.4}}
+
+/* 03 Vorhang auf */
+.v03{height:230vh;position:relative}
+.v03 .st{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden}
+.v03 .hinten{position:absolute;inset:0}
+.v03 .hinten img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;transform:scale(calc(1.1 - .1 * clamp(0,(var(--p,0) - .15) / .6,1)))}
+.v03 .hinten::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(14,12,16,.25),rgba(14,12,16,.78))}
+.v03 .hinten .blk{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,86vw)}
+.v03 .hl,.v03 .hr{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:3}
+.v03 .hl{left:0;transform:translateX(calc(-100% * clamp(0,(var(--p,0) - .15) / .6,1)))}
+.v03 .hr{right:0;transform:translateX(calc(100% * clamp(0,(var(--p,0) - .15) / .6,1)))}
+.v03 .hl img,.v03 .hr img{position:absolute;top:0;height:100%;width:200%;max-width:none;object-fit:cover;object-position:50% 40%}
+.v03 .hl img{left:0}.v03 .hr img{right:0}
+.v03 .hl::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,12,16,.82),rgba(14,12,16,0) 55%)}
+.v03 .hl .blk{position:absolute;z-index:2;left:var(--rand);bottom:clamp(26px,6vh,64px);max-width:380px}
+.v03 .naht{position:absolute;z-index:4;left:50%;top:0;bottom:0;width:1px;background:rgba(239,118,73,.7);opacity:calc(1 - clamp(0,var(--p,0) * 5,1))}
+.v03 .kopf{position:absolute;z-index:5;top:clamp(20px,5vh,56px);left:0;right:0;padding-bottom:0}
+@media (max-width:860px){.v03 .hl .blk{max-width:72vw}}
+
+/* 04 Die Woche */
+.v04{padding:0 var(--rand)}
+.v04 .ph.weit{aspect-ratio:21/8.5;min-height:320px}
+.v04 .ph.weit img{object-position:50% 24%}
+.v04 .woche{display:grid;grid-template-columns:repeat(7,1fr);margin-top:clamp(26px,4vh,44px);border-top:1px solid var(--linie)}
+.v04 .tag{padding:18px 0 0;display:flex;flex-direction:column;gap:12px;min-height:150px}
+.v04 .tag b{font:340 clamp(26px,3.2vw,52px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:rgba(250,244,244,.28)}
+.v04 .tag.bar b{color:var(--weiss)}
+.v04 .strich{height:2px;transform-origin:0 50%;transform:scaleX(calc(.25 + .75 * var(--p,1)))}
+.v04 .strich.w{background:rgba(250,244,244,.6)}
+.v04 .strich.k{background:var(--kerze)}
+.v04 .tag small{font:400 11.5px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
+.v04 .tag small.k{color:var(--kerze)}
+.v04 .zwei{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,72px);margin-top:clamp(20px,3vh,36px)}
+@media (max-width:760px){.v04 .woche{grid-template-columns:repeat(7,minmax(0,1fr))}.v04 .tag small{display:none}.v04 .tag{min-height:0;padding-bottom:12px}.v04 .zwei{grid-template-columns:1fr}.v04 .legende{display:flex!important}}
+.v04 .legende{display:none;gap:18px;margin-top:10px}
+
+/* 05 Das Plakat sagt es schon */
+.v05{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,4vw,72px);align-items:center;padding:0 var(--rand)}
+.v05 .bild{position:relative}
+.v05 .bild .ph{aspect-ratio:4/4.6}
+.v05 .bild .ph img{object-position:50% 30%}
+.v05 .plakat{position:absolute;width:clamp(150px,17vw,250px);left:-6%;bottom:-6%;border-radius:4px;box-shadow:0 30px 60px -20px rgba(0,0,0,.85);transform:rotate(calc(-9deg + 5deg * var(--p,1)));transform-origin:30% 90%}
+.v05 .plakat img{border-radius:4px}
+.v05 .links{display:flex;flex-direction:column;gap:34px}
+.v05 .zeile{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding-top:22px;border-top:1px solid var(--linie)}
+@media (max-width:860px){.v05{grid-template-columns:1fr}.v05 .bild{order:-1;margin-bottom:40px}.v05 .plakat{left:12px;bottom:-30px;width:140px}}
+
+/* 06 Flankiert */
+.v06{display:grid;grid-template-columns:1fr minmax(360px,1.05fr) 1fr;gap:clamp(24px,3.4vw,60px);align-items:center}
+.v06 .ph{height:min(86svh,820px);border-radius:0}
+.v06 .ph.l{border-radius:0 var(--r) var(--r) 0;transform:translateY(calc(30px - 60px * var(--p,.5)))}
+.v06 .ph.r{border-radius:var(--r) 0 0 var(--r);transform:translateY(calc(-30px + 60px * var(--p,.5)))}
+.v06 .ph figcaption{position:absolute;left:18px;bottom:16px;font:400 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--weiss);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.v06 .mitte{display:flex;flex-direction:column;gap:30px;text-align:center;align-items:center;padding:20px 0}
+.v06 .trenn{width:56px;height:1px;background:var(--kerze)}
+@media (max-width:960px){.v06{grid-template-columns:1fr 1fr;padding:0 var(--rand)}.v06 .mitte{grid-column:1/-1;order:-1}.v06 .ph{height:56vh;border-radius:var(--r)!important;transform:none!important}}
+
+/* 07 Die Menükarte */
+.v07{position:relative;margin:0 var(--rand);border-radius:var(--r);overflow:hidden;min-height:min(108svh,980px);display:grid;place-items:center;padding:clamp(40px,8vh,90px) 16px}
+.v07 .grund{position:absolute;inset:0}
+.v07 .grund img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.v07 .grund::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.55)}
+.v07 .karte{position:relative;z-index:2;width:min(500px,100%);background:#F6EFEA;color:#22202A;border-radius:6px;padding:clamp(34px,4vw,52px) clamp(26px,3.4vw,46px) 0;box-shadow:0 50px 90px -30px rgba(0,0,0,.9);transform:translateY(calc(26px - 26px * var(--p,1))) rotate(calc(2.2deg - 2.2deg * var(--p,1)));text-align:center}
+.v07 .marke{width:78%;height:auto;margin:0 auto 6px;color:#22202A}
+.v07 .klein{font:400 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(34,32,42,.6)}
+.v07 .gaenge{margin:28px 0 22px;display:flex;flex-direction:column;gap:6px}
+.v07 .gaenge span{font:360 clamp(22px,2.2vw,30px)/1.15 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96;letter-spacing:.06em;text-transform:uppercase}
+.v07 .gaenge i{display:block;width:26px;height:1px;background:#C9633C;margin:8px auto}
+.v07 .karte p.s{color:rgba(34,32,42,.72);font-size:15.5px;line-height:1.55;max-width:34ch;margin:0 auto}
+.v07 .karte .mono{color:rgba(34,32,42,.6);display:block;margin:16px 0 4px}
+.v07 .karte .knopf{margin:16px 0 34px}
+.v07 .fuss{margin:0 calc(-1 * clamp(26px,3.4vw,46px));padding:22px clamp(26px,3.4vw,46px) 26px;border-top:1px dashed rgba(34,32,42,.25);display:flex;gap:16px;align-items:center;justify-content:space-between;text-align:left}
+.v07 .fuss p{font-size:14px;line-height:1.45;color:rgba(34,32,42,.75);max-width:30ch}
+.v07 .fuss a{font:500 12.5px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;border-bottom:1px solid #C9633C;padding-bottom:4px}
+
+/* 08 Gross und klein */
+.v08{position:relative;padding:0 var(--rand);display:grid;grid-template-columns:1fr;min-height:min(104svh,980px)}
+.v08 .gross{position:relative;width:66%;height:min(88svh,840px)}
+.v08 .gross img{object-position:50% 50%}
+.v08 .gross::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,12,16,.85),rgba(14,12,16,0) 55%)}
+.v08 .gross .blk{position:absolute;z-index:2;left:clamp(22px,3vw,48px);bottom:clamp(24px,4vh,48px);max-width:min(400px,62%)}
+.v08 .klein{position:absolute;right:var(--rand);top:12%;width:29%;display:flex;flex-direction:column;gap:22px;transform:translateY(calc(50px - 100px * var(--p,.5)))}
+.v08 .klein .ph{aspect-ratio:4/5;margin-left:-10%;box-shadow:0 40px 70px -30px rgba(0,0,0,.95);outline:10px solid var(--nacht)}
+.v08 .klein .blk{padding-left:0}
+.v08 .klein .h3{font-size:clamp(24px,2vw,32px)}
+@media (max-width:860px){.v08{min-height:0}.v08 .gross{width:100%;height:70vh}.v08 .gross .blk{max-width:none;right:22px}.v08 .klein{position:relative;right:auto;top:auto;width:82%;margin:22px 0 0 auto;transform:none}.v08 .klein .ph{margin-left:0}}
+
+/* 09 Schild, dann Satz */
+.v09 .buehne{position:relative;height:min(92svh,900px);min-height:560px;margin:0 var(--rand);border-radius:var(--r);overflow:hidden}
+.v09 .buehne img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;transform:scale(calc(1.1 - .1 * var(--p,1)))}
+.v09 .buehne::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,16,.82),rgba(14,12,16,.15) 70%)}
+.v09 .satz{position:absolute;z-index:2;left:clamp(22px,4vw,64px);bottom:clamp(30px,7vh,80px);max-width:min(720px,84%);font-size:clamp(32px,3.9vw,64px);line-height:1.06}
+.v09 .satz em{font-style:normal;color:var(--kerze)}
+.v09 .ruhe{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:clamp(22px,3.4vw,60px);padding:clamp(40px,7vh,80px) var(--rand) 0;align-items:end}
+.v09 .ruhe .ph{aspect-ratio:4/5}
+.v09 .ruhe .haus{border-left:1px solid var(--linie);padding-left:clamp(18px,2.4vw,36px)}
+@media (max-width:860px){.v09 .ruhe{grid-template-columns:1fr}.v09 .ruhe .ph{order:-1}.v09 .ruhe .haus{border:0;padding:20px 0 0;border-top:1px solid var(--linie)}}
+
+/* 10 Steckbrief */
+.v10{padding:0 var(--rand)}
+.v10 .tab{display:grid;grid-template-columns:150px 1fr 1fr;column-gap:clamp(20px,3vw,48px)}
+.v10 .kopfz{display:contents}
+.v10 .kopfz .ph{aspect-ratio:4/3.1}
+.v10 .kopfz .ph img{object-position:50% 45%}
+.v10 .kopfz .ph .h3{position:absolute;left:22px;bottom:20px;z-index:2;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+.v10 .kopfz .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,12,16,.7),rgba(14,12,16,0) 50%)}
+.v10 .r{display:contents}
+.v10 .r>*{padding:20px 0;border-bottom:1px solid var(--linie)}
+.v10 .r>.mono{padding-top:24px}
+.v10 .r>p{font-size:17px;line-height:1.5}
+.v10 .r>p small{display:block;color:var(--fg2);font-size:14.5px;margin-top:4px}
+.v10 .r.e>*{border:0;padding-top:24px}
+.v10 .r.e .knopf{margin:0}
+@media (max-width:760px){.v10 .tab{grid-template-columns:1fr 1fr;column-gap:14px}.v10 .leer,.v10 .r>.mono{display:none}.v10 .r>p{font-size:15px}.v10 .kopfz .ph .h3{left:12px;bottom:12px;font-size:22px}.v10 .knopf{padding-left:14px;gap:8px;font-size:12px}}
+
+/* 11 Wort-Laufband */
+.v11{overflow:hidden}
+.v11 .band{display:flex;white-space:nowrap;font:330 clamp(46px,7.4vw,124px)/1.05 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;text-transform:uppercase;letter-spacing:.01em}
+.v11 .band>div{flex:none;padding-right:.4em;animation:v11 46s linear infinite}
+.v11 .band.zwei>div{animation-direction:reverse;animation-duration:58s}
+.v11 .band.zwei{color:transparent;-webkit-text-stroke:1px rgba(239,118,73,.95)}
+.v11 .band i{font-style:normal;color:var(--kerze);padding:0 .28em}
+.v11 .band.zwei i{-webkit-text-stroke:0;color:rgba(239,118,73,.95)}
+@keyframes v11{to{transform:translateX(-100%)}}
+.v11 .mitte{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(20px,3vw,48px);padding:clamp(22px,3.4vh,40px) var(--rand);align-items:end}
+.v11 .mitte .ph{aspect-ratio:16/10}
+.v11 .mitte .ph img{object-position:50% 40%}
+@media (max-width:860px){.v11 .mitte{grid-template-columns:1fr}}
+
+/* 12 Ein Satz mit Bildern */
+.v12{padding:clamp(20px,6vh,70px) var(--rand) 0;text-align:center}
+.v12 .satz{font-size:clamp(32px,4.4vw,74px);line-height:1.28;max-width:22ch;margin:0 auto;letter-spacing:-.018em}
+.v12 .satz .b{display:inline-block;vertical-align:-.16em;width:2.3em;height:1.05em;border-radius:999px;overflow:hidden;margin:0 .1em;transform:scale(calc(.7 + .3 * clamp(0,var(--p,1) * 1.7,1)));box-shadow:0 10px 26px -12px rgba(0,0,0,.9)}
+.v12 .satz .b.hoch{width:1.5em}
+.v12 .satz .b img{width:100%;height:100%;object-fit:cover}
+.v12 .satz em{font-style:normal;color:var(--kerze)}
+.v12 .info{display:flex;justify-content:center;gap:clamp(18px,3vw,48px);flex-wrap:wrap;margin:38px 0 8px}
+.v12 .knoepfe{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:20px}
+
+/* 13 Vom Haus an die Tafel */
+.v13{height:260vh;position:relative}
+.v13 .st{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden}
+.v13 .a,.v13 .b{position:absolute;inset:0}
+.v13 .a img,.v13 .b img{width:100%;height:100%;object-fit:cover}
+.v13 .b img{object-position:50% 50%;transform:scale(calc(1.18 - .18 * clamp(0,(var(--p,0) - .35) / .5,1)))}
+.v13 .a{z-index:2;opacity:calc(1 - clamp(0,(var(--p,0) - .42) / .2,1))}
+.v13 .a img{object-position:50% 34%;transform-origin:50% 30%;transform:scale(calc(1 + 1.5 * clamp(0,var(--p,0) / .62,1)))}
+.v13 .a::after,.v13 .b::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,16,.84),rgba(14,12,16,.1) 65%)}
+.v13 .blk{position:absolute;z-index:3;left:var(--rand);bottom:clamp(30px,8vh,90px);max-width:440px}
+.v13 .ta{opacity:calc(1 - clamp(0,(var(--p,0) - .3) / .15,1));transform:translateY(calc(-30px * clamp(0,(var(--p,0) - .3) / .15,1)))}
+.v13 .tb{opacity:clamp(0,(var(--p,0) - .58) / .14,1);transform:translateY(calc(30px - 30px * clamp(0,(var(--p,0) - .58) / .14,1)))}
+.v13 .lauf{position:absolute;z-index:4;right:var(--rand);top:50%;height:120px;width:1px;background:rgba(250,244,244,.2);transform:translateY(-50%)}
+.v13 .lauf i{position:absolute;left:-1px;top:0;width:3px;height:100%;background:var(--kerze);transform-origin:50% 0;transform:scaleY(var(--p,0))}
+
+/* 14 Zwei Fenster, eine Fassade */
+.v14{padding:0 var(--rand)}
+.v14 .fassade{max-width:1180px;margin:0 auto;background:#1F1D24;border-radius:var(--r) var(--r) 0 0;padding:0 clamp(16px,3vw,44px) clamp(24px,4vw,52px);box-shadow:inset 0 0 0 1px rgba(250,244,244,.06)}
+.v14 .schild{display:flex;justify-content:center;transform:translateY(-50%)}
+.v14 .schild span{background:#0E0D11;color:var(--weiss);padding:14px 28px 12px;border:2px solid #E7C04A;font:600 clamp(14px,1.4vw,19px)/1 var(--text);letter-spacing:.2em;text-transform:uppercase;box-shadow:0 18px 40px -16px rgba(0,0,0,.9)}
+.v14 .stock{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(22px,3.4vw,56px);align-items:center;padding:clamp(10px,2vh,22px) 0}
+.v14 .stock+.stock{border-top:1px solid rgba(250,244,244,.08);margin-top:clamp(18px,3vh,32px);padding-top:clamp(28px,5vh,52px)}
+.v14 .stock.unten{grid-template-columns:1fr 1.1fr}
+.v14 .fenster{position:relative;padding:10px;background:#141317;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(250,244,244,.08)}
+.v14 .fenster .ph{border-radius:3px;aspect-ratio:16/10}
+.v14 .stock.unten .fenster .ph{aspect-ratio:4/3.2}
+.v14 .fenster .ph img{opacity:calc(.5 + .5 * var(--p,1))}
+.v14 .fenster .ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,transparent calc(50% - 4px),#141317 calc(50% - 4px),#141317 calc(50% + 4px),transparent calc(50% + 4px));pointer-events:none}
+.v14 .stock .mono.k{color:var(--kerze)}
+.v14 .sockel{max-width:1180px;margin:0 auto;height:14px;background:#2A2830;border-radius:0 0 4px 4px}
+@media (max-width:860px){.v14 .stock,.v14 .stock.unten{grid-template-columns:1fr}.v14 .stock.unten .fenster{order:-1}}
+
+/* 15 Ein Wort */
+.v15{padding:0 var(--rand);text-align:center}
+.v15 .wort{font:420 clamp(64px,17.6vw,300px)/.86 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;letter-spacing:-.035em;background:url(assets/bild/anstossen-1600.webp) 50% 30%/cover;-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 0 -.04em;padding-bottom:.06em}
+.v15 .im{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:6px 0 clamp(34px,6vh,64px);font:340 clamp(22px,2.4vw,38px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96}
+.v15 .im .ph{width:clamp(70px,7vw,110px);aspect-ratio:1;border-radius:50%}
+.v15 .zwei{display:grid;grid-template-columns:1fr 1px 1fr;gap:clamp(22px,4vw,72px);text-align:left;max-width:1100px;margin:0 auto}
+.v15 .zwei>i{background:var(--linie)}
+.v15 .zeile{display:grid;grid-template-columns:clamp(140px,17vw,250px) 1fr;gap:22px;align-items:start}
+.v15 .zeile .ph{aspect-ratio:4/5}
+@media (max-width:760px){.v15 .zwei{grid-template-columns:1fr}.v15 .zwei>i{height:1px}}
+
+.ende{padding:120px var(--rand) 160px;color:var(--fg2);text-align:center}
+@media (prefers-reduced-motion:reduce){.v11 .band>div{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="wk">
+  <p class="mono" style="color:var(--kerze);margin-bottom:14px">Culinarium · Startseite · Abschnitt unter dem Auftakt</p>
+  <h1>Abend und Haus: 15 Fassungen</h1>
+  <p>Jede Fassung erklärt dasselbe: Culinarium ist der Abend, das Walk on the Wild Side ist das Haus, in dem er stattfindet. Unterschiedlich ist, wie die beiden zueinander stehen: nebeneinander, ineinander, nacheinander oder umschaltbar. Texte und Fotos sind die echten. Unten in der Leiste blätterst du von Fassung zu Fassung.</p>
+</header>
+
+<!-- ============ 01 ============ -->
+<section class="fk" id="f1" data-name="Haus im Haus"><b>01</b><h2>Haus im Haus</h2><p>Die Bar füllt den ganzen Rahmen, der Abend sitzt als helles Bild darin. Man sieht sofort: Culinarium findet in diesem Haus statt.</p><p class="m">Bewegung: das innere Bild zieht beim Hereinscrollen von 114 auf 100 Prozent · Handy: Bar oben, Abend-Karte schiebt sich darüber</p></section>
+<div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+<div class="v01" data-p>
+  <div class="aussen"><img src="assets/bild/ws00-1000.webp" alt="Der Barraum im Kerzenlicht" loading="lazy"></div>
+  <div class="haus blk"><p class="mono">Das Haus</p><h3 class="ti h3">Walk on the Wild Side</h3><p class="tx" style="font-size:15.5px">Eine Mixology-Bar ohne Karte, Haasemannstraße 13. Donnerstag bis Samstag ab 19 Uhr.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  <div class="innen"><figure class="ph"><img src="assets/bild/t08-1000.webp" alt="Gäste an der langen Tafel bei Kerzenlicht" loading="lazy"></figure>
+    <div class="blk"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</div>
+
+<!-- ============ 02 ============ -->
+<section class="fk" id="f2" data-name="Zwei Abende im selben Raum"><b>02</b><h2>Zwei Abende im selben Raum</h2><p>Ein grosses Bild, zwei Wörter darüber zum Antippen: Culinarium-Abend oder Barabend. Bild und Text tauschen an derselben Stelle, nichts springt. Erklärt ohne Worte, dass beides derselbe Ort ist.</p><p class="m">Bewegung: Überblenden mit leichtem Zoom beim Tippen · Handy: Bild oben, Schalter und Text darunter</p></section>
+<div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+<div class="v02" data-an="abend">
+  <div class="buehne"><figure class="ph abend"><img src="assets/bild/t01-1600.webp" alt="Anstossen an der langen Tafel" loading="lazy" style="object-position:50% 45%"></figure><figure class="ph bar"><img src="assets/bild/theke-1000.webp" alt="Hinter der Theke unter dem Negroni-Schriftzug" loading="lazy" style="object-position:50% 38%"></figure></div>
+  <div>
+    <div class="wahl" role="group" aria-label="Welcher Abend"><button type="button" data-w="abend" aria-pressed="true">Culinarium-Abend</button><button type="button" data-w="bar" aria-pressed="false">Barabend</button></div>
+    <div class="texte">
+      <div class="blk abend"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+      <div class="blk bar"><h3 class="ti h3">Walk on the Wild Side</h3><p class="tx">Eine Mixology-Bar ohne Karte in Linden, Haasemannstraße 13. Hier findet Culinarium statt.</p><p class="mono">Donnerstag bis Samstag ab 19 Uhr</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    </div>
+    <p class="hinweis">Derselbe Raum, Haasemannstraße 13 in Linden.</p>
+  </div>
+</div>
+
+<!-- ============ 03 ============ -->
+<section class="fk" id="f3" data-name="Vorhang auf"><b>03</b><h2>Vorhang auf</h2><p>Zuerst steht die Bar im ganzen Bild. Beim Scrollen teilt sie sich in der Mitte und gleitet zur Seite, dahinter liegt die gedeckte Tafel. Das Haus öffnet sich für den Abend.</p><p class="m">Bewegung: zwei Bildhälften fahren auseinander (nur Weg), die Tafel zoomt von 110 auf 100 · Handy: gleich, Text kürzer</p></section>
+<div class="v03" data-p="sticky">
+  <div class="st">
+    <div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2></div>
+    <div class="hinten"><img src="assets/bild/tafelleer-1600.webp" alt="Die lange Tafel mit Kerzen, gedeckt" loading="lazy">
+      <div class="blk mitte"><p class="mono" style="color:var(--kerze)">An einzelnen Wochenenden</p><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    </div>
+    <div class="hl"><img src="assets/bild/ws00-1000.webp" alt="Der Barraum im Kerzenlicht" loading="lazy">
+      <div class="blk"><p class="mono">Donnerstag bis Samstag ab 19 Uhr</p><h3 class="ti h3">Walk on the Wild Side</h3><p class="tx" style="font-size:15.5px">Eine Mixology-Bar ohne Karte in Linden, Haasemannstraße 13. Hier findet Culinarium statt.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    </div>
+    <div class="hr"><img src="assets/bild/ws00-1000.webp" alt="" loading="lazy"></div>
+    <i class="naht"></i>
+  </div>
+</div>
+
+<!-- ============ 04 ============ -->
+<section class="fk" id="f4" data-name="Die Woche"><b>04</b><h2>Die Woche</h2><p>Ein breites Bild, darunter die sieben Tage als grosse Schrift. Donnerstag bis Samstag leuchtet die Bar, Freitag und Samstag zusätzlich die Kerzenlinie für Culinarium. Wann was ist, versteht man auf einen Blick.</p><p class="m">Bewegung: die Linien unter den Tagen ziehen sich beim Hereinscrollen auf · Handy: Tage ohne Zusatz, Legende darunter</p></section>
+<div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+<div class="v04" data-p>
+  <figure class="ph weit"><img src="assets/bild/anstossen-2400.webp" alt="Am Tisch wird bei Kerzen angestossen" loading="lazy"></figure>
+  <div class="woche">
+    <div class="tag"><b>Mo</b></div><div class="tag"><b>Di</b></div><div class="tag"><b>Mi</b></div>
+    <div class="tag bar"><b>Do</b><i class="strich w"></i><small>Bar ab 19 Uhr</small></div>
+    <div class="tag bar"><b>Fr</b><i class="strich w"></i><small>Bar ab 19 Uhr</small><i class="strich k"></i><small class="k">Culinarium ab 19:00</small></div>
+    <div class="tag bar"><b>Sa</b><i class="strich w"></i><small>Bar ab 19 Uhr</small><i class="strich k"></i><small class="k">Culinarium ab 17:00</small></div>
+    <div class="tag"><b>So</b></div>
+  </div>
+  <div class="legende"><span class="mono">Weiss: Bar ab 19 Uhr</span><span class="mono" style="color:var(--kerze)">Kerze: Culinarium</span></div>
+  <div class="zwei">
+    <div class="blk"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden. Zuletzt 89,00 EUR.</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    <div class="blk"><h3 class="ti h3">Walk on the Wild Side</h3><p class="tx">Eine Mixology-Bar ohne Karte in Linden, Haasemannstraße 13. Hier findet Culinarium statt.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</div>
+
+<!-- ============ 05 ============ -->
+<section class="fk" id="f5" data-name="Das Plakat sagt es schon"><b>05</b><h2>Das Plakat sagt es schon</h2><p>Auf jedem Culinarium-Plakat steht oben «Walk on the Wild Side» und unten «Culinarium». Ein echtes Plakat liegt klein und schräg auf dem grossen Barfoto und erklärt die Beziehung mit dem eigenen Material des Hauses.</p><p class="m">Bewegung: das Plakat dreht sich beim Hereinscrollen von −9° auf −4°, als würde es abgelegt · Handy: Bild oben, Plakat an der unteren Ecke</p></section>
+<div class="v05" data-p>
+  <div class="links">
+    <div class="blk"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+    <div class="zeile"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    <div class="zeile"><h3 class="ti h3">Das Haus</h3><p class="tx">Walk on the Wild Side, eine Mixology-Bar ohne Karte, Haasemannstraße 13. Donnerstag bis Samstag ab 19 Uhr.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+  <div class="bild"><figure class="ph"><img src="assets/bild/theke-1000.webp" alt="Hinter der Theke unter dem Negroni-Schriftzug" loading="lazy"></figure>
+    <figure class="plakat"><img src="assets/bild/p_DbYnkdkjrNy-640.webp" alt="Culinarium-Plakat: oben Walk on the Wild Side, unten Culinarium" loading="lazy"></figure></div>
+</div>
+
+<!-- ============ 06 ============ -->
+<section class="fk" id="f6" data-name="Flankiert"><b>06</b><h2>Flankiert</h2><p>Der Text steht als geschlossener Block in der Mitte, links läuft die Tafel an den Rand, rechts die Theke. Ruhig, ausgewogen, die Erklärung im Zentrum.</p><p class="m">Bewegung: die beiden Bilder wandern beim Scrollen leicht gegenläufig · Handy: Text oben, zwei Bilder nebeneinander</p></section>
+<div class="v06" data-p>
+  <figure class="ph l"><img src="assets/bild/tafelleer-1600.webp" alt="Die lange Tafel mit Kerzen, gedeckt" loading="lazy"><figcaption>Der Abend</figcaption></figure>
+  <div class="mitte">
+    <h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2>
+    <div class="blk mitte"><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    <i class="trenn"></i>
+    <div class="blk mitte"><p class="tx">Er findet im Walk on the Wild Side statt, einer Mixology-Bar ohne Karte in Linden, Haasemannstraße 13.</p><p class="mono">Bar: Donnerstag bis Samstag ab 19 Uhr</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+  <figure class="ph r"><img src="assets/bild/theke-1000.webp" alt="Hinter der Theke unter dem Negroni-Schriftzug" loading="lazy"><figcaption>Das Haus</figcaption></figure>
+</div>
+
+<!-- ============ 07 ============ -->
+<section class="fk" id="f7" data-name="Die Menükarte"><b>07</b><h2>Die Menükarte</h2><p>Eine warmweisse Karte wie die, die an der Tafel liegt, auf einem dunklen Tischfoto. Oben der Abend in Versalien, unten am Falz das Haus: «Serviert im Walk on the Wild Side». Ein Gegenstand des Abends statt zweier Kacheln.</p><p class="m">Bewegung: die Karte legt sich beim Hereinscrollen gerade (2,2° auf 0°) · Handy: Karte füllt die Breite</p></section>
+<div class="v07" data-p>
+  <div class="grund"><img src="assets/bild/kartglas-1600.webp" alt="Gedeckter Tisch mit Karte und Gläsern" loading="lazy"></div>
+  <div class="karte">
+    <svg class="marke" viewBox="0 0 4650 564" role="img" aria-label="Culinarium"><use href="assets/zeichen/marke.svg#wm"/></svg>
+    <p class="klein">Ein Abend an der langen Tafel</p>
+    <div class="gaenge"><span>Ein Menü</span><i></i><span>Fünf Drinks</span><i></i><span>Vierzehn Plätze</span></div>
+    <p class="s">An einzelnen Wochenenden, jeder Drink passend zum Teller.</p>
+    <span class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</span>
+    <a class="knopf dunkel" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
+    <div class="fuss"><p>Serviert im Walk on the Wild Side, Mixology-Bar ohne Karte, Haasemannstraße 13, Linden.</p><a href="bar.html">Das Haus</a></div>
+  </div>
+</div>
+
+<!-- ============ 08 ============ -->
+<section class="fk" id="f8" data-name="Gross und klein"><b>08</b><h2>Gross und klein</h2><p>Culinarium nimmt zwei Drittel ein, das Haus steht kleiner daneben und greift über die Kante des grossen Bildes. Die Rangfolge ist sichtbar: Das ist die Seite des Abends, die Bar ist sein Ort.</p><p class="m">Bewegung: das kleine Bild läuft beim Scrollen leicht gegen das grosse · Handy: grosses Bild, das kleine schiebt sich unten rechts darüber</p></section>
+<div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+<div class="v08" data-p>
+  <figure class="ph gross"><img src="assets/bild/kerze3-1000.webp" alt="Die Tafel im Kerzenlicht, hinten der Raum" loading="lazy">
+    <div class="blk"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></figure>
+  <div class="klein"><figure class="ph"><img src="assets/bild/barnacht-1000.webp" alt="Das Fenster der Bar bei Nacht" loading="lazy"></figure>
+    <div class="blk"><p class="mono">Das Haus</p><h3 class="ti h3">Walk on the Wild Side</h3><p class="tx" style="font-size:15.5px">Mixology-Bar ohne Karte, Haasemannstraße 13. Donnerstag bis Samstag ab 19 Uhr.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></div>
+</div>
+
+<!-- ============ 09 ============ -->
+<section class="fk" id="f9" data-name="Schild, dann Satz"><b>09</b><h2>Schild, dann Satz</h2><p>Erst das Schild der Bar über die ganze Breite und ein einziger Satz darauf. Danach Ruhe: der Abend erklärt, ein Bild der Tafel, das Haus als stille Spalte daneben.</p><p class="m">Bewegung: das Schild zoomt beim Hereinscrollen langsam von 110 auf 100 · Handy: Schild, Satz, dann alles untereinander</p></section>
+<div class="v09" data-p>
+  <div class="buehne"><img src="assets/bild/schildnah-1000.webp" alt="Das Schild Walk on the Wild Side an der Hauswand" loading="lazy">
+    <h2 class="ti satz">Hier, im Walk on the Wild Side in Linden, gibt es an einzelnen Wochenenden einen besonderen Abend: <em>Culinarium.</em></h2></div>
+  <div class="ruhe">
+    <div class="blk"><h3 class="ti h3">Der Abend</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    <figure class="ph"><img src="assets/bild/t09-1000.webp" alt="Der Raum mit der Tafel, warmes Licht" loading="lazy"></figure>
+    <div class="blk haus"><h3 class="ti h3">Das Haus</h3><p class="tx">Eine Mixology-Bar ohne Karte, Haasemannstraße 13. Donnerstag bis Samstag ab 19 Uhr.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+</div>
+
+<!-- ============ 10 ============ -->
+<section class="fk" id="f10" data-name="Steckbrief"><b>10</b><h2>Steckbrief</h2><p>Zwei grosse Bilder als Spaltenköpfe, darunter Zeile für Zeile: Was, Wann, Wo. Die Werte stehen genau nebeneinander. Am sachlichsten, beantwortet die Frage «Was ist was?» am schnellsten.</p><p class="m">Bewegung: nur das Hochschweben der Zeilen · Handy: zwei schmale Spalten, Zeilennamen fallen weg</p></section>
+<div class="kopf"><h2 class="ti h2">Culinarium im Walk on the Wild Side.</h2><p class="tx">Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.</p></div>
+<div class="v10">
+  <div class="tab">
+    <div class="kopfz"><span class="leer"></span><figure class="ph"><img src="assets/bild/t13-1600.webp" alt="Gäste an der Tafel" loading="lazy"><h3 class="ti h3">Culinarium</h3></figure><figure class="ph"><img src="assets/bild/theke2-1000.webp" alt="An der Theke wird gemixt" loading="lazy"><h3 class="ti h3">Walk on the Wild Side</h3></figure></div>
+    <div class="r"><span class="mono">Was</span><p>Ein Menü mit fünf passenden Drinks</p><p>Mixology-Bar ohne Karte</p></div>
+    <div class="r"><span class="mono">Wann</span><p>An einzelnen Wochenenden<small>Freitag ab 19:00, Samstag ab 17:00</small></p><p>Donnerstag bis Samstag<small>ab 19 Uhr</small></p></div>
+    <div class="r"><span class="mono">Wo</span><p>An der langen Tafel<small>vierzehn Plätze, zuletzt 89,00 EUR</small></p><p>Haasemannstraße 13<small>Linden</small></p></div>
+    <div class="r e"><span class="leer"></span><div><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div><div><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></div>
+  </div>
+</div>
+
+<!-- ============ 11 ============ -->
+<section class="fk" id="f11" data-name="Wort-Laufband"><b>11</b><h2>Wort-Laufband</h2><p>Zwei Zeilen in der Titelschrift laufen gegeneinander: oben die Wörter des Abends, unten, als Kerzen-Kontur, die Wörter der Bar. Dazwischen ein breites Bild und die beiden Erklärungen.</p><p class="m">Bewegung: Laufband, nur transform · Handy: Zeilen kleiner, Bild und Texte untereinander</p></section>
+<div class="v11">
+  <div class="band" aria-hidden="true"><div>Culinarium<i>/</i>Ein Menü<i>/</i>Fünf Drinks<i>/</i>Lange Tafel<i>/</i>Vierzehn Plätze<i>/</i></div><div>Culinarium<i>/</i>Ein Menü<i>/</i>Fünf Drinks<i>/</i>Lange Tafel<i>/</i>Vierzehn Plätze<i>/</i></div></div>
+  <div class="mitte">
+    <figure class="ph"><img src="assets/bild/anstossen-1600.webp" alt="Am Tisch wird bei Kerzen angestossen" loading="lazy"></figure>
+    <div class="blk"><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Fr ab 19:00 · Sa ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    <div class="blk"><h3 class="ti h3">Das Haus</h3><p class="tx">Culinarium findet im Walk on the Wild Side statt, einer Mixology-Bar ohne Karte, Haasemannstraße 13.</p><p class="mono">Do bis Sa ab 19 Uhr</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+  </div>
+  <div class="band zwei" aria-hidden="true"><div>Walk on the Wild Side<i>/</i>Mixology ohne Karte<i>/</i>Linden<i>/</i>Haasemannstraße 13<i>/</i></div><div>Walk on the Wild Side<i>/</i>Mixology ohne Karte<i>/</i>Linden<i>/</i>Haasemannstraße 13<i>/</i></div></div>
+</div>
+
+<!-- ============ 12 ============ -->
+<section class="fk" id="f12" data-name="Ein Satz mit Bildern"><b>12</b><h2>Ein Satz mit Bildern</h2><p>Die ganze Erklärung als ein grosser Satz in der Titelschrift, die Fotos stehen als kleine Bildfenster mitten in den Wörtern. Liest sich wie eine Einladung, nicht wie zwei Produkte.</p><p class="m">Bewegung: die Bildfenster wachsen beim Hereinscrollen von 70 auf 100 Prozent · Handy: Satz bricht um, Bilder bleiben im Satz · Risiko: Fotos sind hier klein</p></section>
+<div class="v12" data-p>
+  <h2 class="ti satz">Culinarium ist ein Abend <span class="b"><img src="assets/bild/anstossen-640.webp" alt="" loading="lazy" style="object-position:50% 30%"></span> mit Menü und fünf Drinks <span class="b hoch"><img src="assets/bild/tablett-640.webp" alt="" loading="lazy" style="object-position:50% 40%"></span> für vierzehn Gäste, im <em>Walk on the Wild Side</em> <span class="b"><img src="assets/bild/schildnah-640.webp" alt="" loading="lazy" style="object-position:50% 35%"></span> einer Bar in Linden <span class="b"><img src="assets/bild/theke-640.webp" alt="" loading="lazy" style="object-position:50% 35%"></span></h2>
+  <div class="info"><span class="mono">An einzelnen Wochenenden · Fr ab 19:00 · Sa ab 17:00 · zuletzt 89,00 EUR</span><span class="mono">Bar: Do bis Sa ab 19 Uhr · Haasemannstraße 13</span></div>
+  <div class="knoepfe"><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+</div>
+
+<!-- ============ 13 ============ -->
+<section class="fk" id="f13" data-name="Vom Haus an die Tafel"><b>13</b><h2>Vom Haus an die Tafel</h2><p>Die Bühne bleibt stehen. Zuerst das Fenster der Bar bei Nacht mit dem Haus-Text, beim Scrollen fährt die Kamera durch das Fenster hinein, und drinnen steht die Tafel mit dem Abend-Text. Ein Weg statt zweier Kacheln.</p><p class="m">Bewegung: Zoom durch das Fenster, dann Tausch (Weg und Deckkraft) · Handy: gleich</p></section>
+<div class="v13" data-p="sticky">
+  <div class="st">
+    <div class="b"><img src="assets/bild/t08-1000.webp" alt="Gäste an der langen Tafel" loading="lazy"></div>
+    <div class="a"><img src="assets/bild/barnacht-1000.webp" alt="Das Fenster der Bar bei Nacht" loading="lazy"></div>
+    <div class="blk ta"><p class="mono">Haasemannstraße 13, Linden</p><h3 class="ti h2">Das Haus: Walk on the Wild Side.</h3><p class="tx">Eine Mixology-Bar ohne Karte, Donnerstag bis Samstag ab 19 Uhr. Hier drinnen findet Culinarium statt.</p></div>
+    <div class="blk tb"><p class="mono" style="color:var(--kerze)">An einzelnen Wochenenden</p><h3 class="ti h2">Culinarium.</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></div>
+    <div class="lauf"><i></i></div>
+  </div>
+</div>
+
+<!-- ============ 14 ============ -->
+<section class="fk" id="f14" data-name="Zwei Fenster, eine Fassade"><b>14</b><h2>Zwei Fenster, eine Fassade</h2><p>Der Abschnitt ist selbst das Haus: oben das Schild, darunter zwei Fenster. Im oberen die Tafel mit Culinarium, im unteren die Theke mit der Bar. Beides unter einem Dach, ohne Erklärung.</p><p class="m">Bewegung: in den Fenstern geht das Licht an (Deckkraft von 50 auf 100) · Handy: Fenster und Text untereinander</p></section>
+<div class="v14" data-p>
+  <div style="height:40px"></div>
+  <div class="fassade">
+    <div class="schild"><span>Walk on the Wild Side</span></div>
+    <div class="stock">
+      <div class="fenster"><figure class="ph"><img src="assets/bild/tafelleer-1600.webp" alt="Die lange Tafel mit Kerzen, gedeckt" loading="lazy" style="object-position:50% 62%"></figure></div>
+      <div class="blk"><p class="mono k">An einzelnen Wochenenden</p><h3 class="ti h3">Culinarium</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste.</p><p class="mono">Freitag ab 19:00 · Samstag ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+    </div>
+    <div class="stock unten">
+      <div class="blk"><p class="mono">Donnerstag bis Samstag ab 19 Uhr</p><h3 class="ti h3">Die Bar</h3><p class="tx">Mixology ohne Karte, Haasemannstraße 13 in Linden. Das Haus, in dem Culinarium stattfindet.</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div>
+      <div class="fenster"><figure class="ph"><img src="assets/bild/bar-1000.webp" alt="Ein Drink wird an der Theke gemixt" loading="lazy" style="object-position:50% 40%"></figure></div>
+    </div>
+  </div>
+  <div class="sockel"></div>
+</div>
+
+<!-- ============ 15 ============ -->
+<section class="fk" id="f15" data-name="Ein Wort"><b>15</b><h2>Ein Wort</h2><p>«Culinarium» über die ganze Breite, gefüllt mit dem Foto der gedeckten Tafel. Darunter klein: «im» und das Schild der Bar als runder Ausschnitt. Dann die beiden Erklärungen als ruhige Zeilen mit Bild.</p><p class="m">Bewegung: keine eigene, nur das Hochschweben · Handy: Wort füllt die Breite, Zeilen untereinander</p></section>
+<div class="v15">
+  <h2 class="wort" aria-label="Culinarium">Culinarium</h2>
+  <div class="im"><span>im</span><figure class="ph"><img src="assets/bild/schildnah-640.webp" alt="Das Schild der Bar" loading="lazy" style="object-position:50% 30%"></figure><span>Walk on the Wild Side, einer Bar in Linden.</span></div>
+  <div class="zwei">
+    <div class="zeile"><figure class="ph"><img src="assets/bild/kerze2-640.webp" alt="Kerzen an der Tafel" loading="lazy"></figure><div class="blk"><h3 class="ti h3">Der Abend</h3><p class="tx">Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.</p><p class="mono">Fr ab 19:00 · Sa ab 17:00 · zuletzt 89,00 EUR</p><a class="knopf" href="abend.html"><span>Der Abend</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></div>
+    <i></i>
+    <div class="zeile"><figure class="ph"><img src="assets/bild/theke-640.webp" alt="Hinter der Theke" loading="lazy"></figure><div class="blk"><h3 class="ti h3">Das Haus</h3><p class="tx">Eine Mixology-Bar ohne Karte, Haasemannstraße 13. Hier findet Culinarium statt.</p><p class="mono">Do bis Sa ab 19 Uhr</p><a class="knopf leise" href="bar.html"><span>Das Haus</span><i><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></div></div>
+  </div>
+</div>
+
+<p class="ende">Ende der 15 Fassungen. Sag mir einfach die Nummer, die in die Startseite soll.</p>
+
+<nav class="wl" aria-label="Fassungen"><button type="button" data-schritt="-1" aria-label="Vorige Fassung">←</button><span data-wl><em>01 / 15</em>Haus im Haus</span><button type="button" data-schritt="1" aria-label="Nächste Fassung">→</button></nav>
+
+<script>
+(function () {
+  // Scroll-Fortschritt je Fassung als --p (0 bis 1); nur transform und opacity hängen daran
+  var els = [].slice.call(document.querySelectorAll('[data-p]'));
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function lauf() {
+    var vh = innerHeight;
+    els.forEach(function (el) {
+      var r = el.getBoundingClientRect(), p;
+      if (el.dataset.p === 'sticky') p = -r.top / Math.max(1, r.height - vh);
+      else p = (vh - r.top) / (vh + r.height * .5);
+      p = Math.min(1, Math.max(0, p));
+      if (still) p = el.dataset.p === 'sticky' ? p : 1;
+      el.style.setProperty('--p', p.toFixed(4));
+    });
+  }
+  var t = false;
+  addEventListener('scroll', function () { if (!t) { t = true; requestAnimationFrame(function () { t = false; lauf(); }); } }, { passive: true });
+  addEventListener('resize', lauf); lauf();
+
+  // 02: Culinarium-Abend / Barabend
+  var v2 = document.querySelector('.v02');
+  v2.querySelectorAll('[data-w]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      v2.dataset.an = b.dataset.w;
+      v2.querySelectorAll('[data-w]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    });
+  });
+
+  // Leiste unten: aktuelle Fassung, blättern
+  var fk = [].slice.call(document.querySelectorAll('.fk')), akt = 0, wl = document.querySelector('[data-wl]');
+  function zeige() { var f = fk[akt]; wl.innerHTML = '<em>' + String(akt + 1).padStart(2, '0') + ' / ' + fk.length + '</em>' + f.dataset.name; }
+  function welche() {
+    var y = innerHeight * .4, n = 0;
+    fk.forEach(function (f, i) { if (f.getBoundingClientRect().top < y) n = i; });
+    if (n !== akt) { akt = n; zeige(); }
+  }
+  addEventListener('scroll', welche, { passive: true });
+  document.querySelectorAll('[data-schritt]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = Math.min(fk.length - 1, Math.max(0, akt + +b.dataset.schritt));
+      scrollTo({ top: fk[n].getBoundingClientRect().top + scrollY - 10, behavior: 'smooth' });
+    });
+  });
+  addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') document.querySelector('[data-schritt="' + (e.key === 'ArrowRight' ? 1 : -1) + '"]').click();
+  });
+  zeige();
+})();
+</script>
+</body>
+</html>

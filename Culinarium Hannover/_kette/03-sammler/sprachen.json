@@ -1,0 +1,62 @@
+{
+ "gaeste": [
+  {
+   "sprache": "de",
+   "anzahl": 45,
+   "quelle": "Google Maps, Walk on the Wild Side, 26.10.2026: 75 Rezensionen, 49 mit Text, davon 45 deutsch und 4 «Übersetzt von Google · Original (Englisch)»; 26 nur Sterne. Alle in Roberts Chrome gelesen"
+  },
+  {
+   "sprache": "en",
+   "anzahl": 4,
+   "quelle": "Google Maps, ebenda"
+  },
+  {
+   "sprache": "de",
+   "anzahl": null,
+   "quelle": "Instagram: alle Beiträge und die Texte der Gäste (Luisa Verfürth, Hannover Eats) deutsch"
+  },
+  {
+   "sprache": "tripadvisor",
+   "anzahl": 0,
+   "quelle": "TripAdvisor «Wild Side»: 0 Bewertungen (26.10.2026)"
+  },
+  {
+   "sprache": "booking",
+   "anzahl": null,
+   "quelle": "betrifft nicht: Abende, kein Haus"
+  }
+ ],
+ "website_heute": [
+  "de"
+ ],
+ "website_quelle": "keine Website; Instagram nur Deutsch",
+ "ort": [
+  "de",
+  "en",
+  "ar",
+  "bg",
+  "da",
+  "es",
+  "et",
+  "fi",
+  "fr",
+  "it",
+  "ja",
+  "ko",
+  "nb",
+  "nl",
+  "pl",
+  "pt",
+  "ro",
+  "ru",
+  "sv",
+  "tr",
+  "zh"
+ ],
+ "ort_quelle": "visit-hannover.com, Sprachwahl laut hreflang (Hauptsprache de, dazu en und 19 weitere), 25.10.2026",
+ "reihenfolge": [
+  "de",
+  "en"
+ ],
+ "begruendung": "Gäste schreiben zu 92 % deutsch (45 von 49 Google-Texten), 8 % englisch; der heutige Auftritt ist nur deutsch; Englisch ist die erste Fremdsprache des Tourismusbüros. Nichts entschieden, Station 15a entscheidet."
+}

@@ -1,0 +1,32 @@
+{
+ "ziel": "abend-2024-11-29",
+ "art": "satz",
+ "key": "DCCf-ikoaGs",
+ "name": "29./30. November 2024",
+ "unter": "",
+ "gruppe": "Frühere Abende",
+ "ab": "2024-11-29",
+ "datum": "Fr 29. und Sa 30. November 2024",
+ "preis": "69,00 EUR",
+ "mit": "BY MOMO X RUDI",
+ "zusatz": "",
+ "motto": "",
+ "titel": "",
+ "plakat": "DCCf-ikoaGs",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "Sauerteig | fermentierte Tomate",
+   "drink": "Pallini Limoncello | Basilikum | Olivenöl | Schaumwein"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Beeten | Salzzitrone | Feta-Käse",
+   "drink": "… | Purple-Shiso-Blätter | Yuzu | Galgant | Ziegenmilch"
+  }
+ ],
+ "upgrade": [],
+ "voll": false,
+ "foto_der_karte": "Foto der Karte, Beitrag DFqZn2UMYMV (04.02.2025), nur teilweise lesbar",
+ "quelle": "website/abende_info.py KARTEN['DCCf-ikoaGs'] · website/bau.py ABENDE (Foto der Karte, Beitrag DFqZn2UMYMV (04.02.2025), nur teilweise lesbar)"
+}

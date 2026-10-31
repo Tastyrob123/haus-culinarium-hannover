@@ -1,0 +1,279 @@
+/* Culinarium · «Gut zu wissen» in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.gzw{--papier:#F7F0EB;--tinte:#2A2833;--tinte2:#5A5562}
+.gzw img{display:block;width:100%;height:100%;object-fit:cover}
+.gzw figure{margin:0}
+:where(.gzw) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.gzw h3{font-weight:inherit}
+.fw-tk .titel{font-family:var(--titel);font-weight:340;font-size:clamp(40px,4.6vw,76px);line-height:.98;letter-spacing:-.016em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.fw-tk .titel em{font-style:italic;color:var(--kerze-hell)}
+.fw-satz{margin-top:14px;max-width:34ch;color:var(--fg2);font-size:17px}
+.fw-tk.mitte{text-align:center}.fw-tk.mitte .fw-satz{margin-inline:auto}
+.fw-x{font-style:normal;color:var(--kerze);margin:0 .35em;font-family:var(--titel)}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .gzw .auf:not(.zl):not(.sw){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .gzw .auf.da:not(.zl):not(.sw){transform:none}
+
+/* ---------- 1 Bild zur Frage */
+.fw-01{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:stretch}
+.fw-01-bild{position:relative;height:clamp(520px,78vh,760px);border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.fw-01-f{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity .7s var(--k),transform 1.4s var(--k)}
+.fw-01-f.an{opacity:1;transform:none}
+.fw-01-bild::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(transparent,rgba(12,10,14,.82))}
+.fw-01-titel{position:absolute;z-index:2;left:clamp(22px,3vw,44px);right:22px;bottom:clamp(22px,4vh,44px)}
+.fw-01-r{display:flex;flex-direction:column;justify-content:center;gap:30px}
+.fw-01-z{border-bottom:1px solid var(--linie)}
+.fw-01-z:first-child{border-top:1px solid var(--linie)}
+.fw-01-z button{display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;padding:18px 0;font:340 clamp(21px,1.9vw,30px)/1.15 var(--titel);color:rgba(250,244,244,.55);transition:color .4s}
+.fw-01-z button:hover,.fw-01-z button.an{color:#FAF4F4}
+.fw-01-z i{flex:none;width:30px;height:1.5px;background:currentColor;transform-origin:right;transform:scaleX(.45);transition:transform .5s var(--k)}
+.fw-01-z button.an i{transform:none;background:var(--kerze)}
+.fw-01-z p{display:none;padding:0 0 20px;max-width:46ch;color:var(--fg2);font-size:15.5px;line-height:1.6}
+.fw-01-z.an p{display:block}
+
+/* ---------- 2 Die Karte am Platz */
+.fw-02{position:relative;display:grid;place-items:center;padding:clamp(40px,7vh,80px) 0}
+.fw-02-tisch{position:absolute;inset:0;border-radius:var(--r);overflow:hidden}
+.fw-02-tisch::after{content:"";position:absolute;inset:0;background:rgba(14,12,16,.35)}
+.fw-02-karte{position:relative;width:min(900px,100%);background:var(--papier);color:var(--tinte);padding:clamp(30px,4vw,54px) clamp(24px,4vw,58px);border-radius:3px;box-shadow:0 50px 70px -40px rgba(0,0,0,.9),0 2px 0 rgba(0,0,0,.05);text-align:center;rotate:-1.2deg}
+html.js:not(.ruhig) .gzw .fw-02-karte.auf{transform:translateY(90px) rotate(-4deg)}
+html.js .gzw .fw-02-karte.auf.da{transform:none}
+.fw-02-kopf{font:600 11px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase;color:var(--kerze-tief)}
+.fw-02-kopf span{font-family:var(--titel);letter-spacing:0;font-size:15px;margin:0 6px}
+.fw-02-h{margin:16px 0 22px;font:italic 340 clamp(30px,3vw,44px)/1 var(--titel)}
+.fw-02-gaenge{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;text-align:left}
+.fw-02-g h3{font:400 clamp(17px,1.4vw,20px)/1.2 var(--titel);margin-bottom:4px}
+.fw-02-g p{font-size:13.5px;line-height:1.5;color:var(--tinte2);max-width:46ch}
+.fw-02-g{padding-top:14px;border-top:1px solid rgba(42,40,51,.12)}
+.fw-02-g:last-child{grid-column:1/-1;text-align:center}
+.fw-02-g:last-child p{margin:0 auto}
+.fw-02-fuss{margin-top:24px;font:500 10.5px/1.4 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2)}
+.fw-02-k{position:relative;margin-top:28px}
+
+/* ---------- 3 Kurz gesagt */
+.fw-03{display:grid;gap:clamp(30px,5vh,52px)}
+.fw-03-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,4vh,44px) clamp(20px,2.6vw,40px)}
+.fw-03-z{border-top:1px solid rgba(239,118,73,.5);padding-top:14px}
+.fw-03-z:first-child{grid-column:span 2}
+.fw-03-f{font:600 11.5px/1.3 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+.fw-03-w{margin:10px 0 10px;font:340 clamp(30px,3.1vw,50px)/1 var(--titel);letter-spacing:-.014em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.fw-03-a{font-size:14px;line-height:1.55;color:var(--fg2);max-width:40ch}
+
+/* ---------- 4 Am Tisch gefragt */
+.fw-04{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(30px,5vw,90px);align-items:start}
+.fw-04-l{position:sticky;top:96px;display:grid;gap:28px}
+.fw-04-bild{height:clamp(260px,38vh,380px);border-radius:var(--r);overflow:hidden;position:relative}
+.fw-04-bild figcaption{position:absolute;left:14px;bottom:12px;font:600 11px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:#FAF4F4}
+.fw-04-gespraech{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;align-items:start}
+.fw-04-gespraech>.sw{grid-column:1/-1}
+.fw-04-paar{display:grid;gap:8px}
+.fw-04-gast{justify-self:start;font:italic 340 clamp(19px,1.5vw,23px)/1.2 var(--titel);color:#FAF4F4}
+.fw-04-gast::before{content:"„";color:var(--kerze)}.fw-04-gast::after{content:"“";color:var(--kerze)}
+.fw-04-momo{justify-self:end;margin-left:24px;padding:12px 16px;border-radius:12px 12px 2px 12px;background:var(--papier);color:var(--tinte);font-size:14px;line-height:1.55}
+.fw-04-momo b{display:block;font:600 10.5px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-tief);margin-bottom:6px}
+html.js:not(.ruhig) .gzw .fw-04-paar.auf .fw-04-gast{transform:translateX(-40px);transition:transform 1.3s var(--k) calc(var(--i)*80ms)}
+html.js:not(.ruhig) .gzw .fw-04-paar.auf .fw-04-momo{transform:translateX(40px);transition:transform 1.3s var(--k) calc(var(--i)*80ms + .15s)}
+html.js .gzw .fw-04-paar.auf.da .fw-04-gast,html.js .gzw .fw-04-paar.auf.da .fw-04-momo{transform:none}
+html.js:not(.ruhig) .gzw .fw-04-paar.auf{transform:none}
+
+/* ---------- 5 Das Plakat */
+.fw-05{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,70px);align-items:center}
+.fw-05-plakat{background:var(--kerze);color:#1A1218;padding:clamp(28px,3.4vw,52px);border-radius:4px;aspect-ratio:4/5;display:flex;flex-direction:column;box-shadow:0 50px 70px -40px rgba(0,0,0,.85);rotate:-1.5deg}
+html.js:not(.ruhig) .gzw .fw-05-plakat.auf{transform:translateY(70px) rotate(3deg)}
+html.js .gzw .fw-05-plakat.auf.da{transform:none}
+.fw-05-oben{font:700 12px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase}
+.fw-05-oben span{font-family:var(--titel);font-size:16px;margin:0 6px}
+.fw-05-h{margin:auto 0 0;font:340 clamp(64px,8vw,132px)/.88 var(--titel);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.fw-05-fakten{display:grid;grid-template-columns:repeat(4,1fr);margin:clamp(20px,3vh,34px) 0 18px;border-top:2px solid #1A1218}
+.fw-05-fakten p{padding:12px 8px 0 0}
+.fw-05-fakten span{display:block;font:700 10.5px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase}
+.fw-05-fakten b{display:block;margin-top:6px;font:400 clamp(24px,2.4vw,38px)/1 var(--titel)}
+.fw-05-klein{font:500 12px/1.45 var(--text);max-width:52ch}
+.fw-05-r{display:grid;grid-template-columns:150px 1fr;gap:20px 28px;align-items:start}
+.fw-05-echt{grid-row:span 2;rotate:2deg;box-shadow:0 30px 40px -24px rgba(0,0,0,.9)}
+.fw-05-echt img{aspect-ratio:1;height:auto}
+.fw-05-echt figcaption{margin-top:8px;font:500 11px/1.3 var(--etikett);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2);rotate:-2deg}
+.fw-05-liste{margin:0;display:grid;gap:12px}
+.fw-05-liste dt{font:400 18px/1.2 var(--titel);color:#FAF4F4}
+.fw-05-liste dd{margin:3px 0 0;font-size:13.5px;line-height:1.5;color:var(--fg2)}
+
+/* ---------- 6 Fotoband */
+.fw-06{display:grid;gap:34px}
+.fw-06-band{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;perspective:1400px}
+.fw-06-k1{position:relative;height:clamp(380px,56vh,520px);transform-style:preserve-3d}
+.fw-06-vorn,.fw-06-hinten{position:absolute;inset:0;border-radius:var(--r);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .9s var(--k)}
+.fw-06-vorn::after{content:"";position:absolute;inset:auto 0 0;height:60%;background:linear-gradient(transparent,rgba(12,10,14,.85))}
+.fw-06-vorn b{position:absolute;z-index:2;left:14px;right:14px;bottom:16px;font:400 clamp(16px,1.3vw,20px)/1.2 var(--titel);color:#FAF4F4}
+.fw-06-hinten{background:var(--papier);color:var(--tinte);padding:20px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;transform:rotateY(180deg)}
+.fw-06-hinten b{font:400 clamp(22px,1.9vw,30px)/1.05 var(--titel);color:var(--kerze-tief)}
+.fw-06-hinten span{font-size:13px;line-height:1.5}
+.fw-06-k1.um .fw-06-vorn{transform:rotateY(-180deg)}
+.fw-06-k1.um .fw-06-hinten{transform:rotateY(0)}
+.fw-06-k1:nth-child(even){margin-top:34px}
+.fw-06-k,.fw-07-k,.fw-09-kn,.fw-15-k{text-align:center}
+
+/* ---------- 7 Die Tafel von oben */
+.fw-07{display:grid;gap:30px}
+.fw-07-tafel{position:relative;padding:44px 0}
+.fw-07-s{position:absolute;width:calc(100%/7*.42);height:30px;left:calc((var(--x) + .29)*100%/7);top:calc(var(--o)*(100% - 30px));border-radius:8px;background:#2C2A33;box-shadow:inset 0 0 0 1px rgba(250,244,244,.06)}
+.fw-07-platte{position:relative;height:clamp(380px,50vh,460px);border-radius:12px;background:linear-gradient(90deg,#3A2A22,#4A352A 30%,#3F2D24 60%,#4B372B);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4),0 40px 60px -30px rgba(0,0,0,.9);overflow:hidden}
+.fw-07-platte::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 46px)}
+.fw-07-t{position:absolute;z-index:2;left:calc((var(--x) + .5)*100%/7);top:calc(var(--o)*(100% - 108px) + 14px);width:clamp(70px,7vw,94px);aspect-ratio:1;translate:-50% 0;border-radius:50%;background:radial-gradient(circle,#FAF4F4 0 54%,#EAE2DC 55% 60%,#F7F0EB 61%);box-shadow:0 10px 18px -8px rgba(0,0,0,.8);display:grid;place-items:center;transition:transform .5s var(--k)}
+.fw-07-t span{font:600 10px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--tinte)}
+.fw-07-t:hover{transform:scale(1.06)}
+.fw-07-t.an{transform:scale(1.14)}
+.fw-07-t.an span{color:var(--kerze-tief)}
+.fw-07-mitte{position:absolute;inset:50% 8% auto;translate:0 -50%;text-align:center;pointer-events:none}
+.fw-07-a{display:none}
+.fw-07-a.an{display:block}
+.fw-07-a h3{font:340 clamp(22px,2.2vw,34px)/1.1 var(--titel);color:#FAF4F4}
+.fw-07-a p{margin:8px auto 0;max-width:52ch;font-size:15px;line-height:1.55;color:rgba(250,244,244,.82)}
+.fw-07-kerze{position:absolute;width:10px;height:10px;border-radius:50%;background:#FFD7A8;box-shadow:0 0 18px 8px rgba(255,170,90,.35);top:50%}
+.fw-07-kerze.k1{left:7%}.fw-07-kerze.k2{left:50%;display:none}.fw-07-kerze.k3{right:7%}
+
+/* ---------- 8 Die Kreidetafel */
+.fw-08{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:clamp(24px,3vw,48px);align-items:center}
+.fw-08-tafel{position:relative;padding:clamp(30px,3.6vw,56px);border-radius:6px;background:radial-gradient(120% 90% at 30% 20%,#34343A,#232328 70%),#26262B;box-shadow:inset 0 0 0 10px #4A3527,inset 0 0 0 12px #2C1F17,0 40px 60px -30px rgba(0,0,0,.9);transform-origin:50% 0;color:#F2EFEA}
+html.js:not(.ruhig) .gzw .fw-08-tafel.auf{transform:rotate(-2.5deg) translateY(30px)}
+html.js .gzw .fw-08-tafel.auf.da{transform:rotate(-.4deg)}
+.fw-08-haken{position:absolute;left:50%;top:-26px;width:2px;height:26px;background:#888;translate:-50% 0}
+.fw-08-h{font:italic 340 clamp(40px,4.4vw,70px)/1 var(--titel);text-align:center}
+.fw-08-unter{text-align:center;margin-top:6px;font:500 12px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase;color:#E9B48F}
+.fw-08-spalten{margin-top:28px;columns:2;column-gap:44px}
+.fw-08-z{break-inside:avoid;margin-bottom:20px;padding-bottom:16px;border-bottom:1px dashed rgba(242,239,234,.25)}
+.fw-08-z h3{font:italic 400 clamp(18px,1.5vw,22px)/1.2 var(--titel);margin-bottom:5px}
+.fw-08-z p{font-size:14px;line-height:1.55;color:rgba(242,239,234,.78)}
+.fw-08-r{display:grid;gap:24px}
+.fw-08-bild{height:clamp(320px,52vh,520px);border-radius:var(--r);overflow:hidden}
+
+/* ---------- 9 Das Ticket */
+.fw-09{display:grid;gap:34px}
+.fw-09-ticket{display:grid;grid-template-columns:minmax(220px,.36fr) minmax(0,1fr);min-height:clamp(380px,52vh,480px);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))}
+.fw-09-stub{position:relative;background:var(--kerze);color:#1A1218;padding:28px 26px;border-radius:14px 0 0 14px;display:flex;flex-direction:column;gap:2px}
+.fw-09-stub::after{content:"";position:absolute;right:-1px;top:14px;bottom:14px;border-right:2px dashed rgba(26,18,24,.4)}
+.fw-09-k{font:700 10.5px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.fw-09-q{padding:8px 0;font:400 16px/1.2 var(--titel);border-bottom:1px solid rgba(26,18,24,.18);opacity:.7;transition:opacity .3s}
+.fw-09-q:hover,.fw-09-q.an{opacity:1}
+.fw-09-q.an{font-style:italic}
+.fw-09-haupt{position:relative;background:var(--papier);color:var(--tinte);border-radius:0 14px 14px 0;overflow:hidden}
+.fw-09-a{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);opacity:0;transform:translateY(24px);transition:opacity .45s,transform .7s var(--k);pointer-events:none}
+.fw-09-a.an{opacity:1;transform:none;pointer-events:auto}
+.fw-09-text{padding:clamp(28px,3.4vw,52px);display:flex;flex-direction:column}
+.fw-09-text .fw-09-k{color:var(--kerze-tief)}
+.fw-09-text h3{font:340 clamp(40px,4.6vw,76px)/.95 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.fw-09-text p:not(.fw-09-k){margin-top:18px;font-size:15.5px;line-height:1.6;max-width:40ch;color:var(--tinte2)}
+.fw-09-text .fw-09-ort{margin-top:auto!important;font:600 11px/1 var(--etikett)!important;letter-spacing:.16em;text-transform:uppercase}
+.fw-09-bild{height:100%}
+
+/* ---------- 10 Der Kartenstapel */
+.fw-10{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,90px);align-items:center}
+.fw-10-l{display:grid;gap:24px;justify-items:start}
+.fw-10-hinweis{font:600 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.fw-10-stapel{position:relative;height:clamp(460px,66vh,600px)}
+.fw-10-karte{position:absolute;inset:0 6% 0 0;border-radius:14px;overflow:hidden;background:var(--papier);color:var(--tinte);display:grid;grid-template-rows:1fr auto;box-shadow:0 30px 50px -30px rgba(0,0,0,.9);
+  z-index:calc(10 - var(--p));transform:translate(calc(var(--p)*10px),calc(var(--p)*12px)) rotate(calc(var(--p)*1.4deg));transition:transform .7s var(--k)}
+.fw-10-karte img{min-height:0}
+.fw-10-text{display:grid;gap:8px;padding:22px 26px 26px;text-align:left}
+.fw-10-text b{font:400 clamp(22px,2vw,30px)/1.1 var(--titel)}
+.fw-10-text span{font-size:15px;line-height:1.55;color:var(--tinte2)}
+.fw-10-karte.weg{transform:translate(-30%,-6%) rotate(-10deg)}
+
+/* ---------- 11 Die Zeitung */
+.fw-f11{background:var(--papier);color:var(--tinte);--fg2:var(--tinte2);--linie:rgba(42,40,51,.18);margin:calc(-1*clamp(56px,8vh,100px)) 0;padding:clamp(56px,8vh,100px) 0}
+.fw-11-kopf{display:flex;justify-content:space-between;font:600 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--tinte2);padding-bottom:12px}
+.fw-11-linie{display:block;height:3px;background:var(--tinte);transform-origin:left}
+html.js:not(.ruhig) .gzw .fw-11-linie.auf{transform:scaleX(.08);transition:transform 1.8s var(--k)}
+html.js .gzw .fw-11-linie.auf.da{transform:none}
+.fw-11-h{margin:20px 0 28px;font:340 clamp(56px,8vw,128px)/.9 var(--titel);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.fw-11-spalten{columns:3;column-gap:38px;column-rule:1px solid rgba(42,40,51,.14)}
+.fw-11-bild{break-inside:avoid;margin-bottom:18px!important}
+.fw-11-bild img{aspect-ratio:4/3;height:auto}
+.fw-11-bild figcaption{margin-top:6px;font:italic 13px/1.4 var(--titel);color:var(--tinte2)}
+.fw-11-p{margin-bottom:14px!important;font-size:15.5px;line-height:1.6;hyphens:auto}
+.fw-11-p b{font:600 17px/1.3 var(--titel)}
+.fw-11-k{margin-top:22px}
+
+/* ---------- 12 Die Einladung */
+.fw-12{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,90px);align-items:center}
+.fw-12-l{display:grid;gap:26px}
+.fw-12-bild{height:clamp(220px,30vh,300px);border-radius:var(--r);overflow:hidden}
+.fw-12-umschlag{position:relative;padding:0 0 26px;overflow:hidden}
+.fw-12-umschlag::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:#3A3845;clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);border-radius:0 0 8px 8px}
+.fw-12-brief{position:relative;z-index:1;margin:0 18px;background:var(--papier);color:var(--tinte);padding:clamp(28px,3.4vw,50px) clamp(24px,3.4vw,50px) 40px;border-radius:3px;box-shadow:0 30px 50px -30px rgba(0,0,0,.8)}
+html.js:not(.ruhig) .gzw .fw-12-brief.auf{transform:translateY(120px)}
+.fw-12-anrede{font:italic 340 26px/1.2 var(--titel);margin-bottom:16px}
+.fw-12-absatz{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:8px 0}
+.fw-12-rand{font:600 10.5px/1.35 var(--etikett);letter-spacing:.1em;text-transform:uppercase;color:var(--kerze-tief);padding-top:4px;border-top:1px solid rgba(177,87,54,.35)}
+.fw-12-absatz p{font:400 17px/1.55 var(--titel)}
+.fw-12-gruss{margin-top:18px;font:italic 340 20px/1.4 var(--titel)}
+.fw-12-gruss span{font-style:normal;font:600 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2)}
+
+/* ---------- 13 Der Drehteller */
+.fw-13{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,4vw,70px);align-items:center}
+.fw-13-l{display:grid;gap:26px;justify-items:start}
+.fw-13-buehne{position:relative;display:grid;place-items:center;padding:40px 0}
+.fw-13-rad{--dreh:0deg;--g:min(460px,64vw);position:relative;width:var(--g);aspect-ratio:1;transform:rotate(var(--dreh));transition:transform 1.1s var(--k)}
+.fw-13-teller{position:absolute;inset:20%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 14px #F7F0EB,0 0 0 15px #DDD3CC,0 40px 60px -20px rgba(0,0,0,.9)}
+.fw-13-q{position:absolute;left:50%;top:50%;width:150px;margin:-14px 0 0 -75px;text-align:center;transform:rotate(calc(var(--w)*360deg/7)) translateY(calc(var(--g)*-.5)) rotate(calc(var(--w)*-360deg/7 - var(--dreh)));transition:transform 1.1s var(--k)}
+.fw-13-q span{display:block;font:400 14.5px/1.2 var(--titel);color:rgba(250,244,244,.6);transition:color .4s}
+.fw-13-q:hover span,.fw-13-q.an span{color:#FAF4F4}
+.fw-13-q.an span{color:var(--kerze-hell)}
+.fw-13-mitte{min-height:150px;max-width:40ch;padding-top:18px;border-top:1px solid rgba(239,118,73,.5)}
+.fw-13-a{display:none}.fw-13-a.an{display:block;animation:fw-14-hoch .8s var(--k)}
+.fw-13-a b{display:block;font:340 clamp(28px,2.6vw,40px)/1 var(--titel)}
+.fw-13-a p{margin-top:8px;font-size:15px;line-height:1.55;color:var(--fg2)}
+
+/* ---------- 14 Der Satz */
+.fw-14{text-align:center;display:grid;justify-items:center;gap:26px}
+.fw-14-k1{font:600 12px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase;color:var(--kerze-hell)}
+.fw-14-satz{max-width:1100px;font:340 clamp(26px,2.9vw,46px)/1.25 var(--titel);letter-spacing:-.01em}
+.fw-14-q{color:rgba(250,244,244,.42);transition:color .4s;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.18em;text-decoration-thickness:1px}
+.fw-14-q:hover{color:rgba(250,244,244,.8)}
+.fw-14-q.an{color:#FAF4F4;text-decoration-color:var(--kerze)}
+.fw-14-antwort{min-height:4.8em;max-width:60ch}
+.fw-14-a{display:none}.fw-14-a.an{display:block;animation:fw-14-hoch .8s var(--k)}
+.fw-14-a p{font:italic 340 clamp(19px,1.6vw,24px)/1.45 var(--titel);color:var(--kerze-hell)}
+@keyframes fw-14-hoch{from{transform:translateY(18px)}}
+.fw-14-unten{display:grid;justify-items:center;gap:24px}
+.fw-14-bilder{display:flex;gap:8px}
+.fw-14-b{width:clamp(48px,6vw,86px);aspect-ratio:3/4;border-radius:6px;overflow:hidden;opacity:.35;transition:opacity .5s,transform .6s var(--k)}
+.fw-14-b.an{opacity:1;transform:translateY(-10px) scale(1.12)}
+
+/* ---------- 15 Die Pinnwand */
+.fw-15{display:grid;gap:30px}
+.fw-15-wand{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:start;gap:30px 20px;padding:clamp(24px,3vw,44px);border-radius:var(--r);background:#2A2830;box-shadow:inset 0 0 0 1px rgba(250,244,244,.05)}
+.fw-15-zettel{position:relative;padding:22px 18px 18px;background:var(--papier);color:var(--tinte);rotate:var(--r);box-shadow:0 18px 26px -18px rgba(0,0,0,.9)}
+.fw-15-zettel:nth-child(3n+2){background:#F2D9C7}
+.fw-15-band{position:absolute;left:50%;top:-10px;width:70px;height:20px;translate:-50% 0;rotate:-3deg;background:rgba(239,118,73,.75)}
+.fw-15-zettel h3{font:400 18px/1.2 var(--titel);margin-bottom:8px}
+.fw-15-zettel p{font-size:13.5px;line-height:1.5;color:var(--tinte2)}
+.fw-15-abzug{background:#fff;padding:10px 10px 30px;rotate:var(--r);box-shadow:0 18px 26px -18px rgba(0,0,0,.9)}
+.fw-15-abzug img{aspect-ratio:1;height:auto}
+html.js:not(.ruhig) .gzw .fw-15-zettel.auf,html.js:not(.ruhig) .gzw .fw-15-abzug.auf{transform:translateY(-36px) scale(1.04)}
+html.js .gzw .fw-15-zettel.auf.da,html.js .gzw .fw-15-abzug.auf.da{transform:none}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .fw-01,.fw-04,.fw-05,.fw-08,.fw-10,.fw-12,.fw-13{grid-template-columns:1fr}
+  .fw-01-bild{height:56svh}
+  .fw-03-raster{grid-template-columns:1fr 1fr}.fw-03-z:first-child{grid-column:1/-1}
+  .fw-04-l{position:static}
+  .fw-05-r{grid-template-columns:1fr}.fw-05-echt{width:150px}
+  .fw-06-band{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:68%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .fw-06-k1{scroll-snap-align:start;height:440px}.fw-06-k1:nth-child(even){margin-top:0}
+  .fw-07-platte{height:520px}
+  .fw-07-t{left:calc(var(--o)*100% + (1 - 2*var(--o))*22%);top:calc(var(--x)*68px + 14px);width:58px}
+  .fw-07-s{display:none}
+  .fw-07-mitte{inset:auto 6% 18px;translate:none}
+  .fw-07-a h3{font-size:20px}.fw-07-a p{font-size:13.5px}
+  .fw-08-spalten{columns:1}.fw-08-bild{height:40svh}
+  .fw-09-ticket{grid-template-columns:1fr;min-height:0}
+  .fw-09-stub{border-radius:14px 14px 0 0}.fw-09-stub::after{inset:auto 14px -1px;border-right:0;border-bottom:2px dashed rgba(26,18,24,.4)}
+  .fw-09-haupt{border-radius:0 0 14px 14px;min-height:560px}
+  .fw-09-a{grid-template-columns:1fr;grid-template-rows:auto 220px}
+  .fw-10-stapel{height:540px}
+  .fw-11-spalten{columns:1}
+  .fw-12-absatz{grid-template-columns:1fr;gap:6px}
+  .fw-13-q{width:96px;margin-left:-48px}.fw-13-q span{font-size:11.5px}
+  .fw-15-wand{grid-template-columns:1fr 1fr}
+  .fw-02-gaenge,.fw-04-gespraech{grid-template-columns:1fr}
+}

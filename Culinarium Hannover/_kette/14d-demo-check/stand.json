@@ -1,0 +1,23 @@
+{
+  "station": "D",
+  "name": "Demo-Check",
+  "rolle": "Prüfer (neuer Chat, hat nie daran gebaut)",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T20:56+08:00",
+  "ende": "2026-10-28T21:25+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "demo-check.md"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "Demo-Check grün: 54/54 Seitenaufrufe, 86/86 Wege, 445 Bildschirme angesehen, keine Reparatur nötig. Liste: Esc schliesst Menü nicht; Bar-Knopf lokal 404 (online.py setzt wildside/). Bericht _kette/14d-demo-check/DEMOCHECK.md",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

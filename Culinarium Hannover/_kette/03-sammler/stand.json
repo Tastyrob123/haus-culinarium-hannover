@@ -1,0 +1,74 @@
+{
+  "station": "03",
+  "name": "Recherche",
+  "rolle": "Sammler",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-25T16:09+08:00",
+  "ende": "2026-10-26T12:36+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": 27.0,
+    "guthaben": []
+  },
+  "offen": [
+    {
+      "punkt": "5 Drive-Dateien von Rudi für robert@tasty-studios.de gesperrt (115351, 115442, 115445, 115389, 36541) — Handgriff: Rudi gibt frei oder Robert fordert in Drive Zugriff an",
+      "wo": "_quelle/vom-kunden/eingang.json, drive/ (26.10.2026)"
+    },
+    {
+      "punkt": "Logo: Originaldatei des Gestalters und Schriftname fehlen — Handgriff: Rudi um die Datei bitten. Vorhanden: Logo-Datei 1080 px (Profilbild) und Vektor-Nachzug 4000 px",
+      "wo": "_quelle/logo/nachgezogen/ (26.10.2026)"
+    },
+    {
+      "punkt": "Vertragspartner, Impressum, Mail und Telefon von Culinarium: kein Rechtsträger, keine Kontaktdaten öffentlich",
+      "wo": "fakten.json › rechtstraeger, telefon, mail"
+    },
+    {
+      "punkt": "Rechte an Fotos und Filmen (Irina Voronov, focusonbiz_hannover, Fotografen von Rudis Drive-Bildern) und Herkunft der Plakat-Illustrationen",
+      "wo": "_quelle/*/herkunft.json; Kundenprofil Blatt 6"
+    },
+    {
+      "punkt": "Rechtsträger der Bar heute: Derya Ivkin führt sie seit Herbst 2023 (Presse), aber kein Registereintrag zu Ivkin oder Ben Khelifa; ob Culinarium und Dirty Chicken rechtlich zur Bar gehören, ist offen",
+      "wo": "_quelle/dach.md; North Data 26.10.2026"
+    },
+    {
+      "punkt": "Plätze je Abend wechseln: 15, 20, 12, 14; Tafel der Bar «bis 14» bzw. «8 bis 12»",
+      "wo": "fakten.json › plaetze"
+    },
+    {
+      "punkt": "Vegetarisch als Standard: Silvester 2023 und Dezember 2025 Menüs mit Fleisch, «auch vegetarisch»",
+      "wo": "extern/ig/beitraege.md › C0w6iuCMcnF; extern/ig-gaeste/beitraege.md › DSnlBLECGyD"
+    },
+    {
+      "punkt": "Was «Schulungen, Events, Consulting» konkret anbieten",
+      "wo": "Profilname @culinarium_hannover; alle 20 Beiträge"
+    },
+    {
+      "punkt": "Nächster Termin nicht angekündigt",
+      "wo": "Profil @culinarium_hannover, 26.10.2026"
+    },
+    {
+      "punkt": "Ob Dirty Chicken mitkommt",
+      "wo": "_quelle/dirty-chicken/; einordnung.json"
+    }
+  ],
+  "paket": [
+    "fakten.json",
+    "sprachen.json",
+    "sammlung.html",
+    "../../_quelle/",
+    "../../Prompt — Culinarium Hannover.md"
+  ],
+  "adresse": "http://127.0.0.1:8978/haus/Culinarium%20Hannover/_kette/03-sammler/sammlung.html",
+  "briefing": "briefing.html",
+  "notiz": "Nachsammlung 26.10.: Rudis Mail- und Drive-Dateien, alle Instagram-Beiträge seit 2023 und 8 Highlights, 55 Google-Fotos und 75 Rezensionen, Meininger, TripAdvisor, Logo 1080 px und als Vektor; offen nur, was Rudi liefern muss.",
+  "bestaetigt": null,
+  "rueckgaben": [
+    {
+      "zeit": "2026-10-26T11:40+08:00",
+      "satz": "Alles holen: Rudis Dateien, TripAdvisor, Meininger-Bilder, Google-Fotos und -Rezensionen, ältere Instagram-Beiträge, Logo in gross. «Nicht bekommen» ist inakzeptabel; Hindernis mit Grund melden, dann holen (Robert im Chat)",
+      "allgemein": true
+    }
+  ]
+}

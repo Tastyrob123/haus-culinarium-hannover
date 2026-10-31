@@ -1,0 +1,302 @@
+/* Culinarium · Team-Seite «Wie es kam.» in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.kw img{display:block;width:100%;height:100%;object-fit:cover}
+.kw figure{margin:0}
+:where(.kw) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.kw h3{font-weight:inherit;margin:0}
+.kw-tk .titel{font-family:var(--titel);font-weight:340;font-size:clamp(44px,5vw,84px);line-height:.98;letter-spacing:-.016em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.kw-satz{margin-top:14px;max-width:44ch;color:var(--fg2);font-size:17px}
+.kw-tk.mitte{text-align:center}.kw-tk.mitte .kw-satz{margin-inline:auto}
+.kw-w{display:block;font:500 11.5px/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-tief)}
+[data-ton=nacht] .kw-w{color:var(--kerze-hell)}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .kw .auf:not(.zl):not(.sw){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .kw .auf.da:not(.zl):not(.sw){transform:none}
+
+/* ---------- 1 Die Titelseite */
+.kw-01-blatt{background:#F3ECE3;color:#26242D;padding:clamp(22px,3.4vw,54px);border-radius:3px;box-shadow:0 40px 70px -40px rgba(38,36,45,.45)}
+.kw-01-kopf{display:grid;grid-template-columns:1fr auto;align-items:end;gap:6px 20px;text-align:left}
+.kw-01-kopf .mono{font-size:11px;letter-spacing:.18em;color:#5B5763}
+.kw-01-kopf .mono:last-of-type{text-align:right}
+.kw-01-name{grid-column:1/-1;grid-row:1;font:360 clamp(58px,10.4vw,176px)/.86 var(--titel);letter-spacing:-.035em;text-align:center;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;margin-bottom:14px}
+.kw-01-linie{grid-column:1/-1;height:7px;border-top:3px solid #26242D;border-bottom:1px solid #26242D;transform-origin:center;transition:transform 1.6s var(--k) .2s}
+html.js:not(.ruhig) .kw-01-blatt:not(.da) .kw-01-linie{transform:scaleX(.12)}
+.kw-01-auf{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);padding:clamp(22px,3vh,34px) 0;border-bottom:1px solid rgba(38,36,45,.3)}
+.kw-01-auf figure{aspect-ratio:16/10;overflow:hidden}
+.kw-01-auf h3{font:360 clamp(30px,3.4vw,56px)/1 var(--titel);letter-spacing:-.02em;margin:10px 0 16px;font-variation-settings:"SOFT" 100,"opsz" 144}
+.kw-01-auf p{font-size:16px;line-height:1.55}
+.kw-01-unter{margin-top:16px;padding-top:14px;border-top:1px solid rgba(38,36,45,.2);color:#5B5763}
+.kw-01-spalten{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding-top:clamp(18px,2.6vh,28px)}
+.kw-01-m{padding:0 clamp(12px,1.4vw,22px);border-left:1px solid rgba(38,36,45,.22)}
+.kw-01-m:first-child{padding-left:0;border-left:0}.kw-01-m:last-child{padding-right:0}
+.kw-01-m figure{aspect-ratio:4/3;overflow:hidden;margin-bottom:12px}
+.kw-01-m h3{font:380 clamp(19px,1.5vw,23px)/1.12 var(--titel);margin:6px 0 8px;font-variation-settings:"SOFT" 100,"opsz" 72}
+.kw-01-m p:last-child{font-size:14px;line-height:1.5;color:#3A3845}
+
+/* ---------- 2 Durch die Wand */
+.kw-02-buehne{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:center;margin-top:clamp(30px,6vh,64px)}
+.kw-02-wand{aspect-ratio:1/.86;border-radius:var(--r);display:grid;place-items:center;background:radial-gradient(ellipse at 30% 20%,#34313C,transparent 60%),radial-gradient(ellipse at 80% 90%,#2C2A33,transparent 55%),#23212A}
+.kw-02-loch{position:relative;width:74%;aspect-ratio:1.12;overflow:hidden;border-radius:47% 53% 44% 56%/52% 45% 55% 48%;background:#0B0A0E}
+.kw-02-loch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 6px #1B1A20,inset 0 10px 40px rgba(0,0,0,.85);pointer-events:none;z-index:2}
+.kw-02-f{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity .8s var(--k),transform 1.6s var(--k)}
+.kw-02-f.an{opacity:1;transform:none}
+.kw-02-daten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vh,26px) 18px}
+.kw-02-d{position:relative;display:flex;flex-direction:column;gap:4px;padding-bottom:12px;color:rgba(250,244,244,.36);transition:color .4s}
+.kw-02-d .mono{font-size:10.5px;letter-spacing:.18em;color:inherit}
+.kw-02-d b{font:300 clamp(40px,4.4vw,74px)/.9 var(--titel);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"opsz" 144}
+.kw-02-d::after{content:"";position:absolute;left:0;right:20%;bottom:0;height:2px;background:var(--kerze);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--k)}
+.kw-02-d:hover,.kw-02-d.an{color:#FAF4F4}
+.kw-02-d.an::after{transform:none}
+.kw-02-texte{grid-column:1/-1;position:relative;min-height:5.2em;margin-top:10px}
+.kw-02-t{position:absolute;inset:0 0 auto;font:340 clamp(22px,1.9vw,30px)/1.25 var(--titel);opacity:0;transition:opacity .5s}
+.kw-02-t.an{opacity:1}
+
+/* ---------- 3 Der lange Tresen */
+.kw-f03>.vi{max-width:none;padding:0}
+.kw-03{position:relative;height:330vh}
+.kw-03-handy{display:none}
+.kw-03-halt{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.kw-03-spur{position:relative;z-index:2;display:flex;align-items:flex-end;gap:clamp(34px,4vw,72px);width:max-content;padding:0 var(--rand) 5vh;will-change:transform}
+.kw-03-anfang{width:min(460px,80vw);align-self:center;padding-bottom:22vh}
+.kw-03-m{width:clamp(250px,24vw,380px)}
+.kw-03-b{aspect-ratio:3/4;overflow:hidden;border-radius:4px 4px 0 0}
+.kw-03-m:nth-child(odd) .kw-03-b{aspect-ratio:4/5}
+.kw-03-m figcaption{height:170px;padding-top:24px;color:#F3E6DA}
+.kw-03-m figcaption p{margin-top:8px;font:340 clamp(18px,1.5vw,22px)/1.3 var(--titel);max-width:26ch}
+.kw-03-ende{align-self:center;padding:0 10vw 22vh 0}
+.kw-03-heute{font:340 clamp(30px,3.2vw,52px)/1.05 var(--titel);max-width:12ch;font-variation-settings:"SOFT" 100,"opsz" 144}
+.kw-03-holz{position:absolute;left:0;right:0;bottom:0;height:calc(170px + 5vh);background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 13px),linear-gradient(#5A3B28,#3D2719 18%,#2B1B12);border-top:5px solid #7A5236}
+
+/* ---------- 4 Zwei Seiten der Theke */
+.kw-04-koepfe{display:grid;grid-template-columns:1fr 130px 1fr;margin-top:clamp(30px,6vh,60px);padding-bottom:22px}
+.kw-04-koepfe p{display:flex;flex-direction:column;gap:4px}
+.kw-04-koepfe p:first-child{text-align:right;align-items:flex-end}
+.kw-04-koepfe p:last-child{grid-column:3}
+.kw-04-koepfe b{font:340 clamp(28px,2.6vw,42px)/1 var(--titel);font-weight:340}
+.kw-04-feld{position:relative;display:grid;gap:clamp(20px,4vh,46px);padding-bottom:4vh}
+.kw-04-feld::before,.kw-04-linie{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;margin-left:-.5px;background:var(--fg)}
+.kw-04-feld::before{opacity:.16}
+.kw-04-linie{width:2px;margin-left:-1px;background:var(--kerze);transform-origin:top;transform:scaleY(var(--p,0))}
+.kw-04-z{display:grid;grid-template-columns:1fr 130px 1fr;align-items:center}
+.kw-04-j{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1;background:var(--bg);padding:8px 4px;font-size:13px;letter-spacing:.18em;color:var(--fg)}
+.kw-04-z.bar .kw-04-k{grid-column:1;grid-row:1}
+.kw-04-z.abend .kw-04-k{grid-column:3;grid-row:1}
+.kw-04-k figure{aspect-ratio:3/2;overflow:hidden;border-radius:var(--r);margin-bottom:14px}
+.kw-04-s{margin-top:6px;font:340 clamp(19px,1.6vw,24px)/1.3 var(--titel);max-width:30ch}
+.kw-04-seite{display:none}
+
+/* ---------- 5 Die Karte des Abends */
+.kw-05{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:start}
+.kw-05-bild{position:sticky;top:12vh}
+.kw-05-rahmen{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:#16151A}
+.kw-05-f{position:absolute;inset:0;opacity:0;transform:scale(1.05);transition:opacity .7s var(--k),transform 1.4s var(--k)}
+.kw-05-f.an{opacity:1;transform:none}
+.kw-05-karte{background:#FFFDFA;color:#26242D;text-align:center;padding:clamp(30px,4vw,64px) clamp(24px,3.4vw,56px);box-shadow:inset 0 0 0 10px #FFFDFA,inset 0 0 0 11px rgba(38,36,45,.28),0 34px 60px -36px rgba(38,36,45,.5)}
+.kw-05-oben{font-size:11px;letter-spacing:.22em;color:#5B5763}
+.kw-05-titel{font:340 clamp(44px,4.6vw,76px)/1 var(--titel);letter-spacing:-.02em;margin:14px 0 6px;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.kw-05-unter{color:#5B5763;margin-bottom:clamp(20px,3vh,34px)}
+.kw-05-gang{padding:clamp(20px,3.2vh,32px) 0;border-top:1px solid rgba(38,36,45,.16);opacity:.42;transition:opacity .5s;cursor:default}
+.kw-05-gang.an{opacity:1}
+.kw-05-z{font:500 clamp(17px,1.5vw,22px)/1.35 var(--etikett);letter-spacing:.14em}
+.kw-05-z i{font-style:normal;color:var(--kerze)}
+.kw-05-s{margin:8px auto 0;max-width:40ch;font-size:15px;line-height:1.5;color:#5B5763}
+.kw-05-s .mono{font-size:11px;letter-spacing:.14em;color:var(--kerze-tief)}
+.kw-05-klein{display:none}
+.kw-05-fuss{margin-top:clamp(18px,3vh,30px);padding-top:18px;border-top:1px solid rgba(38,36,45,.16);font-size:11px;letter-spacing:.2em}
+
+/* ---------- 6 Bilder in den Zahlen */
+.kw-06-r{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,70px);align-items:center;padding:clamp(10px,2vh,24px) 0;border-top:1px solid var(--linie);overflow:hidden}
+.kw-06-r:first-of-type{margin-top:clamp(30px,6vh,60px)}
+.kw-06-r.rechts{grid-template-columns:minmax(0,1fr) auto}
+.kw-06-r.rechts .kw-06-zahl{order:2}
+.kw-06-zahl{font:420 clamp(120px,23vw,360px)/.84 var(--titel);letter-spacing:-.055em;font-variation-settings:"SOFT" 100,"opsz" 144;background-size:cover;background-position:center;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;transform:translateX(calc((var(--p,.5) - .5) * -10%))}
+.kw-06-r.rechts .kw-06-zahl{transform:translateX(calc((var(--p,.5) - .5) * 10%))}
+.kw-06-t{display:grid;gap:20px}
+.kw-06-t p{font:340 clamp(20px,1.8vw,28px)/1.25 var(--titel);max-width:28ch}
+.kw-06-t .kw-w{margin-bottom:6px}
+
+/* ---------- 7 Die Reportage */
+.kw-07-auf{aspect-ratio:21/9;overflow:hidden;border-radius:var(--r)}
+.kw-07-auf-i{height:100%;transform:translateY(calc((var(--p,.5) - .5) * 14%)) scale(1.18)}
+.kw-07-kopf{margin-top:clamp(30px,5vh,56px)}
+.kw-07-text{max-width:960px;margin:clamp(30px,5vh,56px) auto 0;display:grid;gap:clamp(26px,4vh,46px)}
+.kw-07-a{display:grid;grid-template-columns:170px minmax(0,1fr);gap:30px}
+.kw-07-rand{padding-top:.6em;font-size:11.5px;letter-spacing:.16em;color:var(--kerze-tief)}
+.kw-07-a p:last-child{font:340 clamp(20px,1.75vw,27px)/1.45 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36}
+.kw-07-erst::first-letter{float:left;font-size:4.1em;line-height:.82;padding:.06em .1em 0 0;color:var(--kerze)}
+.kw-07-zwei,.kw-07-zitat,.kw-07-breit{margin-left:200px}
+.kw-07-zwei{display:grid;grid-template-columns:1fr 1fr;gap:var(--fuge)}
+.kw-07-zwei figure{aspect-ratio:1;overflow:hidden;border-radius:4px}
+.kw-07-zitat{margin-block:0;padding-left:28px;border-left:2px solid var(--kerze)}
+.kw-07-zitat p{font:340 clamp(30px,3.4vw,54px)/1.08 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.kw-07-zitat cite{display:block;margin-top:14px;font-style:normal;font-size:11.5px}
+.kw-07-breit{aspect-ratio:16/9;overflow:hidden;border-radius:4px}
+
+/* ---------- 8 Postkarten aus Linden */
+.kw-08-tisch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(26px,3.4vw,56px);margin-top:clamp(30px,6vh,64px);perspective:1800px}
+.kw-08-karte{display:block;aspect-ratio:3/2;color:#26242D}
+.kw-08-innen{position:relative;display:block;width:100%;height:100%;rotate:var(--r);transform-style:preserve-3d;transition:transform 1s var(--k)}
+.kw-08-karte.um .kw-08-innen{transform:rotateY(180deg)}
+.kw-08-vorn,.kw-08-hinten{position:absolute;inset:0;display:flex;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:3px;box-shadow:0 22px 40px -22px rgba(38,36,45,.55)}
+.kw-08-vorn{flex-direction:column;background:#fff;padding:9px 9px 0}
+.kw-08-vorn img{flex:1;min-height:0}
+.kw-08-gruss{display:block;padding:8px 2px 9px;font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#5B5763}
+.kw-08-hinten{transform:rotateY(180deg);background:#FFFBF5;padding:clamp(14px,1.4vw,22px);display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.kw-08-text{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding-right:16px;border-right:1px solid rgba(38,36,45,.2);font:340 clamp(15px,1.25vw,18px)/1.3 var(--titel)}
+.kw-08-marke{position:absolute;top:clamp(14px,1.4vw,22px);right:clamp(14px,1.4vw,22px);width:56px;height:66px;display:grid;place-items:center;align-content:center;background:var(--kerze);color:#FFF7EF;outline:3px dotted #FFFBF5;outline-offset:-3px}
+.kw-08-marke b{font:400 19px/1 var(--titel)}
+.kw-08-marke span{font:500 8px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.kw-08-an{align-self:end;font-size:12.5px;line-height:2;color:#5B5763;background:repeating-linear-gradient(transparent 0 calc(2em - 1px),rgba(38,36,45,.25) calc(2em - 1px) 2em)}
+
+/* ---------- 9 Das Diamagazin */
+.kw-09-leinwand{position:relative;max-width:1080px;aspect-ratio:16/9;margin:clamp(30px,6vh,60px) auto 0;background:#EFEAE2;border-radius:3px;box-shadow:0 0 140px rgba(245,166,137,.14)}
+.kw-09-f{position:absolute;inset:clamp(10px,1.4vw,18px);overflow:hidden;opacity:0;transition:opacity .6s var(--k)}
+.kw-09-f.an{opacity:1}
+.kw-09-f figcaption{position:absolute;left:0;bottom:0;max-width:min(62%,520px);padding:16px 20px;background:#16151A;color:#FAF4F4}
+.kw-09-f figcaption p{margin-top:6px;font:340 clamp(17px,1.5vw,22px)/1.3 var(--titel)}
+.kw-09-magazin{display:flex;justify-content:center;gap:clamp(10px,1.6vw,24px);margin-top:clamp(30px,5vh,52px);padding:24px 0 6px;border-top:1px solid var(--linie)}
+.kw-09-dia{flex:0 0 clamp(96px,11vw,150px);transition:transform .55s var(--k)}
+.kw-09-dia.an{transform:translateY(-18px)}
+.kw-09-rahmen{position:relative;display:block;aspect-ratio:1;padding:17% 13% 13%;background:#ECE6DC;border-radius:5px;box-shadow:0 12px 26px rgba(0,0,0,.45)}
+.kw-09-schrift{position:absolute;top:4.5%;left:0;right:0;text-align:center;font-size:9.5px;letter-spacing:.1em;color:#3A3845}
+.kw-09-dia.an .kw-09-rahmen{box-shadow:0 0 0 2px var(--kerze),0 12px 26px rgba(0,0,0,.45)}
+
+/* ---------- 10 Das Sammelalbum */
+.kw-10-seite{margin-top:clamp(30px,6vh,60px);background:#EEE5D3;color:#26242D;padding:clamp(24px,4vw,64px);border-radius:6px;box-shadow:inset 0 0 0 1px rgba(38,36,45,.12),0 30px 60px -40px rgba(38,36,45,.5)}
+.kw-10-kopf{text-align:center;font-size:11px;letter-spacing:.22em;color:#5B5763;margin-bottom:clamp(24px,4vh,44px)}
+.kw-10-felder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,5vh,56px) clamp(22px,3.4vw,56px)}
+.kw-10-feld{padding:12px;border:1px dashed rgba(38,36,45,.3);border-radius:4px}
+.kw-10-bild{background:#fff;padding:8px 8px 0;rotate:var(--r);box-shadow:0 16px 28px -14px rgba(38,36,45,.5)}
+.kw-10-bild img{aspect-ratio:4/5;height:auto}
+.kw-10-bild figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:8px -8px 0;padding:9px 12px;background:#26242D;color:#FAF4F4}
+.kw-10-bild b{font:380 clamp(17px,1.4vw,21px)/1 var(--titel)}
+.kw-10-bild .mono{font-size:10px;color:var(--kerze-hell)}
+.kw-10-s{margin-top:16px;font-size:14.5px;line-height:1.5;color:#3A3845}
+
+/* ---------- 11 Der Fotoautomat */
+.kw-11-paare{display:grid;gap:clamp(50px,9vh,110px);margin-top:clamp(36px,7vh,80px)}
+.kw-11-paar{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(30px,6vw,110px);align-items:center;max-width:1020px;width:100%;margin:0 auto}
+.kw-11-paar.rechts{grid-template-columns:minmax(0,1fr) auto}
+.kw-11-paar.rechts .kw-11-streifen{order:2}
+.kw-11-streifen{width:clamp(190px,17vw,250px);display:grid;gap:10px;padding:12px 12px 44px;background:#F6F2EC;rotate:var(--r);transform:translateY(calc((var(--p,.5) - .5) * -90px));box-shadow:0 34px 60px -24px rgba(0,0,0,.7)}
+.kw-11-streifen figure{aspect-ratio:1/1.08;overflow:hidden}
+.kw-11-text p{padding:2.4vh 0;border-top:1px solid var(--linie);font:340 clamp(20px,1.8vw,28px)/1.3 var(--titel)}
+.kw-11-text .kw-w{margin-bottom:8px}
+
+/* ---------- 12 Die grossen Wörter */
+.kw-12-liste{margin-top:clamp(30px,6vh,60px);border-top:1px solid var(--linie)}
+.kw-12-z{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,300px);gap:30px;align-items:center;padding:1.2vh 0;border-bottom:1px solid var(--linie);cursor:default}
+.kw-12-wort{font:340 clamp(54px,8.6vw,142px)/1.02 var(--titel);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;transition:color .4s}
+.kw-12-z:hover .kw-12-wort{color:var(--kerze)}
+.kw-12-s{font-size:15px;line-height:1.5;color:var(--fg2)}
+.kw-12-handy{display:none}
+.kw-12-folger{position:fixed;left:0;top:0;z-index:40;width:clamp(220px,19vw,310px);aspect-ratio:4/5;pointer-events:none;opacity:0;transition:opacity .35s;will-change:transform}
+.kw-12-folger.an{opacity:1}
+.kw-12-folger figure{position:absolute;inset:0;overflow:hidden;border-radius:var(--r);opacity:0;transition:opacity .35s}
+.kw-12-folger figure.an{opacity:1}
+
+/* ---------- 13 Das Massband */
+.kw-13-roll{margin-top:clamp(30px,6vh,60px)}
+.kw-13-band{display:flex;gap:var(--fuge);height:clamp(300px,52vh,560px)}
+.kw-13-band figure{flex:var(--w) 1 0;min-width:0;overflow:hidden;border-radius:3px}
+.kw-13-band img{transform:translateX(calc((var(--p,.5) - .5) * 8%)) scale(1.12)}
+.kw-13-mass{display:flex;gap:var(--fuge);height:44px;margin-top:10px}
+.kw-13-mass span{flex:var(--w) 1 0;min-width:0;border-left:2px solid #26242D;background:repeating-linear-gradient(90deg,rgba(38,36,45,.6) 0 1px,transparent 1px 10px) bottom/100% 34% no-repeat,var(--kerze-hell);padding:4px 0 0 7px}
+.kw-13-mass b{font:400 18px/1 var(--titel);color:#26242D}
+.kw-13-texte{display:flex;gap:var(--fuge);margin-top:16px}
+.kw-13-texte p{flex:var(--w) 1 0;min-width:0;padding-right:14px;font-size:14px;line-height:1.45}
+.kw-13-texte .kw-w{margin-bottom:6px;font-size:10.5px}
+
+/* ---------- 14 Eine Kerze mehr */
+.kw-14{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,90px);align-items:start}
+.kw-14-halt{position:sticky;top:12vh;display:grid;gap:clamp(36px,7vh,70px)}
+.kw-14-reihe{display:flex;align-items:flex-end;justify-content:space-around;height:230px;padding:0 4%;border-bottom:4px solid #3A3845}
+.kw-14-k{position:relative;display:flex;flex-direction:column;align-items:center;width:26px}
+.kw-14-flamme{display:block;width:14px;height:27px;margin-bottom:9px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(circle at 50% 72%,#FFF6DA 0 22%,#F5A689 52%,#EF7649);transform-origin:50% 100%;opacity:0;transform:scale(.3);transition:opacity .5s,transform .8s var(--k)}
+.kw-14-schein{position:absolute;left:50%;top:-58px;width:170px;height:170px;margin-left:-85px;background:radial-gradient(circle,rgba(239,118,73,.34),rgba(239,118,73,0) 66%);opacity:0;transition:opacity 1s;pointer-events:none}
+.kw-14-wachs{position:relative;width:26px;height:calc(var(--h) * 1.7px);border-radius:4px 4px 1px 1px;background:linear-gradient(90deg,#E6DACA,#FFF8EE 42%,#D6C8B6)}
+.kw-14-wachs::before{content:"";position:absolute;left:50%;top:-8px;width:2px;height:9px;margin-left:-1px;background:#1E1C22}
+.kw-14-k b{position:absolute;bottom:-34px;font-weight:400;font-size:11px;color:var(--fg2)}
+.kw-14-k.an .kw-14-flamme{opacity:1;transform:none}
+.kw-14-k.an .kw-14-schein{opacity:1}
+.kw-14-liste{display:grid;gap:clamp(70px,13vh,140px);padding:2vh 0 12vh}
+.kw-14-m{width:88%}
+.kw-14-m.rechts{margin-left:12%}
+.kw-14-m figure{aspect-ratio:3/2;overflow:hidden;border-radius:var(--r);margin-bottom:16px}
+.kw-14-s{margin-top:8px;font:340 clamp(21px,1.9vw,29px)/1.25 var(--titel);max-width:28ch}
+
+/* ---------- 15 Die Fassade bei Nacht */
+.kw-15-haus{max-width:980px;margin:clamp(30px,6vh,60px) auto 0;padding:clamp(22px,3vw,46px) clamp(22px,3vw,46px) 0;border-radius:4px 4px 0 0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 21px),#26242C;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.kw-15-schild{text-align:center;margin-bottom:clamp(20px,4vh,40px);font-size:clamp(13px,1.3vw,17px);letter-spacing:.32em;color:var(--kerze-hell)}
+.kw-15-fenster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vh,40px) clamp(18px,3vw,42px)}
+.kw-15-glas{position:relative;aspect-ratio:3/4;overflow:hidden;border:7px solid #3A3845;box-shadow:0 0 0 2px #19181E}
+.kw-15-glas::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,transparent calc(50% - 3px),#3A3845 calc(50% - 3px) calc(50% + 3px),transparent calc(50% + 3px)),linear-gradient(transparent calc(36% - 3px),#3A3845 calc(36% - 3px) calc(36% + 3px),transparent calc(36% + 3px))}
+.kw-15-dunkel{position:absolute;inset:0;background:#0C0B10;opacity:.8;transition:opacity 1.4s var(--k)}
+.kw-15-f.an .kw-15-dunkel{opacity:0}
+.kw-15-f figcaption{padding:14px 0 6px}
+.kw-15-f figcaption p{margin-top:6px;font-size:14.5px;line-height:1.45;color:var(--fg2)}
+.kw-15-strasse{margin:clamp(22px,4vh,40px) calc(-1 * clamp(22px,3vw,46px)) 0;padding:16px;text-align:center;font-size:11.5px;letter-spacing:.26em;background:#0F0E13;border-top:4px solid #3A3845}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .kw-01-auf{grid-template-columns:1fr}
+  .kw-01-spalten{grid-template-columns:1fr 1fr;gap:26px 0}
+  .kw-01-m{padding:0 0 0 14px}.kw-01-m:nth-child(odd){padding:0 14px 0 0;border-left:0}
+  .kw-01-kopf .mono{font-size:9.5px}
+  .kw-02-buehne{grid-template-columns:1fr}
+  .kw-02-texte{min-height:6.6em}
+  .kw-03{height:auto}
+  .kw-03-halt{position:static;height:auto}
+  .kw-03-spur{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--rand);transform:none!important;padding-top:20px;scrollbar-width:none}
+  .kw-03-spur>*{scroll-snap-align:start;flex:0 0 auto}
+  .kw-03-handy{display:block;padding:0 var(--rand) 8px}
+  .kw-03-anfang{display:none}
+  .kw-03-m{width:72vw}
+  .kw-03-ende{width:60vw;padding:0 0 180px}
+  .kw-03-holz{height:calc(170px + 5vh)}
+  .kw-04-koepfe{display:none}
+  .kw-04-feld{margin-top:32px}
+  .kw-04-feld::before,.kw-04-linie{left:22px}
+  .kw-04-z{grid-template-columns:44px minmax(0,1fr)}
+  .kw-04-j{grid-column:1;align-self:start;margin-top:10px;writing-mode:vertical-rl;rotate:180deg;padding:6px 0}
+  .kw-04-z.bar .kw-04-k,.kw-04-z.abend .kw-04-k{grid-column:2}
+  .kw-04-seite{display:inline}
+  .kw-05{grid-template-columns:1fr}
+  .kw-05-bild{display:none}
+  .kw-05-gang{opacity:1}
+  .kw-05-klein{display:block;aspect-ratio:16/10;overflow:hidden;margin-bottom:16px}
+  .kw-06-r,.kw-06-r.rechts{grid-template-columns:1fr}
+  .kw-06-r.rechts .kw-06-zahl{order:0}
+  .kw-06-zahl{font-size:36vw}
+  .kw-07-auf{aspect-ratio:4/3}
+  .kw-07-a{grid-template-columns:1fr;gap:6px}
+  .kw-07-zwei,.kw-07-zitat,.kw-07-breit{margin-left:0}
+  .kw-08-tisch{grid-template-columns:1fr}
+  .kw-09-leinwand{aspect-ratio:4/5}
+  .kw-09-f figcaption{max-width:none;right:0}
+  .kw-09-magazin{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-top:30px}
+  .kw-09-dia{flex-basis:96px}
+  .kw-10-felder{grid-template-columns:1fr 1fr;gap:22px 14px}
+  .kw-10-feld{padding:8px}
+  .kw-10-s{font-size:13.5px}
+  .kw-11-paar,.kw-11-paar.rechts{grid-template-columns:1fr;justify-items:center}
+  .kw-11-paar.rechts .kw-11-streifen{order:0}
+  .kw-11-streifen{width:min(240px,62vw)}
+  .kw-12-z{grid-template-columns:1fr;gap:8px;padding:22px 0}
+  .kw-12-wort{font-size:15vw}
+  .kw-12-handy{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);margin-top:6px}
+  .kw-12-folger{display:none}
+  .kw-13-roll{overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--rand));padding-inline:var(--rand)}
+  .kw-13-innen{width:260vw}
+  .kw-13-band{height:420px}
+  .kw-f14>.vi{overflow-x:clip}
+  .kw-14{grid-template-columns:1fr;gap:0}
+  .kw-14-halt{display:contents}
+  .kw-14-reihe{position:sticky;top:58px;z-index:3;height:150px;margin:28px calc(-1 * var(--rand)) 0;padding:0 8% 0;background:var(--bg);box-shadow:0 34px 0 var(--bg)}
+  .kw-14-wachs{height:calc(var(--h) * 1px);width:20px}
+  .kw-14-k{width:20px}
+  .kw-14-k b{bottom:-30px}
+  .kw-14-liste{padding-top:70px}
+  .kw-14-m,.kw-14-m.rechts{width:100%;margin-left:0}
+  .kw-15-fenster{grid-template-columns:1fr 1fr}
+}
+@media (hover:none){.kw-12-folger{display:none}.kw-12-handy{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);margin-top:6px}}

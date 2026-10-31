@@ -1,0 +1,284 @@
+/* Culinarium · Der Weg, 20 weitere Fassungen (nur Wahlseite). Baut auf weg-wahl.css auf. Ein bewegter Moment je Fassung, nur transform und opacity. */
+.wg-d.eins{grid-template-columns:1fr;margin-top:14px}
+
+/* 1 Der Bon am Pass */
+.wh01{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(28px,4.5vw,80px);align-items:start}
+.wh01-l{align-self:center}
+.wh01-m{position:relative;padding-top:18px;display:flex;justify-content:center}
+.wh01-schiene{position:absolute;top:0;left:-40px;right:-40px;height:14px;border-radius:3px;background:linear-gradient(#C9CCD2,#7D818A);box-shadow:0 6px 14px rgba(0,0,0,.5)}
+.wh01-bon{position:relative;width:clamp(260px,22vw,330px);padding:26px 24px 40px;background:#FBF8F1;color:#26242D;font:400 13px/1.55 var(--mono);text-transform:uppercase;letter-spacing:.04em;box-shadow:0 30px 50px -26px rgba(0,0,0,.9)}
+html.js:not(.ruhig) .wg.wh .wh01-bon.auf{transform:translateY(-34px);transition:transform 1.5s var(--k) .2s}
+html.js .wg.wh .wh01-bon.auf.da{transform:none}
+.wh01-bon p{display:flex;justify-content:space-between;gap:12px}
+.wh01-bon p:nth-child(-n+3){justify-content:center;font-size:14px}
+.wh01-bon b{font-weight:400}
+.wh01-strich{height:0;margin:10px 0;border-top:1px dashed rgba(38,36,45,.45)}
+.wh01-ende{justify-content:center !important;margin-top:14px;color:var(--kerze-tief)}
+.wh01-b{aspect-ratio:3/4.2}
+
+/* 2 Die Tafel von oben */
+.wh02-kopf{text-align:center;margin-bottom:40px}
+.wh02-raum{display:grid;grid-template-columns:minmax(220px,.42fr) 1fr;gap:10px;align-items:stretch}
+.wh02-b{min-height:420px}
+.wh02-tisch{position:relative;border-radius:var(--r);background:linear-gradient(90deg,#3B271B,#4A3122 40%,#3B271B);padding:34px 4%;display:flex;flex-direction:column;justify-content:space-between;gap:24px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.wh02-reihe{display:flex;justify-content:space-between}
+.wh02-teller{width:clamp(38px,4.2vw,62px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#F6F0E8 0 52%,#E4DCD0 53% 64%,#F6F0E8 65%);box-shadow:0 6px 12px rgba(0,0,0,.4)}
+.wh02-kerzen{display:flex;justify-content:space-around;padding:0 6%}
+.wh02-kerzen i{position:relative;width:14px;height:14px;border-radius:50%;background:#FFE7B8}
+.wh02-kerzen i::after{content:"";position:absolute;inset:-26px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,190,110,.55),transparent);animation:wh02 2.6s ease-in-out calc(var(--i)*-.6s) infinite alternate}
+@keyframes wh02{from{opacity:.55;transform:scale(.9)}to{opacity:1;transform:scale(1.1)}}
+html.ruhig .wh02-kerzen i::after{animation:none}
+.wh02-karten{position:absolute;inset:0;pointer-events:none}
+.wh02-karte{position:absolute;width:clamp(130px,12vw,180px);padding:12px 14px;background:var(--papier);color:var(--tinte);border-radius:3px;box-shadow:0 14px 24px -12px rgba(0,0,0,.8);font:340 15px/1.3 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36}
+.wh02-karte .mono{font-size:10px;color:var(--kerze-tief);margin-bottom:6px}
+.wh02-karte[style*="--k:0"]{left:8%;top:18%;rotate:-3deg}
+.wh02-karte[style*="--k:1"]{left:38%;top:12%;rotate:2deg}
+.wh02-karte[style*="--k:2"]{left:30%;bottom:16%;rotate:-2deg}
+.wh02-karte[style*="--k:3"]{right:7%;bottom:20%;rotate:3deg}
+.wh02-unter{display:flex;justify-content:center}
+
+/* 3 Der Aufsteller */
+.wh03{display:grid;grid-template-columns:1.25fr .9fr;align-items:end;gap:clamp(28px,4vw,70px)}
+.wh03-b{grid-column:1;grid-row:1;height:clamp(560px,82vh,860px)}
+.wh03-tafel{grid-column:1;grid-row:1;justify-self:end;margin-right:clamp(16px,3vw,44px);margin-bottom:-24px;z-index:2;width:clamp(280px,26vw,380px);position:relative;padding-bottom:70px}
+.wh03-schiefer{position:relative;z-index:1;padding:30px 26px;background:#262A2B;border:12px solid #5A3E2B;border-radius:4px;color:#F1EEE6;text-align:center;box-shadow:0 30px 50px -20px rgba(0,0,0,.9);display:flex;flex-direction:column;gap:12px}
+.wh03-klein{font:500 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:rgba(241,238,230,.75)}
+.wh03-gross{font:340 clamp(34px,3vw,46px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.wh03-kreide{display:block;height:3px;margin:2px 18%;background:rgba(241,238,230,.85);border-radius:2px;transform-origin:left;transform:scaleX(.2);transition:transform 1.4s var(--k) .5s}
+.wh03-tafel.da .wh03-kreide{transform:none}
+.wh03-z{font:340 18px/1.3 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36}
+.wh03-bein{position:absolute;bottom:0;width:12px;height:100px;background:#4A3323;border-radius:2px}
+.wh03-bein.a{left:22%;rotate:8deg}.wh03-bein.b{right:22%;rotate:-8deg}
+.wh03-text{padding-bottom:20px}
+
+/* 4 Die Tür geht auf */
+.wh04{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,110px);align-items:center}
+.wh04-r{display:flex;flex-direction:column;align-items:center;gap:22px}
+.wh04-rahmen{position:relative;width:clamp(260px,24vw,360px);aspect-ratio:1/2;padding:14px 14px 0;background:#5B3A2E;border-radius:4px 4px 0 0;perspective:1400px;box-shadow:0 40px 70px -30px rgba(0,0,0,.9)}
+.wh04-rahmen>img{position:absolute;left:14px;right:14px;top:14px;bottom:0;width:calc(100% - 28px);height:calc(100% - 14px)}
+.wh04-tuer{position:absolute;left:14px;right:14px;top:14px;bottom:0;background:linear-gradient(90deg,#17221F,#1F2D29 50%,#17221F);box-shadow:inset 0 0 0 10px #142019,inset 0 0 0 11px rgba(255,255,255,.06);transform-origin:left;transition:transform 1.6s var(--k) .5s;display:flex;flex-direction:column;align-items:center;padding-top:22%}
+.wh04-rahmen.da .wh04-tuer{transform:rotateY(-104deg)}
+.wh04.zu .wh04-tuer{transform:none;transition-delay:0s}
+.wh04-nr{font:340 54px/1 var(--titel);color:#D9B56A;font-variation-settings:"SOFT" 100,"opsz" 144;padding:6px 18px;border:2px solid #D9B56A;border-radius:4px}
+.wh04-griff{position:absolute;right:12%;top:52%;width:10px;height:56px;border-radius:5px;background:linear-gradient(#E5C57D,#9C7A3A)}
+.wh04-schild{position:absolute;bottom:14%;font:500 9.5px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:rgba(241,238,230,.55)}
+.wh04-knopf{font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--fg2);border-bottom:1px solid var(--linie);padding-bottom:5px}
+
+/* 5 Die Hausnummer */
+.wh05{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,70px);align-items:center}
+.wh05-zahl{font:400 clamp(260px,34vw,560px)/.8 var(--titel);letter-spacing:-.06em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;background-position:50% 55%;background-size:cover;-webkit-text-fill-color:transparent;-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.wh05-str{font:500 12px/1 var(--etikett);letter-spacing:.24em;text-transform:uppercase;color:var(--kerze-hell);margin-bottom:16px}
+
+/* 6 Die Leine */
+.wh06-leine{position:relative;display:flex;justify-content:space-between;gap:14px;padding:30px var(--rand) 0;margin-top:30px}
+.wh06-schnur{position:absolute;left:0;right:0;top:20px;width:100%;height:60px;fill:none;stroke:rgba(250,244,244,.45);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.wh06-f{position:relative;flex:1;max-width:250px;margin-top:var(--y);transform-origin:50% 0}
+html.js:not(.ruhig) .wg.wh .wh06-f.auf{transform:rotate(calc(var(--r)*3));transition:transform 2.2s var(--feder) calc(var(--i)*120ms)}
+html.js .wg.wh .wh06-f.auf.da{transform:rotate(var(--r))}
+.wh06-f figure{aspect-ratio:3/4;border:7px solid var(--papier);border-radius:2px !important}
+.wh06-klammer{position:absolute;left:50%;top:-16px;z-index:2;width:12px;height:34px;translate:-50% 0;border-radius:3px;background:linear-gradient(90deg,#B78B5A,#D9AE79,#B78B5A)}
+.wh06-f .mono{margin-top:10px;text-align:center;font-size:11px}
+.wh06-unter{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:30px}
+
+/* 7 Der Bierdeckel */
+.wh07{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,110px);align-items:center}
+.wh07-l{position:relative;padding-bottom:60px}
+.wh07-b{aspect-ratio:4/4.6}
+.wh07-deckel{position:absolute;right:-9%;bottom:0;width:clamp(200px,19vw,290px);aspect-ratio:1;border-radius:50%;box-shadow:0 26px 40px -16px rgba(0,0,0,.85);will-change:transform}
+.wh07-deckel svg{display:block;width:100%;height:100%}
+.wh07-deckel .rand{fill:var(--papier)}
+.wh07-deckel .innen{fill:none;stroke:var(--kerze);stroke-width:2}
+.wh07-deckel text{fill:var(--tinte);font:600 15.5px var(--etikett);letter-spacing:.14em}
+.wh07-mitte{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--tinte);text-align:center}
+.wh07-mitte b{font:340 64px/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--kerze-tief)}
+.wh07-mitte span{font:400 11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+
+/* 8 Ein Satz mit Bildern */
+.wh08-et{color:var(--kerze-hell);margin-bottom:24px}
+.wg .wh08-satz{max-width:none;margin:0;color:var(--fg);text-shadow:none;font:320 clamp(34px,4.3vw,72px)/1.18 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.wh08-bild{display:inline-block;position:relative;width:1.5em;height:.95em;vertical-align:-.12em;overflow:hidden;border-radius:6px;margin:0 .06em}
+.wh08-bild img{position:absolute;inset:0}
+.wh08-unter{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:50px}
+
+/* 9 Der Wegweiser */
+.wh09{display:grid;grid-template-columns:.8fr 1fr .9fr;gap:clamp(24px,4vw,70px);align-items:center}
+.wh09-b{aspect-ratio:3/4.3}
+.wh09-pfosten{position:relative;display:flex;flex-direction:column;gap:22px;padding:30px 0 80px}
+.wh09-stab{position:absolute;left:50%;top:0;bottom:0;width:16px;translate:-50% 0;background:linear-gradient(90deg,#3F2C20,#5A3F2D,#3F2C20);border-radius:3px}
+.wh09-brett{position:relative;display:flex;flex-direction:column;gap:5px;padding:16px 46px 16px 24px;width:92%;color:var(--tinte);background:var(--papier);text-decoration:none;rotate:var(--r);transform-origin:50% 50%;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 50%,calc(100% - 28px) 100%,0 100%)}
+.wh09-brett.links{align-self:flex-end;padding:16px 24px 16px 46px;text-align:right;clip-path:polygon(28px 0,100% 0,100% 100%,28px 100%,0 50%)}
+.wh09-brett.kerze{background:var(--kerze);color:#fff}
+.wh09-brett.schiefer{background:#3A3845;color:var(--fg)}
+.wh09-brett.dunkel{background:#0F0E13;color:var(--fg);box-shadow:inset 0 0 0 1px var(--linie)}
+.wh09-brett b{font:340 clamp(20px,1.8vw,28px)/1.05 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.wh09-brett span{font:400 11.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;opacity:.85}
+html.js:not(.ruhig) .wg.wh .wh09-brett.auf{transform:rotate(-7deg) translateY(30px);transition:transform 1.8s var(--feder) calc(var(--i)*140ms)}
+html.js .wg.wh .wh09-brett.auf.links{transform:rotate(7deg) translateY(30px)}
+html.js .wg.wh .wh09-brett.auf.da{transform:none}
+.wh09-text .wg-tel{display:inline-block;margin-top:24px}
+
+/* 10 Die Postkarte */
+.wh10{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,90px);align-items:center}
+.wh10-karten{position:relative;min-height:clamp(520px,47vw,700px)}
+.wh10-vorn{position:absolute !important;left:0;top:0;width:56%;aspect-ratio:3/2;border:10px solid var(--papier);border-radius:3px !important;rotate:-4deg;box-shadow:0 30px 50px -24px rgba(0,0,0,.9);z-index:2}
+.wh10-vorn span{position:absolute;left:14px;bottom:12px;font:340 22px/1 var(--titel);color:#fff;font-variation-settings:"SOFT" 100,"opsz" 48;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.wh10-hinten{position:absolute;right:0;bottom:0;width:72%;aspect-ratio:3/2;padding:24px;background:var(--papier);color:var(--tinte);border-radius:3px;rotate:3deg;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;box-shadow:0 30px 50px -24px rgba(0,0,0,.9)}
+html.js:not(.ruhig) .wg.wh .wh10-hinten.auf{transform:translate(-26%,-18%);transition:transform 1.6s var(--k) .5s}
+html.js .wg.wh .wh10-hinten.auf.da{transform:none}
+.wh10-gruss{font:340 clamp(15px,1.2vw,18px)/1.45 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36;border-right:1px solid rgba(42,40,51,.18);padding-right:18px;display:flex;flex-direction:column;justify-content:space-between}
+.wh10-zeit{font:400 10.5px/1.5 var(--mono);text-transform:uppercase;color:var(--kerze-tief)}
+.wh10-an{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font:400 14px/1.6 var(--text)}
+.wh10-an p{border-bottom:1px solid rgba(42,40,51,.22)}
+.wh10-marke{position:absolute;right:0;top:0;width:52px;height:62px;display:grid;place-items:center;background:var(--kerze);color:#fff;font:340 30px/1 var(--titel);outline:2px dashed var(--papier);outline-offset:-5px}
+.wh10-poststempel{position:absolute;right:38px;top:34px;width:70px;height:70px;border-radius:50%;border:2px solid rgba(42,40,51,.45);display:grid;place-items:center;text-align:center;font:400 9.5px/1.2 var(--mono);text-transform:uppercase;color:rgba(42,40,51,.6);rotate:-14deg}
+
+/* 11 Die Uhr */
+.wh11{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,110px);align-items:center}
+.wh11-uhr{display:block;width:min(100%,560px);margin:0 auto}
+.wh11-uhr .blatt{fill:#1F1D25;stroke:var(--linie)}
+.wh11-uhr .strich{stroke:rgba(250,244,244,.35);stroke-width:1.5}
+.wh11-uhr text{fill:rgba(250,244,244,.6);font:400 11px var(--mono);text-anchor:middle}
+.wh11-uhr text.tag{fill:var(--fg);font:340 14px var(--titel)}
+.wh11-uhr .ring{fill:none;stroke:var(--papier);stroke-width:12;stroke-linecap:round}
+.wh11-uhr .cul{fill:var(--kerze);stroke:#1F1D25;stroke-width:3}
+.wh11-uhr .mitte{fill:var(--kerze)}
+.wh11-zeiger{transform-origin:200px 200px;transform:rotate(0deg);transition:transform 2.4s var(--k) .4s}
+.wh11-zeiger line{stroke:var(--kerze);stroke-width:3;stroke-linecap:round}
+.wh11-l.da .wh11-zeiger{transform:rotate(285deg)}
+.wh11-leg{display:flex;justify-content:center;gap:26px;margin-top:16px;font:500 11px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--fg2)}
+.wh11-leg span::before{content:"";display:inline-block;width:22px;height:8px;border-radius:4px;margin-right:10px;vertical-align:1px;background:var(--papier)}
+.wh11-leg .c::before{width:10px;height:10px;border-radius:50%;background:var(--kerze)}
+
+/* 12 Der Stempel */
+.wh12{display:grid;grid-template-columns:.8fr 1.2fr}
+.wh12-b{border-radius:var(--r) 0 0 var(--r) !important;min-height:560px}
+.wh12-papier{background:var(--papier);color:var(--tinte);border-radius:0 var(--r) var(--r) 0;padding:clamp(28px,4vw,60px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,3.5vw,56px);align-items:center;--fg:var(--tinte);--fg2:var(--tinte2);--linie:rgba(42,40,51,.18)}
+.wh12-papier .wg-tel{color:var(--tinte)}
+.wh12-stempel{width:clamp(200px,17vw,260px);aspect-ratio:1;border-radius:50%;border:5px solid var(--kerze-tief);box-shadow:inset 0 0 0 6px var(--papier),inset 0 0 0 8px var(--kerze-tief);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:var(--kerze-tief);rotate:-9deg;opacity:.9}
+html.js:not(.ruhig) .wg.wh .wh12-stempel.auf{transform:scale(1.3);opacity:.5;transition:transform .7s cubic-bezier(.5,0,.75,0) .4s,opacity .7s ease .4s}
+html.js .wg.wh .wh12-stempel.auf.da{transform:none;opacity:.9}
+.wh12-ring{font:600 10.5px/1.2 var(--etikett);letter-spacing:.18em;text-transform:uppercase;max-width:80%}
+.wh12-gross{font:400 clamp(24px,2vw,32px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48;padding:8px 0;border-block:2px solid var(--kerze-tief)}
+
+/* 13 Bei Kerzenlicht */
+.wh13{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding-block:20px}
+.wh13-schein{position:absolute;left:50%;top:20%;width:min(900px,90vw);aspect-ratio:1;translate:-50% -30%;border-radius:50%;background:radial-gradient(closest-side,rgba(239,140,80,.28),rgba(239,118,73,.08) 55%,transparent);animation:wh13 4s ease-in-out infinite alternate;pointer-events:none}
+@keyframes wh13{from{opacity:.65;transform:scale(.94)}to{opacity:1;transform:scale(1.04)}}
+html.ruhig .wh13-schein{animation:none}
+.wh13-b{position:relative;width:clamp(200px,20vw,300px);aspect-ratio:4/5;margin-bottom:34px}
+.wh13 .wg-d{width:100%;text-align:left;position:relative}
+.wh13 .wg-tat{justify-content:center}
+
+/* 14 Die Garderobenmarke */
+.wh14{display:grid;grid-template-columns:1fr auto .8fr;gap:clamp(28px,4.5vw,80px);align-items:center}
+.wh14-m{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:10px}
+.wh14-haken{width:46px;height:46px;border:6px solid #8C8F96;border-top-color:transparent;border-right-color:transparent;border-radius:50%;rotate:-45deg}
+.wh14-marke{position:relative;margin-top:-10px;width:clamp(190px,16vw,240px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2D48C,#C79A45 55%,#8E6A26);box-shadow:inset 0 0 0 6px rgba(120,86,30,.55),0 26px 40px -16px rgba(0,0,0,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#3D2A0E;transform-origin:50% -14px}
+html.js:not(.ruhig) .wg.wh .wh14-marke.auf{transform:none}
+html.js .wg.wh .wh14-marke.auf.da{animation:wh14 3.2s ease-out .3s both}
+@keyframes wh14{0%{transform:rotate(14deg)}25%{transform:rotate(-9deg)}50%{transform:rotate(5deg)}75%{transform:rotate(-2deg)}100%{transform:none}}
+.wh14-loch{position:absolute;top:12px;width:18px;height:18px;border-radius:50%;background:var(--bg);box-shadow:inset 0 2px 3px rgba(0,0,0,.6)}
+.wh14-marke b{font:400 clamp(72px,6.4vw,100px)/.9 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.wh14-klein{font:600 9.5px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase}
+.wh14-b{aspect-ratio:3/4.4}
+
+/* 15 Die echte Karte */
+.wh15{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,90px);align-items:center}
+.wh15-karte{height:clamp(480px,74vh,780px)}
+.wh15-karte iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(.9) hue-rotate(180deg) saturate(.55) brightness(.95)}
+.wh15-r{position:relative}
+.wh15-b{margin-top:30px !important;width:clamp(100px,9vw,130px);aspect-ratio:3/4;border:5px solid var(--papier);border-radius:3px !important;rotate:4deg}
+
+/* 16 Der Vorhang */
+.wh16-kopf{text-align:center;margin-bottom:36px}
+.wh16-buehne{position:relative;height:clamp(460px,72vh,780px);overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:#0F0E13}
+.wh16-buehne>img{position:absolute;inset:0}
+.wh16-v{position:absolute;top:0;bottom:0;width:51%;background:repeating-linear-gradient(90deg,#2E2C38 0 22px,#3E3B4A 30px,#2A2833 44px);box-shadow:inset 0 -40px 60px rgba(0,0,0,.45);transition:transform 2.2s var(--k) .4s}
+.wh16-v.l{left:0}.wh16-v.r{right:0}
+.wh16-buehne.da .wh16-v.l{transform:translateX(-86%)}
+.wh16-buehne.da .wh16-v.r{transform:translateX(86%)}
+html.js:not(.ruhig) .wg.wh .wh16-buehne.auf{transform:none}
+.wh16-kante{padding:8px clamp(18px,2.4vw,36px) 0;border-top:6px solid #5A3E2B;background:#1F1D25;border-radius:0 0 var(--r) var(--r)}
+.wh16-kante .wg-d{margin-top:16px}
+.wh16-kante .wg-tat{padding-bottom:26px}
+
+/* 17 Die Klingelleiste */
+.wh17{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,110px);align-items:center}
+.wh17-platte{margin-top:28px;max-width:440px;padding:16px;border-radius:6px;background:linear-gradient(135deg,#D7B676,#A9813E);box-shadow:0 24px 40px -20px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.4);display:flex;flex-direction:column;gap:10px}
+.wh17-zeile{display:flex;align-items:center;gap:16px;padding:8px 10px 8px 8px;border-radius:4px;background:rgba(61,42,14,.12)}
+.wh17-name{flex:1;display:flex;flex-direction:column;gap:3px;padding:10px 14px;background:#FBF6EA;color:#2A2833;border-radius:2px;box-shadow:inset 0 1px 3px rgba(0,0,0,.25)}
+.wh17-name b{font:340 19px/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 36}
+.wh17-name em{font:400 10.5px/1 var(--mono);font-style:normal;text-transform:uppercase;color:#6A6572}
+.wh17-zeile i{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#EFE7D4,#9B9586);box-shadow:0 3px 0 #6E5420,0 4px 8px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s}
+.wh17-zeile[aria-pressed=true] i{transform:translateY(3px);box-shadow:0 0 0 #6E5420,0 0 0 5px rgba(239,118,73,.55)}
+.wh17-r{position:relative;display:grid}
+.wh17-anzeige{grid-area:1/1;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.wh17[data-klingel=bar] [data-anzeige=bar],.wh17[data-klingel=cul] [data-anzeige=cul],.wh17[data-klingel=weg] [data-anzeige=weg]{opacity:1;pointer-events:auto}
+.wh17-anzeige figure{aspect-ratio:4/4.4}
+.wh17-anzeige p{margin-top:16px;font:340 21px/1.35 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+
+/* 18 Die Fensterfront */
+.wh18-kopf{margin-bottom:36px}
+.wh18-front{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px;background:#0B0A0E;border-radius:6px 6px 0 0;box-shadow:inset 0 0 0 2px #2A2833}
+.wh18-s{aspect-ratio:3/4.4;border-radius:2px !important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.wh18-s::before{content:"";position:absolute;inset:auto 0 32% 0;height:10px;background:#0B0A0E;z-index:2}
+.wh18-dunkel{position:absolute;inset:0;background:#0B0A0E;opacity:.82;transition:opacity 1.4s ease calc(.5s + var(--i)*450ms)}
+.wh18-front.da .wh18-dunkel{opacity:0}
+.wh18-bank{padding:4px 24px 6px;background:var(--papier);color:var(--tinte);border-radius:0 0 6px 6px;box-shadow:0 20px 30px -18px rgba(0,0,0,.8);--linie:rgba(42,40,51,.16)}
+.wh18-bank .wg-d{grid-template-columns:repeat(3,1fr);margin:0}
+.wh18-bank .wg-d div{border-top:0}
+.wh18-bank dt{color:var(--kerze-tief)}
+
+/* 19 Die Magazinseite */
+.wh19-dach{color:var(--kerze-hell);margin-bottom:18px}
+.wh19-seite{display:grid;grid-template-columns:1.25fr 1fr;grid-template-areas:"spalten bild" "spalten kasten";gap:30px clamp(28px,4vw,64px);margin-top:36px;padding-top:30px;border-top:1px solid var(--linie)}
+.wh19-spalten{grid-area:spalten;columns:2;column-gap:36px;font-size:16.5px;line-height:1.65;color:var(--fg2)}
+.wh19-spalten p{margin:0 0 16px}
+.wh19-erst::first-letter{float:left;font:320 82px/.8 var(--titel);color:var(--kerze);margin:6px 10px 0 0;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.wh19-zitat{break-inside:avoid;margin:10px 0 22px;padding:14px 0;border-block:1px solid var(--kerze);color:var(--fg);font:320 28px/1.2 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.wh19-b{grid-area:bild;aspect-ratio:4/3.4;overflow:visible !important;background:none !important}
+.wh19-b>img{position:relative !important;height:100% !important;border-radius:var(--r)}
+.wh19-b figcaption{margin-top:10px;font-size:11px}
+.wh19-kasten{grid-area:kasten;align-self:end;padding:22px 24px;border-radius:var(--r);background:#1F1D25;box-shadow:inset 0 0 0 1px var(--linie)}
+.wh19-kasten .wg-d{margin-top:10px}
+
+/* 20 Die Orgelpfeifen */
+.wh20{display:grid;grid-template-columns:.75fr 2fr;gap:clamp(28px,4vw,70px);align-items:start}
+.wh20-text{position:relative;padding-top:20px}
+.wh20-pfeifen{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-bottom:140px}
+.wh20-p{margin-top:var(--y)}
+.wh20-p>div{will-change:transform}
+.wh20-p figure{aspect-ratio:3/5}
+.wh20-p .wg-d dd{font-size:14.5px}
+
+@media (max-width:860px){
+  .wh01,.wh03,.wh04,.wh05,.wh07,.wh09,.wh10,.wh11,.wh12,.wh12-papier,.wh14,.wh15,.wh17,.wh20,.wh06-unter,.wh08-unter{grid-template-columns:1fr}
+  .wh01-m{order:-1}
+  .wh02-raum{grid-template-columns:1fr}
+  .wh02-b{min-height:0;aspect-ratio:4/3}
+  .wh02-tisch{min-height:420px}
+  .wh02-karte{width:44%}
+  .wh03-b{height:62vh}
+  .wh03-tafel{grid-row:2;justify-self:center;margin:-140px 0 0}
+  .wh04-r{order:-1}
+  .wh05-zahl{font-size:62vw}
+  .wh06-leine{overflow-x:auto;justify-content:flex-start}
+  .wh06-f{flex:0 0 40vw}
+  .wh07-deckel{right:-2%}
+  .wh09-pfosten{padding-bottom:30px}
+  .wh10-karten{min-height:0;display:flex;flex-direction:column;gap:18px}
+  .wh10-vorn{position:relative !important;width:94%}
+  .wh10-hinten{position:relative;align-self:flex-end;width:94%;aspect-ratio:auto;grid-template-columns:1fr;padding:18px;font-size:13px}
+  .wh10-gruss{border-right:0;padding-right:0}
+  .wh10-poststempel{display:none}
+  .wh12-b{border-radius:var(--r) var(--r) 0 0 !important;min-height:0;aspect-ratio:4/3}
+  .wh12-papier{border-radius:0 0 var(--r) var(--r);justify-items:center}
+  .wh15-karte{height:60vh}
+  .wh17-r{order:-1}
+  .wh18-front{gap:6px;padding:6px}
+  .wh18-bank .wg-d{grid-template-columns:1fr}
+  .wh19-seite{grid-template-columns:1fr;grid-template-areas:"bild" "spalten" "kasten"}
+  .wh19-spalten{columns:1}
+  .wh20-pfeifen{grid-template-columns:1fr 1fr;padding-bottom:40px}
+  .wh20-p{margin-top:calc(var(--y)*.3)}
+}

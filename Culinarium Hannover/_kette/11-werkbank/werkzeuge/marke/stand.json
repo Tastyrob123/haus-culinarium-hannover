@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "Le Livre / Das Hausbuch",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "marke",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:43+08:00",
+  "ende": "2026-10-28T15:14+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html?teil=marke",
+  "notiz": "Das Plakatarchiv (Le Livre) fertig, lokal :9085, alle Läufe grün; Band nur als Plakat-Merkmal (Beleg); Station 05 auf Website-Stand nachgezogen (Sicherungen .vor-website-stand-2026-10-28); LIEFERUNG.md im Revier",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

@@ -1,0 +1,24 @@
+{
+  "station": "10",
+  "name": "Speisekarten",
+  "rolle": "Kartenmacher",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "karten.json",
+    "../../_karten/stand/"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

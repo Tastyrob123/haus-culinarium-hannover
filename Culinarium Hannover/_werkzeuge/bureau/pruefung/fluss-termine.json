@@ -1,0 +1,32 @@
+[
+ {
+  "rate": 1,
+  "oeffnen_ms": 114,
+  "tippen_ms": 18,
+  "neuer_abend_ms": 6,
+  "scroll": {
+   "p95_ms": 9.2,
+   "laengster_ms": 9.3
+  }
+ },
+ {
+  "rate": 4,
+  "oeffnen_ms": 479,
+  "tippen_ms": 36,
+  "neuer_abend_ms": 32,
+  "scroll": {
+   "p95_ms": 9.1,
+   "laengster_ms": 9.3
+  }
+ },
+ {
+  "rate": 6,
+  "oeffnen_ms": 730,
+  "tippen_ms": 70,
+  "neuer_abend_ms": 58,
+  "scroll": {
+   "p95_ms": 9.2,
+   "laengster_ms": 17.5
+  }
+ }
+]

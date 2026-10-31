@@ -1,0 +1,211 @@
+/* Dirty Chicken · Wahlseite «Nacht» (dc_nacht_wahl.py), 27.10.2026: 15 Fassungen für den Abschnitt nach dem Essen (Dirty Drinks, Live-Musik, Mannschaft, Film).
+   Gemeinsame Teile (ek, et, ex) kommen aus culinarium.css (Block «Dirty Chicken · Essen»). Nur transform und opacity, nativer Scroll. */
+
+.ess .nx-kopf{margin-bottom:clamp(28px,4.5vh,52px)}
+.ess .nx-kopf.mitte{align-items:center;text-align:center;margin-left:auto;margin-right:auto;max-width:820px}
+.ess .nx-kopf.mitte .ex{margin:0 auto}
+.ess .film,.ess .filmw{box-shadow:0 50px 80px -40px rgba(8,6,14,.9)}
+.filmw{position:relative;margin:0;overflow:clip;border-radius:var(--r);background:var(--lq) center/cover no-repeat}
+.filmw video{display:block;width:100%;height:100%;object-fit:cover}
+.nx-still{margin:0;flex:none;height:100%;width:calc(var(--sh,400px)*.5625);overflow:clip;background:#0F0E13}
+.nx-still img{width:100%;height:100%;object-fit:cover}
+
+/* 1 Die Bahnen */
+.nxs01{padding-bottom:0!important}
+.nx1-bahnen{display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(40px,6vh,80px)}
+.nx1-bahn{overflow:hidden;height:clamp(220px,36vh,400px)}
+.nx1-bahn.b1{height:clamp(280px,46vh,520px)}
+.nx1-zug{display:flex;gap:10px;height:100%;width:max-content;animation:nx1-lauf 52s linear infinite;will-change:transform}
+.nx1-bahn.b1 .nx1-zug{animation-direction:reverse;animation-duration:64s}
+.nx1-zug .foto{height:100%;width:auto;border-radius:6px;transform:none!important}
+.nx1-zug .foto img{transform:none!important}
+.nx1-zug .filmw{height:100%;width:auto;border-radius:6px;flex:none}
+@keyframes nx1-lauf{to{transform:translateX(-50%)}}
+html.ruhig .nx1-zug{animation:none}
+
+/* 2 Der Filmstreifen */
+.nx2-streifen{overflow:hidden;background:#0A090C;padding:22px 0;position:relative}
+.nx2-streifen::before,.nx2-streifen::after{content:"";position:absolute;left:0;right:0;height:14px;background:radial-gradient(circle,rgba(250,244,244,.9) 0 3px,transparent 3.5px) 0 50%/28px 14px repeat-x;opacity:.7;pointer-events:none}
+.nx2-streifen::before{top:4px}.nx2-streifen::after{bottom:4px}
+.nx2-spur{--sh:clamp(240px,44vh,520px);display:flex;gap:8px;height:var(--sh);width:max-content;padding:0 var(--rand);will-change:transform}
+.nx2-unten{display:grid;grid-template-columns:clamp(240px,24vw,340px) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center;margin-top:clamp(36px,6vh,72px)}
+.nx2-f{width:100%;border-radius:10px}
+
+/* 3 Das zweite Fenster */
+#fenster-nacht .fenster-satz{text-align:center}
+.nx3{display:grid;grid-template-columns:clamp(260px,26vw,380px) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center}
+.nx3-rechts{display:flex;flex-direction:column;gap:clamp(24px,4vh,40px)}
+.nx3-bild .foto{height:min(46vh,440px)}
+.nx3-f{width:100%;border-radius:10px}
+
+/* 4 Der Equalizer */
+.nx4-eq{display:flex;align-items:flex-end;justify-content:center;gap:clamp(6px,.9vw,14px);height:min(78vh,760px);padding:0 var(--rand);overflow:hidden}
+.nx4-s{flex:1 1 0;min-width:0;max-width:150px;height:62%;will-change:transform;animation:nx4-wippen var(--t,1.3s) ease-in-out var(--d,0s) infinite alternate}
+.nx4-s:nth-child(2n){height:50%}.nx4-s:nth-child(3n){height:70%}
+.nx4-s.s4{max-width:260px;height:100%;animation:none}
+.nx4-s .foto{height:100%;border-radius:8px 8px 0 0;transform:none!important}
+.nx4-s .foto img{transform:none!important}
+.nx4-f{width:100%;border-radius:10px 10px 0 0}
+@keyframes nx4-wippen{from{transform:translateY(22%)}to{transform:translateY(0)}}
+html.ruhig .nx4-s{animation:none}
+
+/* 5 Stories */
+.nx5-buehne{position:relative;height:min(84vh,840px);overflow:hidden}
+.nx5-spur{position:absolute;left:50%;top:50%;width:0;height:0}
+.nx5-k{all:unset;cursor:pointer;position:absolute;left:-150px;top:-267px;width:300px;height:534px;border-radius:18px;overflow:clip;background:#0F0E13;box-shadow:0 40px 70px -30px rgba(8,6,14,.9),0 0 0 1px rgba(250,244,244,.1);transition:transform 1s var(--k);opacity:.6}
+.nx5-k.an{opacity:1}
+.nx5-k .foto,.nx5-k .filmw{position:absolute;inset:0;height:100%;border-radius:0;transform:none!important;box-shadow:none}
+.nx5-k .foto img{transform:none!important}
+.nx5-kopf{position:absolute;left:0;right:0;top:0;padding:12px 14px 0;z-index:2;background:linear-gradient(rgba(12,10,14,.7),transparent)}
+.nx5-balken{display:block;height:2px;border-radius:2px;background:rgba(255,247,239,.4);overflow:hidden;position:relative}
+.nx5-balken::after{content:"";position:absolute;inset:0;background:#FFF7EF;transform:scaleX(0);transform-origin:left}
+.nx5-k.an .nx5-balken::after{animation:nx5-balken 33s linear infinite}
+@keyframes nx5-balken{to{transform:scaleX(1)}}
+.nx5-wer{margin:10px 0 0;display:flex;align-items:center;gap:8px;font:600 11px/1 var(--etikett);letter-spacing:.06em;color:#FFF7EF}
+.nx5-wer b{font-weight:400;opacity:.7;margin-left:auto}
+.nx5-d{width:22px;height:22px;color:#FFF7EF}
+.nx5-k:focus-visible{outline:2px solid #C9A3E6;outline-offset:4px}
+html.ruhig .nx5-k{transition:none}
+
+/* 6 Durch die Buchstaben */
+.nx6-wort svg{display:block;width:100%;height:auto}
+.nx6-wort text{font:900 440px/1 var(--etikett);letter-spacing:-.02em}
+.nx6-unten{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,26vw,380px);gap:clamp(28px,4vw,72px);align-items:center;margin-top:clamp(36px,6vh,72px)}
+.nx6-t{margin:0;font:340 clamp(44px,5.6vw,92px)/.94 var(--titel);letter-spacing:-.022em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.nx6-f{width:100%;border-radius:10px}
+
+/* 7 Die Liste */
+.nx7{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,72px);align-items:start}
+.nx7-film{width:min(260px,70%);margin-top:clamp(20px,3vh,36px)}
+.nx7-f{width:100%;border-radius:10px}
+.nx7-liste{margin:0;padding:0;--hr-fg:#FAF4F4;--hr-dim:rgba(250,244,244,.32);--hr-rule:rgba(250,244,244,.16);--hr-radius:8px}
+.nx7-a{display:flex;flex-direction:column;gap:4px!important;align-items:flex-start!important;padding:clamp(16px,2.4vh,26px) 0!important}
+.nx7-a b{font:340 clamp(30px,3.2vw,52px)/1 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.nx7-a span{font-size:15px;color:var(--fg2)}
+.nx7-handy{display:none}
+@media (hover:none){
+  .nx7-handy{display:block;position:relative;aspect-ratio:4/5;max-width:420px;overflow:clip;border-radius:10px;margin-bottom:20px}
+  .nx7-hb{position:absolute;inset:0;transition:transform .9s var(--k)}
+  .nx7-hb .foto{height:100%;border-radius:0}
+  .nx7-handy[data-wahl="0"] .nx7-hb:not([data-s="0"]),.nx7-handy[data-wahl="1"] .nx7-hb:not([data-s="1"]),.nx7-handy[data-wahl="2"] .nx7-hb:not([data-s="2"]),.nx7-handy[data-wahl="3"] .nx7-hb:not([data-s="3"]),.nx7-handy[data-wahl="4"] .nx7-hb:not([data-s="4"]),.nx7-handy[data-wahl="5"] .nx7-hb:not([data-s="5"]){transform:translateY(101%)}
+  .nx7-z.an .nx7-a b{color:#C9A3E6}
+}
+
+/* 8 Die Lichterkette */
+.nx8-kette{position:relative;height:clamp(220px,34vh,360px);margin:0 var(--rand)}
+.nx8-schnur{position:absolute;left:0;right:0;top:0;width:100%;height:160px}
+.nx8-b{position:absolute;left:var(--x);top:calc(20px + var(--y));width:clamp(72px,9vw,140px);transform:translateX(-50%);transform-origin:50% -20px;animation:nx8-schaukel var(--t,3.5s) ease-in-out calc(var(--i,0)*-.7s) infinite alternate}
+.nx8-b::before{content:"";position:absolute;left:50%;top:-20px;width:2px;height:22px;background:rgba(255,247,239,.55);transform:translateX(-50%)}
+.nx8-b .foto{aspect-ratio:1;border-radius:50%;box-shadow:0 0 40px rgba(201,163,230,.35),0 20px 30px -16px rgba(0,0,0,.9);transform:none!important}
+.nx8-b .foto img{transform:none!important}
+@keyframes nx8-schaukel{from{transform:translateX(-50%) rotate(-4deg)}to{transform:translateX(-50%) rotate(4deg)}}
+html.ruhig .nx8-b{animation:none}
+.nx8-unten{display:grid;grid-template-columns:clamp(260px,28vw,400px) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center;margin-top:clamp(28px,5vh,56px)}
+.nx8-f{width:100%;border-radius:10px}
+
+/* 9 Der Vorhang */
+.nxs09{padding-top:0!important}
+.nx9-buehne{position:relative;height:min(92vh,900px);overflow:hidden;background:#0A090C}
+.nx9-hinten{position:absolute;inset:0;display:grid;grid-template-columns:1fr clamp(280px,28vw,420px) 1fr;gap:10px;padding:10px;align-items:stretch}
+.nx9-h{min-width:0;display:flex;align-items:center;justify-content:center}
+.nx9-h .foto{height:100%;width:100%;border-radius:6px}
+.nx9-f{width:100%;border-radius:10px}
+.nx9-v{position:absolute;top:0;bottom:0;width:51%;z-index:3;background:#8953A9 url(zeichen/tapete-dc.svg) 0 0/240px 240px;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 18px,rgba(255,255,255,.06) 18px 46px,rgba(0,0,0,.22) 46px 70px),url(zeichen/tapete-dc.svg);box-shadow:0 0 80px rgba(0,0,0,.6);transition:transform 2.2s var(--k) .3s}
+.nx9-v.l{left:0}.nx9-v.r{right:0}
+html.js .nx9-buehne.da .nx9-v.l{transform:translateX(-102%)}
+html.js .nx9-buehne.da .nx9-v.r{transform:translateX(102%)}
+html:not(.js) .nx9-v,html.ruhig .nx9-v{display:none}
+.nx9-unten{margin-top:clamp(36px,6vh,72px)}
+
+/* 10 Blitzlicht */
+.nx10-wand{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,40px);padding:10px 0}
+.nx10-f{position:relative;transform:rotate(var(--r,0deg));--d:calc(var(--i,0)*160ms)}
+.nx10-f:nth-child(2n){margin-top:clamp(24px,4vh,56px)}
+.nx10-f .foto,.nx10-film{aspect-ratio:4/5;border-radius:4px;box-shadow:0 30px 50px -28px rgba(0,0,0,.95);--d:calc(var(--i,0)*160ms)}
+.nx10-film{aspect-ratio:1!important;width:100%}
+.nx10-f::after{content:"";position:absolute;inset:0;border-radius:4px;background:#FFF7EF;opacity:0;pointer-events:none}
+html.js:not(.ruhig) .nx10-wand.da .nx10-f::after{animation:nx10-blitz .9s ease-out calc(var(--i,0)*160ms + .5s) both}
+@keyframes nx10-blitz{0%{opacity:0}8%{opacity:.95}100%{opacity:0}}
+
+/* 11 Der Ablauf */
+.nx11-linie{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,40px);padding-top:28px}
+.nx11-linie::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--linie)}
+.nx11-st{display:flex;flex-direction:column;gap:14px;position:relative}
+.nx11-st::before{content:"";position:absolute;left:0;top:-28px;width:1px;height:28px;background:#C9A3E6}
+.nx11-st h3{margin:0;font:340 clamp(34px,3.6vw,58px)/1 var(--titel);letter-spacing:-.018em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.nx11-b .foto{aspect-ratio:9/16;border-radius:8px}
+.nx11-f{width:100%;border-radius:8px}
+.nx11-st .ex{font-size:15.5px}
+
+/* 12 Die Doppelseite */
+.nxs12{background:#F4ECE4!important}
+.nx12{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#FBF6F0;box-shadow:0 60px 90px -50px rgba(42,40,51,.5),0 0 0 1px rgba(42,40,51,.08);border-radius:3px;position:relative;overflow:hidden}
+.nx12::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:60px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(42,40,51,.14) 50%,transparent);pointer-events:none;z-index:2}
+.nx12-seite{position:relative;min-height:min(86vh,860px);color:#2A2833}
+.nx12-seite.l .foto{position:absolute;inset:0;height:100%;border-radius:0}
+.nx12-seite.r{padding:clamp(28px,4vw,64px) clamp(28px,4vw,64px) clamp(60px,8vh,90px);display:flex;flex-direction:column;gap:18px}
+.nx12-dach{margin:0;color:#6E3F8C}
+.nx12-t{color:#2A2833;font-size:clamp(50px,6.4vw,104px)}
+.nx12-spalten{columns:2;column-gap:28px;font-size:14.5px;line-height:1.6;color:#4A4652}
+.nx12-spalten p{margin:0 0 12px;break-inside:avoid}
+.nx12-kasten{display:grid;grid-template-columns:clamp(120px,12vw,180px) minmax(0,1fr);gap:16px;align-items:end;margin-top:auto}
+.nx12-f{width:100%;border-radius:6px;box-shadow:0 20px 30px -20px rgba(42,40,51,.5)}
+.nx12-bz{margin:0;font-size:13px;line-height:1.5;color:#4A4652;padding-bottom:6px;border-bottom:1px solid rgba(42,40,51,.18)}
+.nx12-nr{position:absolute;bottom:18px;left:22px;font-size:11px;color:#8A8592;z-index:3}
+.nx12-nr.r{left:auto;right:22px}
+.nx12-seite.l .nx12-nr{color:#FAF4F4}
+
+/* 13 Die Kachelwand */
+.nx13-wand{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:calc((min(1360px,100vw - 2*var(--rand)) - 5*6px)/6*.89);gap:6px;padding:6px;background:#8FA7A3;border-radius:4px}
+.nx13-k{position:relative;overflow:clip;border-radius:2px;min-width:0;min-height:0;background:#6F8F8C}
+.nx13-k .foto{height:100%;border-radius:0;--weg:0px}
+.nx13-k.film2{grid-row:span 2}
+.nx13-f{width:100%;height:100%;border-radius:0;box-shadow:none}
+.nx13-k.farbe{background:linear-gradient(135deg,#7FA09C,#5F7F7C)}
+.nx13-k.wort{display:grid;place-items:center;background:#8953A9 url(zeichen/tapete-dc.svg) 0 0/240px 240px;color:#FFF7EF;font:800 clamp(14px,1.6vw,24px)/1 var(--etikett);letter-spacing:.2em}
+html.js:not(.ruhig) .nx13-k{transform:scale(.6);transition:transform 1.2s var(--feder) calc(var(--i,0)*70ms)}
+html.js .nx13-wand.da .nx13-k{transform:none}
+
+/* 14 Prost */
+.nx14-paar{display:grid;grid-template-columns:1fr 1fr;gap:var(--fuge);padding:0 var(--rand);max-width:var(--max);margin:0 auto;overflow:hidden}
+.nx14-g{will-change:transform}
+.nx14-g .foto{height:min(74vh,720px);--weg:0px}
+.nx14-g.l .foto{border-radius:var(--r) 0 0 var(--r)}
+.nx14-g.r .foto{border-radius:0 var(--r) var(--r) 0}
+.nx14-paar.prost .nx14-g .foto img{transform:scale(1.03)!important;transition:transform 3s var(--k2)!important}
+.nx14-unten{display:grid;grid-template-columns:clamp(240px,24vw,340px) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center;margin-top:clamp(36px,6vh,72px)}
+.nx14-f{width:100%;border-radius:10px}
+
+/* 15 Der Rahmen */
+.nx15-rahmen{max-width:var(--max);margin:0 auto;padding:0 var(--rand);display:flex;flex-direction:column;gap:10px}
+.nx15-reihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.nx15-b .foto{aspect-ratio:4/3;border-radius:6px;--weg:0px}
+.nx15-mitte{display:grid;grid-template-columns:minmax(0,1fr) clamp(280px,26vw,400px) minmax(0,1fr);gap:10px;align-items:stretch}
+.nx15-seite .foto{height:100%;border-radius:6px;--weg:0px}
+.nx15-film{display:flex;align-items:center}
+.nx15-f{width:100%;border-radius:10px}
+html.js:not(.ruhig) .nx15-reihe.o .nx15-b{transform:translateY(-120%);transition:transform 1.6s var(--k) calc(var(--i,0)*110ms)}
+html.js:not(.ruhig) .nx15-reihe.u .nx15-b{transform:translateY(120%);transition:transform 1.6s var(--k) calc(var(--i,0)*110ms)}
+html.js:not(.ruhig) .nx15-seite.l{transform:translateX(-120%);transition:transform 1.6s var(--k) .2s}
+html.js:not(.ruhig) .nx15-seite.r{transform:translateX(120%);transition:transform 1.6s var(--k) .2s}
+html.js .nx15-rahmen.da .nx15-reihe.o .nx15-b,html.js .nx15-rahmen.da .nx15-reihe.u .nx15-b,html.js .nx15-rahmen.da .nx15-seite.l,html.js .nx15-rahmen.da .nx15-seite.r{transform:none}
+.nxs15{overflow:clip}
+
+/* Handy und schmale Fenster */
+@media (max-width:860px){
+  .nx1-bahn{height:26svh}.nx1-bahn.b1{height:34svh}
+  .nx2-spur{--sh:40svh}.nx2-unten{grid-template-columns:1fr;gap:24px}.nx2-film{width:min(100%,320px);margin:0 auto}
+  .nx3{grid-template-columns:1fr;gap:24px}.nx3-film{width:min(100%,320px);margin:0 auto}.nx3-bild .foto{height:40svh}
+  .nx4-eq{height:56svh;gap:5px}.nx4-s{max-width:none}.nx4-s.s4{flex:2 1 0}
+  .nx5-buehne{height:min(78svh,640px)}.nx5-k{width:min(68vw,260px);height:calc(min(68vw,260px)*1.78);left:calc(min(68vw,260px)/-2);top:calc(min(68vw,260px)*-.89)}
+  .nx6-unten{grid-template-columns:1fr;gap:24px}.nx6-film{width:min(100%,320px);margin:0 auto}
+  .nx7{grid-template-columns:1fr;gap:24px}.nx7-film{width:min(100%,220px)}
+  .nx8-kette{height:30svh}.nx8-b{width:clamp(56px,16vw,80px)}.nx8-b:nth-child(4),.nx8-b:nth-child(6){display:none}.nx8-unten{grid-template-columns:1fr;gap:24px}.nx8-film{width:min(100%,320px);margin:0 auto}
+  .nx9-buehne{height:min(84svh,700px)}.nx9-hinten{grid-template-columns:1fr;grid-template-rows:1fr auto 1fr}.nx9-h.m{width:min(60vw,240px);margin:0 auto}
+  .nx10-wand{grid-template-columns:1fr 1fr;gap:14px}
+  .nx11-linie{grid-template-columns:1fr;gap:32px}.nx11-b .foto{aspect-ratio:4/5}.nx11-f{width:min(100%,300px)}
+  .nx12{grid-template-columns:1fr}.nx12-seite.l{min-height:56svh}.nx12-seite.r{min-height:0}.nx12-spalten{columns:1}.nx12::before{display:none}
+  .nx13-wand{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:calc((100vw - 2*var(--rand) - 2*6px)/3*.89)}
+  .nx14-g .foto{height:52svh}.nx14-unten{grid-template-columns:1fr;gap:24px}.nx14-film{width:min(100%,320px);margin:0 auto}
+  .nx15-reihe{grid-template-columns:1fr 1fr}.nx15-mitte{grid-template-columns:1fr}.nx15-seite{display:none}.nx15-film{width:min(100%,320px);margin:0 auto}
+}

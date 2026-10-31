@@ -1,0 +1,17 @@
+4× 1440 Bewegung p50 8.3 p95 10.2 max 75.0 über33: 1 / 1076
+4× 1440 Bewegung p50 8.3 p95 10.2 max 67.7 über33: 1 / 1067
+4× 1440 Bewegung p50 8.3 p95 10.2 max 67.0 über33: 1 / 1066
+4× 1440 ruhig  p50 8.3 p95 10.0 max 68.0 über33: 1 / 1058
+4× 390 Bewegung p50 8.3 p95 9.9 max 42.0 über33: 2 / 1097
+4× 390 Bewegung p50 8.3 p95 10.1 max 41.4 über33: 2 / 1095
+4× 390 Bewegung p50 8.3 p95 10.1 max 50.5 über33: 3 / 1096
+4× 390 ruhig  p50 8.3 p95 9.9 max 49.3 über33: 2 / 1080
+6× 1440 Bewegung p50 8.3 p95 10.3 max 101.3 über33: 5 / 1077
+6× 1440 Bewegung p50 8.3 p95 10.3 max 91.1 über33: 5 / 1071
+6× 1440 Bewegung p50 8.3 p95 10.2 max 99.5 über33: 5 / 1073
+6× 1440 ruhig  p50 8.3 p95 10.0 max 101.7 über33: 5 / 1060
+6× 390 Bewegung p50 8.3 p95 10.2 max 82.9 über33: 6 / 1099
+6× 390 Bewegung p50 8.3 p95 10.1 max 64.9 über33: 6 / 1099
+6× 390 Bewegung p50 8.3 p95 10.2 max 67.5 über33: 6 / 1097
+6× 390 ruhig  p50 8.3 p95 9.9 max 66.6 über33: 6 / 1090
+12:41  up 10 days, 22:05, 1 user, load averages: 10.04 10.22 14.06

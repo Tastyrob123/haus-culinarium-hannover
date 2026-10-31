@@ -1,0 +1,21 @@
+{
+  "station": "R",
+  "name": "Roberts Durchgang",
+  "rolle": "Robert",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

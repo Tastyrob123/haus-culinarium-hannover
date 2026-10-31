@@ -1,0 +1,274 @@
+/* Culinarium · «Alle Abende» in 15 Fassungen (nur Wahlseite). Jedes Plakat mit Raum, ein bewegter Moment je Fassung, nur transform und opacity. */
+.awv{--papier:#F6EFEA;--schatten:0 40px 60px -40px rgba(38,36,45,.45),0 12px 20px -14px rgba(38,36,45,.22)}
+.awv.wv:not([hidden]){display:block}
+.awv img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.awv figure{margin:0}
+:where(.awv) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.aw-ohne{aspect-ratio:1;width:100%;display:grid;place-items:center;background:#EFE6E2;color:var(--schiefer);box-shadow:inset 0 0 0 1px rgba(58,56,69,.1)}
+.aw-ohne .marke{width:68%;height:auto}
+.aw-info{display:flex;flex-direction:column;gap:6px}
+.aw-info.mitte{align-items:center;text-align:center}
+.aw-datum{font:340 clamp(19px,1.5vw,24px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg)}
+.aw-info.gross .aw-datum{font-size:clamp(28px,2.9vw,46px);line-height:1.06;letter-spacing:-.01em}
+.aw-info.gross{gap:12px}
+.aw-mono{font:400 12px/1.45 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fg2)}
+.aw-mit{font:600 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--fg2)}
+.aw-jahrklein{font:400 12px/1 var(--mono);letter-spacing:.24em;color:var(--kerze-tief)}
+.aw-voll{margin:calc(var(--abstand)*-1) calc(var(--rand)*-1) 0}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .awv .auf{transform:translateY(48px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .awv .auf.da{transform:none}
+
+/* ---------- 1 Der Ausstellungsraum */
+.aw01{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(90px,15vh,180px)}
+.aw01-w{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,7vw,120px);align-items:end}
+.aw01-w:nth-child(even){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.aw01-w:nth-child(even) .aw01-p{order:2}
+.aw01-w:nth-child(even) .aw01-t{justify-self:end;border-left:0;border-right:1px solid var(--linie);padding:0 28px 0 0;text-align:right;align-items:flex-end}
+.aw01-w:nth-child(even) .aw-info{align-items:flex-end}
+.aw01-p{box-shadow:var(--schatten)}
+.aw01-t{display:flex;flex-direction:column;gap:20px;max-width:380px;padding:0 0 0 28px;border-left:1px solid var(--linie);margin-bottom:6px}
+html.js:not(.ruhig) .awv .aw01-t.auf{transform:translateX(-44px);transition-duration:1.8s;transition-delay:.25s}
+html.js:not(.ruhig) .awv .aw01-w:nth-child(even) .aw01-t.auf{transform:translateX(44px)}
+html.js .awv .aw01-w:nth-child(n) .aw01-t.auf.da{transform:none}
+
+/* ---------- 2 Das Passepartout */
+.aw02{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(56px,7vw,100px) clamp(36px,4.6vw,76px)}
+.aw02-jahr{grid-column:1/-1;display:flex;align-items:center;gap:30px;color:var(--kerze-tief)}
+.aw02-jahr:not(:first-child){margin-top:clamp(10px,3vh,40px)}
+.aw02-jahr::before,.aw02-jahr::after{content:"";flex:1;height:1px;background:var(--linie)}
+.aw02-jahr span{font:300 clamp(40px,4vw,66px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144}
+.aw02-rahmen{padding:4px;background:#2A2833;box-shadow:0 34px 56px -34px rgba(38,36,45,.55),0 8px 14px -8px rgba(38,36,45,.3)}
+.aw02-matte{background:#FFFDFB;padding:14%;box-shadow:inset 0 2px 6px rgba(38,36,45,.12)}
+.aw02-matte>*{box-shadow:0 0 0 1px rgba(38,36,45,.14)}
+html.js:not(.ruhig) .awv .aw02-r.auf .aw02-matte>*{transform:scale(.9);transition:transform 1.9s var(--k) calc(.25s + var(--i,0)*90ms)}
+html.js .awv .aw02-r.auf.da .aw02-matte>*{transform:none}
+.aw02-schild{margin:26px auto 0;width:84%;padding:16px 14px 14px;background:#F2E9E3;box-shadow:inset 0 0 0 1px rgba(177,87,54,.22);display:flex;justify-content:center}
+.aw02-schild .aw-info{align-items:center;text-align:center;gap:5px}
+.aw02-schild .aw-datum{font-size:clamp(17px,1.35vw,21px)}
+
+/* ---------- 3 Die Weinkarte */
+.aw03{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(48px,7vw,120px);align-items:start}
+.aw03-bild{position:sticky;top:110px}
+.aw03-rahmen{position:relative;aspect-ratio:1;box-shadow:var(--schatten);background:#EFE6E2}
+.aw03-b{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--k)}
+.aw03-b.an{opacity:1}
+.aw03-b img,.aw03-b .aw-ohne{height:100%}
+.aw03-unter{margin-top:18px;font:400 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fg2)}
+.aw03-a{display:none}.aw03-a.an{display:inline}
+.aw03-liste{display:flex;flex-direction:column;gap:60px}
+.aw03-jahr{display:flex;align-items:baseline;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--fg);font:300 clamp(46px,4.6vw,76px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-tief)}
+.aw03-jahr span{font:400 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--fg2)}
+.aw03-z{display:block;width:100%;padding:22px 0 20px;border-bottom:1px solid var(--linie)}
+.aw03-l{display:flex;align-items:baseline;gap:14px;transition:transform .6s var(--k)}
+.aw03-l b{font:340 clamp(20px,1.7vw,27px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;transition:color .4s}
+.aw03-l i{flex:1;min-width:24px;border-bottom:1px dotted rgba(38,36,45,.38);transform:translateY(-6px)}
+.aw03-l em{font:400 14px/1 var(--mono);font-style:normal;letter-spacing:.06em;white-space:nowrap}
+.aw03-u{display:block;margin-top:8px;font:600 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--fg2)}
+.aw03-z.an .aw03-l{transform:translateX(14px)}
+.aw03-z.an .aw03-l b{color:var(--kerze-tief)}
+.aw03-mob{display:none}
+
+/* ---------- 4 Die Menükarten */
+.aw04{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(48px,6vw,90px) clamp(32px,4vw,64px);align-items:start}
+.aw04-k{display:grid;grid-template-columns:1fr 1fr;background:#FFFDFB;box-shadow:0 34px 60px -40px rgba(38,36,45,.45),0 0 0 1px rgba(38,36,45,.07)}
+.aw04-k:nth-child(even){margin-top:clamp(50px,9vh,110px)}
+.aw04-karte{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:clamp(20px,3vw,44px) clamp(16px,2.4vw,36px);transform-origin:0 50%}
+.aw04-kopf{font:600 10px/1.3 var(--etikett);letter-spacing:.26em;text-transform:uppercase;color:var(--kerze-tief)}
+.aw04-orn{width:44px;height:1px;background:var(--akz)}
+.aw04-d{font:340 clamp(20px,1.8vw,28px)/1.18 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.aw04-satz{font-size:15px;color:var(--fg2)}
+html.js:not(.ruhig) .awv .aw04-k.auf .aw04-karte{transform:perspective(900px) rotateY(-32deg);transition:transform 1.9s var(--k) .3s}
+html.js .awv .aw04-k.auf.da .aw04-karte{transform:none}
+
+/* ---------- 5 Der rote Faden */
+.aw05{position:relative;max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,6vh,72px);padding-bottom:20px}
+.aw05-linie{position:absolute;left:50%;top:0;bottom:0;width:1px;margin-left:-.5px;background:var(--linie)}
+.aw05-linie i{position:absolute;inset:0;background:var(--kerze);transform-origin:50% 0;transform:scaleY(0)}
+.aw05-jahr{position:relative;z-index:1;text-align:center;margin:24px 0 0}
+.aw05-jahr span{display:inline-block;padding:14px 26px;background:var(--bg);font:300 clamp(48px,5vw,86px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-tief)}
+.aw05-a{position:relative;width:min(440px,calc(50% - clamp(40px,6vw,96px)));display:flex;flex-direction:column;gap:20px}
+.aw05-a.l{align-self:flex-start;margin-left:auto;margin-right:calc(50% + clamp(40px,6vw,96px))}
+.aw05-a.r{align-self:flex-end;margin-right:auto;margin-left:calc(50% + clamp(40px,6vw,96px))}
+.aw05-a.r{margin-top:calc(clamp(140px,22vw,300px)*-1)}
+.aw05-jahr+.aw05-a.r{margin-top:0}
+.aw05-a.l .aw-info{align-items:flex-end;text-align:right}
+.aw05-a::after{content:"";position:absolute;top:28%;width:clamp(40px,6vw,96px);height:1px;background:var(--kerze)}
+.aw05-a.l::after{left:100%}.aw05-a.r::after{right:100%}
+.aw05-p{box-shadow:var(--schatten)}
+
+/* ---------- 6 Die Bühne */
+.aw06-b{--fg:#FAF4F4;--fg2:rgba(250,244,244,.72);--buehne:color-mix(in srgb,var(--akz) 30%,#16151A);position:relative;background:var(--buehne);color:var(--fg);min-height:min(100vh,1000px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(26px,4vh,44px);padding:clamp(80px,13vh,140px) var(--rand)}
+.aw06-jahr{position:absolute;top:clamp(26px,4vh,44px);left:var(--rand);font:400 12px/1 var(--mono);letter-spacing:.28em;color:rgba(250,244,244,.6)}
+.aw06-p{width:min(60vh,580px,84vw);box-shadow:0 70px 100px -50px rgba(0,0,0,.8),0 20px 30px -20px rgba(0,0,0,.5)}
+.aw06-b .aw-datum{font-size:clamp(26px,2.6vw,42px)}
+html.js:not(.ruhig) .awv .aw06-p.auf{transform:scale(.86);transition:transform 2.2s var(--k)}
+html.js .awv .aw06-p.auf.da{transform:none}
+
+/* ---------- 7 Die Nischen */
+.aw07{--fg:#FAF4F4;--fg2:rgba(250,244,244,.68);--linie:rgba(250,244,244,.14);background:#16151A;color:var(--fg);padding:clamp(80px,12vh,140px) var(--rand)}
+.aw07-saal{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(48px,6vw,84px) clamp(24px,3vw,48px)}
+.aw07-jahr{grid-column:1/-1;text-align:center}
+.aw07-jahr:not(:first-child){margin-top:clamp(20px,4vh,50px)}
+.aw07-jahr span{font:300 clamp(46px,4.6vw,76px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-hell)}
+.aw07-bogen{position:relative;overflow:hidden;border-radius:999px 999px 4px 4px;background:linear-gradient(#25232C,#1C1B22 70%);padding:40% 10% 13%;box-shadow:inset 0 0 0 1px rgba(250,244,244,.07),inset 0 -40px 50px -40px rgba(0,0,0,.7)}
+.aw07-licht{position:absolute;left:50%;top:0;width:130%;aspect-ratio:1;transform:translate(-50%,-34%);background:radial-gradient(closest-side,rgba(245,166,137,.34),rgba(245,166,137,0));opacity:.22;transition:opacity 1.8s var(--k) .3s}
+.aw07-n.da .aw07-licht{opacity:1}
+.aw07-p{position:relative;box-shadow:0 30px 40px -20px rgba(0,0,0,.8)}
+.aw07-n figcaption{margin-top:22px}
+
+/* ---------- 8 Das Buch der Abende */
+.aw08{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(70px,10vh,120px)}
+.aw08-dop{position:relative;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);background:var(--papier);box-shadow:0 50px 80px -50px rgba(38,36,45,.5),0 0 0 1px rgba(38,36,45,.06)}
+.aw08-dop::after{content:"";position:absolute;top:0;bottom:0;left:40%;width:70px;margin-left:-35px;background:linear-gradient(90deg,rgba(38,36,45,0),rgba(38,36,45,.08) 46%,rgba(38,36,45,.18) 50%,rgba(38,36,45,.05) 54%,rgba(38,36,45,0));pointer-events:none}
+.aw08-links{padding:clamp(36px,5vw,76px);display:flex;flex-direction:column;justify-content:flex-end;gap:18px;min-height:clamp(320px,36vw,520px)}
+.aw08-jahr{font:300 clamp(84px,10vw,176px)/.84 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.02em;color:var(--kerze-tief)}
+.aw08-zahl{font:340 clamp(22px,2vw,30px)/1.2 var(--titel);font-variation-settings:"SOFT" 100}
+.aw08-rechts{padding:clamp(36px,5vw,76px);display:flex;align-items:center;transform-origin:0 50%}
+.aw08-raster{width:100%;display:grid;gap:clamp(26px,3vw,44px) clamp(18px,2.4vw,34px)}
+.aw08-raster.n2,.aw08-raster.n4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.aw08-raster.n3,.aw08-raster.n5{grid-template-columns:repeat(3,minmax(0,1fr))}
+.aw08-p{display:flex;flex-direction:column;gap:14px}
+.aw08-p>img,.aw08-p>.aw-ohne{box-shadow:0 18px 26px -18px rgba(38,36,45,.45)}
+html.js:not(.ruhig) .awv .aw08-rechts.auf{transform:perspective(1800px) rotateY(-16deg);transition:transform 2s var(--k)}
+html.js .awv .aw08-rechts.auf.da{transform:none}
+
+/* ---------- 9 Die Vitrinen */
+.aw09{max-width:1320px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(70px,10vh,120px)}
+.aw09-glas{position:relative;padding:clamp(44px,6vw,84px) clamp(28px,5vw,72px) clamp(20px,3vw,36px);background:linear-gradient(115deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.55) 45%,rgba(255,255,255,0) 52%),linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.28));box-shadow:inset 0 0 0 1px rgba(38,36,45,.12),inset 0 1px 0 #fff}
+.aw09-reihe{display:flex;justify-content:center;align-items:flex-start;gap:clamp(24px,3.4vw,56px)}
+.aw09-p{flex:0 1 230px;min-width:0}
+.aw09-reihe.n2 .aw09-p{flex-basis:360px}.aw09-reihe.n3 .aw09-p{flex-basis:300px}.aw09-reihe.n4 .aw09-p{flex-basis:250px}
+.aw09-bild{position:relative;margin-bottom:31%}
+.aw09-bild>img,.aw09-bild>.aw-ohne{position:relative;box-shadow:0 22px 24px -20px rgba(38,36,45,.55)}
+.aw09-spiegel{position:absolute;left:0;right:0;top:calc(100% + 2px);aspect-ratio:10/3;overflow:hidden;opacity:.1;transition:opacity 2s var(--k) .4s;-webkit-mask-image:linear-gradient(#000,transparent 90%);mask-image:linear-gradient(#000,transparent 90%)}
+.aw09-spiegel>*{transform:scaleY(-1)}
+.aw09-p.da .aw09-spiegel{opacity:.26}
+.aw09-p figcaption{margin-top:4px}
+.aw09-sockel{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px clamp(28px,5vw,72px);background:#2A2833;color:#FAF4F4}
+.aw09-jahr{font:300 clamp(34px,3.2vw,52px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-hell)}
+.aw09-sockel .aw-mit{color:rgba(250,244,244,.7)}
+
+/* ---------- 10 Die Jahresreihen */
+.aw10{display:flex;flex-direction:column;gap:clamp(64px,9vh,110px)}
+.aw10-r{display:grid;grid-template-columns:clamp(170px,18vw,280px) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.aw10-kopf{position:sticky;top:110px;display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:1px solid var(--fg)}
+.aw10-jahr{font:300 clamp(58px,6vw,106px)/.9 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-tief)}
+.aw10-zahl{font:340 20px/1.2 var(--titel)}
+.aw10-pfeile{display:flex;gap:8px;margin-top:10px}
+.aw10-pfeile button{width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(38,36,45,.28);font-size:22px;line-height:1;color:var(--fg);transition:background .3s}
+.aw10-pfeile button:hover{background:rgba(38,36,45,.06)}
+.aw10-band{display:flex;gap:clamp(22px,2.6vw,40px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:calc(var(--rand)*-1);padding-right:var(--rand);padding-bottom:4px}
+.aw10-band::-webkit-scrollbar{display:none}
+.aw10-p{flex:0 0 clamp(270px,31vw,470px);scroll-snap-align:start;display:flex;flex-direction:column;gap:16px}
+.aw10-p>img,.aw10-p>.aw-ohne{box-shadow:0 26px 34px -26px rgba(38,36,45,.5)}
+html.js:not(.ruhig) .awv .aw10-band.auf{transform:translateX(110px);transition:transform 1.9s var(--k)}
+html.js .awv .aw10-band.auf.da{transform:none}
+
+/* ---------- 11 Die Einladungen */
+.aw11{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(64px,8vw,110px) clamp(32px,4vw,64px)}
+.aw11-umschlag{position:relative;aspect-ratio:1/1.1}
+.aw11-hinten{position:absolute;left:0;right:0;bottom:0;height:58%;background:color-mix(in srgb,var(--akz) 34%,#F1E7E1);box-shadow:0 30px 44px -30px rgba(38,36,45,.45)}
+.aw11-hinten::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:36%;background:color-mix(in srgb,var(--akz) 44%,#E9DDD5);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.aw11-karte{position:absolute;left:8%;right:8%;bottom:10%;padding:4.5%;background:#FFFDFB;box-shadow:0 10px 20px -10px rgba(38,36,45,.35)}
+.aw11-vorn{position:absolute;left:0;right:0;bottom:0;height:16%;background:color-mix(in srgb,var(--akz) 40%,#ECE1DA);clip-path:polygon(0 0,50% 46%,100% 0,100% 100%,0 100%)}
+.aw11-e figcaption{margin-top:24px}
+html.js:not(.ruhig) .awv .aw11-e.auf .aw11-karte{transform:translateY(26%);transition:transform 2s var(--k) calc(.3s + var(--i,0)*120ms)}
+html.js .awv .aw11-e.auf.da .aw11-karte{transform:none}
+
+/* ---------- 12 Die Bildstrecke */
+.aw12{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,28px);row-gap:clamp(60px,10vh,130px);align-items:start}
+.aw12-p{grid-column:var(--c)/span var(--w);margin-top:calc(var(--m)*1vh);display:flex;flex-direction:column;gap:16px}
+.aw12-p>img,.aw12-p>.aw-ohne{box-shadow:var(--schatten)}
+.aw12-jahr{font:300 clamp(46px,4.6vw,80px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-tief);margin-bottom:6px}
+html.js:not(.ruhig) .awv .aw12-p.auf{transform:translateY(calc(30px + var(--w)*9px));transition-duration:calc(1.2s + var(--w)*.1s)}
+html.js .awv .aw12-p.auf.da{transform:none}
+
+/* ---------- 13 Die Kapitel */
+.aw13-titel{background:#16151A;color:#FAF4F4;padding:clamp(80px,13vh,150px) var(--rand) clamp(54px,8vh,96px);text-align:center}
+.aw13-jahr{overflow:hidden;font:300 clamp(120px,19vw,300px)/.86 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.02em;color:var(--kerze-hell)}
+.aw13-jahr span{display:inline-block}
+html.js:not(.ruhig) .awv .aw13-jahr.auf{transform:none}
+html.js:not(.ruhig) .awv .aw13-jahr.auf span{transform:translateY(55%);transition:transform 1.8s var(--k)}
+html.js .awv .aw13-jahr.auf.da span{transform:none}
+.aw13-zeile{margin-top:22px;font:600 11px/1.3 var(--etikett);letter-spacing:.24em;text-transform:uppercase;color:rgba(250,244,244,.7)}
+.aw13-raster{max-width:1180px;margin:0 auto;padding:clamp(64px,10vh,120px) var(--rand) clamp(80px,12vh,140px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(56px,8vh,96px) clamp(40px,6vw,100px);align-items:start}
+.aw13-p{display:flex;flex-direction:column;gap:18px}
+.aw13-p:nth-child(even){margin-top:clamp(70px,12vh,160px)}
+.aw13-p:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - clamp(20px,3vw,50px));justify-self:center}
+.aw13-p>img,.aw13-p>.aw-ohne{box-shadow:var(--schatten)}
+
+/* ---------- 14 Der Planschrank */
+.aw14{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.aw14-front{display:grid;grid-template-columns:minmax(150px,auto) 1fr minmax(150px,auto);align-items:center;gap:28px;width:100%;padding:22px clamp(20px,3vw,44px);background:linear-gradient(#423F4C,#35333F);color:#FAF4F4;border-radius:3px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 16px 26px -18px rgba(22,21,26,.7);transition:background .4s}
+.aw14-front:hover{background:linear-gradient(#4A4755,#3A3845)}
+.aw14-halter{display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 18px 8px;background:#F4ECE6;color:#26242D;box-shadow:inset 0 0 0 2px #B59B7C,0 2px 4px rgba(0,0,0,.35);border-radius:2px;justify-self:start}
+.aw14-halter b{font:340 30px/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;font-weight:340}
+.aw14-halter em{font:400 10px/1 var(--mono);font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:#5B5763}
+.aw14-griff{justify-self:center;width:min(240px,60%);height:11px;border-radius:6px;background:linear-gradient(#E0C39B,#A8845B);box-shadow:0 3px 4px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+.aw14-mit{justify-self:end;font:600 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:rgba(250,244,244,.72);text-align:right}
+.aw14-innen{margin:-6px 10px 18px;padding:clamp(40px,5.4vw,72px);background:#EEE5DF;box-shadow:inset 0 22px 26px -20px rgba(38,36,45,.5),inset 0 0 0 1px rgba(38,36,45,.08)}
+.aw14-boden{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,4.4vw,64px) clamp(28px,3.6vw,56px)}
+.aw14-boden.n2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin:0 auto}
+.aw14-boden.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.aw14-p{display:flex;flex-direction:column;gap:16px}
+.aw14-p>img,.aw14-p>.aw-ohne{box-shadow:0 14px 20px -14px rgba(38,36,45,.5)}
+html.js:not(.ruhig) .awv .aw14-p.auf{transform:translateY(-36px);transition-duration:1.3s}
+html.js .awv .aw14-p.auf.da{transform:none}
+
+/* ---------- 15 Eins nach dem anderen */
+.aw15{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,100px);align-items:center}
+.aw15-buehne{position:relative;aspect-ratio:1;box-shadow:0 60px 90px -60px rgba(38,36,45,.6),0 16px 26px -18px rgba(38,36,45,.3);background:#EFE6E2}
+.aw15-b{position:absolute;inset:0;opacity:0;transform:scale(1.04);transition:opacity .8s var(--k),transform 1.4s var(--k)}
+.aw15-b.an{opacity:1;transform:none}
+.aw15-b img,.aw15-b .aw-ohne{height:100%}
+.aw15-r{display:flex;flex-direction:column;gap:30px}
+.aw15-a{display:none}
+.aw15-a.an{display:flex;flex-direction:column;gap:16px}
+.aw15-schritte{display:flex;gap:10px}
+.aw15-schritte button{width:52px;height:52px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(38,36,45,.28);font-size:24px;line-height:1;transition:background .3s}
+.aw15-schritte button:hover{background:rgba(38,36,45,.06)}
+.aw15-daten{display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--linie)}
+.aw15-j{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.aw15-j span{width:62px;font:300 26px/1 var(--titel);font-variation-settings:"SOFT" 100;color:var(--kerze-tief)}
+.aw15-d{font-size:14.5px;color:var(--fg2);padding-bottom:3px;box-shadow:inset 0 -1px 0 transparent;transition:color .3s,box-shadow .3s}
+.aw15-d:hover{color:var(--fg)}
+.aw15-d.an{color:var(--fg);box-shadow:inset 0 -1px 0 var(--kerze)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .aw01-w,.aw01-w:nth-child(even){grid-template-columns:minmax(0,1fr);gap:22px}
+  .aw01-t{max-width:100%}
+  html.js:not(.ruhig) .awv .aw01-w:nth-child(n) .aw01-t.auf{transform:translateY(30px)}
+  html.js .awv .aw01-w:nth-child(n) .aw01-t.auf.da{transform:none}
+  .aw01-w:nth-child(even) .aw01-p{order:0}
+  .aw01-w:nth-child(even) .aw01-t{justify-self:start;border-right:0;border-left:1px solid var(--linie);padding:0 0 0 20px;text-align:left;align-items:flex-start}
+  .aw01-w:nth-child(even) .aw-info{align-items:flex-start}
+  .aw01{gap:72px}
+  .aw02,.aw11{grid-template-columns:1fr;max-width:420px}
+  .aw03{grid-template-columns:1fr}.aw03-bild{display:none}
+  .aw03-mob{display:block;margin-bottom:16px;box-shadow:var(--schatten)}
+  .aw03-z.an .aw03-l{transform:none}
+  .aw04{grid-template-columns:1fr}.aw04-k:nth-child(even){margin-top:0}
+  .aw05-linie{left:12px}
+  .aw05-jahr{text-align:left;padding-left:30px}.aw05-jahr span{padding:10px 0;background:none}
+  .aw05-a.l,.aw05-a.r{width:auto;margin:0 0 0 40px;align-self:stretch}
+  .aw05-a.l .aw-info{align-items:flex-start;text-align:left}
+  .aw05-a::after,.aw05-a.l::after,.aw05-a.r::after{left:-28px;right:auto;width:20px}
+  .aw06-b{min-height:auto}
+  .aw07-saal{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 14px}
+  .aw07 .aw-datum{font-size:16px}
+  .aw08-dop{grid-template-columns:1fr}.aw08-dop::after{display:none}
+  .aw08-links{min-height:0;padding-bottom:0}
+  .aw08-raster.n3,.aw08-raster.n5{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aw09-reihe{flex-wrap:wrap}.aw09-p{flex:0 1 calc(50% - 14px)}.aw09-reihe.n2 .aw09-p,.aw09-reihe.n3 .aw09-p,.aw09-reihe.n4 .aw09-p{flex-basis:calc(50% - 14px)}
+  .aw10-r{grid-template-columns:1fr}.aw10-kopf{position:static}
+  .aw10-p{flex-basis:78vw}
+  .aw12{grid-template-columns:1fr;row-gap:56px}.aw12-p{grid-column:auto;margin-top:0}
+  .aw12-p:nth-child(odd){width:86%}.aw12-p:nth-child(even){width:72%;justify-self:end}
+  .aw13-raster{grid-template-columns:1fr}.aw13-p:nth-child(even){margin-top:0}
+  .aw13-p:last-child:nth-child(odd){width:auto;grid-column:auto}
+  .aw14-front{grid-template-columns:auto 1fr;gap:16px}.aw14-mit{display:none}
+  .aw14-boden,.aw14-boden.n4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aw15{grid-template-columns:1fr}
+}

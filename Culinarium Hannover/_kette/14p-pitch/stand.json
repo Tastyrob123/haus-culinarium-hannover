@@ -1,0 +1,23 @@
+{
+  "station": "P",
+  "name": "Pitch verschickt",
+  "rolle": "Robert",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "pitch.json"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

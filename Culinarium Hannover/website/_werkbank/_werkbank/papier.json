@@ -1,0 +1,174 @@
+{
+ "druck": [
+  {
+   "id": "karte",
+   "name": "Die Karte am Platz",
+   "seiten": 2
+  },
+  {
+   "id": "drinks",
+   "name": "Drink-Kärtchen",
+   "seiten": 4
+  },
+  {
+   "id": "ticket",
+   "name": "Ticket",
+   "seiten": 2
+  },
+  {
+   "id": "briefpapier",
+   "name": "Briefpapier",
+   "seiten": 2
+  },
+  {
+   "id": "menue",
+   "name": "Menükarte des Abends",
+   "seiten": 1
+  },
+  {
+   "id": "platzkarte",
+   "name": "Platzkarte",
+   "seiten": 2
+  },
+  {
+   "id": "reserviert",
+   "name": "Die Tafel ist reserviert",
+   "seiten": 1
+  },
+  {
+   "id": "willkommen",
+   "name": "Willkommen am Platz",
+   "seiten": 1
+  },
+  {
+   "id": "ausgebucht",
+   "name": "Heute ausgebucht",
+   "seiten": 1
+  },
+  {
+   "id": "warteliste",
+   "name": "Auf die Warteliste",
+   "seiten": 1
+  },
+  {
+   "id": "plakat-a3",
+   "name": "Plakat zum Aushang",
+   "seiten": 1
+  },
+  {
+   "id": "fuenf-drinks",
+   "name": "Die fünf Drinks",
+   "seiten": 1
+  },
+  {
+   "id": "rudis-zeilen",
+   "name": "Rudis Zeilen",
+   "seiten": 1
+  },
+  {
+   "id": "flyer",
+   "name": "Flyer",
+   "seiten": 2
+  },
+  {
+   "id": "danke",
+   "name": "Danke für den Abend",
+   "seiten": 1
+  },
+  {
+   "id": "allergien",
+   "name": "Allergien am Platz",
+   "seiten": 1
+  },
+  {
+   "id": "visitenkarte",
+   "name": "Visitenkarte",
+   "seiten": 2
+  },
+  {
+   "id": "dc-karte",
+   "name": "Dirty Chicken: die Karte",
+   "seiten": 1
+  },
+  {
+   "id": "dc-flyer",
+   "name": "Dirty Chicken: Flyer",
+   "seiten": 1
+  },
+  {
+   "id": "heute-abend",
+   "name": "Heute Abend an der Theke",
+   "seiten": 1
+  },
+  {
+   "id": "pressemappe",
+   "name": "Pressemappe",
+   "seiten": 1
+  },
+  {
+   "id": "termine",
+   "name": "Die nächsten Abende",
+   "seiten": 1
+  },
+  {
+   "id": "ablauf-team",
+   "name": "Ablauf für das Team",
+   "seiten": 1
+  },
+  {
+   "id": "einladung",
+   "name": "Einladung an Stammgäste",
+   "seiten": 2
+  }
+ ],
+ "etiketten": [
+  {
+   "id": "u01",
+   "name": "Eisblau, 29./30.11.2024"
+  },
+  {
+   "id": "u02",
+   "name": "Orange, 21./22.02.2025"
+  },
+  {
+   "id": "u03",
+   "name": "Grasgrün, 13./14.06.2025"
+  },
+  {
+   "id": "u04",
+   "name": "Nachtblau, 14./15.11.2025"
+  },
+  {
+   "id": "u05",
+   "name": "Ochsenblut, 27./28.03.2026"
+  },
+  {
+   "id": "u06",
+   "name": "Sepia, 25./26.09.2026"
+  },
+  {
+   "id": "u07",
+   "name": "Fatwashing"
+  },
+  {
+   "id": "u08",
+   "name": "Milkwashing"
+  },
+  {
+   "id": "u09",
+   "name": "Enzyme"
+  },
+  {
+   "id": "u10",
+   "name": "Linden"
+  },
+  {
+   "id": "u11",
+   "name": "HAASEMANNSTR. 13"
+  },
+  {
+   "id": "u12",
+   "name": "Seit 2023"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+Nachrechnen Das Besucherbuch · Culinarium Hannover, 28.10.2026 05:43:20 (Hannover, Europe/Berlin)
+A  7 Tage, Beispiel des Dienstes: gleich (99 Besuche, heute 1)
+A 30 Tage, Beispiel des Dienstes: gleich (478 Besuche, heute 1)
+A 90 Tage, Beispiel des Dienstes: gleich (1296 Besuche, heute 1)
+B  7 Tage, Ablage bis 00:00:00: gleich (98 Besuche, heute 0)
+B  7 Tage, Ablage bis 07:59:59: gleich (99 Besuche, heute 1)
+B  7 Tage, Ablage bis 12:00:00: gleich (99 Besuche, heute 1)
+B  7 Tage, Ablage bis 05:43:20: gleich (99 Besuche, heute 1)
+B  7 Tage, Ablage bis 20:30:15: gleich (110 Besuche, heute 12)
+B  7 Tage, Ablage bis 23:59:59: gleich (113 Besuche, heute 15)
+A=B  7 Tage: Dienst und Ablage zur selben Uhrzeit gleich
+B 30 Tage, Ablage bis 00:00:00: gleich (477 Besuche, heute 0)
+B 30 Tage, Ablage bis 07:59:59: gleich (478 Besuche, heute 1)
+B 30 Tage, Ablage bis 12:00:00: gleich (478 Besuche, heute 1)
+B 30 Tage, Ablage bis 05:43:20: gleich (478 Besuche, heute 1)
+B 30 Tage, Ablage bis 20:30:15: gleich (489 Besuche, heute 12)
+B 30 Tage, Ablage bis 23:59:59: gleich (492 Besuche, heute 15)
+A=B 30 Tage: Dienst und Ablage zur selben Uhrzeit gleich
+B 90 Tage, Ablage bis 00:00:00: gleich (1295 Besuche, heute 0)
+B 90 Tage, Ablage bis 07:59:59: gleich (1296 Besuche, heute 1)
+B 90 Tage, Ablage bis 12:00:00: gleich (1296 Besuche, heute 1)
+B 90 Tage, Ablage bis 05:43:20: gleich (1296 Besuche, heute 1)
+B 90 Tage, Ablage bis 20:30:15: gleich (1307 Besuche, heute 12)
+B 90 Tage, Ablage bis 23:59:59: gleich (1310 Besuche, heute 15)
+A=B 90 Tage: Dienst und Ablage zur selben Uhrzeit gleich
+C +1 Tage,  7 Tage bis 09:15:00: gleich
+C +1 Tage,  7 Tage bis 21:45:30: gleich
+C +1 Tage, 30 Tage bis 09:15:00: gleich
+C +1 Tage, 30 Tage bis 21:45:30: gleich
+C +1 Tage, 90 Tage bis 09:15:00: gleich
+C +1 Tage, 90 Tage bis 21:45:30: gleich
+C +3 Tage,  7 Tage bis 09:15:00: gleich
+C +3 Tage,  7 Tage bis 21:45:30: gleich
+C +3 Tage, 30 Tage bis 09:15:00: gleich
+C +3 Tage, 30 Tage bis 21:45:30: gleich
+C +3 Tage, 90 Tage bis 09:15:00: gleich
+C +3 Tage, 90 Tage bis 21:45:30: gleich
+C +7 Tage,  7 Tage bis 09:15:00: gleich
+C +7 Tage,  7 Tage bis 21:45:30: gleich
+C +7 Tage, 30 Tage bis 09:15:00: gleich
+C +7 Tage, 30 Tage bis 21:45:30: gleich
+C +7 Tage, 90 Tage bis 09:15:00: gleich
+C +7 Tage, 90 Tage bis 21:45:30: gleich
+D  7 Tage, echte Zählung (160 Zeilen angenommen, 11 ungültige abgelehnt): gleich (24 Besuche)
+D 30 Tage, echte Zählung (160 Zeilen angenommen, 11 ungültige abgelehnt): gleich (68 Besuche)
+D 90 Tage, echte Zählung (160 Zeilen angenommen, 11 ungültige abgelehnt): gleich (237 Besuche)
+E Datenschutz: Tagesdateien ohne Adresse/Browser-Text, Ausgabe ohne Kürzel
+Ergebnis: 0 Abweichungen

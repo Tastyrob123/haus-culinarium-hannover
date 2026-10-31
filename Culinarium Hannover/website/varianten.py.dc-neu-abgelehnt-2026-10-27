@@ -1,0 +1,1312 @@
+#!/usr/bin/env python3
+"""Culinarium Hannover · «Abschnitte neu bauen» (Master 6a), 26.10.2026.
+Robert: «Ich würde mich für den Hero von Nummer 4 entscheiden. Aber alles andere … zu wenig Bilder, zu viel Leerraum, die Texte nicht schön angeordnet.»
+Baut wahl.html: Auftakt fest auf Nummer 4, jeder weitere Abschnitt an seinem Platz in 16 Fassungen umschaltbar (0 = heutiger Stand).
+Eine Nummer ist in jedem Abschnitt dieselbe Haltung (7 «Band» ist überall ein Band), damit Robert mischen kann.
+Aufruf: python3 website/bau.py && python3 website/varianten.py   ·   Vorschaubilder: node ../_qa/neubau/daumen.js"""
+import json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bau
+from bau import E, foto, zl, sw, knopf, META, BILD
+
+bau.META.update(bau.bilder())
+HIER = bau.HIER
+
+HALTUNGEN = ['Heute', 'Wand', 'Breitbild', 'Paar gross', 'Hoch und tief', 'Sandwich', 'Drei gleich', 'Band', 'Vier im Quadrat',
+             'Flügel', 'Kino', 'Gross und Stapel', 'Treppe', 'Zickzack', 'Bühne und Reihe', 'Mosaik']
+
+TECHNIKEN = '''<dl class="vt">
+<div><dt>Fatwashing</dt><dd>Die Spirituose nimmt den Geschmack eines Fetts an; kalt gestellt, wird das Fett wieder abgehoben.</dd></div>
+<div><dt>Milkwashing</dt><dd>Milch bindet die Trübstoffe und wird abgefiltert, der Drink wird klar und weich.</dd></div>
+<div><dt>Enzyme</dt><dd>Enzyme lösen die Trübung aus Fruchtsaft, der Geschmack bleibt.</dd></div></dl>'''
+
+NAMEN = '<ul class="vn vn-k">' + ''.join('<li><b>%s</b><span>%s</span></li>' % (n, r) for k, n, r in (('derya', 'Derya Ivkin', 'führt die Bar'), ('momo', 'Momo', 'mixt die Drinks'), ('rudi', 'Rudi Napieraj', 'kocht die Gänge'))) + '</ul>'
+
+
+def rz(z):
+    """Rudis Zeile als Bildzeile, Schrägstriche in der Abendfarbe."""
+    return '<span class="vrz">%s</span>' % E(z).replace(' / ', '&#160;<i>/</i> ')
+
+
+def plakat_zeile(a):
+    return '<span class="vpz"><b>%s %s</b><em>%s</em></span>' % (E(a[1]), a[0], E(a[3]))
+
+
+PLAKATE = [a for a in bau.ABENDE if a[4]][::-1]
+
+# ------------------------------------------------------------------ Inhalt je Abschnitt (Fakten wie in bau.py, Quellen dort)
+A = {
+    'ankommen': dict(name='Ankommen', ton='strasse', lauf='Ankommen',
+        titel=['Freitagabend', 'in Linden.'],
+        text='Culinarium ist zu Gast im Walk on the Wild Side, einer Bar an der Haasemannstraße. Freitags geht es um 19 Uhr los, samstags um 17 Uhr.',
+        info='Haasemannstraße 13 · 30449 Hannover',
+        bilder=['schildtag', 'flur', 'schildnacht', 'fassade', 'ecke', 'barnacht', 'loch', 'fensterdraussen'],
+        gross='fassade', grosspos='50% 55%', ueber='Die Tür ist offen.'),
+    'aperitif': dict(name='Aperitif', ton='warm', lauf='Aperitif',
+        titel=['Das erste Glas.'],
+        text='Momo mixt fünf eigene Drinks, passend zum Essen, und erklärt jeden selbst. Dazu gehört ein Blick hinter die Bar, auf Techniken, die man sonst selten sieht.',
+        extra=TECHNIKEN,
+        bilder=['momo', 'klaeren', 'g1', 'schaum', 'g3', 'theke', 'g4', 'kanister', 'g2', 'g5', 'flaschen'],
+        gross='momo', grosspos='50% 38%', ueber='Und während du trinkst, wird drüben angerichtet.'),
+    'gaenge': dict(name='Drei Gänge', ton='hell', lauf='Drei Gänge',
+        titel=['Drei Gänge', 'von Rudi.'],
+        text='Angerichtet wird Teller für Teller, für die ganze Tafel. Seine Teller schreibt Rudi in drei, vier Wörtern, so stehen sie auch hier.',
+        bilder=['anrichten', ('lauch', rz('LAUCH / BLUMENKOHL / CHIPOTLE')), 'pass', ('roq1', rz('BLUMENKOHL / ROQUEFORT / KAPERN / QUINOA')),
+                ('hok1', rz('HOKKAIDO / KÜRBISKERNÖL / HASELNUSS')), 'kueche', ('spag', rz('SPAGHETTI-EIS / KIWI / WEISSE SCHOKOLADE')), 'pass4', 'm8'],
+        gross='lauch', grosspos='50% 50%', ueber='Drei Gänge sind erst ein Abend, wenn vierzehn Leute daran sitzen.'),
+    'tafel': dict(name='Die Tafel', ton='kerze', lauf='Die Tafel',
+        titel=['Vierzehn Plätze,', 'eine Tafel.'],
+        text='Wer kommt, sitzt mit allen anderen an einem Tisch, auf der kleinen Empore der Bar.',
+        info='Freitag ab 19:00 · Samstag ab 17:00 · 14 Plätze',
+        bilder=['tafelleer', 'kerze1', 'kerze2', 't01', 'kerze3', 't02', 't09', 't08', 't06'],
+        gross='tafelleer', grosspos='50% 45%', ueber='Jeder dieser Abende hatte sein eigenes Plakat.'),
+    'plakate': dict(name='Die Plakate', ton='schiefer', lauf='Die Plakate', dicht=True,
+        titel=['Jeder Abend', 'hat sein Plakat.'],
+        text='Seit September 2023 bekommt jeder Abend ein eigenes Plakat. Zusammen sehen sie aus wie die Ausgaben eines Magazins.',
+        knopf=('Alle Abende ansehen', 'abende.html'),
+        bilder=[('p_' + a[4], plakat_zeile(a)) for a in PLAKATE[:10]],
+        gross='p_' + PLAKATE[0][4], grosspos='50% 30%', ueber='Hinter den Plakaten stehen dieselben Leute, Abend für Abend.'),
+    'familie': dict(name='Die Familie', ton='hell', lauf='Die Familie',
+        titel=['Wenn aus Freunden', 'und Kollegen', 'Familie wird.'],
+        text='<span class="handschrift">Dann haste allet richtig jemacht!</span>',
+        extra=NAMEN, knopf=('Momo x Rudi', 'leute.html'),
+        bilder=['film:familie', 'trio', 'rudi', 'w3', 'service', 'w5', 'w6', 'w1'],
+        gross='trio', grosspos='50% 40%', ueber='Und dieselben Leute haben noch eine zweite Küche.'),
+    'dirty-chicken': dict(name='Dirty Chicken', ton='dc', lauf='Dirty Chicken',
+        titel=['Dirty Chicken.'],
+        text='Ein Pop-up: Sandwiches &amp; More, Dirty Food &amp; Dirty Drinks. Am 30. Mai 2026 war Opening. „Dit ist wahre Liebe!“',
+        knopf=('Zu Dirty Chicken', 'dirty-chicken.html', 'violett'),
+        bilder=['film:opening', 'dc_burger', 'dc_tisch', 'dc_drink', 'dc_team', 'dc_team2'],
+        gross='dc_tisch', grosspos='50% 50%', ueber=''),
+    'naechster': dict(name='Nächster Abend', ton='nacht', lauf='Nächster Abend',
+        titel=['Bis zum', 'nächsten Abend.'],
+        text='Der nächste Termin steht noch nicht fest. Wer auf der Warteliste steht, erfährt ihn zuerst.',
+        info='Zuletzt: 25. und 26. September 2026 · 89,00 EUR · ausgebucht',
+        knopf=('Auf die Warteliste', 'abend.html#warteliste'), knopf2=('Was zum Abend gehört', 'abend.html', 'leise'),
+        bilder=['glaeser', 'barlicht', 'schaumglas', 'coupe', 'baiser', 'tablett'],
+        gross='glaeser', grosspos='50% 45%', ueber=''),
+}
+REIHENFOLGE = ['ankommen', 'aperitif', 'gaenge', 'tafel', 'plakate', 'familie', 'dirty-chicken', 'naechster']
+
+
+# ------------------------------------------------------------------ Bausteine
+def teil(x):
+    return (x, '') if isinstance(x, str) else x
+
+
+def verh(k):
+    if k == 'film:familie':
+        return 1.0
+    if k == 'film:opening':
+        return 9 / 16
+    m = META[k]
+    return m['w'] / m['h']
+
+
+def film(k, cls=''):
+    n = k.split(':')[1]
+    return ('<figure class="film vfilm %s" style="--lq:url(assets/film/%s.webp);aspect-ratio:%s"><video muted playsinline preload="none" poster="assets/film/%s.webp?v=%s" data-src="assets/film/%s.mp4?v=%s" aria-label="%s"></video>'
+            '<button class="film-nochmal" type="button" aria-label="Film noch einmal abspielen">Noch einmal</button></figure>') % (
+        cls, n, '1/1' if n == 'familie' else '9/16', n, bau.VERSION, n, bau.VERSION, 'Die Mannschaft an der Theke' if n == 'familie' else 'Opening 2026 bei Dirty Chicken')
+
+
+def bild(k, sizes, cls='', pos=None, natur=False):
+    if k.startswith('film:'):
+        return film(k, cls)
+    return foto(k, cls, sizes, auf=False, pos=pos, ratio=natur)
+
+
+def st(x, sizes):
+    """Ein Stück in einer Reihe: natürliches Seitenverhältnis, nichts wird beschnitten."""
+    k, cap = teil(x)
+    return '<div class="st" style="--r:%.4f">%s%s</div>' % (verh(k), bild(k, sizes, natur=True), ('<p class="vcap">%s</p>' % cap) if cap else '')
+
+
+def reihe(xs, breite=100, cls=''):
+    tot = sum(verh(teil(x)[0]) for x in xs) or 1
+    return '<div class="rr %s">%s</div>' % (cls, ''.join(st(x, '(max-width:860px) 50vw, %dvw' % max(14, round(breite * verh(teil(x)[0]) / tot))) for x in xs))
+
+
+def zelle(x, sizes='33vw', cls=''):
+    """Ein Stück in einer festen Zelle: Fotos füllen sie, Filme behalten ihr Format (die Spalte richtet sich nach dem Film)."""
+    k, cap = teil(x)
+    inner = bild(k, sizes)
+    mf = ' mf" style="--fr:%.4f' % verh(k) if k.startswith('film:') else ''
+    return '<div class="zl-z %s%s">%s%s</div>' % (cls, mf, inner, ('<p class="vcap">%s</p>' % cap) if cap else '')
+
+
+def istfilm(x):
+    return teil(x)[0].startswith('film:')
+
+
+def platz(b, idx):
+    """Den Film (falls dabei) an die Stelle setzen, deren Form zu ihm passt."""
+    f = [x for x in b if istfilm(x)]
+    if not f:
+        return b
+    rest = [x for x in b if not istfilm(x)]
+    rest.insert(min(idx, len(rest)), f[0])
+    return rest
+
+
+def spalten(b, n, film='auto'):
+    return ' style="grid-template-columns:%s"' % ' '.join(film if istfilm(x) else '1fr' for x in b[:n]) if any(istfilm(x) for x in b[:n]) else ''
+
+
+def hochfilm(c):
+    return any(teil(x)[0] == 'film:opening' for x in c['bilder'])
+
+
+def breit(c, verhaeltnis, cls=''):
+    return '<div class="vbreit %s" style="aspect-ratio:%s">%s</div>' % (cls, verhaeltnis, foto(c['gross'], '', '(max-width:860px) 100vw, 86vw', auf=False, pos=c.get('grosspos')))
+
+
+def kopf(c, cls='', titel=True, text=True, rest=True):
+    teile = []
+    if titel:
+        teile.append(zl(c['titel'], 'h2', 'titel'))
+    if text:
+        teile.append(sw(c['text'], 'p', 'vtext', 1))
+    if rest:
+        if c.get('info'):
+            teile.append(sw('<span class="mono">%s</span>' % c['info'], 'p', 'vinfo', 2))
+        if c.get('extra'):
+            teile.append('<div class="sw auf" style="--i:3">%s</div>' % c['extra'])
+        kn = ''.join(knopf(*k) for k in (c.get('knopf'), c.get('knopf2')) if k)
+        if kn:
+            teile.append('<div class="knoepfe sw auf" style="--i:4">%s</div>' % kn)
+    return '<div class="vk %s">%s</div>' % (cls, ''.join(teile))
+
+
+def bilder(c, n, ab=0):
+    b = c['bilder']
+    out = [b[(ab + i) % len(b)] for i in range(n)]
+    return out
+
+
+# ------------------------------------------------------------------ Die 15 Haltungen
+def h1(c):   # Wand: Text mittig oben, darunter zwei volle Reihen Wand an Wand
+    a, b = (5, 5) if c.get('dicht') else (3, 4)
+    return '<div class="vi h-wand">%s<div class="vwand flaeche auf">%s%s</div></div>' % (kopf(c, 'mitte'), reihe(bilder(c, a)), reihe(bilder(c, b, a)))
+
+
+def h2(c):   # Breitbild: ein breites Bild mit Text darauf, darunter eine Reihe
+    unten = kopf(c, 'h2-fuss', titel=False, text=False)
+    rr = list(dict.fromkeys(x for x in bilder(c, 5) if teil(x)[0] != c['gross']))[:4]
+    return '<div class="vi h-breit"><div class="hb-buehne auf">%s<div class="hb-hof"></div>%s</div>%s%s</div>' % (
+        breit(c, '21/9'), kopf(c, 'auf-bild', rest=False), '<div class="flaeche auf">%s</div>' % reihe(rr) if rr else '',
+        unten if any(c.get(x) for x in ('info', 'extra', 'knopf')) else '')
+
+
+def h3(c):   # Paar gross: zwei Bilder Wand an Wand, daneben Text und zwei kleine
+    return '<div class="vi h-paar"><div class="hp-l paar auf">%s</div><div class="hp-r">%s<div class="flaeche auf">%s</div></div></div>' % (
+        reihe(bilder(c, 2)), kopf(c), reihe(bilder(c, 2, 2)))
+
+
+def h4(c):   # Hoch und tief: zwei Bilder auf zwei Höhen, Text mittig dazwischen
+    b = platz(bilder(c, 4), 0 if hochfilm(c) else 2)
+    return '<div class="vi h-hoch"><div class="hh-a paar auf">%s%s</div>%s<div class="hh-b auf">%s</div></div>' % (
+        zelle(b[0], '30vw', 'hoch'), zelle(b[1], '30vw', 'tief'), kopf(c, 'mitte hh-k'), zelle(b[2], '24vw'))
+
+
+def h5(c):   # Sandwich: Reihe, Text in der Mitte, Reihe
+    a, b = (5, 5) if c.get('dicht') else (3, 3)
+    return '<div class="vi h-sand"><div class="flaeche auf">%s</div>%s<div class="flaeche auf">%s</div></div>' % (
+        reihe(bilder(c, a)), kopf(c, 'mitte quer'), reihe(bilder(c, b, a)))
+
+
+def h6(c):   # Drei gleich: Text mittig, drei gleich grosse Hochformate
+    n = 5 if c.get('dicht') else 3
+    b = platz(bilder(c, n), 1)
+    sp = spalten(b, n)
+    return '<div class="vi h-drei">%s<div class="hd-r flaeche auf" %s>%s</div></div>' % (
+        kopf(c, 'mitte'), sp or 'style="--n:%d"' % n, ''.join(zelle(x, '32vw') for x in b))
+
+
+def h7(c):   # Band: Text als erste Karte, dann ein Band zum Wischen
+    return ('<div class="vi h-band"><div class="vband" tabindex="0">%s%s</div><div class="vband-k"><button type="button" data-band="-1" aria-label="Zurück">‹</button>'
+            '<button type="button" data-band="1" aria-label="Weiter">›</button></div></div>') % (
+        kopf(c, 'karte'), ''.join(st(x, '(max-width:860px) 70vw, 30vw') for x in c['bilder']))
+
+
+def h8(c):   # Vier im Quadrat: vier Bilder im Quadrat, daneben Text und eine Reihe
+    b = platz(bilder(c, 6), 4 if hochfilm(c) else 0)
+    return '<div class="vi h-vier"><div class="hv-q flaeche auf">%s</div><div class="hv-r">%s<div class="flaeche auf">%s</div></div></div>' % (
+        ''.join(zelle(x, '24vw') for x in b[:4]), kopf(c), reihe(b[4:6]))
+
+
+def h9(c):   # Flügel: links und rechts je zwei Bilder, Text und ein Bild in der Mitte
+    b = platz(bilder(c, 5), 2)
+    return '<div class="vi h-fluegel"><div class="hf-s flaeche auf">%s%s</div><div class="hf-m">%s<div class="auf">%s</div></div><div class="hf-s flaeche auf">%s%s</div></div>' % (
+        zelle(b[0], '28vw'), zelle(b[1], '28vw'), kopf(c, 'mitte'), zelle(b[2], '34vw'), zelle(b[3], '28vw'), zelle(b[4], '28vw'))
+
+
+def h10(c):  # Kino: breites Bild mit Titel, darunter Text und drei Bilder
+    b = platz([x for x in bilder(c, 5) if teil(x)[0] != c['gross']][:3], 0)
+    return '<div class="vi h-kino"><div class="hb-buehne auf">%s<div class="hb-hof"></div>%s</div><div class="hk-r">%s<div class="hk-b flaeche auf"%s>%s</div></div></div>' % (
+        breit(c, '12/5'), kopf(c, 'auf-bild', text=False, rest=False), kopf(c, '', titel=False), spalten(b, 3), ''.join(zelle(x, '22vw') for x in b))
+
+
+def h11(c):  # Gross und Stapel: ein grosses Bild, daneben Text und zwei Bilder
+    b = platz(bilder(c, 3), 0)
+    return '<div class="vi h-gross%s">' % (' mit-film' if istfilm(b[0]) else '') + '<div class="hg-l auf">%s</div><div class="hg-r">%s<div class="hg-s flaeche auf">%s%s</div></div></div>' % (
+        zelle(b[0], '52vw'), kopf(c), zelle(b[1], '20vw'), zelle(b[2], '20vw'))
+
+
+def h12(c):  # Treppe: vier Bilder steigen an, der Text steht über den kurzen
+    b = platz(bilder(c, 4), 3 if hochfilm(c) else 1)
+    return '<div class="vi h-treppe">%s<div class="ht-r flaeche auf"%s>%s</div></div>' % (
+        kopf(dict(c, extra=None), 'ht-k'), spalten(b, 4), ''.join(zelle(x, '24vw', 's%d' % (i + 1)) for i, x in enumerate(b)))
+
+
+def h13(c):  # Zickzack: Bilder und Text im Wechsel, zwei Zeilen
+    b = bilder(c, 5)
+    zweite = c.get('extra') or ('<p class="vgross mono">%s</p>' % c['info'] if c.get('info') else '')
+    erste = kopf(dict(c, extra=None, info=None))
+    if not zweite:
+        return '<div class="vi h-zz"><div class="hz-1"><div class="paar auf">%s</div>%s</div><div class="flaeche auf">%s</div></div>' % (reihe(b[:2]), erste, reihe(b[2:5]))
+    return '<div class="vi h-zz"><div class="hz-1"><div class="paar auf">%s</div>%s</div><div class="hz-2"><div class="hz-t sw auf">%s</div><div class="flaeche auf">%s</div></div></div>' % (
+        reihe(b[:2]), erste, zweite, reihe(b[2:5]))
+
+
+def h14(c):  # Bühne und Reihe: Text links, drei hohe Bilder rechts, darunter eine volle Reihe
+    a, b = (4, 6) if c.get('dicht') else (3, 4)
+    return '<div class="vi h-buehne"><div class="hbu-1">%s<div class="flaeche auf">%s</div></div><div class="flaeche auf">%s</div></div>' % (
+        kopf(c), reihe(bilder(c, a), 66), reihe(bilder(c, b, a)))
+
+
+def h15(c):  # Mosaik: dichte Fläche, der Text in einem eigenen Feld
+    b = platz(bilder(c, 6), 2 if hochfilm(c) else 0)
+    return '<div class="vi h-mosaik flaeche auf"><div class="hm-a">%s</div><div class="hm-k">%s</div>%s</div>' % (
+        zelle(b[0], '48vw'), kopf(c), ''.join(zelle(x, '24vw', 'hm-%s' % z) for x, z in zip(b[1:], 'bcdef')))
+
+
+HS = [None, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15]
+
+
+def fassung(k, n):
+    c = A[k]
+    inner = HS[n](c)
+    ueber = '<p class="ueber sw auf">%s</p>' % c['ueber'] if c['ueber'] else ''
+    return '<section class="vab v-%s h%d" data-ton="%s">%s%s</section>' % (k, n, c['ton'], inner, ueber)
+
+
+# ------------------------------------------------------------------ Seite aus der Startseite
+def heute(html):
+    """Die heutigen Abschnitte (Fassung 0) aus index.html."""
+    out = {}
+    ids = ['ankommen', 'aperitif', 'gaenge', 'tafel', 'plakate', 'familie', 'dirty-chicken', 'naechster']
+    for k in ids:
+        i = html.index('id="%s"' % k)
+        a = html.rindex('<section', 0, i)
+        b = html.index('</section>', i) + len('</section>')
+        out[k] = (a, b, re.sub(r'\sid="%s"' % k, '', html[a:b], count=1))
+    return out
+
+
+def main():
+    roh = open(os.path.join(HIER, 'index.html'), encoding='utf-8').read()
+    h = heute(roh)
+    s = roh
+    for k in reversed(REIHENFOLGE):
+        a, b, alt = h[k]
+        varianten = ['<div class="wv" data-n="0">%s</div>' % alt]
+        for n in range(1, 16):
+            varianten.append('<div class="wv" data-n="%d" hidden>%s</div>' % (n, fassung(k, n)))
+        block = '<div class="wahl" id="%s" data-name="%s"><div class="wahl-marke"><b>%s</b><span data-nr>Fassung 0 · Heute</span></div>%s</div>' % (
+            k, A[k]['name'], A[k]['name'], ''.join(varianten))
+        s = s[:a] + block + s[b:]
+    for k in FILMLQ:
+        s = s.replace('--lq:url(assets/film/%s.webp)' % k, '--lq:url(%s)' % FILMLQ[k])
+    s = s.replace('<title>', '<title>Auswahl · ', 1)
+    s = s.replace('</head>', '<link rel="stylesheet" href="assets/wahl.css?v=%s">\n</head>' % bau.VERSION, 1)
+    leiste = '''<div id="wleiste"><div class="wl-kopf"><div class="wl-ab"><b data-wl-ab></b><span data-wl-nr></span><span data-wl-name></span></div>
+<div class="wl-wahl" data-wl-wahl></div><div class="wl-knoepfe"><button type="button" data-wl-zur aria-label="Vorige Fassung">‹</button><button type="button" data-wl-vor aria-label="Nächste Fassung">›</button></div></div>
+<div class="wl-daumen" data-wl-daumen></div></div>
+<script>window.WAHL={namen:%s,ids:%s,daumen:%s};</script>
+<script src="assets/wahl.js?v=%s" defer></script>''' % (json.dumps(HALTUNGEN, ensure_ascii=False), json.dumps(REIHENFOLGE),
+                                                         json.dumps(os.path.isdir(os.path.join(HIER, 'assets', 'daumen'))), bau.VERSION)
+    s = s.replace('</body>', leiste + '</body>', 1)
+    open(os.path.join(HIER, 'wahl.html'), 'w', encoding='utf-8').write(s)
+    print('wahl.html', len(s) // 1024, 'KB')
+
+
+FILMLQ = {k: bau.filmgrund(k) for k in bau.FILM}
+
+# ================================================================== Neubau mit Dach (Robert 26.10.2026): Bar · Culinarium · Pop-up
+# Fakten: Bar laut Falstaff (25.10.2026), Instagram-Bio der Bar, Neue Presse/HAZ 01/2024 (presse/neue-presse-haz-2024.md),
+# thomaslasser.de 2018; Culinarium und Dirty Chicken wie oben. Rudi nur in der Küche und beim Pop-up (Robert: nicht die Hauptfigur).
+ZEITEN = '''<dl class="vz"><div><dt>Donnerstag</dt><dd>19 bis 1 Uhr</dd></div><div><dt>Freitag</dt><dd>19 bis 2 Uhr</dd></div><div><dt>Samstag</dt><dd>19 bis 2 Uhr</dd></div><div><dt>Sonntag bis Mittwoch</dt><dd>geschlossen</dd></div></dl>'''
+
+def ebenen(c):
+    """Gleich nach dem Auftakt: wessen Seite das ist. «Über Eck», Abwandlung 11 «Mehrere Bilder je Seite» (Robert 26.10.2026, ebenen-wahl-3.html):
+    zwei Bildgruppen zu je drei Bildern, schräg geteilt mit einer Naht in Kerzenfarbe, der Titel auf einer Tafel quer über der Naht.
+    Die Texte stehen unter der Wand, nie darin (Robert 26.10.2026: «NICHT in die Bildsektion einarbeiten»): die Naht läuft unter dem Bild
+    weiter und trennt sie, der Abend unter der linken Hälfte, das Haus unter der rechten, bündig mit dem Rahmen.
+    Am Bildschirm rücken die Gruppen beim Hereinscrollen an der Naht zusammen (culinarium.js, data-ue).
+    Texte «Am Strich entlang» mit den grossen Namen aus «Namen gross» (Robert 26.10.2026: «8 aber so wie 10 von der größe», texte-wahl.html):
+    je Text ein Keil mit shape-outside, die Zeilen folgen der Schräge; Grösse des Keils setzt culinarium.js aus der Naht."""
+    gruppen, texte, knoepfe_ = [], [], []
+    for i, ((etikett, titel, satz, info, kn), bilder) in enumerate(zip(c['karten'], c['gruppen'])):
+        fotos = ''.join(foto(k, 'ue-' + x, sizes, auf=False, pos=pos) for x, (k, pos, sizes) in zip('abc', bilder))
+        gruppen.append('<div class="ue-gr ue-%s" data-ue="%d">%s</div>' % ('lr'[i], 1 - 2 * i, fotos))
+        knoepfe_.append('<div class="sw auf ue-kn ue-k%s" style="--i:5">%s</div>' % ('lr'[i], knopf(*kn)))
+        texte.append('<div class="ue-text ue-t%s"><i class="ue-keil" aria-hidden="true"></i>%s%s%s%s</div>' % (
+            'lr'[i], sw(E(etikett), 'p', 'mono ue-etikett', 1), sw(E(titel), 'h3', 'ue-titel', 2),
+            sw(E(satz), 'p', 'vtext', 3), sw('<span class="mono">%s</span>' % '&#160;· '.join(E(x).replace(' ', '&#160;') for x in info.split(' · ')), 'p', 'vinfo', 4)))
+    naht = '<svg class="ue-naht" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="57" y1="0" x2="43" y2="100"/></svg>'
+    weiter = '<svg class="ue-weiter" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="43" y1="0" x2="37.4" y2="100"/></svg>'
+    tafel = '<div class="ue-tafel">%s</div>' % zl(c['titel'], 'h2', 'titel')
+    return '<div class="h-ebenen ue"><div class="ue-rahmen">%s%s%s%s</div><div class="ue-unter">%s%s%s%s%s</div></div>' % (
+        gruppen[0], gruppen[1], naht, tafel, weiter, texte[0], texte[1], knoepfe_[0], knoepfe_[1])
+
+
+HS.append(ebenen)
+EBENEN = len(HS) - 1
+
+
+def flankiert(c):
+    """«Aus demselben Haus» auf der Dirty-Chicken-Seite. Fassung 6 «Flankiert» (Robert 26.10.2026, ebenen-wahl.html):
+    Text als Block in der Mitte, links läuft die Tafel an den Rand, rechts die Theke; die Bilder wandern leicht gegenläufig."""
+    seiten = []
+    for i, (bildk, etikett, satz, info, kn) in enumerate(c['karten']):
+        bild = '<div class="fl-bild fl-%s" data-fl="%d">%s<span class="fl-etikett">%s</span></div>' % (
+            'lr'[i], 1 - 2 * i, foto(bildk, '', '(max-width:960px) 50vw, 32vw', auf=False), E(etikett))
+        block = '<div class="fl-block">%s%s<div class="sw auf" style="--i:%d">%s</div></div>' % (
+            sw(satz, 'p', 'vtext', 1 + 2 * i), sw('<span class="mono">%s</span>' % info, 'p', 'vinfo', 2 + 2 * i), 3 + 2 * i, knopf(*kn))
+        seiten.append((bild, block))
+    mitte = '<div class="fl-mitte">%s%s<i class="fl-trenn"></i>%s</div>' % (zl(c['titel'], 'h2', 'titel'), seiten[0][1], seiten[1][1])
+    return '<div class="h-ebenen fl">%s%s%s</div>' % (seiten[0][0], mitte, seiten[1][0])
+
+
+HS.append(flankiert)
+FLANKIERT = len(HS) - 1
+
+
+
+def ablauf(c):
+    """So läuft ein Abend: Fotowand mit Karte nach der Machart des Grand Beau-Rivage (Robert 26.10.2026: «2» aus ablauf-wahl-seite.html,
+    Bau ablauf_wahl.py). Fünf Kacheln um eine dunkle Karte mit dem Ablauf und Punktlinien, Namen in der Einkerbung, ein Bildschirm.
+    Die Kacheln steigen gestaffelt von unten (Seite .foto/.da) und federn einmal; die Überschrift rollt aus dem Schlitz.
+    Ohne «wand» (andere Seiten, z. B. Leute) bleibt die Reihe aus Stationen wie bisher."""
+    if 'wand' not in c:
+        st_ = ''.join('<article class="ab-st" style="--i:%d">%s<h3 class="ab-titel">%s</h3><p class="ab-satz">%s</p></article>' % (
+            i, foto(b, '', '(max-width:860px) 46vw, 24vw', auf=False), E(t), satz) for i, (b, t, satz) in enumerate(c['stationen']))
+        return '<div class="vi h-ablauf">%s<div class="ab-reihe staffel auf">%s</div></div>' % (kopf(c, 'mitte'), st_)
+    kacheln = []
+    for i, (k, name, platz) in enumerate(c['wand']):
+        # Die Einkerbung liegt neben dem Foto im selben Rahmen, nicht im Ausschnitt des Fotos: so kann an der Kante nie eine helle Bildzeile durchscheinen (Robert 27.10.2026)
+        f = foto(k, 'aw-k', '(max-width:860px) 50vw, 26vw', auf=False)
+        kerbe = '<p class="aw-kerbe">%s</p>' % E(name) if name else ''
+        kacheln.append('<div class="aw-z aw-%s" style="--d:%.2fs">%s%s</div>' % (platz, i * .1, f, kerbe))
+    # Menükarte wie in einem Sternehaus (Robert 27.10.2026: «dunkel lassen, aber edles Sternemenü»): Doppelrahmen, Gänge mittig, Zier statt Punktlinien
+    karte = ('<div class="aw-karte"><p class="aw-oben">Culinarium<i></i>Das Menü</p>%s<p class="aw-satz">%s</p><span class="aw-zier" aria-hidden="true"></span>'
+             '<dl class="aw-liste">%s</dl><p class="aw-unten">%s</p></div>') % (
+        zl(c['titel'], 'h2', 'titel aw-titel'), E(c['text']),
+        ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (E(a), E(b)) for a, b in c['liste']), E(c.get('unten', '')))
+    return '<div class="vi h-ablauf"><div class="aw auf">%s%s%s</div></div>' % (''.join(kacheln[:3]), karte, ''.join(kacheln[3:]))
+
+
+def chronik(c):
+    """Seit 2023: Jahre als grosse Zahlen mit Satz, darunter Bilder der Abende Wand an Wand."""
+    if c.get('jahrbilder'):
+        jahre = ''.join('<div class="ck-k" style="--i:%d"><div class="ck-bild">%s<p class="ck-zahl">%s</p></div><p class="ck-wann mono">%s</p><p class="ck-satz">%s</p></div>' % (
+            i, foto(b, '', '(max-width:860px) 46vw, 20vw', auf=False), j, E(w), satz) for i, ((j, w, satz), b) in enumerate(zip(c['jahre'], c['jahrbilder'])))
+        return '<div class="vi h-chronik">%s<div class="ck-karten staffel auf">%s</div></div>' % (kopf(c, 'mitte'), jahre)
+    jahre = ''.join('<div class="ck-j sw auf" style="--i:%d"><p class="ck-zahl">%s</p><p class="ck-wann mono">%s</p><p class="ck-satz">%s</p></div>' % (
+        i, j, E(w), satz) for i, (j, w, satz) in enumerate(c['jahre']))
+    return '<div class="vi h-chronik">%s<div class="ck-reihe">%s</div><div class="flaeche auf ck-bilder">%s</div></div>' % (
+        kopf(c, 'mitte'), jahre, reihe(c['bilder']))
+
+
+def fragen(c):
+    """Gut zu wissen als Ticket (Robert 27.10.2026: «9»): links der Abschnitt mit den Fragen, rechts der Hauptteil mit kurzer Antwort,
+    Antwort und Bild; eine Frage antippen, und der Hauptteil wird neu gedruckt. Ohne Nummern."""
+    stub = ''.join('<button type="button" class="gt-q%s" data-q="%d" aria-pressed="%s">%s</button>' % (
+        ' an' if i == 0 else '', i, 'true' if i == 0 else 'false', E(q)) for i, (q, _a, _k, _w, _b) in enumerate(c['fragen']))
+    haupt = ''.join('<div class="gt-a%s" data-a="%d"><div class="gt-text"><p class="gt-k">%s</p><h3>%s</h3><p class="gt-antwort">%s</p><p class="gt-ort">Haasemannstraße 13 · Hannover-Linden</p></div>%s</div>' % (
+        ' an' if i == 0 else '', i, E(w), E(k), a, foto(bld, 'gt-bild', '(max-width:860px) 100vw, 34vw', auf=False)) for i, (_q, a, k, w, bld) in enumerate(c['fragen']))
+    return ('<div class="vi h-fragen-ticket">%s<div class="gt auf" data-gt><div class="gt-stub"><p class="gt-k">Culinarium · Einlass</p>%s</div>'
+            '<div class="gt-haupt" aria-live="polite">%s</div></div><div class="gt-knopf sw auf">%s</div></div>') % (
+        kopf(c, 'mitte', rest=False), stub, haupt, knopf(*c['knopf']))
+
+
+HS.extend([ablauf, chronik, fragen])
+ABLAUF, CHRONIK, FRAGEN = len(HS) - 3, len(HS) - 2, len(HS) - 1
+
+# ------------------------------------------------------------------ Bühne (Monte-Moro) und Wand mit Fuge (Schäfli), Robert 26.10.2026
+BUEHNEN = {
+    # Lage je Ebene in Prozent der Bühne (Bühne 1,1 : 1): links, oben, Breite, Höhe, Tiefe beim Scrollen.
+    # Robert 26.10.2026: keine schmalen Streifen, Filme breit; jede Kachel zwischen 3:4 und quer.
+    'a3': [(0, 0, 60, 64, -.22), (63, 8, 37, 48, .32), (63, 60, 37, 40, .62)],
+    'b3': [(0, 14, 38, 48, .35), (41, 0, 59, 62, -.2), (0, 66, 60, 34, .55)],
+    'a4': [(0, 0, 62, 58, -.18), (65, 6, 35, 50, .36), (0, 62, 38, 38, .6), (41, 62, 59, 38, .2)],
+    'b4': [(0, 0, 38, 50, .4), (0, 54, 38, 46, .1), (41, 0, 59, 62, -.2), (41, 66, 59, 34, .5)],
+}
+
+
+def ebene(k, x, y, w, h, t, sizes):
+    if k.startswith('film:'):
+        inner = film(k).replace('class="film vfilm ', 'class="film ')
+        return '<div class="bn-eb" data-tiefe="%s" style="left:%s%%;top:%s%%;width:%s%%;height:%s%%"><figure class="fo" style="--lq:url(%s)">%s</figure></div>' % (
+            t, x, y, w, h, FILMLQ[k.split(':')[1]], inner)
+    m = META[k]
+    q, pos, alt = BILD[k]
+    return ('<div class="bn-eb" data-tiefe="%s" style="left:%s%%;top:%s%%;width:%s%%;height:%s%%"><figure class="fo" style="--lq:url(%s)">'
+            '<img data-srcset="%s" data-sizes="%s" alt="%s" decoding="async" style="object-position:%s"></figure></div>') % (
+        t, x, y, w, h, m['lq'], bau.srcset(k), sizes, E(alt), pos)
+
+
+def buehne_html(bilder, art, hoehe=None):
+    lage = BUEHNEN[art]
+    return '<div class="bn"%s>%s</div>' % (' style="--bnh:%s"' % hoehe if hoehe else '', ''.join(
+        ebene(teil(b)[0], *l, sizes='(max-width:860px) 50vw, %dvw' % max(18, round(l[2] * .62))) for b, l in zip(bilder, lage)))
+
+
+def buehne(c):
+    """Monte-Moro: Text als Block an der Seite, daneben die Bühne aus Ebenen."""
+    art = c.get('buehne', 'a3')
+    seite = c.get('seite', '')
+    return '<div class="vi bn-k %s">%s%s</div>' % (seite, kopf(c), buehne_html(c['bilder'], art, c.get('bnh')))
+
+
+STICKER_DC = (
+    '<div class="stk stk-satz" aria-hidden="true"><span>„Dit is keen Burger.<br>Dit Ding is ’ne Ansage.“</span></div>'
+    '<div class="stk stk-stern" aria-hidden="true"><svg viewBox="-20 -20 240 250"><defs><filter id="stk-sch" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#1E0630" flood-opacity=".35"/></filter></defs><polygon filter="url(#stk-sch)" fill="#EF7649" points="'
+    + ' '.join('%.1f,%.1f' % (100 + (96 if i % 2 == 0 else 78) * __import__('math').cos(__import__('math').pi * i / 14), 100 + (96 if i % 2 == 0 else 78) * __import__('math').sin(__import__('math').pi * i / 14)) for i in range(28)) +
+    '"/><text x="100" y="88" text-anchor="middle" font-family="Urbanist, sans-serif" font-weight="800" font-size="20" letter-spacing="2" fill="#1F1B24">OPENING</text>'
+    '<text x="100" y="124" text-anchor="middle" font-family="Fraunces, serif" font-size="34" fill="#1F1B24">30.05.</text></svg></div>')
+
+
+def wand(c):
+    """Schäfli: Bilder Wand an Wand mit Fuge, eine Karte oder ein Film mittendrin; die Fläche kommt gemeinsam."""
+    zellen = []
+    for z in c['wand']:
+        kind, inhalt, ort = z[:3]
+        if kind == 'bild':
+            zellen.append('<div style="%s">%s</div>' % (ort, foto(inhalt, '', '(max-width:860px) 50vw, 30vw', auf=False, pos=z[3] if len(z) > 3 else None)))
+        elif kind == 'film':
+            zellen.append('<div class="fw-film" style="%s">%s</div>' % (ort, film(inhalt)))
+        else:
+            zellen.append('<div class="fw-karte %s" style="%s">%s</div>' % (c.get('karte_art', ''), ort, inhalt))
+    mini = ''.join('<div class="tq-mini" style="--d:%sdeg;--i:%d">%s</div>' % (d, i, foto(m, '', '(max-width:860px) 30vw, 12vw', auf=False)) for i, (m, d) in enumerate(zip(c.get('mini', []), (-4, 3))))
+    rechts = sw(c['text'], 'p', 'fwk-text', 1) + (''.join('<div class="sw auf" style="--i:3">%s</div>' % knopf(*k) for k in (c.get('knopf'),) if k))
+    k = ('<div class="fwk"><div class="fwk-l">%s</div><div class="fwk-r">%s<div>%s</div></div></div>%s') % (
+        zl(c['titel'], 'h2', 'fwk-titel'), '<div class="fwk-minis staffel auf">%s</div>' % mini if mini else '', rechts,
+        '<div class="fwk-extra sw auf">%s</div>' % c['extra'] if c.get('extra') else '')
+    if c.get('zeichen'):
+        k = '<div class="dk"><div class="dk-z auf">%s</div><div class="dk-t"><p class="dk-kicker mono sw auf">%s</p>%s%s<div class="sw auf" style="--i:3">%s</div></div></div>' % (
+            foto(c['zeichen'], '', '(max-width:860px) 40vw, 22vw', auf=False), c['kicker'], zl(c['titel'], 'h2', 'dk-titel'), sw(c['text'], 'p', 'dk-text', 2), knopf(*c['knopf']))
+    fw = '<div class="fw flaeche auf%s" style="%s">%s</div>' % ((' ' + c['wand_cls']) if c.get('wand_cls') else '', c['raster'], ''.join(zellen))
+    if c.get('seite') == 'buehne':   # Reihe oben, Bühne unten: grosses Bild links, Titel, Text und Extra rechts (Das Haus, «Dein Drink»)
+        gr = '<div class="fw flaeche auf" style="grid-template-columns:1fr;grid-template-rows:clamp(380px,36vw,540px)"><div>%s</div></div>' % foto(
+            c['gross'], '', '(max-width:860px) 100vw, 56vw', auf=False, pos=c.get('grosspos'))
+        kr = '<div class="wr-k">%s%s%s</div>' % (zl(c['titel'], 'h2', 'fwk-titel'), sw(c['text'], 'p', 'fwk-text', 1),
+                                                '<div class="sw auf" style="--i:2">%s</div>' % c['extra_k'] if c.get('extra_k') else '')
+        return '<div class="vi h-wand2">%s<div class="wb">%s%s</div></div>' % (fw, gr, kr)
+    if c.get('seite') == 'rechts':   # Wand links, Text rechts (Das Haus, «Dein Drink»)
+        kr = '<div class="wr-k">%s%s%s</div>' % (zl(c['titel'], 'h2', 'fwk-titel'), sw(c['text'], 'p', 'fwk-text', 1),
+                                                '<div class="sw auf" style="--i:2">%s</div>' % c['extra_k'] if c.get('extra_k') else '')
+        return '<div class="vi h-wand2"><div class="wr">%s%s</div></div>' % (fw, kr)
+    if c.get('sticker'):
+        return '<div class="vi h-wand2 mit-stk">%s%s%s</div>' % (k, fw, STICKER_DC)
+    return '<div class="vi h-wand2">%s%s</div>' % (k, fw)
+
+
+HS.extend([buehne, wand])
+BUEHNE, WAND = len(HS) - 2, len(HS) - 1
+
+
+def steckbrief(c):
+    """Ein Zeichen links, rechts Titel und die Angaben als Liste (Dirty Chicken, erstes Pop-up)."""
+    return '<div class="vi h-sb"><div class="sb-zeichen auf">%s</div>%s</div>' % (
+        foto(c['zeichen'], '', '(max-width:860px) 70vw, 34vw', auf=False), kopf(c))
+
+
+def zitatwand(c):
+    """Nur Schrift: Sätze gross gesetzt, ohne Bilder daneben."""
+    return '<div class="vi h-zw">%s</div>' % kopf(c, 'mitte')
+
+
+HS.extend([steckbrief, zitatwand])
+STECKBRIEF, ZITATWAND = len(HS) - 2, len(HS) - 1
+
+ZAHLEN = '<div class="bn-zahlen"><div><b data-zahl="3">3</b><span>Gänge</span></div><div><b data-zahl="5">5</b><span>Drinks</span></div><div><b data-zahl="14">14</b><span>Plätze</span></div></div>'
+
+KARTE_GAENGE = ('<div class="fk-name"><div class="fk-marke">%s</div><p class="fk-zeile">A UNiQUE EXPERiENCE BY MOMO X RUDI</p></div>' % bau.marke('wm')) + \
+    '<div class="fk-menu"><div class="fk-rahmen"><p class="fk-kopf">Teller von Rudi</p>' + ''.join(
+    '<div class="fk-gang"><span class="fk-nr">%s</span><p>%s</p></div>' % (nr, E(z).replace(' / ', '&#160;<i>/</i> ')) for nr, z in (
+        ('I', 'LAUCH / BLUMENKOHL / CHIPOTLE'), ('II', 'BLUMENKOHL / ROQUEFORT / KAPERN / QUINOA'), ('III', 'HOKKAIDO / KÜRBISKERNÖL / HASELNUSS'), ('IV', 'SPAGHETTI-EIS / KIWI / WEISSE SCHOKOLADE'))) + \
+    '<p class="fk-fuss">So wie er sie schreibt</p></div></div>'
+
+# ------------------------------------------------------------------ Seitenauftakt der Unterseiten (Robert 26.10.2026: «richtig geilen atemberaubenden Hero»)
+def seitenauftakt(c):
+    """Wie der gewählte Auftakt «Anstossen»: Bilder füllen die Bühne, der Titel steht gross darüber, Satz und Knopf unten links."""
+    art = c.get('art', 'zwei')
+    if art == 'mosaik':
+        return mosaik(c)
+    if art == 'ueber':
+        return ueber_koepfe(c)
+    if art == 'zwei':
+        b = foto(c['bilder'][0], 'hoch', '(max-width:860px) 50vw, 34vw', True, False) + foto(c['bilder'][1], 'tief', '(max-width:860px) 50vw, 34vw', True, False)
+    else:
+        b = ''.join(foto(k, '', '(max-width:860px) 100vw, %dvw' % (100 // len(c['bilder'])), True, False) for k in c['bilder'])
+    unten = sw(c['text'], 'p', 'at-satz', 2)
+    if c.get('info'):
+        unten += sw('<span class="mono">%s</span>' % c['info'], 'p', 'sa-info', 3)
+    kn = ''.join(knopf(*k) for k in (c.get('knopf'), c.get('knopf2')) if k)
+    if kn:
+        unten += '<div class="knoepfe sw auf" style="--i:4">%s</div>' % kn
+    hof = '<div class="sa-hof"></div>' if art in ('voll', 'mitte', 'ueber') else ''
+    return '<div class="vi sa sa-%s"><div class="sa-bilder flaeche auf">%s</div>%s%s<div class="at-text">%s</div></div>' % (
+        art, b, hof, zl(c['titel'], 'h2' if art == 'mitte' else 'h1', 'sa-titel'), unten)
+
+
+# Hero «Über den Köpfen» auf Team (Robert 27.10.2026, Fassung 2 aus leute-kopf-wahl.html, Bild D KI-geschärft):
+# «Ich wollte, dass es hinter den Leuten hervorkommt. Das ist ja der Witz an der ganzen Sache.» Drei Ebenen: hinten das Foto, dann der Titel,
+# vorn dieselben Leute freigestellt (Higgsfield, Maske gehärtet), deckungsgleich. Der Titel steigt aus dem Schlitz hinter den Köpfen hervor.
+# Titelhöhe folgt den Köpfen: Oberkante der Köpfe liegt bei 44svh − 8.5vw, die Köpfe decken nur etwa 2vw vom Fuss der Buchstaben
+# (Robert 27.10.2026: «noch ein kleines bisschen besser lesbar»).
+# Stil steht hier inline, damit er beim Überschreiben von culinarium.css nicht verloren geht (20:52 schon einmal passiert).
+UEBER_STIL = """<style>
+.vi.sa-ueber{max-width:none;width:100%;margin:0;padding:0;height:max(100svh,640px);max-height:none}
+.sa-ueber .sa-bilder{position:absolute;inset:0;display:block}
+.sa-ueber .sa-bilder>.foto{position:absolute;inset:0;height:100%;border-radius:0;transform:none!important;opacity:1!important;transition:none!important}
+.sa-ueber .foto img,.sa-vorn img{transform:none!important;transition:none!important;width:100%;height:100%;object-fit:cover}
+.sa-ueber .sa-hof{z-index:1;background:linear-gradient(to bottom,rgba(12,11,15,.62),rgba(12,11,15,.18) 40%,rgba(12,11,15,0) 56%)}
+.sa-ueber .sa-titel{z-index:2;left:0;right:0;top:clamp(90px,calc(44svh - 15.2vw),40svh);transform:none;width:auto;max-width:none;font-size:clamp(72px,12vw,220px);letter-spacing:-.03em;filter:none;text-shadow:0 4px 40px rgba(0,0,0,.35)}
+.sa-vorn{position:absolute;inset:0;z-index:3;pointer-events:none}
+.sa-unten{position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(to top,rgba(12,11,15,.92),rgba(12,11,15,.4) 22%,rgba(12,11,15,0) 38%)}
+.sa-ueber .at-text{z-index:5;left:var(--rand);right:var(--rand);bottom:clamp(30px,5.5vh,60px);max-width:none;flex-direction:row;justify-content:space-between;align-items:flex-end;gap:30px}
+.sa-ueber .at-satz{max-width:470px}
+@media (max-width:860px){
+  .sa-ueber .sa-titel{font-size:clamp(56px,16vw,96px);top:31.5vh}
+  .sa-ueber .at-text{left:18px;right:18px;bottom:28px;flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style>"""
+
+
+def vorn_bilder(k, maske):
+    """Freigestellte Leute in denselben Stufen wie das Foto k: Pixel aus dem Foto, Alpha aus der Maske (gehärtet, ohne Schleier)."""
+    q = os.path.join(bau.PROJ, BILD[k][0]); mq = os.path.join(bau.PROJ, maske)
+    stufen = META[k]['stufen']
+    ziel = [os.path.join(HIER, 'assets/bild/%s_vorn-%d.webp' % (k, w)) for w in stufen]
+    if all(os.path.exists(z) and os.path.getmtime(z) > max(os.path.getmtime(q), os.path.getmtime(mq)) for z in ziel):
+        return stufen
+    from PIL import Image
+    im = Image.open(q).convert('RGB')
+    a = Image.open(mq).convert('RGBA').getchannel('A').resize(im.size, Image.LANCZOS).point(lambda v: 0 if v < 110 else 255 if v > 200 else (v - 110) * 255 // 90)
+    im = im.convert('RGBA'); im.putalpha(a)
+    for w, z in zip(stufen, ziel):
+        (im if im.width == w else im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)).save(z, 'WEBP', quality=82, method=6)
+    print('Vorn', k, stufen)
+    return stufen
+
+
+def ueber_koepfe(c):
+    k = c['bilder'][0]
+    stufen = vorn_bilder(k, c['vorn'])
+    pos = BILD[k][1]
+    v = '%sm%d' % (bau.VERSION, os.path.getmtime(os.path.join(HIER, 'assets/bild/%s_vorn-%d.webp' % (k, stufen[0]))))   # neue Maske = neue Adresse
+    vorn = '<div class="sa-vorn" aria-hidden="true"><img src="assets/bild/%s_vorn-%d.webp?v=%s" srcset="%s" sizes="100vw" alt="" decoding="async" style="object-position:%s"></div>' % (
+        k, stufen[0], v, ', '.join('assets/bild/%s_vorn-%d.webp?v=%s %dw' % (k, w, v, w) for w in stufen), pos)
+    unten = sw(c['text'], 'p', 'at-satz', 2)
+    kn = ''.join(knopf(*x) for x in (c.get('knopf'), c.get('knopf2')) if x)
+    if kn:
+        unten += '<div class="knoepfe sw auf" style="--i:4">%s</div>' % kn
+    return '%s<div class="vi sa sa-ueber"><div class="sa-bilder">%s</div><div class="sa-hof"></div>%s%s<div class="sa-unten"></div><div class="at-text">%s</div></div>' % (
+        UEBER_STIL, foto(k, '', '100vw', True, False), zl(c['titel'], 'h1', 'sa-titel'), vorn, unten)
+
+
+def mosaik(c):
+    """Hero «Mosaik» (Robert 27.10.2026, Fassung 9 aus bar-kopf-wahl.html): Bilder der Bar dicht in ungleichen Grössen über den ganzen Schirm.
+    Der Text steht auf einer eigenen Tafel, die auf Höhe der Glasballons beginnt und über dem Bild darüber und dem darunter liegt."""
+    b = ''.join(foto(k, 'smk smk%d' % (i + 1), '(max-width:860px) 50vw, 34vw', True, False, pos=p) for i, (k, p) in enumerate(c['bilder']))
+    tafel = zl(c['titel'], 'h1', 'mittel') + sw(c['text'], 'p', 'at-satz', 2)
+    if c.get('info'):
+        tafel += sw('<span class="mono">%s</span>' % c['info'], 'p', 'sa-info', 3)
+    return '<div class="sa sa-mosaik"><div class="sa-bilder flaeche auf">%s</div><div class="sa-tafel">%s</div></div>' % (b, tafel)
+
+
+def konzert(c):
+    """Ein grosses Bühnenbild, der Titel steht darauf; rechts drei Fotos übereinander, die über die Kante ragen."""
+    rest = ''
+    if c.get('info'):
+        rest += sw('<span class="mono">%s</span>' % c['info'], 'p', 'kz-info', 2)
+    if c.get('extra'):
+        rest += '<div class="sw auf" style="--i:3">%s</div>' % c['extra']
+    if c.get('knopf'):
+        rest += '<div class="sw auf" style="--i:4">%s</div>' % knopf(*c['knopf'])
+    return ('<div class="vi kz"><div class="kz-gross auf">%s</div><div class="kz-text">%s%s%s</div><div class="kz-stapel flaeche auf">%s</div></div>') % (
+        foto(c['bilder'][0], '', '(max-width:860px) 100vw, 66vw', auf=False), zl(c['titel'], 'h2', 'kz-titel'), sw(c['text'], 'p', 'kz-satz', 1), rest,
+        ''.join(foto(k, '', '(max-width:860px) 33vw, 26vw', auf=False) for k in c['bilder'][1:3]))
+
+
+def lauf(c):
+    """Wie txtme.social: Gruppen aus grossem Querbild, zwei gestapelten Bildern und einem Hochbild, alle gleich hoch und bündig,
+    laufen endlos seitlich durch; die Reihe läuft weiter, wenn die Maus darüber ist, und lässt sich jederzeit selbst schieben."""
+    b = c['bilder']
+    gruppen = []
+    for i in range(0, len(b) - 3, 4):
+        g = b[i:i + 4]
+        gruppen.append('<div class="lf-g">%s<div class="lf-paar">%s%s</div>%s</div>' % (
+            foto(g[0], 'lf-gross', '(max-width:860px) 80vw, 46vw', auf=False), foto(g[1], '', '(max-width:860px) 40vw, 20vw', auf=False),
+            foto(g[2], '', '(max-width:860px) 40vw, 20vw', auf=False), foto(g[3], 'lf-hoch', '(max-width:860px) 60vw, 28vw', auf=False)))
+    spur = ''.join(gruppen)
+    return '<div class="vi h-lauf">%s</div><div class="lf" data-lauf tabindex="0" aria-label="Teller und Drinks, zur Seite schieben"><div class="lf-spur">%s<div class="lf-kopie" aria-hidden="true">%s</div></div></div>' % (
+        kopf(c, 'mitte'), spur, spur)
+
+
+def galerie(c):
+    """Die neueste Ausgabe gross links, rechts Titel und ein Regal, auf dem die früheren Ausgaben gerade nebeneinander stehen."""
+    (k0, cap0, _g), rest = c['galerie'][0], c['galerie'][1:]
+    regal = ''.join('<figure class="gr-p" style="--i:%d">%s<figcaption>%s</figcaption></figure>' % (
+        i, foto(k, '', '(max-width:860px) 30vw, 11vw', auf=False, ratio=True), cap) for i, (k, cap, _g) in enumerate(rest))
+    return ('<div class="vi gr"><figure class="gr-gross auf">%s<figcaption><span class="mono">Neueste Ausgabe</span>%s</figcaption></figure>'
+            '<div class="gr-r">%s<div class="gr-regal staffel auf">%s<span class="gr-brett" aria-hidden="true"></span></div></div></div>') % (
+        foto(k0, '', '(max-width:860px) 80vw, 34vw', auf=False, ratio=True), cap0, kopf(c), regal)
+
+
+def mmkopf(c):
+    """Anordnung wie Monte-Moro «Mehr erleben, weniger zahlen»: links ein geschlossener Bildblock (gross oben, klein unten links, mittel unten rechts, beide über der Kante des grossen), rechts die Textspalte."""
+    lagen = [(0, 0, 77, 61, -.1), (0, 56, 50, 44, .3), (58, 48, 42, 47, .45)]
+    zahlen = ''.join('<div class="mz"><b>%s</b><span>%s</span></div>' % (z, E(l)) for z, l in c['zahlen'])
+    buehne = '<div class="bn mmb">%s</div>' % ''.join(ebene(teil(b)[0], *l, sizes='(max-width:860px) 70vw, %dvw' % round(l[2] * .55)) for b, l in zip(c['bilder'], lagen))
+    return ('<div class="vi mm2">%s<div class="mm2-r"><p class="mm-kicker mono sw auf">%s</p>%s<div class="mm-zahlen sw auf" style="--i:2">%s</div>'
+            '<p class="mm-text sw auf" style="--i:3">%s</p><div class="sw auf" style="--i:4">%s</div></div></div>') % (
+        buehne, c['kicker'], zl(c['titel'], 'h2', 'mm-titel'), zahlen, c['text'], knopf(*c['knopf']))
+
+
+def fensterschluss(c):
+    """Ein Fenster wie «Drinnen wird schon angestossen»: das Bild steht, die Seite zieht darüber; Satz, Text und Knöpfe mittig."""
+    satz = ''.join('<span class="z"><span style="--i:%d">%s</span></span>' % (i, z) for i, z in enumerate(c['titel']))
+    kn = ''.join(knopf(*k) for k in (c.get('knopf'), c.get('knopf2')) if k)
+    return ('<div class="vi fenster fs"><div class="fenster-schicht">%s<div class="fenster-hof fs-hof"></div>'
+            '<div class="fs-inhalt"><h2 class="fenster-satz zl">%s</h2><p class="fs-text sw" style="--i:2">%s</p><div class="knoepfe sw" style="--i:3">%s</div></div></div></div>') % (
+        foto(c['bilder'][0], '', '100vw', auf=False, pos=c.get('pos')), satz, c['text'], kn)
+
+
+def techniken(c):
+    """Links ein hohes Bild mit Titel darauf, rechts die Techniken als Karte, je mit eigenem Bild."""
+    t = ''.join('<div class="tq sw auf" style="--i:%d"><div class="tq-bild">%s</div><div><h3>%s</h3><p>%s</p></div></div>' % (
+        i + 1, foto(b, '', '(max-width:860px) 30vw, 14vw', auf=False), E(n), d) for i, (b, n, d) in enumerate(c['techniken']))
+    mini = ''.join('<div class="tq-mini" style="--d:%sdeg">%s</div>' % (d, foto(k, '', '(max-width:860px) 30vw, 12vw', auf=False)) for k, d in zip(c.get('mini', []), (-4, 3)))
+    return '<div class="vi tq-k"><div class="tq-gross auf">%s<div class="tq-minis staffel auf">%s</div><div class="tq-titel">%s%s</div></div><div class="tq-liste"><p class="tq-kopf mono sw auf">%s</p>%s</div></div>' % (
+        foto(c['bilder'][0], '', '(max-width:860px) 100vw, 46vw', auf=False), mini, zl(c['titel'], 'h2', 'kz-titel'), sw(c['text'], 'p', 'kz-satz', 1), c['kopfzeile'], t)
+
+
+def plakatreihe(c):
+    """Plakate freistehend auf der Tapete, leicht versetzt und gedreht, wie aufgehängt."""
+    dreh = [-2.2, 1.6, -1, 2.4, -1.8, 1.2, -2.6, 1.9]
+    hoch = [0, 34, 10, 42, 4, 30, 14, 38]
+    p = ''.join('<div class="pr-p" style="--d:%sdeg;--y:%spx;--i:%d">%s</div>' % (dreh[i % 8], hoch[i % 8], i, foto(k, '', '(max-width:860px) 46vw, 18vw', auf=False))
+                for i, k in enumerate(c['bilder']))
+    return '<div class="vi pr">%s<div class="pr-reihe staffel auf">%s</div></div>' % (kopf(c, 'mitte'), p)
+
+
+def auslage(c):
+    """Plakate und Karten wie auf einem Tisch ausgelegt, überlappend und leicht gedreht."""
+    p = ''.join('<div class="al-p" style="left:%s%%;top:%s%%;width:%s%%;--d:%sdeg;--i:%d">%s</div>' % (x, y, w, d, i, foto(k, '', '(max-width:860px) 46vw, 22vw', auf=False))
+                for i, (k, x, y, w, d) in enumerate(c['lage']))
+    return '<div class="vi al">%s<div class="al-tisch staffel auf">%s</div></div>' % (kopf(c, 'mitte'), p)
+
+
+def bildkarte(c):
+    """Ein grosses Foto, darauf frei eine helle Karte mit Titel, Angaben und Knöpfen."""
+    return '<div class="vi bk %s"><div class="bk-bild auf">%s</div><div class="bk-karte sw auf">%s</div></div>' % (
+        c.get('seite', ''), foto(c['bilder'][0], '', '(max-width:860px) 100vw, 84vw', auf=False), kopf(c))
+
+
+ZZ_STIL = """<style>
+.zz-kopf{display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:end;margin-bottom:clamp(32px,5vh,60px)}
+.zz-kopf .titel{font-family:var(--titel);font-weight:340;font-size:clamp(34px,3.7vw,60px);line-height:1;letter-spacing:-.014em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;margin:0}
+.zz-kopf .vtext{color:var(--fg2);font-size:17px;line-height:1.6;margin:0}
+.zz-z{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(28px,5vw,88px);align-items:center}
+.zz-z+.zz-z{margin-top:clamp(48px,8vh,100px)}
+.zz-z.um .zz-bilder{order:2}
+.zz-bilder{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:minmax(0,1fr);gap:var(--fuge);height:clamp(460px,70vh,700px);transition:transform 1.6s var(--k)}
+.zz-bilder>.foto{height:100%}
+.zz-zwei{display:grid;grid-template-rows:1fr 1fr;gap:var(--fuge);min-height:0}
+.zz-zwei .foto{height:100%;min-height:0}
+html.js:not(.ruhig) .zz-z .zz-bilder:not(.da){transform:translateX(-90px)}
+html.js:not(.ruhig) .zz-z.um .zz-bilder:not(.da){transform:translateX(90px)}
+.zz-t{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}
+.zz-t .mono{margin:0}
+.zz-name{margin:0;font:340 clamp(38px,3.8vw,62px)/1.02 var(--titel);letter-spacing:-.012em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.zz-voll{margin:-4px 0 0;color:var(--fg2);font-size:15px}
+.zz-text{margin:4px 0 0;font-size:17px;line-height:1.6;color:var(--fg2);max-width:48ch}
+.zz-t .zitat{margin:8px 0 2px}
+.zz-t .zitat p{margin:0}
+.zz-t .zitat cite{display:block;margin-top:8px;font:400 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--fg2)}
+.zz-weg{margin:10px 0 4px;width:100%;max-width:560px}
+.zz-weg>div{display:grid;grid-template-columns:104px 1fr;gap:18px;padding:12px 0;border-top:1px solid var(--linie)}
+.zz-weg>div:last-child{border-bottom:1px solid var(--linie)}
+.zz-weg dt{font:400 13px/1.55 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--kerze-tief)}
+.zz-weg dd{margin:0;font-size:15px;line-height:1.55;color:var(--fg2)}
+.zz-weg dd i{font-style:normal;color:var(--kerze-tief)}
+.zz-ig{color:var(--fg);font-weight:500;font-size:15px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.zz-ig:hover{color:var(--kerze-tief)}
+@media (max-width:860px){.zz-kopf,.zz-z{grid-template-columns:1fr;gap:22px}.zz-z.um .zz-bilder{order:0}.zz-bilder{height:66svh}.zz-weg>div{grid-template-columns:84px 1fr;gap:14px}}
+</style>"""
+
+
+def zickzack(c):
+    """Die drei im Zickzack (Robert 27.10.2026: Fassung 3 aus team-wahl-2.html, «noch mehr Informationen zu den Charakteren»).
+    Je Person eine Zeile: Bildgruppe aus Hochformat und zwei Fotos aus ihrem Teil des Hauses, die Seite wechselt, die Gruppe schiebt sich von ihrer Seite herein.
+    Daneben Rolle, Name, Satz, Zitat und der Weg; alles belegt in _quelle/recherche/werdegang-team.md. Stand davor *.vor-zickzack-2026-10-27."""
+    def weg(dt, dd):
+        dd = E(dd).replace(' / ', '&#160;<i>/</i> ')
+        return '<div><dt>%s</dt><dd>%s</dd></div>' % (E(dt), dd)
+    z = []
+    for i, p in enumerate(c['zickzack']):
+        zitat = '<blockquote class="zitat"><p>%s</p><cite>%s</cite></blockquote>' % (E(p['zitat'][0]), E(p['zitat'][1])) if p.get('zitat') else ''
+        voll = '<p class="zz-voll">%s</p>' % E(p['voll']) if p.get('voll') else ''
+        text = ('<div class="zz-t sw auf"><p class="mono">%s</p><h3 class="zz-name">%s</h3>%s<p class="zz-text">%s</p>%s<dl class="zz-weg">%s</dl>'
+                '<a class="zz-ig" href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a></div>') % (
+            E(p['was']), E(p['name']), voll, E(p['text']), zitat, ''.join(weg(*w) for w in p['weg']), p['ig'], p['ig'])
+        bilder = '<div class="zz-bilder auf">%s<div class="zz-zwei">%s%s</div></div>' % (
+            foto(p['bild'], '', '(max-width:860px) 60vw, 34vw', auf=False, pos=p['pos']),
+            foto(p['dazu'][0], '', '(max-width:860px) 40vw, 20vw', auf=False), foto(p['dazu'][1], '', '(max-width:860px) 40vw, 20vw', auf=False))
+        z.append('<div class="zz-z%s">%s%s</div>' % (' um' if i % 2 else '', bilder, text))
+    kopf = '<div class="zz-kopf">%s%s</div>' % (zl(c['titel'], 'h2', 'titel'), sw(E(c['text']), 'p', 'vtext', 1))
+    return '%s<div class="vi zz">%s%s</div>' % (ZZ_STIL, kopf, ''.join(z))
+
+
+def koepfe(c):
+    """Die Leute als Karten, jede mit rundem Bild aus dem Teamfoto."""
+    if c.get('art') == 'zickzack':
+        return zickzack(c)
+    k = ''.join('<article class="kp sw auf" style="--i:%d"><div class="kp-bild">%s</div><p class="kp-was mono">%s</p><h3 class="kp-name">%s</h3><p class="kp-text">%s</p><a class="link" href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a></article>' % (
+        i, foto(b, '', '160px', auf=False), E(was), E(name), text, ig, ig) for i, (b, was, name, text, ig) in enumerate(c['personen']))
+    return '<div class="vi h-kp">%s<div class="kp-reihe">%s</div></div>' % (kopf(c, 'mitte'), k)
+
+
+def automat(c):
+    """Hero «Der Automat» (Robert 27.10.2026, Fassung 10 aus dirty-chicken-wahl.html): vier Bildsäulen über die ganze Fläche laufen gegeneinander wie Walzen,
+    in der Mitte das violette Schild mit Zitat, Titel und Satz. Nur der schwarze Rahmen ums Schild ist weg, dazu kein Instagram-Knopf (Robert)."""
+    def saeule(i, ks):
+        figs = ''.join('<figure><img src="assets/bild/%s-%d.webp?v=%s" srcset="%s" sizes="(max-width:860px) 34vw, 18vw" alt="%s"%s decoding="async" style="object-position:%s"></figure>' % (
+            k, META[k]['stufen'][0], bau.VERSION, bau.srcset(k), E(BILD[k][2]) if n < len(ks) else '', ' loading="lazy"' if n >= 3 else '', BILD[k][1])
+            for n, k in enumerate(ks * 2))
+        return '<div class="am-s am-s%d" aria-hidden="%s"><div class="am-zug">%s</div></div>' % (i, 'false' if i == 0 else 'true', figs)
+    s = [saeule(i, ks) for i, ks in enumerate(c['saeulen'])]
+    schild = '<div class="am-schild">%s%s%s</div>' % (sw(c['zitat'], 'p', 'am-zitat'), zl(c['titel'], 'h1', 'am-titel', 1), sw(c['text'], 'p', 'am-satz', 3))
+    # Durchlaufendes Band an der Unterkante (Robert 27.10.2026: «wie beim Rivage», in Farbe und Stil der Seite, damit der Übergang ins Fenster weich wird)
+    fuss = '<svg class="am-fuss" viewBox="-20 -32 40 68" aria-hidden="true"><path d="M0 34 L0 4 M0 4 L-14 -22 M0 4 L2 -28 M0 4 L18 -18"/></svg>'
+    eins = ''.join('<span>%s</span>%s' % (w, fuss) for w in c.get('band', []))
+    band = '<div class="am-band" aria-hidden="true"><div class="am-band-zug"><p>%s</p><p>%s</p></div></div>' % (eins, eins) if eins else ''
+    return '<div class="vi am"><div class="am-saeulen">%s</div>%s%s</div>' % (''.join(s), schild, band)
+
+
+HS.extend([seitenauftakt, koepfe, konzert, plakatreihe, auslage, bildkarte, techniken, lauf, fensterschluss, galerie, mmkopf, automat])
+SA, KOEPFE, KONZERT, PLAKATREIHE, AUSLAGE, BILDKARTE, TECHNIKBILD, LAUF, FS, GALERIE, MMKOPF, AUTOMAT = range(len(HS) - 12, len(HS))
+
+# Eigene Website der Bar (Robert-Mail 27.10.2026: zwei Websites, die aufeinander verweisen). Lokal liegt sie im Nachbarordner; vor dem Online-Gehen hier die echte Adresse eintragen.
+WILDSIDE = '../../Walk%20on%20the%20Wild%20Side%20Hannover/website/'
+
+
+def gastgeber(c):
+    """Das Haus als Gastgeber (Robert 27.10.2026: «Gastgebermentalität … besser als Bühne», mit klarem Ziel: die Website der Bar).
+    Oben Foto und Gastgeber-Karte gleich hoch, darunter vier Türen in die Bar, jede führt auf die passende Seite der Bar-Website."""
+    fakten = ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (a, b) for a, b in c['fakten'])
+    karte = ('<div class="gg-karte sw auf"><p class="gg-k mono">%s</p>%s%s<dl class="gg-fakten">%s</dl><div class="knoepfe">%s</div></div>') % (
+        c['kicker'], zl(c['titel'], 'h2', 'titel'), sw(c['text'], 'p', 'vtext', 1), fakten, knopf(*c['knopf']))
+    tueren = ''.join('<a class="gg-tuer sw auf" style="--i:%d" href="%s%s"><div class="gg-tuer-bild">%s</div><p class="gg-tuer-name">%s<i>%s</i></p><p class="gg-tuer-text">%s</p></a>' % (
+        i, WILDSIDE, ziel, foto(b, '', '(max-width:860px) 50vw, 22vw', auf=False), name, bau.PFEIL, text) for i, (b, name, text, ziel) in enumerate(c['tueren']))
+    return ('<div class="vi gg"><div class="gg-oben"><div class="gg-bild auf">%s</div>%s</div>'
+            '<p class="gg-zwischen sw auf">%s</p><div class="gg-tueren">%s</div></div>') % (
+        foto(c['gross'], '', '(max-width:860px) 100vw, 56vw', auf=False), karte, c['zwischen'], tueren)
+
+
+HS.append(gastgeber)
+GASTGEBER = len(HS) - 1
+
+LEUTESEITE = [
+    # Hero «Über den Köpfen» (Robert 27.10.2026: Fassung 2 aus leute-kopf-wahl.html mit Bild D, KI-geschärft; Titel tiefer als in der Wahl).
+    # Stand davor *.vor-team-hero-2026-10-27
+    ('lt-kopf', SA, dict(name='Das Team', ton='nacht', art='ueber',
+        titel=['Das Team.'],
+        text='Die Abende von Culinarium und ihr Haus, das Walk on the Wild Side: getragen von denselben Leuten.',
+        knopf=('Der Abend', 'abend.html'), bilder=['team_alle'], vorn='_quelle/dirty-chicken/hochgerechnet/DZIjZWNCGZT-2-4k-freigestellt-sauber.png')),
+    # Zickzack (Robert 27.10.2026: Fassung 3 aus team-wahl-2.html) mit dem Weg der drei; Belege: _quelle/recherche/werdegang-team.md. Stand davor *.vor-zickzack-2026-10-27
+    ('lt-koepfe', KOEPFE, dict(name='Die Leute', ton='hell', art='zickzack',
+        titel=['Drei Leute,', 'ein Haus.'],
+        text='Wer an einem Abend hinter der Theke, in der Küche und an der Tafel steht.',
+        zickzack=[
+            dict(bild='w3', pos='40% 30%', dazu=['ecke', 'barlicht'], was='Führt die Bar', name='Derya Ivkin', ig='derrisch__',
+                 text='Führt das Walk on the Wild Side, das Haus von Culinarium, seit dem Reopening im November 2023. Eine Karte gibt es bei ihr nicht: Wer an die Theke kommt, bekommt einen Drink nach seinem Geschmack.',
+                 zitat=('„Ich bin die Karte.“', 'Derya in der Neuen Presse, Januar 2024'),
+                 weg=[('Herkunft', 'Zu Hause in Hannover, mit Wurzeln in Ordu an der türkischen Schwarzmeerküste.'),
+                      ('2023', 'Sie übernimmt die Bar in Linden und macht sie im November neu auf, ohne Getränkekarte: Man sagt, was man mag, und bekommt seinen eigenen Drink. Zu den Drinks kam sie über Momo.'),
+                      ('Das Haus', 'Unter ihr wird die Bar zum Haus für mehr: Culinarium an der langen Tafel, Bartender aus anderen Bars als Gäste hinter der Theke, Konzerte am Donnerstag.'),
+                      ('Samstags', 'An manchen Samstagen legen DJs auf, dann gibt es Drinks und Musik bis 2 Uhr.')]),
+            dict(bild='momo_hoch', pos='50% 22%', dazu=['schaum', 'd3'], was='Mixt die Drinks', name='Momo', voll='Mohamed Ben Khelifa', ig='momo012027',
+                 text='Steht hinter der Bar und mixt die Signature Drinks, auch die fünf eines Culinarium-Abends, und erklärt jeden selbst.',
+                 zitat=('„Du sagst mir, was du magst, ich mache dir einen Drink.“', 'Momos Motto an der Theke'),
+                 weg=[('2018', 'Barchef im Lindenblatt in Hannover. Schon damals mixt er eigene Drinks, etwa mit Melone, rosa Pfeffer und Honig.'),
+                      ('2023', 'Im Mai macht er das erste Pop-up im Walk on the Wild Side, im September folgen die ersten Abende mit Menü und seinen Drinks. So beginnt Culinarium.'),
+                      ('Im Glas', 'Er arbeitet mit Techniken aus der Mixology: Milch macht einen Drink klar und weich, Fett gibt der Spirituose seinen Geschmack mit.'),
+                      ('Unterwegs', 'Auch außerhalb der Bar steht er hinter der Theke, in den Sommern 2024 und 2025 etwa beim Maschseefest am See.')]),
+            dict(bild='w4', pos='74% 30%', dazu=['beete', 'pass3'], was='Kocht die Gänge', name='Rudi Napieraj', voll='Rudolf Napieraj', ig='rudi__san',
+                 text='Kocht seit 2024 bei Culinarium, drei Gänge an der langen Tafel, und steht beim Pop-up Dirty Chicken in der Küche.',
+                 zitat=('„Unser Herzensprojekt.“', 'Rudi über Culinarium, Juli 2024'),
+                 weg=[('2024', 'Im April kocht er seinen ersten Culinarium-Abend. Seitdem stehen auf jedem Plakat zwei Namen: Momo für die Drinks, Rudi für die Küche.'),
+                      ('Am Teller', 'Gemüse steht bei ihm oft im Mittelpunkt: Lauch, Blumenkohl, Kürbis, Rote Bete. Zu jedem Gang gibt es einen passenden Drink von Momo.'),
+                      ('2025', 'Im Juli kocht er für die erste Tacos & Tequila Party in der Bar, zusammen mit Momo.'),
+                      ('2026', 'Zum Valentinstag ein eigenes Menü in der Bar. Dazu startet er Dirty Chicken, ein Pop-up mit Chicken-Sandwiches, Pommes und Drinks.')])])),
+    ('lt-arbeit', WAND, dict(name='Bei der Arbeit', ton='nacht',
+        raster='grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:repeat(2,clamp(230px,26vw,360px)) clamp(220px,22vw,320px)',
+        wand=[('bild', 'momo', 'grid-column:1;grid-row:1'), ('bild', 't04', 'grid-column:2;grid-row:1/3'), ('bild', 'klaeren', 'grid-column:3;grid-row:1'),
+              ('bild', 'anrichten', 'grid-column:1;grid-row:2'), ('bild', 'w2', 'grid-column:3;grid-row:2'),
+              ('bild', 'theke2', 'grid-column:1;grid-row:3'), ('bild', 'm5', 'grid-column:2;grid-row:3'), ('bild', 'm7', 'grid-column:3;grid-row:3')],
+        titel=['Bei der Arbeit.'],
+        text='An einem Abend, zwischen Theke, Pass und Tafel.',
+        bilder=['momo'], gross='momo')),
+    ('lt-chronik', ABLAUF, dict(name='Wie es kam', ton='hell',
+        titel=['Wie es kam.'],
+        text='Von der Bar in Linden bis zum ausgebuchten Abend an der langen Tafel.',
+        stationen=[('schildnacht', 'Oktober 2017', 'Das Walk on the Wild Side öffnet in Linden, Haasemannstraße 13.'),
+                   ('pop23', 'Mai 2023', 'Das erste Pop-up mit Momo.'),
+                   ('pl23', 'Herbst 2023', 'Die ersten Abende unter dem Namen Culinarium, „by Momo x Christoph“.'),
+                   ('ws00', 'November 2023', 'Reopening der Bar unter Derya Ivkin. Mixology ohne Karte.'),
+                   ('kueche', '2024', 'Rudi kommt in die Küche von Culinarium, „by Momo x Rudi“.'),
+                   ('kerze1', '2026', 'Der September-Abend ist ausgebucht, Dirty Chicken feiert Opening.')],
+        bilder=[], gross='kerze1')),
+]
+
+
+def leuteseite():
+    s = [bau.kopf('Team · Culinarium im Walk on the Wild Side', 'Wer hinter Culinarium und seinem Haus, dem Walk on the Wild Side, steht: Derya Ivkin, Momo und Rudi Napieraj.', 'leute.html')]
+    # Fenster zwischen «Bei der Arbeit» und «Wie es kam» (Robert 27.10.2026): die Teller am Pass, ein Bild, das auf Team sonst nicht vorkommt
+    fenster = '''<section class="fenster" id="fenster-team" aria-label="Am Pass">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Jeder Teller</span></span><span class="z"><span style="--i:1">von Hand angerichtet.</span></span></p></div>
+</section>''' % foto('pass', '', '100vw', auf=False)
+    for k, n, c in LEUTESEITE:
+        if k == 'lt-chronik':
+            s.append(fenster)
+        s.append(abschnitt(k, n, c, idn=False).replace('class="vab ', 'class="vab bar-ab ', 1))
+    s.append('<section class="schluss"></section>')
+    s.append(bau.fuss())
+    open(os.path.join(HIER, 'leute.html'), 'w', encoding='utf-8').write(''.join(s))
+
+
+
+
+START = [
+    ('ebenen', EBENEN, dict(name='Culinarium', ton='warm', lauf='Culinarium',
+        titel=['Culinarium im', 'Walk on the Wild Side.'],
+        text='Culinarium ist ein Abend, der an einzelnen Wochenenden in einer Bar in Linden stattfindet. Das hier ist seine Seite.',
+        karten=[('Der Abend', 'Culinarium', 'Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.',
+                 'Freitag ab 19:00 · Samstag ab 17:00 · 89,00 EUR', ('Der Abend', 'abend.html')),
+                ('Das Haus', 'Walk on the Wild Side', 'Eine Mixology-Bar ohne Karte in Linden, Haasemannstraße 13. Hier findet Culinarium statt.',
+                 'Bar: Donnerstag bis Samstag ab 19 Uhr', ('Das Haus', 'bar.html', 'leise'))],
+        # je Seite drei Bilder: a gross aussen über zwei Reihen, b und c in der Mitte, von der Naht angeschnitten
+        gruppen=[[('t01', '50% 42%', '(max-width:960px) 100vw, 40vw'), ('glaeser', '50% 45%', '(max-width:960px) 50vw, 26vw'), ('kerze2', '50% 40%', '(max-width:960px) 50vw, 26vw')],
+                 [('ecke', '60% 50%', '(max-width:960px) 100vw, 40vw'), ('theke', '50% 32%', '(max-width:960px) 50vw, 26vw'), ('schildnacht', '50% 50%', '(max-width:960px) 50vw, 26vw')]],
+        bilder=[], gross='tafelleer', ueber='')),
+    ('fenster', 0, None),
+    ('abend', MMKOPF, dict(name='Der Abend', ton='hell', lauf='Der Abend',
+        kicker='Culinarium · Der Abend',
+        titel=['Der Abend', '<em>an einer langen Tafel.</em>'],
+        zahlen=[('3', 'Gänge'), ('5', 'Drinks'), ('14', 'Plätze')],
+        text='Freitags ab 19 Uhr, samstags ab 17 Uhr. Vierzehn Gäste an einer Tafel, drei Gänge aus der Küche und dazu fünf Signature Drinks, passend zum Essen. Momo erklärt am Tisch, was im Glas ist.',
+        knopf=('Der Abend', 'abend.html'),
+        bilder=['t02', 'toast', 'g1'], ueber='')),
+    ('ablauf', ABLAUF, dict(name='So läuft ein Abend', ton='nacht', lauf='So läuft ein Abend',
+        titel=['So läuft', '<em>ein Abend.</em>'],
+        text='Wer zum ersten Mal kommt, weiss nicht, was ihn erwartet. Ungefähr so:',
+        # Fotowand (Robert 26.10.2026 «2»): Bild, Name in der Einkerbung, Platz in der Wand
+        wand=[('g2', 'Aperitif', 'a'), ('r09', 'Drei Gänge', 'b'), ('m7', 'Fünf Drinks', 'c'), ('tafelleer', None, 'd'), ('kerze2', 'Tasting und Schulung', 'e')],
+        liste=[('Aperitif', 'zum Ankommen'), ('Drei Gänge', 'aus Rudis Küche'), ('Fünf Signature Drinks', 'von Momo, passend zum Essen'), ('Tasting und Schulung', 'am Tisch')],
+        unten='Vierzehn Plätze · Freitag ab 19 Uhr · Samstag ab 17 Uhr',
+        stationen=[('g2', 'Ankommen', 'Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.'),
+                   ('roq2', 'Drei Gänge', 'Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.'),
+                   ('t04', 'Fünf Drinks', 'Zu den Gängen kommen fünf Signature Drinks von Momo, gemacht für genau dieses Essen.'),
+                   ('m7', 'Tasting und Schulung', 'Momo erklärt jeden Drink am Tisch, damit man die Aromen nicht nur schmeckt, sondern auch versteht. Dazu ein Blick auf seine Techniken.')],
+        bilder=[], gross='g2', ueber='Zuerst also das Glas.')),
+    ('glas', TECHNIKBILD, dict(name='Das erste Glas', ton='warm', lauf='Das erste Glas',
+        titel=['Das erste Glas.'],
+        text='Die Drinks mixt Momo, hinter der Bar des Hauses. Zum Abend gehören ein Cocktail-Tasting und eine kleine Schulung.',
+        kopfzeile='Was Fett, Milch und Enzyme mit einem Drink machen',
+        techniken=[('schaum', 'Fatwashing', 'Die Spirituose nimmt den Geschmack eines Fetts an; kalt gestellt, wird das Fett wieder abgehoben.'),
+                   ('klaeren', 'Milkwashing', 'Milch bindet die Trübstoffe und wird abgefiltert, der Drink wird klar und weich.'),
+                   ('kanister', 'Enzyme', 'Enzyme lösen die Trübung aus Fruchtsaft, der Geschmack bleibt.')],
+        bilder=['momo'], gross='momo', ueber='Dann kommen die Teller.')),
+    ('gaenge', WAND, dict(name='Drei Gänge', ton='hell', lauf='Drei Gänge',
+        raster='grid-template-columns:1.15fr .95fr 1.15fr;grid-template-rows:repeat(2,clamp(240px,30vw,400px)) clamp(220px,24vw,330px)',
+        wand=[('bild', 'lauch', 'grid-column:1;grid-row:1'), ('bild', 'roq1', 'grid-column:1;grid-row:2'), ('karte', KARTE_GAENGE, 'grid-column:2;grid-row:1/3'),
+              ('bild', 'hok1', 'grid-column:3;grid-row:1'), ('bild', 'spag', 'grid-column:3;grid-row:2'),
+              ('bild', 'anrichten', 'grid-column:1;grid-row:3'), ('bild', 'pass', 'grid-column:2;grid-row:3'), ('bild', 'kueche', 'grid-column:3;grid-row:3')],
+        titel=['Drei Gänge.'],
+        text='In der Küche steht Rudi Napieraj. Seine Teller schreibt er in drei, vier Wörtern, so stehen sie auch hier.',
+        bilder=['anrichten', ('lauch', rz('LAUCH / BLUMENKOHL / CHIPOTLE')), 'pass', ('roq1', rz('BLUMENKOHL / ROQUEFORT / KAPERN / QUINOA')),
+                ('hok1', rz('HOKKAIDO / KÜRBISKERNÖL / HASELNUSS')), ('spag', rz('SPAGHETTI-EIS / KIWI / WEISSE SCHOKOLADE')), 'kueche'],
+        gross='lauch', ueber='Und das war nur ein Abend.')),
+    ('teller', LAUF, dict(name='Mehr Teller', ton='warm', lauf='Mehr Teller',
+        titel=['Teller aus', 'vielen Abenden.'],
+        text='Das Menü wechselt mit jedem Abend. Ein paar Teller und Drinks aus den letzten Ausgaben.',
+        bilder=['r04', 'd3', 'r01', 'r07', 'r08', 'd1', 'r09', 'r03', 'r06', 'g4', 'r02', 'r11', 'r05', 'r10', 'lauch', 'm5'], gross='r08', ueber='')),
+    ('fenster2', 0, None),
+    ('plakate', GALERIE, dict(name='Die Plakate', ton='schiefer', lauf='Die Plakate',
+        titel=['Jeder Abend', 'hat sein Plakat.'],
+        text='Seit September 2023 bekommt jeder Culinarium-Abend ein eigenes Plakat. Zusammen sehen sie aus wie die Ausgaben eines Magazins.',
+        knopf=('Alle Abende ansehen', 'abende.html'),
+        galerie=[('p_' + PLAKATE[k][4], plakat_zeile(PLAKATE[k]), '') for k in (0, 1, 2, 3, 4)],
+        bilder=[], gross='p_' + PLAKATE[0][4], ueber='Angefangen hat es klein.')),
+    ('chronik', CHRONIK, dict(name='Seit 2023', ton='nacht', lauf='Seit 2023',
+        titel=['Seit 2023.'],
+        text='Aus einem Pop-up an der Bar sind ausgebuchte Abende geworden.',
+        jahre=[('2023', 'Mai', 'Das erste Pop-up mit Momo im Walk on the Wild Side.'),
+               ('2023', 'Herbst', 'Die ersten Abende unter dem Namen Culinarium, „by Momo x Christoph“, jeder mit eigenem Plakat.'),
+               ('2024', 'April', 'Rudi kommt in die Küche. Ab Juli steht „by Momo x Rudi“ auf den Plakaten.'),
+               ('2025', 'Februar', 'Ab jetzt vierzehn Plätze pro Abend.'),
+               ('2026', 'September', 'Der Abend ist ausgebucht, bevor er beginnt.')],
+        jahrbilder=['pop23', 'pl23', 'kueche', 't08', 'kerze1'],
+        bilder=['t01'], gross='t01', ueber='Und wo das alles passiert?')),
+    ('haus', BILDKARTE, dict(name='Das Haus', ton='strasse', lauf='Das Haus', seite='links',
+        titel=['Das Haus:', 'Walk on the Wild Side.'],
+        text='Culinarium ist zu Hause in einer Mixology-Bar in Linden, Haasemannstraße 13. Eine Getränkekarte gibt es dort nicht: Wer an die Theke kommt, erzählt, was er mag. Dazu Gastschichten, Konzerte, DJ-Abende und private Abende an der langen Tafel.',
+        info='Donnerstag 19 bis 1 Uhr · Freitag und Samstag 19 bis 2 Uhr',
+        knopf=('Das Haus', 'bar.html'),
+        bilder=['schildtag'], gross='schildtag', ueber='Und dahinter stehen immer dieselben Leute.')),
+    ('leute', 2, dict(name='Die Leute', ton='hell', lauf='Die Leute',
+        titel=['Wenn aus Freunden', 'und Kollegen', 'Familie wird.'],
+        text='<span class="handschrift">Dann haste allet richtig jemacht!</span>',
+        knopf=('Das Team', 'leute.html'),
+        # Namen unter den Bildern, jede Person auf ihrem eigenen Foto (Robert 27.10.2026); der Mann mit Dutt an der Bar ist nicht Momo
+        # Robert 27.10.2026: Film an Platz 2, Momo ist das Bild an der Bar (bar), kein Ausschnitt aus dem Teamfoto
+        bilder=['trio', ('w4', '<b>Rudi Napieraj</b><span>kocht die Gänge</span>'), ('film:familie', '<b>Die Mannschaft</b><span>Bar, Küche und Service</span>'),
+                ('bar', '<b>Momo</b><span>mixt die Drinks</span>'), ('w3', '<b>Derya Ivkin</b><span>führt die Bar</span>')],
+        gross='trio', grosspos='50% 12%', ueber='Aus demselben Haus kommt noch etwas anderes.')),
+    ('fenster3', 0, None),
+    ('dirty-chicken', WAND, dict(name='Dirty Chicken', ton='dc', lauf='Dirty Chicken',
+        raster='grid-template-columns:1fr .8fr 1fr;grid-template-rows:repeat(2,clamp(230px,26vw,360px))',
+        wand=[('bild', 'dc_burger', 'grid-column:1;grid-row:1'), ('bild', 'dc_drink', 'grid-column:1;grid-row:2'), ('film', 'film:opening', 'grid-column:2;grid-row:1/3'),
+              ('bild', 'dc_tisch', 'grid-column:3;grid-row:1'), ('bild', 'dc_team', 'grid-column:3;grid-row:2')],
+        titel=['Dirty', 'Chicken.'], zeichen='dc_zeichen', kicker='Aus demselben Haus · Pop-up', sticker=True,
+        text='Sandwiches &amp; More, Dirty Food, Dirty Drinks und Live-Musik. Opening war am 30. Mai 2026 im AM:PM Café im Tiedthof, die nächsten Termine stehen auf Instagram.',
+        knopf=('Dirty Chicken', 'dirty-chicken.html', 'violett'),
+        bilder=['film:opening', 'dc_burger', 'dc_tisch'], gross='dc_tisch', ueber='')),
+    ('fragen', FRAGEN, dict(name='Gut zu wissen', ton='nacht', lauf='Gut zu wissen',
+        titel=['Gut zu wissen.'],
+        text='Was Gäste vor ihrem ersten Abend wissen wollen.',
+        # Frage, Antwort, kurze Antwort, Stichwort, Bild
+        fragen=[('Wie komme ich an einen Platz?', 'Tickets gibt es bisher nur im Vorverkauf. Sobald der nächste Abend feststeht, erfahren es die zuerst, die auf der Warteliste stehen.', 'Im Vorverkauf.', 'Platz', 'kerze3'),
+                ('Was kostet ein Abend?', 'Zuletzt 89,00 EUR am 25. und 26. September 2026. Angekündigt waren drei Gänge, fünf Drinks, Tasting und Schulung.', '89 Euro.', 'Preis', 'roq1'),
+                ('Wann geht es los?', 'Freitags ab 19 Uhr, samstags ab 17 Uhr. Culinarium gibt es an einzelnen Wochenenden, meist ein Freitag und der Samstag danach.', 'Fr 19, Sa 17 Uhr.', 'Beginn', 'fassade'),
+                ('Wie viele sind dabei?', 'Vierzehn Gäste an einer langen Tafel.', 'Vierzehn.', 'Tafel', 'tafelleer'),
+                ('Was gibt es zu essen?', 'Das Menü wechselt mit jedem Abend. Was genau kommt, steht auf der Karte an deinem Platz.', 'Jedes Mal etwas anderes.', 'Menü', 'service'),
+                ('Kann ich ein Ticket zurückgeben?', '„Da die Plätze begrenzt sind, bitten wir um Verständnis, dass Tickets nicht rückerstattet werden können.“', 'Leider nein.', 'Tickets', 'karte'),
+                ('Wo ist das?', 'Im Walk on the Wild Side, Haasemannstraße 13, 30449 Hannover-Linden.', 'In Linden.', 'Ort', 'schildtag')],
+        knopf=('Der Abend', 'abend.html'),
+        bilder=['t03'], gross='t03', ueber='')),
+    ('bisbald', FS, dict(name='Bis bald', art='mitte', ton='nacht', lauf='Bis bald',
+        titel=['Bis zum', 'nächsten Abend.'],
+        text='Der nächste Culinarium-Abend steht noch nicht fest; wer auf der Warteliste steht, erfährt ihn zuerst. Bis dahin hat die Bar donnerstags bis samstags ab 19 Uhr geöffnet.',
+        knopf=('Auf die Warteliste', 'abend.html#warteliste'), knopf2=('Der Weg', 'weg.html', 'leise'),
+        bilder=['glaeser'], gross='glaeser', ueber='')),
+]
+
+
+
+
+def abschnitt(k, n, c, idn=True):
+    inner = HS[n](c)
+    ueber = '<p class="ueber sw auf">%s</p>' % c['ueber'] if c.get('ueber') else ''
+    return '<section class="vab v-%s h%d" data-ton="%s"%s data-lauf="%s">%s%s</section>' % (
+        k, n, c['ton'], (' id="%s"' % k) if idn else '', c.get('lauf', ''), inner, ueber)
+
+
+def startseite_neu():
+    auf, _ = bau.auftakt_fassungen()
+    fenster = '''<section class="fenster" id="fenster" aria-label="Drinnen">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Drinnen wird</span></span><span class="z"><span style="--i:1">schon angestossen.</span></span></p></div>
+</section>''' % foto('anstossen', '', '100vw', auf=False)
+    fenster2 = '''<section class="fenster" id="fenster2" aria-label="Plakate">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Kerzen an,</span></span><span class="z"><span style="--i:1">Gläser voll.</span></span></p></div>
+</section>''' % foto('loch', '', '100vw', auf=False, pos='50% 60%')
+    # Drittes Fenster (Robert 27.10.2026, «einen abschnitt höher»): zwischen den Leuten und Dirty Chicken; Momo, Derya und Rudi an der Bar (Robert: kein Bild mit Telefon)
+    fenster3 = '''<section class="fenster" id="fenster3" aria-label="Eine Familie">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Eine Familie,</span></span><span class="z"><span style="--i:1">zwei Küchen.</span></span></p></div>
+</section>''' % foto('ws12', '', '100vw', auf=False, pos='50% 30%')
+    # Bildwahl für «Eine Familie, zwei Küchen» zum Durchklicken (?fb=N, Robert 27.10.2026: «such mal andere Bilder raus»)
+    # Bildwahl für das Glas im Teller-Laufband (?lf=N, Robert 27.10.2026: «haben wir statt diesem Glas noch was anderes?»)
+    LF = ['pass4', 'tarte', 'm8', 'beete', 'hok2', 'roq2', 'm2', 'pass3', 'baiser', 'm4', 'coupe', 'm3']
+    lfwahl = '<script type="application/json" id="lf-wahl">%s</script>' % json.dumps([[k, bau.srcset(k), BILD[k][2]] for k in LF])
+    FB = [('t10', '50% 30%'), ('t12', '50% 12%'), ('t14', '50% 30%'), ('t03', '50% 40%'), ('t04', '50% 40%'), ('t07', '50% 40%'), ('pass2', '50% 8%'), ('bar', '50% 25%'), ('ws12', '50% 30%'), ('m6', '50% 8%'), ('w6', '50% 30%'), ('ws00', '50% 50%'), ('ws01', '50% 45%'), ('ws14', '50% 35%'), ('pass3', '50% 40%')]
+    fbwahl = '<script type="application/json" id="fb-wahl">%s</script>' % json.dumps([[k, bau.srcset(k), pos, BILD[k][2]] for k, pos in FB])
+    s = [bau.kopf('Culinarium · Food-Pairing-Abende im Walk on the Wild Side', 'Culinarium: Food-Pairing-Abende im Walk on the Wild Side, Hannover-Linden. Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.', 'index.html'), auf]
+    for k, n, c in START:
+        teil_ = {'fenster': fenster, 'fenster2': fenster2, 'fenster3': fenster3}.get(k) or abschnitt(k, n, c)
+        s.append(teil_)
+    lauf = '<nav class="abendlauf" aria-label="Der Abend">%s</nav>' % ''.join(
+        '<a href="#%s" data-ziel="%s"><span>%s</span></a>' % (k, k, c['lauf']) for k, n, c in START if c and c.get('lauf'))
+    s.append(bau.fuss(lauf))
+    h = ''.join(s)
+    for k in FILMLQ:
+        h = h.replace('--lq:url(assets/film/%s.webp)' % k, '--lq:url(%s)' % FILMLQ[k])
+    open(os.path.join(HIER, 'index.html'), 'w', encoding='utf-8').write(h)
+    print('index.html', len(h) // 1024, 'KB')
+
+
+BAR = [
+    # Hero «Mosaik» (Robert 27.10.2026: Fassung 9 aus bar-kopf-wahl.html, die Tafel rutscht hoch bis zu den Glasballons, darunter ein Bild). Stand davor *.vor-bar-mosaik-2026-10-27
+    ('bar-kopf', SA, dict(name='Das Haus', ton='strasse', art='mosaik',
+        titel=['Walk on', 'the Wild Side.'],
+        text='Der Gastgeber von Culinarium: eine Nachbarschafts-Mixology-Bar in Linden, Haasemannstraße 13. Drinks, Events, private Veranstaltungen und Tastings.',
+        info='Donnerstag 19 bis 1 Uhr · Freitag und Samstag 19 bis 2 Uhr',
+        bilder=[('barneg', '50% 40%'), ('schaumglas', '50% 50%'), ('schildnah', '50% 20%'), ('ws14', '50% 50%'),
+                ('kanister', '50% 100%'), ('ws12', '50% 40%'), ('d3', '50% 22%')])),
+    # «Reihe oben, Bühne unten» (Robert 27.10.2026: Fassung 15 aus drink-wahl.html, Runde 3). Fünf kleine oben, darunter ein grosses Bild
+    # und rechts Titel, Text und Momos Techniken. Keine Bilder aus dem Hero (barneg, d3, kanister, schaumglas, schildnah, ws12, ws14)
+    # oder dem Abschnitt darunter. Das Fenster darüber hat Robert wieder verworfen (27.10.2026, Stand mit Fenster: *.vor-ohne-fenster-2026-10-27). Stand davor *.vor-drink15-2026-10-27
+    ('bar-karte', WAND, dict(name='Ohne Karte', ton='warm', seite='buehne',
+        titel=['Dein Drink,', 'nach deinem Geschmack.'],
+        text='Eine Getränkekarte gibt es im Walk on the Wild Side nicht. Wer an die Theke kommt, erzählt, was er mag, und bekommt seinen eigenen Drink. Seit dem Reopening am 9. November 2023 führt Derya Ivkin die Bar, Momo steht mit ihr hinter der Theke.',
+        extra_k=TECHNIKEN,
+        raster='grid-template-columns:repeat(5,1fr);grid-template-rows:clamp(150px,14vw,210px)',
+        wand=[('bild', 'ws28', ''), ('bild', 'ws31', ''), ('bild', 'schaum', ''), ('bild', 'klaeren', ''), ('bild', 'g4', '')],
+        gross='theke2', grosspos='50% 40%', bilder=['theke2'])),
+    ('bar-geschichte', WAND, dict(name='Seit 2017', ton='hell',
+        titel=['Seit 2017', 'in Linden.'],
+        text='Christoph Elbert und Verena Schindler eröffneten die Bar Ende Oktober 2017 in Linden, gegenüber ihrem Restaurant 11A. Seit dem Reopening am 9. November 2023 führt Derya Ivkin sie.',
+        extra='<div class="gz"><div><b>2017</b><span>Eröffnung Ende Oktober</span></div><div><b>2023</b><span>Reopening am 9. November</span></div><div class="gz-fs"><b data-zahl="91" aria-label="91 Punkte">91</b><span class="gz-fs-z"><img class="gz-logo" src="assets/zeichen/falstaff.svg" alt="Falstaff" width="239" height="71"><span>Bar Guide 2027</span></span></div></div>',
+        # Robert 27.10.2026 (danach): 2017 und 2023 kräftiger, etwas Luft zwischen den Zahlen und den Bildern (.v-bar-geschichte in culinarium.css).
+        # Die 91 erst im Magenta des Falstaff Bar Guide, von Robert verworfen («das schwarze … auf der anderen Seite»): jetzt schwarz mit der schwarzen
+        # Falstaff-Wortmarke wie bei den Auszeichnungen im Schäfli (assets/zeichen/falstaff.svg). Stände davor *.vor-falstaff-2026-10-27, *.vor-falstaff-schwarz-2026-10-27
+        # Robert 27.10.2026: Fassung 9 aus geschichte-wahl.html («Sechs Bilder in zwei Reihen»), «die Bilder alle freistellen und nicht in so einem
+        # Gesamtrahmen … richtig geil mit Zoom-Effekt». Jedes Bild steht frei mit eigenem Schatten, schwebt einzeln mit der Feder herauf,
+        # zoomt in seinen Rahmen und gleitet beim Scrollen (.fw-frei in culinarium.css/.js). Stand davor *.vor-wand9-2026-10-27
+        raster='grid-template-columns:1fr 1.15fr 1.25fr .95fr;grid-template-rows:clamp(250px,22vw,340px) clamp(210px,18vw,280px)', wand_cls='fw-frei',
+        wand=[('bild', 'fensterdraussen', 'grid-column:1;grid-row:1/3;--d:0s;--g0:.5'), ('bild', 'kerze3', 'grid-column:2;grid-row:1;--d:.12s;--g0:-.4'),
+              ('bild', 'ecke', 'grid-column:2;grid-row:2;--d:.3s;--g0:.6'), ('bild', 'ws00', 'grid-column:3;grid-row:1/3;--d:.2s;--g0:-.5'),
+              ('bild', 'ws01', 'grid-column:4;grid-row:1;--d:.38s;--g0:.45'), ('bild', 'glasnacht', 'grid-column:4;grid-row:2;--d:.48s;--g0:-.6')],
+        bilder=['kerze3'], gross='kerze3')),
+    ('bar-zeiten', BILDKARTE, dict(name='Öffnungszeiten', ton='nacht',
+        titel=['Wann die', 'Bar offen hat.'],
+        text='Reservieren geht per Nachricht oder Telefon.',
+        extra=ZEITEN, knopf=('Der Weg', 'weg.html'), knopf2=('Instagram', 'https://www.instagram.com/walkonthewildside_hannover/', 'leise'),
+        bilder=['t12'])),
+    # Robert 27.10.2026: Das Haus hat seine eigene Website. Hier nur, wer der Gastgeber ist; Konzerte, SESSION, Anlässe und die lange Tafel stehen auf der Seite der Bar.
+    ('bar-weiter', FS, dict(name='Das ganze Haus', ton='kerze', art='mitte',
+        titel=['Das ganze Haus', 'auf seiner eigenen Seite.'],
+        text='Konzerte am Donnerstag, SESSION mit DJs an den Decks, Gastschichten, Anlässe und die lange Tafel für eure eigene Feier.',
+        knopf=('Zur Website der Bar', WILDSIDE + 'index.html'), bilder=['ws09'], pos='50% 40%')),
+]
+
+DC_ZITATE = '''<ul class="dc-zitate">
+<li><b>„Dit is keen Burger. Dit Ding is ’ne Ansage.“</b><span class="mono">Juni 2026</span></li>
+<li><b>„Dirty Food &amp; Dirty Drinks. Jenau meen Ding wa.“</b><span class="mono">Juni 2026</span></li>
+<li><b>„Dit ist wahre Liebe!“</b><span class="mono">Juni 2026</span></li>
+<li><b>„Wenn aus Freunden und Kollegen Familie wird. Dann haste allet richtig jemacht!“</b><span class="mono">Juni 2026</span></li></ul>'''
+
+POP_ERST = '''<dl class="vz"><div><dt>Wann</dt><dd>30. Mai 2026, 14 bis 22 Uhr</dd></div><div><dt>Wo</dt><dd>AM:PM Café im Tiedthof, Goseriede 4</dd></div><div><dt>Was</dt><dd>Dirty Food, Dirty Drinks &amp; Live Music</dd></div><div><dt>Gastschicht</dt><dd>Martin Bauermann, Beluga Vodka Berlin</dd></div><div><dt>Danach</dt><dd>Aftershow im NATE</dd></div><div><dt>Mit dabei</dt><dd>AM:PM, Walk on the Wild Side, Beluga, NATE</dd></div></dl>'''
+
+DCSEITE = [
+    # Hero «Der Automat» (Robert 27.10.2026: «10», ohne den schwarzen Rahmen ums Schild, ohne Instagram, ein Text, der Lust macht). Stand davor *.vor-automat-2026-10-27
+    ('dc-kopf', AUTOMAT, dict(name='Dirty Chicken', ton='dc',
+        zitat='„Dit ist wahre Liebe!“',
+        band=['Fried Chicken', 'Sandwiches &amp; More', 'Chicken Chunks mit Spicy Glaze', 'Dirty Food &amp; Dirty Drinks', 'Pommes &amp; Krautsalat', 'Live-Musik', 'Nur an einzelnen Tagen'],
+        titel=['Dirty', 'Chicken.'],
+        text='Fried Chicken, das kracht. Im Brötchen mit Paprika-Honig-Mayo und eingelegten Zwiebeln, als Chunks mit Spicy Glaze und grüner Sauce. Dazu Pommes, Krautsalat, Dirty Drinks von der Bar und Musik. Nur an einzelnen Tagen.',
+        saeulen=[['dn_burger', 'dc_drink', 'dn_team', 'dn_salat', 'dn_karte'], ['dn_tisch', 'dn_glas', 'dc_burger', 'dn_sosse', 'dc_team'],
+                 ['dn_drinks', 'dn_bar', 'dc_tisch', 'dn_burger', 'dn_glas'], ['dn_sosse', 'dc_team2', 'dn_salat', 'dc_drink', 'dn_tisch']])),
+    ('dc-film', WAND, dict(name='Dirty Food', ton='dc',
+        raster='grid-template-columns:1fr .9fr 1fr;grid-template-rows:repeat(2,clamp(230px,26vw,360px))',
+        wand=[('bild', 'dc_drink', 'grid-column:1;grid-row:1/3'), ('film', 'film:opening', 'grid-column:2;grid-row:1/3'), ('bild', 'dc_team2', 'grid-column:3;grid-row:1/3')],
+        titel=['Dirty Food,', 'Dirty Drinks.'],
+        text='„Jenau meen Ding wa.“ Dirty Food, Dirty Drinks und Live-Musik.',
+        bilder=['dc_drink'], gross='dc_drink')),
+    ('dc-teller', WAND, dict(name='Sandwiches &amp; More', ton='nacht',
+        raster='grid-template-columns:1.1fr .9fr 1.1fr .9fr;grid-template-rows:repeat(2,clamp(260px,26vw,390px))',
+        wand=[('bild', 'dn_burger', 'grid-column:1;grid-row:1/3'), ('bild', 'dn_sosse', 'grid-column:2;grid-row:1'), ('bild', 'dn_salat', 'grid-column:2;grid-row:2'),
+              ('bild', 'dn_drinks', 'grid-column:3;grid-row:1/3'), ('bild', 'dn_glas', 'grid-column:4;grid-row:1'), ('bild', 'dn_karte', 'grid-column:4;grid-row:2')],
+        titel=['Sandwiches', '&amp; More.'],
+        text='So sah es beim Pop-up auf den Tischen aus: Chicken-Sandwiches, Chunks mit grüner Sauce, Pommes, Krautsalat und Drinks.',
+        bilder=['dn_burger'], gross='dn_burger')),
+    ('dc-pop', STECKBRIEF, dict(name='Das erste Pop-up', ton='nacht', zeichen='dc_zeichen',
+        titel=['Das erste', 'Pop-up.'],
+        text='Ein Nachmittag und Abend im Tiedthof, mit Gastschicht an der Bar und Musik.',
+        extra=POP_ERST, bilder=[], gross='dc_zeichen')),
+    ('dc-zitate', ZITATWAND, dict(name='So klingt es', ton='warm',
+        titel=['Wie Dirty Chicken', 'von sich spricht.'],
+        text='In Berliner Schnauze, so wie die Beiträge auf Instagram.',
+        extra=DC_ZITATE, bilder=[], gross='')),
+    ('dc-opening', 2, dict(name='Opening', ton='dc',
+        titel=['Opening 2026.'],
+        text='„Opening 2026! Wat ne Sause.“ Mit dabei: Rudi, Momo und die Leute vom Walk on the Wild Side.',
+        bilder=['dc_team'], gross='dc_team', grosspos='50% 40%')),
+    ('dc-weiter', FLANKIERT, dict(name='Aus demselben Haus', ton='nacht',
+        titel=['Aus demselben Haus.'],
+        text='Dirty Chicken ist das Pop-up. Zu Hause sind die Leute dahinter in einer Bar in Linden, und dort gibt es auch Culinarium.',
+        karten=[('tafelleer', 'Culinarium', 'Ein Menü mit fünf passenden Drinks an einer langen Tafel für vierzehn Gäste, an einzelnen Wochenenden.',
+                 'Freitag ab 19:00 · Samstag ab 17:00', ('Zu Culinarium', 'index.html')),
+                ('theke', 'Das Haus: Walk on the Wild Side', 'Eine Mixology-Bar ohne Karte in Linden, Haasemannstraße 13.',
+                 'Donnerstag bis Samstag ab 19 Uhr', ('Das Haus', 'bar.html', 'leise'))],
+        bilder=[], gross='tafelleer')),
+]
+
+
+def dcseite():
+    s = [bau.kopf('Dirty Chicken · Pop-up aus dem Walk on the Wild Side', 'Dirty Chicken Hannover, das Pop-up aus der Familie des Walk on the Wild Side, dem Haus von Culinarium: Sandwiches & More, Dirty Food & Dirty Drinks.', 'dirty-chicken.html', 'dc')]
+    # Fenster zwischen Hero und «Dirty Food» (Robert 27.10.2026: «was diese ganze Situation nochmal auffängt und geil macht»). Stand davor *.vor-fenster-dc-2026-10-27
+    fenster = '''<section class="fenster" id="fenster-dc" aria-label="Die Ansage">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Dit is keen Burger.</span></span><span class="z"><span style="--i:1">Dit Ding is ’ne Ansage.</span></span></p></div>
+</section>''' % foto('dn_burger', '', '100vw', auf=False, pos='50% 55%')
+    # Nach Hero und Fenster alles neu als eine Geschichte (Robert 27.10.2026 abends: «Das Dirty Chicken ist der Star … das Einzige, was bleibt,
+    # ist der Hero und das erste Fenster»): Teile in dc_neu.py, Aussehen assets/dirty-chicken.css, Bewegung assets/dirty-chicken.js.
+    # Stand davor *.vor-dc-neu-2026-10-27; die alten Teile stehen weiter in DCSEITE[1:], werden aber nicht mehr gebaut.
+    import dc_neu
+    k, n, c = DCSEITE[0]
+    s.append(abschnitt(k, n, c, idn=False).replace('class="vab ', 'class="vab dc-ab bar-ab ', 1))
+    s.append(fenster)
+    s.append(dc_neu.seite())
+    s.append(bau.fuss())
+    h = dc_neu.einbinden(''.join(s))
+    for k in FILMLQ:
+        h = h.replace('--lq:url(assets/film/%s.webp)' % k, '--lq:url(%s)' % FILMLQ[k])
+    open(os.path.join(HIER, 'dirty-chicken.html'), 'w', encoding='utf-8').write(h)
+    print('dirty-chicken.html', len(h) // 1024, 'KB')
+
+
+# Übergang Hero → «Dein Drink» (Robert 27.10.2026: Fassung 3 «Zeichen der Bar» aus uebergang-wahl.html, statt eines Fensters).
+# Stand davor *.vor-uebergang3-2026-10-27
+def bar_uebergang():
+    return ('<section class="ub" data-ton="warm" aria-label="Walk on the Wild Side"><div class="ub-zeichen auf"><i></i>%s<i></i></div>'
+            '<p class="ub-mono sw auf" style="--i:1">Haasemannstraße 13 · Linden</p></section>') % bau.zeichen_haus('ws', 'ub-ws')
+
+
+def barseite():
+    s = [bau.kopf('Das Haus · Walk on the Wild Side', 'Walk on the Wild Side, das Haus von Culinarium: Nachbarschafts-Mixology-Bar in Hannover-Linden, Haasemannstraße 13. Öffnungszeiten, Geschichte, Abende.', 'bar.html', 'strasse')]
+    for k, n, c in BAR:
+        if k == 'bar-karte':
+            s.append(bar_uebergang())
+        if k == 'bar-geschichte':
+            # Fenster vor der Geschichte (Robert 27.10.2026: «noch ein Fenster … zwischen die beiden Abschnitte»): die Fenster der Bar am Abend,
+            # der Satz führt in «Seit 2017 in Linden». Robert 27.10.2026 zu «Früher eine Fußballkneipe.»: «wie weit wollen wir unser Restaurant noch abwerten … inakzeptabel».
+            # Nie die Vorgeschichte als Abwertung erzählen; der Satz nimmt das Licht der Bar am Abend auf (Charakterblatt Wild Side: «Das Licht geht an»)
+            s.append('''<section class="fenster" id="fenster-bar" aria-label="Die Bar am Abend">
+  <div class="fenster-schicht">%s<div class="fenster-hof"></div><p class="fenster-satz zl"><span class="z"><span style="--i:0">Abends geht an der Ecke</span></span><span class="z"><span style="--i:1">das Licht an.</span></span></p></div>
+</section>''' % foto('fassade', '', '100vw', auf=False, pos='50% 58%'))
+        s.append(abschnitt(k, n, c, idn=False).replace('class="vab ', 'class="vab bar-ab ', 1))
+    s.append(bau.fuss())
+    h = ''.join(s)
+    open(os.path.join(HIER, 'bar.html'), 'w', encoding='utf-8').write(h)
+    print('bar.html', len(h) // 1024, 'KB')
+
+
+
+# ------------------------------------------------------------------ Der Weg und die Schlüsse der Unterseiten (Robert 26.10.2026: «leer und traurig», «zu wenig etwas für zu viel nichts»)
+MAPS = 'https://www.google.com/maps/search/?api=1&query=Walk+on+the+Wild+Side+Haasemannstra%C3%9Fe+13+30449+Hannover'
+WEG_DATEN = ('''<dl class="weg-daten"><div><dt class="mono">Adresse</dt><dd>Walk on the Wild Side<br>Haasemannstraße 13<br>30449 Hannover</dd></div>'''
+             '''<div><dt class="mono">Plus Code</dt><dd>9PC7+49 Hannover</dd></div>'''
+             '''<div><dt class="mono">Culinarium</dt><dd>Freitag ab 19:00<br>Samstag ab 17:00</dd></div></dl>''')
+KARTE_BAR = ('''<p class="fk-zitat">Die Bar</p><p class="fk-wer">Walk on the Wild Side</p>'''
+             '''<div class="fk-gang"><p>Donnerstag 19 bis 1 Uhr</p></div><div class="fk-gang"><p>Freitag 19 bis 2 Uhr</p></div>'''
+             '''<div class="fk-gang"><p>Samstag 19 bis 2 Uhr</p></div><p class="fk-fuss"><a href="tel:+491633909578">+49 163 3909578</a></p>''')
+
+WEGSEITE = [
+    ('weg-abends', WAND, dict(name='Abends', ton='nacht',
+        raster='grid-template-columns:1.1fr .9fr 1.1fr;grid-template-rows:repeat(2,clamp(240px,28vw,380px))',
+        wand=[('bild', 'fensterdraussen', 'grid-column:1;grid-row:1'), ('bild', 'ecke', 'grid-column:1;grid-row:2'),
+              ('karte', KARTE_BAR, 'grid-column:2;grid-row:1/3'),
+              ('bild', 'schildnacht', 'grid-column:3;grid-row:1'), ('bild', 'flur', 'grid-column:3;grid-row:2')],
+        titel=['So findest du hin.'],
+        text='Die Bar liegt an der Hausecke, am Schild mit Walk on the Wild Side erkennst du sie.',
+        extra=WEG_DATEN,
+        bilder=['fensterdraussen'], gross='fensterdraussen')),
+]
+
+SCHLUESSE = {
+    'weg.html': dict(name='Bis bald', ton='nacht', art='mitte', titel=['Bis zum', 'nächsten Abend.'],
+        text='Der nächste Culinarium-Abend steht noch nicht fest; wer auf der Warteliste steht, erfährt ihn zuerst.',
+        knopf=('Auf die Warteliste', 'abend.html#warteliste'), knopf2=('Das Haus', 'bar.html', 'leise'), bilder=['barlicht']),
+    'abende.html': dict(name='Das nächste Plakat', ton='nacht', art='mitte', titel=['Das nächste Plakat', 'kommt bestimmt.'],
+        text='Der nächste Termin steht noch nicht fest. Wer auf der Warteliste steht, erfährt ihn zuerst.',
+        knopf=('Auf die Warteliste', 'abend.html#warteliste'), knopf2=('Der Abend', 'abend.html', 'leise'), bilder=['plakatwand'], pos='50% 50%'),   # die Wand mit allen Plakaten, der nächste Platz frei (Robert 27.10.2026: «dann ist ein Bild mit einem Weinglas sinnlos»; davor glasnacht)
+    'leute.html': dict(name='An der Theke', ton='nacht', art='mitte', titel=['Am besten lernst du', 'sie an der Theke kennen.'],
+        text='Donnerstags bis samstags ab 19 Uhr in der Bar, an einzelnen Wochenenden an der langen Tafel.',
+        knopf=('Der Abend', 'abend.html'), knopf2=('Das Haus', 'bar.html', 'leise'), bilder=['lachen']),
+}
+
+
+# Kopf «Das Schild geht an» (Robert 27.10.2026 aus 30 Fassungen in weg-kopf-wahl.html gewählt: «nimm Version 1», Titel ohne Trennstrich).
+# Die Hausecke bei Nacht rechts der dunklen Wand, erst dunkel; nach dem Laden flackert das Schild an. Stand davor: *.vor-weg-hero-2026-10-27
+WEG_STUFEN = (800, 1400)
+
+
+def weg_kopf():
+    from PIL import Image, ImageOps
+    qp = os.path.join(bau.PROJ, BILD['schildnacht'][0])
+    for b in WEG_STUFEN:                       # grössere Stufen als die Website sonst hat (bis 1000 px), das Bild steht fast randlos
+        z = os.path.join(HIER, 'assets/bild/wg_schildnacht-%d.webp' % b)
+        if not os.path.exists(z) or os.path.getmtime(z) < os.path.getmtime(qp):
+            im = ImageOps.exif_transpose(Image.open(qp)).convert('RGB')
+            im.resize((b, round(im.height * b / im.width)), Image.LANCZOS).save(z, 'WEBP', quality=80, method=6)
+    srcset = ', '.join('assets/bild/wg_schildnacht-%d.webp?v=%s %dw' % (b, bau.VERSION, b) for b in WEG_STUFEN)
+    img = lambda: '<img src="assets/bild/wg_schildnacht-800.webp?v=%s" srcset="%s" sizes="(max-width:860px) 100vw, 72vw" alt="%s" fetchpriority="high" decoding="async">' % (
+        bau.VERSION, srcset, E(BILD['schildnacht'][2]))
+    return '''<section class="wk" data-ton="strasse">
+  <figure class="wk-bild auf"><span class="wk-aus">%s</span><span class="wk-an" aria-hidden="true">%s</span></figure><div class="wk-grund"></div>
+  <div class="wk-text">%s%s<div class="sw auf wk-knopf" style="--i:3">%s</div></div>
+</section>''' % (img(), img().replace(' fetchpriority="high"', ''), zl(['Haasemannstraße', '13.'], 'h1', 'gross'),
+                 sw('Linden-Mitte. Am Schild über der Hausecke erkennst du die Bar schon von weitem.', 'p', '', 2), knopf('In Google Maps öffnen', MAPS))
+
+
+def wegseite():
+    s = [bau.kopf('Der Weg · Culinarium Hannover', 'Walk on the Wild Side, Haasemannstraße 13, 30449 Hannover-Linden: die Bar, die Culinarium-Abende und das Pop-up Dirty Chicken.', 'weg.html', 'strasse')]
+    s.append(weg_kopf())
+    for k, n, c in WEGSEITE:
+        s.append(abschnitt(k, n, c, idn=False).replace('class="vab ', 'class="vab bar-ab ', 1))
+    s.append('<section class="schluss"></section>')
+    s.append(bau.fuss())
+    open(os.path.join(HIER, 'weg.html'), 'w', encoding='utf-8').write(''.join(s))
+
+
+KOPF_ERSATZ = {
+    'abend.html': dict(name='Der Abend', ton='nacht', art='drei', titel=['Culinarium.'],
+        text='Die Abende an der langen Tafel des Walk on the Wild Side: drei Gänge, fünf Drinks, vierzehn Plätze. Und wer dir erklärt, was auf dem Teller und im Glas ist.',
+        info='Freitag ab 19 Uhr · Samstag ab 17 Uhr · 89,00 EUR',
+        knopf=('Auf die Warteliste', '#warteliste'), bilder=['beete', 'kerze1', 'beeteglas']),
+}
+
+
+def schluesse():
+    import re
+    for datei, c in KOPF_ERSATZ.items():
+        pfad = os.path.join(HIER, datei)
+        h = open(pfad, encoding='utf-8').read()
+        neu = abschnitt('kopf', SA, c, idn=False).replace('class="vab ', 'class="vab bar-ab ', 1)
+        h, n = re.subn(r'<section class="seitenkopf".*?</section>', lambda m: neu, h, count=1, flags=re.S)
+        open(pfad, 'w', encoding='utf-8').write(h)
+        print(datei, 'Kopf', n)
+    for datei, c in SCHLUESSE.items():
+        pfad = os.path.join(HIER, datei)
+        h = open(pfad, encoding='utf-8').read()
+        neu = abschnitt('schluss', FS, c, idn=False).replace('class="vab ', 'class="vab bar-ab ', 1)
+        h, n = re.subn(r'<section class="schluss".*?</section>', lambda m: neu, h, count=1, flags=re.S)
+        open(pfad, 'w', encoding='utf-8').write(h)
+        print(datei, 'Schluss', n)
+
+
+if __name__ == '__main__':
+    if 'wahl' in sys.argv:
+        main()
+    startseite_neu()
+    barseite()
+    dcseite()
+    wegseite()
+    leuteseite()
+    schluesse()
+    # Termine buchen, nur Vorschau (Robert 26.10.2026, Rudis Überraschung)
+    if os.path.exists(os.path.join(HIER, 'buchen.py')):
+        import subprocess, sys
+        subprocess.run([sys.executable, os.path.join(HIER, 'buchen.py')], check=True)
+    # Überleitung Auftakt → Abend und Haus baut ein eigener Chat in ueberleitung.py (Robert 26.10.2026 20:40, 15 Fassungen)
+    if os.path.exists(os.path.join(HIER, 'ueberleitung.py')):
+        import subprocess, sys
+        subprocess.run([sys.executable, os.path.join(HIER, 'ueberleitung.py')], check=True)
+    # Fassungen des Abend-Auftakts baut ein eigener Chat in abend_auftakt.py (Robert 26.10.2026 19:30)
+    if os.path.exists(os.path.join(HIER, 'abend_auftakt.py')):
+        import subprocess, sys
+        subprocess.run([sys.executable, os.path.join(HIER, 'abend_auftakt.py')], check=True)

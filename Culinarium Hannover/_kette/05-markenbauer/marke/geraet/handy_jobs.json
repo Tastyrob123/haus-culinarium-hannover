@@ -1,0 +1,20 @@
+[
+ {
+  "screen": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_kette/05-markenbauer/marke/geraet/schirm/handy-a.png",
+  "out": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_kette/05-markenbauer/marke/geraet/handy-a.png",
+  "res": [
+   800,
+   1400
+  ],
+  "samples": 64
+ },
+ {
+  "screen": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_kette/05-markenbauer/marke/geraet/schirm/handy-b.png",
+  "out": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_kette/05-markenbauer/marke/geraet/handy-b.png",
+  "res": [
+   800,
+   1400
+  ],
+  "samples": 64
+ }
+]

@@ -1,0 +1,15 @@
+Sicherheit Le Bureau (Culinarium), 28.10.2026 12:13, echter Server 9082, nur abgewiesene Anfragen (nichts gespeichert)
+Host fremd (421): 421
+Termine speichern, fremde Herkunft (403): 403
+Termine speichern, ohne Herkunft (403): 403
+Termine speichern, kein JSON (415): 415
+Termine speichern, über 3 MB (413): 413
+Termine speichern, falscher Fingerabdruck (409): 409
+Quelltext termine.py (404): 404
+Datenordner _daten/termine.json (404): 404
+Pfad hinaus aus der Vorschau (404): 404
+Kopfzeilen:
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'

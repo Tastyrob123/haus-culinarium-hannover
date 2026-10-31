@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "La Réception / Der Gastgeber",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "gaeste",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:44+08:00",
+  "ende": "2026-10-28T12:37+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": "http://localhost:9084/_werkzeuge/reception/",
+  "briefing": "briefing.html?teil=gaeste",
+  "notiz": "La Réception gebaut und bedient: Hauptlauf 27/26/27/27 (Chromium/WebKit, 1440/390), Zusatz 8/8, Demo-Check 5/5, Breiten 35/35; Wissen 45 belegte Zeilen, Gegenprobe 57/57; Warteliste-Baustein bereit, nicht eingebaut. LIEFERUNG.md im Revier.",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

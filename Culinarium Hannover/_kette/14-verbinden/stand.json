@@ -1,0 +1,23 @@
+{
+  "station": "14",
+  "name": "Website verbinden",
+  "rolle": "Werkbank-Bauer",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "links.json"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

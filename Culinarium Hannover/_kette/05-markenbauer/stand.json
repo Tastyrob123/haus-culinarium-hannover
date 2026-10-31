@@ -1,0 +1,49 @@
+{
+  "station": "05",
+  "name": "Markenbuch und Designidentität",
+  "rolle": "Markenbauer",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-26T14:53+08:00",
+  "ende": "2026-10-26T15:24+08:00",
+  "verbrauch": {
+    "budget_vorher": 5.0,
+    "budget_nachher": 8.0,
+    "guthaben": []
+  },
+  "offen": [
+    {
+      "punkt": "Wortmarke ist Platzhalter: Rudi schickt sein echtes Logo nach (26.10.2026); dann Wortmarke, C, x, Titelschrift, Tapete und Logo-Regeln daran neu prüfen",
+      "wo": "Nachricht der Sitzung «Culinarium Hannover Recherche», 26.10.2026; marke/markenbuch.html#zeichen"
+    },
+    {
+      "punkt": "Abendfarbe des nächsten Abends nicht gewählt: kein Termin angekündigt, bis dahin Vorgabe Orange (Plakat 02/2025)",
+      "wo": "Instagram-Profil 25.10.2026 ohne Ankündigung; marke/markenbuch.html#abende"
+    },
+    {
+      "punkt": "Rechte und Herkunft der Plakat-Illustrationen (im Markenbuch als Farbquelle gezeigt)",
+      "wo": "Kundenprofil Blatt 5 und 6; marke/bilder/plakat-*.jpg"
+    },
+    {
+      "punkt": "Fotograf je Foto und wer auf welchem Foto zu sehen ist; Namen stehen deshalb nirgends im Bild",
+      "wo": "_quelle/vom-kunden/drive/herkunft.json; marke/bilder/herkunft.json"
+    },
+    {
+      "punkt": "Zuordnung Teller zu Menü: welches von Rudis Fotos AUBERGINE / KOKOS / LIMETTE / SESAM zeigt, ist nicht belegt; das Bild am Pass steht ohne diese Zeile",
+      "wo": "_quelle/extern/ig-team/beitraege.md (De1pn9ttMoX, Foto von focusonbiz_hannover)"
+    },
+    {
+      "punkt": "Station 04 Potentialanalyse liegt noch nicht vor; Station 05 auf Roberts Auftrag vom 26.10.2026 vorgezogen",
+      "wo": "_kette/04-analyst/stand.json"
+    }
+  ],
+  "paket": [
+    "marke/",
+    "marke.json"
+  ],
+  "adresse": "http://127.0.0.1:8978/haus/Culinarium%20Hannover/_kette/05-markenbauer/marke/markenbuch.html",
+  "briefing": "briefing.html",
+  "notiz": "Markenbuch auf dem Stand der Luxushäuser: Wortmarke, C und x als Vektor, siebzehn gemessene Farben, sechs Abendfarben zum Umschalten, zwei Farbwelten mit Probe, Schriften, Tapete, Bausteine, Logo-Regeln. Wortmarke als Platzhalter markiert, «vegetarisch» nicht mehr Markenmerkmal (Rudi 26.10.2026). Farbwelt A «Plakat» gewählt (Robert 26.10.2026: «a»).",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

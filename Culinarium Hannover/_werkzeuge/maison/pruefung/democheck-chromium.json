@@ -1,0 +1,949 @@
+{
+ "zeit": "2026-10-30T00:31:22.016Z",
+ "gruen": 157,
+ "rot": 0,
+ "ergebnis": [
+  {
+   "w": "chromium 1440",
+   "n": "Weg zum Tisch: Zahlen gefüllt, kein Anteil über 100 %",
+   "gut": true,
+   "info": "478 BESUCHE auf der Website, in 30 Tagen | 232 «DER ABEND» GEÖFFNET 49 % davon | 59 PLATZ GEBUCHT ODER AUF DER WARTELISTE 25 % davon | DABEI zählt das Team am Abend, nicht die Website"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Stand-Zeilen gefüllt",
+   "gut": true,
+   "info": "bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort | livre"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Prüfung öffnen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/werkzeuge/website/pruefung.html?haus=culinarium"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Neu laden» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #fuss da",
+   "gut": true,
+   "info": "Anleitungen"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #oben da",
+   "gut": true,
+   "info": "Der TresenAlle Werkzeuge · Culinarium"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #bureau da",
+   "gut": true,
+   "info": "Das Schaufenster"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #carte da",
+   "gut": true,
+   "info": "Die Pairing-Karte"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #imprimerie da",
+   "gut": true,
+   "info": "Die Plakatwerkstatt"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #reception da",
+   "gut": true,
+   "info": "Das Gästebuch"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #livre da",
+   "gut": true,
+   "info": "Das Markenbuch"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Sprungziel #registre da",
+   "gut": true,
+   "info": "Die Besucherliste"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Website ansehen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/index.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «WebsiteDas SchaufensterAlles veröffentlicht» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/_werkzeuge/bureau/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «KartenDie Pairing-Karte8 Karten, alle veröffentlic» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9083/_werkzeuge/carte/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «DrucksachenDie Plakatwerkstatt115 Vorlagen in 17 A» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9087/_werkzeuge/imprimerie/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «GästeDas Gästebuch6 Anfragen offen · 2 Fragen ohne» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9084/_werkzeuge/reception/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «MarkeDas Markenbuch232 Fotos · 34 Dateien» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9085/_werkzeuge/livre/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Die Besucherliste öffnen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9086/_werkzeuge/registre/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Das Schaufenster, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/_werkzeuge/bureau/anleitung.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Die Pairing-Karte, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9083/_werkzeuge/carte/anleitung.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Die Plakatwerkstatt, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9087/_werkzeuge/imprimerie/hilfe/index.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Das Gästebuch, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9084/_werkzeuge/reception/anleitung.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Das Markenbuch, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9085/_werkzeuge/livre/anleitung.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Link «Die Besucherliste, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9086/_werkzeuge/registre/anleitung.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Konsole leer beim Laden",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 1 öffnet http://127.0.0.1:9082/_werkzeuge/bureau/",
+   "gut": true,
+   "info": "http://127.0.0.1:9082/_werkzeuge/bureau/ · Das Schaufenster · Culinarium · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 1: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 2 öffnet http://127.0.0.1:9083/_werkzeuge/carte/",
+   "gut": true,
+   "info": "http://127.0.0.1:9083/_werkzeuge/carte/#abend · Die Pairing-Karte · Culinarium · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 2: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 3 öffnet http://127.0.0.1:9087/_werkzeuge/imprimerie/",
+   "gut": true,
+   "info": "http://127.0.0.1:9087/_werkzeuge/imprimerie/ · Die Plakatwerkstatt · Culinarium · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 3: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 4 öffnet http://127.0.0.1:9084/_werkzeuge/reception/",
+   "gut": true,
+   "info": "http://127.0.0.1:9084/_werkzeuge/reception/ · Das Gästebuch · Culinarium Hannover · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 4: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 5 öffnet http://127.0.0.1:9085/_werkzeuge/livre/",
+   "gut": true,
+   "info": "http://127.0.0.1:9085/_werkzeuge/livre/ · Das Markenbuch · Culinarium Hannover · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 5: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 6 öffnet http://127.0.0.1:9086/_werkzeuge/registre/",
+   "gut": true,
+   "info": "http://127.0.0.1:9086/_werkzeuge/registre/ · Übersicht · Die Besucherliste · Culinarium · "
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Kachel 6: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Leiste: sichtbare Sprungmarken",
+   "gut": true,
+   "info": "#fuss #oben"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Leiste #fuss springt hin",
+   "gut": true,
+   "info": "454"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Leiste #oben springt hin",
+   "gut": true,
+   "info": "0"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Leiste ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Schild nicht im ersten Bildschirm",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Schild «Kurzer Rundgang» erscheint",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang Schritt 1: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang Schritt 2: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang Schritt 3: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang Schritt 4: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang Schritt 5: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang: fünf Schritte, dann zu",
+   "gut": true,
+   "info": "5"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Rundgang ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Werkbank hat Weg zur Zentrale",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Werkbank → Zentrale öffnet",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "Zentrale zeigt «Zur Werkbank»",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "«Zur Werkbank» führt zurück zur Werkbank",
+   "gut": true,
+   "info": "zu · erster Reiter http://127.0.0.1:9088/werkbank/index.html"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "bureau: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "bureau → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "bureau → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "bureau → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "carte: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "carte → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "carte → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "carte → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "reception: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "reception → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "reception → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "reception → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "livre: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "livre → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "livre → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "livre → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "registre: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "registre → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "registre → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "registre → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 1440",
+   "n": "imprimerie: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "imprimerie → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "imprimerie → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 1440",
+   "n": "imprimerie → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Weg zum Tisch: Zahlen gefüllt, kein Anteil über 100 %",
+   "gut": true,
+   "info": "478 BESUCHE auf der Website, in 30 Tagen | 232 «DER ABEND» GEÖFFNET 49 % davon | 59 PLATZ GEBUCHT ODER AUF DER WARTELISTE 25 % davon | DABEI zählt das Team am Abend, nicht die Website"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Stand-Zeilen gefüllt",
+   "gut": true,
+   "info": "bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort | livre"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Prüfung öffnen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/werkzeuge/website/pruefung.html?haus=culinarium"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Neu laden» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #fuss da",
+   "gut": true,
+   "info": "Anleitungen"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #oben da",
+   "gut": true,
+   "info": "Der TresenAlle Werkzeuge · Culinarium"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #bureau da",
+   "gut": true,
+   "info": "Das Schaufenster"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #carte da",
+   "gut": true,
+   "info": "Die Pairing-Karte"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #imprimerie da",
+   "gut": true,
+   "info": "Die Plakatwerkstatt"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #reception da",
+   "gut": true,
+   "info": "Das Gästebuch"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #livre da",
+   "gut": true,
+   "info": "Das Markenbuch"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Sprungziel #registre da",
+   "gut": true,
+   "info": "Die Besucherliste"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Website ansehen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/index.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «WebsiteDas SchaufensterAlles veröffentlicht» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/_werkzeuge/bureau/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «KartenDie Pairing-Karte8 Karten, alle veröffentlic» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9083/_werkzeuge/carte/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «DrucksachenDie Plakatwerkstatt115 Vorlagen in 17 A» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9087/_werkzeuge/imprimerie/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «GästeDas Gästebuch6 Anfragen offen · 2 Fragen ohne» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9084/_werkzeuge/reception/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «MarkeDas Markenbuch232 Fotos · 34 Dateien» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9085/_werkzeuge/livre/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Die Besucherliste öffnen» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9086/_werkzeuge/registre/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Das Schaufenster, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9082/_werkzeuge/bureau/anleitung.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Die Pairing-Karte, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9083/_werkzeuge/carte/anleitung.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Die Plakatwerkstatt, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9087/_werkzeuge/imprimerie/hilfe/index.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Das Gästebuch, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9084/_werkzeuge/reception/anleitung.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Das Markenbuch, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9085/_werkzeuge/livre/anleitung.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Link «Die Besucherliste, Schritt für Schritt» antwortet",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9086/_werkzeuge/registre/anleitung.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Konsole leer beim Laden",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 1 öffnet http://127.0.0.1:9082/_werkzeuge/bureau/",
+   "gut": true,
+   "info": "http://127.0.0.1:9082/_werkzeuge/bureau/ · Das Schaufenster · Culinarium · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 1: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 2 öffnet http://127.0.0.1:9083/_werkzeuge/carte/",
+   "gut": true,
+   "info": "http://127.0.0.1:9083/_werkzeuge/carte/#abend · Die Pairing-Karte · Culinarium · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 2: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 3 öffnet http://127.0.0.1:9087/_werkzeuge/imprimerie/",
+   "gut": true,
+   "info": "http://127.0.0.1:9087/_werkzeuge/imprimerie/ · Die Plakatwerkstatt · Culinarium · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 3: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 4 öffnet http://127.0.0.1:9084/_werkzeuge/reception/",
+   "gut": true,
+   "info": "http://127.0.0.1:9084/_werkzeuge/reception/ · Das Gästebuch · Culinarium Hannover · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 4: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 5 öffnet http://127.0.0.1:9085/_werkzeuge/livre/",
+   "gut": true,
+   "info": "http://127.0.0.1:9085/_werkzeuge/livre/ · Das Markenbuch · Culinarium Hannover · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 5: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 6 öffnet http://127.0.0.1:9086/_werkzeuge/registre/",
+   "gut": true,
+   "info": "http://127.0.0.1:9086/_werkzeuge/registre/ · Übersicht · Die Besucherliste · Culinarium · "
+  },
+  {
+   "w": "chromium 390",
+   "n": "Kachel 6: keine Skriptfehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Leiste: sichtbare Sprungmarken",
+   "gut": true,
+   "info": "#oben"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Leiste #oben springt hin",
+   "gut": true,
+   "info": "0"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Leiste ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Schild nicht im ersten Bildschirm",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Schild «Kurzer Rundgang» erscheint",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang Schritt 1: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang Schritt 2: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang Schritt 3: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang Schritt 4: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang Schritt 5: Karte ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang: fünf Schritte, dann zu",
+   "gut": true,
+   "info": "5"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Rundgang ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Werkbank hat Weg zur Zentrale",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "Werkbank → Zentrale öffnet",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "Zentrale zeigt «Zur Werkbank»",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "«Zur Werkbank» führt zurück zur Werkbank",
+   "gut": true,
+   "info": "zu · erster Reiter http://127.0.0.1:9088/werkbank/index.html"
+  },
+  {
+   "w": "chromium 390",
+   "n": "bureau: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "bureau → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "bureau → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "bureau → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "carte: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "carte → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "carte → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "carte → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "reception: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "reception → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "reception → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "reception → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "livre: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "livre → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "livre → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "livre → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "registre: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "registre → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "registre → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "registre → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "chromium 390",
+   "n": "imprimerie: Weg zur Zentrale vorhanden",
+   "gut": true,
+   "info": "http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "imprimerie → Zentrale öffnet (http://127.0.0.1:9081/_werkzeuge/maison/)",
+   "gut": true,
+   "info": "200 http://127.0.0.1:9081/_werkzeuge/maison/"
+  },
+  {
+   "w": "chromium 390",
+   "n": "imprimerie → Zentrale zeigt Zahlen",
+   "gut": true,
+   "info": "10/12 · bureau-kurz: Alles veröffentlicht | carte-kurz: 8 Karten, alle veröffentlicht | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception-kurz: 6 Anfragen offen · 2 Fragen ohne Antwort | livre-kurz: 232 Fotos · 34 Dateien | registre-heute: 1 | registre-buchung: 0 | bureau: Nichts offen im Entwurf. | imprimerie-kurz: 115 Vorlagen in 17 Arten | reception: 6 Anfragen offen · 2 Fragen ohne Antwort"
+  },
+  {
+   "w": "chromium 390",
+   "n": "imprimerie → Zentrale ohne Fehler",
+   "gut": true,
+   "info": ""
+  }
+ ]
+}

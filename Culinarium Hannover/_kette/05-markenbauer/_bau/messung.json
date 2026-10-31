@@ -1,0 +1,505 @@
+{
+ "plakate": [
+  {
+   "abend": "2024-11",
+   "motiv": "Ski",
+   "band": {
+    "datei": "_quelle/extern/ig/2024-11-06_culinarium_hannover_DCCf-ikoaGs-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     86,
+     1103,
+     1354,
+     1389
+    ],
+    "hex": "#FAF4F4",
+    "median": "#FAF4F4",
+    "anteil_modus": 0.926,
+    "pixel": 248319
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2024-11-06_culinarium_hannover_DCCf-ikoaGs-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     173,
+     1146,
+     1267,
+     1246
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.807,
+    "pixel": 55255
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2024-11-06_culinarium_hannover_DCCf-ikoaGs-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     72,
+     43,
+     1382,
+     1045
+    ],
+    "hex": "#B3EBFC",
+    "median": "#C2E8F8",
+    "anteil_modus": 0.051,
+    "pixel": 1312620
+   }
+  },
+  {
+   "abend": "2025-02",
+   "motiv": "Panther auf Thron",
+   "band": {
+    "datei": "_quelle/extern/ig/2025-02-04_culinarium_hannover_DFqbLG2s_dc-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     86,
+     1103,
+     1354,
+     1389
+    ],
+    "hex": "#FAF4F4",
+    "median": "#FAF4F4",
+    "anteil_modus": 0.927,
+    "pixel": 248314
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2025-02-04_culinarium_hannover_DFqbLG2s_dc-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     173,
+     1146,
+     1267,
+     1246
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.809,
+    "pixel": 55255
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2025-02-04_culinarium_hannover_DFqbLG2s_dc-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     72,
+     43,
+     1382,
+     1045
+    ],
+    "hex": "#EF7649",
+    "median": "#EF7744",
+    "anteil_modus": 0.143,
+    "pixel": 1312620
+   }
+  },
+  {
+   "abend": "2025-06",
+   "motiv": "Gärtnerin",
+   "band": {
+    "datei": "_quelle/extern/ig/2025-05-17_culinarium_hannover_DJw8OqGMY1G-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     86,
+     1103,
+     1354,
+     1389
+    ],
+    "hex": "#FAF4F4",
+    "median": "#FAF4F4",
+    "anteil_modus": 0.933,
+    "pixel": 248401
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2025-05-17_culinarium_hannover_DJw8OqGMY1G-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     173,
+     1146,
+     1267,
+     1246
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.824,
+    "pixel": 55254
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2025-05-17_culinarium_hannover_DJw8OqGMY1G-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     72,
+     43,
+     1382,
+     1045
+    ],
+    "hex": "#94B253",
+    "median": "#A9B887",
+    "anteil_modus": 0.056,
+    "pixel": 1312620
+   }
+  },
+  {
+   "abend": "2025-11",
+   "motiv": "Kürbis",
+   "band": {
+    "datei": "_quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     86,
+     1103,
+     1354,
+     1389
+    ],
+    "hex": "#FAF4F4",
+    "median": "#FAF4F4",
+    "anteil_modus": 0.932,
+    "pixel": 248282
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     173,
+     1146,
+     1267,
+     1246
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.824,
+    "pixel": 55253
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2025-10-13_culinarium_hannover_DPwlqcfiKcA-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     72,
+     43,
+     1382,
+     1045
+    ],
+    "hex": "#112D43",
+    "median": "#213142",
+    "anteil_modus": 0.048,
+    "pixel": 1312620
+   }
+  },
+  {
+   "abend": "2026-03",
+   "motiv": "Panther mit Eisbecher",
+   "band": {
+    "datei": "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     86,
+     1103,
+     1354,
+     1389
+    ],
+    "hex": "#F9F5F4",
+    "median": "#F9F5F4",
+    "anteil_modus": 0.86,
+    "pixel": 246766
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     173,
+     1146,
+     1267,
+     1246
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.763,
+    "pixel": 54953
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+    "groesse": [
+     1440,
+     1432
+    ],
+    "box": [
+     72,
+     43,
+     1382,
+     1045
+    ],
+    "hex": "#881301",
+    "median": "#88191B",
+    "anteil_modus": 0.386,
+    "pixel": 1312620
+   }
+  },
+  {
+   "abend": "2026-09",
+   "motiv": "Mondfrau",
+   "band": {
+    "datei": "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg",
+    "groesse": [
+     2014,
+     2003
+    ],
+    "box": [
+     121,
+     1542,
+     1893,
+     1943
+    ],
+    "hex": "#FAF4F4",
+    "median": "#FAF4F4",
+    "anteil_modus": 0.939,
+    "pixel": 490667
+   },
+   "tinte": {
+    "datei": "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg",
+    "groesse": [
+     2014,
+     2003
+    ],
+    "box": [
+     242,
+     1602,
+     1772,
+     1743
+    ],
+    "hex": "#3A3845",
+    "median": "#3A3845",
+    "anteil_modus": 0.834,
+    "pixel": 107413
+   },
+   "bild": {
+    "datei": "_quelle/extern/ig/2026-07-29_culinarium_hannover_DbYnkdkjrNy-1.jpg",
+    "groesse": [
+     2014,
+     2003
+    ],
+    "box": [
+     101,
+     60,
+     1933,
+     1462
+    ],
+    "hex": "#4D3321",
+    "median": "#4C3448",
+    "anteil_modus": 0.027,
+    "pixel": 2568464
+   }
+  }
+ ],
+ "fotos": [
+  {
+   "datei": "_quelle/vom-kunden/drive/4029.jpg",
+   "groesse": [
+    1536,
+    2048
+   ],
+   "box": [
+    154,
+    410,
+    614,
+    1024
+   ],
+   "hex": "#E3BB7D",
+   "median": "#DCAC67",
+   "anteil_modus": 0.097,
+   "pixel": 282440,
+   "name": "Putz",
+   "was": "warme Wand hinter dem Tisch mit Kerze und Apothekerflasche"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/3887.jpg",
+   "groesse": [
+    1536,
+    2048
+   ],
+   "box": [
+    31,
+    410,
+    154,
+    819
+   ],
+   "hex": "#EB6C23",
+   "median": "#E66522",
+   "anteil_modus": 0.1,
+   "pixel": 50307,
+   "name": "Flur",
+   "was": "orange Wand im Flur zur Bar, Licht der Hängelampe"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/3855.jpg",
+   "groesse": [
+    1536,
+    2048
+   ],
+   "box": [
+    645,
+    1516,
+    768,
+    1761
+   ],
+   "hex": "#FFCC64",
+   "median": "#FFCA5E",
+   "anteil_modus": 0.071,
+   "pixel": 22493,
+   "name": "Kerze",
+   "was": "Kerze auf der Tafel, beleuchtetes Wachs"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/3937.jpg",
+   "groesse": [
+    1536,
+    2048
+   ],
+   "box": [
+    461,
+    1126,
+    645,
+    1536
+   ],
+   "hex": "#A35C1C",
+   "median": "#B06B21",
+   "anteil_modus": 0.04,
+   "pixel": 75440,
+   "name": "Honig",
+   "was": "Glasballon mit hellem Sirup an der Bar"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/5369.jpg",
+   "groesse": [
+    5304,
+    7952
+   ],
+   "box": [
+    265,
+    6521,
+    5039,
+    7793
+   ],
+   "hex": "#231B13",
+   "median": "#2D241B",
+   "anteil_modus": 0.213,
+   "pixel": 6072528,
+   "name": "Schiefertisch",
+   "was": "dunkle Tischplatte unter dem Glas"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/5369.jpg",
+   "groesse": [
+    5304,
+    7952
+   ],
+   "box": [
+    265,
+    159,
+    5039,
+    1590
+   ],
+   "hex": "#0A0705",
+   "median": "#0A0706",
+   "anteil_modus": 0.454,
+   "pixel": 6831594,
+   "name": "Barnacht",
+   "was": "Dunkel hinter dem Glas, ebd."
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/5541.jpg",
+   "groesse": [
+    5304,
+    7952
+   ],
+   "box": [
+    0,
+    795,
+    424,
+    3976
+   ],
+   "hex": "#442D32",
+   "median": "#483336",
+   "anteil_modus": 0.036,
+   "pixel": 1348744,
+   "name": "Ziegel",
+   "was": "Klinker an der Ecke Haasemannstraße, über den Schildern"
+  },
+  {
+   "datei": "_quelle/vom-kunden/drive/4026.jpg",
+   "groesse": [
+    1638,
+    2048
+   ],
+   "box": [
+    1212,
+    1475,
+    1409,
+    1761
+   ],
+   "hex": "#8B1424",
+   "median": "#D44032",
+   "anteil_modus": 0.057,
+   "pixel": 40153,
+   "name": "Campari",
+   "was": "roter Drink im Stielglas, gereicht über den Tisch"
+  }
+ ],
+ "rahmen": {
+  "datei": "_quelle/extern/ig/2026-03-06_culinarium_hannover_DVjkofijp6R-1.jpg",
+  "groesse": [
+   1440,
+   1432
+  ],
+  "box": [
+   43,
+   1045,
+   1397,
+   1418
+  ],
+  "hex": "#B1ADAC",
+  "median": "#B1ADAD",
+  "anteil_modus": 0.104,
+  "pixel": 31484
+ }
+}

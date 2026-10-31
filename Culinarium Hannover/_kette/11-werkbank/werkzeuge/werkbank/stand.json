@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "Werkbank",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "werkbank",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:44+08:00",
+  "ende": "2026-10-28T15:41+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": "http://localhost:9088/werkbank/index.html",
+  "briefing": "briefing.html?teil=werkbank",
+  "notiz": "Nachgezogen: Rudis Original-Logo (Station 05), Plakatarchiv und Plakatwerkstatt fertig aufgenommen; Bedienen 56/56, 60 Seitenläufe ohne Fehler",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

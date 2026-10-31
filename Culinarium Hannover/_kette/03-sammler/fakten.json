@@ -1,0 +1,450 @@
+{
+ "art": {
+  "wert": "Reihe von Food-Pairing-Abenden (kein Hotel, kein Restaurant mit eigenem Lokal); Projektart Auftrag",
+  "quelle": "_kette/haus.json, _kette/02-spaeher/einordnung.json (25.10.2026)"
+ },
+ "name": {
+  "wert": "CULINARIUM (Instagram-Name «Food Pairing | Schulungen | Events | Consulting», Konto @culinarium_hannover); Plakat-Zeile «A UNiQUE EXPERiENCE BY MOMO X RUDI», Bio «CULINARIUM / a unique experience»",
+  "quelle": "_qa/spaeher/ig-profil-rechner.txt (25.10.2026); _quelle/extern/ig/ (Plakate)"
+ },
+ "rechtstraeger": {
+  "wert": null,
+  "quelle": "offen",
+  "gesucht": "North Data, DENIC, Handelsregister laut _quelle/recherche/Kundenprofil.md Blatt 1 (24.10.2026): kein Rechtsträger, kein Registereintrag unter dem Namen"
+ },
+ "adresse": {
+  "wert": "Walk on the Wild Side, Haasemannstraße 13, 30449 Hannover (Linden-Mitte)",
+  "quelle": "_quelle/walk-on-the-wild-side/portale/google-maps.md und falstaff-bars-wild-side.md (25.10.2026). Die Beiträge schreiben «Hasemannstrasse 13» (falsch)"
+ },
+ "telefon": {
+  "wert": null,
+  "quelle": "offen",
+  "gesucht": "Instagram-Profil und alle Beiträge 25.10.2026: keine Nummer für Culinarium. Nur die Bar: +49 163 3909578 (Google Maps, Falstaff 25.10.2026)"
+ },
+ "mail": {
+  "wert": null,
+  "quelle": "offen",
+  "gesucht": "Instagram, Portale 25.10.2026: keine Mailadresse; Kontakt per Instagram-Nachricht. Rudi schreibt privat von napierajrudolf@gmail.com (_quelle/vom-kunden/eingang.json), nicht öffentlich"
+ },
+ "zimmer": {
+  "wert": "betrifft nicht (keine Zimmer)",
+  "quelle": "Art des Hauses"
+ },
+ "plaetze": {
+  "wert": [
+   {
+    "zahl": 15,
+    "was": "Plätze pro Abend, Pop-ups Sept./Nov. 2023",
+    "quelle": "_quelle/extern/ig/beitraege.md · CxNkFWTIvL2, CzMcqNcMCqG"
+   },
+   {
+    "zahl": 20,
+    "was": "Plätze, Samstag Okt. 2023 («nur 20 Plätze»)",
+    "quelle": "_quelle/extern/ig/beitraege.md · CyT32RTMB4d"
+   },
+   {
+    "zahl": 12,
+    "was": "Plätze pro Abend, Jan. und April/Juni 2024",
+    "quelle": "_quelle/extern/ig/beitraege.md · C17kqAXLfs_, C56bJeds8PF"
+   },
+   {
+    "zahl": 14,
+    "was": "Plätze pro Abend, Feb. 2025",
+    "quelle": "_quelle/extern/ig/beitraege.md · DFqbLG2s_dc"
+   },
+   {
+    "zahl": "bis 14",
+    "was": "Tafel der Bar",
+    "quelle": "_quelle/extern/portale/hannover-prestige-kartenvorteil-wild-side.md"
+   },
+   {
+    "zahl": "8 bis 12 / bis 12",
+    "was": "Tafel der Bar (Private Dining)",
+    "quelle": "_quelle/walk-on-the-wild-side/presse/fizzz-meininger-2018.md; portale/essen-in-hannover.md"
+   }
+  ],
+  "quelle": "Instagram-Beiträge 2023–2025; die Zahl wechselt je Abend"
+ },
+ "preise_ab": {
+  "wert": [
+   {
+    "kategorie": "Abend (3 Gänge, 5 Signature Drinks, Tasting und Schulung)",
+    "preis": "89,00 EUR",
+    "termin": "27./28.03.2026 und 25./26.09.2026",
+    "quelle": "_quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DVjkofijp6R/ (veröffentlicht 06.03.2026, abgelesen 25.10.2026); _quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DbYnkdkjrNy/ (veröffentlicht 29.07.2026, abgelesen 25.10.2026)"
+   },
+   {
+    "kategorie": "Abend",
+    "preis": "79,00 Euro",
+    "termin": "21./22.02.2025, 13./14.06.2025, 14./15.11.2025",
+    "quelle": "_quelle/extern/ig/beitraege.md · DFqbLG2s_dc, DJw8OqGMY1G, DPwlqcfiKcA"
+   },
+   {
+    "kategorie": "Abend",
+    "preis": "69,00 Euro",
+    "termin": "29./30.11.2024",
+    "quelle": "_quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DCCf-ikoaGs/ (veröffentlicht 06.11.2024, abgelesen 25.10.2026)"
+   },
+   {
+    "kategorie": "Pop-up 2023",
+    "preis": "80,00 EUR bzw. 59,00 EUR",
+    "termin": "15./16.09.2023 bzw. 22./23.09.2023",
+    "quelle": "_quelle/extern/ig-team/beitraege.md · Cw8KZ8Lsiiu, CxYTLBVMOKj"
+   }
+  ],
+  "quelle": "Instagram-Beiträge, Preise wörtlich; Währung EUR"
+ },
+ "restaurants": {
+  "wert": [
+   {
+    "name": "Culinarium (Abend an der langen Tafel der Bar)",
+    "art": "3-Gänge-Menü (bis September 2026 als vegetarisch angekündigt; laut Rudi am 26.10.2026 nicht mehr rein vegetarisch), 5 Signature Drinks, Cocktail-Tasting mit Schulung zu Fatwashing, Milkwashing und Klärung von Drinks durch Enzyme; «Momo wird persönlich jeden Drink für dich erklären»",
+    "zeiten": "Beginn Freitag 19:00 Uhr, Samstag 17:00 Uhr"
+   }
+  ],
+  "quelle": "_quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DbYnkdkjrNy/ (veröffentlicht 29.07.2026, abgelesen 25.10.2026)"
+ },
+ "menue_beispiele": {
+  "wert": [
+   "Dezember 2025 (Hannover Eats): Apéritif Rotkraut & Orange Gin · Hibiskus · Cranberry · Rosmarin · Granatapfel / Vorspeise Grünkohl · Sesam · Dumpling / Hauptgang Barbarie-Entenbrust · Kartoffel · Spitzkohl / Dessert Milchreis · fermentierte Pflaume · Bratapfel / Absacker (je mit Drink); «*auch in Veggie möglich»",
+   "Rudi 04/2026: BLUMENKOHL / ROGUEFORT [sic] / KAPERN / QUINOA",
+   "Rudi 10/2026: AUBERGINE / KOKOS / LIMETTE / SESAM",
+   "Rudi 06/2026: Spaghetti Eis / Kiwi / weiße Schokolade"
+  ],
+  "quelle": "_quelle/extern/ig-gaeste/beitraege.md · DSnlBLECGyD (23.12.2025); _quelle/extern/ig-team/beitraege.md · DW4V45ujR0B, De1pn9ttMoX, DZIlJu-N0w4"
+ },
+ "oeffnungszeiten": {
+  "wert": "keine festen Zeiten: einzelne Doppeltermine (Fr 19:00, Sa 17:00). Die Bar: Do 19:00–01:00, Fr und Sa 19:00–02:00",
+  "quelle": "_quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DbYnkdkjrNy/ (veröffentlicht 29.07.2026, abgelesen 25.10.2026); Bar: falstaff-bars-wild-side.md und Instagram-Bio der Bar (25.10.2026)"
+ },
+ "termine": {
+  "wert": [
+   {
+    "datum": "20.05.2023",
+    "was": "erstes Pop-up (Momo)",
+    "quelle": "_quelle/extern/ig-team/beitraege.md · CsZTwYtMoyC (veröffentlicht 18.05.2023)"
+   },
+   {
+    "datum": "15./16.09.2023",
+    "was": "Pop-up mit Live-Act, 80 EUR",
+    "quelle": "Cw8KZ8Lsiiu"
+   },
+   {
+    "datum": "22./23.09.2023",
+    "was": "Pop-up, 59 EUR",
+    "quelle": "CxYTLBVMOKj"
+   },
+   {
+    "datum": "Okt. 2023",
+    "was": "Pop-up Samstag, 59 EUR, 20 Plätze; Plakat «21/10/23»",
+    "quelle": "CyT32RTMB4d (12.10.2023)"
+   },
+   {
+    "datum": "Nov. 2023",
+    "was": "Pop-up, 59 EUR, 15 Plätze, erstmals «Vorverkauf per PayPal»",
+    "quelle": "CzMcqNcMCqG (03.11.2023)"
+   },
+   {
+    "datum": "31.12.2023",
+    "was": "«Silvester Edition» mit Christoph und Momo, 4 Gänge plus Amuse-Gueule, «nach Wunsch auch vegetarisch», Champagner",
+    "quelle": "C0w6iuCMcnF (12.12.2023)"
+   },
+   {
+    "datum": "26./27.01.2024",
+    "was": "69 EUR, 12 Plätze, Live-Act @sinibins («BY MOMO X CHRISTOPH»)",
+    "quelle": "C17kqAXLfs_ (10.01.2024)"
+   },
+   {
+    "datum": "26.04.2024",
+    "was": "69 Euro, 12 Plätze, Plakat «BY MOMO»",
+    "quelle": "C56bJeds8PF (18.04.2024)"
+   },
+   {
+    "datum": "19./20.07.2024",
+    "was": "69 Euro, «mit @momo012027 und @rudi_san», Aperitif mit @sinimusicofficial",
+    "quelle": "C8cgYVSouVT (20.06.2024)"
+   },
+   {
+    "datum": "April 2024",
+    "was": "erster Abend mit Rudi (Beitrag Luisa Verfürth, 30.04.2024)",
+    "quelle": "_quelle/extern/ig-gaeste/beitraege.md · C6YS0yFs-kk"
+   },
+   {
+    "datum": "Juli 2024",
+    "was": "Fotoserie Irina Voronov (Beitrag 24.07.2024)",
+    "quelle": "_quelle/extern/ig-fotografen/beitraege.md · C9z2rj1MRb2"
+   },
+   {
+    "datum": "29./30.11.2024",
+    "was": "69 Euro",
+    "quelle": "DCCf-ikoaGs"
+   },
+   {
+    "datum": "21./22.02.2025",
+    "was": "79 Euro, 14 Plätze",
+    "quelle": "DFqbLG2s_dc"
+   },
+   {
+    "datum": "13./14.06.2025",
+    "was": "79 Euro",
+    "quelle": "DJw8OqGMY1G"
+   },
+   {
+    "datum": "14./15.11.2025",
+    "was": "79 Euro, Freitag «bereits ausverkauft»",
+    "quelle": "DPwlqcfiKcA"
+   },
+   {
+    "datum": "Dezember 2025",
+    "was": "Menü mit Ente, Einladung Hannover Eats (Beitrag 23.12.2025), Abenddatum offen",
+    "quelle": "DSnlBLECGyD"
+   },
+   {
+    "datum": "27./28.03.2026",
+    "was": "89 EUR",
+    "quelle": "DVjkofijp6R"
+   },
+   {
+    "datum": "Mai 2026",
+    "was": "Foto und Video focusonbiz_hannover (Beitrag 27.05.2026), Abenddatum offen",
+    "quelle": "_quelle/video/profi-fremd/ · DY2oEIFI7od"
+   },
+   {
+    "datum": "25./26.09.2026",
+    "was": "89 EUR, «AUSGEBUCHT!»",
+    "quelle": "DbYnkdkjrNy"
+   },
+   {
+    "datum": "nächster Termin",
+    "was": "offen, keiner angekündigt",
+    "quelle": "Profil 25.10.2026"
+   }
+  ],
+  "quelle": "Instagram-Beiträge; Datum der Abende aus dem Text, Jahr aus dem Veröffentlichungsdatum"
+ },
+ "saison": {
+  "wert": "rund drei Doppeltermine im Jahr seit Herbst 2024 (Nov., Feb./März, Juni, Sept.)",
+  "quelle": "termine oben; _quelle/recherche/Kundenprofil.md Blatt 3"
+ },
+ "noten": {
+  "wert": [
+   {
+    "portal": "Google Maps, Culinarium",
+    "wert": "kein Eintrag",
+    "anzahl": null,
+    "datum": "25.10.2026",
+    "adresse": "Google Maps (Späher)"
+   },
+   {
+    "portal": "Google Maps, Walk on the Wild Side",
+    "wert": "4,8 von 5 (67 × 5, 4 × 4, 2 × 3, 1 × 2, 1 × 1 Stern; nachgerechnet 360/75 = 4,8)",
+    "anzahl": 75,
+    "datum": "26.10.2026",
+    "adresse": "https://www.google.com/maps/place/Walk+on+the+Wild+Side/@52.3702539,9.7133871,17z · alle 75 in Roberts Chrome gelesen"
+   },
+   {
+    "portal": "NeoTaste, Walk on the Wild Side",
+    "wert": "4,8",
+    "anzahl": 40,
+    "datum": "25.10.2026",
+    "adresse": "https://neotaste.com/de/restaurants/hannover/walk-on-the-wild-side"
+   },
+   {
+    "portal": "Falstaff, Walk on the Wild Side",
+    "wert": "91 Punkte, Bar Guide 2027 – Cocktail bars; zusätzlich im Weinbar-Verzeichnis mit 89 Punkten (Google-Ausschnitt falstaff.com/wineries, 26.10.2026)",
+    "anzahl": null,
+    "datum": "25.10.2026",
+    "adresse": "https://www.falstaff.com/en/bars/wild-side"
+   },
+   {
+    "portal": "TripAdvisor",
+    "wert": "Bar «Wild Side»: 0 Bewertungen, keine Fotos, Ort falsch «Pattensen»; Culinarium: kein Eintrag",
+    "anzahl": 0,
+    "datum": "26.10.2026",
+    "adresse": "https://www.tripadvisor.de/Restaurant_Review-g2018197-d27395540-Reviews-Wild_Side-Pattensen_b_Hannover_Lower_Saxony.html"
+   },
+   {
+    "portal": "Booking.com",
+    "wert": "betrifft nicht",
+    "anzahl": null,
+    "datum": "25.10.2026",
+    "adresse": "Abende, kein Haus"
+   }
+  ],
+  "quelle": "_quelle/walk-on-the-wild-side/portale/*.md"
+ },
+ "auszeichnungen": {
+  "wert": [
+   {
+    "was": "Falstaff Bar Guide 2027, 91 Punkte",
+    "fuer": "Bar Walk on the Wild Side, nicht Culinarium",
+    "geprueft": "an der Quelle, 25.10.2026"
+   }
+  ],
+  "quelle": "_quelle/walk-on-the-wild-side/portale/falstaff-bars-wild-side.md. Die frühere Angabe «89 Punkte 2026» (En Primeur Club) ist überholt"
+ },
+ "geschichte": {
+  "wert": [
+   {
+    "jahr": "2017",
+    "was": "Bar Walk on the Wild Side eröffnet Ende Oktober in der ehemaligen Fussballkneipe Linden Journal, gegenüber dem 11A (Verena Schindler, Christoph Elbert)",
+    "quelle": "_quelle/walk-on-the-wild-side/presse/thomaslasser-trinken.md (Jahr laut Kundenprofil Blatt 4)"
+   },
+   {
+    "jahr": "2023",
+    "was": "erste Pop-ups «BY MOMO X CHRISTOPH», Wortmarke CULINARIUM schon auf den Plakaten",
+    "quelle": "_quelle/extern/ig-team/ · Cw8KZ8Lsiiu, CxYTLBVMOKj"
+   },
+   {
+    "jahr": "2024",
+    "was": "Rudi kocht, «BY MOMO X RUDI»",
+    "quelle": "_quelle/extern/ig-gaeste/ · C6YS0yFs-kk; _quelle/extern/ig/ · DCCf-ikoaGs"
+   },
+   {
+    "jahr": "2026",
+    "was": "89 EUR, September ausgebucht",
+    "quelle": "DbYnkdkjrNy"
+   }
+  ],
+  "quelle": "siehe je Eintrag"
+ },
+ "personen": {
+  "wert": [
+   {
+    "name": "Rudolf «Rudi» Napieraj",
+    "rolle": "Küche",
+    "quelle": "Profil @rudi__san (Name «Rudolf Napieraj», 25.10.2026); Plakate «BY MOMO X RUDI»"
+   },
+   {
+    "name": "Mohamed «Momo» Ben Khelifa",
+    "rolle": "Drinks, Tasting und Schulung; Bartender des Wild Side, vorher «Probierbar»",
+    "quelle": "Neue Presse 11.01.2024 und 21.11.2024 (_quelle/walk-on-the-wild-side/presse/neue-presse-haz-2024.md); Profil @momo012027"
+   },
+   {
+    "name": "Derya Ivkin",
+    "rolle": "führt die Bar Walk on the Wild Side seit Herbst 2023 (Presse), «Bar Owner» und «Food Pairing @culinarium_hannover» (eigene Bio); 2024 «Gastgeberin»",
+    "quelle": "Neue Presse 11.01.2024, 05.12.2024; HAZ 12.01.2024; _qa/spaeher/ig-derrisch__.txt"
+   },
+   {
+    "name": "Sini (@sinimusicofficial)",
+    "rolle": "Stimme beim Aperitif 2024/2025",
+    "quelle": "DCCf-ikoaGs, DFqbLG2s_dc, C9z2rj1MRb2"
+   }
+  ],
+  "quelle": "Instagram 25.10.2026; private Angaben aus Bios werden nicht übernommen"
+ },
+ "fotografen": {
+  "wert": [
+   {
+    "name": "Irina Voronov (@voronov_irina)",
+    "was": "Serie Juli 2024; Mitautorin des Recap-Beitrags 02/2025 (Urheberschaft dort nicht belegt)",
+    "quelle": "C9z2rj1MRb2 («Fotos @voronov_irina»), DFqZn2UMYMV (Mitautoren)"
+   },
+   {
+    "name": "focusonbiz_hannover",
+    "was": "Foto und Video 2026 (Culinarium, Rudis Gerichte, Dirty Chicken)",
+    "quelle": "DY2oEIFI7od, DW4V45ujR0B, De1pn9ttMoX, DZId0KMoAtq"
+   }
+  ],
+  "quelle": "Instagram-Texte"
+ },
+ "anreise": {
+  "wert": null,
+  "quelle": "offen",
+  "gesucht": "Instagram und Portale 25.10.2026: keine Anreise-Angaben; nur Adresse und Plus Code 9PC7+49 Hannover (Google Maps)"
+ },
+ "buchungsweg": {
+  "wert": {
+   "system": "Instagram-Nachricht, dann Vorverkauf per PayPal; «Tickets ausschließlich per Vorverkauf über PayPal. Schreibt uns hierzu gerne eine Nachricht»",
+   "link": "https://www.instagram.com/p/DbYnkdkjrNy/",
+   "storno": "«Da die Plätze begrenzt sind, bitten wir um Verständnis, dass Tickets nicht rückerstattet werden können» (seit 03/2026); 2025: Rückgabe ab 7 Tagen vor Beginn ausgeschlossen"
+  },
+  "quelle": "_quelle/extern/ig/beitraege.md · https://www.instagram.com/p/DbYnkdkjrNy/ (veröffentlicht 29.07.2026, abgelesen 25.10.2026); DJw8OqGMY1G, DPwlqcfiKcA"
+ },
+ "sprachen_website": {
+  "wert": [
+   "de"
+  ],
+  "quelle": "keine Website; alle Instagram-Beiträge deutsch (_quelle/extern/ig/beitraege.md)"
+ },
+ "rechtstexte": {
+  "wert": {
+   "impressum": "offen: kein Impressum (Instagram, keine Website)",
+   "datenschutz": "offen: keine",
+   "agb": "offen: keine; nur die Stornozeile in den Beiträgen",
+   "widerruf": "offen: keine"
+  },
+  "quelle": "Profil und Beiträge 25.10.2026; Kundenprofil Blatt 1"
+ },
+ "weitere_haeuser": {
+  "wert": [
+   {
+    "name": "Walk on the Wild Side",
+    "ordner": "_quelle/walk-on-the-wild-side/ (82 Instagram-Beiträge, Facebook 56 Fotos, Google 55 Fotos, Presse, Portale); _quelle/dach.md",
+    "bezug": "Hauptgeschäft: Culinarium und Dirty Chicken laufen darunter (Rudi 26.10.2026); geführt von Derya Ivkin seit Herbst 2023 (Presse); Rechtsträger offen"
+   },
+   {
+    "name": "Dirty Chicken Hannover",
+    "ordner": "_quelle/dirty-chicken/",
+    "bezug": "Rudis zweites Projekt, «Pop up coming soon»; ob es mitkommt: offen"
+   }
+  ],
+  "quelle": "_kette/02-spaeher/einordnung.json"
+ },
+ "social": {
+  "wert": {
+   "instagram": "https://www.instagram.com/culinarium_hannover/ (1.079 Follower, 28 Beiträge, 25.10.2026)",
+   "facebook": "keins (/culinariumhannover nicht verfügbar laut Recherche)",
+   "tiktok": "keins",
+   "youtube": "keins",
+   "team": [
+    "https://www.instagram.com/rudi__san/",
+    "https://www.instagram.com/momo012027/",
+    "https://www.instagram.com/derrisch__/"
+   ],
+   "bar": "https://www.instagram.com/walkonthewildside_hannover/ (2.678 Follower, 82 Beiträge)"
+  },
+  "quelle": "_qa/spaeher/ig-*.txt (25.10.2026)"
+ },
+ "marke": {
+  "wert": {
+   "farben_gemessen": "Off-White #FAF4F4, Schiefer-Violett #3A3845, Akzent je Abend",
+   "schrift": "nur visuell bestimmt (breite 70er-Display-Antiqua; Tagline geometrische Grotesk mit Unicase-i)",
+   "logo": "Logo-Datei des Kunden als Profilbild 1080 × 1080 (_quelle/logo/culinarium-profilbild-1080.jpg: CULINARIUM / A UNiQUE EXPERiENCE, sauber auf Weiss); daraus und aus dem 2014-px-Plakat als Vektor nachgezogen (_quelle/logo/nachgezogen/*.svg, je 4000-px-PNG). Original-Vektor und Schriftname beim Kunden: offen"
+  },
+  "quelle": "_quelle/recherche/Kundenprofil.md Blatt 5 und marke_bilder_online.md (Messung 24.10.2026)"
+ },
+ "material_vom_kunden": {
+  "wert": "26 Mail-Anhänge (23 verschiedene) in _quelle/vom-kunden/; 68 von 90 Drive-Dateien in _quelle/vom-kunden/drive/ (inkl. Film 52799.mp4 1920 × 1080 und RAW 5406/5409.arw); 22 Drive-Dateien für robert@tasty-studios.de gesperrt",
+  "quelle": "_quelle/vom-kunden/eingang.json, drive/herkunft.json (26.10.2026)"
+ },
+ "sponsoren": {
+  "wert": [
+   "Hardenberg Distillery (Sept. 2023, laut Recherche)",
+   "@casparnea (Dez. 2023)",
+   "@diggidanjoksen und @brownforman (Silvester 2023)"
+  ],
+  "quelle": "_quelle/extern/ig/beitraege.md · C0w5_ZEsfY5, C15hZ_zIh60; Kundenprofil Blatt 3"
+ },
+ "kueche_2023": {
+  "wert": "«3 Gänge Menü à la @11a» (Küche des Restaurants 11A gegenüber), 2023 «BY MOMO X CHRISTOPH»",
+  "quelle": "_quelle/extern/ig/beitraege.md · CxnB2TiM4Iy, Cy0KSO7MlDA, C0w5_ZEsfY5"
+ },
+ "dach": {
+  "wert": {
+   "hauptgeschaeft": "Walk on the Wild Side, Haasemannstraße 13, Nachbarschafts-Mixology-Bar; geführt seit Herbst 2023 von Derya Ivkin, Drinks Mohamed «Momo» Ben Khelifa; Reopening 09.11.2023",
+   "darunter": [
+    "Culinarium (Food-Pairing-Abende, Rudi und Momo)",
+    "Dirty Chicken (Rudis Sandwich-Pop-up, Opening 06.06.2026 im Wild Side)",
+    "Private Dining an der langen Tafel",
+    "SESSION – Sip & Sound (DJ-Abende seit 06.09.2025)",
+    "Wild Side goes in love (Valentinstag 2026 mit Rudi)",
+    "Silvester-Frühshoppen (2024, 2025)",
+    "Gastschichten und Konzerte"
+   ],
+   "frueher": "Christoph Elbert und Verena Schindler (C.H.E.F. GmbH, HRB 202394) eröffneten die Bar Ende Oktober 2017 und übergaben sie Ende 2023 an Derya Ivkin",
+   "rechtstraeger_heute": null
+  },
+  "quelle": "_quelle/dach.md (alle Belege), Neue Presse 11.01.2024 und 05.12.2024, HAZ 12.01.2024, Instagram @walkonthewildside_hannover (82 Beiträge), North Data 26.10.2026; Aussage Rudi 26.10.2026 über Robert"
+ }
+}

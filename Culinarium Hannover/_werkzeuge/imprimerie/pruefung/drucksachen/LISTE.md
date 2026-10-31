@@ -1,0 +1,21 @@
+# Drucksachen für die Werkbank (aus dem PDF-Lauf aller Vorlagen, 28.10.2026)
+
+- `01-abendplakat-014.pdf` · Culinarium · Fr 27. und Sa 28. November 2026 · Plakat, vorne und hinten
+- `02-abendplakat-016.pdf` · Culinarium · Fr 18. und Sa 19. Dezember 2026 · Plakat, vorne und hinten
+- `03-abendplakat-013.pdf` · Plakat · Fr 25. und Sa 26. September 2026
+- `04-abendplakat-009.pdf` · Plakat · Fr 21. und Sa 22. Februar 2025
+- `05-abendplakat-007.pdf` · Plakat · Fr 19. und Sa 20. Juli 2024
+- `06-plakat-002.pdf` · Culinarium · Fr 27. und Sa 28. November 2026 · Plakat A3 zum Aushang
+- `07-story-002.pdf` · Culinarium · Fr 27. und Sa 28. November 2026 · Ausgebucht
+- `08-menuekarte-008.pdf` · Culinarium · Fr 27. und Sa 28. November 2026 · Menükarte am Tisch
+- `09-menuekarte-005.pdf` · Menükarte · Fr 21. und Sa 22. Februar 2025
+- `10-menuekarte-006.pdf` · Rudis Zeilen
+- `11-menuekarte-007.pdf` · Die drei Techniken
+- `12-tisch-001.pdf` · LAUCH / BLUMENKOHL / CHIPOTLE, am Tisch
+- `13-tisch-006.pdf` · Fünf Signature Drinks
+- `14-tischkarte-001.pdf` · Platzkarte
+- `15-instagram-005.pdf` · Culinarium · Fr 18. und Sa 19. Dezember 2026 · Ankündigung
+- `16-flyer-003.pdf` · Culinarium · Fr 18. und Sa 19. Dezember 2026 · Flyer
+- `17-aushang-001.pdf` · Heute ausgebucht
+- `18-story-005.pdf` · Dirty Chicken · Pop-up · Story
+- `19-flyer-002.pdf` · Culinarium · Fr 27. und Sa 28. November 2026 · Flyer

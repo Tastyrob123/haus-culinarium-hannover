@@ -1,0 +1,47 @@
+{
+ "ziel": "abend-2024-04-26",
+ "art": "satz",
+ "key": "C56bJeds8PF",
+ "name": "26./27. April 2024",
+ "unter": "Kabinett der Illusionen",
+ "gruppe": "Frühere Abende",
+ "ab": "2024-04-26",
+ "datum": "Fr 26. und Sa 27. April 2024",
+ "preis": "69,00 EUR",
+ "mit": "BY MOMO",
+ "zusatz": "12 Plätze",
+ "motto": "Kabinett der Illusionen",
+ "titel": "Zum ersten Mal mit Rudi",
+ "plakat": "C56bJeds8PF",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "Sauerteigbrot | Miso-Butter",
+   "drink": "Arcane · Hendrick’s Floral Adora | Rosen-Shrub | CO2"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Gurke | Sesam | Sternanis",
+   "drink": "Cabinet Collins · Discarded Vodka | gelbe Paprika | grüner Apfel"
+  },
+  {
+   "gang": "Hauptgang",
+   "teller": "Sellerie | Lauch | Frisée",
+   "drink": "Mystical Mixology · Hendrick’s Neptunia | Gurke | rosa Pfeffer | Sellerie"
+  },
+  {
+   "gang": "Dessert",
+   "teller": "Amalfi-Zitrone | Vanille",
+   "drink": "Wanderlust · Monkey Shoulder Whisky | Rhabarber | Spargel | weisser Port | Estragon"
+  },
+  {
+   "gang": "Absacker",
+   "teller": "",
+   "drink": "Curiosity Crush · Discarded Banana Peel Rum | Erdbeere | Grana Padano"
+  }
+ ],
+ "upgrade": [],
+ "voll": true,
+ "foto_der_karte": "Foto der Karte in der Story vom 29.04.2024",
+ "quelle": "website/abende_info.py KARTEN['C56bJeds8PF'] · website/bau.py ABENDE (Foto der Karte in der Story vom 29.04.2024)"
+}

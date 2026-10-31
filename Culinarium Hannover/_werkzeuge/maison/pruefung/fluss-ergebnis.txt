@@ -1,0 +1,5 @@
+Last 19.7
+{"groesse":"1440x900","drossel":4,"bilder":388,"p50":8.3,"p95":9.2,"laengstes":308.4,"ueber33":4,"cls":0.0035,"zeiger_laengstes":33.5,"gewicht_mb":2.37,"anfragen":39}
+{"groesse":"1440x900","drossel":6,"bilder":386,"p50":8.3,"p95":9.2,"laengstes":41.7,"ueber33":2,"cls":0.0035,"zeiger_laengstes":42.4,"gewicht_mb":2.37,"anfragen":39}
+{"groesse":"390x844","drossel":4,"bilder":425,"p50":8.3,"p95":9.2,"laengstes":33.5,"ueber33":1,"cls":0.0051,"zeiger_laengstes":null,"gewicht_mb":1.8,"anfragen":39}
+{"groesse":"390x844","drossel":6,"bilder":421,"p50":8.3,"p95":9.3,"laengstes":49.4,"ueber33":1,"cls":0.0051,"zeiger_laengstes":null,"gewicht_mb":1.8,"anfragen":39}

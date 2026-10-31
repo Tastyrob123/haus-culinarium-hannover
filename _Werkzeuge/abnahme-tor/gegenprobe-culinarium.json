@@ -1,0 +1,16 @@
+{
+ "quelle": "Roberts Funde vom 29.10.2026 (Auftrag Oberchef an den Prüfchat): das Tor muss jeden davon am Stand von heute früh finden",
+ "funde": [
+  {"name": "Haus-Knopf oval", "k": 1, "muster": "rund|maison|tresen|haus"},
+  {"name": "«PREISLISTE» abgeschnitten", "k": 2, "muster": "preisliste"},
+  {"name": "Feld «Etwas anderes für …»", "k": 2, "muster": "etwas anderes"},
+  {"name": "Vorlagen-Leiste versetzt", "k": 3, "muster": "vorlagen|\\bvk\\b|\\.vk"},
+  {"name": "«2023» allein in der Zeile", "k": 7, "muster": "«2023»"},
+  {"name": "Menükarte mit Löchern", "k": 10, "muster": "men[üu]karte|men[üu]"},
+  {"name": "«Ausgebucht» mit Löchern", "k": 10, "muster": "ausgebucht"},
+  {"name": "Speisekarte nicht im Stil", "k": 12, "muster": "blumenkohl|vom pass|speisekarte"},
+  {"name": "Plakatarchiv = Fotos (zwei Wege, ein Ziel)", "k": 15, "muster": "plakatarchiv"},
+  {"name": "Tapete leer", "k": 4, "muster": "tapete"},
+  {"name": "Fuss der Leiste nicht auf einer Kante", "k": 6, "muster": "fuss|leiste"}
+ ]
+}

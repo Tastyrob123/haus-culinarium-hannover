@@ -1,0 +1,362 @@
+{
+ "menue": {
+  "karton": [
+   "",
+   [
+    [
+     "menue",
+     40,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Die Menükarte",
+   "am Platz."
+  ],
+  "breit": []
+ },
+ "platzkarte": {
+  "karton": [
+   "",
+   [
+    [
+     "platz-h",
+     46,
+     "Warmweiss"
+    ],
+    [
+     "platz-d",
+     46,
+     "Nacht"
+    ]
+   ]
+  ],
+  "titel": [
+   "Ein Name",
+   "für jeden Platz."
+  ],
+  "breit": []
+ },
+ "reserviert": {
+  "karton": [
+   "",
+   [
+    [
+     "reserviert",
+     42,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Die Tafel",
+   "ist reserviert."
+  ],
+  "breit": []
+ },
+ "willkommen": {
+  "karton": [
+   "",
+   [
+    [
+     "willkommen",
+     42,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Willkommen",
+   "am Platz."
+  ],
+  "breit": []
+ },
+ "ausgebucht": {
+  "karton": [
+   "",
+   [
+    [
+     "ausgebucht",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Heute",
+   "ausgebucht."
+  ],
+  "breit": []
+ },
+ "warteliste": {
+  "karton": [
+   "",
+   [
+    [
+     "warteliste",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Auf die",
+   "Warteliste."
+  ],
+  "breit": []
+ },
+ "plakat-a3": {
+  "karton": [
+   "",
+   [
+    [
+     "plakat-a3",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Das Plakat",
+   "an der Wand."
+  ],
+  "breit": []
+ },
+ "fuenf-drinks": {
+  "karton": [
+   "",
+   [
+    [
+     "fuenf-drinks",
+     40,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Fünf Drinks",
+   "von Momo."
+  ],
+  "breit": []
+ },
+ "rudis-zeilen": {
+  "karton": [
+   "",
+   [
+    [
+     "rudis-zeilen",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Rudis",
+   "Zeilen."
+  ],
+  "breit": []
+ },
+ "flyer": {
+  "karton": [
+   "",
+   [
+    [
+     "flyer",
+     44,
+     "Vorderseite"
+    ],
+    [
+     "flyer-r",
+     44,
+     "Rückseite"
+    ]
+   ]
+  ],
+  "titel": [
+   "Ein Flyer",
+   "für die Theke."
+  ],
+  "breit": []
+ },
+ "danke": {
+  "karton": [
+   "",
+   [
+    [
+     "danke",
+     42,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Danke",
+   "für den Abend."
+  ],
+  "breit": []
+ },
+ "allergien": {
+  "karton": [
+   "",
+   [
+    [
+     "allergien",
+     46,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Allergien",
+   "am Platz."
+  ],
+  "breit": []
+ },
+ "visitenkarte": {
+  "karton": [
+   "",
+   [
+    [
+     "visite",
+     46,
+     "Vorderseite"
+    ],
+    [
+     "visite-r",
+     46,
+     "Rückseite"
+    ]
+   ]
+  ],
+  "titel": [
+   "Eine Karte",
+   "zum Weitergeben."
+  ],
+  "breit": []
+ },
+ "dc-karte": {
+  "karton": [
+   "",
+   [
+    [
+     "dc-karte",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Dirty Chicken:",
+   "die Karte."
+  ],
+  "breit": []
+ },
+ "dc-flyer": {
+  "karton": [
+   "",
+   [
+    [
+     "dc-flyer",
+     42,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Dirty Chicken:",
+   "der Flyer."
+  ],
+  "breit": []
+ },
+ "heute-abend": {
+  "karton": [
+   "",
+   [
+    [
+     "heute-abend",
+     42,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Heute Abend",
+   "an der Theke."
+  ],
+  "breit": []
+ },
+ "pressemappe": {
+  "karton": [
+   "",
+   [
+    [
+     "presse",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Ein Deckblatt",
+   "für die Presse."
+  ],
+  "breit": []
+ },
+ "termine": {
+  "karton": [
+   "",
+   [
+    [
+     "termine",
+     40,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Die nächsten",
+   "Abende."
+  ],
+  "breit": []
+ },
+ "ablauf-team": {
+  "karton": [
+   "",
+   [
+    [
+     "ablauf",
+     44,
+     ""
+    ]
+   ]
+  ],
+  "titel": [
+   "Der Ablauf",
+   "für das Team."
+  ],
+  "breit": []
+ },
+ "einladung": {
+  "karton": [
+   "",
+   [
+    [
+     "einladung",
+     46,
+     "Vorderseite"
+    ],
+    [
+     "einladung-r",
+     46,
+     "Rückseite"
+    ]
+   ]
+  ],
+  "titel": [
+   "Eine Einladung",
+   "für Stammgäste."
+  ],
+  "breit": []
+ }
+}

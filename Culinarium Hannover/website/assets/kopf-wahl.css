@@ -1,0 +1,145 @@
+/* Culinarium · Kopf von «Alle Abende» in 15 Fassungen, dritte Runde: jede ein Hero über den ganzen ersten Bildschirm, nur Fotos der Abende (nur Wahlseite).
+   Ein bewegter Moment je Fassung, nur transform und opacity. */
+.kw{z-index:3}
+.kw>.wv[hidden]{display:none!important}
+.kw>.wv.seitenkopf{padding:calc(64px + var(--abstand)) 0 var(--abstand)}
+.kwv{padding:0;background:#0F0E13}
+.kwv.wv:not([hidden]){display:block}
+.kwv figure{margin:0}
+.kwv img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Hero: randlos, ganze Höhe, das Bild trägt */
+.kh{position:relative;height:max(100svh,620px);overflow:hidden;color:#FAF4F4;isolation:isolate}
+.kh-bild{position:absolute;inset:0}
+html.js:not(.ruhig) .kh-setzt img{transform:scale(1.14);transition:transform 4s var(--k2) calc(var(--i,0)*160ms)}
+html.js .kh-setzt.da img{transform:none}
+.kh-grund{position:absolute;inset:0;z-index:1;pointer-events:none}
+.kh-grund.unten{background:linear-gradient(to top,rgba(12,11,15,.88),rgba(12,11,15,.4) 34%,rgba(12,11,15,0) 62%),linear-gradient(to bottom,rgba(12,11,15,.55),rgba(12,11,15,0) 20%)}
+.kh-grund.mitte{background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(12,11,15,.62),rgba(12,11,15,.18) 70%),linear-gradient(to bottom,rgba(12,11,15,.55),rgba(12,11,15,0) 20%)}
+.kh-grund.links{background:linear-gradient(to right,rgba(12,11,15,.82),rgba(12,11,15,.3) 45%,rgba(12,11,15,0) 70%),linear-gradient(to bottom,rgba(12,11,15,.55),rgba(12,11,15,0) 20%)}
+.kh-grund.voll{background:rgba(12,11,15,.42)}
+.kh-grund.voll.stark{background:rgba(12,11,15,.58)}
+.kh-grund.oben{background:linear-gradient(to bottom,rgba(12,11,15,.7),rgba(12,11,15,0) 45%)}
+.kh-text{position:absolute;z-index:2;display:flex;flex-direction:column}
+.kh-text .sw{color:rgba(250,244,244,.84);font-size:18px;max-width:500px;margin-top:22px;text-shadow:0 1px 18px rgba(0,0,0,.45)}
+.kh-text .gross{font-size:clamp(56px,7.6vw,128px);text-shadow:0 2px 40px rgba(0,0,0,.35)}
+.kh-text.unten-links{left:var(--rand);right:var(--rand);bottom:clamp(44px,9vh,100px)}
+.kh-text.mitte{left:50%;top:50%;transform:translate(-50%,-42%);width:min(900px,calc(100% - 2*var(--rand)));align-items:center;text-align:center}
+.kh-text.mitte .sw{margin-left:auto;margin-right:auto}
+.kh-text.links{left:var(--rand);top:50%;transform:translateY(-38%);max-width:620px}
+.kh-text.riesig .gross{font-size:clamp(72px,13.5vw,230px);line-height:.9;letter-spacing:-.035em;white-space:nowrap}
+
+/* 2 Überblende */
+.kh02-b{opacity:0;transition:opacity 2s ease}
+.kh02-b.an{opacity:1}
+html.js:not(.ruhig) .kh02-b img{transform:scale(1.1);transition:transform 9s linear}
+html.js:not(.ruhig) .kh02-b.an img{transform:none}
+
+/* 3 Geteilt */
+.kh03-h{position:absolute;top:-6%;bottom:-6%;width:50%}
+.kh03-h.l{left:0}.kh03-h.r{right:0}
+html.js:not(.ruhig) .kh03-h{transform:translateY(5%);transition:transform 2.2s var(--k)}
+html.js:not(.ruhig) .kh03-h.r{transform:translateY(-5%)}
+html.js .kh.kh03 .kh03-h{will-change:transform}
+html.js .kh03.da .kh03-h,html.js .kh03-h.da{transform:none}
+
+/* 4 Drei Bahnen */
+.kh04{display:grid;grid-template-columns:repeat(3,1fr)}
+.kh04-b{position:relative;overflow:hidden}
+.kh04-b+.kh04-b{box-shadow:-1px 0 0 rgba(12,11,15,.9)}
+.kh04-b figcaption{position:absolute;z-index:2;left:clamp(18px,2vw,32px);top:calc(64px + 24px);font:400 11.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(250,244,244,.9);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* 5 Das Licht geht an */
+.kh05-bild>span{position:absolute;inset:0}
+.kh05-dunkel img{filter:brightness(.16) saturate(.5)}
+html.js:not(.ruhig) .kh05-hell{opacity:0;transition:opacity 3.2s ease .6s}
+html.js .kh05-bild.da .kh05-hell{opacity:1}
+
+/* 6 Das Kinobild */
+.kh06{background:#060509;display:flex;flex-direction:column;justify-content:center}
+.kh06-bild{position:relative;width:100%;height:min(41.8vw,calc(100svh - 64px - 220px));overflow:hidden;margin-top:64px}
+.kh06-bild img{position:absolute;left:0;top:0;height:160%}
+html.js:not(.ruhig) .kh06-bild img{transform:translateY(-6%);transition:transform 18s cubic-bezier(.3,.1,.3,1)}
+html.js .kh06-bild.da img{transform:translateY(-34%)}
+html.ruhig .kh06-bild img{transform:translateY(-24%)}
+.kh06-balken{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding:clamp(24px,4vh,40px) var(--rand) 0}
+.kh06-balken .gross{font-size:clamp(48px,5.6vw,92px)}
+.kh06-balken .sw{color:rgba(250,244,244,.72);font-size:16px;max-width:440px;margin:0 0 8px}
+
+/* 7 Davor */
+.kh07-hinten img{filter:brightness(.38) saturate(.85)}
+.kh07-wort{position:absolute;z-index:1;left:0;right:0;top:50%;transform:translateY(-58%);text-align:center;white-space:nowrap;font:300 clamp(80px,16.5vw,290px)/1 var(--titel);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.kh07-vorn{position:absolute;z-index:2;left:50%;top:22%;width:clamp(230px,24vw,380px);margin-left:calc(clamp(230px,24vw,380px)*-.5);aspect-ratio:3/4.3;overflow:hidden;border-radius:3px;box-shadow:0 60px 100px -40px rgba(0,0,0,1);will-change:transform}
+.kh07-text{position:absolute;z-index:3;right:var(--rand);bottom:clamp(32px,6vh,64px);max-width:380px}
+.kh07-text .sw{color:rgba(250,244,244,.8);font-size:16px}
+
+/* 8 Hinein */
+.kh08-bild{will-change:transform;transform-origin:50% 52%}
+
+/* 9 Der grosse Titel */
+.kh09 .kh-bild{top:-6%;bottom:-6%;will-change:transform}
+
+/* 10 Die Lamellen */
+.kh10-bild{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.kh10-l{position:relative;overflow:hidden}
+.kh10-l img{position:absolute;top:0;height:100%;width:500%;left:calc(var(--i)*-100%);max-width:none}
+html.js:not(.ruhig) .kh10-l{transform:translateY(calc((var(--i) - 2)*(var(--i) - 2)*3% + 6%));transition:transform 2.2s var(--k) calc(var(--i)*100ms)}
+html.js:not(.ruhig) .kh10-l:nth-child(even){transform:translateY(-9%)}
+html.js .kh10-bild.da .kh10-l{transform:none}
+
+/* 11 Die Bildwand */
+.kh11-wand{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr}
+.kh11-k{position:relative;overflow:hidden}
+
+/* 12 Es wird weit */
+.kh12-bild{position:absolute;inset:0;overflow:hidden;transform:scale(.72);border-radius:6px;will-change:transform}
+.kh12 .kh-text{pointer-events:none}
+html.ruhig .kh12-bild{transform:none}
+
+/* 13 Senkrecht */
+.kh13-titel{position:absolute;z-index:2;left:clamp(10px,2.4vw,40px);bottom:clamp(36px,7vh,80px);writing-mode:vertical-rl;rotate:180deg;font:300 clamp(72px,10.5vh,140px)/.9 var(--titel);font-size:min(13vh,9.4vw);letter-spacing:-.025em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;text-shadow:0 2px 40px rgba(0,0,0,.4)}
+.kh13-titel .z{padding:0 .07em;margin:0 -.07em}
+html.js:not(.ruhig) .kh13-titel .z>span{transform:translateX(-112%)}
+html.js .kh13-titel.da .z>span{transform:none}
+.kh13-satz{position:absolute;z-index:2;right:var(--rand);bottom:clamp(40px,8vh,90px);max-width:440px}
+.kh13-satz .sw{color:rgba(250,244,244,.86);font-size:18px;text-shadow:0 1px 18px rgba(0,0,0,.5)}
+
+/* 14 Die Kante */
+.kh14{display:flex;flex-direction:column;background:var(--nacht)}
+.kh14-oben{flex:none;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding:calc(64px + 3vh) var(--rand) 0}
+.kh14-titel,.kh14-zwei{font:300 clamp(80px,13vw,220px)/.84 var(--titel);letter-spacing:-.035em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.kh14-oben .sw{color:rgba(250,244,244,.76);font-size:17px;max-width:420px;margin-bottom:1.2em}
+.kh14-bild{position:relative;flex:1 1 auto;overflow:hidden;margin-top:.6vh}
+.kh14-bild>img{position:absolute;left:0;top:-10%;height:120%;will-change:transform}
+.kh14-zwei{position:relative;z-index:2;padding:0 var(--rand);margin-top:-.1em}
+
+/* 15 Der Filmstreifen */
+.kh15-zug{position:absolute;top:0;bottom:0;left:0;display:flex;width:max-content;animation:kh15 140s linear infinite}
+.kh15-k{height:100%;aspect-ratio:3/4;flex:none;overflow:hidden;box-shadow:-1px 0 0 #0F0E13}
+@keyframes kh15{to{transform:translateX(-50%)}}
+html.ruhig .kh15-zug{animation:none}
+
+/* Handy */
+@media (max-width:860px){
+  .kh-text .gross{font-size:15vw}
+  .kh-text .sw{font-size:16px}
+  .kh-text.links{right:var(--rand);top:auto;bottom:clamp(40px,8vh,80px);transform:none}
+  .kh-grund.links{background:linear-gradient(to top,rgba(12,11,15,.88),rgba(12,11,15,.3) 45%,rgba(12,11,15,0) 70%)}
+  .kh-text.riesig .gross{font-size:19vw;white-space:normal}
+  .kh03-h{width:100%;height:56%}.kh03-h.l{top:-6%;bottom:auto}.kh03-h.r{top:auto;bottom:-6%}
+  .kh-grund.mitte{background:radial-gradient(ellipse 120% 50% at 50% 50%,rgba(12,11,15,.72),rgba(12,11,15,.3) 80%)}
+  .kh04{grid-template-columns:1fr 1fr}.kh04-b:nth-child(3){display:none}
+  .kh06-bild{height:58svh}
+  .kh06-balken{flex-direction:column;align-items:flex-start;gap:14px}
+  .kh07-wort{font-size:25vw;line-height:.86;white-space:normal;top:calc(64px + 5vh);transform:none}
+  .kh07-vorn{width:56vw;margin-left:-28vw;top:34%}
+  .kh07-text{left:var(--rand);bottom:20px}
+  .kh11-wand{grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,1fr)}
+  .kh12-bild{transform:scale(.84)}
+  .kh13-titel{font-size:17vw}
+  .kh13-satz{left:calc(17vw + 28px);right:var(--rand)}
+  .kh14-oben{flex-direction:column;align-items:flex-start;gap:16px}
+  .kh14-oben .sw{order:2;margin:0}
+  .kh14-titel,.kh14-zwei{font-size:24vw}
+  .kh15-k{aspect-ratio:3/5}
+}

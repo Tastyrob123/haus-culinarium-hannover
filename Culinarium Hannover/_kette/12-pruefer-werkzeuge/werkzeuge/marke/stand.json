@@ -1,0 +1,24 @@
+{
+  "station": "12",
+  "name": "Le Livre / Das Hausbuch",
+  "rolle": "Prüfer ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "marke",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/pruefung.md"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html?teil=marke",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

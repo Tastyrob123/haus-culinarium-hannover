@@ -1,0 +1,61 @@
+{
+ "haus": "Culinarium Hannover",
+ "quelle": "Zusatz Tor 4 (30.10.): von der Werkbank verlinkte Seiten (neuer Tab), die werkbank-3010b nicht im Inventar hatte",
+ "gefahr": "l[öo]sch|entfern|senden|abschick|verschick|ver[öo]ffentlich|hochlad|online stellen|abmeld|zur[üu]cksetz|leeren|drucken|druckfertig|herunterlad|download|speicher|[üu]bernehm|best[äa]tig|freigeb|bezahl|verwerf|archivier|logout|ausloggen|ki fragen|erzeugen|generier|neu laden|entw[üu]rfe anlegen|f[üu]nf entw|anlegen und|export|als tabelle|als pdf|probe-pdf|pdf|zip|kopieren|in die zwischenablage|teilen|anrufen|ausprobieren|chat ausprobieren|abbrechen|r[üu]ckg[äa]ngig|wiederholen|undo|redo",
+ "dokument": "\\s(blatt|papier|bogen|dokument|druckseite|a4-seite|brief-seite|karte-blatt|seite-blatt)\\s",
+ "dokumentNicht": "\\sfl\\s",
+ "stil": {
+  "trenner": "|",
+  "trennerFalsch": "[A-Za-zÄÖÜäöü]\\s+/\\s+[A-Za-zÄÖÜäöü]",
+  "versalienNur": "Mono",
+  "versalienErlaubt": "Mono|plakat|marke|wortmarke"
+ },
+ "stilblatt": "/Users/robertreff/Desktop/Website-Projekte/Culinarium Hannover/_werkzeuge/imprimerie/haeuser/culinarium/stilblatt.json",
+ "ziele": [
+  {
+   "k": "werkbank-sticker",
+   "name": "Die Werkbank · Sticker",
+   "url": "http://127.0.0.1:9088/sticker/index.html"
+  },
+  {
+   "k": "werkbank-beigaben",
+   "name": "Die Werkbank · Beigaben",
+   "url": "http://127.0.0.1:9088/beigaben/index.html"
+  },
+  {
+   "k": "werkbank-postkarten",
+   "name": "Die Werkbank · Postkarten",
+   "url": "http://127.0.0.1:9088/postkarten/index.html"
+  },
+  {
+   "k": "werkbank-mail-01-ticket",
+   "name": "Die Werkbank · Mail 01-ticket",
+   "url": "http://127.0.0.1:9088/mails/01-ticket/index.html"
+  },
+  {
+   "k": "werkbank-mail-02-warteliste",
+   "name": "Die Werkbank · Mail 02-warteliste",
+   "url": "http://127.0.0.1:9088/mails/02-warteliste/index.html"
+  },
+  {
+   "k": "werkbank-mail-03-frei",
+   "name": "Die Werkbank · Mail 03-frei",
+   "url": "http://127.0.0.1:9088/mails/03-frei/index.html"
+  },
+  {
+   "k": "werkbank-mail-04-erinnerung",
+   "name": "Die Werkbank · Mail 04-erinnerung",
+   "url": "http://127.0.0.1:9088/mails/04-erinnerung/index.html"
+  },
+  {
+   "k": "werkbank-mail-05-danke",
+   "name": "Die Werkbank · Mail 05-danke",
+   "url": "http://127.0.0.1:9088/mails/05-danke/index.html"
+  },
+  {
+   "k": "werkbank-mail-06-termin",
+   "name": "Die Werkbank · Mail 06-termin",
+   "url": "http://127.0.0.1:9088/mails/06-termin/index.html"
+  }
+ ]
+}

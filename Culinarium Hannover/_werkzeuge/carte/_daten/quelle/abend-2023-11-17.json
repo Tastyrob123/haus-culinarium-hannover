@@ -1,0 +1,47 @@
+{
+ "ziel": "abend-2023-11-17",
+ "art": "satz",
+ "key": "CzMcqNcMCqG",
+ "name": "17./18. November 2023",
+ "unter": "Winter is coming",
+ "gruppe": "Frühere Abende",
+ "ab": "2023-11-17",
+ "datum": "Fr 17. und Sa 18. November 2023",
+ "preis": "59,00 EUR",
+ "mit": "BY MOMO X CHRISTOPH",
+ "zusatz": "15 Plätze",
+ "motto": "Winter is coming",
+ "titel": "",
+ "plakat": "CzMcqNcMCqG",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "",
+   "drink": "Un air de Déjà-vu · Cranberry-Orangen-Sherbet | Rosmarin | Thomas Henry Spicy Ginger"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Pilzkraftbrühe mit vegetarischen Gyoza",
+   "drink": "Pera Dulce · Cazcabel Tequila Honey | Cleared Pear Water | weisse Schokolade"
+  },
+  {
+   "gang": "Hauptgang",
+   "teller": "Gebackenes … auf Kartoffelstampf mit Champagner-…",
+   "drink": "Beet it · Beetroot-infused Knut Hansen Gin | Himbeer-Cordial | …"
+  },
+  {
+   "gang": "Dessert",
+   "teller": "Crème Brûlée",
+   "drink": "Russian Winter · Three Sixty Vodka | Vanille | Coldbrew-Kaffee | …"
+  },
+  {
+   "gang": "Absacker",
+   "teller": "",
+   "drink": "Apfel-Punsch · Ron Piet Rum | Sherry | Limette | Kamille | Apfel | Zimt"
+  }
+ ],
+ "upgrade": [],
+ "voll": true,
+ "foto_der_karte": "Foto der Karte, Beitrag C0w5_ZEsfY5 (12.12.2023)",
+ "quelle": "website/abende_info.py KARTEN['CzMcqNcMCqG'] · website/bau.py ABENDE (Foto der Karte, Beitrag C0w5_ZEsfY5 (12.12.2023))"
+}

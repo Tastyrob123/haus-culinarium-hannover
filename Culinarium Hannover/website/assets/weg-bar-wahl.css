@@ -1,0 +1,225 @@
+/* Culinarium · Der Weg, die Wand mit der Karte «Die Bar» in 20 Fassungen (nur Wahlseite). Nur transform und opacity bewegt. */
+.wahl{overflow-x:clip}
+.zb{position:relative;margin-top:clamp(36px,5vh,64px)}
+.zb .foto{border-radius:0;width:100%;height:100%;margin:0}
+.zb-voll{width:100vw;margin-left:calc(50% - 50vw)}
+.zb .fw-karte{box-sizing:border-box}
+.zb .fk-fuss a,.zb a[href^="tel"]{color:inherit}
+.zb-k{box-shadow:0 44px 70px -40px rgba(8,6,14,.85)}
+[data-wb]{will-change:transform}
+
+/* Karte liegend */
+.zb-kq{flex-direction:row;align-items:stretch;gap:clamp(18px,2.4vw,40px);text-align:left;padding:clamp(18px,2vw,30px) clamp(20px,2.4vw,36px)}
+.zb-kq-name{display:flex;flex-direction:column;justify-content:center}
+.zb-kq-name .fk-fuss{margin-top:16px;border:0;padding:0;width:auto}
+.zb-kq-zeiten{flex:1;display:flex;flex-direction:column;justify-content:center}
+.zb-kq .fk-gang{padding:9px 0}.zb-kq .fk-gang:first-of-type{margin-top:0;border-top:0}
+
+/* 1 Das Band */
+.zb01-band{overflow:hidden;height:clamp(300px,31vw,480px)}
+.zb01-lauf{display:flex;gap:6px;height:100%;width:114vw;margin-left:-7vw}
+.zb01-lauf>.foto{flex:1}
+.zb01-k{position:relative;z-index:2;width:min(420px,88%);margin:calc(-1 * clamp(110px,11vw,170px)) auto 0}
+.zb01-k .fw-karte{width:100%}
+
+/* 2 Auf der Naht */
+.zb02-reihe{display:grid;grid-template-columns:repeat(4,1fr);height:clamp(440px,46vw,660px)}
+.zb02-mitte{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.zb02-k{pointer-events:auto;width:min(380px,31%)}
+.zb02-k .fw-karte{width:100%}
+
+/* 3 Ein grosses Bild */
+.zb03-bild{position:relative;height:clamp(480px,52vw,760px);overflow:hidden}
+.zb03-zoom{position:absolute;inset:0}
+.zb03-k{position:absolute;z-index:2;right:clamp(16px,3vw,44px);top:clamp(16px,3vw,44px);bottom:clamp(16px,3vw,44px);width:min(390px,34%);display:flex}
+.zb03-k .fw-karte{width:100%}
+
+/* 4 Angedockt */
+.zb04-gross{position:relative;overflow:hidden;height:clamp(380px,60vh,620px)}
+.zb04-lauf{position:absolute;left:0;right:0;top:-70px;bottom:-70px}
+.zb04-unten{display:grid;grid-template-columns:1fr minmax(300px,410px) 1fr;gap:12px;align-items:start;margin-top:12px}
+.zb04-unten>.foto{height:clamp(260px,24vw,360px)}
+.zb04-k{position:relative;z-index:2;margin-top:calc(-1 * clamp(170px,17vw,250px))}
+.zb04-k .fw-karte{width:100%}
+
+/* 5 Näher ran */
+.zb05{display:grid;grid-template-columns:1fr 1.35fr 1.75fr 2.4fr;gap:12px;align-items:end}
+.zb05-k{grid-column:1/3;grid-row:1;align-self:end}
+.zb05-k .fw-karte{width:100%}
+.zb05-b{grid-row:2;aspect-ratio:3/4;overflow:hidden;position:relative}
+.zb05-3,.zb05-4{grid-row:1/3}
+.zb05-1{grid-column:1}.zb05-2{grid-column:2}.zb05-3{grid-column:3}.zb05-4{grid-column:4}
+.zb05-zoom{position:absolute;inset:0}
+
+/* 6 Das Querband */
+.zb06{overflow:hidden}
+.zb06-reihe{display:flex;gap:6px;height:clamp(200px,19vw,290px);width:118vw;margin-left:-9vw}
+.zb06-reihe>.foto{flex:1}
+.zb06-band{background:#FAF4F4;color:#2A2833;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(24px,4vw,72px);padding:clamp(24px,3vw,42px) max(var(--rand),calc((100vw - var(--max)) / 2));margin:6px 0}
+.zb06-name{font:340 clamp(40px,4.6vw,72px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.zb06-band .fk-wer{margin-top:10px}
+.zb06-tage{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,32px)}
+.zb06-tage>div{border-left:1px solid rgba(58,56,69,.18);padding-left:clamp(14px,1.6vw,24px)}
+.zb06-tag{font:600 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-tief)}
+.zb06-zeit{margin-top:10px;font:340 clamp(20px,2vw,30px)/1.1 var(--titel)}
+.zb06-tel{font:500 11px/1.4 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-tief)}
+
+/* 7 Wörter und Bilder */
+.zb07{text-align:center}
+.zb07-kopf{margin:0 0 clamp(18px,2.4vw,32px)}
+.zb07-z{margin:0;font:340 clamp(32px,6.2vw,96px)/1.18 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96;display:flex;justify-content:center;align-items:center;gap:.28em;flex-wrap:wrap}
+.zb07-z+.zb07-z{border-top:1px solid var(--linie);padding-top:.12em;margin-top:.12em}
+.zb07-b{display:inline-block;width:2.3em;height:1em;overflow:hidden;position:relative;border-radius:4px}
+.zb07-zoom{position:absolute;inset:0}
+.zb07-tel{margin-top:clamp(20px,3vw,40px);font:500 12px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* 8 Drei Abende, drei Bilder */
+.zb08-reihe{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.zb08-t{position:relative;height:clamp(440px,46vw,640px);overflow:hidden}
+.zb08-t::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(15,14,19,.88),rgba(15,14,19,0) 52%);pointer-events:none}
+.zb08-text{position:absolute;z-index:2;left:clamp(18px,2vw,30px);right:clamp(18px,2vw,30px);bottom:clamp(18px,2vw,30px);color:#FAF4F4}
+.zb08-tag{font:340 clamp(34px,3.8vw,58px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96}
+.zb08-zeit{margin-top:12px;font:600 clamp(13px,1.2vw,17px)/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.zb08-fuss{display:flex;align-items:baseline;gap:clamp(14px,2vw,28px);margin-top:clamp(22px,3vw,40px);padding-top:clamp(18px,2vw,26px);border-top:1px solid var(--linie)}
+.zb08-name{font:340 clamp(30px,3vw,46px)/1 var(--titel)}
+.zb08-tel{margin-left:auto;font:500 12px/1 var(--etikett);letter-spacing:.14em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* 9 Der Dreiklang */
+.zb09{display:grid;grid-template-columns:minmax(290px,1fr) 1.7fr 1fr;grid-template-rows:repeat(2,clamp(250px,24vw,350px));gap:12px}
+.zb09-k{grid-column:1;grid-row:1/3}
+.zb09-m{grid-column:2;grid-row:1/3;position:relative;overflow:hidden}
+.zb09-zoom{position:absolute;inset:0}
+.zb09-a{grid-column:3;grid-row:1}.zb09-b{grid-column:3;grid-row:2}
+
+/* 10 Bild im Bild */
+.zb10{height:clamp(580px,58vw,820px)}
+.zb10-gross{position:absolute;left:0;top:7%;width:58%;height:86%}
+.zb10-klein{position:absolute;z-index:2;left:49%;top:0;width:28%;height:56%;box-shadow:0 44px 70px -40px rgba(8,6,14,.9)}
+.zb10-k{position:absolute;z-index:3;right:0;bottom:0;width:min(400px,34%)}
+.zb10-k .fw-karte{width:100%}
+
+/* 11 Die Torbögen */
+.zb11{display:grid;grid-template-columns:1fr 1fr 1.25fr 1fr 1fr;gap:12px;height:clamp(420px,42vw,600px);align-items:stretch}
+.zb11-bogen,.zb11-k{border-radius:999px 999px 0 0;overflow:hidden}
+.zb11-bogen .foto{border-radius:999px 999px 0 0}
+.zb11-mitte{display:flex}
+.zb11-k{width:100%;padding-top:clamp(60px,6vw,90px)}
+
+/* 12 Der Bilderrahmen */
+.zb12{display:flex;flex-direction:column;gap:8px}
+.zb12-reihe{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;height:clamp(150px,15vw,220px)}
+.zb12-mitte{display:grid;grid-template-columns:1fr 2fr 1fr;gap:8px;min-height:clamp(220px,20vw,300px)}
+.zb12-k{position:relative;z-index:2}
+
+/* 13 Das Mauerwerk */
+.zb13{overflow:hidden;background:#3A3845;padding:8px 0;display:flex;flex-direction:column;gap:8px}
+.zb13-reihe{display:flex;gap:8px;height:clamp(170px,16vw,240px);width:110%;margin-left:-5%}
+.zb13-s{flex:2 1 0;min-width:0}
+.zb13-s.h{flex:1 1 0}
+.zb13-k.zb13-s{flex:4 1 0}
+.zb13 .zb-kq .fk-gang{padding:6px 0}
+
+/* 14 Schrift dahinter */
+.zb14{height:clamp(580px,56vw,800px)}
+.zb14-schrift{position:absolute;top:0;bottom:0;display:flex;align-items:center;overflow:hidden;pointer-events:none}
+.zb14-lauf p{margin:0;white-space:nowrap;padding-left:4vw;font:340 25vw/.8 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:#4A4656;letter-spacing:-.02em}
+.zb14-f{position:absolute;z-index:1;box-shadow:0 44px 70px -40px rgba(8,6,14,.9)}
+.zb14-a{left:0;top:5%;width:23%;height:52%}
+.zb14-b{left:28%;top:32%;width:24%;height:62%}
+.zb14-c{left:56%;top:2%;width:15%;height:38%}
+.zb14-k{position:absolute;z-index:2;right:0;top:20%;width:min(390px,31%)}
+.zb14-k .fw-karte{width:100%}
+
+/* 15 Die Jalousie */
+.zb15{display:grid;grid-template-columns:minmax(300px,1fr) 2.2fr;gap:12px;align-items:stretch}
+.zb15-k{display:flex}.zb15-k .fw-karte{width:100%}
+.zb15-bild{display:flex;height:clamp(440px,44vw,640px)}
+.zb15-s{flex:1;overflow:hidden;position:relative;height:100%}
+.zb15-in{position:absolute;top:0;bottom:0;left:calc(var(--i) * -100%);width:800%}
+.zb15-in img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 16 Die Karte bleibt stehen */
+.zb16{display:grid;grid-template-columns:minmax(300px,1fr) 2fr;gap:12px;align-items:start}
+.zb16-l{position:sticky;top:clamp(96px,14vh,140px)}
+.zb16-l .fw-karte{width:100%}
+.zb16-r{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.zb16-r>div{display:flex;flex-direction:column;gap:12px}
+.zb16-r>div:last-child{margin-top:clamp(80px,10vw,140px)}
+.zb16-r .foto{height:clamp(300px,30vw,440px)}
+.zb16-r .foto.hoch{height:clamp(420px,42vw,600px)}
+
+/* 17 Die Überblendung */
+.zb17{height:250vh}
+.zb17-buehne{position:sticky;top:clamp(84px,11vh,112px);height:min(76vh,700px);display:grid;grid-template-columns:2fr minmax(300px,1fr);gap:12px}
+.zb17-bilder{position:relative;overflow:hidden}
+.zb17-f{position:absolute!important;inset:0;opacity:0}
+.zb17-f:first-child{opacity:1}
+.zb17-f figcaption{position:absolute;z-index:2;left:18px;bottom:16px;padding:8px 12px;background:#0F0E13;color:#FAF4F4;font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase}
+.zb17-k{width:100%}
+
+/* 18 Der Flur */
+.zb18-raum{position:relative;height:clamp(500px,50vw,700px);overflow:hidden;perspective:760px;perspective-origin:50% 50%;background:#0F0E13}
+.zb18-tief{position:absolute;inset:0;transform-style:preserve-3d}
+.zb18-wand{position:absolute;top:0;bottom:0;width:640px;display:flex;gap:16px;padding:9% 0;box-sizing:border-box}
+.zb18-wand .foto{flex:1}
+.zb18-wand.l{left:0;transform-origin:0 50%;transform:rotateY(88deg)}
+.zb18-wand.r{right:0;transform-origin:100% 50%;transform:rotateY(-88deg);flex-direction:row-reverse}
+.zb18-ende{position:absolute;inset:0;display:grid;place-items:center;transform:translateZ(-640px)}
+.zb18-k{width:760px;padding:60px 70px}
+.zb18-k .fk-zitat{font-size:80px}.zb18-k .fk-wer{font-size:20px}
+.zb18-k .fk-gang{padding:26px 0}.zb18-k .fk-gang p{font-size:36px}.zb18-k .fk-fuss{font-size:19px;padding-top:24px}
+.zb18-handy{display:none}
+.zb18-hb{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.zb18-hb .foto{height:62vw}
+
+/* 19 Der Aushang */
+.zb19{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+.zb19-k{padding:clamp(36px,4vw,64px)}
+.zb19-k .fk-zitat{font-size:clamp(64px,8vw,124px)}
+.zb19-k .fk-wer{font-size:clamp(11px,1vw,14px);margin-top:16px}
+.zb19-k .fk-gang{padding:clamp(16px,1.6vw,24px) 0}
+.zb19-k .fk-gang p{font-size:clamp(22px,2.2vw,34px)}
+.zb19-k .fk-gang:first-of-type{margin-top:clamp(26px,3vw,44px)}
+.zb19-k .fk-fuss{font-size:12px}
+.zb19-r{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,clamp(250px,25vw,360px));gap:12px}
+
+/* 20 Die Mittelachse */
+.zb20{text-align:center}
+.zb20-titel{margin:12px 0 clamp(24px,3vw,44px);font:340 clamp(64px,8vw,124px)/.95 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.zb20-achse{display:grid;grid-template-columns:1fr minmax(240px,27%) 1fr;gap:clamp(20px,3vw,48px);align-items:stretch}
+.zb20-l,.zb20-r{display:flex;flex-direction:column;justify-content:space-evenly}
+.zb20-l{text-align:right}.zb20-r{text-align:left}
+.zb20-l p,.zb20-r p{margin:0;font:340 clamp(28px,3.4vw,54px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96}
+.zb20-r p{color:var(--kerze-hell)}
+.zb20-bild{position:relative;overflow:hidden;height:clamp(440px,44vw,640px)}
+.zb20-bild>.foto{position:absolute;inset:0}
+.zb20-tel{margin-top:clamp(20px,3vw,36px);font:500 12px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* Handy */
+@media (max-width:860px){
+  .zb01-band{height:62vw}.zb01-lauf{width:230vw;margin-left:-15vw}
+  .zb02-reihe{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:62vw}.zb02-k{width:min(330px,80%)}
+  .zb03-bild{height:auto;overflow:visible}.zb03-zoom{position:relative;height:110vw;overflow:hidden}
+  .zb03-k{position:relative;inset:auto;width:auto;margin:-80px 16px 0}
+  .zb04-gross{height:70vw}.zb04-unten{grid-template-columns:1fr 1fr;gap:6px}.zb04-k{grid-column:1/-1;order:-1;margin:-90px 16px 0}.zb04-unten>.foto{height:62vw}
+  .zb05{grid-template-columns:1fr 1fr;gap:6px}.zb05-k{grid-column:1/-1;grid-row:auto}.zb05-b{grid-column:auto!important;grid-row:auto!important}
+  .zb06-reihe{height:40vw;width:240vw;margin-left:-20vw}.zb06-band{grid-template-columns:1fr;gap:18px;padding:24px 16px}.zb06-tage{gap:10px}.zb06-zeit{font-size:17px}
+  .zb07-z{font-size:clamp(30px,9vw,44px);gap:.2em}
+  .zb08-reihe{grid-template-columns:1fr}.zb08-t{height:78vw}.zb08-fuss{flex-wrap:wrap}
+  .zb09{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:6px}.zb09-k{grid-column:1/-1;grid-row:auto}.zb09-m{grid-column:1/-1;grid-row:auto;height:110vw}.zb09-a,.zb09-b{grid-column:auto;grid-row:auto;height:62vw}
+  .zb10{height:auto;display:grid;gap:0}.zb10-gross,.zb10-klein,.zb10-k{position:relative;left:auto;right:auto;top:auto;bottom:auto}
+  .zb10-gross{width:84%;height:100vw}.zb10-klein{width:52%;height:66vw;margin:-40vw 0 0 auto}.zb10-k{width:auto;margin:-24px 16px 0}
+  .zb11{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:auto}.zb11-bogen{height:70vw}.zb11-3,.zb11-4{display:none}.zb11-mitte{grid-column:1/-1;order:3}
+  .zb12-reihe{height:24vw;gap:4px}.zb12-mitte{grid-template-columns:1fr 1fr;gap:4px}.zb12-k{grid-column:1/-1;order:-1}.zb12-mitte>.foto{height:34vw}
+  .zb13-reihe{height:30vw;width:150%;margin-left:-25%}.zb13-reihe.b{width:100%;margin-left:0;height:auto}.zb13-reihe.b>.foto{display:none}.zb13-k.zb13-s{flex:1}
+  .zb-kq{flex-direction:column;gap:12px}
+  .zb14{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px}.zb14-f{position:relative;left:auto!important;top:auto!important;width:auto!important;height:62vw!important}
+  .zb14-c{grid-column:1/-1;height:70vw!important}.zb14-k{position:relative;right:auto;top:auto;width:auto;grid-column:1/-1;order:-1}
+  .zb15{grid-template-columns:1fr}.zb15-bild{height:110vw}
+  .zb16{grid-template-columns:1fr}.zb16-l{position:static}.zb16-r{gap:6px}.zb16-r>div{gap:6px}.zb16-r>div:last-child{margin-top:40px}.zb16-r .foto{height:62vw}.zb16-r .foto.hoch{height:84vw}
+  .zb17{height:auto}.zb17-buehne{position:static;height:auto;grid-template-columns:1fr}.zb17-bilder{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .zb17-f{position:relative!important;opacity:1!important;height:62vw}.zb17-f figcaption{left:8px;bottom:8px;font-size:9px;padding:6px 8px}
+  .zb18-raum{display:none}.zb18-handy{display:block}
+  .zb19{grid-template-columns:1fr}.zb19-r{grid-template-rows:repeat(2,62vw);gap:6px}
+  .zb20-achse{grid-template-columns:1fr 1fr;gap:14px 18px}.zb20-bild{grid-column:1/-1;order:-1;height:110vw}
+  .zb20-l p,.zb20-r p{font-size:24px}
+}

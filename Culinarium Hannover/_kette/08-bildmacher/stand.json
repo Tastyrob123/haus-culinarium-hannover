@@ -1,0 +1,31 @@
+{
+  "station": "08",
+  "name": "Fertigstellen und Bilder",
+  "rolle": "Bildmacher",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:50+08:00",
+  "ende": "2026-10-28T12:16+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": [
+      {
+        "was": "Higgsfield Bytedance Upscale 4K, 25 Bilder",
+        "vorher": 61.34,
+        "nachher": 11.34,
+        "einheit": "Credits"
+      }
+    ]
+  },
+  "offen": [],
+  "paket": [
+    "bilder/",
+    "bilder.json"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "23 Fotos KI-geschärft und eingebaut (8 mit Schrift im Original), 2 verworfen; 61,34 → 11,34 Credits; Tafel _Oberchef/zeigen/culinarium/bilder/index.html; LIEFERUNG _quelle/ki/geschaerft/LIEFERUNG.md",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

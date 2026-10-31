@@ -1,0 +1,254 @@
+/* Culinarium · «Seit 2023.» Runde 2 (nur Wahlseite). Baut auf chronik-wahl.css auf. Ein bewegter Moment je Fassung, nur transform und opacity. */
+.cz-k{text-align:center}
+.ch2 .ch-tk.links .ch-satz{margin-left:0}
+
+/* ---------- 1 Die Tafel von oben */
+.cz-01{display:grid;gap:clamp(30px,5vh,50px)}
+.cz-01-tafel{padding:clamp(90px,12vh,120px) 0}
+.cz-01-platte{position:relative;height:clamp(300px,36vh,340px);border-radius:10px;background:linear-gradient(180deg,#3B2A22,#2B1E18 50%,#3B2A22),#2B1E18;box-shadow:0 40px 60px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+.cz-01-platte::before{content:"";position:absolute;inset:0;border-radius:10px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.08) 0 2px,transparent 2px 140px)}
+.cz-01-platz{position:absolute;left:calc(4% + var(--x)*19%);width:16%;display:flex;flex-direction:column;align-items:center;gap:22px}
+.cz-01-platz.oben{bottom:53%}
+.cz-01-platz.unten{top:53%;flex-direction:column-reverse}
+.cz-01-teller{width:clamp(110px,10vw,150px);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px #F4EEE7,0 0 0 9px rgba(0,0,0,.2),0 18px 30px -10px rgba(0,0,0,.8)}
+.cz-01-karte{text-align:center;max-width:22ch}
+.cz-01-karte p:last-child{margin-top:6px;font-size:13.5px;line-height:1.45;color:var(--fg2)}
+html.js:not(.ruhig) .chw .cz-01-tafel.auf .cz-01-teller{transform:translateY(-30px) scale(1.12)}
+html.js .chw .cz-01-tafel.auf .cz-01-teller{transition:transform 1.2s var(--k) calc(var(--i)*120ms + .3s)}
+html.js:not(.ruhig) .chw .cz-01-tafel.da .cz-01-teller{transform:none}
+
+/* ---------- 2 Fünf Gläser auf dem Tresen */
+.cz-02{display:grid;gap:clamp(24px,4vh,40px)}
+.cz-02-tresen{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);align-items:end;padding-bottom:30px;border-bottom:14px solid #2A2026;box-shadow:0 1px 0 rgba(207,114,51,.4)}
+.cz-02-g{display:flex;flex-direction:column;align-items:center;gap:0}
+.cz-02-g figure{width:100%;aspect-ratio:3/4;border-radius:var(--r) var(--r) 0 0;overflow:hidden;transition:transform .6s var(--k)}
+.cz-02-g:nth-child(odd) figure{aspect-ratio:2/3}
+.cz-02-deckel{display:grid;place-items:center;align-content:center;width:clamp(86px,8vw,118px);aspect-ratio:1;margin-top:-30px;position:relative;z-index:2;border-radius:50%;background:#F4EEE7;color:var(--tinte);box-shadow:0 8px 16px -6px rgba(0,0,0,.7);transition:transform .5s var(--k)}
+.cz-02-deckel::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px dashed rgba(42,40,51,.35)}
+.cz-02-deckel b{font:340 clamp(22px,2vw,30px)/1 var(--titel)}
+.cz-02-deckel span{font:500 9px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--tinte2);margin-top:4px}
+.cz-02-g:hover figure,.cz-02-g.an figure{transform:translateY(-10px)}
+.cz-02-g.an .cz-02-deckel{background:var(--kerze);color:#fff}
+.cz-02-g.an .cz-02-deckel span{color:#fff}
+.cz-02-satz{position:relative;min-height:5em;text-align:center}
+.cz-02-a{position:absolute;inset:0;opacity:0;transition:opacity .5s;font:340 clamp(22px,2.2vw,34px)/1.25 var(--titel);max-width:34ch;margin:0 auto}
+.cz-02-a.an{opacity:1}
+.cz-02-a .ch-w{display:block;font-family:"DM Mono",monospace;margin-bottom:8px}
+
+/* ---------- 3 Der Stapel beim Scrollen */
+.cz-03{display:grid;gap:clamp(30px,5vh,50px)}
+.cz-03-stapel{display:flex;flex-direction:column;gap:12vh;padding-bottom:6vh}
+.cz-03-karte{position:sticky;top:calc(11vh + var(--i)*16px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);height:min(72vh,640px);border-radius:var(--r);overflow:hidden;background:#211E27;box-shadow:0 -20px 50px -20px rgba(0,0,0,.8)}
+.cz-03-karte figure{height:100%}
+.cz-03-text{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,48px);gap:10px;border-left:1px solid rgba(207,114,51,.3)}
+.cz-03-j{font:300 clamp(80px,9vw,150px)/.85 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.cz-03-s{font:340 clamp(22px,2vw,32px)/1.25 var(--titel);color:#FAF4F4}
+
+/* ---------- 4 In Zahlen */
+.cz-04{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(30px,5vw,80px);align-items:center}
+.cz-04-bild{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+.cz-04-r{display:flex;flex-direction:column;gap:clamp(24px,4vh,40px)}
+.cz-04-zahlen{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vh,40px) clamp(20px,3vw,40px)}
+.cz-04-z{border-top:1px solid var(--kerze);padding-top:14px}
+.cz-04-n{font:300 clamp(70px,8vw,130px)/.9 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.cz-04-t{margin-top:8px;color:var(--fg2);font-size:14.5px;line-height:1.45;max-width:24ch}
+
+/* ---------- 5 Das Buch zum Blättern */
+.cz-05{display:grid;gap:clamp(24px,4vh,40px)}
+.cz-05-buch{position:relative;max-width:1100px;width:100%;margin:0 auto;aspect-ratio:2/1.25;perspective:2200px}
+.cz-05-buch::before{content:"";position:absolute;left:50%;top:2%;bottom:2%;width:40px;margin-left:-20px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.35),transparent);z-index:3;pointer-events:none}
+.cz-05-seite{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;opacity:0;pointer-events:none;transition:opacity .5s}
+.cz-05-seite.an{opacity:1;pointer-events:auto}
+.cz-05-l{background:#F4EEE7;padding:clamp(16px,2vw,28px);border-radius:6px 0 0 6px;box-shadow:-12px 20px 40px -20px rgba(0,0,0,.9)}
+.cz-05-l img{border-radius:2px}
+.cz-05-r{background:#F7F1EA;color:var(--tinte);padding:clamp(24px,3.4vw,56px);border-radius:0 6px 6px 0;display:flex;flex-direction:column;gap:14px;transform-origin:left center;box-shadow:12px 20px 40px -20px rgba(0,0,0,.9)}
+.cz-05-seite.an .cz-05-r{animation:cz-blatt .9s var(--k)}
+@keyframes cz-blatt{from{transform:rotateY(-70deg)}to{transform:none}}
+.cz-05-kopf{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinte2);padding-bottom:12px;border-bottom:1px solid rgba(42,40,51,.15)}
+.cz-05-hand{margin-top:auto;font:italic 340 clamp(34px,3.6vw,58px)/1 var(--titel);color:var(--kerze-tief);font-variation-settings:"SOFT" 100,"WONK" 1}
+.cz-05-s{font:340 clamp(19px,1.7vw,26px)/1.35 var(--titel);margin-bottom:30px}
+.cz-05-weiter{position:absolute;right:clamp(18px,2vw,30px);bottom:clamp(16px,2vw,26px);z-index:4;font:500 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-tief)}
+
+/* ---------- 6 Wie eine Story */
+.cz-06{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(30px,5vw,90px);align-items:center}
+.cz-06-l{display:flex;flex-direction:column;gap:30px}
+.cz-06-story{position:relative;width:min(420px,40vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#0F0E13;box-shadow:0 40px 70px -30px rgba(0,0,0,.9)}
+.cz-06-striche{position:absolute;z-index:4;left:12px;right:12px;top:12px;display:flex;gap:4px}
+.cz-06-striche span{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
+.cz-06-striche i{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left}
+.cz-06-striche span.voll i{transform:none}
+.cz-06-striche span.laeuft i{animation:cz-strich 5s linear forwards}
+@keyframes cz-strich{to{transform:none}}
+.cz-06-f{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity .5s,transform 5s linear}
+.cz-06-f.an{opacity:1;transform:none}
+.cz-06-f::after{content:"";position:absolute;inset:auto 0 0;height:50%;background:linear-gradient(transparent,rgba(10,8,12,.85))}
+.cz-06-f figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:26px}
+.cz-06-f figcaption .mono{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.cz-06-f figcaption p{margin-top:8px;font:340 24px/1.25 var(--titel);color:#FAF4F4}
+.cz-06-zur,.cz-06-vor{position:absolute;z-index:5;top:0;bottom:0;width:35%}
+.cz-06-zur{left:0}.cz-06-vor{right:0;width:65%}
+
+/* ---------- 7 Die Bilderwand im Flur */
+.cz-07{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(30px,4vw,70px);align-items:center}
+.cz-07-l{display:flex;flex-direction:column;gap:30px}
+.cz-07-wand{position:relative;height:clamp(500px,66vh,620px)}
+.cz-07-r{position:absolute;padding:6px}
+.cz-07-f{width:100%;height:100%;border:clamp(8px,.8vw,12px) solid #1B1310;outline:2px solid #6E5132;outline-offset:-4px;box-shadow:0 20px 34px -18px rgba(0,0,0,.95);overflow:hidden;background:#111}
+.cz-07-r figcaption{position:absolute;left:50%;bottom:-24px;z-index:2;transform:translateX(-50%);white-space:nowrap;padding:4px 10px;background:linear-gradient(#D2B07A,#9C7A47);color:#2B1E10;font:500 9.5px/1.2 var(--etikett);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;box-shadow:0 2px 4px rgba(0,0,0,.6)}
+.cz-07-r figcaption b{font-weight:700;margin-right:6px}
+
+/* ---------- 8 Die Zahl hinter dem Bild */
+.cz-08{display:grid;gap:clamp(40px,8vh,90px)}
+.cz-08-reihe{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:clamp(20px,4vw,60px);align-items:end;padding-top:clamp(40px,8vh,80px)}
+.cz-08-reihe.rechts{grid-template-columns:minmax(0,4fr) minmax(0,5fr)}
+.cz-08-reihe.rechts .cz-08-bild{order:2}
+.cz-08-zahl{position:absolute;top:0;font:300 clamp(160px,22vw,360px)/.8 var(--titel);color:transparent;-webkit-text-stroke:1.5px rgba(207,114,51,.55);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"opsz" 144;pointer-events:none;will-change:transform}
+.cz-08-reihe.links .cz-08-zahl{right:0}
+.cz-08-reihe.rechts .cz-08-zahl{left:0}
+.cz-08-bild{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden}
+.cz-08-t{position:relative;padding-bottom:10px}
+.cz-08-t p:last-child{margin-top:8px;font:340 clamp(22px,2.2vw,34px)/1.25 var(--titel);max-width:24ch}
+
+/* ---------- 9 Die Kreidetafel */
+.cz-09{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(30px,4vw,70px);align-items:center}
+.cz-09-tafel{padding:clamp(30px,4vw,60px);background:radial-gradient(ellipse at 30% 20%,#3A403C,#262A27 70%);border:clamp(12px,1.2vw,18px) solid #4A3324;border-radius:4px;box-shadow:inset 0 0 60px rgba(0,0,0,.5),0 30px 50px -30px rgba(0,0,0,.95);color:#EDEBE4}
+.cz-09-h{font:italic 340 clamp(48px,5vw,84px)/1 var(--titel);text-align:center;font-variation-settings:"SOFT" 100,"WONK" 1;opacity:.92}
+.cz-09-u{text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin:8px 0 clamp(20px,3vh,34px)}
+.cz-09-z{display:flex;align-items:baseline;gap:12px;font:400 clamp(20px,1.8vw,28px)/1.2 var(--titel);margin-top:clamp(14px,2vh,22px)}
+.cz-09-z span{flex:none}
+.cz-09-z i{flex:1;border-bottom:2px dotted rgba(237,235,228,.35);transform:translateY(-5px)}
+.cz-09-z b{flex:none;font-weight:400;color:#F3B48A}
+.cz-09-s{font-size:14px;line-height:1.5;opacity:.65;max-width:60ch}
+.cz-09-r{display:flex;flex-direction:column;gap:24px}
+.cz-09-bild{aspect-ratio:3/4;border-radius:var(--r);overflow:hidden}
+.cz-09-satz{font:340 22px/1.3 var(--titel);color:var(--fg2)}
+
+/* ---------- 10 Die Anzeigetafel */
+.cz-10{display:grid;gap:clamp(24px,4vh,40px)}
+.cz-10-tafel{padding:clamp(18px,2.4vw,34px);background:#0B0B0D;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 30px 50px -30px rgba(0,0,0,.95);overflow-x:auto}
+.cz-10-kopf{display:grid;grid-template-columns:9fr 11fr 16fr;gap:clamp(14px,2vw,30px);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#C9933A;padding-bottom:12px;min-width:880px}
+.cz-10-z{display:grid;grid-template-columns:9fr 11fr 16fr;gap:clamp(14px,2vw,30px);padding:5px 0;min-width:880px}
+.cz-10-f{display:flex;gap:3px}
+.cz-10-f span{flex:1;display:grid;place-items:center;height:clamp(34px,3.4vw,50px);background:linear-gradient(#1F1E22 50%,#171619 50%);border-radius:3px;font:500 clamp(16px,1.6vw,24px)/1 "DM Mono",monospace;color:#F2E9DA;position:relative;transform-origin:50% 50%}
+.cz-10-f span::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#000}
+.cz-10-z:nth-child(2) .cz-10-f:nth-child(2) span{color:#F3B48A}
+html.js:not(.ruhig) .chw .cz-10-tafel.auf .cz-10-f span{transform:perspective(300px) rotateX(-55deg)}
+html.js .chw .cz-10-tafel.auf .cz-10-f span{transition:transform .35s cubic-bezier(.3,1.4,.6,1) calc(var(--d)*18ms + .3s)}
+html.js:not(.ruhig) .chw .cz-10-tafel.da .cz-10-f span{transform:none}
+.cz-10-unter{text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg2)}
+
+/* ---------- 11 Die Tickets in der Hand */
+.cz-11{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,4vw,70px);align-items:center}
+.cz-11-l{display:flex;flex-direction:column;gap:28px}
+.cz-11-satz{position:relative;min-height:6.5em}
+.cz-11-a{position:absolute;inset:0;opacity:0;transition:opacity .5s;font:340 clamp(22px,2vw,30px)/1.3 var(--titel)}
+.cz-11-a.an{opacity:1}
+.cz-11-a .ch-w{display:block;font-family:"DM Mono",monospace;margin-bottom:8px}
+.cz-11-faecher{position:relative;height:clamp(460px,64vh,600px)}
+.cz-11-t{position:absolute;left:50%;bottom:0;width:clamp(170px,15vw,230px);margin-left:calc(clamp(170px,15vw,230px)/-2);display:flex;flex-direction:column;background:#F4EEE7;color:var(--tinte);border-radius:8px;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.9);transform-origin:50% 140%;transform:rotate(calc(var(--w)*11deg));transition:transform .6s var(--k)}
+.cz-11-t figure{aspect-ratio:4/5}
+.cz-11-text{display:flex;flex-direction:column;gap:4px;padding:14px 16px 18px;border-top:2px dashed rgba(42,40,51,.3)}
+.cz-11-text .mono{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2)}
+.cz-11-text b{font:340 34px/1 var(--titel);color:var(--kerze-tief)}
+.cz-11-text>span:last-child{font-size:13px;color:var(--tinte2)}
+.cz-11-t:hover{transform:rotate(calc(var(--w)*11deg)) translateY(-16px)}
+.cz-11-t.an{transform:rotate(calc(var(--w)*11deg)) translateY(-60px);z-index:6;box-shadow:0 30px 50px -20px rgba(0,0,0,.95),0 0 0 2px var(--kerze)}
+
+/* ---------- 12 Der Teller als Uhr */
+.cz-12{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(30px,4vw,70px);align-items:center}
+.cz-12-l{display:flex;flex-direction:column;gap:28px}
+.cz-12-mitte{position:relative;min-height:clamp(300px,40vh,380px)}
+.cz-12-a{position:absolute;inset:0;opacity:0;transition:opacity .5s;display:grid;grid-template-columns:140px 1fr;gap:20px;align-content:start}
+.cz-12-a.an{opacity:1}
+.cz-12-a figure{grid-row:span 2;aspect-ratio:3/4;border-radius:8px;overflow:hidden}
+.cz-12-s{font:340 clamp(20px,1.8vw,28px)/1.3 var(--titel)}
+.cz-12-buehne{position:relative;width:min(100%,640px);aspect-ratio:1;margin:0 auto}
+.cz-12-rad{position:absolute;inset:0;transform:rotate(var(--dreh,0deg));transition:transform 1s var(--k)}
+.cz-12-teller{position:absolute;inset:18%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 14px #F4EEE7,0 0 0 15px rgba(0,0,0,.25),0 30px 60px -20px rgba(0,0,0,.9)}
+.cz-12-q{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(calc(var(--w)*72deg)) translateY(min(-46%,-280px))}
+.cz-12-q span{position:absolute;left:0;top:0;transform:translate(-50%,-50%) rotate(calc(var(--w)*-72deg - var(--dreh,0deg)));transition:transform 1s var(--k);display:flex;flex-direction:column;align-items:center;white-space:nowrap;color:rgba(250,244,244,.45);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.cz-12-q b{font:300 clamp(30px,3vw,46px)/1 var(--titel);letter-spacing:-.02em;text-transform:none}
+.cz-12-q.an span,.cz-12-q:hover span{color:#FAF4F4}
+.cz-12-q.an b{color:var(--kerze-hell)}
+
+/* ---------- 13 Kapitel im Vollbild */
+.cz-13{position:relative}
+.cz-13-fest{position:sticky;top:0;height:100vh;margin:0 calc(50% - 50vw);overflow:hidden}
+.cz-13-bilder,.cz-13-f{position:absolute;inset:0}
+.cz-13-f{opacity:0;transform:scale(1.08);transition:opacity .9s var(--k),transform 2.4s var(--k)}
+.cz-13-f.an{opacity:1;transform:none}
+.cz-13-bilder::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,10,14,.86),rgba(12,10,14,.35) 55%,rgba(12,10,14,.1))}
+.cz-13-text{position:absolute;z-index:2;left:max(24px,calc(50vw - 640px));top:0;bottom:0;width:min(560px,80vw);display:flex;flex-direction:column;justify-content:center;gap:30px}
+.cz-13-st{position:relative;min-height:300px}
+.cz-13-s{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:opacity .6s,transform .8s var(--k)}
+.cz-13-s.an{opacity:1;transform:none}
+.cz-13-j{font:300 clamp(110px,12vw,190px)/.85 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.cz-13-s .ch-w{margin-top:14px}
+.cz-13-s p:last-child{margin-top:8px;font:340 clamp(24px,2.4vw,36px)/1.25 var(--titel);color:#FAF4F4;max-width:22ch}
+.cz-13-marken{margin-top:-100vh;pointer-events:none}
+.cz-13-marken span{display:block;height:80vh}
+.cz-13 .cz-k{position:relative;margin-top:6vh}
+
+/* ---------- 14 Der Abspann */
+.cz-14{position:relative;margin:0 calc(50% - 50vw);padding:clamp(70px,14vh,140px) 24px;overflow:hidden}
+.cz-14-hinten{position:absolute;inset:0;opacity:.18}
+.cz-14-hinten::after{content:"";position:absolute;inset:0;background:linear-gradient(#16141B,transparent 30%,transparent 70%,#16141B)}
+.cz-14-rolle{position:relative;max-width:900px;margin:0 auto;text-align:center}
+.cz-14-titel{font:300 clamp(60px,7vw,120px)/1 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.cz-14-unter{margin:10px 0 clamp(50px,9vh,90px);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--kerze-hell)}
+.cz-14-z{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:clamp(22px,4vh,36px);text-align:left}
+.cz-14-z span{text-align:right;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg2);padding-top:.5em}
+.cz-14-z b{font:340 clamp(22px,2.2vw,32px)/1.2 var(--titel);color:#FAF4F4}
+.cz-14-z b em{display:block;font:400 14px/1.4 var(--etikett,inherit);font-style:normal;color:var(--fg2);margin-top:4px}
+.cz-14-z.gross b{font-size:clamp(34px,3.6vw,56px)}
+.cz-14-z.gross:first-of-type{margin-top:clamp(40px,8vh,80px)}
+.cz-14-k{margin-top:clamp(40px,8vh,70px)}
+
+/* ---------- 15 Zwei Linien, ein x */
+.cz-15{display:grid;gap:clamp(30px,5vh,50px)}
+.cz-15-feld{position:relative;height:clamp(300px,40vh,380px);margin:20px 0 0}
+.cz-15-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.cz-15-svg path{fill:none;stroke-width:3;vector-effect:non-scaling-stroke}
+.cz-15-momo{stroke:var(--kerze)}
+.cz-15-chr{stroke:rgba(250,244,244,.3);stroke-dasharray:6 8}
+.cz-15-rudi{stroke:#F3B48A}
+.cz-15-kopf{position:absolute;display:flex;align-items:center;gap:12px;transform:translateY(-50%)}
+.cz-15-kopf figure{width:64px;height:64px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px var(--kerze)}
+.cz-15-kopf b{font:340 26px/1 var(--titel);color:#FAF4F4}
+.cz-15-kopf span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2)}
+.cz-15-kopf.k1{left:-10px;top:50%;flex-direction:column;align-items:flex-start;transform:translateY(-120%)}
+.cz-15-kopf.k2{left:18.3%;top:19.4%;flex-direction:column;align-items:flex-start;transform:translateY(-110%)}
+.cz-15-kopf.k3{left:46.6%;top:83%;transform:translate(-100%,-50%);flex-direction:row-reverse;text-align:right}
+.cz-15-kopf.k3 figure{box-shadow:0 0 0 3px #F3B48A}
+.cz-15-x{position:absolute;left:63.3%;top:50%;transform:translate(-50%,-62%);font:300 clamp(90px,9vw,150px)/1 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 144}
+.cz-15-jahre{position:absolute;left:0;right:0;bottom:-34px;border-top:1px solid var(--linie)}
+.cz-15-jahre span{position:absolute;left:calc(var(--x)*1%);top:10px;font:400 12px/1 "DM Mono",monospace;letter-spacing:.14em;color:var(--fg2)}
+.cz-15-momente{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,2vw,30px);margin-top:40px}
+.cz-15-m figure{aspect-ratio:1;border-radius:8px;overflow:hidden;margin-bottom:12px}
+.cz-15-m p:last-child{margin-top:6px;font-size:14px;line-height:1.45;color:var(--fg2)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .cz-01-tafel{padding:0}
+  .cz-01-platte{height:auto;display:grid;gap:28px;padding:28px 18px}
+  .cz-01-platz,.cz-01-platz.oben,.cz-01-platz.unten{position:static;width:auto;flex-direction:row;align-items:center;text-align:left}
+  .cz-01-karte{text-align:left}
+  .cz-02-tresen{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+  .cz-02-deckel{width:60px}.cz-02-deckel b{font-size:16px}.cz-02-deckel span{display:none}
+  .cz-03-karte{grid-template-columns:1fr;grid-template-rows:55% 45%;height:78vh;top:calc(70px + var(--i)*10px)}
+  .cz-03-text{border-left:0;padding:20px}.cz-03-j{font-size:64px}
+  .cz-04,.cz-06,.cz-07,.cz-09,.cz-11,.cz-12{grid-template-columns:1fr}
+  .cz-05-buch{aspect-ratio:auto;height:auto}.cz-05-seite{position:relative;display:none;grid-template-columns:1fr}.cz-05-seite.an{display:grid}
+  .cz-05-l{border-radius:6px 6px 0 0;aspect-ratio:4/3}.cz-05-r{border-radius:0 0 6px 6px}
+  .cz-06-story{width:100%;max-width:400px;margin:0 auto}
+  .cz-07-wand{height:120vw}
+  .cz-07-r figcaption{font-size:8px;bottom:-20px}
+  .cz-08-reihe,.cz-08-reihe.rechts{grid-template-columns:1fr}.cz-08-reihe.rechts .cz-08-bild{order:0}
+  .cz-10-tafel{margin:0 -16px;border-radius:0}
+  .cz-11-faecher{height:440px}.cz-11-t{width:150px;margin-left:-75px}
+  .cz-12-q{transform:rotate(calc(var(--w)*72deg)) translateY(-44vw)}
+  .cz-12-a{grid-template-columns:100px 1fr}
+  .cz-14-z{grid-template-columns:1fr;gap:4px;text-align:center}.cz-14-z span{text-align:center}
+  .cz-15-feld{height:260px}.cz-15-kopf b{font-size:18px}.cz-15-kopf figure{width:44px;height:44px}
+  .cz-15-momente{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

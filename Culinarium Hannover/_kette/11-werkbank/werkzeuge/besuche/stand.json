@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "Le Registre / Das Besucherbuch",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "besuche",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:44+08:00",
+  "ende": "2026-10-28T13:05+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": "http://localhost:9086/_werkzeuge/registre/",
+  "briefing": "briefing.html?teil=besuche",
+  "notiz": "Die Besucherliste fertig: 91/91 grün (Chromium+WebKit, 1440+390), Nachrechnen 0 Abweichungen, Fehlerbuch 144 Messungen je Regel grün; Zählung der Website bereit, nicht eingebaut (501 auf 8765)",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

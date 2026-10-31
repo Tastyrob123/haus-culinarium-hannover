@@ -1,0 +1,69 @@
+{
+  "station": "07",
+  "name": "Website bauen",
+  "rolle": "Baumeister",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": null,
+  "ende": "2026-10-26T17:00+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [
+    {
+      "punkt": "Auftakt-Fassung wählen",
+      "wo": "Robert, 10 Fassungen unten in der Seite (Pfeiltasten)"
+    },
+    {
+      "punkt": "Bildrechte Rudis Fotos und Plakate",
+      "wo": "_kette/06-konzepter/stand.json; Plakatwand und Abende nur lokal"
+    },
+    {
+      "punkt": "Wer ist wer auf den Fotos",
+      "wo": "keine Bildzeilen mit Namen gesetzt"
+    },
+    {
+      "punkt": "Nächster Termin, Preis, Ticketweg",
+      "wo": "Warteliste verschickt nichts (abend.html#warteliste)"
+    },
+    {
+      "punkt": "Vertragspartner, Impressum, Datenschutz",
+      "wo": "impressum.html, datenschutz.html nur Gerüst"
+    },
+    {
+      "punkt": "Derya Ivkin als Gastgeberin",
+      "wo": "fakten.json 2024; heutige Rolle mit Rudi klären"
+    },
+    {
+      "punkt": "Vegetarisch als fester Standard",
+      "wo": "Dezember 2025 Ente, «auch in Veggie möglich»"
+    },
+    {
+      "punkt": "Freigabe der Bar",
+      "wo": "Schild WILD SIDE, Fotos der Bar, Öffnungszeiten auf weg.html"
+    },
+    {
+      "punkt": "Echtes Logo von Rudi",
+      "wo": "Wortmarke aus Instagram ist laut Rudi nicht sein Logo (26.10.2026); bis dahin Platzhalter"
+    },
+    {
+      "punkt": "Freigabe der Bar für Fotos, Falstaff-Satz und Öffnungszeiten",
+      "wo": "bar.html, index.html #dach; Fakten aus Falstaff 25.10.2026, NP/HAZ 01/2024"
+    },
+    {
+      "punkt": "Material des Sammlers zur Bar und _quelle/dach.md einarbeiten",
+      "wo": "lag beim Bau noch nicht vor; neue Fakten danach nachziehen"
+    }
+  ],
+  "paket": [
+    "abschnitte.json",
+    "../../website/"
+  ],
+  "adresse": "http://127.0.0.1:8978/haus/Culinarium%20Hannover/website/index.html",
+  "briefing": "briefing.html",
+  "notiz": "Website für Culinarium (Robert 26.10.2026): oben Culinarium und sein Haus Walk on the Wild Side, je ein Satz; Dirty Chicken weiter unten als Pop-up. Material des Sammlers (dach.md) eingearbeitet. Geprüft 1000/390/1440, Chromium/WebKit, gedrosselt.",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

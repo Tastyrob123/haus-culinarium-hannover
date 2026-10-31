@@ -1,0 +1,4488 @@
+{
+ "schema": 1,
+ "haus": "beau-rivage",
+ "karten": [
+  {
+   "id": "ambiance",
+   "gilt": {
+    "von": "",
+    "bis": ""
+   },
+   "fassungen": {},
+   "herkunft": {
+    "original": "Grand Beau-Rivage/website/_karten/stand/ambiance.json",
+    "sha256": "b0b41cca8882c88124a0835dbbe63fd19ebcda8e6f122f764e75aa42995abbcc",
+    "gelesen_mit": "einlesen/beau_rivage_lesen.py"
+   },
+   "offen": [
+    "Zeitraum der Karte: die Datei des Hauses nennt kein «gilt von» und kein «gilt bis».",
+    "Allergene je Gericht: die Datei des Hauses nennt keine."
+   ],
+   "karte": {
+    "ziel": "ambiance",
+    "name": "Karte «L’Ambiance»",
+    "gruppe": "Restaurants",
+    "quelle": "assets/pdf/LAmbiance-Summer-2026.pdf",
+    "format": [
+     210,
+     297
+    ],
+    "kl": "",
+    "fuss": "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise",
+    "pruef": {
+     "dazu": "Mediterraner Salat Pak Choi Kokosnussmilch cremige Polenta Chimichurri Pommes Frites Chimichurri Püree purée – seasonal Dessert Crème Brulée Crème Brulée frische Pfirsiche Ananas-Limetten",
+     "fehlt": "Mediterranes Salat Pok Choi Kokonussmilch cremiges Polenta Chimchurri PommesFrites Chimchurri Pürree purée– seasonal Dessert | Dessert Créme Brulée Créme Brulée frischen Pfirsichen Ananas- Limetten",
+     "fuss_n": 7
+    },
+    "berichtigt": [
+     [
+      "Mediterranes Salat",
+      "Mediterraner Salat",
+      "A · Grammatik (der Salat)"
+     ],
+     [
+      "Kokonussmilch",
+      "Kokosnussmilch",
+      "A · Tippfehler"
+     ],
+     [
+      "Pok Choi",
+      "Pak Choi",
+      "A · Schreibweise, in der englischen Zeile richtig («Pak Choi»)"
+     ],
+     [
+      "cremiges Polenta",
+      "cremige Polenta",
+      "A · Grammatik (die Polenta)"
+     ],
+     [
+      "Chimchurri",
+      "Chimichurri",
+      "A · Tippfehler, zweimal (deutsch und englisch)"
+     ],
+     [
+      "PommesFrites",
+      "Pommes Frites",
+      "A · Leerzeichen fehlt"
+     ],
+     [
+      "Pürree",
+      "Püree",
+      "A · Tippfehler"
+     ],
+     [
+      "purée– seasonal",
+      "purée – seasonal",
+      "A · Leerzeichen"
+     ],
+     [
+      "Créme Brulée",
+      "Crème Brulée",
+      "A · Akzent, zweimal; der Titel schreibt «Crème»"
+     ],
+     [
+      "frischen Pfirsichen",
+      "frische Pfirsiche",
+      "A · Grammatik in der Zutatenzeile"
+     ],
+     [
+      "Ananas- Limetten",
+      "Ananas-Limetten",
+      "A · Leerzeichen"
+     ]
+    ],
+    "teile": [
+     {
+      "art": "deckel",
+      "s": 1,
+      "titel": "L’Ambiance",
+      "unter": "Menü · Menu",
+      "zeilen": [
+       "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise"
+      ]
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "rubrik",
+        "titel": "Vorspeisen",
+        "en": "Starters",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Mango Garnelen Salat",
+        "zeilen": [
+         {
+          "text": "Avocado – Mango – gegrillte Garnelen – Maracuja Dressing – Cashewnüsse"
+         },
+         {
+          "text": "Avocado – Mango – Grilled Shrimp – Passion Fruit Dressing – Cashews",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Mediterraner Salat",
+        "zeilen": [
+         {
+          "text": "Falafel – Tahini-Limetten Dressing – Sesam"
+         },
+         {
+          "text": "Falafel – Tahini-Lime Dressing – Sesame",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 15"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Burrata Salat",
+        "zeilen": [
+         {
+          "text": "Burrata – Früchte der Saison – Serranoschinken – Balsamico Dressing –"
+         },
+         {
+          "text": "Pinienkerne"
+         },
+         {
+          "text": "Burrata – Seasonal Fruit – Jamon Serrano – Balsamic – Pine Nuts",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 25"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Citrus Salat",
+        "zeilen": [
+         {
+          "text": "Gemischtes grünes Gemüse – Ziegenkäse – Honig – Nüsse"
+         },
+         {
+          "text": "Mixed Greens – Goat Cheese – Honey – Nuts",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 15"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Suppen",
+        "en": "Soups",
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Erbsen Suppe",
+        "zeilen": [
+         {
+          "text": "Grüne Erbsen – Frischer Käse – Pinienkerne – Minze"
+         },
+         {
+          "text": "Green Peas – Fresh Cheese – Pine Nuts – Mint",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 13"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Salmorejo (Kalte / Cold)",
+        "zeilen": [
+         {
+          "text": "Tomaten – Eier – Rohschinken – Oregano"
+         },
+         {
+          "text": "Tomato – Eggs – Cured Ham – Oregano",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 3
+       },
+       {
+        "t": "rubrik",
+        "titel": "Fisch & Meeresfrüchte",
+        "en": "Fish & Seafood",
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Salmon Risotto",
+        "zeilen": [
+         {
+          "text": "Lachs – Zitronen-Risotto – Pak Choi – Parmesan"
+         },
+         {
+          "text": "Salmon – Lemon-Risotto – Pak Choi – Parmesan",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 27"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Linguini Nero",
+        "zeilen": [
+         {
+          "text": "Schwarze Linguine – Cherry Tomaten – Garnelen – Muscheln"
+         },
+         {
+          "text": "Black Linguini – Cherry Tomatoes – Prawns – Mussels",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 4
+       },
+       {
+        "t": "rubrik",
+        "titel": "Vegetarier",
+        "en": "Vegetarian",
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Green Curry",
+        "zeilen": [
+         {
+          "text": "Grünes Curry – Tofu – Kokosnussmilch – Erdnüsse – Mango"
+         },
+         {
+          "text": "Green Curry – Tofu – Coconut Milk – Peanuts – Mango",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Creamy Risotto",
+        "zeilen": [
+         {
+          "text": "Risotto – Sahne – Pilze"
+         },
+         {
+          "text": "Risotto – Cream – Mushrooms",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 15"
+        ],
+        "s": 5
+       },
+       {
+        "t": "rubrik",
+        "titel": "Hauptgänge",
+        "en": "Main Courses",
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Gegrillte Hähnchenbrust",
+        "zeilen": [
+         {
+          "text": "Hühnerbrust – cremige Polenta – Mangold – Sommergemüse – Minzsauce"
+         },
+         {
+          "text": "Chicken Breast – creamy polenta – swiss chard – summer vegetables – mint sauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 21"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Ribeye Steak (200g)",
+        "zeilen": [
+         {
+          "text": "Rinds Ribeye Steak 200 g – Chimichurri Sauce – gegrilltes Saisongemüse"
+         },
+         {
+          "text": "Beilage nach Wahl: Pommes Frites / Bunter Salat"
+         },
+         {
+          "text": "Beef Ribeye Steak 200 g – Chimichurri sauce – grilled seasonal vegetables",
+          "en": true
+         },
+         {
+          "text": "Choice of Side Dish: Fries / Colorful Salad",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 38"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Kalbsmedaillon (150g)",
+        "zeilen": [
+         {
+          "text": "Kalbsmedaillon – Süsskartoffel Püree – Saisongemüse – Szechuan Pfeffer Sauce"
+         },
+         {
+          "text": "Veal medallion – sweet potato purée – seasonal vegetables –",
+          "en": true
+         },
+         {
+          "text": "Szechuan pepper sauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 49"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Iberic Schweins Secreto (120g)",
+        "zeilen": [
+         {
+          "text": "Iberic Schweins Secreto – Petersilienkartoffeln – Saisongemüse –"
+         },
+         {
+          "text": "Limetten-Petersilien Sauce"
+         },
+         {
+          "text": "Iberic pork secreto – parsley potatoes – seasonal vegetables – lime-parsley sauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 27"
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Dessert",
+        "en": "",
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Sommer Crème Brulée",
+        "zeilen": [
+         {
+          "text": "Crème Brulée mit Vanille – Orange – Kardamom"
+         },
+         {
+          "text": "Crème Brulée infused with vanilla – orange – cardamom"
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Pfirsich Melba Pavlova",
+        "zeilen": [
+         {
+          "text": "Himbeermarmelade – frische Pfirsiche – Chantilly Creme"
+         },
+         {
+          "text": "Raspberry marmalade – fresh peaches – Chantilly cream",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Schweizer Schokoladen Eclair",
+        "zeilen": [
+         {
+          "text": "Mit Kaffee Mousse und Salted Caramel Sauce"
+         },
+         {
+          "text": "With coffee mousse and salted caramel sauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Piña Colada Dome",
+        "zeilen": [
+         {
+          "text": "Kokosnuss Mousse Dome mit Ananas-Limetten Füllung"
+         },
+         {
+          "text": "Coconut mousse dome with pineapple-lime filling",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 7
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Liebe Gäste"
+         },
+         {
+          "text": "Bei Fragen zu Unverträglichkeiten oder Allergien wenden Sie sich bitte an unser"
+         },
+         {
+          "text": "Personal. Unsere Mitarbeitenden stehen Ihnen jederzeit gerne zur Verfügung."
+         },
+         {
+          "text": "Dear guests,",
+          "en": true
+         },
+         {
+          "text": "If you have any questions about intolerances or allergies, please contact our staff. Our staff",
+          "en": true
+         },
+         {
+          "text": "is happy to assist you at any time.",
+          "en": true
+         }
+        ],
+        "s": 8
+       }
+      ]
+     }
+    ],
+    "veroeffentlicht": "2026-10-11 21:37:57"
+   }
+  },
+  {
+   "id": "petite-suisse",
+   "gilt": {
+    "von": "",
+    "bis": ""
+   },
+   "fassungen": {},
+   "herkunft": {
+    "original": "Grand Beau-Rivage/website/_karten/stand/petite-suisse.json",
+    "sha256": "a1dcf607179587ac3b8d51a6b49faac41cdfa2829fe8b08c9518db4dbb72c996",
+    "gelesen_mit": "einlesen/beau_rivage_lesen.py"
+   },
+   "offen": [
+    "Zeitraum der Karte: die Datei des Hauses nennt kein «gilt von» und kein «gilt bis».",
+    "Allergene je Gericht: die Datei des Hauses nennt keine."
+   ],
+   "karte": {
+    "ziel": "petite-suisse",
+    "name": "Karte «La Petite Suisse»",
+    "gruppe": "Restaurants",
+    "quelle": "assets/pdf/la-petite-suisse-speisekarte.pdf",
+    "format": [
+     210,
+     297
+    ],
+    "kl": "",
+    "fuss": "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise",
+    "pruef": {
+     "dazu": "Potatoes Rösti Raclette Dessert Lemon – Swiss Free-Range Eggs",
+     "fehlt": "Potaoes Rösti | Rösti Raclette | Raclette Dessert | Dessert Lemon – Fried Swiss Free-Range Eggs Vorspeisen  Starters",
+     "fuss_n": 8
+    },
+    "berichtigt": [
+     [
+      "Potaoes",
+      "Potatoes",
+      "S · Tippfehler"
+     ],
+     [
+      "Lemon – Fried Swiss Free-Range Eggs",
+      "Lemon – Swiss Free-Range Eggs",
+      "S · «Fried» aus der Rösti-Zeile übernommen; die deutsche Zeile sagt «Schweizer Freilandeier»"
+     ]
+    ],
+    "teile": [
+     {
+      "art": "deckel",
+      "s": 1,
+      "titel": "La Petite Suisse",
+      "unter": "Menü · Menu",
+      "zeilen": [
+       "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise"
+      ]
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "rubrik",
+        "titel": "Vorspeisen",
+        "en": "Starters",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Nüssler Salat",
+        "zeilen": [
+         {
+          "text": "Nüssler Salat – French Dressing – Speck – Ei – Croutons"
+         },
+         {
+          "text": "Nüssler Lettuce – French Dressing – Bacon – Hard Boiled Eggs – Croutons",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 17"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Bunter Salatteller",
+        "zeilen": [
+         {
+          "text": "Bunter Salat – Croutons – Geröstete Kerne – French Dressing"
+         },
+         {
+          "text": "Colorful Leaves – Croutons – Roasted Seeds – French Dressing",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Schweizer Wurst und Käse Salat",
+        "zeilen": [
+         {
+          "text": "Cervelatwurst – Alpkäse – Vinaigrette"
+         },
+         {
+          "text": "Cervelat Sausage – Alpine Cheese – Vinaigrette",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Salat mit Eglifilets",
+        "zeilen": [
+         {
+          "text": "Gebratene Eglifilets – Bunter Salat – Crudité"
+         },
+         {
+          "text": "Fried Perch – Colorful Salad – Crudité",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 22"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Zvieri Platte",
+        "zeilen": [
+         {
+          "text": "Trockenfleisch – Ballenbergwurst – Harder Schinken –"
+         },
+         {
+          "text": "«Buurespeck» – 3 verschiedene Käsesorten – Brot – Eingelegtes Gemüse"
+         },
+         {
+          "text": "Dried Meat – Ballenberg Sausage – Harder Ham –"
+         },
+         {
+          "text": "«Buurespeck» Bacon – 3 different Cheese varieties – Bread – Mixed Pickles",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 30"
+        ],
+        "s": 3
+       },
+       {
+        "t": "rubrik",
+        "titel": "Suppen",
+        "en": "Soups",
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Kartoffelsuppe",
+        "zeilen": [
+         {
+          "text": "Brottasse – Kartoffel – Gruyère – Paprika"
+         },
+         {
+          "text": "Bread Cup – Potatoes – Gruyère Cheese – Bell Pepper",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 14"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Berner Märitsuppe",
+        "zeilen": [
+         {
+          "text": "Gelberbsen – Rüebli – Zwiebeln – Lauch – Butter"
+         },
+         {
+          "text": "Yellow Peas – Carrots – Onions – Leek – Butter",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 3
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rösti",
+        "en": "",
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Oberländer Rösti",
+        "zeilen": [
+         {
+          "text": "Raclettekäse – Speck – Schweizer Freilandeier – Rösti"
+         },
+         {
+          "text": "Raclette Cheese – Bacon – Swiss Free-Range Eggs – Rösti",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 27"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Vacherin Fribourgeois Rösti",
+        "zeilen": [
+         {
+          "text": "Vacherin Fribourgeois AOP Käse – Zwiebeln – Gurken – Rösti"
+         },
+         {
+          "text": "Vacherin Fribourgeois AOP Cheese – Red Onion – Cucumber – Rösti",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 25"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Spiegelei Rösti",
+        "zeilen": [
+         {
+          "text": "Schweizer Freilandeier – Butter – Rösti"
+         },
+         {
+          "text": "Fried Swiss Free-Range Eggs – Butter – Rösti",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 22"
+        ],
+        "s": 4
+       },
+       {
+        "t": "rubrik",
+        "titel": "Raclette",
+        "en": "",
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Käseschnitten",
+        "zeilen": [
+         {
+          "text": "Raclettekäse – Zwiebeln – Schinken – Ruchbrot"
+         },
+         {
+          "text": "Raclette Cheese – Red Onions – Ham – Rye Bread",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 16"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Optional mit Spiegelei",
+        "zeilen": [
+         {
+          "text": "Optional with Fried Egg",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 3"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Portion Raclette",
+        "zeilen": [
+         {
+          "text": "Raclettekäse – Kartoffel – Essiggurken – Perlzwiebeln"
+         },
+         {
+          "text": "Raclette Cheese – Potatoes – Cucumber Pickles – Pearl Onions",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 14"
+        ],
+        "s": 5
+       },
+       {
+        "t": "rubrik",
+        "titel": "Käsefondue",
+        "en": "Cheese Fondue",
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Käsefondue",
+        "zeilen": [
+         {
+          "text": "Käse Hausmischung – Kleine Kartoffeln – Essiggurken – Perlzwiebeln – Ruchbrot"
+         },
+         {
+          "text": "Cheese House Mix – Small Potatoes – Pickles – Pearl Onions – Brown Bread",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 30"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "«La Petite Suisse» Fondue",
+        "zeilen": [
+         {
+          "text": "Käse Hausmischung – Steinpilze – Birne – Äpfel –"
+         },
+         {
+          "text": "Kleine Kartoffeln – Essiggurken – Perlzwiebeln – Ruchbrot"
+         },
+         {
+          "text": "Cheese House Mix – Porcini Mushrooms – Pears – Apples –",
+          "en": true
+         },
+         {
+          "text": "Small Potatoes – Pickles – Pearl Onions – Brown Bread",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 34"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Optional dazu Plättli aus der Region",
+        "zeilen": [
+         {
+          "text": "Optional Plate of Regionally Sourced Meat",
+          "en": true
+         },
+         {
+          "text": "Trockenfleisch – Bündner Coppa – Rohspeck – Zungenwurst"
+         },
+         {
+          "text": "Dried meat – Dried Pork-Neck Meat – Raw Bacon – Tongue Sausage",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Hauptgänge",
+        "en": "Main Courses",
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Kalbsgeschnetzeltes",
+        "zeilen": [
+         {
+          "text": "Kalbsgeschnetzeltes – Morchel – Rösti – Buntes Gemüse"
+         },
+         {
+          "text": "Calf Meat – Morels – Rösti – Steamed Vegetables",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 46"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Bratwurst mit Zwiebelsauce",
+        "zeilen": [
+         {
+          "text": "St. Galler Kalbsbratwurst – Zwiebelsauce – Rösti"
+         },
+         {
+          "text": "St. Galler Calf Sausage – Onion Sauce – Rösti",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 27"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Älplermagronen",
+        "zeilen": [
+         {
+          "text": "Älplermagronen – Kartoffel – Vollrahm – Gruyère – Zwiebeln – Apfelmus"
+         },
+         {
+          "text": "Älplermagronen – Potatoes – Cream – Gruyère Cheese –",
+          "en": true
+         },
+         {
+          "text": "Crispy Onions – Apple Sauce",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 25"
+        ],
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Entrecôte 200 g",
+        "zeilen": [
+         {
+          "text": "Rinds Entrecôte 200 g – Butter – Beilage nach Wahl"
+         },
+         {
+          "text": "Bärner Frites / Rösti / Bunter Salat"
+         },
+         {
+          "text": "Beef Entrecôte 200 g – Butter – Choice of Side Dish",
+          "en": true
+         },
+         {
+          "text": "Berner Fries / Rösti / Colorful Salad",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 50"
+        ],
+        "s": 7
+       },
+       {
+        "t": "rubrik",
+        "titel": "Dessert",
+        "en": "",
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "«Thurgauer» Apfelkuchen",
+        "zeilen": [
+         {
+          "text": "Äpfel – Butter – Zitrone – Schweizer Freilandeier"
+         },
+         {
+          "text": "Apples – Butter – Lemon – Swiss Free-Range Eggs",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Brönnti Crème",
+        "zeilen": [
+         {
+          "text": "Milch – Eigelb – Karamell – Sahne – Vanille – Brätzeli"
+         },
+         {
+          "text": "Milk – Egg Yolks – Caramel – Cream – Vanilla – Brätzeli",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Karamell Köpfli",
+        "zeilen": [
+         {
+          "text": "Milch – Eigelb – Karamell – Sahne"
+         },
+         {
+          "text": "Milk – Egg Yolks – Caramel – Cream",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Eiskaffee",
+        "zeilen": [
+         {
+          "text": "Kaffeeeis – Frisch gebrühter Kaffee"
+         },
+         {
+          "text": "Coffee Ice Cream – Fresh Brewed Coffee",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 8
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Liebe Gäste"
+         },
+         {
+          "text": "Bei Fragen zu Unverträglichkeiten oder Allergien wenden Sie sich bitte an unser"
+         },
+         {
+          "text": "Personal. Unsere Mitarbeitenden stehen Ihnen jederzeit gerne zur Verfügung."
+         },
+         {
+          "text": "Dear guests,",
+          "en": true
+         },
+         {
+          "text": "If you have any questions about intolerances or allergies, please contact our staff.",
+          "en": true
+         },
+         {
+          "text": "Our staff is happy to assist you at any time.",
+          "en": true
+         }
+        ],
+        "s": 9
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "vieux-rivage",
+   "gilt": {
+    "von": "",
+    "bis": ""
+   },
+   "fassungen": {},
+   "herkunft": {
+    "original": "Grand Beau-Rivage/website/_karten/stand/vieux-rivage.json",
+    "sha256": "7bc37fefc7fa99e3ad516859358a46e6009b8f0488f0890ff869f6dad12fbb35",
+    "gelesen_mit": "einlesen/beau_rivage_lesen.py"
+   },
+   "offen": [
+    "Zeitraum der Karte: die Datei des Hauses nennt kein «gilt von» und kein «gilt bis».",
+    "Allergene je Gericht: die Datei des Hauses nennt keine."
+   ],
+   "karte": {
+    "ziel": "vieux-rivage",
+    "name": "Barkarte «Le Vieux Rivage»",
+    "gruppe": "Bar",
+    "quelle": "assets/pdf/Le-Vieux-Rivage-Summer-2026.pdf",
+    "format": [
+     143,
+     297
+    ],
+    "kl": "schmal",
+    "fuss": "",
+    "pruef": {
+     "dazu": "Captain’s Curse Pfirsich Gruyère Gruyère Cranberry Sparkling Louis 246 2021 DOCG, Valdobbiadene Zürich, 2024 Thurgau Kerner-Johanniter-Solaris-Müller DOC, 2024 Saint Rosé 2024 Syrah, Grenache-Cinsault-Mourvèdre-Syrah Red Zürich, 2023 Riserva DOC, 2021 20% Scotland Switzerland Bourbon Tennessee Scotch Whisky Blend 43% Tee» Soft Drinks Softgetränke 300ml 300ml Spezial 33cl India Pale Ale Z’Vieri Plättli – Eingelegtes Sourdough Cheese Süsskartoffel Kleiner Salat",
+     "fehlt": "j Captain`s Curse Pfirsisch Gruyere Gruyere Cramberry Sparkl ing L ouis 24 6 20 21 DOCG , Valdobbiane Zürich , 202 4 Thurg au Kerner -Johanniter -Solaris -Müller DOC , 202 4 S aint Ros é 202 4 Syrah , Grenache -Cinsault-Mourvèdre -Syrah Re d Zürich , 202 3 Riser va DOC , 202 1 20 % Scottland S witzerland B ourbon Tenness ee Scotch Whiskey Blen d 4 3% Tee » S oft Drinks Soft getränke 30 0ml 30 0ml Spezi al 33 cl Indian Pale Ale Z`Vieri Plätli –Eingelegtes Sour -Dough Chees e Süsskartofeln Kleine Salat Classic Cocktails",
+     "fuss_n": 0
+    },
+    "berichtigt": [
+     [
+      "Captain`s Curse",
+      "Captain’s Curse",
+      "B · Akzent statt Apostroph"
+     ],
+     [
+      "Pfirsisch",
+      "Pfirsich",
+      "B · Tippfehler"
+     ],
+     [
+      "Gruyere",
+      "Gruyère",
+      "B · Akzent, zweimal"
+     ],
+     [
+      "Cramberry",
+      "Cranberry",
+      "B · Tippfehler"
+     ],
+     [
+      "Scottland",
+      "Scotland",
+      "B · Tippfehler"
+     ],
+     [
+      "Scotch Whiskey",
+      "Scotch Whisky",
+      "B · schottischer Whisky ohne e (Kopf der Seite: «Whiskey / Whisky»)"
+     ],
+     [
+      "Indian Pale Ale",
+      "India Pale Ale",
+      "B · Bierstil heisst India Pale Ale"
+     ],
+     [
+      "Z`Vieri Plätli",
+      "Z’Vieri Plättli",
+      "B · Apostroph; «Plättli» wie auf der Karte des La Petite Suisse"
+     ],
+     [
+      "Sour -Dough",
+      "Sourdough",
+      "B · zerrissenes Wort"
+     ],
+     [
+      "Süsskartofeln",
+      "Süsskartoffel",
+      "B · Tippfehler"
+     ],
+     [
+      "Kleine Salat",
+      "Kleiner Salat",
+      "B · Grammatik (Seite davor: «Kleiner Salat»)"
+     ],
+     [
+      "Valdobbiane",
+      "Valdobbiadene",
+      "B/W · Herkunft heisst Valdobbiadene, dreimal"
+     ]
+    ],
+    "teile": [
+     {
+      "art": "deckel",
+      "s": 1,
+      "titel": "Le Vieux Rivage",
+      "unter": "Barkarte · Bar Menu",
+      "zeilen": []
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "rubrik",
+        "titel": "Signature Cocktails",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "The Negroni",
+        "zeilen": [
+         {
+          "text": "Im Fass gelagert (2 Monate) – Barrel Aged (2 Months)"
+         },
+         {
+          "text": "Gin | roter Wermut | Campari | Orangenblüten-Bitter"
+         },
+         {
+          "text": "Gin | Red vermouth | Campari | Orange blossom bitters",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 17"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Pear Martini",
+        "zeilen": [
+         {
+          "text": "Birnenwodka | Vieille Poire | Holunderblüte | Zitrone | Birnensirup"
+         },
+         {
+          "text": "Pear Vodka | Vieille Poire | Elderflower | Lemon | Pear syrup",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "El Diablo",
+        "zeilen": [
+         {
+          "text": "Tequila | Mezcal | Chilli | Ginger Beer | Zitrone | Creme de Cassis"
+         },
+         {
+          "text": "Tequila | Mezcal | Chilli | Ginger Beer | Lemon | Creme de Cassis",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Captain’s Curse",
+        "zeilen": [
+         {
+          "text": "Feigenrum | Pfirsich | Limette | Ingwer"
+         },
+         {
+          "text": "Fig Rum | Peach | Lime | Ginger",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 19"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "The All – Pine Sage",
+        "zeilen": [
+         {
+          "text": "Alpinist Gin | Pinienhonig | Salbei | Eiweiss"
+         },
+         {
+          "text": "Alpinist Gin | Pine Honey | Sage | Egg white",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 19"
+        ],
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Olive oil & Dill Martini",
+        "zeilen": [
+         {
+          "text": "Olivenöl Grey Goose | Dill Wermut | Gruyère Käse"
+         },
+         {
+          "text": "Olive oil Grey Goose | Dill Vermouth | Gruyère cheese",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 21"
+        ],
+        "s": 2
+       },
+       {
+        "t": "rubrik",
+        "titel": "Classic Cocktails",
+        "en": "",
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Dry Martini",
+        "zeilen": [
+         {
+          "text": "Gin | Noilly Prat Dry"
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Manhattan",
+        "zeilen": [
+         {
+          "text": "Rye Whiskey | Süsser Wermut | Bitter"
+         },
+         {
+          "text": "Rye Whiskey | Sweet Vermouth | Bitters",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 19"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Daiquiri",
+        "zeilen": [
+         {
+          "text": "Weisser Rum | Limette | Sirup"
+         },
+         {
+          "text": "White Rum | Lime | Syrup",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Margarita",
+        "zeilen": [
+         {
+          "text": "Tequila | Limette | Grand Marnier"
+         },
+         {
+          "text": "Tequila | Lime | Grand Marnier",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Mojito",
+        "zeilen": [
+         {
+          "text": "Rum | Limette | Sirup | Minze"
+         },
+         {
+          "text": "Rum | Lime | Syrup | Mint",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 17"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Mai Tai",
+        "zeilen": [
+         {
+          "text": "Rum | Grand Marnier | Orgeat | Limettensaft"
+         },
+         {
+          "text": "Rum | Grand Marnier | Orgeat | Lime juice",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 19"
+        ],
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Old Fashioned",
+        "zeilen": [
+         {
+          "text": "Bourbon | Zucker | Bitter"
+         },
+         {
+          "text": "Bourbon | Sugar | Bitters",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 17"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Cosmopolitan",
+        "zeilen": [
+         {
+          "text": "Vodka | Cointreau | Limettensaft | Cranberrysaft"
+         },
+         {
+          "text": "Vodka | Cointreau | Lime juice | Cranberry juice",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Whiskey Sour",
+        "zeilen": [
+         {
+          "text": "Bourbon | Zitronensaft | Zuckersirup"
+         },
+         {
+          "text": "Bourbon | Lemon juice | Simple syrup",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 19"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Amaretto Sour",
+        "zeilen": [
+         {
+          "text": "Amaretto | Zitronensaft | Zuckersirup"
+         },
+         {
+          "text": "Amaretto | Lemon juice | Simple syrup",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "French 75",
+        "zeilen": [
+         {
+          "text": "Gin | Zitronensaft | Champagner | Zuckersirup"
+         },
+         {
+          "text": "Gin | Lemon juice | Champagne | Simple syrup",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Sidecar",
+        "zeilen": [
+         {
+          "text": "Cognac | Cointreau | Zitronensaft"
+         },
+         {
+          "text": "Cognac | Cointreau | Lemon juice",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20"
+        ],
+        "s": 4
+       },
+       {
+        "t": "rubrik",
+        "titel": "Alkoholfrei Signature Cocktails",
+        "en": "",
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "The Tropical",
+        "zeilen": [],
+        "preise": [
+         "CHF 10"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "The Bitter",
+        "zeilen": [],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "The Spritz",
+        "zeilen": [],
+        "preise": [
+         "CHF 13"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "The Fresh Sour",
+        "zeilen": [],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "The Special",
+        "zeilen": [],
+        "preise": [
+         "CHF 13"
+        ],
+        "s": 5
+       },
+       {
+        "t": "rubrik",
+        "titel": "Wein / Wine",
+        "en": "",
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Schaumwein / Sparkling",
+        "en": "",
+        "koepfe": [
+         "1dl CHF",
+         "75cl CHF"
+        ],
+        "s": 6
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Louis Roederer “Collection 246”",
+          "fett": true,
+          "preise": [
+           "18",
+           "135"
+          ]
+         },
+         {
+          "text": "AOC Champagne, FR",
+          "en": true
+         },
+         {
+          "text": "Chardonnay-Pinot Noir-Meunier, 2021",
+          "en": true
+         },
+         {
+          "text": "Astoria Wines Casa Vittorino Brut",
+          "fett": true,
+          "preise": [
+           "10",
+           "55"
+          ]
+         },
+         {
+          "text": "Valdobbiadene Prosecco Superiore DOCG, IT",
+          "en": true
+         },
+         {
+          "text": "Glera, 2023",
+          "en": true
+         }
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Weiss / White",
+        "en": "",
+        "s": 6
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "8247 Weinbau, Kräutergarten Blanc “Krü“",
+          "fett": true,
+          "preise": [
+           "12",
+           "59"
+          ]
+         },
+         {
+          "text": "Zürich, CH",
+          "en": true
+         },
+         {
+          "text": "Kerner-Johanniter-Solaris-Müller-Thurgau, 2024",
+          "en": true
+         },
+         {
+          "text": "Terenzi, Balbino",
+          "fett": true,
+          "preise": [
+           "13",
+           "60"
+          ]
+         },
+         {
+          "text": "Maremma Toscana DOC, IT",
+          "en": true
+         },
+         {
+          "text": "Vermentino, 2024",
+          "en": true
+         }
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rosé",
+        "en": "",
+        "s": 6
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Clos Saint Magdeleine, Rosé Côte de Provence",
+          "fett": true,
+          "preise": [
+           "12",
+           "65"
+          ]
+         },
+         {
+          "text": "AOC Cassis, FR",
+          "en": true
+         },
+         {
+          "text": "Grenache-Cinsault-Mourvèdre-Syrah, 2024",
+          "en": true
+         }
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rot / Red",
+        "en": "",
+        "s": 6
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Nadine Saxer Tete de Pinot",
+          "fett": true,
+          "preise": [
+           "14",
+           "75"
+          ]
+         },
+         {
+          "text": "Zürich, CH",
+          "en": true
+         },
+         {
+          "text": "Pinot Noir, 2023",
+          "en": true
+         },
+         {
+          "text": "Jerzu Antichi Poderi, Josto Miglior Riserva",
+          "fett": true,
+          "preise": [
+           "15",
+           "95"
+          ]
+         },
+         {
+          "text": "Cannonau di Sardegna DOC, IT",
+          "en": true
+         },
+         {
+          "text": "Cannonau, 2021",
+          "en": true
+         }
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Aperitifs & Bitters",
+        "en": "",
+        "s": 7
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Sanbitter 0%",
+        "preis": "5",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Appenzeller 29%",
+        "preis": "8",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Fernet Branca 40%",
+        "preis": "9",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Pernod 40%",
+        "preis": "9",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Jsotta Bianco Vermouth 17%",
+        "preis": "9",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Antica Formula Vermouth 16.5%",
+        "preis": "9",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Noilly Prat Vermouth 18%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Aperol 11%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Cynar 17%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Campari 23%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Pastis 51 45%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Absinthe 53%",
+        "preis": "12",
+        "s": 7
+       },
+       {
+        "t": "rubrik",
+        "titel": "Sherry & Port",
+        "en": "",
+        "s": 7
+       },
+       {
+        "t": "kopf",
+        "text": "5cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Ramos Pinto 10y 20%",
+        "preis": "14",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Ramos Pinto 20y 20%",
+        "preis": "24",
+        "s": 7
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rum",
+        "en": "",
+        "s": 7
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Plantation 3 Stars Caribbean 41.2%",
+        "preis": "10",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Bumbu Barbados 40%",
+        "preis": "13",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Flor de Cana 12 Nicaragua 40%",
+        "preis": "20",
+        "s": 7
+       },
+       {
+        "t": "rubrik",
+        "titel": "Gin",
+        "en": "",
+        "s": 8
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Tanqueray UK 43.1%",
+        "preis": "10",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Hendricks Scotland 41.4%",
+        "preis": "13",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Crystal Switzerland 46%",
+        "preis": "14",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Tanqueray Nr.10 UK 47.3%",
+        "preis": "14",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Mare Spain 42.7%",
+        "preis": "14",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "The Wall Switzerland 45%",
+        "preis": "14",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Alpinist Switzerland 42%",
+        "preis": "16",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Ki-No-Bi Japan 45.7%",
+        "preis": "18",
+        "s": 8
+       },
+       {
+        "t": "rubrik",
+        "titel": "Vodka",
+        "en": "",
+        "s": 8
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Absolut Sweden 40%",
+        "preis": "10",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Grey Goose France 40%",
+        "preis": "14",
+        "s": 8
+       },
+       {
+        "t": "rubrik",
+        "titel": "Tequila & Mezcal",
+        "en": "",
+        "s": 8
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Espolón Blanco 40%",
+        "preis": "12",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "Espolón Reposado 40%",
+        "preis": "13",
+        "s": 8
+       },
+       {
+        "t": "zeile",
+        "name": "La Escondida Mezcal 40%",
+        "preis": "18",
+        "s": 8
+       },
+       {
+        "t": "rubrik",
+        "titel": "Whiskey / Whisky",
+        "en": "",
+        "s": 9
+       },
+       {
+        "t": "land",
+        "text": "Bourbon & Rye",
+        "s": 9
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Bulleit Bourbon 45%",
+        "preis": "14",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Woodford Reserve 43.2%",
+        "preis": "18",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Bulleit Rye 45%",
+        "preis": "15",
+        "s": 9
+       },
+       {
+        "t": "land",
+        "text": "Swiss Single Malt",
+        "s": 9
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Two Lakes 40%",
+        "preis": "12",
+        "s": 9
+       },
+       {
+        "t": "land",
+        "text": "Tennessee Whiskey",
+        "s": 9
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Gentleman’s Jack 40%",
+        "preis": "13",
+        "s": 9
+       },
+       {
+        "t": "land",
+        "text": "Irish Whiskey",
+        "s": 9
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Jameson 40%",
+        "preis": "11",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Yellow Spot 12y 46%",
+        "preis": "24",
+        "s": 9
+       },
+       {
+        "t": "rubrik",
+        "titel": "Scotch Whisky",
+        "en": "",
+        "s": 9
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Chivas Regal 12y Blend 40%",
+        "preis": "16",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Tobermory 12y Isle of Mull 40%",
+        "preis": "21",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Oban Highlands 43%",
+        "preis": "23",
+        "s": 9
+       },
+       {
+        "t": "zeile",
+        "name": "Macallan 12y Speyside 40%",
+        "preis": "25",
+        "s": 9
+       },
+       {
+        "t": "rubrik",
+        "titel": "Cognac & Brandy",
+        "en": "",
+        "s": 10
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Vecchia Romagna 38%",
+        "preis": "11",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Hine Rare 40%",
+        "preis": "23",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Davidoff XO 40%",
+        "preis": "26",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Remy Martin XO 40%",
+        "preis": "28",
+        "s": 10
+       },
+       {
+        "t": "rubrik",
+        "titel": "Digestifs",
+        "en": "",
+        "s": 10
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Grap – Pinot 42%",
+        "preis": "12",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Grappa de Brunello 43%",
+        "preis": "15",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Grappa Le Giare Amarone 41%",
+        "preis": "15",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Grappa Bepi Rovere 42%",
+        "preis": "12",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Calvados Morin 40%",
+        "preis": "12",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Kirsch Dettling Superieur 41%",
+        "preis": "12",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Vieille Prune Barrique Fassbind 40%",
+        "preis": "9",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Williams La Valadiere 37.5%",
+        "preis": "8",
+        "s": 10
+       },
+       {
+        "t": "rubrik",
+        "titel": "Likör / Liquor",
+        "en": "",
+        "s": 10
+       },
+       {
+        "t": "kopf",
+        "text": "4cl · Vol CHF",
+        "s": 7
+       },
+       {
+        "t": "zeile",
+        "name": "Baileys 17%",
+        "preis": "10",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Amaretto 28%",
+        "preis": "10",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Kahlua 20%",
+        "preis": "10",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Mama Mia Limoncello 24%",
+        "preis": "11",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Maraschino Luxardo 32%",
+        "preis": "11",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Drambuie 40%",
+        "preis": "11",
+        "s": 10
+       },
+       {
+        "t": "zeile",
+        "name": "Grand Marnier 40%",
+        "preis": "12",
+        "s": 10
+       },
+       {
+        "t": "rubrik",
+        "titel": "Kaffee / Coffee",
+        "en": "",
+        "s": 11
+       },
+       {
+        "t": "kopf",
+        "text": "CHF",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Espresso",
+        "preis": "4.90",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Doppelter Espresso | Double Espresso",
+        "preis": "6.50",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Kaffee | Coffee",
+        "preis": "4.90",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Cappuccino",
+        "preis": "5.50",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Latte Macchiato",
+        "preis": "5.50",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Heisse Schokolade | Hot Chocolate",
+        "preis": "5",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Kaffee & Tageskuchen | Coffee & Cake of the Day",
+        "preis": "12",
+        "s": 11
+       },
+       {
+        "t": "rubrik",
+        "titel": "Tee / Tea",
+        "en": "",
+        "s": 11
+       },
+       {
+        "t": "kopf",
+        "text": "«Läng Gass Tee» CHF",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Phoenix | Chinese Oolong",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Assam Halmari | Indian Black",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Menthe du Maroc | Herbal Mint",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Sencha Yamato | Japanese Green",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Earl Grey | Black Tea with Bergamot",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Verveine | Herbal Verbena",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Rooibos Bourbon | Rooibos with Vanilla",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Ginger Lemon | Herb & Fruit",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Berner Rosen | Fruit & Flower",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Edelweiss | Herbal Flower",
+        "preis": "5.20",
+        "s": 11
+       },
+       {
+        "t": "rubrik",
+        "titel": "Softgetränke / Soft Drinks",
+        "en": "",
+        "s": 11
+       },
+       {
+        "t": "kopf",
+        "text": "CHF",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Coca Cola Regular / Zero 330ml",
+        "preis": "6",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Sprite / Fanta 330ml",
+        "preis": "6",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "FUSE Tea Lemon | Peach 330ml",
+        "preis": "6",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Rivella Rot | Blau 330ml",
+        "preis": "6",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Thomas Henry Tonic | Bitter Lemon | Ginger 200ml",
+        "preis": "5.50",
+        "s": 11
+       },
+       {
+        "t": "rubrik",
+        "titel": "Säfte / Juices",
+        "en": "",
+        "s": 12
+       },
+       {
+        "t": "kopf",
+        "text": "CHF",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Apfel | Cranberry | Ananas | Grapefruit 300ml",
+        "preis": "5.50",
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "Apple | Cranberry | Pineapple | Grapefruit",
+        "en": true,
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Frischgepresster Orangensaft 300ml",
+        "preis": "7",
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "Fresh Orange Juice",
+        "en": true,
+        "s": 12
+       },
+       {
+        "t": "rubrik",
+        "titel": "Mineralwasser / Mineral Water",
+        "en": "",
+        "s": 12
+       },
+       {
+        "t": "kopf",
+        "text": "CHF",
+        "s": 11
+       },
+       {
+        "t": "zeile",
+        "name": "Adelbodner Still | Prickelnd 400ml",
+        "preis": "6",
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "Adelbodner Still | Sparkling",
+        "en": true,
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Adelbodner Still | Prickelnd 800ml",
+        "preis": "9.50",
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "Adelbodner Still | Sparkling",
+        "en": true,
+        "s": 12
+       },
+       {
+        "t": "rubrik",
+        "titel": "Bier vom Fass / Draft Beer",
+        "en": "",
+        "s": 12
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Vol 2dl | 3dl | 5dl",
+          "en": true
+         },
+         {
+          "text": "Rugenbräu Spezial Hell 5.2% 4|5|8"
+         }
+        ],
+        "s": 12
+       },
+       {
+        "t": "rubrik",
+        "titel": "Flaschenbier / Bottled Beer",
+        "en": "",
+        "s": 12
+       },
+       {
+        "t": "kopf",
+        "text": "Vol CHF",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Rugenbräu Dunkel 5.2% 33cl",
+        "preis": "6",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Rugenbräu Weizen 5.2% 50cl",
+        "preis": "9",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Rugenbräu Alkoholfrei 0% 33cl",
+        "preis": "6",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Rugenbräu Weizen Alkoholfrei 0 % 33cl",
+        "preis": "7",
+        "s": 12
+       },
+       {
+        "t": "rubrik",
+        "titel": "Bierspezialitäten / Speciality Beers",
+        "en": "",
+        "s": 12
+       },
+       {
+        "t": "kopf",
+        "text": "Vol CHF",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Haarige Kuh India Pale Ale 6% 33cl",
+        "preis": "8",
+        "s": 12
+       },
+       {
+        "t": "zeile",
+        "name": "Haarige Kuh Single Hop Pale Ale 5% 33cl",
+        "preis": "8",
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "Alle Preise verstehen sich in Schweizer Franken und beinhalten 8.1% Mehrwertsteuer.",
+        "en": false,
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "All prices are stated in Swiss Francs and include 8.1% VAT",
+        "en": true,
+        "s": 12
+       }
+      ]
+     },
+     {
+      "art": "deckel",
+      "s": 13,
+      "titel": "Le Vieux Rivage",
+      "unter": "Sn Ack Karte / Snack Menu",
+      "zeilen": []
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "gericht",
+        "name": "Bunter Salat",
+        "zeilen": [
+         {
+          "text": "Bunter Salatteller – French Dressing – Croutons"
+         },
+         {
+          "text": "Geröstete Kerne"
+         },
+         {
+          "text": "Colorful Salad Plate – French Dressing – Croutons",
+          "en": true
+         },
+         {
+          "text": "Roasted Seeds",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 11"
+        ],
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Tomatensuppe",
+        "zeilen": [
+         {
+          "text": "Tomatensuppe – Oregano – Croutons"
+         },
+         {
+          "text": "Tomato Soup – Oregano – Croutons",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12"
+        ],
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Z’Vieri Plättli",
+        "zeilen": [
+         {
+          "text": "Spezialitäten Aus Dem Berner Oberland"
+         },
+         {
+          "text": "Trockenfleisch – Ballenbergwurst – Harder Schinken «Buurespeck» –"
+         },
+         {
+          "text": "3 Verschiedene Käsesorten – Brot"
+         },
+         {
+          "text": "Butter – Eingelegtes Gemüse"
+         },
+         {
+          "text": "Specialities From the Bernese Oberland",
+          "en": true
+         },
+         {
+          "text": "Dried Meat – Ballenberg Sausage – Harder Ham",
+          "en": true
+         },
+         {
+          "text": "«Buurespeck» Bacon – 3 Different Cheeses – Bread",
+          "en": true
+         },
+         {
+          "text": "Butter – Mixed Pickles",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 35"
+        ],
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Antipasti",
+        "zeilen": [
+         {
+          "text": "Oliven – Grissini – Sauerteigbrot"
+         },
+         {
+          "text": "Olives – Grissini – Sourdough Bread",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 9"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Nuggets",
+        "zeilen": [
+         {
+          "text": "Knusprig Hausgemachte Nuggets"
+         },
+         {
+          "text": "Pikantes Tomaten Relish – Kleiner Salat"
+         },
+         {
+          "text": "Crispy Homemade Nuggets – Spicy Tomato Relish – Small Salad",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 16"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Beef Burger",
+        "zeilen": [
+         {
+          "text": "Oberländer Beef Burger"
+         },
+         {
+          "text": "Salat Tomaten – Rote Zwiebeln – Essiggurken – Raclette Käse"
+         },
+         {
+          "text": "Pommes Frites"
+         },
+         {
+          "text": "«Oberländer» Beef Burger",
+          "en": true
+         },
+         {
+          "text": "Lettuce – Tomatoes – Red Onions – Pickles – Raclette Cheese",
+          "en": true
+         },
+         {
+          "text": "French Fries",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 22"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Sides",
+        "zeilen": [
+         {
+          "text": "Pommes | Süsskartoffel Frites | Kleiner Salat"
+         },
+         {
+          "text": "French Fries | Sweet Potato Fries | Small Salad",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 7"
+        ],
+        "s": 15
+       },
+       {
+        "t": "notiz",
+        "text": "Alle Preise verstehen sich in Schweizer Franken und beinhalten 8.1% Mehrwertsteuer.",
+        "en": false,
+        "s": 12
+       },
+       {
+        "t": "notiz",
+        "text": "All prices are stated in Swiss Francs and include 8.1% VAT",
+        "en": true,
+        "s": 12
+       },
+       {
+        "t": "frei",
+        "zeilen": [
+         {
+          "text": "Liebe Gäste",
+          "fett": true
+         },
+         {
+          "text": "Bei Fragen zu Unverträglichkeiten oder Allergien wenden Sie sich",
+          "fett": true
+         },
+         {
+          "text": "bitte an unser Personal. Unsere Mitarbeitenden stehen Ihnen",
+          "fett": true
+         },
+         {
+          "text": "jederzeit gerne zur Verfügung.",
+          "fett": true
+         },
+         {
+          "text": "Dear guests,",
+          "en": true
+         },
+         {
+          "text": "If you have any questions about intolerances or allergies, please",
+          "en": true
+         },
+         {
+          "text": "contact our staff. Our staff is happy to assist you at any time.",
+          "en": true
+         }
+        ],
+        "s": 16
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "weinkarte",
+   "gilt": {
+    "von": "",
+    "bis": ""
+   },
+   "fassungen": {},
+   "herkunft": {
+    "original": "Grand Beau-Rivage/website/_karten/stand/weinkarte.json",
+    "sha256": "cfd8d8ecccc93ae237be3283333d5866eaa702b3ca10815c6d9e08e8e4825a29",
+    "gelesen_mit": "einlesen/beau_rivage_lesen.py"
+   },
+   "offen": [
+    "Zeitraum der Karte: die Datei des Hauses nennt kein «gilt von» und kein «gilt bis».",
+    "Allergene je Gericht: die Datei des Hauses nennt keine."
+   ],
+   "karte": {
+    "ziel": "weinkarte",
+    "name": "Weinkarte",
+    "gruppe": "Wein",
+    "quelle": "assets/pdf/Wine-List-Summer-2026-v2.pdf",
+    "format": [
+     210,
+     297
+    ],
+    "kl": "wein",
+    "fuss": "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise",
+    "pruef": {
+     "dazu": "Valdobbiadene Valdobbiadene Côtes de Provence Mourvèdre Grande Arvine – Humagne Blanc Waadt / Vaud Gewürztraminer Vallée du Rhône Vallée du Rhône Vallée du Rhône Tempranillo, 2018",
+     "fehlt": "Valdobbiane Valdobbiane Cotes de Provence Mouvèdre Grande Arvigne – Humagner Blanc Waat / Vaud Gewüztraminer Valee du Rhone Valee du Rhone Valee du Rhone Tempranillo,2018 Weine im Offenausschank / Wine by the Glass Schaumweine / Sparkling Schaumweine / Sparkling Frankreich / France Weiss / White Schweiz / Switzerland Deutschschweiz / German Speaking Switzerland Weiss / White Schweiz / Switzerland Weiss / White Schweiz / Switzerland Weiss / White Weiss / White Weiss / White Frankreich / France Rot / Red Schweiz / Switzerland Rot / Red Schweiz / Switzerland Rot / Red Rot / Red Italien / Italy Rot / Red Rot / Red Frankreich / France Vallée du Rhône Rot / Red Rot / Red",
+     "fuss_n": 22
+    },
+    "berichtigt": [
+     [
+      "Valdobbiane",
+      "Valdobbiadene",
+      "B/W · Herkunft heisst Valdobbiadene, dreimal"
+     ],
+     [
+      "Mouvèdre",
+      "Mourvèdre",
+      "W · Tippfehler (sonst überall «Mourvèdre»)"
+     ],
+     [
+      "Gewüztraminer",
+      "Gewürztraminer",
+      "W · Tippfehler"
+     ],
+     [
+      "Waat / Vaud",
+      "Waadt / Vaud",
+      "W · Tippfehler (Rotweine: «Waadt / Vaud»)"
+     ],
+     [
+      "Valee du Rhone",
+      "Vallée du Rhône",
+      "W · Akzente, dreimal"
+     ],
+     [
+      "Cotes de Provence",
+      "Côtes de Provence",
+      "W · Akzent (Weinname darunter: «Côte de Provence»)"
+     ],
+     [
+      "Grande Arvigne – Humagner Blanc",
+      "Grande Arvine – Humagne Blanc",
+      "W · zwei Rebsorten falsch geschrieben"
+     ],
+     [
+      "Tempranillo,2018",
+      "Tempranillo, 2018",
+      "W · Leerzeichen"
+     ]
+    ],
+    "teile": [
+     {
+      "art": "deckel",
+      "s": 1,
+      "titel": "Weinkarte",
+      "unter": "Wine List",
+      "zeilen": [
+       "Alle Preise in CHF inkl. MwST. · All prices in CHF incl. VAT./ Tous les prix sont en CHF, TVA comprise"
+      ]
+     },
+     {
+      "art": "inhalt",
+      "posten": [
+       {
+        "t": "rubrik",
+        "titel": "Weine im Offenausschank / Wine by the Glass",
+        "en": "",
+        "s": 2
+       },
+       {
+        "t": "land",
+        "text": "Schweiz / Switzerland",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Weiss / White",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "8247 Weinbau, Kräutergarten Blanc “Krü”",
+        "zeilen": [
+         {
+          "text": "Zürich, Kerner-Johanniter-Solaris-Müller-Thurgau, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12.00"
+        ],
+        "s": 2,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "zw",
+        "text": "Rot / Red",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Nadine Saxer, Tete de Pinot",
+        "zeilen": [
+         {
+          "text": "Zürich, Pinot Noir, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 14.00"
+        ],
+        "s": 2,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "land",
+        "text": "Italien / Italy",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Schaumweine / Sparkling",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Astoria Wines, Casa Vittorino Brut",
+        "zeilen": [
+         {
+          "text": "Valdobbiadene Prosecco Superiore DOCG, Glera, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 9.00"
+        ],
+        "s": 2,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "zw",
+        "text": "Weiss / White",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Terenzi, Balbino",
+        "zeilen": [
+         {
+          "text": "Maremma Toscana DOC, Vermentino, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 13.00"
+        ],
+        "s": 2,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "zw",
+        "text": "Rot / Red",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Jerzu Antichi Poderi, Josto Miglior, Riserva",
+        "zeilen": [
+         {
+          "text": "Cannonau di Sardegna DOC, Cannonau, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 15.00"
+        ],
+        "s": 2,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "land",
+        "text": "Frankreich / France",
+        "s": 3
+       },
+       {
+        "t": "zw",
+        "text": "Schaumweine / Sparkling",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Louis Roederer, Collection 246",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Chardonnay – Pinot Noir – Meunier, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 18.00"
+        ],
+        "s": 3,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot RICH",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Meunier – Chardonnay",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 17.00"
+        ],
+        "s": 3,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot RICH ROSÉ",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Meunier – Chardonnay",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 20.00"
+        ],
+        "s": 3,
+        "zusatz": "1 dl."
+       },
+       {
+        "t": "zw",
+        "text": "Rosé",
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Clos Sainte Magdeleine, Cassis Rosé Côte de Provence 1 dl.",
+        "zeilen": [
+         {
+          "text": "AOC Cassis, Grenache – Cinsault – Mourvèdre – Syrah, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 12.00"
+        ],
+        "s": 3
+       },
+       {
+        "t": "rubrik",
+        "titel": "Schaumweine / Sparkling",
+        "en": "",
+        "s": 4
+       },
+       {
+        "t": "land",
+        "text": "Schweiz / Switzerland",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Spiezer, Jubilé",
+        "zeilen": [
+         {
+          "text": "Thunersee AOC, Blauburgunder, 2019",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 140.00"
+        ],
+        "s": 4
+       },
+       {
+        "t": "land",
+        "text": "Italien / Italy",
+        "s": 2
+       },
+       {
+        "t": "gericht",
+        "name": "Astoria Wines, Casa Vittorino Brut",
+        "zeilen": [
+         {
+          "text": "Valdobbiadene Prosecco Superiore DOCG, Glera, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 4
+       },
+       {
+        "t": "gericht",
+        "name": "Antica Fratta, Cuvée Real Brut",
+        "zeilen": [
+         {
+          "text": "Franciacorta DOCG, Chardonnay – Pinot Nero, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 82.00"
+        ],
+        "s": 4
+       },
+       {
+        "t": "land",
+        "text": "Frankreich / France",
+        "s": 3
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot Brut",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Chardonnay – Meunier",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot RICH",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Meunier – Chardonnay",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot RICH ROSÉ",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Meunier – Chardonnay",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 155.00"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot Demi Sec",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Meunier – Chardonnay",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 175.00"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Veuve Clicquot Rosé",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir – Chardonnay – Meunier",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 175.00"
+        ],
+        "s": 5
+       },
+       {
+        "t": "gericht",
+        "name": "Louis Roederer, Collection 246",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Chardonnay – Pinot Noir – Meunier, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Louis Roederer, Rosé Vintage",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir-Chardonnay, 2017",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 230.00"
+        ],
+        "s": 6
+       },
+       {
+        "t": "gericht",
+        "name": "Louis Roederer, Cristal",
+        "zeilen": [
+         {
+          "text": "AOC Champagne, Pinot Noir-Chardonnay, 2016",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 440.00"
+        ],
+        "s": 6
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rosé",
+        "en": "",
+        "s": 7
+       },
+       {
+        "t": "land",
+        "text": "Schweiz / Switzerland",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Drei Seen / Three Lake Region",
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Château D’Auvernier, L’œil De Perdrix",
+        "zeilen": [
+         {
+          "text": "AOC Neuchâtel, Pinot Noir, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 7
+       },
+       {
+        "t": "land",
+        "text": "Frankreich / France",
+        "s": 3
+       },
+       {
+        "t": "zw",
+        "text": "Côtes de Provence",
+        "s": 7
+       },
+       {
+        "t": "gericht",
+        "name": "Clos Sainte Magdeleine, Cassis Rosé “Côte de Provence”",
+        "zeilen": [
+         {
+          "text": "AOC Cassis, Grenache-Cinsault-Mourvèdre-Syrah, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 65.00"
+        ],
+        "s": 7
+       },
+       {
+        "t": "rubrik",
+        "titel": "Weiss / White",
+        "en": "",
+        "s": 8
+       },
+       {
+        "t": "land",
+        "text": "Schweiz / Switzerland",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Deutschschweiz / German Speaking Switzerland",
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Spiezer, Blanc de Noir",
+        "zeilen": [
+         {
+          "text": "AOC Thunersee, Blauburgunder, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Spiezer, Souvignier Gris",
+        "zeilen": [
+         {
+          "text": "AOC Thunersee, Souvignier Gris, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Spiezer, Sauvignac",
+        "zeilen": [
+         {
+          "text": "AOC Thunersee, Sauvignac, 2023, 50 cl",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Nadine Saxer, Sylvie",
+        "zeilen": [
+         {
+          "text": "Zürich, Riesling-Silvaner, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Nadine Saxer, Sauvignon Blanc",
+        "zeilen": [
+         {
+          "text": "Zürich, Sauvignon Blanc, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 59.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Nadine Saxer, Chardonnay",
+        "zeilen": [
+         {
+          "text": "Zürich, Chardonnay, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 59.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "8247 Weinbau, Kräutergarten Blanc “Krü”",
+        "zeilen": [
+         {
+          "text": "Zürich, Kerner-Johanniter-Solaris-Müller-Thurgau, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 59.00"
+        ],
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Schlossgut Bachtobel Müller-Thurgau",
+        "zeilen": [
+         {
+          "text": "Thurgau, Müller-Thurgau, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 9
+       },
+       {
+        "t": "gericht",
+        "name": "Nauer Weine, Granit",
+        "zeilen": [
+         {
+          "text": "AOC Aargau, Räuschling, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 9
+       },
+       {
+        "t": "gericht",
+        "name": "Jann Marugg, Grüner Veltliner",
+        "zeilen": [
+         {
+          "text": "AOC Graubünden, Grüner Veltliner, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 95.00"
+        ],
+        "s": 9
+       },
+       {
+        "t": "gericht",
+        "name": "Donatsch, Completer",
+        "zeilen": [
+         {
+          "text": "AOC Graubünden, Completer, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 235.00"
+        ],
+        "s": 9
+       },
+       {
+        "t": "zw",
+        "text": "Wallis / Valais",
+        "s": 10
+       },
+       {
+        "t": "gericht",
+        "name": "Imesch, Soleil D’Or",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Petite Arvine, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 10
+       },
+       {
+        "t": "gericht",
+        "name": "Adrian & Diego Mathier, Heida Les Pyramides",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Savagnin, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 62.00"
+        ],
+        "s": 10
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Chappaz, Fendant La Liaudisaz",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Chasselas, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 95.00"
+        ],
+        "s": 10
+       },
+       {
+        "t": "gericht",
+        "name": "Oliver Pittet, Les Temps Passés",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Grande Arvine – Humagne Blanc – Rèze, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 10
+       },
+       {
+        "t": "zw",
+        "text": "Waadt / Vaud",
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Paccot Domaine La Colombe, Brez Grand Cru",
+        "zeilen": [
+         {
+          "text": "Fechy AOC La Côte, Chasselas, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 58.00"
+        ],
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Henri Cruchon, Altesse",
+        "zeilen": [
+         {
+          "text": "Vaud, Altesse, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 11
+       },
+       {
+        "t": "zw",
+        "text": "Drei Seen / Three Lakes Region",
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Cru De L’Hôpital, Traminer de Fichillien",
+        "zeilen": [
+         {
+          "text": "AOC Vully, Gewürztraminer, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 11
+       },
+       {
+        "t": "zw",
+        "text": "Genf / Genève",
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Les Hutins, Viognier de Dardagny",
+        "zeilen": [
+         {
+          "text": "AOC Genève, Viognier, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 73.00"
+        ],
+        "s": 11
+       },
+       {
+        "t": "land",
+        "text": "Italien / Italy",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Nordost / North East",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Venica & Venica, Primarul",
+        "zeilen": [
+         {
+          "text": "Collio DOC, Friulano, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 65.00"
+        ],
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Tenutae Lageder, Porer",
+        "zeilen": [
+         {
+          "text": "Alto Adige DOC, Pinot Grigio, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 12
+       },
+       {
+        "t": "zw",
+        "text": "Nordwest / North West",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Monchiero Carbone, Recit",
+        "zeilen": [
+         {
+          "text": "Roero DOCG, Arneis, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 12
+       },
+       {
+        "t": "zw",
+        "text": "Zentral / Central",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Mormoraia, Suavis",
+        "zeilen": [
+         {
+          "text": "Vernaccia di San Gimignano DOCG, Vernaccia, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 50.00"
+        ],
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Terenzi, Balbino",
+        "zeilen": [
+         {
+          "text": "Maremma Toscana DOC, Vermentino, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 60.00"
+        ],
+        "s": 12
+       },
+       {
+        "t": "land",
+        "text": "Frankreich / France",
+        "s": 3
+       },
+       {
+        "t": "zw",
+        "text": "Bourgogne",
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Jean Collet & Fils",
+        "zeilen": [
+         {
+          "text": "AOC Chablis, Chardonnay, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Jean-Marc Boillot, Macon Chardonnay",
+        "zeilen": [
+         {
+          "text": "AOC Macon, Chardonnay, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 92.00"
+        ],
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Jean-Marc Boillot, Puligny Montrachet",
+        "zeilen": [
+         {
+          "text": "AOC Puligny Montrachet, Chardonnay, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 190.00"
+        ],
+        "s": 13
+       },
+       {
+        "t": "zw",
+        "text": "Vallée du Rhône",
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Piaugier, Sablet Blanc",
+        "zeilen": [
+         {
+          "text": "AOC Côtes du Rhône Villages, Grenache-Viognier-Marsanne-Roussanne, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 59.00"
+        ],
+        "s": 13
+       },
+       {
+        "t": "zw",
+        "text": "Val de Loire",
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Serge Dagueneau & Filles, Tradition",
+        "zeilen": [
+         {
+          "text": "AOC Pouilly Fume, Sauvignon Blanc, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Serge Laloue, Sancerre",
+        "zeilen": [
+         {
+          "text": "AOC Sancerre, Sauvignon Blanc, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 78.00"
+        ],
+        "s": 14
+       },
+       {
+        "t": "land",
+        "text": "Kalifornien / California",
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Francis Ford Coppola, Diamond Collection",
+        "zeilen": [
+         {
+          "text": "California, Chardonnay, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 14
+       },
+       {
+        "t": "land",
+        "text": "Argentinien / Argentina",
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Terrazas de Los Andes, Reserva Chardonnay",
+        "zeilen": [
+         {
+          "text": "Mendoza, Chardonnay, 2025",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 50.00"
+        ],
+        "s": 14
+       },
+       {
+        "t": "rubrik",
+        "titel": "Rot / Red",
+        "en": "",
+        "s": 15
+       },
+       {
+        "t": "land",
+        "text": "Schweiz / Switzerland",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Deutschschweiz / German Speaking Switzerland",
+        "s": 8
+       },
+       {
+        "t": "gericht",
+        "name": "Frauenkopf, Pinot Noir / Malbec",
+        "zeilen": [
+         {
+          "text": "AOC Bielersee, Pinot Noir – Malbec, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 65.00"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Nadine Saxer, Tete de Pinot",
+        "zeilen": [
+         {
+          "text": "Zürich, Pinot Noir 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Tom Litwan, Herznach Chraibel",
+        "zeilen": [
+         {
+          "text": "AOC Aargau, Pinot Noir, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 115.00"
+        ],
+        "s": 15
+       },
+       {
+        "t": "gericht",
+        "name": "Donatsch, Pinot Noir Passion",
+        "zeilen": [
+         {
+          "text": "AOC Graubünden, Pinot Noir, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 145.00"
+        ],
+        "s": 15
+       },
+       {
+        "t": "zw",
+        "text": "Waadt / Vaud",
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Henri Cruchon, Ultimo",
+        "zeilen": [
+         {
+          "text": "Vaud, Gamay, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 15
+       },
+       {
+        "t": "zw",
+        "text": "Wallis / Valais",
+        "s": 10
+       },
+       {
+        "t": "gericht",
+        "name": "Imesch, Soleil D’Or",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Cornalin, 2024",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 55.00"
+        ],
+        "s": 16
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Chappaz, Dôle La Liaudisaz",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Gamay-Pinot Noir 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 98.00"
+        ],
+        "s": 16
+       },
+       {
+        "t": "gericht",
+        "name": "Olivier Pittet, Durize",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Durize, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 115.00"
+        ],
+        "s": 16
+       },
+       {
+        "t": "gericht",
+        "name": "Mathier, L’Ambassadeur de Diego Mathier",
+        "zeilen": [
+         {
+          "text": "AOC Valais, Pinot Noir 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 120.00"
+        ],
+        "s": 16
+       },
+       {
+        "t": "zw",
+        "text": "Tessin / Ticino",
+        "s": 17
+       },
+       {
+        "t": "gericht",
+        "name": "Cantina il Cavaliere, Artù Merlot",
+        "zeilen": [
+         {
+          "text": "AOC Ticino, Merlot, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 69.00"
+        ],
+        "s": 17
+       },
+       {
+        "t": "gericht",
+        "name": "Agriloro, Sottobosco Rosso del Ticino",
+        "zeilen": [
+         {
+          "text": "AOC Ticino, Merlot-Cabernet Sauvignon-Cabernet Franc-Petit Verdot, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 95.00"
+        ],
+        "s": 17
+       },
+       {
+        "t": "zw",
+        "text": "Genf / Genève",
+        "s": 11
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Les Hutins, Gamay de Dardagny La Briva",
+        "zeilen": [
+         {
+          "text": "AOC Genève, Gamay, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 50.00"
+        ],
+        "s": 17
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Les Hutins, L’Esprit de Genève",
+        "zeilen": [
+         {
+          "text": "AOC Genève, Gamay – Gamaret – Merlot, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 73.00"
+        ],
+        "s": 17
+       },
+       {
+        "t": "land",
+        "text": "Italien / Italy",
+        "s": 2
+       },
+       {
+        "t": "zw",
+        "text": "Nordost / North East",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Buglioni, Il Lussurioso Amarone della Valpolicella",
+        "zeilen": [
+         {
+          "text": "Amarone della Valpolicella Classico DOCG, Corvina-Corvinone – Rondinella – Croatina –",
+          "en": true
+         },
+         {
+          "text": "Oseleta, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 125.00"
+        ],
+        "s": 18
+       },
+       {
+        "t": "zw",
+        "text": "Nordwest / North West",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Fratelli Giacosa, Barolo Scarrone “Vigna Mandorlo” Riserva",
+        "zeilen": [
+         {
+          "text": "Barolo DOCG, Nebbiolo, 2015",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 135.00"
+        ],
+        "s": 18
+       },
+       {
+        "t": "gericht",
+        "name": "Moccagatta, Barbaresco",
+        "zeilen": [
+         {
+          "text": "Barbaresco DOCG, Nebbiolo, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 115.00"
+        ],
+        "s": 18
+       },
+       {
+        "t": "zw",
+        "text": "Zentral / Central",
+        "s": 12
+       },
+       {
+        "t": "gericht",
+        "name": "Le Macchiole, Bolgheri Rosso",
+        "zeilen": [
+         {
+          "text": "Rosso Bolgheri DOC, Merlot – Cabernet Franc – Cabernet Sauvignon – Syrah, 2023",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 19
+       },
+       {
+        "t": "gericht",
+        "name": "Tenuta Il Poggione, Brunello di Montalcino",
+        "zeilen": [
+         {
+          "text": "Brunello di Montalcino DOCG, Sangiovese, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 125.00"
+        ],
+        "s": 19
+       },
+       {
+        "t": "gericht",
+        "name": "Ornellaia, Ornellaia, Superiore Rosso",
+        "zeilen": [
+         {
+          "text": "Bolgheri DOC, Cabernet Sauvignon – Merlot – Cabernet Franc – Petit Verdot, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 300.00"
+        ],
+        "s": 19
+       },
+       {
+        "t": "gericht",
+        "name": "Tenuta San Guido, Sassicaia",
+        "zeilen": [
+         {
+          "text": "Bolgheri Sassicaia DOC, Cabernet Sauvignon – Cabernet Franc, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 350.00"
+        ],
+        "s": 19
+       },
+       {
+        "t": "zw",
+        "text": "Süden / South",
+        "s": 19
+       },
+       {
+        "t": "gericht",
+        "name": "Jerzu Antichi Poderi, Josto Miglior, Riserva",
+        "zeilen": [
+         {
+          "text": "Cannonau di Sardegna DOC, Cannonau, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 95.00"
+        ],
+        "s": 19
+       },
+       {
+        "t": "land",
+        "text": "Frankreich / France",
+        "s": 3
+       },
+       {
+        "t": "zw",
+        "text": "Bordeaux",
+        "s": 20
+       },
+       {
+        "t": "gericht",
+        "name": "Château de Camensac",
+        "zeilen": [
+         {
+          "text": "AOC Haut-Médoc, Cabernet Sauvignon – Merlot, 2016",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 115.00"
+        ],
+        "s": 20
+       },
+       {
+        "t": "gericht",
+        "name": "Château La Gaffelière",
+        "zeilen": [
+         {
+          "text": "AOC Saint-Émilion 1er Grand Cru Classé, Merlot-Cabernet Franc, 2016",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 198.00"
+        ],
+        "s": 20
+       },
+       {
+        "t": "zw",
+        "text": "Bourgogne",
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Sérafin, Gevrey-Chambertin",
+        "zeilen": [
+         {
+          "text": "AOC Gevrey-Chambertin, Pinot Noir, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 155.00"
+        ],
+        "s": 20
+       },
+       {
+        "t": "zw",
+        "text": "Vallée du Rhône",
+        "s": 13
+       },
+       {
+        "t": "gericht",
+        "name": "Ferraton Père & Fils, Les Miaux",
+        "zeilen": [
+         {
+          "text": "AC Hermitage, Syrah, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 175.00"
+        ],
+        "s": 20
+       },
+       {
+        "t": "gericht",
+        "name": "Ferraton Père & Fils, Le Méal",
+        "zeilen": [
+         {
+          "text": "AC Ermitage, Syrah, 2018",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 195.00"
+        ],
+        "s": 20
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Raspail-Ay, Gigondas",
+        "zeilen": [
+         {
+          "text": "AOC Gigondas, Grenache – Mourvèdre – Syrah, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 85.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "gericht",
+        "name": "Domaine Du Pégau, Cuvée Réservée Rouge",
+        "zeilen": [
+         {
+          "text": "AOC Châteauneuf-du-Pape, Grenache-Syrah-Mourvèdre-Autres cépages, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 155.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "land",
+        "text": "Spanien / Spain",
+        "s": 21
+       },
+       {
+        "t": "gericht",
+        "name": "Celler Ardevol, Anjoli",
+        "zeilen": [
+         {
+          "text": "DO Priorat, Cabernet Sauvignon-Grenache-Merlot-Syrah, 2018",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 65.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "gericht",
+        "name": "Bodegas Altanza, Edulis Reserva",
+        "zeilen": [
+         {
+          "text": "DO Rioja, Tempranillo, 2017",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 73.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "gericht",
+        "name": "Lui & William, Fighting Bulls Reserva",
+        "zeilen": [
+         {
+          "text": "DO Toro, Tempranillo, 2018",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 90.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "gericht",
+        "name": "Tempos Vega Sicilia, Vega Sicilia Unico",
+        "zeilen": [
+         {
+          "text": "DO Ribera del Duero, Tempranillo – Cabernet Sauvignon, 2012/2013",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 650.00"
+        ],
+        "s": 21
+       },
+       {
+        "t": "land",
+        "text": "Portugal",
+        "s": 22
+       },
+       {
+        "t": "gericht",
+        "name": "Rui Roboredo Madeira, Beyra Vinhas Velhas",
+        "zeilen": [
+         {
+          "text": "DOC Beira Interior, Tinta Roriz-Mourisco-Borrao-Rufete-Tinta Amarela, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 75.00"
+        ],
+        "s": 22
+       },
+       {
+        "t": "gericht",
+        "name": "Quinta do Couquinho, Touriga Nacional Reserva",
+        "zeilen": [
+         {
+          "text": "DOC Douro, Touriga Nacional, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 95.00"
+        ],
+        "s": 22
+       },
+       {
+        "t": "land",
+        "text": "Deutschland / Germany",
+        "s": 22
+       },
+       {
+        "t": "gericht",
+        "name": "Adeneuer, Kleine Kammer",
+        "zeilen": [
+         {
+          "text": "Ahr, Spätburgunder, 2020",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 97.00"
+        ],
+        "s": 22
+       },
+       {
+        "t": "land",
+        "text": "Chile",
+        "s": 23
+       },
+       {
+        "t": "gericht",
+        "name": "Viña Almaviva, Almaviva",
+        "zeilen": [
+         {
+          "text": "DO Puente Alto, Cabernet Sauvignon – Carmenere – Cabernet Franc, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 300.00"
+        ],
+        "s": 23
+       },
+       {
+        "t": "gericht",
+        "name": "Viña VIK, Millahue",
+        "zeilen": [
+         {
+          "text": "Valle del Cachapoal, Cabernet Franc – Cabernet Sauvignon, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 300.00"
+        ],
+        "s": 23
+       },
+       {
+        "t": "land",
+        "text": "Argentinien / Argentina",
+        "s": 14
+       },
+       {
+        "t": "gericht",
+        "name": "Catena Zapata, Angelica Zapata",
+        "zeilen": [
+         {
+          "text": "Valle de Uco – Mendoza, Malbec, 2021",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 98.00"
+        ],
+        "s": 23
+       },
+       {
+        "t": "gericht",
+        "name": "Terrazas de Los Andes, Grand Malbec",
+        "zeilen": [
+         {
+          "text": "Mendoza, Malbec, 2022",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 125.00"
+        ],
+        "s": 23
+       },
+       {
+        "t": "gericht",
+        "name": "Enemigo Wines, Gran Enemigo El Cepillo Single Vineyard",
+        "zeilen": [
+         {
+          "text": "San Carlos – Mendoza, Cabernet Franc, 2019",
+          "en": true
+         }
+        ],
+        "preise": [
+         "CHF 175.00"
+        ],
+        "s": 23
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+  "station": "09",
+  "name": "Prüfen auf Herz und Nieren",
+  "rolle": "Prüfer",
+  "haus": "Culinarium Hannover",
+  "zustand": "liegt vor",
+  "beginn": null,
+  "ende": "2026-10-28T13:08+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "pruefung-website.md"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "8 Fehler repariert (Verrutschen Handy, Fuss-Warteliste, sizes, Auftakt-Rückfall), offen: Bar-Link, h1 Startseite, Hero-Fassungen in abend.html, 2 Texte",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

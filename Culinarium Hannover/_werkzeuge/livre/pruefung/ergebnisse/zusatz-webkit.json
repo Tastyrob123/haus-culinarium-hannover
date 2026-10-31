@@ -1,0 +1,86 @@
+[
+ {
+  "nr": 71,
+  "t": "R15 Ladezeichen erst nach 280 ms",
+  "ok": true,
+  "m": "bei 152 ms nicht da, bei 655 ms da"
+ },
+ {
+  "nr": 72,
+  "t": "R02 Auftakt: Kopf, Rand, Ansicht kommen zusammen, Schriften geladen",
+  "ok": true,
+  "m": "{\"schrift\":\"loaded\",\"kopf\":true,\"rand\":true,\"leiste\":true,\"bereit\":true}"
+ },
+ {
+  "nr": 73,
+  "t": "R04 Startfehler-Tür: Satz mit Namen (kein Platzhalter), Grund, «Neu laden», Anleitung; «Neu laden» startet; ohne Skript nach 12 s ein Satz",
+  "ok": true,
+  "m": "Das Markenbuch startet nicht. Die Daten (livre.json) fehlen. (404) Hil | Das Markenbuch startet nicht. Das Programm der Seite ist nic"
+ },
+ {
+  "nr": 74,
+  "t": "R03 Fehlermelder: gemerkt (höchstens 20), an api/fehler (höchstens 20, F34 keiner verloren), Netzfehler nicht",
+  "ok": true,
+  "m": "20 im Browser, 20 im Protokoll, Netzfehler 0"
+ },
+ {
+  "nr": 75,
+  "t": "R18 Rundgang: Prüfbrowser ohne Schild, Weg im Rand (bleibt nach Wechsel), ?rundgang mit vier Schritten, was und wozu",
+  "ok": true,
+  "m": "DAS MARKENBUCH · 1 VON 4 Das ist das Markenbuch Die Marke vo / DAS MARKENBUCH · 2 VON 4 Jedes Foto in der richtigen Grösse  / DAS MARKENBUCH · 3 VON 4 Passt ein Entwurf zu Culinarium? Di / DAS MARKENB"
+ },
+ {
+  "nr": 76,
+  "t": "R19 «Zur Werkbank» nur aus der Werkbank geöffnet, bleibt über weitere Klicks",
+  "ok": true,
+  "m": "[\"Zur Werkbank\",\"http://127.0.0.1:9088/werkbank/index.html#werkzeuge\"]"
+ },
+ {
+  "nr": 77,
+  "t": "R17 «Weniger Bewegung»: alles steht sofort",
+  "ok": true,
+  "m": "0 warten, 0 bewegen sich"
+ },
+ {
+  "nr": 78,
+  "t": "L09 Vorher/Nachher bei allen 24 nachgeschärften Fotos (Knöpfe, Original, Schieber folgt der Maus, gleicher Ausschnitt); ohne Nachschärfung keine Knöpfe",
+  "ok": true,
+  "m": "24 von 24 · Schieber 21.9%"
+ },
+ {
+  "nr": 79,
+  "t": "Suche mit 5’000 Zeichen, <script>, Emoji, Umlauten (gross/klein gleich), nur Leerzeichen",
+  "ok": true,
+  "m": "200 Zeichen · Gläser 7/7/7 · Leer 48 · "
+ },
+ {
+  "nr": 80,
+  "t": "L10 Prüfung: über 30 MB abgewiesen, knapp 30 MB und 169 MP verkleinert geprüft, 400 px, «Bild» ohne Bild mit Meldung, PDF mit drei Seiten",
+  "ok": true,
+  "m": "{\"zuGross\":true,\"knapp\":true,\"klein\":true,\"riesig\":true,\"keinBild\":true,\"pdf\":true}"
+ },
+ {
+  "nr": 81,
+  "t": "Netz weg beim Prüfen: Meldung, Datei bleibt; Netz zurück: prüfen geht",
+  "ok": true,
+  "m": "Die Prüfung ging nicht durch: Keine Verbindung. Der Entwurf bleibt gewählt, bitte noch einmal prüfen"
+ },
+ {
+  "nr": 82,
+  "t": "Zwei Fenster prüfen gleichzeitig, je eigene Rückmeldung",
+  "ok": true,
+  "m": "klein-400.png | drei-seiten.pdf 3 Seiten, geprüft die er"
+ },
+ {
+  "nr": 83,
+  "t": "320 und 390 px: alle Ansichten, Foto-Fenster, Markenbuch und Anleitung ohne seitliches Verrutschen",
+  "ok": true,
+  "m": "16 Messungen"
+ },
+ {
+  "nr": 87,
+  "t": "L05 Markenbuch der Station 05 im Stand der Website: zwölf Blätter (ohne «Farbwelt», Robert 29.10.2026), Rudis Wortmarke, alle Bilder, «Als PDF sichern» öffnet den Druck",
+  "ok": true,
+  "m": "haltung,zeichen,farben,abende,herkunft,schrift,tapete,bilder,bausteine,logo,welt,mitnehmen · Wortmarke 0.00 0.00 364.78 40.36en · 0 Bilder fehlen"
+ }
+]

@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "La Carte / Die Tafel",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "karten",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:43+08:00",
+  "ende": "2026-10-28T12:43+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html?teil=karten",
+  "notiz": "La Carte: 8 Karten (nächster Abend + 7 frühere), Bedienungsprobe Chromium/WebKit 1440/390 grün, pruefe.py grün, DEMO-Sperre; karten.json für Station 10 in _kette/10-kartenmacher/. Offen: Einbau karten.json in website/, online.",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

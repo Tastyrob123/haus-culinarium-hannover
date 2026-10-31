@@ -1,0 +1,398 @@
+/* Culinarium · Warteliste in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.ww{--papier:#FAF4F4;--tinte:#2A2833;--tinte2:#5A5562;--holz:#3A281D}
+.ww img{display:block;width:100%;height:100%;object-fit:cover}
+.ww figure{margin:0;overflow:hidden;border-radius:var(--r);background:#0F0E13}
+.ww figure,.ww09-f,.ww10-f,.ww12-vorn{position:relative}
+.ww figure>img,.ww09-f>img,.ww10-f>img,.ww12-vorn>img{position:absolute;inset:0}
+:where(.ww) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.ww .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ww input[type=radio]{position:absolute;opacity:0;pointer-events:none}
+.ww-in{max-width:var(--max);margin:0 auto;padding:0 var(--rand)}
+.ww-kopf .ww-satz{margin-top:18px;max-width:46ch;color:var(--fg2);font-size:18px;line-height:1.5}
+.ww-kopf.mitte{text-align:center}.ww-kopf.mitte .ww-satz{margin-inline:auto}
+.ww-form{display:flex;flex-direction:column;gap:22px}
+.ww-form>.ww-in,.ww10-paar{width:100%}
+.ww-leg{font:340 21px/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48;margin-bottom:10px}
+.ww-tat{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
+.ww-zwei{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ww-eins{display:grid;gap:12px}
+.ww-feld{display:flex;flex-direction:column;gap:8px;min-width:0}
+.ww-feld>span{font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.ww-feld input{width:100%;height:54px;padding:0 16px;border:0;border-radius:10px;background:rgba(250,241,234,.07);box-shadow:inset 0 0 0 1px var(--linie);color:var(--fg);font:400 17px var(--text)}
+.ww-feld input:focus{outline:none;box-shadow:inset 0 0 0 1px var(--kerze-hell)}
+.ww [aria-invalid=true]{box-shadow:inset 0 0 0 1.5px #E8735A !important}
+.ww-meldung{font:340 22px/1.3 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.ww-meldung:empty{display:none}
+.ww-meldung small{display:block;margin-top:6px;font:400 13px var(--text);color:var(--fg2)}
+/* Tage: drei Felder nebeneinander */
+.ww-tage{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ww-tage label{position:relative;cursor:pointer}
+.ww-tage span{display:flex;flex-direction:column;gap:4px;height:100%;padding:14px 16px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--linie);transition:background .35s,box-shadow .35s,color .35s}
+.ww-tage b{font:500 16px/1.1 var(--text)}
+.ww-tage em{font:400 12px/1 var(--mono);font-style:normal;color:var(--fg2)}
+.ww-tage input:checked+span{background:var(--kerze);box-shadow:inset 0 0 0 1px var(--kerze),0 12px 22px -14px rgba(207,114,51,.9);color:#fff}
+.ww-tage input:checked+span em{color:rgba(255,255,255,.86)}
+.ww input:focus-visible+span,.ww input:focus-visible+i{outline:2px solid var(--kerze-hell);outline-offset:3px}
+/* Zähler */
+.ww-z{display:inline-flex;align-items:center;gap:4px;padding:5px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--linie);width:max-content}
+.ww-z button{width:42px;height:42px;border-radius:50%;background:rgba(250,241,234,.1);font-size:21px;text-align:center;transition:background .3s}
+.ww-z button:hover{background:var(--kerze);color:#fff}
+.ww-z output{min-width:40px;text-align:center;font:340 28px/1 var(--titel)}
+/* auf hellem Papier */
+.ww-hell{color:var(--tinte)}
+.ww-hell .ww-feld>span,.ww-hell .ww-tage em,.ww-hell .ww-meldung small{color:var(--tinte2)}
+.ww-hell .ww-feld input{background:#F1E9E4;color:var(--tinte);box-shadow:inset 0 0 0 1px rgba(42,40,51,.14)}
+.ww-hell .ww-feld input:focus{box-shadow:inset 0 0 0 1px var(--kerze-tief)}
+.ww-hell .ww-tage span{box-shadow:inset 0 0 0 1px rgba(42,40,51,.16)}
+.ww-hell .ww-z{box-shadow:inset 0 0 0 1px rgba(42,40,51,.16)}
+.ww-hell .ww-z button{background:#EDE3DD}
+.ww-hell .ww-z button:hover{background:var(--kerze)}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .ww .auf:not(.zl):not(.sw){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .ww .auf.da:not(.zl):not(.sw){transform:none}
+
+/* ---------- 1 Der Sitzplan */
+.ww01{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,90px);align-items:center}
+.ww01-l .ww-form{margin-top:34px}
+.ww01-bild{aspect-ratio:16/10}
+.ww01-plan{position:relative;z-index:2;margin:-70px 6% 0;padding:22px clamp(16px,2vw,28px) 26px;border-radius:var(--r);background:#1E1C24;box-shadow:0 40px 60px -30px rgba(0,0,0,.85),inset 0 0 0 1px var(--linie)}
+.ww01-k{font:400 13px/1.3 var(--mono);color:var(--fg2);margin-bottom:16px}
+.ww01-k span{color:var(--kerze-hell)}
+.ww01-reihe{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(6px,1vw,12px);padding:0 4%}
+.ww01-s{height:28px;border-radius:8px 8px 4px 4px;background:rgba(250,244,244,.13);transition:background .35s,transform .6s var(--k)}
+.ww01-reihe.u .ww01-s{border-radius:4px 4px 8px 8px}
+button.ww01-s:hover{background:rgba(250,244,244,.26)}
+.ww01-s.frei{opacity:.45;cursor:default}
+.ww01-s.an{background:var(--kerze)}
+.ww01-reihe.o .ww01-s.an{transform:translateY(6px)}
+.ww01-reihe.u .ww01-s.an{transform:translateY(-6px)}
+.ww01-platte{height:66px;margin:10px 0;border-radius:6px;background:linear-gradient(#4A3426,var(--holz));display:grid;grid-template-columns:repeat(7,1fr);align-items:center;justify-items:center;padding:0 4%;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.ww01-platte i{width:8px;height:8px;border-radius:50%;background:#FFD9A6;box-shadow:0 0 14px 6px rgba(239,118,73,.5)}
+
+/* ---------- 2 Das Ticket */
+.ww02 .ww-kopf{margin-bottom:clamp(36px,5vh,60px)}
+.ww02-ticket{display:grid;grid-template-columns:27% minmax(0,1fr) 210px;gap:0;max-width:1220px;margin:0 auto;background:var(--papier);border-radius:14px;box-shadow:0 50px 80px -40px rgba(0,0,0,.85)}
+.ww02-bild{border-radius:14px 0 0 14px !important;min-height:100%}
+.ww02-mitte{padding:clamp(24px,3vw,44px);display:flex;flex-direction:column;gap:22px}
+.ww02-kopf{display:flex;flex-direction:column;gap:8px;color:var(--schiefer)}
+.ww02-kopf .marke{width:220px;height:auto}
+.ww02-kopf span{font:600 9.5px/1 var(--etikett);letter-spacing:.2em}
+.ww02-reihe{display:grid;grid-template-columns:1fr;gap:18px}
+.ww02-reihe>div:last-child{display:flex;align-items:center;gap:18px}
+.ww02-reihe>div:last-child .ww02-k{margin:0}
+.ww02-k{font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2);margin-bottom:10px}
+.ww02 .ww-tage span{border-radius:3px}
+.ww02 .ww-tage input:checked+span{background:none;color:var(--kerze-tief);box-shadow:inset 0 0 0 2px var(--kerze-tief);transform:rotate(-3deg)}
+.ww02 .ww-tage input:checked+span em{color:var(--kerze-tief)}
+.ww02 .ww-tage span{transition:transform .5s var(--k),box-shadow .3s,color .3s}
+.ww02-abriss{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:30px 20px;text-align:center;color:var(--tinte);background:var(--papier);border-left:2px dashed rgba(42,40,51,.25);border-radius:0 14px 14px 0;transform-origin:0 100%;transition:transform 1.3s var(--feder)}
+.ww02-abriss::before,.ww02-abriss::after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:#26252E}
+.ww02-abriss::before{top:-12px}.ww02-abriss::after{bottom:-12px}
+.ww02-abriss b{font:300 96px/1 var(--titel);color:var(--kerze-tief);font-variation-settings:"SOFT" 100,"opsz" 144}
+.ww02-pl,.ww02-z{font:400 12px var(--mono);color:var(--tinte2)}
+.ww02-t{margin-top:14px;font:500 17px var(--text)}
+.ww02-name{margin-top:16px;padding-top:12px;border-top:1px solid rgba(42,40,51,.18);font:340 20px/1.15 var(--titel);word-break:break-word}
+.ww02-ok{margin-top:14px;font:600 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-tief);opacity:0;transition:opacity .5s .5s}
+.ww02.fertig .ww02-abriss,.fertig .ww02-abriss{transform:translate(30px,14px) rotate(7deg)}
+.fertig .ww02-ok{opacity:1}
+
+/* ---------- 3 Der Satz */
+.ww03{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(36px,5vw,96px);align-items:center}
+.ww03-bilder{position:relative;height:clamp(520px,72vh,720px)}
+.ww03-bilder .a{position:absolute;left:0;top:0;width:78%;height:80%}
+.ww03-bilder .b{position:absolute;right:0;bottom:0;width:52%;height:44%;box-shadow:0 30px 50px -20px rgba(0,0,0,.8)}
+.ww03-k{font:400 13px/1.4 var(--mono);color:var(--kerze-hell);letter-spacing:.03em;margin-bottom:26px}
+.ww03-satz{font-family:var(--titel);font-weight:320;font-size:clamp(30px,3.3vw,54px);line-height:1.42;letter-spacing:-.01em;font-variation-settings:"SOFT" 100,"opsz" 96}
+.ww03-l{position:relative;display:inline-block;color:var(--kerze-hell);font:inherit;line-height:1.1;cursor:pointer}
+.ww03-l::before,.ww03-l::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:1.5px}
+.ww03-l::before{background:rgba(245,166,137,.35)}
+.ww03-l::after{background:var(--kerze);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--k)}
+.ww03-l:hover::after,.ww03-l:focus-within::after,button.ww03-l:focus-visible::after{transform:none}
+.ww03-l input{font:inherit;color:inherit;background:none;border:0;padding:0;width:8.6em;outline:none;field-sizing:content;min-width:5em}
+.ww03-l input[type=email]{width:9.6em}
+.ww03-l input::placeholder{color:rgba(250,244,244,.26)}
+.ww03-l input[aria-invalid=true]{box-shadow:none !important;color:#F09A80}
+.ww03-hin{margin-top:22px;font:400 14px var(--text);color:var(--fg2)}
+.ww03 .ww-tat{margin-top:34px}
+
+/* ---------- 4 Das Plakat */
+.ww04{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(36px,6vw,110px);align-items:center;justify-content:center}
+.ww04-hin{margin-top:22px;max-width:36ch;font:340 22px/1.35 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 48}
+.ww04-plakat{--ak:var(--kerze);gap:22px}
+.wv[data-tag=sa] .ww04-plakat{--ak:#C9942F}
+.wv[data-tag=egal] .ww04-plakat{--ak:#7C8FA8}
+.ww04-blatt{background:var(--papier);color:var(--tinte);padding:18px 18px 26px;border-radius:4px;box-shadow:0 50px 80px -40px rgba(0,0,0,.85);text-align:center;rotate:-1.2deg}
+.ww04-bild{aspect-ratio:4/3;border-radius:2px !important}
+.ww04-marke{width:76%;margin:22px auto 0;color:var(--schiefer)}.ww04-marke .marke{width:100%;height:auto}
+.ww04-zeile{margin-top:8px;font:600 9.5px/1 var(--etikett);letter-spacing:.2em;color:var(--schiefer)}
+.ww04-tage{display:flex;justify-content:center;gap:clamp(10px,2vw,26px);margin-top:22px}
+.ww04-tage label{position:relative;cursor:pointer}
+.ww04-tage span{display:block;padding:6px 2px;font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#8A8592;transition:color .3s}
+.ww04-tage input:checked+span{color:var(--tinte);box-shadow:inset 0 -2px 0 var(--ak)}
+.ww04-linie{display:block;height:3px;margin:16px 18% 0;background:var(--ak);transition:background .4s}
+.ww04-linie.neu{animation:ww04-zieh .9s var(--k)}
+@keyframes ww04-zieh{from{transform:scaleX(0)}to{transform:none}}
+.ww04-name input{display:block;width:100%;margin-top:22px;padding:4px 0 8px;border:0;border-bottom:1.5px dashed rgba(42,40,51,.3);background:none;text-align:center;color:var(--tinte);font:340 clamp(30px,3vw,44px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.ww04-name input::placeholder{color:rgba(42,40,51,.35)}
+.ww04-name input:focus{outline:none;border-bottom-color:var(--ak)}
+.ww04-unten{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:end;margin-top:22px;text-align:left}
+.ww04-pl>span,.ww04-mail>span{display:block;margin-bottom:8px;font:500 10.5px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2)}
+.ww04-pl .ww-z{box-shadow:inset 0 0 0 1px rgba(42,40,51,.16)}.ww04-pl .ww-z button{background:#EDE3DD}
+.ww04-mail input{width:100%;height:52px;padding:0 14px;border:0;border-radius:6px;background:#F1E9E4;box-shadow:inset 0 0 0 1px rgba(42,40,51,.14);font:400 16px var(--text);color:var(--tinte)}
+.ww04-mail input:focus{outline:none;box-shadow:inset 0 0 0 1px var(--ak)}
+.ww04-ort{margin-top:24px;padding-top:14px;border-top:1px solid rgba(42,40,51,.16);font-size:12.5px;color:#8A8592}
+.ww04 .ww-tat{justify-content:center}
+
+/* ---------- 5 Die Karte */
+.ww05-karte{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(36px,5vw,96px);align-items:center}
+.ww05-text{display:flex;flex-direction:column;gap:30px}
+.ww05-k{font:400 13px var(--mono);color:var(--kerze-hell);letter-spacing:.04em}
+.ww05-gang{display:flex;flex-direction:column;gap:10px;padding-top:22px;border-top:1px solid var(--linie)}
+.ww05-n{font:500 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--fg2)}
+.ww05-zeile{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .1em;font-family:var(--titel);font-weight:300;font-size:clamp(26px,2.9vw,46px);line-height:1.15;letter-spacing:.012em;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ww05-zeile .sl{font-style:normal;color:var(--kerze);padding:0 .22em}
+.ww05-zeile label{position:relative;cursor:pointer}
+.ww05-zeile span,.ww05-zeile button{color:rgba(250,244,244,.3);transition:color .35s}
+.ww05-zeile button{font:inherit;letter-spacing:inherit}
+.ww05-zeile span:hover,.ww05-zeile button:hover{color:rgba(250,244,244,.6)}
+.ww05-zeile input:checked+span,.ww05-zeile button.an{color:#FAF4F4}
+.ww05-unter{font:400 13px var(--mono);color:var(--kerze-hell)}
+.ww05-in{width:100%;padding:4px 0 6px;border:0;border-bottom:1px solid var(--linie);background:none;color:var(--fg);font-family:var(--titel);font-weight:300;font-size:clamp(24px,2.4vw,38px);letter-spacing:.012em;text-transform:uppercase;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ww05-in::placeholder{color:rgba(250,244,244,.22)}
+.ww05-in:focus{outline:none;border-bottom-color:var(--kerze)}
+.ww05-in[aria-invalid=true]{box-shadow:none !important;border-bottom-color:#E8735A}
+.ww05-bild{height:clamp(560px,82vh,820px);position:sticky;top:100px}
+
+/* ---------- 6 Der Bon am Pass */
+.ww06-band{position:relative}
+.ww06-bild{height:clamp(300px,44vh,480px);border-radius:0 !important}
+.ww06-schiene{position:absolute;left:0;right:0;bottom:46px;height:7px;background:linear-gradient(#D9D6DA,#8E8A92 60%,#5E5A63);box-shadow:0 6px 10px rgba(0,0,0,.45)}
+.ww06-unten{display:grid;grid-template-columns:340px minmax(0,1fr);gap:clamp(36px,5vw,90px);align-items:start}
+.ww06-bonplatz{position:relative;z-index:3;margin-top:-50px;display:flex;justify-content:center}
+.ww06-bon{position:relative;width:290px;padding:34px 24px 30px;background:#FBF8F3;color:#2B2930;font:400 14px/1.55 var(--mono);text-transform:uppercase;letter-spacing:.04em;box-shadow:0 30px 40px -20px rgba(0,0,0,.8);transform-origin:50% 0;rotate:-1.5deg;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/14px 8px repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/14px 8px repeat-x}
+.ww06-bon.neu{animation:ww06-wipp 1.1s var(--k)}
+@keyframes ww06-wipp{0%{transform:rotate(0)}25%{transform:rotate(3.5deg)}55%{transform:rotate(-2deg)}80%{transform:rotate(.8deg)}100%{transform:rotate(0)}}
+.ww06-klemme{position:absolute;left:50%;top:0;width:64px;height:16px;margin-left:-32px;background:linear-gradient(#C9C5CB,#7E7A83);border-radius:0 0 4px 4px}
+.ww06-bon .c{text-align:center;font-weight:500}
+.ww06-bon .k{color:#7D7882;margin-top:4px}
+.ww06-bon b{font-weight:500;font-size:20px}
+.ww06-st{color:#B9B4BC;overflow:hidden;white-space:nowrap}
+.ww06-name{font:400 18px/1.3 var(--mono);word-break:break-word}
+.ww06-ok{color:var(--kerze-tief);display:none}
+.fertig .ww06-ok{display:block}.fertig .ww06-wart{display:none}
+.ww06-r{padding-top:clamp(40px,6vh,70px);display:flex;flex-direction:column;gap:30px}
+.ww06-reihe{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:end}
+
+/* ---------- 7 Anstossen */
+.ww07-reihe{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,3.4vw,60px);align-items:center}
+.ww07-g{aspect-ratio:3/4.4;position:relative;z-index:2}
+.ww07-g img{transition:none}
+.ww07-m{display:flex;flex-direction:column;gap:30px;transition:opacity .6s}
+.ww07-m .ww-form{gap:18px}
+.ww07-pl{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ww07-pl>span{font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.ww07 .ww-tat{justify-content:center}
+.ww07-dank{margin-top:34px;text-align:center}
+.ww07-g.l,.ww07-g.r{transition:transform 1.5s var(--feder) !important}
+.fertig .ww07-m{opacity:.08;pointer-events:none}
+.fertig .ww07-g.l{transform:translateX(68%) rotate(7deg) !important}
+.fertig .ww07-g.r{transform:translateX(-68%) rotate(-7deg) !important}
+
+/* ---------- 8 Die Kerzen */
+.ww08{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,5vw,90px);align-items:center}
+.ww08-bild{height:clamp(600px,84vh,820px)}
+.ww08-r{display:flex;flex-direction:column;gap:30px}
+.ww08-box{padding:24px 26px;border-radius:var(--r);background:#1B1A20;box-shadow:inset 0 0 0 1px var(--linie)}
+.ww08-kerzen{display:flex;align-items:flex-end;gap:clamp(12px,2vw,26px);height:150px;padding:0 6px;border-bottom:1px solid var(--linie)}
+.ww08-k{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:34px;height:100%}
+.ww08-k b{display:block;width:22px;height:var(--h);border-radius:3px 3px 1px 1px;background:linear-gradient(90deg,#E9DED2,#FBF4EC 45%,#D6C8BA)}
+.ww08-k b::before{content:"";display:block;width:2px;height:9px;margin:-9px auto 0;background:#2A2522}
+.ww08-k .fl{position:relative;width:14px;height:26px;margin-bottom:8px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(circle at 50% 72%,#FFF6DA 0 22%,#FFC36A 45%,#EF7649 75%,transparent 76%);box-shadow:0 0 24px 10px rgba(239,118,73,.38);transform:scale(0);transform-origin:50% 100%;transition:transform .6s var(--k)}
+.ww08-k.an .fl{transform:none;animation:ww08-flacker 2.6s ease-in-out infinite alternate}
+.ww08-k:nth-child(2n).an .fl{animation-duration:3.1s}.ww08-k:nth-child(3n).an .fl{animation-duration:2.2s}
+@keyframes ww08-flacker{0%{transform:scale(1,1)}40%{transform:scale(.94,1.06)}70%{transform:scale(1.04,.95)}100%{transform:scale(.97,1.03)}}
+.ww08-n{margin-top:14px;font:400 13px var(--mono);color:var(--kerze-hell)}
+
+/* ---------- 9 Die Gläser */
+.ww09 .ww-kopf{margin-bottom:clamp(36px,5vh,56px)}
+.ww09-reihe{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:1600px;margin:0 auto;padding:0 var(--rand)}
+.ww09-g{display:block;padding:0;border-radius:var(--r);overflow:hidden}
+.ww09-f{display:block;width:100%;aspect-ratio:3/5;border-radius:var(--r);overflow:hidden;opacity:.24;transform:translateY(26px) scale(.96);transition:opacity .6s var(--k),transform .8s var(--k)}
+.ww09-g.an .ww09-f{opacity:1;transform:none}
+.ww09-g:hover .ww09-f{opacity:.55}.ww09-g.an:hover .ww09-f{opacity:1}
+.ww09-n{margin-top:22px;text-align:center;font:400 13px var(--mono);color:var(--kerze-hell)}
+.ww09-form{margin-top:30px}
+.ww09-zeile{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr) minmax(0,1fr) auto;gap:14px;align-items:end}
+
+/* ---------- 10 Freitag oder Samstag */
+.ww10{gap:0}
+.ww10 .ww-kopf{margin-bottom:clamp(34px,5vh,56px)}
+.ww10-paar{display:grid;grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);gap:clamp(10px,1.4vw,18px);max-width:1560px;margin:0 auto;padding:0 var(--rand);align-items:start}
+.ww10-h{position:relative;width:100%;display:flex;flex-direction:column;gap:14px;cursor:pointer}
+.ww10-f{display:block;width:100%;aspect-ratio:4/3.3;border-radius:var(--r);overflow:hidden;background:#0F0E13;opacity:.36;transition:opacity .6s var(--k),box-shadow .4s}
+.ww10-f img{transform:scale(1.06);transition:transform 1.6s var(--k)}
+.ww10-t{display:flex;align-items:baseline;gap:14px;font:340 clamp(26px,2.6vw,40px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 96;color:rgba(250,244,244,.45);transition:color .4s}
+.ww10-t em{font:400 13px var(--mono);font-style:normal;color:var(--fg2)}
+.ww10-egal{position:relative;align-self:center;display:grid;place-items:center;cursor:pointer;margin-top:-40px}
+.ww10-egal span{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;text-align:center;font:500 12px/1.25 var(--etikett);letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 0 0 1px var(--linie);color:var(--fg2);transition:background .35s,color .35s}
+.ww10-egal input:checked+span{background:var(--kerze);color:#fff;box-shadow:none}
+.wv[data-tag=fr] .ww10-h.ww10-fr .ww10-f,.wv[data-tag=sa] .ww10-h.ww10-sa .ww10-f,.wv[data-tag=egal] .ww10-f{opacity:1;box-shadow:0 0 0 2px var(--kerze)}
+.wv[data-tag=fr] .ww10-h.ww10-fr .ww10-f img,.wv[data-tag=sa] .ww10-h.ww10-sa .ww10-f img,.wv[data-tag=egal] .ww10-f img{transform:none}
+.wv[data-tag=fr] .ww10-h.ww10-fr .ww10-t,.wv[data-tag=sa] .ww10-h.ww10-sa .ww10-t,.wv[data-tag=egal] .ww10-t{color:#FAF4F4}
+.ww10-zeile{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr) auto;gap:16px;align-items:end;margin-top:clamp(30px,4vh,48px)}
+.ww10-pl>span,.ww13-pl>span{display:block;margin-bottom:8px;font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.ww10 .ww-meldung{margin-top:22px}
+
+/* ---------- 11 Am Tresen */
+.ww11{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,90px);align-items:start}
+.ww11-bild{height:clamp(600px,86vh,860px);position:sticky;top:100px}
+.ww11-f{gap:14px;max-width:640px}
+.ww11-kopf{display:flex;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:8px;border-bottom:1px solid var(--linie)}
+.ww11-av{position:relative;flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px var(--kerze)}
+.ww11-av img{position:absolute;inset:0}
+.ww11-kopf b{display:block;font:500 16px var(--text)}.ww11-kopf span{font:400 12px var(--mono);color:var(--fg2)}
+.ww11-q{align-self:flex-start;max-width:82%;padding:14px 18px;border-radius:18px 18px 18px 4px;background:#33313B;font:400 17px/1.45 var(--text)}
+.ww11-a{align-self:flex-end;max-width:92%;padding:14px 18px;border-radius:18px 18px 4px 18px;background:var(--papier);color:var(--tinte);margin-bottom:10px}
+.ww11-a .sl{font-style:normal;color:var(--kerze);padding:0 .45em}
+.ww11-a label{position:relative;cursor:pointer}
+.ww11-a label span{font:500 16px var(--text);color:#9A95A0;transition:color .3s}
+.ww11-a input:checked+span{color:var(--tinte);box-shadow:inset 0 -2px 0 var(--kerze)}
+.ww11-pl{display:flex;align-items:center;gap:18px;font:500 16px var(--text)}
+.ww11-pl .ww-z,.ww11-felder .ww-feld input{box-shadow:inset 0 0 0 1px rgba(42,40,51,.16)}
+.ww11-pl .ww-z button{background:#EDE3DD}
+.ww11-felder{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.ww11-felder .ww-feld>span{color:var(--tinte2)}
+.ww11-felder .ww-feld input{background:#F1E9E4;color:var(--tinte)}
+.ww11-los{background:none;padding:0}
+.ww11 .ww-meldung.ww11-q{font:340 21px/1.35 var(--titel);background:#3B2A22}
+
+/* ---------- 12 Die Postkarte */
+.ww12 .ww-kopf{margin-bottom:clamp(36px,5vh,56px)}
+.ww12-karte{max-width:1080px;margin:0 auto;perspective:2200px}
+.ww12-dreh{display:grid;transform-style:preserve-3d;transition:transform 1.6s var(--feder)}
+.ww12-rueck,.ww12-vorn{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px;box-shadow:0 50px 80px -40px rgba(0,0,0,.85)}
+.ww12-rueck{display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);gap:clamp(22px,3vw,44px);padding:clamp(24px,3vw,44px);background:var(--papier)}
+.ww12-vorn{transform:rotateY(180deg);overflow:hidden;background:#0F0E13;border:12px solid var(--papier)}
+.fertig .ww12-dreh{transform:rotateY(180deg)}
+.ww12-strich{background:rgba(42,40,51,.18)}
+.ww12-l{display:flex;flex-direction:column;gap:26px}
+.ww12-gruss{font:340 clamp(26px,2.5vw,38px)/1.25 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.ww12-tage{display:flex;flex-direction:column;gap:12px}
+.ww12-tage label{position:relative;display:flex;align-items:center;gap:12px;cursor:pointer;font:400 17px var(--text)}
+.ww12-tage i{position:relative;flex:none;width:22px;height:22px;border:1.5px solid rgba(42,40,51,.4);border-radius:3px}
+.ww12-tage i::after{content:"×";position:absolute;inset:-6px 0 0;text-align:center;font:400 26px/1 var(--titel);color:var(--kerze-tief);transform:scale(0);transition:transform .45s var(--feder)}
+.ww12-tage input:checked+i::after{transform:none}
+.ww12-pl{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ww12-pl>span,.ww12-zeile span{font:500 11px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--tinte2)}
+.ww12-r{display:flex;flex-direction:column;gap:22px}
+.ww12-oben{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}
+.ww12-stempel{display:grid;place-items:center;width:104px;height:104px;border-radius:50%;border:1.5px solid rgba(177,87,54,.6);color:var(--kerze-tief);text-align:center;font:400 11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.06em;rotate:-12deg}
+.ww12-stempel b{font-weight:500}
+.ww12-marke img{position:static}
+.ww12-marke{position:relative;width:96px;height:120px;padding:9px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18);-webkit-mask:linear-gradient(#000 0 0) center/calc(100% - 10px) calc(100% - 10px) no-repeat,radial-gradient(circle 4px,#000 95%,#0000) 0 0/10px 10px round;mask:linear-gradient(#000 0 0) center/calc(100% - 10px) calc(100% - 10px) no-repeat,radial-gradient(circle 4px,#000 95%,#0000) 0 0/10px 10px round;rotate:3deg}
+.ww12-zeile{display:flex;flex-direction:column;gap:8px}
+.ww12-zeile input{border:0;border-bottom:1.5px solid rgba(42,40,51,.3);background:none;padding:6px 0 8px;font:400 20px var(--text);color:var(--tinte)}
+.ww12-zeile input:focus{outline:none;border-bottom-color:var(--kerze-tief)}
+.ww12-zeile input[aria-invalid=true]{box-shadow:none !important;border-bottom-color:#E8735A}
+.ww12 .ww-meldung{position:relative;margin-top:48px;text-align:center}
+
+/* ---------- 13 Die Tischkante */
+.ww13 .ww-kopf{margin-bottom:clamp(36px,5vh,56px)}
+.ww13-band{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:var(--fuge)}
+.ww13-b{height:clamp(380px,60vh,620px);border-radius:0 !important}
+.ww13-b img{transform:scale(1.08);transition:transform 2.6s var(--k) calc(var(--i,0)*120ms)}
+.ww13-b.da img{transform:none}
+.ww13-kante{gap:0;padding:26px 0 30px;background:linear-gradient(#3F2B1F,#2A1D15);box-shadow:inset 0 3px 0 var(--kerze),0 30px 50px -30px rgba(0,0,0,.8)}
+.ww13-zeile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:16px;align-items:end}
+.ww13-zeile .ww-tage{grid-column:1/4}
+.ww13-zeile .ww-feld[class]:nth-of-type(1){grid-column:1/2}
+.ww13-zeile label.ww-feld:last-of-type{grid-column:2/4}
+.ww13-kante .ww-tage span{box-shadow:inset 0 0 0 1px rgba(250,244,244,.2)}
+.ww13-kante .ww-feld input{background:rgba(0,0,0,.25)}
+.ww13 .ww-meldung{margin-top:18px}
+
+/* ---------- 14 Der Abreisskalender */
+.ww14.ww-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:center}
+.ww14-l{display:flex;flex-direction:column;gap:26px}
+.ww14-r{display:flex;flex-direction:column;align-items:center;gap:26px}
+.ww14-block{position:relative;width:min(440px,100%);perspective:1600px}
+.ww14-ring{position:absolute;z-index:5;left:-8px;right:-8px;top:-14px;height:34px;border-radius:6px;background:linear-gradient(#4A4753,#2C2A33);box-shadow:0 10px 20px -8px rgba(0,0,0,.7)}
+.ww14-ring::before{content:"";position:absolute;left:12%;right:12%;top:12px;height:10px;background:radial-gradient(circle 5px,#0F0E13 96%,#0000) 0 0/44px 10px repeat-x}
+.ww14-blaetter{position:relative;display:grid;width:100%;aspect-ratio:4/4.6;cursor:pointer;filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))}
+.ww14-blaetter::before,.ww14-blaetter::after{content:"";grid-area:1/1;border-radius:4px;background:#E9E1DC;transform:translateY(6px)}
+.ww14-blaetter::after{background:#DCD3CD;transform:translateY(12px);z-index:-1}
+.ww14-blatt{grid-area:1/1;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:56px 26px 26px;border-radius:4px;background:var(--papier);color:var(--tinte);text-align:center;opacity:0;transform-origin:50% 0}
+.wv[data-tag=fr] .ww14-blatt[data-blatt=fr],.wv[data-tag=sa] .ww14-blatt[data-blatt=sa],.wv[data-tag=egal] .ww14-blatt[data-blatt=egal]{opacity:1;z-index:2}
+.ww14-blatt.weg{opacity:1;z-index:3;animation:ww14-ab .85s var(--k) forwards}
+@keyframes ww14-ab{0%{transform:none;opacity:1}100%{transform:translateY(-34px) rotateX(-96deg) rotate(4deg);opacity:0}}
+.ww14-kopf{position:absolute;left:0;right:0;top:0;padding:30px 0 12px;background:var(--kerze);color:#fff;border-radius:4px 4px 0 0;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.ww14-blatt b{font:300 clamp(60px,6.6vw,108px)/1 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.ww14-blatt em{font:400 15px var(--mono);font-style:normal;color:var(--tinte2)}
+.ww14-fuss{position:absolute;left:24px;right:24px;bottom:22px;padding-top:12px;border-top:1px solid rgba(42,40,51,.16);font:400 12px var(--mono);color:var(--tinte2)}
+.ww14-wahl{display:flex;gap:26px;margin-top:14px}
+.ww14-wahl label{position:relative;cursor:pointer}
+.ww14-wahl span{display:block;padding:6px 0;font:500 15px var(--text);color:var(--fg2);transition:color .3s}
+.ww14-wahl input:checked+span{color:#FAF4F4;box-shadow:inset 0 -2px 0 var(--kerze)}
+
+/* ---------- 15 Der Umschlag */
+.ww15{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,5vw,96px);align-items:center}
+.ww15-l{display:flex;flex-direction:column;gap:24px}
+.ww15-hin{font:340 21px/1.35 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 48;max-width:30ch}
+.ww15-r{position:relative;padding-bottom:150px}
+.ww15-brief{position:relative;z-index:1;margin:0 7%;padding:clamp(26px,3vw,42px) clamp(26px,3vw,42px) calc(clamp(26px,3vw,42px) + 96px);background:var(--papier);border-radius:4px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);transition:transform 1.5s var(--k),opacity 1.1s .4s}
+.ww15-an{font:400 13px/1.5 var(--mono);color:var(--tinte2);text-align:right}
+.ww15-text{font:340 clamp(24px,2.3vw,34px)/1.25 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96;margin-top:6px}
+.ww15-reihe{display:grid;grid-template-columns:1fr;gap:18px}
+.ww15-reihe>div:last-child{display:flex;align-items:center;gap:18px}
+.ww15-reihe>div:last-child .ww-leg{margin:0}
+.ww15-umschlag{position:absolute;z-index:2;left:0;right:0;bottom:0;height:230px;border-radius:6px;background:linear-gradient(#D9C9BC,#CDBBAE);box-shadow:0 40px 60px -30px rgba(0,0,0,.8)}
+.ww15-umschlag::before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(155deg,transparent 49.6%,rgba(0,0,0,.07) 50%) left/50% 100% no-repeat,linear-gradient(-155deg,transparent 49.6%,rgba(0,0,0,.07) 50%) right/50% 100% no-repeat}
+.ww15-klappe{position:absolute;left:0;right:0;bottom:100%;height:150px;background:#C8B5A7;clip-path:polygon(0 100%,50% 0,100% 100%);transform-origin:50% 100%;transform:rotateX(180deg) translateY(0);opacity:0;transition:transform 1s var(--k) 1.1s,opacity .2s 1.1s}
+.ww15-siegel{position:absolute;left:50%;top:-34px;z-index:3;display:grid;place-items:center;width:68px;height:68px;margin-left:-34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F08A5E,#B5502C);color:#FFE7D8;font:300 34px/1 var(--titel);box-shadow:0 8px 16px -6px rgba(0,0,0,.6);transform:scale(0);transition:transform .7s var(--feder) 1.9s}
+.fertig .ww15-brief{transform:translateY(64%) scale(.9);opacity:0;pointer-events:none}
+.fertig .ww15-klappe{opacity:1;transform:none}
+.fertig .ww15-siegel{transform:none}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .ww01,.ww03,.ww04,.ww05-karte,.ww06-unten,.ww08,.ww11,.ww15,.ww14.ww-form{grid-template-columns:1fr}
+  .ww-zwei,.ww11-felder{grid-template-columns:1fr}
+  .ww-tage span{padding:12px}
+  .ww01-plan{margin:-40px 0 0}
+  .ww02-ticket{grid-template-columns:1fr}
+  .ww02-bild{aspect-ratio:16/9;border-radius:14px 14px 0 0 !important}
+  .ww02-reihe{grid-template-columns:1fr}
+  .ww02-abriss{border-left:0;border-top:2px dashed rgba(42,40,51,.25);border-radius:0 0 14px 14px;flex-direction:row;flex-wrap:wrap;gap:6px 14px;transform-origin:0 0}
+  .ww02-abriss::before,.ww02-abriss::after{display:none}
+  .ww02-abriss b{font-size:52px}
+  .ww02-name{margin-top:0;border-top:0;padding-top:0}
+  .fertig .ww02-abriss{transform:translate(8px,18px) rotate(4deg)}
+  .ww03-bilder{height:420px}
+  .ww05-bild,.ww11-bild{position:static;height:420px;order:-1}
+  .ww06-bonplatz{margin-top:-50px}
+  .ww06-r{padding-top:10px}
+  .ww06-reihe,.ww15-reihe{grid-template-columns:1fr}
+  .ww07-reihe{grid-template-columns:1fr 1fr}
+  .ww07-m{grid-column:1/-1;order:3}
+  .fertig .ww07-g.l{transform:translateX(12%) rotate(6deg) !important}
+  .fertig .ww07-g.r{transform:translateX(-12%) rotate(-6deg) !important}
+  .fertig .ww07-m{opacity:.25}
+  .ww08-bild{height:420px}
+  .ww09-reihe{gap:4px}
+  .ww09-zeile,.ww10-zeile,.ww13-zeile{grid-template-columns:1fr}
+  .ww10-paar{grid-template-columns:1fr 1fr}
+  .ww10-egal{grid-column:1/-1;order:3;margin:6px 0 0}
+  .ww10-egal span{width:auto;height:auto;padding:12px 20px;border-radius:8px}
+  .ww10-egal br{display:none}
+  .ww10-t{flex-direction:column;gap:6px}
+  .ww12-rueck{grid-template-columns:1fr}
+  .ww12-strich{height:1px}
+  .ww13-band{grid-template-columns:1fr 1fr 1fr}
+  .ww13-b{height:260px}
+  .ww14-r{order:-1}
+  .ww15-r{padding-bottom:120px}
+  .ww13-zeile .ww-tage,.ww13-zeile label.ww-feld:last-of-type,.ww13-zeile .ww-feld[class]:nth-of-type(1){grid-column:auto}
+  .ww15-brief{margin:0 3%}
+  .ww15-umschlag{height:170px}
+}

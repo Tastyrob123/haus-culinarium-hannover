@@ -1,0 +1,27 @@
+
+chromium ungebremst · Rechnerlast 8.1
+ok     Karte «abend-2025-02-21» steht nach · 100 ms
+ok     Karte «abend» steht nach · 107 ms
+ok     Karte «abend-2023-09-15» steht nach · 113 ms
+ok     Tippen → Vorschau folgt nach · 16 ms
+ok     Scrollen der Liste: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Scrollen der Vorschau: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Lange Aufgaben (über 50 ms) · 0 Stück, längste 0 ms
+
+chromium gedrosselt (Prozessor 4×, Slow 4G) · Rechnerlast 8.7
+ok     Karte «abend-2025-02-21» steht nach · 4408 ms
+ok     Karte «abend» steht nach · 4358 ms
+ok     Karte «abend-2023-09-15» steht nach · 4314 ms
+ok     Tippen → Vorschau folgt nach · 38 ms
+ok     Scrollen der Liste: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Scrollen der Vorschau: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Lange Aufgaben (über 50 ms) · 0 Stück, längste 0 ms
+
+chromium gedrosselt (Prozessor 6×, Slow 4G) · Rechnerlast 9.0
+ok     Karte «abend-2025-02-21» steht nach · 4486 ms
+ok     Karte «abend» steht nach · 4414 ms
+ok     Karte «abend-2023-09-15» steht nach · 4366 ms
+ok     Tippen → Vorschau folgt nach · 67 ms
+ok     Scrollen der Liste: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Scrollen der Vorschau: 120 Bilder/s · schlechtestes Bild 10 ms, 95 % unter 10 ms
+ok     Lange Aufgaben (über 50 ms) · 2 Stück, längste 80 ms

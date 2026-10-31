@@ -1,0 +1,47 @@
+{
+ "ziel": "abend-2025-02-21",
+ "art": "satz",
+ "key": "DFqbLG2s_dc",
+ "name": "21./22. Februar 2025",
+ "unter": "",
+ "gruppe": "Frühere Abende",
+ "ab": "2025-02-21",
+ "datum": "Fr 21. und Sa 22. Februar 2025",
+ "preis": "79,00 EUR",
+ "mit": "BY MOMO X RUDI",
+ "zusatz": "14 Plätze",
+ "motto": "",
+ "titel": "",
+ "plakat": "DFqbLG2s_dc",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "Sauerteig | Tomate | Butter",
+   "drink": "Cognac | Toasted Pumpkin Samen | Limette | Champagner"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Miso | Sellerie | Röstzwiebeln",
+   "drink": "Vodka | Tom Yam | Guava | Cocos | Acids | Soda"
+  },
+  {
+   "gang": "Hauptgang",
+   "teller": "Spinat | braune Butter | Parmesan",
+   "drink": "Tequila | lakto-fermentierte Tomate | Agave | Limette"
+  },
+  {
+   "gang": "Dessert",
+   "teller": "Kaffee | Molke | Amaretto",
+   "drink": "Vodka | Cacao | Matcha | Mango"
+  },
+  {
+   "gang": "Absacker",
+   "teller": "",
+   "drink": "Gin | Turmeric | Ingwer"
+  }
+ ],
+ "upgrade": [],
+ "voll": true,
+ "foto_der_karte": "Foto der Karte in der Story vom 22.02.2025",
+ "quelle": "website/abende_info.py KARTEN['DFqbLG2s_dc'] · website/bau.py ABENDE (Foto der Karte in der Story vom 22.02.2025)"
+}

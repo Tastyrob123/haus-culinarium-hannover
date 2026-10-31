@@ -1,0 +1,15 @@
+{
+ "carte": "http://127.0.0.1:9063/_werkzeuge/carte/",
+ "bureau": "http://127.0.0.1:9062/_werkzeuge/bureau/",
+ "livre": "http://127.0.0.1:9065/_werkzeuge/livre/",
+ "bureau:anleitung": "http://127.0.0.1:9062/_werkzeuge/bureau/anleitung.html",
+ "livre:anleitung": "http://127.0.0.1:9065/_werkzeuge/livre/anleitung.html",
+ "carte:anleitung": "http://127.0.0.1:9063/_werkzeuge/carte/anleitung.html",
+ "reception": "http://127.0.0.1:9064/_werkzeuge/reception/",
+ "reception:anleitung": "http://127.0.0.1:9064/_werkzeuge/reception/anleitung.html",
+ "maison": "http://127.0.0.1:9061/_werkzeuge/maison/",
+ "registre": "http://127.0.0.1:9066/_werkzeuge/registre/",
+ "imprimerie": "http://127.0.0.1:9067/_werkzeuge/imprimerie/",
+ "registre:anleitung": "http://127.0.0.1:9066/_werkzeuge/registre/anleitung.html",
+ "imprimerie:anleitung": "http://127.0.0.1:9067/_werkzeuge/imprimerie/hilfe/"
+}

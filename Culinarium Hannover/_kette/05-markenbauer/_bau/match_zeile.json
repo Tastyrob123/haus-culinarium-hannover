@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Fredoka 700 schmal",
+  "datei": "Fredoka[wdth,wght].ttf",
+  "sperrung_em": 0.164,
+  "deckung": 0.567
+ },
+ {
+  "name": "Urbanist 900",
+  "datei": "Urbanist[wght].ttf",
+  "sperrung_em": 0.06,
+  "deckung": 0.542
+ },
+ {
+  "name": "M PLUS Rounded 1c 900",
+  "datei": "MPLUSRounded1c-Black.ttf",
+  "sperrung_em": 0.176,
+  "deckung": 0.516
+ },
+ {
+  "name": "Righteous",
+  "datei": "Righteous-Regular.ttf",
+  "sperrung_em": 0.204,
+  "deckung": 0.505
+ },
+ {
+  "name": "Outfit 800",
+  "datei": "Outfit[wght].ttf",
+  "sperrung_em": 0.09,
+  "deckung": 0.501
+ },
+ {
+  "name": "Urbanist 800",
+  "datei": "Urbanist[wght].ttf",
+  "sperrung_em": 0.06,
+  "deckung": 0.498
+ },
+ {
+  "name": "Lexend 800",
+  "datei": "Lexend[wght].ttf",
+  "sperrung_em": 0.145,
+  "deckung": 0.489
+ },
+ {
+  "name": "Nunito 900",
+  "datei": "Nunito[wght].ttf",
+  "sperrung_em": 0.205,
+  "deckung": 0.482
+ },
+ {
+  "name": "Lexend 700",
+  "datei": "Lexend[wght].ttf",
+  "sperrung_em": 0.149,
+  "deckung": 0.471
+ },
+ {
+  "name": "Baloo 2 800",
+  "datei": "Baloo2[wght].ttf",
+  "sperrung_em": 0.216,
+  "deckung": 0.466
+ }
+]

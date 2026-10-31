@@ -1,0 +1,133 @@
+/* Satz der Unterlagen. Masse in mm, Schrift in pt über --s (wird je Seite angepasst, damit nichts überläuft).
+   Farben sind die Bezugsfarben der Vorlage und werden beim Schreiben auf das Haus umgerechnet. Keine weichen Schatten. */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#8f8672;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.blatt{--s:1;position:relative;overflow:hidden;margin:8mm auto;background:#fbf6ea;color:#0c1526;display:flex;flex-direction:column;font-family:'Instrument Sans',Arial,sans-serif;font-size:calc(9.4pt*var(--s));line-height:1.42;page-break-after:always;break-after:page}
+/* :where() wiegt nichts, sonst löscht diese Zeile die Abstände von .rubrik, .ut, .ab, .zw und .ul */
+:where(.blatt) :where(h1,h2,h3,h4,p,ul){margin:0;padding:0}
+.uband{flex:none;display:flex;align-items:center;gap:7mm;padding:9mm 15mm 8mm;background:#0b1f40 var(--muster) 50% 0/var(--musterb) auto;color:#f4ecdc;border-bottom:.7mm solid #a98a45}
+.uband--klein{padding:6mm 15mm 5mm}
+.uband__z{flex:none;width:17mm;color:#dcc68f;display:block}
+.uband__z svg,.udeck__z svg,.uz svg,.uw svg{display:block;width:100%;height:auto}
+.uband h1{font-family:var(--titel);font-weight:var(--tg);font-size:25pt;line-height:1.08;letter-spacing:0}
+.uband--klein h1{font-size:19pt}
+.uband p{font-family:'DM Mono',Menlo,monospace;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#dcc68f;margin-top:1.6mm}
+.inhalt{flex:1;min-height:0;padding:9mm 15mm 5mm;display:flex;flex-direction:column}
+.ufuss2{flex:none;margin:0 15mm;padding:3.2mm 0 6.5mm;border-top:.25mm solid #a98a45;font-family:'DM Mono',Menlo,monospace;font-size:6.2pt;letter-spacing:.17em;text-transform:uppercase;text-align:center;color:rgba(12,21,38,.74)}
+.spalten{flex:1;min-height:0;display:grid;gap:0 11mm}
+.spalten--2{grid-template-columns:1fr 1fr}.spalten--3{grid-template-columns:1fr 1fr 1fr}.spalten--1{grid-template-columns:1fr}
+.sp{min-width:0;min-height:0}
+.spalten--2 .sp+.sp,.spalten--3 .sp+.sp{border-left:.25mm solid rgba(169,138,69,.5);padding-left:11mm;margin-left:-5.5mm}
+/* Rubrik: Titelschrift, gut doppelt so gross wie der Lesetext, kurze Linie darunter */
+.rubrik{display:flex;align-items:flex-end;justify-content:space-between;gap:4mm;font-family:var(--titel);font-weight:var(--tg);font-size:calc(19pt*var(--s));line-height:1.1;color:#0b1f40;margin:calc(5.4mm*var(--s)) 0 calc(2.4mm*var(--s));padding-bottom:calc(2.9mm*var(--s));position:relative}
+.rubrik::after{content:'';position:absolute;left:0;bottom:0;width:14mm;height:.5mm;background:#a98a45}
+.sp>.rubrik:first-child,.inhalt>.rubrik:first-child{margin-top:0}
+.rubrik small{font-family:'Instrument Sans',Arial,sans-serif;font-weight:400;font-size:calc(8.6pt*var(--s));color:rgba(12,21,38,.72);margin-left:2.4mm}
+.rk{display:flex;gap:0;flex:none}
+.rk b{flex:none;width:calc(12.5mm*var(--s));min-width:0;text-align:right;font-family:var(--titel);font-weight:400;font-size:calc(7.6pt*var(--s));letter-spacing:.02em;color:#8a7545;white-space:nowrap}
+.rk b:empty::before{content:'\00a0'}
+.re .rk b em{font-family:'Instrument Sans',Arial,sans-serif;font-style:normal;font-weight:400;font-size:calc(8pt*var(--s));color:rgba(12,21,38,.72)}
+.zw{font-family:'DM Mono',Menlo,monospace;font-weight:400;font-size:calc(6.8pt*var(--s));letter-spacing:.22em;text-transform:uppercase;color:#8a7545;margin:calc(3.2mm*var(--s)) 0 calc(1.2mm*var(--s))}
+.po{display:flex;justify-content:space-between;align-items:baseline;gap:4mm;padding:calc(1.5mm*var(--s)) 0;break-inside:avoid}
+.po__t{min-width:0}
+.po h4{font-family:'Instrument Sans',Arial,sans-serif;font-weight:600;font-size:calc(10pt*var(--s));line-height:1.28;color:#0c1526}
+.po h4 small{font-weight:400;font-size:calc(8.2pt*var(--s));color:rgba(12,21,38,.72)}
+.po p{font-size:calc(8.6pt*var(--s));line-height:1.36;color:rgba(12,21,38,.86)}
+.po p.fr{font-style:italic;color:rgba(12,21,38,.62);font-size:calc(8pt*var(--s))}
+.po__p{flex:none;text-align:right;display:flex;flex-direction:column;gap:.4mm}
+.pz{display:flex;justify-content:flex-end;align-items:baseline;gap:2.4mm;white-space:nowrap}
+.pz b{font-family:var(--titel);font-weight:var(--tg);font-size:calc(11pt*var(--s));color:#0b1f40;min-width:calc(11mm*var(--s));text-align:right}
+.pz em{font-style:normal;font-size:calc(8pt*var(--s));color:rgba(12,21,38,.72)}
+.re{display:flex;justify-content:space-between;align-items:baseline;gap:3mm;padding:calc(.72mm*var(--s)) 0}
+.re__n{font-weight:600;font-size:calc(9.4pt*var(--s));min-width:0}
+.re__n small{font-weight:400;font-size:calc(8.2pt*var(--s));color:rgba(12,21,38,.72)}
+.re .rk b{font-family:var(--titel);font-weight:var(--tg);font-size:calc(9.6pt*var(--s));letter-spacing:0;text-transform:none;color:#0b1f40}
+.ab{font-size:calc(9.4pt*var(--s));line-height:1.5;margin-bottom:calc(2.4mm*var(--s))}
+.ab.gross{font-family:var(--titel);font-weight:var(--tg);font-size:calc(13pt*var(--s));line-height:1.3;color:#0b1f40}
+.ab.fr{font-style:italic;color:rgba(12,21,38,.66);font-size:calc(8.8pt*var(--s))}
+.ab.mitte,.ut.mitte{text-align:center}
+.ab.klein{font-size:calc(8pt*var(--s));color:rgba(12,21,38,.76)}
+.ut{font-family:var(--titel);font-weight:var(--tg);font-size:calc(19pt*var(--s));line-height:1.12;color:#0b1f40;margin:calc(5mm*var(--s)) 0 calc(2.4mm*var(--s))}
+.ut.klein{font-size:calc(14pt*var(--s))}
+.ukasten{border:.3mm solid #a98a45;border-radius:3mm;padding:calc(4mm*var(--s)) calc(5mm*var(--s));margin:calc(3mm*var(--s)) 0;break-inside:avoid}
+.ukasten h3{font-family:var(--titel);font-weight:var(--tg);font-size:calc(13pt*var(--s));color:#0b1f40;margin-bottom:calc(1.6mm*var(--s))}
+.ukasten.dunkel{background:#0b1f40;border-color:#0b1f40;color:#f4ecdc}
+.ukasten.dunkel h3{color:#dcc68f}.ukasten.dunkel .ab{color:#f4ecdc}
+.ul{list-style:none}
+.ul li{position:relative;padding-left:5mm;font-size:calc(9.2pt*var(--s));line-height:1.45;margin-bottom:calc(1.2mm*var(--s))}
+/* Strich als Kante statt Fläche: eine Fläche von .35mm rundet je nach Lage auf 1 oder 2 Bildpunkte, die Striche wurden ungleich dick */
+.ul li::before{content:'';position:absolute;left:0;top:.62em;width:2.6mm;height:0;border-top:.35mm solid #a98a45}
+.ulin{display:block;width:14mm;height:.5mm;background:#a98a45;margin:calc(3mm*var(--s)) 0}
+.mitte .ulin,.ulin.mitte{margin-left:auto;margin-right:auto}
+.ubild{display:block;width:100%;object-fit:cover;border-radius:2.4mm}
+.udeck{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#0b1f40 var(--muster) 50% 0/var(--musterb) auto;color:#f4ecdc;margin:-9mm -15mm -5mm;padding:14mm}
+.udeck__z{width:34mm;color:#dcc68f;margin-bottom:9mm}
+.udeck h1{font-family:var(--titel);font-weight:var(--tg);font-size:44pt;line-height:1.06}
+.udeck i{display:block;width:20mm;height:.6mm;background:#dcc68f;margin:7mm 0}
+.udeck p{font-size:10.5pt;line-height:1.5;max-width:120mm}
+.udeck__u{font-family:'DM Mono',Menlo,monospace;font-size:8pt!important;letter-spacing:.22em;text-transform:uppercase;color:#dcc68f;margin-bottom:5mm}
+.uz{display:block;width:26mm;color:#a98a45}.uz.mitte,.uw.mitte{margin-left:auto;margin-right:auto}
+.uw{display:block;width:70mm;color:#0b1f40}
+@page{margin:0}
+@media print{html,body{background:#fff}.blatt{margin:0}}
+/* aus dem Original gelesene Karten (satz_auto.py): Zeilen unter dem Gericht, Übersetzungen kursiv und heller */
+.po p.fr{font-style:italic;color:rgba(12,21,38,.6);font-size:calc(7.9pt*var(--s))}
+.po--frei p{font-size:calc(9pt*var(--s))}
+.po__p--reihe{flex-direction:row;gap:calc(3mm*var(--s))}
+.oder{font-family:'DM Mono',Menlo,monospace;font-size:calc(6.2pt*var(--s));letter-spacing:.2em;text-transform:uppercase;color:#8a7545;margin:calc(.6mm*var(--s)) 0!important}
+.po p.mp{display:flex;justify-content:space-between;gap:3mm;align-items:baseline}
+.po p.mp b{font-family:var(--titel);font-weight:var(--tg);font-size:calc(10pt*var(--s));color:#0b1f40;white-space:nowrap;margin-left:2.4mm}
+.po:has(p.mp) .po__t{flex:1}
+.tmreihe{display:grid;gap:0 6mm;margin-bottom:calc(5mm*var(--s))}
+.tmsp{min-width:0;border-top:.5mm solid #a98a45;padding-top:calc(2mm*var(--s))}
+.tmsp h4.tag{font-family:var(--titel);font-weight:var(--tg);font-size:calc(12.5pt*var(--s));line-height:1.15;color:#0b1f40;margin-bottom:calc(1.6mm*var(--s))}
+.tmsp p{margin:0}
+.tmsp p.gang{font-weight:600;font-size:calc(9pt*var(--s));line-height:1.3;margin-top:calc(.5mm*var(--s))}
+.tmsp p.fr{font-style:italic;font-size:calc(7.2pt*var(--s));line-height:1.3;color:rgba(12,21,38,.62)}
+.tmsp p.stern{font-size:calc(6pt*var(--s));letter-spacing:.3em;color:#a98a45;margin:calc(.8mm*var(--s)) 0}
+.uleiste{flex:none;display:flex;align-items:center;justify-content:center;gap:4mm;padding:8mm 15mm 0;color:#a98a45}
+.uleiste span{display:block;width:11mm}.uleiste span svg{display:block;width:100%;height:auto}
+.uleiste b{font-family:'DM Mono',Menlo,monospace;font-weight:400;font-size:6.6pt;letter-spacing:.24em;text-transform:uppercase}
+.uleiste+.inhalt{padding-top:6mm}
+.po p.halb{font-weight:600;color:#0c1526}
+.po p.stern,.inhalt>p.stern,.sp>p.stern{font-size:calc(6pt*var(--s));letter-spacing:.3em;color:#a98a45;margin:calc(.6mm*var(--s)) 0}
+/* Aussenseite einer gefalzten Karte: eine Spalte ist der Deckel in der dunklen Farbe des Hauses */
+.karte .inhalt{padding:10mm 12mm 8mm}
+.karte--aussen .inhalt{padding:0}
+.karte--aussen .spalten{gap:0}
+.karte--aussen .sp{padding:10mm 9mm 8mm 12mm}
+.karte--aussen .sp:last-child{padding:0}
+.karte--aussen .sp+.sp{border-left:0;margin-left:0}
+.karte--aussen .sp+.sp:not(:last-child){padding-left:6mm}
+.deckel{height:100%;background:#0b1f40 var(--muster) 50% 0/var(--musterb) auto;color:#f4ecdc;padding:17mm 11mm 12mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.deckel .uz{width:30mm;color:#dcc68f}
+.deckel h1{font-family:var(--titel);font-weight:var(--tg);font-size:34pt;line-height:1.08;margin-top:9mm}
+.deckel>i{display:block;width:16mm;height:.5mm;background:#dcc68f;margin:8mm 0;flex:none}
+.deckel__z{font-family:var(--titel);font-weight:var(--tg);font-size:14pt;line-height:1.36;color:#dcc68f;max-width:78mm}
+.deckel__q{font-family:'DM Mono',Menlo,monospace;font-size:6.6pt;letter-spacing:.22em;text-transform:uppercase;margin-top:4mm!important}
+.deckel__a{font-size:8.4pt;line-height:1.6;margin-top:auto!important;padding-top:8mm;opacity:.9}
+.gutschein{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 4mm}
+.gutschein .uz{width:22mm;margin-bottom:8mm}
+.gutschein .ab{font-size:calc(11pt*var(--s));line-height:1.7}
+.gutschein .unten{margin-top:14mm!important;opacity:.7}
+.menupreis{text-align:right;margin:-11mm 0 5mm!important}
+.menupreis b{font-family:var(--titel);font-weight:var(--tg);font-size:calc(15pt*var(--s));color:#0b1f40}
+.rubrik .rp{font-size:calc(13pt*var(--s));white-space:nowrap}
+.po p.mp span{flex:1}
+.po p.mp b{min-width:calc(15mm*var(--s));text-align:right}
+.gutschein .ab{font-size:calc(9.4pt*var(--s))}
+.pz--k{flex-direction:column;align-items:flex-end;gap:0}
+.pz--k em,.po__p .pz>em:only-child{font-family:'DM Mono',Menlo,monospace;font-size:calc(5.6pt*var(--s));letter-spacing:.14em;text-transform:uppercase;color:#8a7545}
+.uraster{margin-top:calc(2mm*var(--s))}
+.uraster .rz{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:0 6mm;padding:calc(1.5mm*var(--s)) 0;border-bottom:.2mm solid rgba(169,138,69,.4);font-size:calc(9.4pt*var(--s))}
+.uraster .rz.kopf{font-family:'DM Mono',Menlo,monospace;font-size:calc(6.4pt*var(--s));letter-spacing:.2em;text-transform:uppercase;color:#8a7545;border-bottom:.4mm solid #a98a45}
+.uraster .rz span.fr{font-style:italic;color:rgba(12,21,38,.66)}
+.mitte .po,.po.mitte{justify-content:center;text-align:center}
+.mittig .po{flex-direction:column;align-items:center;text-align:center}
+.mittig .po__p{flex-direction:row}
+.mittig .rubrik{justify-content:center}.mittig .rubrik::after{left:50%;margin-left:-7mm}
+.mittig p.stern{text-align:center}
+
+/* Umbrüche: keine einzelnen Wörter auf der letzten Zeile, Titel ausgeglichen */
+.blatt p,.blatt h4,.blatt li{text-wrap:pretty}
+.blatt h1,.blatt h2,.blatt h3,.po h4,.po p{text-wrap:balance}

@@ -1,0 +1,58 @@
+{
+ "zeit": "2026-10-28T04:20:41.168Z",
+ "last": "19.7",
+ "aus": [
+  {
+   "groesse": "1440x900",
+   "drossel": 4,
+   "bilder": 388,
+   "p50": 8.300000000001091,
+   "p95": 9.199999999998909,
+   "laengstes": 308.40000000000146,
+   "ueber33": 4,
+   "cls": 0.003457270869502315,
+   "zeiger_laengstes": 33.5,
+   "gewicht_mb": 2.37,
+   "anfragen": 39
+  },
+  {
+   "groesse": "1440x900",
+   "drossel": 6,
+   "bilder": 386,
+   "p50": 8.300000000001091,
+   "p95": 9.200000000000728,
+   "laengstes": 41.69999999999982,
+   "ueber33": 2,
+   "cls": 0.003457270869502315,
+   "zeiger_laengstes": 42.399999999999636,
+   "gewicht_mb": 2.37,
+   "anfragen": 39
+  },
+  {
+   "groesse": "390x844",
+   "drossel": 4,
+   "bilder": 425,
+   "p50": 8.300000000000182,
+   "p95": 9.199999999999818,
+   "laengstes": 33.5,
+   "ueber33": 1,
+   "cls": 0.005096453780238539,
+   "zeiger_laengstes": null,
+   "gewicht_mb": 1.8,
+   "anfragen": 39
+  },
+  {
+   "groesse": "390x844",
+   "drossel": 6,
+   "bilder": 421,
+   "p50": 8.300000000000182,
+   "p95": 9.300000000000182,
+   "laengstes": 49.399999999999636,
+   "ueber33": 1,
+   "cls": 0.005096453780238539,
+   "zeiger_laengstes": null,
+   "gewicht_mb": 1.8,
+   "anfragen": 39
+  }
+ ]
+}

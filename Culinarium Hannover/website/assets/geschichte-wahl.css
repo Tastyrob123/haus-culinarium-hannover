@@ -1,0 +1,66 @@
+/* Culinarium · Bar-Seite «Seit 2017 in Linden.» · dritte Runde (nur Wahlseite).
+   Jede Fassung ist die heutige (.fwk, .gz, .fw.flaeche) und hebt sie an genau einer Stelle. Bewegung nur über transform und opacity. */
+
+/* ---------- 1 Das Zählwerk: jede Ziffer rollt an ihren Platz */
+.g3-rw{display:inline-flex;line-height:1}
+.gz b.g3-rw span{font:inherit;line-height:1;letter-spacing:inherit;text-transform:none;color:inherit;max-width:none;text-align:center}
+.g3-rad{display:block;height:1em;overflow:clip}
+.g3-rad>span{display:flex;flex-direction:column}
+.g3-rad i{display:block;height:1em;font-style:normal;text-align:center}
+html.js:not(.ruhig) .g3-rad>span{transform:translateY(0);transition:transform 2.2s cubic-bezier(.2,.8,.2,1) calc(.25s + var(--i)*.16s)}
+html.js .da .g3-rad>span,html.ruhig .g3-rad>span,html:not(.js) .g3-rad>span{transform:translateY(calc(var(--d)*-10%))}
+
+/* ---------- 2 Die Wand läuft: endlos seitwärts, Zeigen hält an */
+.g3-lauf{display:block;overflow:hidden}
+.g3-lauf-band{display:flex;gap:var(--fugew,12px);width:max-content;animation:g3-lauf 70s linear infinite}
+.g3-lauf:hover .g3-lauf-band{animation-play-state:paused}
+.g3-lauf-z{flex:none;width:clamp(240px,22vw,340px);height:clamp(300px,34vw,500px);position:relative;overflow:hidden}
+.g3-lauf-z:nth-child(3n+2){width:clamp(280px,27vw,420px)}
+.g3-lauf-z:nth-child(4n+3){width:clamp(220px,19vw,290px)}
+@keyframes g3-lauf{to{transform:translateX(calc(-50% - var(--fugew,12px)/2))}}
+@media (prefers-reduced-motion:reduce){.g3-lauf-band{animation:none}}
+html.ruhig .g3-lauf-band{animation:none}
+
+/* ---------- 3 Die Wand fächert auf: liegen erst übereinander in der Mitte */
+html.js:not(.ruhig) .g3-facher>*{transition:transform 1.9s cubic-bezier(.28,1.18,.42,1) calc(.2s + var(--f)*.06s)}
+html.js:not(.ruhig) .g3-facher:not(.da)>*:nth-child(1){transform:translateX(118%) scale(.9) rotate(-3deg);z-index:1}
+html.js:not(.ruhig) .g3-facher:not(.da)>*:nth-child(2){transform:translateX(38%) scale(.94) rotate(1.5deg);z-index:3}
+html.js:not(.ruhig) .g3-facher:not(.da)>*:nth-child(3){transform:translateX(-46%) scale(.92) rotate(-1deg);z-index:2}
+html.js:not(.ruhig) .g3-facher:not(.da)>*:nth-child(4){transform:translateX(-112%) scale(.9) rotate(2.5deg);z-index:1}
+.g3-facher>*{box-shadow:0 30px 50px -30px rgba(12,10,14,.6)}
+
+/* ---------- 4 Der Titel über die volle Breite */
+.g3-breit{font-size:clamp(56px,9.4vw,158px)!important;line-height:.9!important;white-space:nowrap;margin-bottom:clamp(30px,5vh,56px)!important}
+.g3-reihe{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr);gap:clamp(30px,4vw,72px);align-items:end;margin-bottom:clamp(36px,5.5vh,60px)}
+.g3-reihe .fwk-text{margin:0 0 6px}
+.g3-reihe-z .gz{margin:0;max-width:none}
+
+/* ---------- 5 Die Wand randlos: volle Breite, Fotos zoomen am Scrollen */
+.g3-randlos{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;padding:0;gap:var(--fuge,4px);box-shadow:none}
+.g3-randlos .foto img{scale:var(--z,1.18)}
+
+/* ---------- 6 Die Zahlen in der Wand */
+.g3-kachel{display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:clamp(18px,2vw,30px);background:#F1E7DD}
+.g3-kachel b{font:300 clamp(54px,6vw,104px)/.86 var(--titel);color:var(--kerze-tief);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"opsz" 144;font-variant-numeric:tabular-nums}
+.g3-kachel span{font:500 10.5px/1.45 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);max-width:20ch}
+html.js:not(.ruhig) .g3-schach .g3-kachel b{display:inline-block;transform:translateY(40px);transition:transform 1.6s var(--feder) .3s}
+html.js .g3-schach.da .g3-kachel b{transform:none}
+
+/* ---------- 8 Die Wand atmet: jedes Foto gleitet mit eigener Geschwindigkeit */
+.g3-atmet .foto img{scale:1.16;translate:0 var(--g,0px)}
+
+/* ---------- 10 Die Wand zieht vorbei: breiter als die Seite, zieht am Scrollen */
+.g3-zug{display:block;overflow:hidden}
+.g3-zug-band{display:flex;gap:var(--fugew,12px);width:max-content;transform:translate3d(var(--x,0px),0,0)}
+.g3-zug-z{flex:none;width:clamp(260px,25vw,380px);height:clamp(300px,34vw,500px);position:relative;overflow:hidden}
+.g3-zug-z:nth-child(2n){width:clamp(300px,30vw,460px)}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .g3-breit{white-space:normal}
+  .g3-reihe{grid-template-columns:1fr}
+  .g3-lauf-z,.g3-zug-z{height:72vw}
+  .g3-lauf-z,.g3-lauf-z:nth-child(n),.g3-zug-z,.g3-zug-z:nth-child(n){width:56vw}
+  .g3-schach{grid-auto-rows:42vw!important}
+  html.js:not(.ruhig) .g3-facher:not(.da)>*{transform:translateY(40px)!important}
+}

@@ -1,0 +1,218 @@
+/* Culinarium · Der Weg, «Die Bar» in 15 Fassungen, Runde 3 (nur Wahlseite): die Zeiten werden zur Form, keine Karte mehr. Nur transform und opacity bewegt. */
+.zd-name{display:flex;flex-direction:column;gap:10px}
+.zd-name.zeile{flex-direction:row;align-items:baseline;gap:22px;flex-wrap:wrap}
+.zd-name.zeile .zd-tel{margin-left:auto}
+.zd-name.mitte{align-items:center;text-align:center}
+.zd-gross{margin:0;font:340 clamp(40px,4.6vw,72px)/1 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zd-wer{margin:0;font:600 11px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd-tel{margin:0;font:500 11.5px/1.4 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+.zd-tel a,.zb .zd-tel a{color:inherit;text-decoration:none}
+.zd-tage{display:grid;gap:clamp(14px,2vw,26px)}
+.zd-tage.reihe{grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(24px,4vw,64px)}
+.zd-tage.mitte{justify-items:center;text-align:center}
+.zd-t{margin:0;font:340 clamp(24px,2.4vw,36px)/1.1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg)}
+.zd-z{margin:6px 0 0;font:500 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd-fw{--fugew:10px}
+.zd-fw .fw-f>.foto{position:absolute;inset:0;--d:calc(var(--i,0)*90ms)}
+.zd-fw .foto{border-radius:0}
+@media (max-width:860px){.zd-tage.reihe{grid-template-columns:1fr;gap:14px}.zd-name.zeile .zd-tel{margin-left:0;flex-basis:100%}}
+
+/* 1 Die Woche */
+.zd01-kopf{margin-bottom:clamp(20px,2.6vw,36px)}
+.zd01-tage{display:grid;grid-template-columns:.5fr .5fr .5fr 1.2fr 1.2fr 1.2fr .5fr;gap:10px;height:clamp(440px,46vw,640px)}
+.zd01-t{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:4px;overflow:hidden}
+.zd01-t.zu{background:#1E1D24;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 0 0 1px rgba(250,244,244,.06)}
+.zd01-kurz{margin:0;font:340 clamp(36px,4vw,64px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:rgba(250,244,244,.42)}
+.zd01-t.zu .zd01-lang{margin:0;font:500 10px/1 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:rgba(250,244,244,.42)}
+.zd01-zu{margin:14px 0 0;font:400 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(250,244,244,.28)}
+.zd01-t.offen{background:var(--schiefer);gap:6px;padding:6px}
+.zd01-b{position:relative;flex:1;min-height:0;overflow:hidden;border-radius:2px}
+.zd01-b>.foto{position:absolute;inset:0}
+.zd01 .foto img{transform:none!important}
+.zd01-v{position:absolute;inset:0;background:#0B0A0E;opacity:.82;transition:opacity 1.4s var(--k) calc(.7s + var(--i,0)*.32s);pointer-events:none}
+html.js .zd01.da .zd01-v,html.ruhig .zd01-v,html:not(.js) .zd01-v{opacity:0}
+.zd01-text{flex:0 0 auto;padding:16px 14px 14px;background:#16151A;border-radius:2px}
+.zd01-t.offen .zd01-lang{margin:0;font:340 clamp(20px,1.9vw,30px)/1.05 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg)}
+.zd01-zeit{margin:8px 0 0;font:500 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd01-heute{display:none;position:absolute;left:0;right:0;top:0;margin:0;padding:8px 0 7px;text-align:center;font:600 10px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;background:var(--kerze);color:#fff;z-index:3}
+.zd01-t.heute .zd01-heute{display:block}
+.zd01-t.heute{box-shadow:0 0 0 2px var(--kerze)}
+@media (max-width:860px){
+  .zd01-tage{grid-template-columns:1fr;height:auto;gap:8px}
+  .zd01-t.zu{flex-direction:row;justify-content:flex-start;gap:14px;padding:12px 16px}
+  .zd01-kurz{font-size:26px;width:44px}
+  .zd01-zu{margin:0 0 0 auto}
+  .zd01-t.offen{flex-direction:row;flex-wrap:wrap}
+  .zd01-b{flex:1 1 40%;aspect-ratio:4/5}
+  .zd01-text{flex:1 1 100%}
+  .zd01-heute{left:auto;right:0;top:0;width:90px}
+}
+
+/* 2 Von 19 bis 2 */
+.zd02-kopf{margin-bottom:clamp(24px,3vw,40px)}
+.zd02-strahl{position:relative;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:auto 2px auto;gap:0 10px}
+.zd02-linie{grid-column:1/-1;grid-row:2;height:2px;background:rgba(250,244,244,.14);position:relative;overflow:hidden}
+.zd02-fuell{position:absolute;inset:0;background:var(--kerze);transform-origin:0 50%;transform:scaleX(0);will-change:transform}
+.zd02-st{position:relative;display:flex;flex-direction:column;min-width:0}
+.zd02-st.o{grid-row:1;align-self:end;padding-bottom:18px}
+.zd02-st.u{grid-row:3;align-self:start;padding-top:18px;flex-direction:column-reverse}
+.zd02-st::after{content:"";position:absolute;left:0;width:1px;height:18px;background:rgba(250,244,244,.3)}
+.zd02-st.o::after{bottom:0}.zd02-st.u::after{top:0}
+.zd02-b{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden}
+.zd02-b>.foto{position:absolute;inset:0;--d:calc(var(--i,0)*90ms)}
+.zd02-uhr{margin:0;padding:10px 0 0;display:flex;flex-direction:column;gap:4px;font:500 10px/1.4 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd02-st.u .zd02-uhr{padding:0 0 10px}
+.zd02-uhr b{font:340 clamp(17px,1.6vw,24px)/1 var(--titel);letter-spacing:0;text-transform:none;color:var(--fg);font-variation-settings:"SOFT" 100,"opsz" 72}
+@media (max-width:860px){.zd02-strahl{grid-template-columns:repeat(4,1fr);grid-template-rows:none;gap:14px 8px}.zd02-linie{display:none}.zd02-st.o,.zd02-st.u{grid-row:auto;padding:0;flex-direction:column}.zd02-st::after{display:none}.zd02-st.u .zd02-uhr{padding:10px 0 0}}
+
+/* 3 Drei Abende */
+.zd03{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.4fr);gap:clamp(24px,4vw,64px);align-items:center}
+.zd03-knoepfe{display:grid;margin:clamp(22px,3vw,40px) 0 0;border-top:1px solid var(--linie)}
+.zd03-k{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:clamp(14px,1.6vw,22px) 0;border:0;border-bottom:1px solid var(--linie);background:none;color:var(--fg);text-align:left;cursor:pointer;opacity:.45;transition:opacity .4s;font:inherit}
+.zd03-k b{font:340 clamp(26px,2.6vw,40px)/1 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.zd03-k span{font:500 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd03-k.an,.zd03-k:hover{opacity:1}
+.zd03-r{position:relative;aspect-ratio:5/4}
+.zd03-wand{position:absolute;inset:0;opacity:0;transform:translateY(40px);transition:opacity .5s,transform .9s var(--k);pointer-events:none}
+.zd03-wand.an{opacity:1;transform:none;pointer-events:auto;z-index:1}
+.zd03-fw{height:100%;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr}
+.zd03-fw .fw-f:first-child{grid-row:1/3}
+@media (max-width:860px){.zd03{grid-template-columns:1fr}.zd03-r{aspect-ratio:1}.zd03-fw{grid-template-columns:1.3fr 1fr!important;grid-template-rows:1fr 1fr!important;grid-auto-rows:auto!important}.zd03-fw .fw-f:first-child{grid-row:1/3!important}}
+
+/* 4 Die Wand geht auf */
+.zd04{position:relative;--h:clamp(170px,19vw,280px);--g:clamp(96px,9.5vw,140px)}
+.zd04-z{position:absolute;left:0;right:0;z-index:0;margin:0;display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;justify-content:center;transform:translateY(-50%);pointer-events:none}
+.zd04-z.o{top:calc(var(--h) + var(--g)/2)}
+.zd04-z.u{top:calc(2*var(--h) + 1.5*var(--g));font:340 clamp(18px,1.9vw,30px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg);gap:clamp(18px,3vw,48px)}
+.zd04-z.u b{font-weight:340;color:var(--kerze-hell)}
+.zd04-z .zd-gross{font-size:clamp(28px,2.8vw,44px)}
+.zd04-z .zd-tel{pointer-events:auto}
+.zd04-wand{position:relative;z-index:1;display:grid;grid-template-rows:repeat(3,var(--h));row-gap:var(--g)}
+.zd04-reihe{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;will-change:transform}
+.zd04-reihe .foto{border-radius:4px}
+@media (max-width:860px){.zd04{--h:28vw;--g:84px}.zd04-z{gap:10px 16px;padding:0 6px}.zd04-z .zd-gross{font-size:24px}.zd04-z.u{font-size:14px;gap:8px 14px}.zd04-reihe{gap:6px}}
+
+/* 5 Ab 19 Uhr */
+.zd05{display:flex;flex-direction:column}
+.zd05-wer{margin:0 0 6px}
+.zd05-gross{position:relative;z-index:2;margin:0;max-width:none;font:340 clamp(72px,12.5vw,210px)/.9 var(--titel);letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg);text-shadow:0 2px 22px rgba(12,10,14,.6);pointer-events:none}
+.zd05-wand{margin-top:calc(-1 * clamp(34px,5.6vw,96px));grid-template-columns:repeat(4,1fr);grid-template-rows:clamp(200px,22vw,330px) clamp(160px,16vw,240px)}
+.zd05-fuss{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(22px,2.6vw,36px)}
+@media (max-width:860px){.zd05-wand{margin-top:-18px}.zd05-fuss{flex-direction:column;gap:18px}}
+
+/* 6 Blatt für Blatt */
+.zd06{--kopf:72px}
+.zd06-blatt{position:sticky;top:calc(var(--kopf) + 2vh);height:calc(100vh - var(--kopf) - 4vh);margin-bottom:14vh;z-index:calc(1 + var(--n));display:flex;flex-direction:column;gap:14px;background:var(--bg);border-radius:6px}
+.zd06-blatt:last-child{margin-bottom:0}
+.zd06-zeile{margin:0;display:flex;align-items:baseline;gap:18px;font:340 clamp(22px,2.2vw,34px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg)}
+.zd06-fw{flex:1;min-height:0;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr}
+.zd06-fw .fw-f:first-child{grid-row:1/3}
+.zd06-ende{align-items:center;justify-content:center}
+.zd06-platte{display:flex;flex-direction:column;align-items:center;gap:clamp(26px,3vw,44px);padding:clamp(40px,5vw,72px);border-radius:6px;background:linear-gradient(#1F1E26,#15141A);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 60px 80px -50px rgba(0,0,0,.9);width:min(100%,760px);box-sizing:border-box}
+.zd06-ende .zd-tage.reihe{justify-content:center;text-align:center}
+@media (max-width:860px){.zd06{--kopf:60px}.zd06-blatt{height:calc(100svh - var(--kopf) - 4svh)}.zd06-fw{grid-template-columns:1.4fr 1fr!important;grid-template-rows:1fr 1fr!important;grid-auto-rows:auto!important}.zd06-fw .fw-f:first-child{grid-row:1/3!important}.zd06-platte{padding:28px 20px}}
+
+/* 7 Drei Streifen */
+.zd07{display:grid;gap:10px}
+.zd07-reihe{display:grid;grid-template-columns:minmax(220px,.9fr) minmax(0,3.1fr);gap:10px;height:clamp(200px,22vw,320px);overflow:hidden;padding-left:var(--rand)}
+.zd07-tafel{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:clamp(18px,2.4vw,36px) clamp(18px,2.4vw,40px);background:#1E1D24;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(250,244,244,.06)}
+.zd07-tag{margin:0;font:340 clamp(30px,3.4vw,54px)/1 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zd07-zeit{margin:0;font:500 11px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd07-bilder{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:calc(100% + 120px);margin-left:-60px;height:100%}
+.zd07-bilder .foto{border-radius:4px}
+@media (max-width:860px){.zd07-reihe{grid-template-columns:1fr;height:auto;padding:0 var(--rand)}.zd07-tafel{flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:8px 16px;padding:14px 16px}.zd07-tafel .zd-wer{flex-basis:100%}.zd07-bilder{width:100%;margin:0;height:42vw;gap:6px}}
+
+/* 8 Verstreut */
+.zd08{position:relative;height:clamp(540px,54vw,760px)}
+.zd08-mitte{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,32px);text-align:center;padding:clamp(22px,2.6vw,40px) clamp(26px,3vw,48px);background:var(--bg);border-radius:6px}
+.zd08-b{position:absolute;aspect-ratio:4/5}
+.zd08-lauf{position:absolute;inset:0}
+.zd08-lauf .foto{border-radius:4px;box-shadow:0 40px 60px -36px rgba(0,0,0,.9)}
+@media (max-width:860px){.zd08{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}.zd08-mitte{position:static;transform:none;grid-column:1/-1;order:-1;padding:10px 0 20px}.zd08-b{position:static;width:auto!important}.zd08-lauf{position:static;transform:none!important;display:block;aspect-ratio:4/5}}
+
+/* 9 Jede Stunde ein Bild */
+.zd09-kopf{margin-bottom:clamp(22px,2.6vw,36px)}
+.zd09-skala,.zd09-reihe{display:grid;grid-template-columns:minmax(150px,1.1fr) repeat(7,minmax(0,1fr)) minmax(64px,.5fr);gap:6px}
+.zd09-felder{display:contents}
+.zd09-skala{align-items:end;margin-bottom:2px}
+.zd09-skala b{font:400 11px/1 var(--mono);letter-spacing:.08em;color:var(--fg2);padding-left:6px;border-left:1px solid rgba(250,244,244,.3);height:18px;display:flex;align-items:flex-end}
+.zd09-reihe{margin-top:6px}
+.zd09-tag{margin:0;display:flex;align-items:center;padding:0 clamp(12px,1.4vw,22px);background:#1E1D24;border-radius:4px;font:340 clamp(17px,1.7vw,26px)/1 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg);white-space:nowrap}
+.zd09-f{position:relative;aspect-ratio:1;border-radius:4px;overflow:hidden}
+.zd09-f>.foto{position:absolute;inset:0;--d:calc(var(--i,0)*100ms)}
+.zd09-f.leer{background:#1A191F;box-shadow:inset 0 0 0 1px rgba(250,244,244,.06)}
+.zd09-ende{margin:0;display:flex;align-items:center;justify-content:center;text-align:center;background:#1E1D24;border-radius:4px;font:500 10.5px/1.3 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+@media (max-width:860px){
+  .zd09-skala{display:none}
+  .zd09-reihe{grid-template-columns:repeat(7,1fr);gap:4px;margin-top:14px}
+  .zd09-tag{grid-column:1/6;grid-row:1;padding:10px 12px;font-size:20px}
+  .zd09-ende{grid-column:6/8;grid-row:1;font-size:9.5px}
+  .zd09-f{grid-row:2}
+}
+
+/* 10 Das Band zum Blättern */
+.zd10-kopf{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(18px,2.2vw,30px)}
+.zd10-pfeile{display:flex;gap:6px;flex:0 0 auto}
+.zd10-pfeile button{width:44px;height:44px;border:0;border-radius:50%;background:rgba(250,244,244,.1);color:var(--fg);font-size:24px;line-height:1;cursor:pointer}
+.zd10-pfeile button:hover{background:var(--kerze)}
+.zd10-band{height:auto;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;width:100vw;margin-left:calc(50% - 50vw);padding:0 var(--rand) 4px;box-sizing:border-box;-webkit-overflow-scrolling:touch}
+.zd10-band::-webkit-scrollbar{display:none}
+.zd10-band>*{flex:0 0 auto;scroll-snap-align:start}
+.zd10-erst{width:clamp(260px,24vw,340px);display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,2vw,30px);padding:clamp(22px,2.4vw,36px);background:#1E1D24;border-radius:4px;box-sizing:border-box}
+.zd10-b{width:clamp(220px,22vw,320px);aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:relative}
+.zd10-b>.foto{position:absolute;inset:0;--d:calc(var(--i,0)*80ms)}
+@media (max-width:860px){.zd10-kopf{flex-direction:column;align-items:flex-start;gap:14px}.zd10-erst{width:78vw}.zd10-b{width:64vw}}
+
+/* 11 Die Lichter gehen an */
+.zd11-wand{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,clamp(150px,16vw,240px))}
+.zd11-mitte{grid-column:2/4;grid-row:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(16px,1.8vw,24px);background:linear-gradient(#1C1B22,#121116);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.zd11-mitte .zd-tage.reihe{justify-content:center;gap:clamp(16px,2.4vw,40px)}
+.zd11-mitte .zd-t{font-size:clamp(18px,1.6vw,24px)}
+.zd11-f .foto{--weg:0px}
+.zd11-f .foto img{transform:none!important}
+.zd11-v{position:absolute;inset:0;background:#0B0A0E;opacity:.84;transition:opacity 1.1s var(--k) calc(.5s + var(--i,0)*.22s);pointer-events:none}
+html.js .zd11.da .zd11-v,html.ruhig .zd11-v,html:not(.js) .zd11-v{opacity:0}
+@media (max-width:860px){.zd11-mitte{grid-column:1/-1!important;grid-row:auto!important;min-height:220px;padding:20px}.zd11-mitte .zd-tage.reihe{grid-template-columns:repeat(3,auto);gap:14px}.zd11-mitte .zd-t{font-size:15px}}
+
+/* 12 Draussen, drinnen */
+.zd12{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch}
+.zd12-h{position:relative}
+.zd12-h>.fl-etikett{position:absolute;left:18px;top:18px;z-index:3}
+.zd12-lauf{height:100%}
+.zd12-fw{grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,clamp(180px,20vw,300px));height:100%;box-sizing:border-box}
+.zd12-naht{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:18px;padding:clamp(18px,2vw,28px) clamp(10px,1.2vw,18px);background:#1E1D24;border-radius:4px;text-align:center;width:clamp(100px,9.5vw,136px);box-sizing:border-box}
+.zd12-naht .zd-gross{font-size:clamp(22px,2.2vw,34px)}
+.zd12-senk{margin:0;writing-mode:vertical-rl;transform:rotate(180deg);font:340 clamp(16px,1.5vw,22px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;color:var(--fg);white-space:nowrap;flex:1;display:flex;align-items:center}
+@media (max-width:860px){.zd12{grid-template-columns:1fr}.zd12-naht{width:auto;flex-direction:row;flex-wrap:wrap;justify-content:center;padding:18px 16px}.zd12-senk{writing-mode:horizontal-tb;transform:none;white-space:normal;flex:1 1 100%;justify-content:center;font-size:16px}.zd12-fw{grid-template-rows:repeat(2,44vw)!important;grid-auto-rows:44vw}}
+
+/* 13 Das Fenster */
+.zd13{margin-top:clamp(36px,5vh,64px)}
+.zd13.fenster{width:100vw;margin-left:calc(50% - 50vw);height:min(84vh,780px)}
+.zd13 .fenster-satz{font-size:clamp(40px,6vw,104px)}
+.zd13-zeile{position:absolute;left:50%;bottom:clamp(28px,5vh,56px);transform:translateX(-50%);margin:0;width:max-content;max-width:90vw;text-align:center;font:500 11px/1.6 var(--etikett);letter-spacing:.18em;text-transform:uppercase;color:rgba(250,244,244,.9);text-shadow:0 1px 10px rgba(12,10,14,.8)}
+.zd13-zeile a{color:var(--kerze-hell);text-decoration:none}
+@media (max-width:860px){.zd13.fenster{height:64svh}.zd13 .fenster-satz{font-size:34px}.zd13-zeile{font-size:9.5px;letter-spacing:.14em;max-width:92vw;white-space:normal;line-height:1.8}}
+
+/* 14 Die Zeilen */
+.zd14-kopf{display:flex;align-items:baseline;gap:22px;margin-bottom:clamp(16px,2vw,28px)}
+.zd14-liste{margin:0 0 clamp(22px,2.6vw,36px);padding:0;--hr-fg:var(--fg);--hr-dim:rgba(250,244,244,.3);--hr-rule:var(--linie)}
+.zd14-z>a{color:var(--fg);text-decoration:none}
+.zd14-z b{font:340 clamp(32px,4vw,64px)/1 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.zd14-z span{font:500 11px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell);text-align:right}
+.zd14-wand{grid-template-columns:repeat(5,1fr);grid-template-rows:clamp(150px,16vw,240px)}
+@media (max-width:860px){.zd14-kopf{flex-direction:column;gap:8px}.zd14-z b{font-size:26px}}
+
+/* 15 Die Bühne */
+.zd15{height:300vh;position:relative}
+.zd15-fest{position:sticky;top:72px;height:calc(100vh - 72px);display:grid;grid-template-columns:minmax(240px,.8fr) minmax(0,1.5fr);gap:clamp(24px,4vw,64px);align-items:center;padding:4vh 0;box-sizing:border-box}
+.zd15-l{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,22px)}
+.zd15-tag{opacity:.32;transition:opacity .6s}
+.zd15-tag.an{opacity:1}
+.zd15-t{margin:0;font:340 clamp(34px,4.2vw,68px)/1 var(--titel);letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zd15-z{margin:6px 0 0;font:500 10.5px/1.3 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--kerze-hell)}
+.zd15-r{position:relative;height:min(78vh,720px)}
+.zd15-wand{position:absolute;inset:0;opacity:0;transform:translateY(30px);transition:opacity .7s,transform 1s var(--k);pointer-events:none}
+.zd15-wand.an{opacity:1;transform:none;pointer-events:auto}
+.zd15-fw{height:100%;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr 1fr}
+.zd15-fw .fw-f:first-child{grid-row:1/3}.zd15-fw .fw-f:nth-child(4){grid-column:1/3}
+@media (max-width:860px){.zd15{height:auto}.zd15-fest{position:static;height:auto;grid-template-columns:1fr;padding:0}.zd15-tag{opacity:1}.zd15-r{height:auto;display:grid;gap:12px}.zd15-wand{position:static;opacity:1;transform:none;pointer-events:auto}.zd15-fw{height:auto;grid-template-columns:1.25fr 1fr!important;grid-template-rows:38vw 38vw 44vw!important;grid-auto-rows:auto!important}.zd15-fw .fw-f:first-child{grid-row:1/3!important}.zd15-fw .fw-f:nth-child(4){grid-column:1/3!important}}

@@ -1,0 +1,110 @@
+{
+ "karten": [
+  {
+   "id": "pk01",
+   "key": "po_CxNkFWTIvL2",
+   "name": "Katze im Cocktailglas",
+   "abend": "Fr 15. und Sa 16. September 2023",
+   "farbe": "#87323f"
+  },
+  {
+   "id": "pk02",
+   "key": "po_CyT32RTMB4d",
+   "name": "Goldener Herbst",
+   "abend": "Sa 21. Oktober 2023",
+   "farbe": "#0d545d"
+  },
+  {
+   "id": "pk03",
+   "key": "po_CzMcqNcMCqG",
+   "name": "Winter is coming",
+   "abend": "Fr 17. und Sa 18. November 2023",
+   "farbe": "#444d37"
+  },
+  {
+   "id": "pk04",
+   "key": "po_C0w6iuCMcnF",
+   "name": "Silvester auf der Bühne",
+   "abend": "So 31. Dezember 2023",
+   "farbe": "#a4080a"
+  },
+  {
+   "id": "pk05",
+   "key": "po_C17kqAXLfs_",
+   "name": "Flashback",
+   "abend": "Fr 26. und Sa 27. Januar 2024",
+   "farbe": "#60024b"
+  },
+  {
+   "id": "pk06",
+   "key": "po_C56bJeds8PF",
+   "name": "Kabinett der Illusionen",
+   "abend": "Fr 26. und Sa 27. April 2024",
+   "farbe": "#5a4e3e"
+  },
+  {
+   "id": "pk07",
+   "key": "po_C8cgYVSouVT",
+   "name": "Erdig",
+   "abend": "Fr 19. und Sa 20. Juli 2024",
+   "farbe": "#39515e"
+  },
+  {
+   "id": "pk08",
+   "key": "po_DCCf-ikoaGs",
+   "name": "Gondeln aus Gläsern",
+   "abend": "Fr 29. und Sa 30. November 2024",
+   "farbe": "#3c4f54"
+  },
+  {
+   "id": "pk09",
+   "key": "po_DFqbLG2s_dc",
+   "name": "Panther im Abendrot",
+   "abend": "Fr 21. und Sa 22. Februar 2025",
+   "farbe": "#7c3d24"
+  },
+  {
+   "id": "pk10",
+   "key": "po_DJw8OqGMY1G",
+   "name": "Spargel im Gewächshaus",
+   "abend": "Fr 13. und Sa 14. Juni 2025",
+   "farbe": "#435228"
+  },
+  {
+   "id": "pk11",
+   "key": "po_DPwlqcfiKcA",
+   "name": "Kürbis bei Kerzen",
+   "abend": "Fr 14. und Sa 15. November 2025",
+   "farbe": "#14354a"
+  },
+  {
+   "id": "pk12",
+   "key": "po_DVjkofijp6R",
+   "name": "Panther und Spaghetti-Eis",
+   "abend": "Fr 27. und Sa 28. März 2026",
+   "farbe": "#891302"
+  },
+  {
+   "id": "pk13",
+   "key": "po_DbYnkdkjrNy",
+   "name": "Tanz auf dem Mond",
+   "abend": "Fr 25. und Sa 26. September 2026",
+   "farbe": "#2d295b"
+  },
+  {
+   "id": "pk14",
+   "key": "dc_plakat_ganz",
+   "name": "Dirty Chicken",
+   "abend": "Das erste Pop-up",
+   "farbe": "#8953a9"
+  },
+  {
+   "id": "pk15",
+   "key": "pop23",
+   "name": "Das erste Pop-up",
+   "abend": "Sa 20. Mai 2023",
+   "farbe": "#4a4330"
+  }
+ ],
+ "boegen": 2
+}

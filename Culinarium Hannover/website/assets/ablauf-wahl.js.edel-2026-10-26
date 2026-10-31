@@ -1,0 +1,70 @@
+/* Wahlseite «So läuft ein Abend»: Momente der 15 edlen Fassungen. Nur transform und opacity, nativer Scroll; rechnet nur die sichtbare Fassung. */
+(function () {
+  'use strict';
+  var ruhig = document.documentElement.classList.contains('ruhig');
+  function $$(s, c) { return [].slice.call((c || document).querySelectorAll(s)); }
+  function sichtbar(el) { var v = el.closest('.wv'); return v && !v.hidden; }
+  function setzeAn(liste, i) { liste.forEach(function (e, j) { e.classList.toggle('an', j === i); }); }
+  var beimZeigen = [];
+  /* wahl.js schaltet über das hidden-Attribut; neu Gezeigtes misst sich neu */
+  if ('MutationObserver' in window) new MutationObserver(function () { beimZeigen.forEach(function (f) { f(); }); scroll(); })
+    .observe(document.getElementById('ablauf'), { attributes: true, subtree: true, attributeFilter: ['hidden'] });
+
+  /* 5 Galerie: langsames Überblenden, Zeitlinie, Pfeile */
+  $$('[data-ae-galerie]').forEach(function (g) {
+    var imgs = $$('.ae-ga-bild img', g), tx = $$('.ae-ga-t>div', g), lauf = g.querySelector('.ae-ga-lauf i'), i = 0, t0 = performance.now(), D = 7000, sicht = false;
+    function zeig(n) { i = (n + 4) % 4; t0 = performance.now(); setzeAn(imgs, i); setzeAn(tx, i); }
+    $$('[data-r]', g).forEach(function (b) { b.addEventListener('click', function () { zeig(i + +b.dataset.r); }); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { sicht = e[0].isIntersecting; t0 = performance.now(); }, { threshold: .35 }).observe(g);
+    (function tick(now) { requestAnimationFrame(tick); if (!sicht || ruhig || !sichtbar(g)) return; var p = (now - t0) / D; if (p >= 1) { zeig(i + 1); p = 0; } lauf.style.transform = 'scaleX(' + p.toFixed(4) + ')'; })(performance.now());
+  });
+
+  /* 6 Triptychon: die Reihe rückt, die Mitte wächst */
+  $$('[data-ae-trip]').forEach(function (t) {
+    var spur = t.querySelector('.ae-tp-spur'), st = $$('.ae-tp-st', t), i = 1;
+    function setz() { if (!sichtbar(t)) return; var a = st[i]; spur.style.transform = 'translateX(' + (t.clientWidth / 2 - (a.offsetLeft + a.offsetWidth / 2)).toFixed(1) + 'px)'; setzeAn(st, i); }
+    $$('[data-r]', t).forEach(function (b) { b.addEventListener('click', function () { i = Math.max(1, Math.min(4, i + +b.dataset.r)); setz(); }); });
+    addEventListener('resize', setz); beimZeigen.push(setz); setz();
+  });
+
+  /* 9 Die Liste: Zeigen rückt den Titel ein und blendet das Bild über */
+  $$('[data-ae-liste]').forEach(function (l) {
+    var z = $$('.ae-ls-z button', l), imgs = $$('.ae-ls-bild img', l), satz = l.querySelector('.ae-ls-s');
+    var texte = ['Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.', 'Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.', 'Zu den Gängen kommen fünf Signature Drinks von Momo, gemacht für genau dieses Essen.', 'Momo erklärt jeden Drink am Tisch, damit man die Aromen nicht nur schmeckt, sondern auch versteht.'];
+    z.forEach(function (b) { function setz() { var i = +b.dataset.i; setzeAn(z, i); setzeAn(imgs, i); satz.textContent = texte[i]; } b.addEventListener('mouseenter', setz); b.addEventListener('click', setz); });
+  });
+
+  /* 14 Register: Goldlinie gleitet zum gewählten Reiter */
+  $$('[data-ae-reg]').forEach(function (r) {
+    var bt = $$('.ae-rg-r button', r), s = r.querySelector('.ae-rg-s'), bild = $$('.ae-rg-b img', r), det = $$('.ae-rg-d img', r), tx = $$('.ae-rg-t>div', r), i = 0;
+    function setz(n) { i = n; setzeAn(bt, i); setzeAn(bild, i); setzeAn(det, i); setzeAn(tx, i); if (!sichtbar(r)) return; var b = bt[i]; s.style.transform = 'translateX(' + b.offsetLeft + 'px) scaleX(' + (b.offsetWidth / 100).toFixed(3) + ')'; }
+    bt.forEach(function (b) { b.addEventListener('click', function () { setz(+b.dataset.i); }); b.addEventListener('mouseenter', function () { setz(+b.dataset.i); }); });
+    addEventListener('resize', function () { setz(i); }); beimZeigen.push(function () { setz(i); }); setz(0);
+  });
+
+  /* 11 Promenade: Goldlinie wächst mit, Pfeile blättern um ein Bild */
+  $$('[data-ae-prom]').forEach(function (p) {
+    var f = p.parentNode.querySelector('.ae-pr-f i');
+    function lauf() { var m = p.scrollWidth - p.clientWidth; f.style.transform = 'scaleX(' + (.2 + .8 * (m > 0 ? p.scrollLeft / m : 1)).toFixed(4) + ')'; }
+    p.addEventListener('scroll', lauf, { passive: true }); lauf();
+    $$('[data-r]', p.parentNode).forEach(function (b) { b.addEventListener('click', function () { var k = p.querySelector('.ae-pr-k'); p.scrollBy({ left: +b.dataset.r * (k.offsetWidth + 30), behavior: 'smooth' }); }); });
+  });
+
+  /* 10 Bild und Detail (Detail läuft gegen), 13 Geteilt (Text wechselt mit den Bildern): ein Takt am Seitenscroll */
+  var details = $$('.ae-bd-k'), geteilt = $$('[data-ae-geteilt]');
+  function takt() {
+    lt = false; var vh = innerHeight;
+    if (!ruhig && innerWidth > 860) details.forEach(function (k) {
+      if (!sichtbar(k)) return; var r = k.parentNode.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
+      k.style.transform = 'translate3d(0,' + (((r.top + r.height / 2) - vh / 2) * .16).toFixed(1) + 'px,0)';
+    });
+    geteilt.forEach(function (g) {
+      if (!sichtbar(g)) return; var an = 0;
+      $$('.ae-gt-g', g).forEach(function (x, j) { if (x.getBoundingClientRect().top < vh * .55) an = j; });
+      setzeAn($$('.ae-gt-st>div', g), an);
+    });
+  }
+  var lt = false;
+  function scroll() { if (!lt) { lt = true; requestAnimationFrame(takt); } }
+  addEventListener('scroll', scroll, { passive: true }); addEventListener('resize', scroll, { passive: true }); takt();
+})();

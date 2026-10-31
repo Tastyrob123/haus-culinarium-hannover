@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ablauf wählen 3 · Culinarium</title>
+<meta name="theme-color" content="#16151A">
+<style>
+@font-face{font-family:"Fraunces";src:url(assets/schrift/fraunces-soft.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Urbanist";src:url(assets/schrift/urbanist.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(assets/schrift/instrument.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:"DM Mono";src:url(assets/schrift/dmmono.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{
+  --nacht:#16151A;--tief:#0F0E13;--schiefer:#3A3845;--weiss:#FAF4F4;--kerze:#EF7649;--kerze-hell:#F5A689;--gold:#D9A57E;--elfenbein:#F3EDE4;--tinte:#1d1b20;
+  --linie:rgba(250,244,244,.16);--leise:rgba(250,244,244,.64);
+  --titel:"Fraunces",Georgia,serif;--text:"Instrument Sans",system-ui,sans-serif;--etikett:"Urbanist",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;
+  --rand:clamp(16px,4.4vw,72px);--h:min(78vh,720px);--k:cubic-bezier(.22,.68,.26,1);--lang:cubic-bezier(.16,.84,.24,1)
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--nacht);color:var(--weiss);font:400 16px/1.6 var(--text);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;text-align:inherit}
+.foto{position:relative;overflow:hidden;background:var(--schiefer)}
+.foto img{width:100%;height:100%;object-fit:cover}
+.m{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+/* edle Grundbausteine */
+.lab{display:block;font:500 10.5px/1.4 var(--etikett);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.tt{font-family:var(--titel);font-weight:300;font-variation-settings:"SOFT" 100;line-height:1.06;letter-spacing:-.005em}
+.sz{color:var(--leise);font-size:15px;line-height:1.7}
+.strich{display:block;width:44px;height:1px;background:var(--gold);margin:18px 0}
+.mitte{text-align:center}.mitte .strich{margin-left:auto;margin-right:auto}
+.ein img{transform:scale(1.07);transition:transform 2.2s var(--lang)}
+.da .ein img{transform:none}
+
+/* Seitenkopf */
+.seitenkopf{max-width:1280px;margin:0 auto;padding:clamp(48px,9vh,110px) var(--rand) 40px}
+.seitenkopf h1{font-family:var(--titel);font-weight:300;font-variation-settings:"SOFT" 100;font-size:clamp(40px,6vw,84px);line-height:1.04}
+.seitenkopf p{max-width:640px;margin-top:20px;color:var(--leise)}
+.inhalt{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:32px;max-width:900px}
+.inhalt a{text-decoration:none;font-family:var(--etikett);font-size:15px;color:var(--leise);border-bottom:1px solid transparent}
+.inhalt a:hover{color:var(--weiss);border-color:var(--gold)}
+.inhalt a span{font-family:var(--mono);font-size:11px;color:var(--gold);margin-right:6px}
+
+/* Fassung */
+.fassung{max-width:1280px;margin:0 auto;padding:clamp(56px,10vh,120px) var(--rand) 0;scroll-margin-top:20px}
+.fassung:last-of-type{padding-bottom:140px}
+.kopf{display:grid;grid-template-columns:56px 1fr minmax(220px,300px);gap:8px 28px;align-items:start;margin-bottom:22px;border-top:1px solid var(--linie);padding-top:22px}
+.kopf .nr{font-family:var(--mono);color:var(--gold);font-size:14px;padding-top:8px}
+.kopf h2{font-family:var(--titel);font-weight:300;font-variation-settings:"SOFT" 100;font-size:clamp(30px,3.6vw,46px);line-height:1.05}
+.kopf .satz{margin-top:10px;color:var(--leise);max-width:620px}
+.kopf .vorbild{margin-top:8px;font-size:13px;color:var(--leise)}
+.kopf .vorbild b{font-weight:500;color:var(--gold)}
+.kopf dl{font-size:13px;line-height:1.5;color:var(--leise);display:grid;gap:8px;padding-top:6px}
+.kopf dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.buehne{position:relative;height:var(--h);border-radius:10px;overflow:hidden;background:var(--tief);box-shadow:0 0 0 1px var(--linie)}
+.scroller{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--schiefer) transparent}
+.wisch{position:absolute;right:16px;bottom:14px;z-index:9;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--leise);background:var(--tief);padding:4px 8px;border-radius:3px}
+.hinweis{margin-top:12px;font-size:13px;color:var(--leise);max-width:860px}
+.hinweis b{font-weight:500;color:var(--gold)}
+.pfeil{width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(250,244,244,.34);display:grid;place-items:center;transition:box-shadow .4s}
+.pfeil:hover{box-shadow:inset 0 0 0 1px var(--gold)}
+.pfeil svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.2}
+
+/* 01 Doppelseite */
+.dp{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--schiefer) transparent}
+.dp-seite{height:var(--h);scroll-snap-align:start;display:grid;grid-template-columns:1.12fr .88fr;gap:4px;padding-bottom:4px}
+.dp-seite:nth-child(even){grid-template-columns:.88fr 1.12fr}
+.dp-seite:nth-child(even) .dp-gross{order:2}
+.dp-rechts{display:grid;grid-template-rows:50% 50%;gap:4px;min-height:0}
+.dp-txt{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(22px,3.4vw,52px);background:#1b1a20}
+.dp-txt .tt{font-size:clamp(30px,3.2vw,46px)}
+
+/* 02 Arkaden */
+.ak{height:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2vw,32px);padding:4% 4.5%;align-content:center}
+.ak-b{aspect-ratio:3/4.25;border-radius:999px 999px 0 0;position:relative}
+.ak-b:after{content:"";position:absolute;inset:9px;border:1px solid rgba(250,244,244,.42);border-radius:999px 999px 0 0;pointer-events:none}
+.ak-txt{padding-top:20px}
+.ak-txt .tt{font-size:clamp(20px,2vw,28px);margin-top:10px}
+.ak-txt .sz{font-size:13.5px;margin-top:8px;line-height:1.6}
+.ak-st:nth-child(2) img{transition-delay:.15s}.ak-st:nth-child(3) img{transition-delay:.3s}.ak-st:nth-child(4) img{transition-delay:.45s}
+
+/* 03 Vier Paneele */
+.pn{height:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.pn-p{position:relative;overflow:hidden}
+.pn-p .foto{position:absolute;inset:0}
+.pn-p:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,19,.35) 0%,rgba(15,14,19,0) 26%,rgba(15,14,19,0) 46%,rgba(15,14,19,.88) 100%);pointer-events:none}
+.pn-dim{position:absolute;inset:0;background:var(--tief);opacity:0;transition:opacity .9s var(--k);z-index:1}
+.pn:hover .pn-p:not(:hover) .pn-dim{opacity:.55}
+.pn-oben{position:absolute;left:24px;top:22px;z-index:2}
+.pn-unten{position:absolute;left:24px;right:24px;bottom:26px;z-index:2}
+.pn-unten .tt{font-size:clamp(24px,2.5vw,36px)}
+.pn-linie{display:block;height:1px;background:var(--gold);margin:16px 0 14px;transform:scaleX(.16);transform-origin:0 50%;transition:transform 1s var(--lang)}
+.pn-p:hover .pn-linie{transform:none}
+.pn-unten .sz{font-size:13.5px;line-height:1.6;opacity:0;transition:opacity .8s var(--k)}
+.pn-p:hover .sz{opacity:1}
+
+/* 04 Die Einladung */
+.ei{height:100%;position:relative}
+.ei-bild{position:absolute;left:0;right:0;top:0;height:66%}
+.ei-karte{position:absolute;left:6%;right:6%;bottom:6%;background:var(--elfenbein);color:var(--tinte);padding:clamp(20px,2.6vw,34px) clamp(20px,3vw,40px);box-shadow:0 30px 60px -20px rgba(0,0,0,.7);transition:transform 1.6s var(--lang)}
+.ei:not(.da) .ei-karte{transform:translateY(22px)}
+.ei-kopf{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:clamp(16px,2vw,26px)}
+.ei-kopf:before,.ei-kopf:after{content:"";flex:1;height:1px;background:#cdbfae}
+.ei-kopf .lab{color:#9c6847}
+.ei-reihe{display:grid;grid-template-columns:repeat(4,1fr)}
+.ei-reihe>div{padding:0 clamp(12px,1.6vw,24px);border-left:1px solid #d9cec1}
+.ei-reihe>div:first-child{border-left:0;padding-left:0}
+.ei-reihe .tt{font-size:clamp(19px,1.9vw,27px);color:var(--tinte)}
+.ei-reihe p{font-size:13px;line-height:1.6;color:#5d5761;margin-top:8px}
+
+/* 05 Galerie */
+.ga{height:100%;position:relative;overflow:hidden}
+.ga-bild img{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity 1.4s var(--k),transform 8s linear}
+.ga-bild img.an{opacity:1;transform:none}
+.ga-tafel{position:absolute;left:0;bottom:0;width:min(450px,52%);background:var(--nacht);padding:clamp(22px,2.8vw,38px) clamp(22px,3vw,42px) clamp(24px,3vw,40px)}
+.ga-tafel .tt{font-size:clamp(28px,3vw,44px)}
+.ga-tafel>div{transition:opacity .5s}
+.ga-steuer{position:absolute;right:clamp(18px,3vw,40px);bottom:clamp(18px,3vw,36px);display:flex;align-items:center;gap:14px;z-index:2}
+.ga-lauf{width:110px;height:1px;background:rgba(250,244,244,.3);overflow:hidden;margin-right:8px}
+.ga-lauf i{display:block;height:100%;background:var(--weiss);transform:scaleX(0);transform-origin:0 50%}
+
+/* 06 Triptychon */
+.tp{height:100%;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:3% 0 2%}
+.tp-spur{display:flex;gap:3vw;transition:transform 1.3s var(--lang);will-change:transform}
+.tp-st{flex:0 0 min(30%,calc(var(--h) * .48));transition:transform 1.3s var(--lang),opacity 1.3s var(--lang);transform:scale(.8);opacity:.42}
+.tp-st.an{transform:none;opacity:1}
+.tp-st .foto{aspect-ratio:3/4}
+.tp-txt{text-align:center;margin-top:20px;opacity:0;transition:opacity .8s var(--k)}
+.tp-st.an .tp-txt{opacity:1}
+.tp-txt .tt{font-size:clamp(22px,2.2vw,32px);margin-top:8px}
+.tp-txt .sz{font-size:13.5px;margin:8px auto 0;max-width:300px;line-height:1.6}
+.tp-steuer{position:absolute;left:0;right:0;top:40%;display:flex;justify-content:space-between;padding:0 clamp(16px,3vw,40px);pointer-events:none;z-index:2}
+.tp-steuer .pfeil{pointer-events:auto;background:var(--tief)}
+
+/* 07 Übereinander */
+.ub-p{position:sticky;top:0;height:var(--h);overflow:hidden}
+.ub-p .foto{position:absolute;inset:0}
+.ub-p:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,14,19,0) 40%,rgba(15,14,19,.82));pointer-events:none}
+.ub-txt{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);width:min(560px,86%);z-index:2;text-align:center}
+.ub-txt .tt{font-size:clamp(36px,4.6vw,66px)}
+.ub-txt .sz{color:rgba(250,244,244,.82)}
+
+/* 08 Medaillons */
+.md{height:100%;background:#211F27;display:grid;grid-template-columns:repeat(4,1fr);gap:3.4%;padding:4% 6%;align-content:center}
+.md-o{aspect-ratio:3/4;border-radius:50%;box-shadow:0 0 0 1px rgba(217,165,126,.7),0 0 0 8px #211F27,0 0 0 9px rgba(250,244,244,.22)}
+.md-txt{text-align:center;padding-top:26px}
+.md-txt .tt{font-size:clamp(19px,1.9vw,27px);margin-top:10px}
+.md-txt .sz{font-size:13.5px;margin-top:8px;line-height:1.6}
+
+/* 09 Die Liste */
+.ls{height:100%;display:grid;grid-template-columns:1.12fr .88fr;gap:4px}
+.ls-links{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(22px,4.4vw,68px)}
+.ls-z{display:grid;grid-template-columns:clamp(124px,13vw,170px) 1fr;align-items:baseline;width:100%;padding:clamp(10px,1.6vh,16px) 0;border-top:1px solid var(--linie)}
+.ls-z:last-of-type{border-bottom:1px solid var(--linie)}
+.ls-z .tt{font-size:clamp(28px,3.6vw,52px);color:rgba(250,244,244,.34);transition:color .6s,transform 1s var(--lang)}
+.ls-z .lab{color:rgba(217,165,126,.5);transition:color .6s}
+.ls-z.an .tt{color:var(--weiss);transform:translateX(14px)}
+.ls-z.an .lab{color:var(--gold)}
+.ls-satz{margin-top:22px;min-height:3.6em;max-width:460px}
+.ls-bild img{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--k)}
+.ls-bild img.an{opacity:1}
+
+/* 10 Bild und Detail */
+.bd-z{height:var(--h);position:relative}
+.bd-gross{position:absolute;left:5%;top:8%;width:52%;height:80%}
+.bd-klein{position:absolute;left:45%;top:44%;width:21%;height:44%;box-shadow:0 0 0 7px var(--tief);will-change:transform}
+.bd-txt{position:absolute;left:70%;top:50%;transform:translateY(-50%);width:25%}
+.bd-txt .tt{font-size:clamp(28px,3vw,44px)}
+.bd-z:nth-child(even) .bd-gross{left:auto;right:5%}
+.bd-z:nth-child(even) .bd-klein{left:auto;right:45%}
+.bd-z:nth-child(even) .bd-txt{left:5%}
+
+/* 11 Promenade */
+.pr{height:100%;overflow-x:auto;overflow-y:hidden;display:flex;gap:clamp(18px,2.4vw,34px);padding:5% 5% 8%;scroll-snap-type:x proximity;scrollbar-width:none}
+.pr::-webkit-scrollbar{display:none}
+.pr-intro{flex:0 0 clamp(220px,24vw,320px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:4%}
+.pr-intro .tt{font-size:clamp(32px,3.6vw,52px)}
+.pr-k{flex:0 0 auto;width:calc(var(--h) * .44);display:flex;flex-direction:column;scroll-snap-align:start}
+.pr-k .foto{flex:1;min-height:0}
+.pr-k .tt{font-size:clamp(20px,2vw,28px);margin-top:8px}
+.pr-k .lab{margin-top:18px}
+.pr-k .sz{font-size:13.5px;line-height:1.6;margin-top:6px}
+.pr-fort{position:absolute;left:5%;right:5%;bottom:4%;height:1px;background:rgba(250,244,244,.18);z-index:2}
+.pr-fort i{display:block;height:100%;background:var(--gold);transform-origin:0 50%;transform:scaleX(.2)}
+
+/* 12 Passepartout */
+.pp{height:100%;background:radial-gradient(ellipse at 50% 12%,#2c2932,#17161b 70%);display:grid;grid-template-columns:repeat(4,1fr);gap:3.4%;padding:4% 6%;align-content:center}
+.pp-rahmen{background:var(--elfenbein);padding:9%;box-shadow:0 0 0 3px #0d0c10,0 0 0 4px rgba(217,165,126,.55),0 24px 40px rgba(0,0,0,.55)}
+.pp-rahmen .foto{aspect-ratio:3/4;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.pp-txt{text-align:center;padding-top:24px}
+.pp-txt .tt{font-size:clamp(18px,1.8vw,25px)}
+.pp-txt .sz{font-size:13px;margin-top:6px;line-height:1.6}
+
+/* 13 Geteilt */
+.gt-lauf{display:grid;grid-template-columns:1fr 1fr}
+.gt-links{position:sticky;top:0;height:var(--h)}
+.gt-links>div{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,4.6vw,72px);opacity:0;transition:opacity .25s}
+.gt-links>div.an{opacity:1;transition:opacity .9s .2s var(--k)}
+.gt-links .tt{font-size:clamp(38px,4.6vw,68px)}
+.gt-rechts{padding:6vh 4px 10vh 0;display:flex;flex-direction:column;gap:4px}
+.gt-rechts .foto{aspect-ratio:4/5}
+.gt-rechts .foto.schmal{width:72%;margin-left:auto}
+.gt-rechts .foto.breit{aspect-ratio:5/4}
+
+/* 14 Register */
+.rg{height:100%;display:grid;grid-template-rows:auto 1fr}
+.rg-reiter{display:flex;justify-content:space-between;gap:20px;padding:22px clamp(22px,4vw,56px) 0;position:relative;border-bottom:1px solid var(--linie)}
+.rg-reiter button{padding:6px 0 16px}
+.rg-reiter .tt{font-size:clamp(17px,1.9vw,26px);color:rgba(250,244,244,.4);transition:color .5s}
+.rg-reiter button.an .tt,.rg-reiter button:hover .tt{color:var(--weiss)}
+.rg-strich{position:absolute;left:0;bottom:-1px;height:1px;width:100px;background:var(--gold);transform-origin:0 50%;transition:transform 1s var(--lang)}
+.rg-koerper{display:grid;grid-template-columns:1.45fr 1fr;gap:4px;min-height:0;padding-top:4px}
+.rg-bild img,.rg-detail img{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--k)}
+.rg-bild img.an,.rg-detail img.an{opacity:1}
+.rg-rechts{display:grid;grid-template-rows:auto 1fr;min-height:0}
+.rg-txt{padding:clamp(22px,3vw,40px) clamp(22px,3vw,40px) clamp(20px,2.6vw,32px)}
+.rg-txt .tt{font-size:clamp(28px,3vw,42px)}
+
+/* 15 Kolumne */
+.ko{padding:clamp(40px,8vh,80px) 0 60px}
+.ko-kopf{max-width:620px;margin:0 auto;padding:0 24px;text-align:center}
+.ko-kopf .tt{font-size:clamp(36px,4.4vw,60px);margin-top:14px}
+.ko-kopf p.sz{margin-top:22px;text-align:left}
+.ko-kopf p.sz:first-letter{float:left;font:300 64px/.86 var(--titel);font-variation-settings:"SOFT" 100;color:var(--gold);margin:6px 10px 0 0}
+.ko-bild{margin:clamp(36px,6vh,64px) 4px 0;height:calc(var(--h) * .7)}
+.ko-paar{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:clamp(36px,6vh,64px) 4px 0;height:calc(var(--h) * .62)}
+.ko-st{max-width:520px;margin:clamp(24px,4vh,40px) auto 0;padding:0 24px;text-align:center}
+.ko-st .tt{font-size:clamp(28px,3vw,42px);margin-top:10px}
+.ko-st .sz{margin-top:12px}
+
+/* Handy */
+@media (max-width:860px){
+  :root{--h:min(84vh,720px)}
+  .kopf{grid-template-columns:40px 1fr}
+  .kopf dl{grid-column:1/-1}
+  .dp-seite,.dp-seite:nth-child(even){grid-template-columns:1fr;grid-template-rows:46% 54%}
+  .dp-seite:nth-child(even) .dp-gross{order:0}
+  .dp-rechts{grid-template-rows:0 1fr}.dp-rechts .foto{display:none}
+  .ak,.md,.pp{grid-template-columns:1fr 1fr;gap:18px 14px;padding:16px}
+  .ak-txt .sz,.md-txt .sz,.pp-txt .sz{display:none}
+  .ak-txt{padding-top:10px}.md-txt,.pp-txt{padding-top:14px}
+  .pn{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+  .pn-unten .sz{display:none}
+  .ei-bild{height:42%}
+  .ei-karte{left:12px;right:12px;bottom:12px}
+  .ei-reihe{grid-template-columns:1fr 1fr;gap:16px 0}
+  .ei-reihe>div:nth-child(3){border-left:0;padding-left:0}
+  .ei-reihe p{font-size:12px;line-height:1.5}
+  .ga-tafel{width:100%}
+  .ga-steuer{top:16px;bottom:auto}
+  .tp-st{flex-basis:62%}
+  .ls{grid-template-columns:1fr;grid-template-rows:40% 60%}
+  .ls-bild{order:-1}
+  .ls-z{grid-template-columns:1fr}.ls-z .lab{display:none}
+  .bd-gross{left:4%!important;right:auto!important;top:4%;width:70%;height:52%}
+  .bd-klein{left:auto!important;right:4%!important;top:34%;width:38%;height:30%}
+  .bd-txt{left:4%!important;top:auto;bottom:4%;transform:none;width:92%}
+  .gt-lauf{grid-template-columns:1fr 1fr}
+  .gt-links .tt{font-size:28px}.gt-links .sz{font-size:13px}
+  .rg-reiter{overflow-x:auto;gap:22px;justify-content:flex-start}
+  .rg-reiter button{flex:0 0 auto}
+  .rg-koerper{grid-template-columns:1fr;grid-template-rows:55% 45%}
+  .rg-detail{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="seitenkopf">
+  <p class="m" style="color:var(--gold)">Culinarium · Startseite · Teil «So läuft ein Abend» · dritte Runde</p>
+  <h1>Fünfzehn edle Fassungen für den Ablauf.</h1>
+  <p>In der Haltung eines Luxushotels: grosse Bilder, feine Schrift, Haarlinien, langsame Bewegung, keine Spielereien. Grobe Skizzen mit Rudis Fotos. Rahmen mit Laufbalken lassen sich darin scrollen.</p>
+  <nav class="inhalt" aria-label="Fassungen" id="inhalt"></nav>
+</header>
+
+<main>
+
+<section class="fassung" id="f01" data-name="Doppelseite">
+  <div class="kopf"><span class="nr">01</span>
+    <div><h2>Doppelseite</h2><p class="satz">Jeder Schritt eine ganze Doppelseite wie in einem Bildband: ein grosses Foto, daneben ein zweites und der Text als ruhiger Block. Die Seiten rasten beim Scrollen ein und wechseln die Seite.</p></div>
+    <dl><dt>Bewegung</dt><dd>Einrasten beim Scrollen, sonst still</dd><dt>Am Handy</dt><dd>Foto oben, Text darunter, Seite für Seite</dd></dl>
+  </div>
+  <div class="buehne"><div class="dp" data-bau="doppelseite"></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<section class="fassung" id="f02" data-name="Arkaden">
+  <div class="kopf"><span class="nr">02</span>
+    <div><h2>Arkaden</h2><p class="satz">Vier hohe Bilder mit rundem Bogen oben, wie Fenster in einer Galerie, darin eine feine Innenlinie. Darunter Etikett, Titel und Satz, still und gleichmässig.</p></div>
+    <dl><dt>Bewegung</dt><dd>Bilder setzen sich beim Hereinkommen langsam (Massstab 1,07 auf 1)</dd><dt>Am Handy</dt><dd>Zwei mal zwei Bögen</dd></dl>
+  </div>
+  <div class="buehne"><div class="ak" data-da data-bau="arkaden"></div></div>
+</section>
+
+<section class="fassung" id="f03" data-name="Vier Paneele">
+  <div class="kopf"><span class="nr">03</span>
+    <div><h2>Vier Paneele</h2><p class="satz">Vier hohe Bildbahnen über die volle Höhe, nur durch eine Fuge getrennt. Fährt man über eine, treten die anderen zurück, die Goldlinie zieht sich auf und der Satz erscheint.</p></div>
+    <dl><dt>Bewegung</dt><dd>Linie zieht auf, Nachbarn dunkeln ab (Deckkraft)</dd><dt>Am Handy</dt><dd>Zwei mal zwei, Titel sichtbar</dd></dl>
+  </div>
+  <div class="buehne"><div class="pn" data-bau="paneele"></div></div>
+</section>
+
+<section class="fassung" id="f04" data-name="Die Einladung">
+  <div class="kopf"><span class="nr">04</span>
+    <div><h2>Die Einladung</h2><p class="satz">Oben ein breites Bild der gedeckten Tafel, darauf liegt eine Karte in Elfenbein wie eine gedruckte Einladung. Die vier Schritte stehen darauf in vier Spalten, getrennt durch Haarlinien.</p></div>
+    <dl><dt>Bewegung</dt><dd>Karte setzt sich sanft auf (nur Weg, sichtbar von Anfang an)</dd><dt>Am Handy</dt><dd>Karte mit zwei mal zwei Feldern</dd></dl>
+  </div>
+  <div class="buehne"><div class="ei" data-da data-bau="einladung"></div></div>
+</section>
+
+<section class="fassung" id="f05" data-name="Galerie">
+  <div class="kopf"><span class="nr">05</span>
+    <div><h2>Galerie</h2><p class="satz">Ein Bild über die ganze Fläche, das langsam in das nächste übergeht. Unten links eine dunkle Tafel mit dem Schritt, rechts zwei feine Pfeile und eine Linie, die die Zeit zeigt.</p></div>
+    <dl><dt>Bewegung</dt><dd>Langsames Überblenden mit leichtem Zurückweichen des Bildes</dd><dt>Am Handy</dt><dd>Bild oben, Tafel über die volle Breite</dd></dl>
+  </div>
+  <div class="buehne"><div class="ga" data-bau="galerie"></div></div>
+</section>
+
+<section class="fassung" id="f06" data-name="Triptychon">
+  <div class="kopf"><span class="nr">06</span>
+    <div><h2>Triptychon</h2><p class="satz">In der Mitte gross der aktuelle Schritt, links und rechts kleiner und gedämpft der vorige und der nächste, symmetrisch wie ein Altarbild. Ein Pfeil rückt alles um einen Platz weiter.</p></div>
+    <dl><dt>Bewegung</dt><dd>Reihe rückt langsam weiter, Mitte wächst (nur Weg und Massstab)</dd><dt>Am Handy</dt><dd>Mitte breiter, Nachbarn angeschnitten</dd></dl>
+  </div>
+  <div class="buehne"><div class="tp" data-bau="triptychon"></div></div>
+</section>
+
+<section class="fassung" id="f07" data-name="Übereinander">
+  <div class="kopf"><span class="nr">07</span>
+    <div><h2>Übereinander</h2><p class="satz">Vier Bilder über die volle Fläche, jedes mit Titel in der Mitte unten. Beim Scrollen gleitet das nächste über das vorige, das stehen bleibt, wie Seiten, die sich übereinanderlegen.</p></div>
+    <dl><dt>Bewegung</dt><dd>Nächstes Bild gleitet über das stehende (nativer Scroll)</dd><dt>Am Handy</dt><dd>Gleich, Hochformat füllt den Bildschirm</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-bau="uebereinander"></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<section class="fassung" id="f08" data-name="Medaillons">
+  <div class="kopf"><span class="nr">08</span>
+    <div><h2>Medaillons</h2><p class="satz">Vier ovale Bilder mit doppelter Fassung aus einer Goldlinie und einer hellen Linie, wie gerahmte Porträts. Darunter zentriert Etikett, Titel und Satz.</p></div>
+    <dl><dt>Bewegung</dt><dd>Bilder setzen sich beim Hereinkommen (Massstab)</dd><dt>Am Handy</dt><dd>Zwei mal zwei</dd></dl>
+  </div>
+  <div class="buehne"><div class="md" data-da data-bau="medaillons"></div></div>
+</section>
+
+<section class="fassung" id="f09" data-name="Die Liste">
+  <div class="kopf"><span class="nr">09</span>
+    <div><h2>Die Liste</h2><p class="satz">Die vier Schritte gross und leicht gesetzt, untereinander zwischen Haarlinien. Fährt man über einen, rückt er ein Stück ein und rechts erscheint sein Bild in voller Höhe.</p></div>
+    <dl><dt>Bewegung</dt><dd>Titel rückt ein, Bild blendet über</dd><dt>Am Handy</dt><dd>Bild oben, Liste darunter, Antippen</dd></dl>
+  </div>
+  <div class="buehne"><div class="ls" data-bau="liste"></div></div>
+</section>
+
+<section class="fassung" id="f10" data-name="Bild und Detail">
+  <div class="kopf"><span class="nr">10</span>
+    <div><h2>Bild und Detail</h2><p class="satz">Je Schritt ein grosses Bild und ein kleines Detail, das über seine Ecke greift und beim Scrollen sanft gegenläuft. Der Text steht frei daneben, die Seiten wechseln von Schritt zu Schritt.</p></div>
+    <dl><dt>Bewegung</dt><dd>Detailbild läuft leicht gegen (nur Weg)</dd><dt>Am Handy</dt><dd>Grosses Bild, Detail rechts versetzt, Text darunter</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-bau="detail"></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<section class="fassung" id="f11" data-name="Promenade">
+  <div class="kopf"><span class="nr">11</span>
+    <div><h2>Promenade</h2><p class="satz">Ein ruhiger Gang seitwärts: vorne der Einleitungssatz, dann vier grosse Hochformate mit ihren Texten darunter. Eine Goldlinie unten zeigt, wie weit man ist.</p></div>
+    <dl><dt>Bewegung</dt><dd>Seitwärts wischen oder scrollen, Linie wächst mit</dd><dt>Am Handy</dt><dd>Gleich, ein Bild je Blick</dd></dl>
+  </div>
+  <div class="buehne"><div class="pr" data-bau="promenade"></div><div class="pr-fort"><i></i></div><span class="wisch">Seitwärts wischen</span></div>
+</section>
+
+<section class="fassung" id="f12" data-name="Passepartout">
+  <div class="kopf"><span class="nr">12</span>
+    <div><h2>Passepartout</h2><p class="satz">Vier Fotos in breiten Passepartouts aus Elfenbein, gehängt wie in einer Galerie auf dunkler Wand. Darunter klein der Titel und ein Satz.</p></div>
+    <dl><dt>Bewegung</dt><dd>Keine eigene; der stille Teil</dd><dt>Am Handy</dt><dd>Zwei mal zwei</dd></dl>
+  </div>
+  <div class="buehne"><div class="pp" data-bau="passepartout"></div></div>
+</section>
+
+<section class="fassung" id="f13" data-name="Geteilt">
+  <div class="kopf"><span class="nr">13</span>
+    <div><h2>Geteilt</h2><p class="satz">Links steht gross und ruhig der Schritt, rechts ziehen seine Bilder vorbei. Kommt der nächste Schritt ins Bild, wechselt links der Text.</p></div>
+    <dl><dt>Bewegung</dt><dd>Text steht, Bilder ziehen (nativer Scroll), Text blendet über</dd><dt>Am Handy</dt><dd>Zwei schmale Spalten, gleiche Idee</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-bau="geteilt"></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+<section class="fassung" id="f14" data-name="Register">
+  <div class="kopf"><span class="nr">14</span>
+    <div><h2>Register</h2><p class="satz">Oben die vier Schritte in einer Reihe, darunter eine Goldlinie, die zum gewählten gleitet. Darunter ein grosses Bild, daneben Text und ein zweites Bild.</p></div>
+    <dl><dt>Bewegung</dt><dd>Linie gleitet, Bilder blenden über</dd><dt>Am Handy</dt><dd>Reiter seitwärts, Bild und Text untereinander</dd></dl>
+  </div>
+  <div class="buehne"><div class="rg" data-bau="register"></div></div>
+</section>
+
+<section class="fassung" id="f15" data-name="Die Kolumne">
+  <div class="kopf"><span class="nr">15</span>
+    <div><h2>Die Kolumne</h2><p class="satz">Wie ein Artikel in einem Reisemagazin: Initiale in Gold, dann im Wechsel ein Bild über die volle Breite und ein schmaler, zentrierter Absatz je Schritt.</p></div>
+    <dl><dt>Bewegung</dt><dd>Keine eigene; Lesen im eigenen Takt</dd><dt>Am Handy</dt><dd>Gleich, Bilder etwas niedriger</dd></dl>
+  </div>
+  <div class="buehne"><div class="scroller" data-bau="kolumne"></div><span class="wisch">Im Rahmen scrollen</span></div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var raf=function(fn){var w=false;return function(){if(w)return;w=true;requestAnimationFrame(function(){w=false;fn()})}};
+  var B=function(n,g,pos){return '<div class="foto'+(g?' '+g:'')+'"><img src="assets/bild/'+n+'-1000.webp" alt=""'+(pos?' style="object-position:'+pos+'"':'')+' loading="lazy"></div>'};
+  var PF='<svg viewBox="0 0 16 16"><path d="M2 8h12M9 3l5 5-5 5"/></svg>',PZ='<svg viewBox="0 0 16 16"><path d="M14 8H2M7 3L2 8l5 5"/></svg>';
+
+  // Die vier Schritte: Etikett, Titel, Satz, kurz, Bilder
+  var S=[
+    {l:'Der Empfang',t:'Ankommen',s:'Zum Ankommen gibt es einen Aperitif. Die Tafel ist gedeckt, die Kerzen brennen.',k:'Ein Aperitif, die Kerzen brennen.',b:['g2','tafelleer','tablett','kerze1']},
+    {l:'Aus der Küche',t:'Drei Gänge',s:'Aus der Küche kommen drei Gänge, Teller für Teller für die ganze Tafel. Das Menü wechselt mit jedem Abend.',k:'Teller für Teller für die ganze Tafel.',b:['r09','m8','roq1','anrichten']},
+    {l:'Von der Bar',t:'Fünf Drinks',s:'Zu den Gängen kommen fünf Signature Drinks von Momo, gemacht für genau dieses Essen.',k:'Von Momo, gemacht für dieses Essen.',b:['m7','d3','g1','glas']},
+    {l:'Am Tisch',t:'Tasting und Schulung',s:'Momo erklärt jeden Drink am Tisch, damit man die Aromen nicht nur schmeckt, sondern auch versteht.',k:'Jeder Drink wird am Tisch erklärt.',b:['kerze2','schaum','t09','m1']}
+  ];
+  var bau={};
+
+  bau.doppelseite=function(el){
+    el.innerHTML=S.map(function(x){return '<div class="dp-seite">'+B(x.b[0],'dp-gross')+'<div class="dp-rechts">'+B(x.b[1])+'<div class="dp-txt"><span class="lab">'+x.l+'</span><span class="strich"></span><h3 class="tt">'+x.t+'</h3><p class="sz" style="margin-top:16px;max-width:380px">'+x.s+'</p></div></div></div>'}).join('');
+  };
+  bau.arkaden=function(el){
+    var w=['g2','r09','m7','kerze2'];
+    el.innerHTML=S.map(function(x,i){return '<div class="ak-st mitte">'+B(w[i],'ak-b ein')+'<div class="ak-txt"><span class="lab">'+x.l+'</span><h3 class="tt">'+x.t+'</h3><p class="sz">'+x.k+'</p></div></div>'}).join('');
+  };
+  bau.paneele=function(el){
+    var w=['tafelleer','anrichten','m7','kerze2'];
+    el.innerHTML=S.map(function(x,i){return '<div class="pn-p">'+B(w[i])+'<div class="pn-dim"></div><span class="lab pn-oben">'+x.l+'</span><div class="pn-unten"><h3 class="tt">'+x.t+'</h3><span class="pn-linie"></span><p class="sz">'+x.s+'</p></div></div>'}).join('');
+  };
+  bau.einladung=function(el){
+    el.innerHTML='<div class="foto ei-bild ein"><img src="assets/bild/tafelleer-1600.webp" alt="" style="object-position:50% 58%"></div><div class="ei-karte"><p class="ei-kopf"><span class="lab">So läuft ein Abend im Culinarium</span></p><div class="ei-reihe">'+S.map(function(x){return '<div><h3 class="tt">'+x.t+'</h3><p>'+x.s+'</p></div>'}).join('')+'</div></div>';
+  };
+  bau.galerie=function(el){
+    var w=[['tafelleer-1600','50% 60%'],['pass4-1600','50% 50%'],['m1-1600','50% 55%'],['t09-1000','50% 45%']];
+    el.innerHTML='<div class="foto ga-bild" style="position:absolute;inset:0">'+w.map(function(b,i){return '<img'+(i?'':' class="an"')+' src="assets/bild/'+b[0]+'.webp" alt="" style="object-position:'+b[1]+'">'}).join('')+'</div><div class="ga-tafel"><div><span class="lab"></span><span class="strich"></span><h3 class="tt"></h3><p class="sz" style="margin-top:14px"></p></div></div><div class="ga-steuer"><span class="ga-lauf"><i></i></span><button class="pfeil" data-r="-1" aria-label="Zurück">'+PZ+'</button><button class="pfeil" data-r="1" aria-label="Weiter">'+PF+'</button></div>';
+    var imgs=$('.ga-bild img',el),tf=el.querySelector('.ga-tafel>div'),lauf=el.querySelector('.ga-lauf i'),i=0,t0=performance.now(),sicht=false,D=6500;
+    function zeig(n){i=(n+4)%4;t0=performance.now();imgs.forEach(function(m,j){m.classList.toggle('an',j===i)});tf.style.opacity=0;setTimeout(function(){tf.querySelector('.lab').textContent=S[i].l;tf.querySelector('.tt').textContent=S[i].t;tf.querySelector('.sz').textContent=S[i].s;tf.style.opacity=1},i===0&&!tf.querySelector('.tt').textContent?0:450)}
+    function tick(now){if(sicht){var p=(now-t0)/D;if(p>=1){zeig(i+1);p=0}lauf.style.transform='scaleX('+p.toFixed(4)+')'}requestAnimationFrame(tick)}
+    $('[data-r]',el).forEach(function(b){b.addEventListener('click',function(){zeig(i+ +b.dataset.r)})});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(e){sicht=e[0].isIntersecting;t0=performance.now()},{threshold:.4}).observe(el);else sicht=true;
+    zeig(0);requestAnimationFrame(tick);
+  };
+  bau.triptychon=function(el){
+    var w=['g2','r09','m7','kerze2'],folge=[3,0,1,2,3,0];
+    el.innerHTML='<div class="tp-spur">'+folge.map(function(j){var x=S[j];return '<div class="tp-st">'+B(w[j])+'<div class="tp-txt"><span class="lab">'+x.l+'</span><h3 class="tt">'+x.t+'</h3><p class="sz">'+x.k+'</p></div></div>'}).join('')+'</div><div class="tp-steuer"><button class="pfeil" data-r="-1" aria-label="Zurück">'+PZ+'</button><button class="pfeil" data-r="1" aria-label="Weiter">'+PF+'</button></div>';
+    var spur=el.querySelector('.tp-spur'),st=$('.tp-st',el),i=1;
+    function setz(){var a=st[i],x=a.offsetLeft+a.offsetWidth/2;spur.style.transform='translateX('+(el.clientWidth/2-x).toFixed(1)+'px)';st.forEach(function(s,j){s.classList.toggle('an',j===i)})}
+    $('[data-r]',el).forEach(function(b){b.addEventListener('click',function(){i=Math.max(1,Math.min(4,i+ +b.dataset.r));setz()})});
+    addEventListener('resize',setz);setz();
+  };
+  bau.uebereinander=function(el){
+    var w=[['tablett','50% 50%'],['r09','50% 50%'],['m7','50% 50%'],['kerze2','50% 40%']];
+    el.innerHTML=S.map(function(x,i){return '<div class="ub-p">'+B(w[i][0],'',w[i][1])+'<div class="ub-txt"><span class="lab">'+x.l+'</span><span class="strich"></span><h3 class="tt">'+x.t+'</h3><p class="sz" style="margin-top:14px">'+x.s+'</p></div></div>'}).join('');
+  };
+  bau.medaillons=function(el){
+    var w=['g2','roq1','glas','momo'];
+    el.innerHTML=S.map(function(x,i){return '<div>'+B(w[i],'md-o ein')+'<div class="md-txt"><span class="lab">'+x.l+'</span><h3 class="tt">'+x.t+'</h3><p class="sz">'+x.k+'</p></div></div>'}).join('');
+  };
+  bau.liste=function(el){
+    var w=['tablett','r09','d3','kerze2'];
+    el.innerHTML='<div class="ls-links"><span class="lab" style="margin-bottom:26px">So läuft ein Abend</span>'+S.map(function(x,i){return '<button class="ls-z'+(i?'':' an')+'" data-i="'+i+'"><span class="lab">'+x.l+'</span><span class="tt">'+x.t+'</span></button>'}).join('')+'<p class="sz ls-satz">'+S[0].s+'</p></div><div class="foto ls-bild">'+w.map(function(b,i){return '<img'+(i?'':' class="an"')+' src="assets/bild/'+b+'-1000.webp" alt="">'}).join('')+'</div>';
+    var z=$('.ls-z',el),imgs=$('.ls-bild img',el),satz=el.querySelector('.ls-satz');
+    z.forEach(function(b){function setz(){var i=+b.dataset.i;z.forEach(function(o){o.classList.toggle('an',o===b)});imgs.forEach(function(m,j){m.classList.toggle('an',j===i)});satz.textContent=S[i].s}b.addEventListener('mouseenter',setz);b.addEventListener('click',setz)});
+  };
+  bau.detail=function(el){
+    var w=[['tafelleer','g2'],['anrichten','r09'],['m7','g1'],['kerze2','schaum']];
+    el.innerHTML=S.map(function(x,i){return '<div class="bd-z">'+B(w[i][0],'bd-gross')+B(w[i][1],'bd-klein')+'<div class="bd-txt"><span class="lab">'+x.l+'</span><span class="strich"></span><h3 class="tt">'+x.t+'</h3><p class="sz" style="margin-top:14px">'+x.s+'</p></div></div>'}).join('');
+    var k=$('.bd-klein',el);
+    var lauf=raf(function(){var mitte=el.scrollTop+el.clientHeight/2;k.forEach(function(e){var z=e.parentNode,d=(z.offsetTop+z.offsetHeight/2)-mitte;e.style.transform='translate3d(0,'+(d*.14).toFixed(1)+'px,0)'})});
+    el.addEventListener('scroll',lauf,{passive:true});lauf();
+  };
+  bau.promenade=function(el){
+    var w=['g2','r09','m7','kerze2'];
+    el.innerHTML='<div class="pr-intro"><span class="lab">So läuft ein Abend</span><span class="strich"></span><h3 class="tt">Ein Abend an der langen Tafel.</h3><p class="sz" style="margin-top:16px">Wer zum ersten Mal kommt, weiss nicht, was ihn erwartet. Ungefähr so.</p></div>'+S.map(function(x,i){return '<div class="pr-k">'+B(w[i])+'<span class="lab">'+x.l+'</span><h3 class="tt">'+x.t+'</h3><p class="sz">'+x.k+'</p></div>'}).join('');
+    var f=el.parentNode.querySelector('.pr-fort i');
+    var lauf=raf(function(){var m=el.scrollWidth-el.clientWidth,p=m>0?el.scrollLeft/m:1;f.style.transform='scaleX('+(.2+.8*p).toFixed(4)+')'});
+    el.addEventListener('scroll',lauf,{passive:true});lauf();
+  };
+  bau.passepartout=function(el){
+    var w=['g2','r01','glas','momo'];
+    el.innerHTML=S.map(function(x,i){return '<div><div class="pp-rahmen">'+B(w[i])+'</div><div class="pp-txt"><span class="lab">'+x.l+'</span><h3 class="tt" style="margin-top:8px">'+x.t+'</h3><p class="sz">'+x.k+'</p></div></div>'}).join('');
+  };
+  bau.geteilt=function(el){
+    var g=['','schmal','breit',''];
+    el.innerHTML='<div class="gt-lauf"><div class="gt-links">'+S.map(function(x,i){return '<div'+(i?'':' class="an"')+'><span class="lab">'+x.l+'</span><span class="strich"></span><h3 class="tt">'+x.t+'</h3><p class="sz" style="margin-top:18px;max-width:400px">'+x.s+'</p></div>'}).join('')+'</div><div class="gt-rechts">'+S.map(function(x,i){return '<div class="gt-gruppe" data-i="'+i+'">'+B(x.b[0])+'<div style="height:4px"></div>'+B(x.b[1],'schmal')+'</div>'}).join('')+'</div></div>';
+    var tx=$('.gt-links>div',el),gr=$('.gt-gruppe',el);
+    var lauf=raf(function(){var mitte=el.scrollTop+el.clientHeight*.55,an=0;gr.forEach(function(g,j){if(g.offsetTop<=mitte)an=j});tx.forEach(function(d,j){d.classList.toggle('an',j===an)})});
+    el.addEventListener('scroll',lauf,{passive:true});lauf();
+  };
+  bau.register=function(el){
+    var w=[['tafelleer','g2'],['anrichten','r09'],['m1','m7'],['kerze2','schaum']];
+    el.innerHTML='<div class="rg-reiter">'+S.map(function(x,i){return '<button data-i="'+i+'"'+(i?'':' class="an"')+'><span class="tt">'+x.t+'</span></button>'}).join('')+'<span class="rg-strich"></span></div><div class="rg-koerper"><div class="foto rg-bild">'+w.map(function(b,i){return '<img'+(i?'':' class="an"')+' src="assets/bild/'+b[0]+'-1000.webp" alt="">'}).join('')+'</div><div class="rg-rechts"><div class="rg-txt"><span class="lab"></span><span class="strich"></span><h3 class="tt"></h3><p class="sz" style="margin-top:14px"></p></div><div class="foto rg-detail">'+w.map(function(b,i){return '<img'+(i?'':' class="an"')+' src="assets/bild/'+b[1]+'-1000.webp" alt="">'}).join('')+'</div></div></div>';
+    var bt=$('.rg-reiter button',el),strich=el.querySelector('.rg-strich'),bild=$('.rg-bild img',el),det=$('.rg-detail img',el),tx=el.querySelector('.rg-txt'),i=0;
+    function setz(n){i=n;bt.forEach(function(b,j){b.classList.toggle('an',j===i)});bild.forEach(function(m,j){m.classList.toggle('an',j===i)});det.forEach(function(m,j){m.classList.toggle('an',j===i)});
+      var b=bt[i];strich.style.transform='translateX('+b.offsetLeft+'px) scaleX('+(b.offsetWidth/100).toFixed(3)+')';
+      tx.querySelector('.lab').textContent=S[i].l;tx.querySelector('.tt').textContent=S[i].t;tx.querySelector('.sz').textContent=S[i].s}
+    bt.forEach(function(b){b.addEventListener('click',function(){setz(+b.dataset.i)});b.addEventListener('mouseenter',function(){setz(+b.dataset.i)})});
+    addEventListener('resize',function(){setz(i)});setz(0);
+  };
+  bau.kolumne=function(el){
+    var h='<div class="ko"><div class="ko-kopf"><span class="lab">Der Abend</span><h3 class="tt">So läuft ein Abend.</h3><p class="sz">Wer zum ersten Mal kommt, weiss nicht, was ihn erwartet. Ungefähr so: ankommen, anstossen, essen, probieren, zuhören, und am Ende mit Leuten am Tisch sitzen, die man vorher nicht kannte.</p></div>';
+    var w=[['tafelleer-1600','50% 60%'],['pass4-1600','50% 50%'],null,['kerze2-1000','50% 38%']];
+    S.forEach(function(x,i){
+      h+=w[i]?'<div class="foto ko-bild"><img src="assets/bild/'+w[i][0]+'.webp" alt="" style="object-position:'+w[i][1]+'" loading="lazy"></div>':'<div class="ko-paar">'+B('m7')+B('d3')+'</div>';
+      h+='<div class="ko-st"><span class="lab">'+x.l+'</span><h3 class="tt">'+x.t+'</h3><p class="sz">'+x.s+'</p></div>';
+    });
+    el.innerHTML=h+'</div>';
+  };
+
+  $('[data-bau]').forEach(function(el){bau[el.dataset.bau](el)});
+
+  // Inhalt
+  var nav=document.getElementById('inhalt');
+  $('.fassung').forEach(function(f){var a=document.createElement('a');a.href='#'+f.id;a.innerHTML='<span>'+f.id.slice(1)+'</span>'+f.dataset.name;nav.appendChild(a)});
+
+  // Hereinkommen
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('da');io.unobserve(e.target)}})},{threshold:.45}):null;
+  $('[data-da]').forEach(function(el){io?io.observe(el):el.classList.add('da')});
+})();
+</script>
+</body>
+</html>

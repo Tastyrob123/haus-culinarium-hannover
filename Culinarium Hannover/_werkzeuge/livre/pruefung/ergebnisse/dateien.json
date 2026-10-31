@@ -1,0 +1,68 @@
+[
+ {
+  "nr": "A1",
+  "t": "20 Farben = culinarium.css bzw. Plakate (marke.json); CSS, JSON, ASE gleich",
+  "ok": true,
+  "m": "#16151A #0F0E13 #1C1B21 #222028 #26252E #3A3845 #FAF4F4 #2A2833 #5B5763 #EF7649 #F5A689 #B15736 #8953A9 #FFF7EF #B3EBFC #EF7649 #94B253 #112D43 #881301 #4D3321"
+ },
+ {
+  "nr": "A2",
+  "t": "Schriften Byte für Byte die der Website, TTF lesbar, Lizenzen dabei",
+  "ok": true,
+  "m": "Fraunces, Urbanist, Instrument Sans, DM Mono"
+ },
+ {
+  "nr": "A3",
+  "t": "Wortmarke, Zeile und beides zusammen Pfad für Pfad Rudis Original, nur in Original, Schiefer, Warmweiss; ebenso im Markenbuch",
+  "ok": true,
+  "m": ""
+ },
+ {
+  "nr": "A4",
+  "t": "Rudis PDF, Dirty Chicken (Logo und D), Profilbild und Tapeten Byte für Byte die Originale (nie umgefärbt)",
+  "ok": true,
+  "m": "9 Dateien"
+ },
+ {
+  "nr": "A6",
+  "t": "Jede PNG der Wortmarke gefüllt, deckende Bildpunkte in der angegebenen Farbe",
+  "ok": true,
+  "m": ""
+ },
+ {
+  "nr": "A7",
+  "t": "ZIP «Alle Dateien» = alle Einzeldateien, Byte für Byte",
+  "ok": true,
+  "m": "33 Dateien"
+ },
+ {
+  "nr": "B1",
+  "t": "Alle 232 Fotos in vier Grössen: Masse, JPEG, Name, KI-Kennzeichen, Druck = Original (mit Ausschnitt)",
+  "ok": true,
+  "m": "928 Dateien in 65 s"
+ },
+ {
+  "nr": "B2",
+  "t": "Ausschnitt wirkt (links/rechts verschieden)",
+  "ok": true,
+  "m": ""
+ },
+ {
+  "nr": "B3",
+  "t": "Herkunft: jedes Foto mit Satz, nichts «offen»; fremde Rechte genau die Fotos der Bar Walk on the Wild Side",
+  "ok": true,
+  "m": "38 fremd (Bar), 194 von Culinarium"
+ },
+ {
+  "nr": "B4",
+  "t": "Vorher-Bilder: eines je nachgeschärftem Foto, gleiche Grösse wie das Foto der Website",
+  "ok": true,
+  "m": "24 mit Vorher"
+ },
+ {
+  "nr": "C1",
+  "t": "Probe ohne Claude: läuft durch, Farben gemessen, als Probe beschriftet, kein Schlüssel gelesen, keine Anfrage nach aussen",
+  "ok": true,
+  "m": "18 Töne"
+ }
+]

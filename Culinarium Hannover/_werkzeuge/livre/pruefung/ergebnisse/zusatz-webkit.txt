@@ -1,0 +1,17 @@
+Proben: drei-seiten.pdf=27939 gross-29mb.jpg=27766491 gross-31mb.jpg=32505856 kein-bild.png=50 klein-400.png=1066 riesig-169mp.png=517956
+✓ 71 R15 Ladezeichen erst nach 280 ms · bei 154 ms nicht da, bei 657 ms da
+✓ 72 R02 Auftakt: Kopf, Rand, Ansicht kommen zusammen, Schriften geladen · {"schrift":"loaded","kopf":true,"rand":true,"leiste":true,"bereit":true}
+✓ 73 R04 Startfehler-Tür: Satz mit Namen (kein Platzhalter), Grund, «Neu laden», Anleitung; «Neu laden» startet; ohne Skript nach 12 s ein Satz · Das Markenbuch startet nicht. Die Daten (livre.json) fehlen. (404) Hil | Das Markenbuch startet nicht. Das Programm der Seite ist nic
+✓ 74 R03 Fehlermelder: gemerkt (höchstens 20), an api/fehler (höchstens 20, F34 keiner verloren), Netzfehler nicht · 20 im Browser, 20 im Protokoll, Netzfehler 0
+✓ 75 R18 Rundgang: Prüfbrowser ohne Schild, Weg im Rand (bleibt nach Wechsel), ?rundgang mit vier Schritten, was und wozu · DAS MARKENBUCH · 1 VON 4 Das ist das Markenbuch Die Marke vo / DAS MARKENBUCH · 2 VON 4 Jedes Foto in der richtigen Grösse  / DAS MARKENBUCH · 3 VON 4 Passt ein
+✓ 76 R19 «Zur Werkbank» nur aus der Werkbank geöffnet, bleibt über weitere Klicks · ["Zur Werkbank","http://127.0.0.1:9088/werkbank/index.html#werkzeuge"]
+✓ 77 R17 «Weniger Bewegung»: alles steht sofort · 0 warten, 0 bewegen sich
+✓ 78 L09 Vorher/Nachher bei allen 24 nachgeschärften Fotos (Knöpfe, Original, Schieber folgt der Maus, gleicher Ausschnitt); ohne Nachschärfung keine Knöpfe · 24 von 24 · Schieber 21.9%
+✓ 79 Suche mit 5’000 Zeichen, <script>, Emoji, Umlauten (gross/klein gleich), nur Leerzeichen · 200 Zeichen · Gläser 7/7/7 · Leer 48 · 
+✓ 80 L10 Prüfung: über 30 MB abgewiesen, knapp 30 MB und 169 MP verkleinert geprüft, 400 px, «Bild» ohne Bild mit Meldung, PDF mit drei Seiten · {"zuGross":true,"knapp":true,"klein":true,"riesig":true,"keinBild":true,"pdf":true}
+✓ 81 Netz weg beim Prüfen: Meldung, Datei bleibt; Netz zurück: prüfen geht · Die Prüfung ging nicht durch: Keine Verbindung. Der Entwurf bleibt gewählt, bitte noch einmal prüfen
+✓ 82 Zwei Fenster prüfen gleichzeitig, je eigene Rückmeldung · klein-400.png | drei-seiten.pdf 3 Seiten, geprüft die er
+✓ 83 320 und 390 px: alle Ansichten, Foto-Fenster, Markenbuch und Anleitung ohne seitliches Verrutschen · 16 Messungen
+✗ 87 L05 Markenbuch der Station 05 im Stand der Website: dreizehn Blätter, Rudis Wortmarke, alle Bilder, «Als PDF sichern» öffnet den Druck · haltung,zeichen,farben,abende,herkunft,schrift,tapete,bilder,bausteine,logo,welt,mitnehmen · Wortmarke 0.00 0.00 364.78 40.36en · 0 Bilder fehlen
+
+Summe webkit: 13/14

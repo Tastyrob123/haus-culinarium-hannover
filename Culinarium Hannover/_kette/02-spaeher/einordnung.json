@@ -1,0 +1,16 @@
+{
+  "art": "auftrag",
+  "passt": true,
+  "grund": "Auftrag, kein Pitch: Robert hat Culinarium am 25.10.2026 ausdrücklich als Website-Auftrag angelegt (Projektdatei 02 Projekte/Culinarium Hannover — Website.md); Rudi ist Backoffice-Kunde, das Website-Angebot kam von Robert per WhatsApp am 30.07. und 21.08.2026, Rudi schickte am 24.10.2026 Material (_quelle/vom-kunden/eingang.json). Damit gilt die Regel «ausserhalb der Schweiz: passt, wenn Robert es ausdrücklich will» als erfüllt. Inhabergeführt im kleinsten Sinn: drei Personen (Rudolf Napieraj Küche, Momo Drinks, Derya Ivkin laut eigener Instagram-Bio «Bar Owner @walkonthewildside_hannover» und «Food Pairing @culinarium_hannover», abgelesen 25.10.2026), keine Kette, kein Rechtsträger. Der Auftritt ist viel schwächer als die Sache: keine Website, kein Impressum, kein Link in der Bio, kein Google-Eintrag, Buchung per Nachricht und PayPal, obwohl die Abende ausgebucht sind (Beitrag DbYnkdkjrNy vom 29.07.2026: «AUSGEBUCHT!», 89 EUR). Echtes Material ist da: ein durchgezogenes Plakat-System seit 2023, Profi-Fotos (Irina Voronov 07/2024, focusonbiz_hannover 2026) und 109 Dateien von Rudi (noch nicht im Ordner). Kein Relaunch erkennbar, culinarium-hannover.de war am 24.10.2026 frei. Vorbehalte, die vor dem Bau geklärt sein müssen: wer Vertragspartner ist und ins Impressum kommt, wem die Bilder und Illustrationen gehören, wie Culinarium zur Bar steht.",
+  "betreuung": "keine Agentur, kein Baukasten: Es gibt keine Website (Domain culinarium-hannover.de frei laut DENIC-Abfrage 24.10.2026, _quelle/recherche/Kundenprofil.md Blatt 1). Einzige Plattform ist Instagram (Meta), Konto @culinarium_hannover, geführt vom Team selbst; Bezahlung per PayPal nach Nachricht (Beitrag DbYnkdkjrNy, 29.07.2026). Wer die Plakate gestaltet und woher die Illustrationen stammen: offen.",
+  "familie": [
+    {"name": "Walk on the Wild Side", "ort": "Haasemannstraße 13, 30449 Hannover", "website": "https://www.instagram.com/walkonthewildside_hannover/", "gastgeber": "Derya Ivkin laut eigener Bio «Bar Owner»; gegründet 2017 von Christoph Elbert und Verena Schindler (thomaslasser.de); heutiger Betreiber öffentlich nicht belegt", "system": "keine Website (Google Maps zeigt «Website hinzufügen», 25.10.2026), Instagram 2.678 Follower, 82 Beiträge"},
+    {"name": "Dirty Chicken Hannover", "ort": "Hannover (Ort offen, Bio nennt @walkonthewildside_hannover)", "website": "https://www.instagram.com/dirtychicken.hannover/", "gastgeber": "Rudolf Napieraj (in der Bio verlinkt)", "system": "keine Website, Instagram 297 Follower, 4 Beiträge, «Pop up coming soon» (25.10.2026)"}
+  ],
+  "schon_gebaut": [],
+  "website_ordner": "website/",
+  "buchung": {
+    "system": "Instagram-Nachricht, dann Vorkasse per PayPal; kein Ticketsystem, keine Warteliste",
+    "link": "https://www.instagram.com/p/DbYnkdkjrNy/"
+  }
+}

@@ -1,0 +1,16 @@
+Sicherheit (curl gegen :9087, 28.10.2026 12:22)
+fremde Herkunft: 403
+kein JSON: 415
+70 KB: 413
+Haus ../gbr: 400
+Probe-Entwurf: 200
+serve.py: 404
+bau.py: 404
+_qa/belege.py: 404
+api/entwurf.py: 404
+api/_daten/culinarium-wissen.txt: 404
+.env.local: 404
+LIEFERUNG.md: 404
+../../website/bau.py: 404
+Ausbruch /assets/bild/..%2f..%2fbau.py: 404
+Lebenszeichen GET api/entwurf: {"ok": true, "modell": "claude-sonnet-5-5", "schluessel": false, "probe": true}

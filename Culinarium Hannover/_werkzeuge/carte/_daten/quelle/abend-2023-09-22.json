@@ -1,0 +1,47 @@
+{
+ "ziel": "abend-2023-09-22",
+ "art": "satz",
+ "key": "ohne-2023",
+ "name": "22./23. September 2023",
+ "unter": "Whisky und Rum",
+ "gruppe": "Frühere Abende",
+ "ab": "2023-09-22",
+ "datum": "Fr 22. und Sa 23. September 2023",
+ "preis": "59,00 EUR",
+ "mit": "BY MOMO X CHRISTOPH",
+ "zusatz": "",
+ "motto": "",
+ "titel": "Whisky und Rum",
+ "plakat": "",
+ "gaenge": [
+  {
+   "gang": "Apéritif",
+   "teller": "",
+   "drink": "White Mojito"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Sashimi vom Balfego-Thunfisch · Tomate | Ingwer | Sesam (vegetarische Alternative auf Nachfrage)",
+   "drink": "Birne"
+  },
+  {
+   "gang": "Hauptgang",
+   "teller": "Risotto vom Hokkaido-Kürbis mit gebratenen Pfifferlingen",
+   "drink": "Butternut Old Fashioned"
+  },
+  {
+   "gang": "Dessert",
+   "teller": "Crème Brulée mit hausgemachtem Sorbet",
+   "drink": "Escape"
+  },
+  {
+   "gang": "Absacker",
+   "teller": "",
+   "drink": "Autumn Highball"
+  }
+ ],
+ "upgrade": [],
+ "voll": true,
+ "foto_der_karte": "Foto der Karte in der Story vom 22.09.2023",
+ "quelle": "website/abende_info.py KARTEN['ohne-2023'] · website/bau.py ABENDE (Foto der Karte in der Story vom 22.09.2023)"
+}

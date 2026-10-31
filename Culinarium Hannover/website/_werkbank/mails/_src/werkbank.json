@@ -1,0 +1,68 @@
+[
+ [
+  "01",
+  "01-ticket",
+  "Dein Ticket",
+  "Kommt gleich nach der Buchung: Abend, Beginn, Plätze und der Weg zur Bar, das Ticket zum Vorzeigen."
+ ],
+ [
+  "02",
+  "02-warteliste",
+  "Auf der Warteliste",
+  "Kommt nach dem Eintrag auf der Warteliste: welcher Abend, wie viele Plätze, und dass wir uns melden, sobald einer frei wird."
+ ],
+ [
+  "03",
+  "03-frei",
+  "Ein Platz ist frei",
+  "Kommt, wenn für einen vollen Abend ein Platz frei wird: an die Gäste auf der Warteliste, mit dem Weg zum Buchen."
+ ],
+ [
+  "04",
+  "04-erinnerung",
+  "Morgen an der Tafel",
+  "Kommt am Tag vor dem Abend: wann es losgeht, wie man hinfindet, und dass man Unverträgliches noch sagen kann."
+ ],
+ [
+  "05",
+  "05-danke",
+  "Danke für den Abend",
+  "Kommt am Morgen danach: ein Dank, die Karte des Abends zum Nachlesen und der Weg auf die Liste für den nächsten."
+ ],
+ [
+  "06",
+  "06-termin",
+  "Der nächste Abend steht",
+  "Kommt an die Gäste der Liste, sobald der nächste Abend feststeht: Datum, Beginn, Preis und der Weg zum Buchen, vor allen anderen."
+ ],
+ [
+  "07",
+  "07-rueckblick",
+  "Rückblick mit Fotos",
+  "Kommt eine Woche nach dem Abend: ein paar Fotos von der Tafel und der Weg zu allen Bildern auf Instagram."
+ ],
+ [
+  "08",
+  "08-feier",
+  "Eure Feier an der Tafel",
+  "Antwort auf eine Anfrage für einen Geburtstag oder eine Feier: was möglich ist, wie viele Plätze, und wie es weitergeht."
+ ],
+ [
+  "09",
+  "09-dirty-chicken",
+  "Dirty Chicken ist zurück",
+  "Kommt vor einem Pop-up von Dirty Chicken: wann, wo, und dass es ohne Anmeldung geht."
+ ],
+ [
+  "10",
+  "10-stammgaeste",
+  "Für dich zuerst",
+  "Kommt an Gäste, die schon an der Tafel sassen: ein Platz am nächsten Abend wird für sie freigehalten, bevor er für alle aufgeht."
+ ],
+ [
+  "11",
+  "11-gutschein",
+  "Ein Abend als Geschenk",
+  "Geht an den Beschenkten: wer ihm den Abend schenkt, für wie viele, bis wann, und der Gutschein als PDF im Anhang."
+ ]
+]

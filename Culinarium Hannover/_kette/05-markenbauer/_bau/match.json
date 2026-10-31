@@ -1,0 +1,198 @@
+{
+ "wort": [
+  {
+   "name": "Bagel Fat One",
+   "datei": "BagelFatOne-Regular.ttf",
+   "deckung": 0.552,
+   "breite": 0.761
+  },
+  {
+   "name": "Dela Gothic One",
+   "datei": "DelaGothicOne-Regular.ttf",
+   "deckung": 0.536,
+   "breite": 1.081
+  },
+  {
+   "name": "Krona One",
+   "datei": "KronaOne-Regular.ttf",
+   "deckung": 0.479,
+   "breite": 0.952
+  },
+  {
+   "name": "Unbounded 900",
+   "datei": "Unbounded[wght].ttf",
+   "deckung": 0.477,
+   "breite": 0.997
+  },
+  {
+   "name": "Holtwood One SC",
+   "datei": "HoltwoodOneSC-Regular.ttf",
+   "deckung": 0.472,
+   "breite": 1.011
+  },
+  {
+   "name": "Rubik Mono One",
+   "datei": "RubikMonoOne-Regular.ttf",
+   "deckung": 0.471,
+   "breite": 1.1
+  },
+  {
+   "name": "Syne 800",
+   "datei": "Syne[wght].ttf",
+   "deckung": 0.444,
+   "breite": 1.494
+  },
+  {
+   "name": "Gravitas One",
+   "datei": "GravitasOne.ttf",
+   "deckung": 0.435,
+   "breite": 1.107
+  },
+  {
+   "name": "Fraunces 900 Soft",
+   "datei": "Fraunces[SOFT,WONK,opsz,wght].ttf",
+   "deckung": 0.391,
+   "breite": 0.86
+  },
+  {
+   "name": "Bodoni Moda 900",
+   "datei": "BodoniModa[opsz,wght].ttf",
+   "deckung": 0.356,
+   "breite": 0.856
+  },
+  {
+   "name": "Abril Fatface",
+   "datei": "AbrilFatface-Regular.ttf",
+   "deckung": 0.344,
+   "breite": 0.807
+  },
+  {
+   "name": "Playfair Display 900",
+   "datei": "PlayfairDisplay[wght].ttf",
+   "deckung": 0.327,
+   "breite": 0.838
+  },
+  {
+   "name": "Chonburi",
+   "datei": "Chonburi-Regular.ttf",
+   "deckung": 0.316,
+   "breite": 0.895
+  },
+  {
+   "name": "Calistoga",
+   "datei": "Calistoga-Regular.ttf",
+   "deckung": 0.308,
+   "breite": 0.792
+  },
+  {
+   "name": "Gloock",
+   "datei": "Gloock-Regular.ttf",
+   "deckung": 0.295,
+   "breite": 0.767
+  },
+  {
+   "name": "DM Serif Display",
+   "datei": "DMSerifDisplay-Regular.ttf",
+   "deckung": 0.288,
+   "breite": 0.764
+  },
+  {
+   "name": "Rozha One",
+   "datei": "RozhaOne-Regular.ttf",
+   "deckung": 0.276,
+   "breite": 0.893
+  },
+  {
+   "name": "Yeseva One",
+   "datei": "YesevaOne-Regular.ttf",
+   "deckung": 0.235,
+   "breite": 0.83
+  }
+ ],
+ "zeile": [
+  {
+   "name": "Righteous",
+   "datei": "Righteous-Regular.ttf",
+   "deckung": 0.59,
+   "breite": 0.738
+  },
+  {
+   "name": "Sniglet 800",
+   "datei": "Sniglet-ExtraBold.ttf",
+   "deckung": 0.566,
+   "breite": 0.973
+  },
+  {
+   "name": "M PLUS Rounded 1c 900",
+   "datei": "MPLUSRounded1c-Black.ttf",
+   "deckung": 0.556,
+   "breite": 0.774
+  },
+  {
+   "name": "M PLUS Rounded 1c 800",
+   "datei": "MPLUSRounded1c-ExtraBold.ttf",
+   "deckung": 0.52,
+   "breite": 0.758
+  },
+  {
+   "name": "Lexend 800",
+   "datei": "Lexend[wght].ttf",
+   "deckung": 0.513,
+   "breite": 0.819
+  },
+  {
+   "name": "Nunito 900",
+   "datei": "Nunito[wght].ttf",
+   "deckung": 0.505,
+   "breite": 0.752
+  },
+  {
+   "name": "Baloo 2 800",
+   "datei": "Baloo2[wght].ttf",
+   "deckung": 0.499,
+   "breite": 0.713
+  },
+  {
+   "name": "Unbounded 700",
+   "datei": "Unbounded[wght].ttf",
+   "deckung": 0.495,
+   "breite": 0.978
+  },
+  {
+   "name": "Outfit 800",
+   "datei": "Outfit[wght].ttf",
+   "deckung": 0.484,
+   "breite": 0.864
+  },
+  {
+   "name": "Quicksand 700",
+   "datei": "Quicksand[wght].ttf",
+   "deckung": 0.45,
+   "breite": 0.724
+  },
+  {
+   "name": "Fredoka 700",
+   "datei": "Fredoka[wdth,wght].ttf",
+   "deckung": 0.375,
+   "breite": 1.267
+  },
+  {
+   "name": "Varela Round",
+   "datei": "VarelaRound-Regular.ttf",
+   "deckung": 0.364,
+   "breite": 0.817
+  },
+  {
+   "name": "Fredoka 600",
+   "datei": "Fredoka[wdth,wght].ttf",
+   "deckung": 0.331,
+   "breite": 1.259
+  },
+  {
+   "name": "Comfortaa 700",
+   "datei": "Comfortaa[wght].ttf",
+   "deckung": 0.264,
+   "breite": 0.943
+  }
+ ]
+}

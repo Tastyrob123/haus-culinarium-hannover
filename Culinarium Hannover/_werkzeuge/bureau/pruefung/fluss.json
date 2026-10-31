@@ -1,0 +1,40 @@
+{
+ "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/?haus=culinarium",
+ "zeit": "2026-10-28T04:15:50.418Z",
+ "last": "34.9",
+ "werte": [
+  {
+   "rate": 1,
+   "oeffnen_ms": 106,
+   "scroll": {
+    "p95_ms": 9.2,
+    "laengster_ms": 9.3
+   },
+   "bereich_liste_ms": 44,
+   "bereich_seite_ms": 110,
+   "zeiten_preise_ms": 136
+  },
+  {
+   "rate": 4,
+   "oeffnen_ms": 257,
+   "scroll": {
+    "p95_ms": 9.3,
+    "laengster_ms": 9.4
+   },
+   "bereich_liste_ms": 130,
+   "bereich_seite_ms": 255,
+   "zeiten_preise_ms": 342
+  },
+  {
+   "rate": 6,
+   "oeffnen_ms": 399,
+   "scroll": {
+    "p95_ms": 9.1,
+    "laengster_ms": 9.2
+   },
+   "bereich_liste_ms": 196,
+   "bereich_seite_ms": 330,
+   "zeiten_preise_ms": 348
+  }
+ ]
+}

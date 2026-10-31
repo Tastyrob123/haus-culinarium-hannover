@@ -1,0 +1,132 @@
+[
+ {
+  "name": "Ansicht start: zweimal geladen, kein Fehler, kein Überlaufen, keine kaputten Bilder",
+  "ok": true,
+  "info": "Das Gästebuch GÄSTE · CULINARIUM Übersicht KEINE NEUEN ANFRAGEN CHAT AUSPROBIERE"
+ },
+ {
+  "name": "Ansicht eingang: zweimal geladen, kein Fehler, kein Überlaufen, keine kaputten Bilder",
+  "ok": true,
+  "info": "Das Gästebuch GÄSTE · CULINARIUM Eingang KEINE NEUEN ANFRAGEN CHAT AUSPROBIEREN "
+ },
+ {
+  "name": "Ansicht gefragt: zweimal geladen, kein Fehler, kein Überlaufen, keine kaputten Bilder",
+  "ok": true,
+  "info": "Das Gästebuch GÄSTE · CULINARIUM Das wurde gefragt KEINE NEUEN ANFRAGEN CHAT AUS"
+ },
+ {
+  "name": "Ansicht nachgetragen: zweimal geladen, kein Fehler, kein Überlaufen, keine kaputten Bilder",
+  "ok": true,
+  "info": "Das Gästebuch GÄSTE · CULINARIUM Vom Team nachgetragen KEINE NEUEN ANFRAGEN CHAT"
+ },
+ {
+  "name": "Ansicht wissen: zweimal geladen, kein Fehler, kein Überlaufen, keine kaputten Bilder",
+  "ok": true,
+  "info": "Das Gästebuch GÄSTE · CULINARIUM Das weiss der Chat KEINE NEUEN ANFRAGEN CHAT AU"
+ },
+ {
+  "name": "Jeder Link in Kopf und Rand antwortet (Fehlerbuch 10a): eigene Wege 200, Zentrale auf 127.0.0.1:9081, kein localhost",
+  "ok": true,
+  "info": "/_werkzeuge/reception/ 200 · :9082/_werkzeuge/bureau/ 200 · :9083/_werkzeuge/carte/ 200 · :9084/_werkzeuge/reception/ 200 · :9085/_werkzeuge/livre/ 200 · :9086/_werkzeuge/registre/ 200 · :9087/_werkzeuge/imprimerie/ 200 · :9081/_werkzeuge/maison/ 200 · /_werkzeuge/reception/pruefung.html 200 · /_werkzeuge/reception/anleitung.html 200 · /index.html 200 · /abend.html 200"
+ },
+ {
+  "name": "Kein roher Code im Bild ({, undefined, NaN, None, null) in allen Ansichten und jeder Anfrage (Fehlerbuch 10a)",
+  "ok": true,
+  "info": "7 Anfragen, 5 Ansichten"
+ },
+ {
+  "name": "Kein Mailprogramm, keine Namensabfrage, keine fremden Hausnamen (Fehlerbuch 10a, Anfragen ins Fenster)",
+  "ok": true,
+  "info": "5 Ansichten sauber"
+ },
+ {
+  "name": "Auswahl und Kalender im Stil des Hauses: keine Systemauswahl sichtbar, Bereich und «Gilt bis» wählbar",
+  "ok": true,
+  "info": "Bereich Das Haus (Bar), gilt bis 2026-11-15"
+ },
+ {
+  "name": "Bilder in jeder Liste: jeder Eintrag hat ein geladenes Foto (Robert 19.10.2026)",
+  "ok": true,
+  "info": "eingang 7, gefragt 11, nachgetragen 3, wissen 6"
+ },
+ {
+  "name": "Eingang: Hinweise Termin offen, mehr als die Tafel, Allergie, Ticket stehen bei den richtigen Anfragen",
+  "ok": true,
+  "info": "Lena, Tim, Mira, Sophie, Kai"
+ },
+ {
+  "name": "Eingang ruhig gesetzt (Robert 20.10.): Hinweise mit Luft zur Schrift, kein Leerraum in der Karte, Rundgang-Schild bleibt beim Scrollen stehen",
+  "ok": true,
+  "info": "Luft 18 px, Rest 26 px, Schild 0"
+ },
+ {
+  "name": "Eingang: Auswahl Warteliste / Abende / Feiern / Nachrichten zählt richtig",
+  "ok": true,
+  "info": "{\"Warteliste\":2,\"Abende\":2,\"Feiern\":2,\"Nachrichten\":1}"
+ },
+ {
+  "name": "Brief: «Brief schreiben» (Probe ohne KI) nennt die Allergie, Text ändern, sichern, neu laden, bleibt",
+  "ok": true,
+  "info": "gesichert und zurückgestellt"
+ },
+ {
+  "name": "Brief: «Als PDF speichern» lädt ein A4-PDF mit Briefkopf des Culinarium",
+  "ok": true,
+  "info": "Culinarium – Jonas Albers – 30.10.2026.pdf, 166897 Byte"
+ },
+ {
+  "name": "Zwei Fenster: veraltete Fassung des Briefs wird abgewiesen (KONFLIKT), nichts überschrieben (E21/E26)",
+  "ok": true,
+  "info": "Fassung 13 → 14, zweites Fenster abgewiesen"
+ },
+ {
+  "name": "Brief «Nur Text» sieht aus wie «Gestalten»: Betreff bricht um, Felder ohne Rahmen und Füllung (Fehlerbuch 10a, 20.10.2026)",
+  "ok": true,
+  "info": "{\"tag\":\"TEXTAREA\",\"hoch\":true,\"zeilen\":4,\"rand\":\"0px/0px\",\"bg\":\"rgba(0, 0, 0, 0)\",\"fett\":\"400\"}"
+ },
+ {
+  "name": "Erledigt und wieder offen",
+  "ok": true,
+  "info": "ok"
+ },
+ {
+  "name": "Auf Deutsch lesen (englische Anfrage)",
+  "ok": true,
+  "info": "Lesefassung da"
+ },
+ {
+  "name": "Das wurde gefragt: Lücke nachtragen, steht in «Vom Team nachgetragen», entfernen",
+  "ok": true,
+  "info": "Lücken 2 → 1, weggeräumt"
+ },
+ {
+  "name": "Das weiss der Chat: Suche «Warteliste» trifft, «Kinderstuhl» führt zu «noch nicht im Wissen»",
+  "ok": true,
+  "info": "ok"
+ },
+ {
+  "name": "Chat ausprobieren: Frage antippen, Antwort kommt (Probe), Anfrage mit Kontakt landet als Beispiel im Eingang",
+  "ok": true,
+  "info": "Anfrage warteliste, weggeräumt"
+ },
+ {
+  "name": "Website-Warteliste (abend.html) → Eingang mit Tag und Plätzen, Abriss löst sich erst nach der Annahme, Name mit <script> und Emoji entschärft",
+  "ok": true,
+  "info": "warteliste, 4 Plätze, Samstag · Danke, QA Warte scriptalert(1)/script 🥂. Du stehst auf der Liste: Sam"
+ },
+ {
+  "name": "Website-Warteliste ohne Name: die Website sagt, was fehlt, nichts geht in den Eingang",
+  "ok": true,
+  "info": "Bitte Name und E-Mail eintragen."
+ },
+ {
+  "name": "Website-Warteliste ohne Verbindung: Meldung mit Telefon der Bar und Instagram, Eingaben bleiben, Abriss bleibt",
+  "ok": true,
+  "info": "Gerade kommt deine Nachricht nicht bei uns an. Deine Angaben bleiben stehen. Versuch es gl"
+ },
+ {
+  "name": "Sicherheit Weg «formular»: fremde Herkunft 403, Kontakt ungültig 422, Maschinenfeld legt nichts ab, über 12 kB 413",
+  "ok": true,
+  "info": "422 422 · Falle ok · 413 413 · fremd 403"
+ }
+]

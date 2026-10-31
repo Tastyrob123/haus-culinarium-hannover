@@ -1,0 +1,24 @@
+{
+  "station": "13",
+  "name": "Anschliessen und Beigaben",
+  "rolle": "Werkbank-Bauer",
+  "haus": "Culinarium Hannover",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "beigaben/",
+    "beigaben.json"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

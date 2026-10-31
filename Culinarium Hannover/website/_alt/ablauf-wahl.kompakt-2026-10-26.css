@@ -1,0 +1,177 @@
+/* Wahlseite «So läuft ein Abend»: 15 kompakte Fassungen in der echten Startseite (nur für Robert, nicht Teil der Website).
+   Jede Fassung passt in einen Bildschirm und zeigt alle vier Schritte auf einmal; Bausteine der Seite:
+   Foto mit runder Ecke, Orange-Linie über dem Titel, Fraunces, Mono-Etikett, römische Ziffer, Menükarte, ×.
+   Nur transform und opacity; Hereinkommendes ist von Anfang an sichtbar. */
+.kb{max-width:var(--max);margin:0 auto;padding:0 var(--rand)}
+.kb .foto{box-shadow:0 30px 44px -30px rgba(0,0,0,.7)}
+.kb .foto img{display:block}
+.kb .foto.rund{border-radius:50%;aspect-ratio:1/1}
+.kb-kicker{color:var(--kerze-hell);font-size:12px;letter-spacing:.14em}
+.kb-h{font-family:var(--titel);font-weight:340;font-size:clamp(32px,3.4vw,54px);line-height:1;letter-spacing:-.014em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;margin-top:12px}
+.kb-in{color:var(--fg2);font-size:16px;line-height:1.55;margin-top:14px;max-width:46ch}
+.kb-kopf{margin-bottom:clamp(22px,3.6vh,40px)}
+.kb-kopf.mitte{text-align:center}.kb-kopf.mitte .kb-in{margin-left:auto;margin-right:auto}
+.kb-nr{display:block;font:500 12px/1 var(--mono);letter-spacing:.12em;color:var(--kerze);margin-bottom:8px}
+.kb-t{font-family:var(--titel);font-weight:340;font-size:clamp(20px,1.8vw,27px);line-height:1.1;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 72;padding-top:10px;border-top:1px solid rgba(239,118,73,.8)}
+.kb-s{color:var(--fg2);font-size:14.5px;line-height:1.5;margin-top:8px}
+.kb-st .kb-nr+.kb-t{margin-top:0}
+
+/* 1 Kopf links, vier rechts */
+.kb-01{display:grid;grid-template-columns:minmax(220px,.78fr) 3.2fr;gap:clamp(24px,3.4vw,56px);align-items:end}
+.kb-01 .kb-kopf{margin:0;align-self:center}
+.kb-01-r{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.kb-01-r .foto{aspect-ratio:3/4;max-height:min(46vh,400px);width:100%;margin-bottom:14px}
+
+/* 2 Ein Bild, vier Spalten */
+.kb .kb-02-b{height:min(40vh,400px)}
+.kb-02-r{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,40px);margin-top:clamp(18px,3vh,30px)}
+
+/* 3 Wie «Das erste Glas» */
+.kb-03{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);height:min(76vh,700px)}
+.kb-03-l{position:relative;border-radius:var(--r);overflow:hidden}
+.kb-03-l .foto{position:absolute;inset:0;border-radius:0;box-shadow:none}
+.kb-03-l::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,16,0) 40%,rgba(14,12,16,.82))}
+.kb-03-titel{position:absolute;z-index:2;left:clamp(20px,2.6vw,40px);right:clamp(20px,2.6vw,40px);bottom:clamp(22px,3.6vh,40px)}
+.kb-03-titel .kb-h{font-size:clamp(36px,4.4vw,68px);color:#FAF4F4}
+.kb-03-titel .kb-in{color:rgba(250,244,244,.86)}
+.kb-03-r{display:flex;flex-direction:column;justify-content:center}
+.kb-03-z{display:grid;grid-template-columns:clamp(72px,7.4vw,112px) 1fr;gap:clamp(16px,2vw,28px);align-items:center;padding:clamp(10px,1.8vh,18px) 0;border-top:1px solid rgba(239,118,73,.55)}
+.kb-03-z:last-child{border-bottom:1px solid rgba(239,118,73,.55)}
+.kb-03-z .kb-t{border:0;padding:0}
+.kb-03-z .kb-s{margin-top:4px}
+
+/* 4 Zwei mal zwei */
+.kb-04{display:grid;grid-template-columns:.9fr 1.5fr;gap:clamp(28px,4vw,72px);align-items:center}
+.kb-04 .kb-kopf{margin:0}
+.kb-knopf{margin-top:26px}
+.kb-04-r{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,16px)}
+.kb-04-z{position:relative}
+.kb-04-z .foto{height:min(34vh,310px)}
+.kb-04-t{position:absolute;left:12px;bottom:12px;background:var(--nacht);border-radius:6px;padding:10px 16px 12px;max-width:calc(100% - 24px)}
+.kb-04-t .kb-t{border:0;padding:0;font-size:clamp(18px,1.6vw,23px)}
+.kb-04-t .kb-nr{margin-bottom:5px}
+
+/* 5 Die Menükarte */
+.kb-05{display:grid;grid-template-columns:1fr minmax(320px,1.15fr) 1fr;gap:clamp(14px,2vw,30px);align-items:stretch;height:min(76vh,700px)}
+.kb-05-s{display:grid;grid-template-rows:1fr 1fr;gap:clamp(14px,2vw,30px);min-height:0}
+.kb-05-s .foto{height:100%}
+.kb-05-k{background:#FAF4F4;color:#2A2833;border-radius:4px;padding:clamp(22px,3vh,40px) clamp(22px,2.6vw,44px);text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 40px 60px -40px rgba(0,0,0,.8)}
+.kb-05-kopf{font:600 11px/1 var(--etikett);letter-spacing:.22em;text-transform:uppercase;color:var(--kerze-tief);padding-bottom:clamp(12px,2vh,20px)}
+.kb-05-g{padding:clamp(10px,1.7vh,18px) 0;border-top:1px solid rgba(58,56,69,.2)}
+.kb-05-g .kb-nr{color:var(--kerze-tief);margin-bottom:6px}
+.kb-05-g h3{font-family:var(--titel);font-weight:340;font-size:clamp(21px,1.9vw,28px);line-height:1.1;font-variation-settings:"SOFT" 100,"opsz" 72}
+.kb-05-g p{margin-top:5px;color:#5B5763;font-size:14px;line-height:1.45}
+.kb-05-fuss{padding-top:clamp(12px,2vh,20px);border-top:1px solid rgba(58,56,69,.2);font:500 11px/1.4 var(--etikett);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-tief)}
+
+/* 6 Die Zahlen */
+.kb-06{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,32px)}
+.kb-06 .foto{height:min(36vh,330px)}
+.kb-06-z{display:flex;align-items:baseline;gap:12px;padding-top:14px;margin-top:16px;border-top:1px solid rgba(239,118,73,.8)}
+.kb-06-z b{font:300 clamp(46px,5vw,76px)/.9 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--kerze-hell)}
+.kb-06-z span{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg2)}
+
+/* 7 Kante an Kante */
+.kb-f07{max-width:none;padding:0}
+.kb-07{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;height:min(68vh,640px)}
+.kb-07-z{position:relative}
+.kb-07 .foto{position:absolute;inset:0;border-radius:0;box-shadow:none}
+.kb-07-p{position:absolute;left:clamp(10px,1.2vw,18px);right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);background:var(--nacht);border-radius:6px;padding:clamp(14px,1.6vw,22px)}
+
+/* 8 Die Kerzenlinie */
+.kb-08{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,40px);height:min(66vh,600px)}
+.kb-08-l{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--kerze)}
+.kb-08-z{display:grid;grid-template-rows:1fr 56px 1fr;min-height:0}
+.kb-08-z .foto{height:100%;min-height:0}
+.kb-08-nr{grid-row:2;align-self:center;justify-self:start;position:relative;z-index:1;background:var(--bg,var(--nacht));padding:0 12px 0 0;font:500 13px/1 var(--mono);letter-spacing:.12em;color:var(--kerze)}
+.kb-08-z.oben .foto{grid-row:1}
+.kb-08-z.oben .kb-st{grid-row:3;align-self:start}
+.kb-08-z.unten .kb-st{grid-row:1;align-self:end}
+.kb-08-z.unten .foto{grid-row:3}
+.kb-08 .kb-t{border:0;padding:0}
+
+/* 9 Teller × Glas */
+.kb-09{display:grid;grid-template-columns:1fr 2.1fr 1fr;gap:clamp(18px,2.6vw,44px);align-items:start}
+.kb-09-paar{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.kb-09 .foto{aspect-ratio:3/4;max-height:min(46vh,420px);width:100%;margin-bottom:14px}
+.kb-09-paar>div:first-child .foto{border-radius:var(--r) 0 0 var(--r)}
+.kb-09-paar>div:last-child .foto{border-radius:0 var(--r) var(--r) 0}
+.kb-09-paar>div:first-child .kb-st{padding-right:14px}
+.kb-09-paar>div:last-child .kb-st{padding-left:14px}
+.kb-09-x{position:absolute;left:50%;top:min(23vh,210px);transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--kerze);color:#fff;display:grid;place-items:center;font:300 30px/1 var(--titel);box-shadow:0 10px 24px -8px rgba(0,0,0,.6);z-index:2}
+html.js:not(.ruhig) .kb-09:not(.da) .kb-09-paar>div:first-child{transform:translateY(46px)}
+html.js:not(.ruhig) .kb-09:not(.da) .kb-09-paar>div:last-child{transform:translateY(80px)}
+.kb-09-paar>div{transition:transform 1.4s var(--k)}
+.kb-09-paar>div:last-child{transition-delay:.12s}
+
+/* 10 Rudis Zeile */
+.kb-10{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,32px)}
+.kb-10-w{font-family:var(--titel);font-weight:340;font-size:clamp(22px,2.4vw,38px);line-height:1;text-transform:uppercase;letter-spacing:.01em;font-variation-settings:"SOFT" 100,"opsz" 96;white-space:nowrap;margin-bottom:16px}
+.kb-10-w i{font-style:normal;color:var(--kerze);margin-left:.35em}
+.kb-10 .foto{height:min(42vh,380px)}
+
+/* 11 Vier Karten auf dem Bild */
+.kb-11{position:relative;padding-bottom:clamp(90px,13vh,130px)}
+.kb .kb-11-b{height:min(52vh,500px)}
+.kb-11-r{position:absolute;left:clamp(14px,2.4vw,40px);right:clamp(14px,2.4vw,40px);bottom:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,20px)}
+.kb-11-r .kb-st{background:#FAF4F4;color:#2A2833;border-radius:6px;padding:clamp(14px,1.6vw,22px);box-shadow:0 26px 40px -24px rgba(0,0,0,.8)}
+.kb-11-r .kb-s{color:#5B5763}
+.kb-11-r .kb-nr{color:var(--kerze-tief)}
+
+/* 12 Um die Mitte */
+.kb-12{display:grid;grid-template-columns:1fr 1.05fr 1.05fr 1fr;grid-template-rows:min(30vh,290px) min(30vh,290px);gap:clamp(12px,1.6vw,22px) clamp(18px,2.6vw,40px);align-items:center}
+.kb-12 .foto{height:100%}
+.kb-12 .kb-st.rechts{text-align:right}
+.kb-12 .kb-st.rechts .kb-s{margin-left:auto}
+.kb-12 .kb-s{max-width:30ch}
+
+/* 13 Schachbrett-Streifen */
+.kb-13{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:min(30vh,280px);gap:clamp(8px,1vw,14px)}
+.kb-13 .foto{height:100%}
+.kb-13 .kb-st.hell{background:#FAF4F4;color:#2A2833;border-radius:var(--r);padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;justify-content:flex-end}
+.kb-13 .hell .kb-s{color:#5B5763}
+.kb-13 .hell .kb-nr{color:var(--kerze-tief)}
+.kb-13 .hell .kb-t{border-top-color:var(--kerze-tief)}
+
+/* 14 Bild wechselt, Text bleibt */
+.kb-14{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,4vw,72px);align-items:stretch;height:min(74vh,680px)}
+.kb-14-b{position:relative;border-radius:var(--r);overflow:hidden;background:var(--schiefer);box-shadow:0 30px 44px -30px rgba(0,0,0,.7)}
+.kb-14-b img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--k)}
+.kb-14-b img.an{opacity:1}
+.kb-14-r{display:flex;flex-direction:column;justify-content:center}
+.kb-14-r .kb-kopf{margin-bottom:clamp(14px,2.4vh,26px)}
+.kb-14-l{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vh,28px) clamp(18px,2vw,32px)}
+.kb-14-l .kb-st{cursor:pointer;opacity:.55;transition:opacity .5s}
+.kb-14-l .kb-st.an{opacity:1}
+
+/* 15 Bild und Satz */
+.kb-15{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vh,28px) clamp(24px,3.4vw,56px)}
+.kb-15-z{display:grid;grid-template-columns:min(28vh,250px) 1fr;gap:clamp(16px,2vw,28px);align-items:center}
+.kb-15-z .foto{aspect-ratio:1/1}
+
+/* Handy: jede Fassung bleibt ein Teil, Bilder kleiner */
+@media (max-width:860px){
+  .kb-01,.kb-04,.kb-03,.kb-14{grid-template-columns:1fr;height:auto}
+  .kb-01-r,.kb-02-r,.kb-06,.kb-10{grid-template-columns:1fr 1fr;row-gap:22px}
+  .kb-01-r .foto{max-height:none}
+  .kb .kb-02-b{height:30svh}
+  .kb-03-l{height:46svh}
+  .kb-03-z{grid-template-columns:64px 1fr}
+  .kb-04-z .foto{height:24svh}
+  .kb-05{grid-template-columns:1fr;height:auto}.kb-05-s{display:none}
+  .kb-06 .foto,.kb-10 .foto{height:22svh}
+  .kb-06-z b{font-size:40px}
+  .kb-07{grid-template-columns:1fr 1fr;height:auto;grid-auto-rows:34svh}
+  .kb-07-p .kb-s{display:none}
+  .kb-08{grid-template-columns:1fr 1fr;height:auto;row-gap:20px}.kb-08-l{display:none}
+  .kb-08-z,.kb-08-z.oben,.kb-08-z.unten{display:flex;flex-direction:column;gap:10px}.kb-08-z .foto{height:24svh;order:-1}.kb-08-nr{order:0}.kb-08-z .kb-st{order:1}
+  .kb-09{grid-template-columns:1fr 1fr}.kb-09-paar{grid-column:1/-1;order:-1}
+  .kb-09 .foto{max-height:30svh}
+  .kb-11{padding-bottom:0}.kb-11-r{position:static;grid-template-columns:1fr 1fr;margin-top:-40px;padding:0 10px}
+  .kb-11-r .kb-s{display:none}
+  .kb-12{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
+  .kb-12 .foto{height:22svh}.kb-12 .kb-st.rechts{text-align:left}
+  .kb-12>.foto:nth-of-type(1){order:1}.kb-12>.kb-st:nth-of-type(1){order:2}.kb-12>.foto:nth-of-type(2){order:3}.kb-12>.kb-st:nth-of-type(2){order:4}
+  .kb-13{grid-template-columns:1fr 1fr;grid-auto-rows:26svh}.kb-13 .hell .kb-s{display:none}
+  .kb-14-b{height:42svh}.kb-14-l{grid-template-columns:1fr 1fr}.kb-14-l .kb-s{display:none}
+  .kb-15{grid-template-columns:1fr}.kb-15-z{grid-template-columns:110px 1fr}
+}

@@ -1,0 +1,56 @@
+[
+ {
+  "k": "werkbank-sticker",
+  "name": "Die Werkbank · Sticker",
+  "url": "http://127.0.0.1:9088/sticker/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-beigaben",
+  "name": "Die Werkbank · Beigaben",
+  "url": "http://127.0.0.1:9088/beigaben/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-postkarten",
+  "name": "Die Werkbank · Postkarten",
+  "url": "http://127.0.0.1:9088/postkarten/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-01-ticket",
+  "name": "Die Werkbank · Mail 01-ticket",
+  "url": "http://127.0.0.1:9088/mails/01-ticket/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-02-warteliste",
+  "name": "Die Werkbank · Mail 02-warteliste",
+  "url": "http://127.0.0.1:9088/mails/02-warteliste/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-03-frei",
+  "name": "Die Werkbank · Mail 03-frei",
+  "url": "http://127.0.0.1:9088/mails/03-frei/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-04-erinnerung",
+  "name": "Die Werkbank · Mail 04-erinnerung",
+  "url": "http://127.0.0.1:9088/mails/04-erinnerung/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-05-danke",
+  "name": "Die Werkbank · Mail 05-danke",
+  "url": "http://127.0.0.1:9088/mails/05-danke/index.html",
+  "rundgang": false
+ },
+ {
+  "k": "werkbank-mail-06-termin",
+  "name": "Die Werkbank · Mail 06-termin",
+  "url": "http://127.0.0.1:9088/mails/06-termin/index.html",
+  "rundgang": false
+ }
+]

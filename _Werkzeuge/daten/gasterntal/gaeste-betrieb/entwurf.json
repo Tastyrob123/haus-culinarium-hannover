@@ -1,0 +1,308 @@
+{
+ "fassung": 1,
+ "anfragen": [
+  {
+   "id": "b-tisch",
+   "v": 1,
+   "zeit": "2026-10-12T21:13:35+07:00",
+   "art": "tisch",
+   "name": "Martina Lüthi",
+   "kontakt": "martina.luethi@example.ch",
+   "datum": "Sonntag, 18. Oktober 2026, 12.30 Uhr",
+   "personen": 8,
+   "anliegen": "Mittagessen zum 80. Geburtstag der Grossmutter, acht Personen, davon zwei Kinder. Wenn möglich ein Tisch in der Stube, eine Person isst vegetarisch.",
+   "sprache": "de",
+   "gespraech": "bspbtisch",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Grüezi, wir möchten am Sonntag, 18. Oktober, um halb eins zum 80. Geburtstag meiner Grossmutter bei Ihnen essen. Wir sind zu acht, zwei Kinder sind dabei. Geht ein Tisch in der Stube?"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Gerne gebe ich Ihre Anfrage an das Team weiter. Nennen Sie mir dafür bitte Ihren Namen und eine E-Mail-Adresse oder Telefonnummer."
+    },
+    {
+     "rolle": "user",
+     "text": "Martina Lüthi, martina.luethi@example.ch. Eine Person isst vegetarisch."
+    },
+    {
+     "rolle": "assistant",
+     "text": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen."
+    }
+   ],
+   "status": "neu",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-zimmer",
+   "v": 1,
+   "zeit": "2026-10-12T18:41:35+07:00",
+   "art": "zimmer",
+   "name": "James Whitfield",
+   "kontakt": "j.whitfield@example.co.uk",
+   "datum": "16. bis 18. Oktober 2026",
+   "personen": 2,
+   "anliegen": "Zwei Nächte zu zweit, am liebsten ein Doppelzimmer mit eigener Dusche. Reisen mit dem Mietwagen an und fragen, wie die Fahrt ins Tal geregelt ist.",
+   "sprache": "en",
+   "gespraech": "bspbzimmer",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Hello, we are two hikers from the UK and would like to stay two nights, 16 to 18 October. Is a double room with a private shower possible? We arrive by rental car and are not sure about the road into the valley."
+    },
+    {
+     "rolle": "assistant",
+     "text": "I will gladly pass your request on to the team. May I have your name and an e-mail address or phone number?"
+    },
+    {
+     "rolle": "user",
+     "text": "James Whitfield, j.whitfield@example.co.uk"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Thank you, your request is with the team of the Berghotel Gasterntal. We will get back to you personally."
+    }
+   ],
+   "status": "neu",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-gruppe",
+   "v": 1,
+   "zeit": "2026-10-11T19:31:35+07:00",
+   "art": "feier",
+   "name": "Sandra Imboden",
+   "kontakt": "sandra.imboden@example.ch",
+   "datum": "August 2027, zwei Nächte",
+   "personen": 14,
+   "anliegen": "Wandergruppe mit 14 Personen, zwei Nächte im August 2027 mit Halbpension. Fragt nach Platz und Preis.",
+   "sprache": "de",
+   "gespraech": "bspbgruppe",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Hallo\n\nWir sind eine Wandergruppe mit 14 Personen und möchten im August 2027 zwei Nächte im Gasterntal übernachten, mit Halbpension. Habt ihr Platz und was kostet das?\n\nGruss\nSandra Imboden"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen."
+    }
+   ],
+   "status": "gelesen",
+   "entwurf": {
+    "betreff": "Anfrage Wandergruppe 14 Personen, August 2027",
+    "text": "Liebe Sandra\n\nHerzlichen Dank für Ihre Anfrage. Gerne helfen wir Ihrer Wandergruppe weiter.\n\nFür 14 Personen mit zwei Übernachtungen und Halbpension können wir Ihnen folgende Optionen anbieten:\n\nZimmer und Bettenlager\nWir verfügen über Zimmer für bis zu 20 Personen und ein Bettenlager für maximal 30 Personen. Für Ihre Gruppe sollte das ausreichend sein. Die genaue Zimmerverteilung (Einzelzimmer, Doppelzimmer, Familienzimmer) können wir gerne mit Ihnen besprechen.\n\nPreise für Übernachtung mit Frühstück\nDie Zimmerpreise variieren je nach Zimmertyp:\n- Einzelzimmer: CHF 120.––140.–\n- Budget Doppelzimmer: CHF 190.––200.–\n- Doppelzimmer mit Frühstück: CHF 210.––230.–\n- Doppelzimmer mit privater Dusche/WC: CHF 280.––295.–\n- Familienzimmer (4, 6 oder 8 Betten): CHF 320.––580.– je nach Grösse\n\nNachtessen\nAus unserer Speisekarte können Sie wählen – von Grossmutters Küche über Ravioli bis zu Fondues. Genaue Preise und Menüs finden Sie auf unserer Website unter «Ässe u trinke».\n\n[VERFÜGBARKEIT PRÜFEN] für August 2027 und die gewünschten Daten.\n\nDamit ich Ihnen ein massgeschneidertes Angebot machen kann, benötige ich noch einige Angaben:\n\n- Welche Daten im August 2027 interessieren Sie genau?\n- Wie sollen sich die 14 Personen auf Zimmer und Bettenlager verteilen (Einzelpersonen, Paare, Familien)?\n- Haben Sie Wünsche zu den Nachtessen-Menüs?\n- Gibt es Diäten oder Allergien zu berücksichtigen?\n\nGerne helfen wir Ihrer Gruppe auch beim Transport von Kandersteg hinauf ins Gasterntal.\n\nHerzliche Grüsse aus Gasterntal (Selden, Kandersteg)\n\n[Name], Berghotel Gasterntal, Selden, 3718 Kandersteg, +41 33 675 81 81, gasterntal@doldenhorn.ch",
+    "team": "Grundlage: Website Berghotel Gasterntal (Seiten: index.html, zimmer.html, essen.html, feste.html), Karte 2026 (Speisen und Getränke)\n\nOffen: \n- Verfügbarkeit August 2027 prüfen\n- Exakte Daten erfragen\n- Zimmerverteilung klären\n- Menüwünsche für die zwei Nachtessen erfragen\n- Allergien/Diäten abklären\n- [Name des Verfassers eintragen]",
+    "vorlage": "",
+    "absender": "gasterntal@doldenhorn.ch",
+    "art": "probelauf",
+    "zeit": "2026-10-11T19:31:35+07:00",
+    "hinweis": "Anfrage und Antwortentwurf stammen aus dem Probelauf im Projekt vom 10.10.2026; nur die E-Mail-Adresse ist ergänzt."
+   },
+   "herkunft": "beispiel"
+  },
+  {
+   "id": "b-sauna",
+   "v": 1,
+   "zeit": "2026-10-10T20:41:35+07:00",
+   "art": "tisch",
+   "name": "Beat Zürcher",
+   "kontakt": "beat.zuercher@example.ch",
+   "datum": "Samstag, 17. Oktober 2026, 19 Uhr",
+   "personen": 4,
+   "anliegen": "Fondue zu viert am Samstagabend, davor um 16 Uhr die Sauna. Fragt, ob beides zusammen reserviert werden kann.",
+   "sprache": "de",
+   "gespraech": "bspbsauna",
+   "verlauf": [
+    {
+     "rolle": "user",
+     "text": "Können wir am Samstag, 17. Oktober, um 16 Uhr die Sauna haben und danach um 19 Uhr zu viert Fondue essen? Beat Zürcher, beat.zuercher@example.ch"
+    },
+    {
+     "rolle": "assistant",
+     "text": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen."
+    }
+   ],
+   "status": "erledigt",
+   "entwurf": null,
+   "herkunft": "beispiel"
+  }
+ ],
+ "fragen": [
+  {
+   "id": "f1a1305ea01a17f283",
+   "zeit": "2026-10-10T12:00:00",
+   "frage": "Wie komme ich ins Gasterntal?",
+   "antwort": "Sie erreichen uns über eine Naturstrasse (14 km) von Kandersteg mit dem Auto (gebührenpflichtig) oder mit dem öffentlichen Verkehr.\n\n**Mit dem Auto:**\n- Bewilligung an der Frontscheibe: CHF 15.00 für Hin- und Rückfahrt, oder CHF 60.00 Jahresbewilligung\n- Beachten Sie die Chluse (Felsengalerie): Hinauf von Viertel vor bis fünf nach jede Stunde, hinunter von Viertel nach bis fünf nach halb jede Stunde\n- Kreuzen von Autos in der Chluse ist nicht möglich\n\n**Ohne Auto:**\n- Ab 5. Oktober verkehrt der Gasternbus nicht mehr\n- Für CHF 15.00 pro Person (mindestens CHF 30.00) kann ein Transport von Kandersteg organisiert werden\n- Reservation: 033 675 81 81",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Anreise und Parken",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f1a1305ea01a5531",
+   "zeit": "2026-10-10T12:00:01",
+   "frage": "Wann ist das Berghotel geöffnet?",
+   "antwort": "Das Berghotel Gasterntal ist geöffnet bis **25. Oktober 2026**. Die nächste Saison beginnt am **13. Mai 2027** (falls das Wetter mitspielt).\n\nWährend der Saison sind wir geöffnet:\n- Di–So 11:00 – 20:00\n- Mo: Je nach Wetter und Saison\n\nWarme Speisen servieren wir bis 20:30.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Zimmer und Buchung",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f1a1305ea01a177e4d",
+   "zeit": "2026-10-10T12:00:02",
+   "frage": "Habt ihr eine Sauna?",
+   "antwort": "Ja, in der alten Käserei.\n- Dauer: 90 Minuten\n- Preis: CHF 60.– pauschal (egal ob 1, 2 oder 4 Personen), CHF 50.– Spezialpreis für Hotelgäste\n- Reservation: mindestens 2 Stunden im Voraus erforderlich\n- Telefon: 033 675 81 81",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Spa und Sauna",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f1a1305ea01a39f54",
+   "zeit": "2026-10-10T12:00:03",
+   "frage": "Can we bring our dog?",
+   "antwort": "Ja, selbstverständlich. Das Berghotel Gasterntal heisst auch Vierbeiner herzlich willkommen.\n\nFür spezifische Fragen zu den Hunderegeln (Kosten, Einschränkungen, besondere Bedingungen) hilft Ihnen die Rezeption gerne weiter:\n- Telefon: 033 675 81 81\n- E-Mail: gasterntal@doldenhorn.ch",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Hund und Familie",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f1a1305ea01bf7bdc",
+   "zeit": "2026-10-10T12:00:04",
+   "frage": "Wir möchten im Juli zwei Nächte zu zweit kommen, vom 10. bis 12. Juli. Wie kommen wir mit dem Auto hin?",
+   "antwort": "Die Buchungsmaske unten zeigt die freien Zimmer und den Preis.\n\nUm zu uns hinzufahren, folgen Sie ab Kandersteg der Naturstrasse (14 km) hinauf ins Gasterntal. Sie benötigen eine Bewilligung:\n\n- Talstation Kandersteg: Bewilligung CHF 15.00 für Hin- und Rückfahrt, oder CHF 60.00 pro Jahr\n- Chluse (Felsengalerie): Taktfahrplan beachten – hochfahren von Viertel vor bis fünf nach jede Stunde (z.B. 8:45–9:05), runterfahren von Viertel nach bis fünf nach halb jede Stunde (z.B. 11:15–11:35). Kreuzen ist nicht möglich.\n\nSie können die Bewilligung bei uns kaufen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Anreise und Parken",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f1a1305ea01b7d312",
+   "zeit": "2026-10-10T12:00:05",
+   "frage": "Was können wir morgen bei dem Wetter im Gasterntal machen?",
+   "antwort": "Das Wetter morgen (11. Oktober) ist im Gasterntal günstig: Nebel in der Früh, ab Mittag sollte es aufklaren, mit nur 28 % Regenwahrscheinlichkeit und Temperaturen von 1 bis 9 °C.\n\nHier ein Tagesvorschlag:\n- Leichte Wanderung: Im Tal oder zum Bergbach, wo Sie die herbstliche Natur trotz Nebel geniessen können\n- Sauna am Mittag: Wenn das Wetter aufklärt, ein perfekter Zeitpunkt für 90 Minuten Entspannung in der alten Käserei mit anschliessender Abkühlung in der Bergluft\n- Zvieri-Plättli: Später gemütlich Wurst und Käse auf der langen Tafel oder in der Stube\n- Warme Getränke: Ein Kaffee oder eine Schokolade zum Aufwärmen nach dem Ausflug\n\nDie Sauna braucht mindestens 2 Stunden Voranmeldung. Möchten Sie diese reservieren?",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Ausflüge und Wetter",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "",
+   "gespraech": "",
+   "herkunft": "quelle",
+   "erledigt": false,
+   "art": "echt"
+  },
+  {
+   "id": "f-b-tisch",
+   "zeit": "2026-10-12T21:13:35+07:00",
+   "frage": "Grüezi, wir möchten am Sonntag, 18. Oktober, um halb eins zum 80. Geburtstag meiner Grossmutter bei Ihnen essen. Wir sind zu acht, zwei Kinder sind dabei. Geht ein Tisch in der Stube?",
+   "antwort": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Essen und Trinken",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "b-tisch",
+   "gespraech": "bspbtisch",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-zimmer",
+   "zeit": "2026-10-12T18:41:35+07:00",
+   "frage": "Hello, we are two hikers from the UK and would like to stay two nights, 16 to 18 October. Is a double room with a private shower possible? We arrive by rental car and are not sure about the road into the valley.",
+   "antwort": "Thank you, your request is with the team of the Berghotel Gasterntal. We will get back to you personally.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Zimmer und Buchung",
+   "sprache": "en",
+   "buchung": false,
+   "anfrage": "b-zimmer",
+   "gespraech": "bspbzimmer",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-gruppe",
+   "zeit": "2026-10-11T19:31:35+07:00",
+   "frage": "Hallo\n\nWir sind eine Wandergruppe mit 14 Personen und möchten im August 2027 zwei Nächte im Gasterntal übernachten, mit Halbpension. Habt ihr Platz und was kostet das?\n\nGruss\nSandra Imboden",
+   "antwort": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Feiern und Tagen",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "b-gruppe",
+   "gespraech": "bspbgruppe",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  },
+  {
+   "id": "f-b-sauna",
+   "zeit": "2026-10-10T20:41:35+07:00",
+   "frage": "Können wir am Samstag, 17. Oktober, um 16 Uhr die Sauna haben und danach um 19 Uhr zu viert Fondue essen? Beat Zürcher, [E-Mail]",
+   "antwort": "Danke, Ihre Anfrage liegt beim Team des Berghotel Gasterntal. Wir melden uns persönlich bei Ihnen.",
+   "belegt": true,
+   "thema": "",
+   "gruppe": "Essen und Trinken",
+   "sprache": "de",
+   "buchung": false,
+   "anfrage": "b-sauna",
+   "gespraech": "bspbsauna",
+   "herkunft": "beispiel",
+   "erledigt": false,
+   "art": "beispiel"
+  }
+ ],
+ "zaehler": {
+  "tag": "2026-10-12",
+  "gesamt": 0,
+  "entwurf": 0,
+  "gespraeche": {},
+  "monate": {},
+  "ki": {
+   "stand": "",
+   "text": "",
+   "zeit": ""
+  }
+ }
+}

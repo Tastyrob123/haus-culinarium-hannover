@@ -1,0 +1,107 @@
+/* Wahlseite «Texte unter Über Eck» (nur für Robert, nicht Teil der Website). Bildwand wie heute, je Fassung ein anderer Umgang mit dem Text. */
+.v-ebenen.wahl>.wv{padding-top:0}
+.tw-satz{margin:0 0 8px;font-size:12.5px;line-height:1.35;opacity:.78}
+
+/* gemeinsam: Textlink mit wachsender Linie (transform) */
+.tw-link{position:relative;display:inline-flex;align-items:center;gap:10px;padding-bottom:9px;color:var(--fg);text-decoration:none;font:500 15px/1 var(--text);letter-spacing:.03em}
+.tw-link svg{width:18px;height:18px;color:var(--kerze);transition:transform .8s var(--k)}
+.tw-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--kerze);transform-origin:left;transform:scaleX(.3);transition:transform .7s var(--k)}
+@media (hover:hover){.tw-link:hover::after{transform:none}.tw-link:hover svg{transform:translateX(4px)}}
+
+/* 1 Weniger Worte */
+.tw01 .ue-titel{font-size:clamp(32px,2.9vw,46px)}
+.tw01 .vtext{font-size:19px;color:var(--fg)}
+
+/* 3 Ein Satz für beide */
+.tw03{display:block}
+.tw03-satz{font-family:var(--titel);font-weight:330;font-size:clamp(28px,2.8vw,44px);line-height:1.2;letter-spacing:-.008em;max-width:34em;text-wrap:pretty;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.tw03-satz a{color:var(--kerze-hell);text-decoration:none;background:linear-gradient(var(--kerze),var(--kerze)) 0 100%/100% 1px no-repeat}
+.tw03-fuss{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;margin-top:clamp(28px,4vh,44px)}
+.tw03-kn{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
+.tw03-kn .knopf{width:232px;justify-content:space-between}
+
+/* 4 Vierzehn und Dreizehn */
+.tw04-z{display:flex;align-items:flex-end;gap:16px;margin-bottom:6px}
+.tw04-z b{font-family:var(--titel);font-weight:280;font-size:clamp(88px,8.6vw,138px);line-height:.78;color:var(--kerze);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.tw04-z span{font:400 13px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--fg2);padding-bottom:6px;max-width:17ch}
+
+/* 5 Steckbrief */
+.tw05-dl{margin:4px 0 0;width:100%;max-width:520px}
+.tw05-dl div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:11px 0;border-top:1px solid var(--linie)}
+.tw05-dl div:last-child{border-bottom:1px solid var(--linie)}
+.tw05-dl dt{color:var(--kerze-hell);font-size:12px;padding-top:3px}
+.tw05-dl dd{margin:0;color:var(--fg);font-size:16px;line-height:1.45}
+.tw05 .vtext{max-width:none;width:100%}
+
+/* 6 Rudis Zeile */
+.tw06-z{font-family:var(--titel);font-weight:380;font-size:clamp(21px,1.75vw,28px);letter-spacing:.035em;line-height:1.35;color:var(--fg);font-variation-settings:"SOFT" 100,"opsz" 36}
+.tw06-z i{font-style:normal;color:var(--kerze);padding:0 .12em}
+.tw06 .vtext{max-width:none}
+
+/* 7 Zwei Zeichen */
+.tw07-wm{width:min(340px,100%);height:auto;color:var(--fg);margin:4px 0 6px}
+.tw07-r{display:grid;grid-template-columns:auto 1fr;gap:clamp(22px,2.4vw,36px);align-items:start}
+.tw07-r>div{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.tw07-schild{width:clamp(96px,8.6vw,128px)}
+.tw07-ws{display:block;width:100%;height:auto;filter:drop-shadow(0 16px 26px rgba(0,0,0,.5))}
+
+/* 8 Am Strich entlang: Keile mit shape-outside, Breite aus der Schräge der Naht (texte-wahl.js setzt --schraege) */
+.tw08{grid-template-columns:39fr 2fr 59fr}
+.tw08 .ue-text{display:block}
+.tw08 .ue-text>*:not(.tw08-keil)+*{margin-top:14px}
+.tw08 .ue-text .knopf{margin-top:20px}
+.tw08-keil{display:block;height:380px;width:calc(var(--schraege,.22)*380px)}
+.tw08 .ue-tl .tw08-keil{float:right;shape-outside:polygon(100% 0,100% 100%,0 100%)}
+.tw08 .ue-tr .tw08-keil{float:left;shape-outside:polygon(0 0,100% 0,0 100%)}
+.tw08 .ue-tl{text-align:right}
+.tw08 .ue-tl .vtext{margin-left:auto}
+.tw08 .ue-tl .vinfo{max-width:30ch;margin-left:auto}
+
+/* 9 Satz auf der Naht */
+.tw09-naht{position:absolute;z-index:3;left:40.2%;top:50%;margin:0;white-space:nowrap;transform:translate(-50%,-50%) rotate(var(--tw09-w,-77deg));pointer-events:none}
+.tw09-naht span{display:block;padding:5px 12px;background:var(--bg);color:var(--kerze-hell);font-size:12px}
+
+/* 10 Namen gross */
+.tw10 .ue-titel{font-size:clamp(42px,4.4vw,72px);line-height:.98;letter-spacing:-.014em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.tw10 .vtext{font-size:16px}
+.tw10-reihe{display:flex;align-items:center;flex-wrap:wrap;gap:14px 24px;margin-top:6px}
+.tw10-reihe .knopf{margin-top:0}
+
+/* 11 Zwei Zeilen quer */
+.tw11{display:block}
+.tw11-z{display:grid;grid-template-columns:86px minmax(0,1fr) minmax(0,1.45fr) minmax(0,1.3fr) auto;align-items:center;gap:26px;padding:28px 0;border-top:1px solid var(--linie)}
+.tw11-z:last-child{border-bottom:1px solid var(--linie)}
+.tw11-z .ue-titel{font-size:clamp(26px,2.1vw,34px)}
+.tw11-z .vtext{color:var(--fg2);font-size:16px;line-height:1.5;text-wrap:pretty}
+.tw11-z .knopf{width:200px;justify-content:space-between}
+
+/* 12 Feuilleton */
+.tw12 .ue-titel .mono{color:var(--kerze-hell)}
+.tw12 .ue-titel{font-size:inherit;line-height:1}
+.tw12 .vtext{font-family:var(--titel);font-weight:350;font-size:20px;line-height:1.56;color:var(--fg);max-width:44ch;text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;font-variation-settings:"SOFT" 100,"opsz" 24}
+.tw12 .vtext::first-letter{float:left;font-size:4.3em;line-height:.82;margin:.07em .1em 0 0;color:var(--kerze);font-weight:300;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+
+/* 13 Hell, wo du hinschaust */
+.tw13 .ue-text{transition:opacity .6s var(--k)}
+.tw13[data-blick=l] .ue-tr,.tw13[data-blick=r] .ue-tl{opacity:.3}
+
+/* 14 Frage und Antwort */
+.tw14 .ue-titel{color:var(--kerze-hell)}
+.tw14 .vtext{font-size:19px;color:var(--fg)}
+
+/* 15 Titel ist der Link */
+.tw15 .ue-titel{font-size:clamp(32px,3vw,50px)}
+.tw15-a{position:relative;display:inline-flex;align-items:center;gap:.28em;padding-bottom:.16em;color:inherit;text-decoration:none}
+.tw15-a svg{flex:none;width:.62em;height:.62em;color:var(--kerze);transition:transform .8s var(--k)}
+.tw15-a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--kerze);transform-origin:left;transform:scaleX(.16);transition:transform .8s var(--k)}
+@media (hover:hover){.tw15-a:hover::after{transform:none}.tw15-a:hover svg{transform:translateX(.12em)}}
+
+@media (max-width:960px){
+  .tw03-kn{margin-left:0}
+  .tw04-z b{font-size:96px}
+  .tw07-r{grid-template-columns:84px 1fr}
+  .tw08{grid-template-columns:1fr}.tw08-keil{display:none}.tw08 .ue-tl{text-align:left}.tw08 .ue-tl .vtext{margin-left:0}
+  .tw09-naht{display:none}
+  .tw11-z{grid-template-columns:1fr;gap:12px;align-items:start}
+  .tw12 .vtext{text-align:left}
+}

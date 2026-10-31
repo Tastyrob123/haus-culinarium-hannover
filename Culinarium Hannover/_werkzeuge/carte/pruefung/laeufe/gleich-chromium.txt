@@ -1,0 +1,5 @@
+ok     abend-2025-02-21 Seite 1: Vorschau gegen PDF · mittlere Abweichung 0.94, starke Abweichung 0.02 % der Fläche
+ok     abend-2023-09-15 Seite 1: Vorschau gegen PDF · mittlere Abweichung 1.66, starke Abweichung 0 % der Fläche
+ok     abend Seite 1: Vorschau gegen PDF · mittlere Abweichung 1.08, starke Abweichung 0 % der Fläche
+
+chromium: Vorschau = PDF grün

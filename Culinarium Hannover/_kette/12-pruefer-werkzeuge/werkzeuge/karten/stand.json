@@ -1,0 +1,24 @@
+{
+  "station": "12",
+  "name": "La Carte / Die Tafel",
+  "rolle": "Prüfer ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "karten",
+  "zustand": "wartet",
+  "beginn": null,
+  "ende": null,
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/pruefung.md"
+  ],
+  "adresse": null,
+  "briefing": "briefing.html?teil=karten",
+  "notiz": "",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

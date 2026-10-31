@@ -1,0 +1,284 @@
+/* Culinarium · «Seit 2023.» in 15 Fassungen (nur Wahlseite). Ein bewegter Moment je Fassung, nur transform und opacity. */
+.chw{--papier:#F7F0EB;--tinte:#2A2833;--tinte2:#5A5562}
+.chw img{display:block;width:100%;height:100%;object-fit:cover}
+.chw figure{margin:0}
+:where(.chw) button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.chw h3{font-weight:inherit}
+.ch-tk .titel{font-family:var(--titel);font-weight:340;font-size:clamp(44px,5vw,84px);line-height:.98;letter-spacing:-.016em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.ch-satz{margin-top:14px;max-width:36ch;color:var(--fg2);font-size:17px}
+.ch-tk.mitte{text-align:center}.ch-tk.mitte .ch-satz{margin-inline:auto}
+.ch-w{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-pl{object-fit:cover}
+/* gemeinsamer Einstieg: steigt von unten, von Anfang an sichtbar */
+html.js:not(.ruhig) .chw .auf:not(.zl):not(.sw){transform:translateY(46px);transition:transform 1.5s var(--k) calc(var(--i,0)*90ms)}
+html.js .chw .auf.da:not(.zl):not(.sw){transform:none}
+
+/* ---------- 1 Das mitlaufende Jahr */
+.ch-01{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(30px,5vw,90px)}
+.ch-01-fest{position:sticky;top:16vh}
+.ch-01-fenster{height:clamp(110px,13vw,210px);overflow:hidden;margin:clamp(26px,5vh,50px) 0 6px}
+.ch-01-rolle{display:flex;flex-direction:column;transform:translateY(calc(var(--m,0)*-100%/5));transition:transform 1s var(--k)}
+.ch-01-rolle span{height:clamp(110px,13vw,210px);font:300 clamp(110px,13vw,210px)/1 var(--titel);color:var(--kerze-hell);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.ch-01-wann{position:relative;height:1.4em;overflow:hidden;margin-bottom:30px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg2)}
+.ch-01-wann span{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+.ch-01-wann span.an{opacity:1}
+.ch-01-r{display:flex;flex-direction:column;gap:clamp(70px,14vh,150px);padding:4vh 0 10vh}
+.ch-01-bild{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-01-j{display:none}
+.ch-01-m .ch-w{margin-top:20px}
+.ch-01-s{margin-top:8px;font:340 clamp(22px,2vw,30px)/1.25 var(--titel);max-width:24ch}
+
+/* ---------- 2 Jahreszahlen als Schalter */
+.ch-02{display:grid;gap:clamp(28px,5vh,50px)}
+.ch-02-zahlen{display:flex;justify-content:space-between;border-bottom:1px solid var(--linie)}
+.ch-02-z{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:0 0 18px;position:relative;color:rgba(250,244,244,.38);transition:color .4s}
+.ch-02-z b{font:300 clamp(46px,6.4vw,110px)/.9 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.ch-02-z span{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.ch-02-z::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--kerze);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--k)}
+.ch-02-z:hover,.ch-02-z.an{color:#FAF4F4}
+.ch-02-z.an::after{transform:none}
+.ch-02-buehne{position:relative;aspect-ratio:21/9;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-02-f{position:absolute;inset:0;opacity:0;transform:scale(1.05);transition:opacity .7s var(--k),transform 1.4s var(--k)}
+.ch-02-f.an{opacity:1;transform:none}
+.ch-02-f::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(transparent,rgba(12,10,14,.85))}
+.ch-02-f figcaption{position:absolute;z-index:2;left:clamp(22px,3vw,48px);bottom:clamp(22px,4vh,44px);right:22px}
+.ch-02-f figcaption span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-02-f figcaption p{margin-top:8px;font:340 clamp(24px,2.6vw,42px)/1.15 var(--titel);max-width:26ch;color:#FAF4F4}
+.ch-02-f img[src*="pop23"],.ch-02-f img[src*="pl23"]{object-fit:contain;background:#0F0E13}
+.ch-02-k{text-align:center}
+
+/* ---------- 3 Der Preis als Treppe */
+.ch-03{display:grid;gap:clamp(30px,6vh,60px)}
+.ch-03-treppe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);align-items:end}
+.ch-03-s{display:flex;flex-direction:column;gap:14px}
+.ch-03-s figure{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+.ch-03-block{padding:22px 20px calc(24px + var(--h)*clamp(36px,6vh,70px));background:linear-gradient(#2A2732,#1E1C24);border-top:2px solid var(--kerze);border-radius:4px 4px 0 0}
+.ch-03-p{font:300 clamp(46px,5vw,84px)/.9 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.02em;margin-bottom:12px}
+.ch-03-t{margin-top:6px;color:var(--fg2);font-size:14.5px;line-height:1.5;max-width:22ch}
+html.js:not(.ruhig) .chw .ch-03-s.auf{transform:translateY(calc(60px + var(--i)*30px))}
+
+/* ---------- 4 Der Name auf dem Plakat */
+.ch-04{display:grid;gap:clamp(26px,5vh,50px)}
+.ch-04-zeilen{display:grid;gap:0;border-top:1px solid var(--linie)}
+.ch-04-z{display:grid;grid-template-columns:130px minmax(0,1fr) 150px minmax(0,200px);gap:clamp(16px,2.4vw,40px);align-items:center;padding:clamp(18px,3vh,30px) 0;border-bottom:1px solid var(--linie)}
+.ch-04-name{font:400 clamp(30px,3.9vw,68px)/1 var(--titel);letter-spacing:.02em;color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144;white-space:nowrap}
+.ch-04-name i{font-style:normal;color:var(--kerze);margin:0 .12em}
+.ch-04-name em{font-style:normal;color:var(--kerze-hell)}
+.ch-04-name s{position:relative;text-decoration:none;color:rgba(250,244,244,.45)}
+.ch-04-name s u{position:absolute;left:-4%;right:-4%;top:52%;height:.07em;background:var(--kerze);transform:scaleX(0) rotate(-2deg);transform-origin:left;transition:transform 1.1s var(--k) .6s}
+.ch-04-z.da .ch-04-name s u,html.ruhig .ch-04-name s u{transform:scaleX(1) rotate(-2deg)}
+.ch-04-pl{aspect-ratio:1;border-radius:4px;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+.ch-04-s{color:var(--fg2);font-size:15px;line-height:1.5}
+.ch-04-rest{color:var(--fg2);font-size:16px;line-height:1.8;max-width:80ch}
+.ch-04-rest .mono{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell);margin:0 8px 0 18px}
+.ch-04-rest .mono:first-child{margin-left:0}
+
+/* ---------- 5 Die Leine */
+.ch-05{display:grid;gap:clamp(24px,4vh,40px)}
+.ch-05-band{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;margin:0 calc(var(--rand,0px)*-1)}
+.ch-05-band::-webkit-scrollbar{display:none}
+.ch-05-feld{position:relative;min-width:1100px;height:clamp(420px,58vh,540px);margin:0 70px 0 20px}
+.ch-05-schnur{position:absolute;left:-20px;right:-70px;top:34px;height:1.5px;background:linear-gradient(90deg,rgba(207,114,51,.2),var(--kerze) 20%,var(--kerze) 80%,rgba(207,114,51,.2))}
+.ch-05-p{position:absolute;top:30px;left:calc(var(--x)*100%);width:clamp(96px,8.4vw,128px);transform-origin:50% 0;rotate:var(--r)}
+.ch-05-p:nth-of-type(even){top:120px}
+.ch-05-p:nth-of-type(even)::before{content:"";position:absolute;left:50%;top:-90px;width:1px;height:90px;background:rgba(207,114,51,.55)}
+.ch-05-p img{aspect-ratio:1;box-shadow:0 18px 30px -16px rgba(0,0,0,.9);border-radius:2px}
+.ch-05-erst img{object-fit:cover}
+.ch-05-kl{position:absolute;left:50%;top:-8px;width:10px;height:20px;margin-left:-5px;background:#B8A58C;border-radius:2px;box-shadow:0 2px 3px rgba(0,0,0,.4)}
+.ch-05-p figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg2);text-align:center}
+html.js:not(.ruhig) .ch-05-band .ch-05-p{transform:rotate(14deg);transition:transform 1.6s cubic-bezier(.3,1.6,.5,1) calc(var(--i)*70ms)}
+html.js .ch-05-band.da .ch-05-p{transform:none}
+.ch-05-jahre{position:absolute;left:0;right:0;bottom:0;height:120px;border-top:1px solid var(--linie)}
+.ch-05-j{position:absolute;left:calc(var(--x)*100%);top:18px;padding-left:12px;border-left:1px solid var(--kerze)}
+.ch-05-j b{display:block;font:300 clamp(40px,4vw,64px)/.9 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ch-05-j p{margin-top:6px;font-size:13px;color:var(--fg2)}
+.ch-05-k{text-align:center}
+
+/* ---------- 6 Der Wandkalender */
+.ch-06{display:grid;gap:clamp(26px,5vh,46px)}
+.ch-06-wand{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,70px);align-items:start}
+.ch-06-kal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,26px)}
+.ch-06-j{font:300 clamp(30px,3vw,48px)/1 var(--titel);color:#FAF4F4;padding-bottom:12px;border-bottom:2px solid var(--kerze);margin-bottom:4px;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ch-06-m{display:flex;align-items:center;gap:10px;min-height:34px;border-bottom:1px solid rgba(250,244,244,.07)}
+.ch-06-m .mono{flex:none;width:30px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,244,244,.3)}
+.ch-06-m.da-ab .mono{color:var(--kerze-hell)}
+.ch-06-t1{position:relative;font:400 13px/1.2 var(--text,inherit);color:#FAF4F4;padding:4px 0}
+.ch-06-t1::before{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:26px;margin-top:-13px;border:1.5px solid var(--kerze);border-radius:50%;transform:rotate(-4deg) scale(.6);opacity:0;transition:transform .5s var(--k),opacity .3s}
+.ch-06-t1.an::before{transform:rotate(-4deg);opacity:1}
+.ch-06-t1+.ch-06-t1{margin-left:4px}
+.ch-06-buehne{position:relative;aspect-ratio:1/1.18}
+.ch-06-a{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--k)}
+.ch-06-a.an{opacity:1}
+.ch-06-a figure{aspect-ratio:1;border-radius:4px;overflow:hidden;box-shadow:0 30px 50px -30px rgba(0,0,0,.9);transform:rotate(-1.5deg)}
+.ch-06-a.an figure{animation:ch-landen .8s var(--k)}
+@keyframes ch-landen{from{transform:translateY(24px) rotate(-4deg)}to{transform:rotate(-1.5deg)}}
+.ch-06-a .ch-w{margin-top:18px}
+.ch-06-t{margin-top:6px;color:var(--fg2);font-size:15px}
+
+/* ---------- 7 Die Abzüge */
+.ch-07{display:grid;gap:clamp(24px,4vh,40px)}
+.ch-07-tresen{position:relative;height:clamp(560px,82vh,780px)}
+.ch-07-a{position:absolute;width:clamp(220px,22vw,330px);background:#F4EEE7;padding:12px 12px 16px;box-shadow:0 30px 50px -24px rgba(0,0,0,.95);rotate:var(--r)}
+.ch-07-f{aspect-ratio:4/5;overflow:hidden;background:#1a1a1a}
+.ch-07-a figcaption{padding-top:12px;color:var(--tinte)}
+.ch-07-hand{display:block;font:italic 340 22px/1.1 var(--titel);color:var(--kerze-tief);font-variation-settings:"SOFT" 100,"WONK" 1}
+.ch-07-a figcaption span:last-child{display:block;margin-top:4px;font-size:13px;line-height:1.45;color:var(--tinte2)}
+.ch-07-a.a0{left:0;top:4%}.ch-07-a.a1{left:19%;top:22%}.ch-07-a.a2{left:39%;top:2%}.ch-07-a.a3{left:58%;top:20%}.ch-07-a.a4{right:0;top:5%}
+html.js:not(.ruhig) .chw .ch-07-a.auf{transform:translateY(120px) rotate(10deg)}
+.ch-07-k{text-align:center}
+
+/* ---------- 8 Der Kontaktbogen */
+.ch-08{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(30px,4vw,70px);align-items:center}
+.ch-08-l{display:flex;flex-direction:column;gap:30px}
+.ch-08-bogen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 6px;padding:22px 14px;background:#0B0A0D;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(250,244,244,.05)}
+.ch-08-f{position:relative;aspect-ratio:4/5;outline:5px solid #050406}
+.ch-08-f img{filter:saturate(.85)}
+.ch-08-nr{position:absolute;left:4px;top:-17px;font-size:9px;letter-spacing:.1em;color:#C9933A}
+.ch-08-ring{position:absolute;inset:-12px -10px;border:3px solid var(--kerze);border-radius:50%;rotate:-6deg;transform:scale(1.25);opacity:0;transition:transform .6s var(--k) calc(var(--i)*60ms + .4s),opacity .4s calc(var(--i)*60ms + .4s);pointer-events:none}
+.ch-08-bogen.da .ch-08-ring,html.ruhig .ch-08-ring{transform:none;opacity:1}
+.ch-08-f figcaption{position:absolute;left:-4px;bottom:-30px;z-index:2;font:italic 340 15px/1 var(--titel);color:var(--kerze-hell);white-space:nowrap;rotate:-3deg}
+.ch-08-f.kreis{z-index:1}
+.ch-08-bogen{row-gap:42px}
+
+/* ---------- 9 Rudis Zeilen */
+.ch-09{display:grid;gap:clamp(30px,6vh,60px)}
+.ch-09-zeilen{display:flex;flex-direction:column;gap:clamp(40px,8vh,90px)}
+.ch-09-z{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(20px,3vw,50px);align-items:center}
+.ch-09-z.rechts{grid-template-columns:minmax(0,8fr) minmax(0,3fr)}
+.ch-09-z.rechts .ch-09-b{order:2}
+.ch-09-z.rechts .ch-09-t{text-align:right}
+.ch-09-b{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden}
+.ch-09-t h3{margin:10px 0 12px;font:400 clamp(30px,4.4vw,74px)/1.02 var(--titel);letter-spacing:.03em;text-transform:uppercase;color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ch-09-t h3 i{font-style:normal;color:var(--kerze);margin:0 .1em}
+.ch-09-s{color:var(--fg2);font-size:15.5px;max-width:44ch}
+.ch-09-z.rechts .ch-09-s{margin-left:auto}
+.ch-09-k{text-align:center}
+
+/* ---------- 10 Der Bonspiess */
+.ch-10{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(30px,5vw,90px);align-items:start}
+.ch-10-spiess{position:relative;margin-top:40px;padding-top:70px;width:min(360px,100%)}
+.ch-10-stab{position:absolute;left:50%;top:0;bottom:16px;width:3px;margin-left:-1.5px;background:linear-gradient(90deg,#8E8A95,#E9E6EE,#77737D);border-radius:2px 2px 0 0;z-index:3}
+.ch-10-stab::before{content:"";position:absolute;left:-1px;top:-8px;border:2.5px solid transparent;border-bottom:9px solid #DAD6DE}
+.ch-10-fuss{display:block;height:16px;background:linear-gradient(#55515C,#35323B);border-radius:3px;position:relative;z-index:4}
+.ch-10-bon{position:relative;display:flex;flex-direction:column;gap:6px;width:100%;margin-top:-40px;padding:18px 22px 16px;background:#F3EFE8;color:var(--tinte);font:400 12px/1.4 "DM Mono",monospace;box-shadow:0 12px 18px -12px rgba(0,0,0,.8);rotate:var(--r);transition:translate .5s var(--k)}
+.ch-10-bon:first-of-type{margin-top:0}
+.ch-10-bon::before{content:"";position:absolute;left:50%;top:26px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#C9C3B8}
+.ch-10-kopf{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte2);padding-bottom:6px;border-bottom:1px dashed rgba(42,40,51,.25)}
+.ch-10-z{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;color:var(--tinte2)}
+.ch-10-bon b{font:400 24px/1.1 var(--titel);color:var(--tinte);font-variation-settings:"SOFT" 100}
+.ch-10-s{font-size:12px;line-height:1.45;color:var(--tinte2)}
+.ch-10-bon.an{translate:18px 0;box-shadow:0 14px 22px -12px rgba(0,0,0,.9),inset 4px 0 0 var(--kerze)}
+html.js:not(.ruhig) .chw .ch-10-bon.auf{transform:translateY(-120px);transition:transform 1s var(--k) calc(var(--i)*140ms)}
+.ch-10-r{position:sticky;top:12vh;display:flex;flex-direction:column;gap:26px}
+.ch-10-buehne{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-10-f{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--k)}
+.ch-10-f.an{opacity:1}
+.ch-10-f figcaption{position:absolute;left:20px;bottom:18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#FAF4F4;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+
+/* ---------- 11 Es wird grösser */
+.ch-11{display:grid;gap:clamp(30px,6vh,60px)}
+.ch-11-reihe{display:grid;grid-template-columns:.62fr .78fr 1fr 1.25fr 1.6fr;gap:clamp(12px,1.6vw,26px);align-items:end}
+.ch-11-f{aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-11-b:nth-child(-n+2) .ch-11-f{aspect-ratio:1}
+.ch-11-b figcaption{display:flex;flex-direction:column;gap:4px;padding-top:14px;border-top:1px solid var(--kerze);margin-top:14px}
+.ch-11-b b{font:300 calc(26px + var(--g)*7px)/1 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ch-11-b .mono{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-11-s{font-size:13.5px;line-height:1.45;color:var(--fg2)}
+
+/* ---------- 12 Der Messbecher */
+.ch-12{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(30px,5vw,90px);align-items:start}
+.ch-12-l{position:sticky;top:12vh;display:flex;flex-direction:column;gap:26px}
+.ch-12-bilder{position:relative;aspect-ratio:5/4;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-12-f{position:absolute;inset:0;opacity:0;transform:scale(1.04);transition:opacity .6s var(--k),transform 1.2s var(--k)}
+.ch-12-f.an{opacity:1;transform:none}
+.ch-12-r{padding:4vh 0 6vh}
+.ch-12-becher{position:relative;padding-left:40px}
+.ch-12-glas{position:relative;height:clamp(900px,170vh,1500px);width:clamp(120px,11vw,170px);border:2px solid rgba(250,244,244,.35);border-top:0;border-radius:0 0 26px 26px;overflow:visible}
+.ch-12-glas::before{content:"";position:absolute;inset:0;border-radius:0 0 24px 24px;background:linear-gradient(90deg,rgba(255,255,255,.05),transparent 40%)}
+.ch-12-fuell{position:absolute;left:0;right:0;bottom:0;height:100%;border-radius:0 0 24px 24px;background:linear-gradient(0deg,#B15736,#CF7233 60%,#E79A5E);transform-origin:bottom;transform:scaleY(var(--f,0.05));transition:transform .4s linear;opacity:.92}
+.ch-12-strich{position:absolute;left:0;top:calc((4 - var(--y))*19% + 6%);width:400%;display:flex;align-items:center;gap:16px}
+.ch-12-l1{flex:none;width:clamp(120px,11vw,170px);height:1.5px;background:rgba(250,244,244,.55)}
+.ch-12-strich p{color:rgba(250,244,244,.45);font-size:14px;line-height:1.45;max-width:30ch;transition:color .4s}
+.ch-12-strich p b{display:block;font:300 clamp(28px,2.6vw,40px)/1 var(--titel);margin-bottom:6px;font-variation-settings:"SOFT" 100,"opsz" 144}
+.ch-12-strich.an p{color:#FAF4F4}
+.ch-12-strich.an p b{color:var(--kerze-hell)}
+
+/* ---------- 13 Der Erzählsatz */
+.ch-13{max-width:1180px;margin:0 auto;text-align:center}
+.ch-13-k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--kerze-hell);margin-bottom:28px}
+.ch-13-text{font:330 clamp(30px,3.6vw,60px)/1.28 var(--titel);letter-spacing:-.01em;color:#FAF4F4;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;text-wrap:balance}
+.ch-13-i{display:inline-block;vertical-align:middle;width:1.9em;height:1.2em;margin:-.1em .12em 0;border-radius:999px;overflow:hidden;background:#0F0E13}
+html.js:not(.ruhig) .chw .ch-13-i.auf{transform:scale(.4)}
+html.js .chw .ch-13-i.auf.da{transform:none;transition:transform 1.1s var(--k) .2s}
+.ch-13-kn{margin-top:clamp(30px,6vh,60px)}
+
+/* ---------- 14 Das Querband */
+.ch-14{display:grid;gap:clamp(24px,4vh,40px)}
+.ch-14-kopf{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.ch-14-pfeile{display:flex;gap:10px}
+.ch-14-pfeile button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(250,244,244,.3);font-size:22px;display:grid;place-items:center;transition:background .3s}
+.ch-14-pfeile button:hover{background:rgba(250,244,244,.08)}
+.ch-14-band{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.ch-14-band::-webkit-scrollbar{display:none}
+.ch-14-b{flex:none;width:clamp(280px,34vw,520px);scroll-snap-align:start}
+.ch-14-f{position:relative;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:#0F0E13}
+.ch-14-f::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(12,10,14,.7))}
+.ch-14-f b{position:absolute;z-index:2;left:22px;bottom:12px;font:300 clamp(64px,7vw,120px)/1 var(--titel);color:#FAF4F4;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.ch-14-b figcaption{padding-top:16px}
+.ch-14-b figcaption .mono{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-14-b figcaption p{margin-top:6px;font-size:16px;line-height:1.5;color:var(--fg2);max-width:34ch}
+
+/* ---------- 15 Damals und heute */
+.ch-15{display:grid;gap:clamp(24px,4vh,40px)}
+.ch-15-feld{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#0F0E13;touch-action:pan-y}
+.ch-15-heute,.ch-15-damals{position:absolute;inset:0}
+.ch-15-clip{position:absolute;inset:0;overflow:hidden;transform:translateX(calc((var(--p) - 100)*1%))}
+.ch-15-innen{position:absolute;inset:0;transform:translateX(calc((100 - var(--p))*1%))}
+.ch-15-damals{background:#111}
+.ch-15-damals img{object-fit:contain;filter:grayscale(.15)}
+.ch-15-feld figcaption{position:absolute;bottom:clamp(18px,3vh,30px);display:flex;flex-direction:column;gap:6px;font:340 clamp(20px,2vw,30px)/1.15 var(--titel);color:#FAF4F4;text-shadow:0 2px 14px rgba(0,0,0,.8);max-width:36%}
+.ch-15-feld figcaption .mono{font:400 11.5px/1 "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-15-heute figcaption{right:clamp(18px,3vw,40px);text-align:right}
+.ch-15-damals figcaption{left:clamp(18px,3vw,40px)}
+.ch-15-griff{position:absolute;top:0;bottom:0;left:0;width:2px;background:#FAF4F4;transform:translateX(calc(var(--p)*1cqw - 1px));pointer-events:none}
+.ch-15-feld{container-type:inline-size}
+.ch-15-griff span{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:#FAF4F4;color:var(--tinte);display:grid;place-items:center;font-size:16px;letter-spacing:.1em;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.ch-15-feld input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ch-15-dazwischen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,40px)}
+.ch-15-dazwischen p{padding-top:14px;border-top:1px solid var(--kerze);color:var(--fg2);font-size:15px;line-height:1.5}
+.ch-15-dazwischen .mono{display:block;margin-bottom:6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.ch-15-k{text-align:center}
+
+/* ---------- Handy */
+@media (max-width:860px){
+  .ch-01,.ch-06-wand,.ch-08,.ch-10,.ch-12{grid-template-columns:1fr}
+  .ch-01-fest{position:static}.ch-01-fenster,.ch-01-wann{display:none}
+  .ch-01-j{display:block;margin-top:16px;font:300 64px/1 var(--titel);color:var(--kerze-hell)}
+  .ch-01-r{gap:60px;padding:0}
+  .ch-02-zahlen{overflow-x:auto;gap:24px;scrollbar-width:none}.ch-02-z{flex:none}
+  .ch-02-buehne{aspect-ratio:4/5}
+  .ch-03-treppe{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .ch-03-block{padding-bottom:22px}
+  html.js:not(.ruhig) .chw .ch-03-s.auf{transform:translateY(50px)}
+  .ch-04-z{grid-template-columns:90px minmax(0,1fr);row-gap:10px}
+  .ch-04-z .ch-w{grid-column:1/-1}.ch-04-name{grid-column:1/-1;white-space:normal;font-size:clamp(30px,9vw,44px)}
+  .ch-04-pl{grid-row:3}
+  .ch-06-buehne{aspect-ratio:auto;min-height:0}.ch-06-a{position:static;display:none}.ch-06-a.an{display:block}
+  .ch-06-kal{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ch-07-tresen{height:auto;display:grid;gap:30px;justify-items:center}
+  .ch-07-a{position:relative;inset:auto!important;width:min(320px,86%)}
+  .ch-07-a:nth-child(even){justify-self:end}.ch-07-a:nth-child(odd){justify-self:start}
+  .ch-08-bogen{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ch-09-z,.ch-09-z.rechts{grid-template-columns:110px minmax(0,1fr)}
+  .ch-09-z.rechts .ch-09-b{order:0}.ch-09-z.rechts .ch-09-t{text-align:left}.ch-09-z.rechts .ch-09-s{margin-left:0}
+  .ch-10-r{position:static;order:-1}
+  .ch-10-spiess{margin-inline:auto}
+  .ch-11-reihe{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .ch-11-b:last-child{grid-column:1/-1}
+  .ch-12-l{position:sticky;top:64px;z-index:2}.ch-12-bilder{aspect-ratio:16/10}
+  .ch-12-glas{height:900px}.ch-12-becher{padding-left:0}
+  .ch-13-text{font-size:clamp(26px,7vw,36px)}
+  .ch-14-b{width:78vw}.ch-14-pfeile{display:none}
+  .ch-15-feld{aspect-ratio:4/5}.ch-15-feld figcaption{max-width:44%;font-size:17px}
+  .ch-15-dazwischen{grid-template-columns:1fr}
+}

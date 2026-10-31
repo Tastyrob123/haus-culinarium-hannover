@@ -1,0 +1,49 @@
+{
+  "station": "11",
+  "name": "Die Plakatwerkstatt (L’Imprimerie)",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "druck",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:45+08:00",
+  "ende": "2026-10-28T16:58+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": [
+      {
+        "dienst": "Higgsfield",
+        "vorher": 1006.34,
+        "nachher": 877.34,
+        "wofuer": "Versuche KI-Motive, Abende, Stiltest am 28.10.; seit Roberts Entscheid keine KI mehr im Werkzeug"
+      }
+    ]
+  },
+  "offen": [
+    {
+      "punkt": "Online-Anschluss (online.json bereit, Adresse des Hauses fehlt)",
+      "wo": "_werkzeuge/imprimerie/online.json"
+    },
+    {
+      "punkt": "Plakat-Illustrationen nur in Instagram-Grösse: für A3-Druck Originale des Gestalters",
+      "wo": "LIEFERUNG.md"
+    },
+    {
+      "punkt": "Nächster Abend offen: Vorlagen nehmen die Beispieltermine der Website",
+      "wo": "website/assets/buchen.js"
+    },
+    {
+      "punkt": "Higgsfield-Schlüssel (Bilder) und Anthropic-Schlüssel (Konzepte) liegen leer bereit; erst damit entstehen neue Plakate live",
+      "wo": "~/.config/tasty/higgsfield.env, anthropic.env"
+    }
+  ],
+  "paket": [
+    "../../../_werkzeuge/imprimerie/LIEFERUNG.md",
+    "../../../_werkzeuge/imprimerie/pruefung/"
+  ],
+  "adresse": "http://localhost:9087/_werkzeuge/imprimerie/",
+  "briefing": "briefing.html?teil=druck",
+  "notiz": "Die Plakatwerkstatt: Plakat je Abend in der Sprache der echten Plakate, Menükarte, Beiträge. Stand 28.10. nachts nach Roberts Wort «pro Anfrage 3 4 oder 5 … an neuen» und «komplett neue und weitergedachte konzepte»: «Abend beschreiben» entwirft je Vorschlag ein eigenes Konzept (Stilblatt aus Rudis 13 Plakaten, kein Motiv des Bestands) und lässt das Bild vorn und hinten entstehen, geprüft auf Kopfzone, Kontrast, Farbabstand und Nähe zu den Originalen; ohne Schlüssel stehen die Konzepte ohne Bild da, nie alte Motive. «Plakat-Motive» nur Rudis 13 Illustrationen. Prüfkette grün (Plakat 4×18/18, PDF 66/66).",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

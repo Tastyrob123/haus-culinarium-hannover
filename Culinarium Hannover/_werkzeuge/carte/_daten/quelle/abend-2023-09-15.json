@@ -1,0 +1,51 @@
+{
+ "ziel": "abend-2023-09-15",
+ "art": "satz",
+ "key": "CxNkFWTIvL2",
+ "name": "15./16. September 2023",
+ "unter": "Das erste Culinarium-Wochenende",
+ "gruppe": "Frühere Abende",
+ "ab": "2023-09-15",
+ "datum": "Fr 15. und Sa 16. September 2023",
+ "preis": "80,00 EUR",
+ "mit": "BY MOMO X CHRISTOPH",
+ "zusatz": "mit Live-Act, 15 Plätze",
+ "motto": "",
+ "titel": "Das erste Culinarium-Wochenende",
+ "plakat": "CxNkFWTIvL2",
+ "gaenge": [
+  {
+   "gang": "Amuse Bouche",
+   "teller": "",
+   "drink": "Cleared Strawberry Martini · Gin | Cleared Erdbeer-Wasser"
+  },
+  {
+   "gang": "Apéritif",
+   "teller": "",
+   "drink": "Umami · Tequila | lakto-fermentierte Tomaten | Agave | Limettensaft | Tomatenstaub"
+  },
+  {
+   "gang": "Vorspeise",
+   "teller": "Das „Brot der Freude“ · Geeister Sugo von allerfeinsten sizilianischen Dattel-Tomaten | Burrata-Mozzarella | Pfirsich | Avocado",
+   "drink": "Cabra · Mezcal | Thymian | Feige | Birne | Limetten | ziegenmilch-filtriert"
+  },
+  {
+   "gang": "Hauptgang",
+   "teller": "Allerlei geröstete Pilze in Schnittlauch-Rahmsauce · hausgemachte Bandnudeln | grüner Erbsen-Sud",
+   "drink": "Molekulare Aviation · Gin | Zitrone | Maraschino | Veilchen-Caviar"
+  },
+  {
+   "gang": "Dessert",
+   "teller": "Crème Brulée mit hausgemachtem Sorbet",
+   "drink": "Black Pearl · Black Sesam fatwashed Tequila | Guave | Grapefruit | Limette | MSG Solution"
+  }
+ ],
+ "upgrade": [
+  "Bunter Salat von der Permakultur Kirchhorst",
+  "Filet vom Fjord-Lachs mit Bouillabaisse-Sauce",
+  "Striploin-Steak (grasgefüttert aus Australien) mit Kräuterbutter"
+ ],
+ "voll": true,
+ "foto_der_karte": "Foto der Karte, Beitrag CxQg56AItz6 (16.09.2023)",
+ "quelle": "website/abende_info.py KARTEN['CxNkFWTIvL2'] · website/bau.py ABENDE (Foto der Karte, Beitrag CxQg56AItz6 (16.09.2023))"
+}

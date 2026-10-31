@@ -1,0 +1,28 @@
+{
+ "haus": "Culinarium Hannover",
+ "quelle": "Gegenprobe: Plakatwerkstatt im Stand von heute früh (Sicherungen *.vor-*-2026-10-29), Port 9187",
+ "gefahr": "l[öo]sch|entfern|senden|abschick|verschick|ver[öo]ffentlich|hochlad|online stellen|abmeld|zur[üu]cksetz|leeren|drucken|druckfertig|herunterlad|download|speicher|[üu]bernehm|best[äa]tig|freigeb|bezahl|verwerf|archivier|logout|ausloggen|ki fragen|erzeugen|generier|neu laden|entw[üu]rfe anlegen|f[üu]nf entw|anlegen und|export|als tabelle|als pdf|probe-pdf|pdf|zip|kopieren|in die zwischenablage|teilen|anrufen|ausprobieren|chat ausprobieren|abbrechen|r[üu]ckg[äa]ngig|wiederholen|undo|redo",
+ "dokument": "\\s(blatt|papier|bogen|dokument|druckseite|a4-seite|brief-seite|karte-blatt|seite-blatt)\\s",
+ "stil": {
+  "trenner": "|",
+  "trennerFalsch": "[A-Za-zÄÖÜäöü]\\s+/\\s+[A-Za-zÄÖÜäöü]",
+  "versalienNur": "Mono",
+  "versalienErlaubt": "Mono|plakat|marke|wortmarke"
+ },
+ "ziele": [
+  {
+   "k": "plakatwerkstatt",
+   "name": "Die Plakatwerkstatt",
+   "url": "http://127.0.0.1:9187/_werkzeuge/imprimerie/",
+   "localStorage": {
+    "ds-culinarium-willkommen": "1"
+   },
+   "max": 520
+  },
+  {
+   "k": "plakatwerkstatt-mail",
+   "name": "Die Plakatwerkstatt · Mail",
+   "url": "http://127.0.0.1:9187/_werkzeuge/imprimerie/mail.html"
+  }
+ ]
+}

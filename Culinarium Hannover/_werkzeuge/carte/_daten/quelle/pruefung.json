@@ -1,0 +1,61 @@
+{
+ "geprueft": "Wort für Wort gegen website/abende_info.py, Teller/Drinks/Preise gegen website/abende.html",
+ "karten": {
+  "abend-2023-09-15": {
+   "name": "15./16. September 2023",
+   "gaenge": 5,
+   "drinks": 5,
+   "preis": "80,00 EUR",
+   "voll": true
+  },
+  "abend-2023-09-22": {
+   "name": "22./23. September 2023",
+   "gaenge": 5,
+   "drinks": 5,
+   "preis": "59,00 EUR",
+   "voll": true
+  },
+  "abend-2023-11-17": {
+   "name": "17./18. November 2023",
+   "gaenge": 5,
+   "drinks": 5,
+   "preis": "59,00 EUR",
+   "voll": true
+  },
+  "abend-2024-04-26": {
+   "name": "26./27. April 2024",
+   "gaenge": 5,
+   "drinks": 5,
+   "preis": "69,00 EUR",
+   "voll": true
+  },
+  "abend-2024-07-19": {
+   "name": "19./20. Juli 2024",
+   "gaenge": 1,
+   "drinks": 1,
+   "preis": "69,00 EUR",
+   "voll": false
+  },
+  "abend-2024-11-29": {
+   "name": "29./30. November 2024",
+   "gaenge": 2,
+   "drinks": 2,
+   "preis": "69,00 EUR",
+   "voll": false
+  },
+  "abend-2025-02-21": {
+   "name": "21./22. Februar 2025",
+   "gaenge": 5,
+   "drinks": 5,
+   "preis": "79,00 EUR",
+   "voll": true
+  },
+  "abend": {
+   "name": "Der nächste Abend",
+   "gaenge": 0,
+   "drinks": 0,
+   "preis": "79,00 EUR",
+   "voll": true
+  }
+ }
+}

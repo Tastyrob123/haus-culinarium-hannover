@@ -1,0 +1,109 @@
+# Bewusst nicht übersetzt (bau_en.py, Version 26216): Text	Grund	Seiten
+30449 Hannover	Adresse	weg
+30449 Hannover-Linden	Adresse	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Haasemannstraße	Adresse	weg
+Haasemannstraße 13	Adresse	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Haasemannstraße 13 · Hannover-Linden	Adresse	index
+Haasemannstraße 13 · Linden	Adresse	bar
+Haasemannstraße 13.	Adresse	weg
+Haasemannstraße,	Adresse	weg
+Walk on the Wild Side · Haasemannstraße 13	Adresse	abend
+Walk on the Wild Side · Haasemannstraße 13 · 30449 Hannover	Adresse	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Chicken Chunks	Englisch im Original	dirty-chicken
+Dirty Food	Englisch im Original	dirty-chicken
+Dirty Food & Dirty Drinks	Englisch im Original	dirty-chicken
+Dirty Food, Dirty Drinks & Live Music	Englisch im Original	dirty-chicken
+Dirty Food.	Englisch im Original	dirty-chicken
+Food.	Englisch im Original	dirty-chicken
+Fried Chicken	Englisch im Original	dirty-chicken
+Sandwich	Englisch im Original	dirty-chicken
+Sandwiches & More	Englisch im Original	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Fatwashing	Fachwort wie auf der Seite	bar, index
+Milkwashing	Fachwort wie auf der Seite	bar, index
+Plus Code	Google-Begriff	weg
+CHICKEN CHUNKS · SPICY GLAZE · PICKLED ONIONS ·	Laufschrift, Englisch im Original	dirty-chicken
+DIRTY FOOD · DIRTY DRINKS · SANDWICHES & MORE ·	Laufschrift, Englisch im Original	dirty-chicken
+100 m	Massstab der Karte	weg
+Flashback	Motto des Abends, Englisch im Original	abende
+Winter is coming	Motto des Abends, Englisch im Original	abende
+Culinarium	Name	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Culinarium Hannover	Name	abende, datenschutz, impressum, weg
+Derya Ivkin	Name	index, leute
+Falstaff	Name	bar
+Instagram	Name	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Mohamed Ben Khelifa	Name	leute
+Momo	Name	index, leute
+PayPal	Name	abend
+Rudi Napieraj	Name	index, leute
+Rudolf Napieraj	Name	leute
+Walk on the Wild Side.	Name der Bar	bar, index
+Walk on the Wild Side	Name der Bar (Auftrag)	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Walk on	Name der Bar (Zeile 1 des Titels)	bar
+the Wild Side.	Name der Bar (Zeile 2 des Titels)	bar
+Opening 2026	Name des Abends	dirty-chicken
+Opening 2026.	Name des Abends	dirty-chicken
+Dirty Chicken	Name des Pop-ups	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Dirty Chicken.	Name des Pop-ups	dirty-chicken, index
+Dirty	Name des Pop-ups (Zeile 1)	dirty-chicken, index
+Chicken.	Name des Pop-ups (Zeile 2)	dirty-chicken, index
+Martin Bauermann, Beluga Vodka Berlin	Name und Marke	dirty-chicken
+AM:PM, Walk on the Wild Side, Beluga, NATE	Namen	dirty-chicken
+Culinarium · Walk on the Wild Side	Namen	abend
+Visa, Mastercard	Namen	abend
+Linden	Ortsname	weg
+In Linden.	Ortsname, gleich in beiden Sprachen	index
+9PC7+49 Hannover	Plus Code	weg
+BLUMENKOHL	Rudis Zeile	index
+CHIPOTLE	Rudis Zeile	index
+HASELNUSS	Rudis Zeile	index
+HOKKAIDO	Rudis Zeile	index
+KAPERN	Rudis Zeile	index
+KIWI	Rudis Zeile	index
+KÜRBISKERNÖL	Rudis Zeile	index
+LAUCH	Rudis Zeile	index
+QUINOA	Rudis Zeile	index
+ROQUEFORT	Rudis Zeile	index
+SPAGHETTI-EIS	Rudis Zeile	index
+WEISSE SCHOKOLADE	Rudis Zeile	index
+AUBERGINE / KOKOS / LIMETTE / SESAM	Rudis Zeile (Bildzeile)	abende
+BLUMENKOHL / ROGUEFORT / KAPERN / QUINOA	Rudis Zeile (Bildzeile)	abende
+HOKKAIDO / KÜRBISKERN ÖL / HASELNUSS	Rudis Zeile (Bildzeile)	abende
+LAUCH / BLUMENKOHL / CHIPOTLE	Rudis Zeile (Bildzeile)	abende
+ROTE BEETE / ZWIEBEL / PARMESAN	Rudis Zeile (Bildzeile)	abende
+ZWIEBELTARTELETT	Rudis Zeile (Bildzeile)	abende
+DE	Sprachschalter	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Deutsch	Sprachschalter	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Deutsche Fassung	Sprachschalter (aria-label der deutschen Seite)	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+BLUMENAUER STRASSE	Strassenname	weg
+ELISENSTRASSE	Strassenname	weg
+FÖSSESTRASSE	Strassenname	weg
+HAASEMANNSTRASSE	Strassenname	weg
+LIMMERSTRASSE	Strassenname	weg
+MINISTER-STÜVE-STRASSE	Strassenname	weg
+NIESCHLAGSTRASSE	Strassenname	weg
+RAMPENSTRASSE	Strassenname	weg
+SPINNEREISTRASSE	Strassenname	weg
+STEPHANUSSTRASSE	Strassenname	weg
+Am Küchengarten	Strassenname auf der Karte	weg
+hannover	Teil von @dirtychicken.hannover	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Bar Guide 2027	Titel des Falstaff-Führers	bar
+BY MOMO	Zeile von den Plakaten	abende
+BY MOMO X CHRISTOPH	Zeile von den Plakaten	abende
+BY MOMO X RUDI	Zeile von den Plakaten	abende
+A UNiQUE EXPERiENCE BY MOMO X RUDI	Zeile von den Plakaten (Auftrag)	abend, index
+„sponsored by @camparideutschland @campari“	Zitat, Englisch im Original	abende
+April	gleich	index
+November 2023	gleich	leute
+September	gleich	index
+Aperitif	gleich in beiden Sprachen	abend, index
+Dessert	gleich in beiden Sprachen	abende
+Drinks	gleich in beiden Sprachen	abende, index
+Name	gleich in beiden Sprachen	abend
+Pop-up	gleich in beiden Sprachen	index
+Team	gleich in beiden Sprachen	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
+Tickets	gleich in beiden Sprachen	index
+OPENING	vom Plakat	index
+Amuse Bouche	wie auf der Karte	abende
+Apéritif	wie auf der Karte	abende
+
+# Momos Menükarten: Zutaten Deutsch, englische Zeile darunter (46 Zeilen)

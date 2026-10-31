@@ -1,0 +1,62 @@
+Le Livre (marke) · Culinarium · chromium 390 × 844 · 30.10.2026, 05:01:40
+ok    1 Übersicht lädt mit Gruss nach Tageszeit
+ok    2 Zahlen: 232 Fotos, 34 Dateien im Kopf
+ok    3 Vier Kacheln Fotos, Logo & Dateien, Markenprüfung, Markenbuch
+ok    4 Kein seitliches Verrutschen (Übersicht)
+ok    5 Namen des Hauses aus dem Kleid: Das Markenbuch, Der Tresen; keine Namen anderer Häuser
+ok    6 Rand → Fotos: Ansicht und Titel wechseln, Menü schliesst
+ok    7 Rand → Logo & Dateien: Ansicht und Titel wechseln, Menü schliesst
+ok    8 Rand → Markenprüfung: Ansicht und Titel wechseln, Menü schliesst
+ok    9 Rand → Übersicht: Ansicht und Titel wechseln, Menü schliesst
+ok   10 Alle Wege in Kopf, Rand und Leiste antworten · 12 Wege
+ok   11 ZIP mit allen Dateien lädt · culinarium-hannover-marke.zip, 2.9 MB
+ok   12 Raster zeigt zuerst 48 Kacheln · 48
+ok   13 Nachladen beim Scrollen bis alle 232 da sind · 232
+ok   14 Alle 232 Vorschaubilder laden · 0 fehlen
+ok   15 Suche «tafel» filtert, Zähler stimmt · 27
+ok   16 Suche mit <script>, Emoji, Umlauten: Hinweis statt Kacheln, nichts ausgeführt
+ok   17 Suche mit 5000 Zeichen wird auf 200 begrenzt
+ok   18 «Filter zurücksetzen» zeigt wieder alle
+ok   19 Kein Filter «Saison» (Culinarium kennt keine Saison, alle Fotos ganzjährig)
+ok   20 Filter Bereich: 10 Knöpfe, jeder trifft, «Alle» löst · 15/26/22/20/11/13/15/56/16/38
+ok   21 Filter Format: 2 Knöpfe, jeder trifft, «Alle» löst · 182/50
+ok   22 Filter Herkunft: 2 Knöpfe, jeder trifft, «Alle» löst · 194/38
+ok   23 Foto öffnet gross mit Titel und Quelle (Rudis Datei, ohne öffentlichen Weg)
+ok   24 Vier Grössen Instagram, Story, Website, Druck
+ok   25 Download instagram: 1080 × 1350 · culinarium-hannover-pass4-instagram-1080x1350.jpg 1080×1350
+ok   26 Download story: 1080 × 1920 · culinarium-hannover-pass4-story-1080x1920.jpg 1080×1920
+ok   27 Download web: 2000 × 1500 · culinarium-hannover-pass4-web-2000x1500.jpg 2000×1500
+ok   28 Download druck: 2582 × 1936 · culinarium-hannover-pass4-druck-2582x1936.jpg 2582×1936
+ok   29 Zwei Wege in Die Plakatwerkstatt (eigener Server :9087) mit Foto, Haus und Ausschnitt · http://127.0.0.1:9087/_werkzeuge/imprimerie/?haus=culinarium&foto=pass4&art=insta&x=0.500&y=0.500
+ok   30 Esc schliesst das Fenster
+ok   31 Foto der Bar (fremde Rechte): Kennzeichen «Rechte», Hinweis und Weg zum Beitrag
+ok   32 Kreuz schliesst das Fenster
+ok   33 Kein Foto mit KI erzeugt oder verändert: kein Filter «KI», kein Kennzeichen
+ok   34 Klick neben das Fenster schliesst es
+ok   35 Vorher/Nachher: drei Knöpfe, Vorher und Schieber wirken, Vorher ladbar · vorher/schieber
+ok   36 Ohne Nachschärfung keine Vorher-Knöpfe
+ok   37 Jede Datei der Ansicht ist abrufbar · 35 Dateien
+ok   38 Blöcke Wortmarke mit Zeile, Wortmarke, Zeile, Tapete, Farben, Schriften, Dirty Chicken, Instagram · 8
+ok   39 Jede Farbgruppe mit einem eigenen Foto (keins doppelt), die Farben der Abende je mit ihrem Plakat, jede Schrift mit Bild · 4 Gruppen, 6 Plakate
+ok   40 Keine doppelten Fotos im Archiv (Bildvergleich im Bau, ZUSAMMEN)
+ok   41 Farbe antippen meldet «Kopiert» mit dem Wert
+ok   42 Alle Bilder der Ansicht laden · 0
+ok   43 Kein seitliches Verrutschen (Dateien)
+ok   44 Unter dem leeren Feld steht schon ein Beispiel
+ok   45 Falscher Dateityp wird abgewiesen
+ok   46 Gewählte Datei: Name und «Prüfen»
+ok   47 Prüfung endet mit Ergebnis: gemessene Farben, Probe deutlich beschriftet
+ok   48 «Ergebnis sichern» legt eine HTML-Datei ab · markenpruefung-culinarium-entwurf.html
+ok   49 «Als Text kopieren» meldet sich
+ok   50 «Neuen Entwurf prüfen» setzt das Feld zurück
+ok   51 «Beispiel ansehen»: als Beispiel beschriftet, «passt nicht» zuerst
+ok   52 Netz weg beim Prüfen: Meldung, Datei bleibt gewählt
+ok   53 Neuladen bleibt in der Ansicht
+ok   54 Hausregeln: zwölf Blätter mit Rudis Wortmarke (ohne «Farbwelt», Robert 29.10.2026), das Band belegt auf vier Plakaten, «Als PDF sichern» öffnet den Druck
+ok   55 Markenbuch: alle Bilder laden
+ok   56 Kein seitliches Verrutschen (Markenbuch)
+ok   57 Markenbuch: nichts Internes (Station, Tasty, andere Häuser, verworfene Wahl), kein Band als Baustein
+ok   58 Logo richtig und falsch: Seite und Bilder laden, Weg zurück ins Markenbuch · 0
+ok   59 Anleitung: neun Kapitel, Bilder laden
+ok   60 Keine Fehler in der Konsole, keine toten Anfragen
+60 von 60 ok

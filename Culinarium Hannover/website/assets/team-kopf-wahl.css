@@ -1,0 +1,151 @@
+/* Culinarium · Hero «Das Team»: Gruppenbild und Schriftzug wählen (nur Wahlseite). Schrift nur Fraunces leicht, nie fett, nie kursiv; Kerze als Akzent.
+   Ein bewegter Moment je Fassung, nur transform und opacity. */
+.tw{padding:0;z-index:3}
+.tw>.wv[hidden]{display:none!important}
+.tmv{background:#0F0E13}
+.tmv figure{margin:0}
+.tmv img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Grundform: randlos über den ersten Bildschirm */
+.tm{position:relative;height:max(100svh,640px);overflow:hidden;color:#FAF4F4;isolation:isolate}
+.tm-bild{position:absolute;inset:0;overflow:hidden}
+html.js:not(.ruhig) .tm-setzt img{transform:scale(1.12);transition:transform 4s var(--k2)}
+html.js .tm-setzt.da img{transform:none}
+.tm-grund{position:absolute;inset:0;z-index:1;pointer-events:none}
+.tm-grund.unten{background:linear-gradient(to top,rgba(12,11,15,.94),rgba(12,11,15,.58) 32%,rgba(12,11,15,0) 62%),linear-gradient(to bottom,rgba(12,11,15,.55),rgba(12,11,15,0) 18%)}
+.tm-grund.oben-unten{background:linear-gradient(to bottom,rgba(12,11,15,.82),rgba(12,11,15,.35) 34%,rgba(12,11,15,0) 52%),linear-gradient(to top,rgba(12,11,15,.92),rgba(12,11,15,.4) 22%,rgba(12,11,15,0) 38%)}
+.tm-grund.mitte{background:linear-gradient(to top,rgba(12,11,15,.92),rgba(12,11,15,.3) 40%,rgba(12,11,15,.22))}
+.tm-grund.links-schmal{background:linear-gradient(to right,rgba(12,11,15,.8),rgba(12,11,15,0) 26%),linear-gradient(to top,rgba(12,11,15,.92),rgba(12,11,15,.4) 22%,rgba(12,11,15,0) 38%),linear-gradient(to bottom,rgba(12,11,15,.5),rgba(12,11,15,0) 18%)}
+.tm-grund.rand{background:radial-gradient(ellipse 80% 70% at 50% 46%,rgba(12,11,15,0) 40%,rgba(12,11,15,.7)),linear-gradient(to top,rgba(12,11,15,.8),rgba(12,11,15,0) 36%)}
+.tm .tm-titel{font-family:var(--titel);font-weight:320;font-size:clamp(64px,9.6vw,172px);line-height:.9;letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;margin:0;color:#FAF4F4}
+.tm .tm-satz{color:rgba(250,244,244,.86);font-size:18px;line-height:1.5;max-width:470px;margin:0}
+.tm .knoepfe{display:flex;gap:14px}
+.tm-k{font:500 11.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--kerze-hell)}
+.tm-punkt{font-weight:inherit;color:var(--kerze)}
+/* Schatten nur, wo Schrift auf dem Bild liegt */
+.tm02 .tm-titel,.tm03 .tm-titel,.tm07 .tm-titel,.tm08 .tm-titel,.tm09 .tm-titel,.tm11 .tm-titel,.tm12 .tm-titel,.tm13 .tm-titel{text-shadow:0 4px 40px rgba(0,0,0,.4)}
+.tm02 .tm-satz,.tm03 .tm-satz,.tm07 .tm-satz,.tm08 .tm-satz,.tm11 .tm-satz,.tm12 .tm-satz,.tm13 .tm-satz{text-shadow:0 1px 16px rgba(0,0,0,.55)}
+
+/* 1 Darunter */
+.tm01{display:flex;flex-direction:column;background:#0F0E13}
+.tm01-bild{position:relative;flex:1;min-height:0;margin-top:64px}
+.tm01-text{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding:clamp(26px,4.4vh,48px) var(--rand) clamp(30px,5vh,56px)}
+.tm01 .tm-titel{font-size:clamp(60px,8.4vw,150px)}
+.tm01-rechts{display:flex;flex-direction:column;gap:22px;align-items:flex-start;padding-bottom:10px}
+
+/* 2 Über den Köpfen */
+.tm02-titel{position:absolute;z-index:2;left:0;right:0;top:calc(64px + clamp(20px,5vh,56px));text-align:center}
+.tm02 .tm-titel{font-size:clamp(72px,12vw,220px)}
+.tm02-unten{position:absolute;z-index:2;left:var(--rand);right:var(--rand);bottom:clamp(30px,5.5vh,60px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+
+/* 3 Angeschnitten */
+.tm03-oben{position:absolute;z-index:2;right:var(--rand);top:calc(64px + clamp(24px,5vh,56px));display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:420px}
+.tm03-titel{position:absolute;z-index:2;left:-.02em;right:0;bottom:-.09em;white-space:nowrap;text-align:center}
+.tm03 .tm-titel{font-size:min(17.4vw,42vh);line-height:.8;letter-spacing:-.045em}
+
+/* 4 Die Zeilen */
+.tm04{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);background:#0F0E13}
+.tm04-text{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:24px;padding:calc(64px + 24px) clamp(24px,3.4vw,56px) 40px var(--rand)}
+.tm04 .tm-titel{font-size:clamp(60px,7.4vw,132px)}
+.tm04-zeilen{font-size:clamp(22px,2.3vw,38px);line-height:1.08;color:rgba(250,244,244,.92);margin:4px 0 6px}
+.tm04-bild{position:relative;margin-top:64px;overflow:hidden}
+
+/* 5 Der Abzug */
+.tm05{background:radial-gradient(ellipse 70% 60% at 50% 40%,#25232C,#0F0E13 75%);display:flex;flex-direction:column;align-items:center;padding-top:calc(64px + clamp(22px,4vh,44px))}
+.tm05-abzug{width:min(72vw,calc((100svh - 64px - 300px) * 1.33 + 40px));background:#F4EEEA;padding:clamp(10px,1.1vw,18px) clamp(10px,1.1vw,18px) 0;box-shadow:0 50px 90px -40px rgba(0,0,0,.95),0 2px 0 rgba(255,255,255,.06);color:#3A3845}
+html.js:not(.ruhig) .tm05-abzug{transform:translateY(40px) rotate(-1.4deg);opacity:0;transition:transform 1.8s var(--k),opacity 1.2s ease}
+html.js .tm05-abzug.da{transform:rotate(-.6deg);opacity:1}
+.tm05-bild{aspect-ratio:4/3;overflow:hidden}
+.tm05-zeile{display:flex;justify-content:space-between;gap:20px;padding:12px 2px 14px;font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.tm05-titel{position:relative;z-index:2;margin-top:clamp(-120px,-6.4vw,-56px)!important;text-align:center}
+.tm05 .tm-titel{font-size:clamp(72px,10.4vw,190px);text-shadow:0 10px 50px rgba(0,0,0,.5)}
+.tm05-unten{display:flex;align-items:center;justify-content:center;gap:34px;margin-top:clamp(14px,2.4vh,26px);padding:0 var(--rand)}
+
+/* 6 Das Kinobild */
+.tm06{background:#060509;display:flex;flex-direction:column;justify-content:center}
+.tm06-bild{position:relative;width:100%;height:min(42vw,calc(100svh - 64px - 230px));margin-top:64px;overflow:hidden}
+.tm06-balken{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding:clamp(24px,4vh,40px) var(--rand) 0}
+.tm06 .tm-titel{font-size:clamp(56px,6.6vw,118px)}
+.tm06-r{display:flex;align-items:flex-end;gap:30px}
+.tm06 .tm-satz{font-size:16px;max-width:400px;color:rgba(250,244,244,.72)}
+
+/* 7 Senkrecht */
+.tm07-titel{position:absolute;z-index:2;left:clamp(14px,2.2vw,40px);bottom:clamp(30px,6vh,64px);writing-mode:vertical-rl;transform:rotate(180deg)}
+.tm07 .tm-titel{font-size:min(15vh,150px);line-height:.86}
+.tm07-unten{position:absolute;z-index:2;right:var(--rand);bottom:clamp(30px,6vh,64px);display:flex;align-items:flex-end;gap:30px;max-width:760px}
+
+/* 8 Umriss */
+.tm08-titel{position:absolute;z-index:2;left:0;right:0;bottom:clamp(104px,15vh,160px);margin:0;text-align:center;font:300 clamp(90px,16vw,300px)/.84 var(--titel);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:#FAF4F4}
+.tm08-titel .kontur{color:transparent;-webkit-text-stroke:1.5px rgba(250,244,244,.95)}
+.tm08-unten{position:absolute;z-index:2;left:var(--rand);right:var(--rand);bottom:clamp(30px,5.5vh,60px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+
+/* 9 Familie */
+.tm09-unten{position:absolute;z-index:2;left:var(--rand);right:var(--rand);bottom:clamp(34px,6vh,66px);display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.tm09-unten>div{display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.tm09-zitat{max-width:440px;margin:0 0 6px}
+.tm09-zitat p{color:#FAF4F4;text-shadow:0 1px 18px rgba(0,0,0,.5)}
+.tm09-zitat footer{margin-top:12px;font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--kerze-hell)}
+
+/* 10 Gestapelt */
+.tm10{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr);background:#0F0E13}
+.tm10-text{display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:calc(64px + 30px) clamp(24px,3vw,52px) clamp(40px,7vh,80px) var(--rand)}
+.tm10 .tm-titel{font-size:clamp(90px,13.5vw,250px);line-height:.82;letter-spacing:-.045em}
+.tm10-bild{position:relative;overflow:hidden}
+
+/* 11 Der Rahmen */
+.tm11-rahmen{position:absolute;z-index:2;left:var(--rand);right:var(--rand);top:calc(64px + clamp(18px,2.6vh,30px));bottom:clamp(24px,4vh,40px);border:2px solid rgba(250,244,244,.95);border-bottom:0;pointer-events:none;filter:drop-shadow(0 0 1.5px rgba(0,0,0,.45))}
+.tm11-rahmen::before,.tm11-rahmen::after{content:"";position:absolute;bottom:0;height:2px;background:rgba(250,244,244,.95)}
+.tm11-rahmen::before{left:0;width:clamp(20px,2.4vw,40px)}
+.tm11-rahmen::after{right:0;width:clamp(20px,2.4vw,40px)}
+html.js:not(.ruhig) .tm11-rahmen{opacity:0;transform:scale(1.03);transition:opacity 1.6s ease .5s,transform 2.4s var(--k) .5s}
+html.js .tm11-rahmen.da{opacity:1;transform:none}
+.tm11-unten{position:absolute;z-index:3;left:calc(var(--rand) + clamp(40px,4.4vw,72px));right:calc(var(--rand) + clamp(40px,4.4vw,72px));bottom:clamp(-2px,1vh,10px);display:flex;justify-content:space-between;align-items:flex-end;gap:36px}
+.tm11 .tm-titel{font-size:clamp(64px,8.4vw,150px);padding:0 .12em;margin-bottom:-.06em!important}
+.tm11-r{display:flex;align-items:flex-end;gap:28px;padding-bottom:clamp(28px,4.4vh,50px)}
+
+/* 12 Titelblatt */
+.tm12-e{position:absolute;z-index:2;margin:0;font:500 11.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:rgba(250,244,244,.9);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.tm12-e.o-l{left:var(--rand);top:calc(64px + 28px)}.tm12-e.o-r{right:var(--rand);top:calc(64px + 28px)}
+.tm12-e.u-l{left:var(--rand);bottom:30px}.tm12-e.u-r{right:var(--rand);bottom:30px}
+.tm12-mitte{position:absolute;z-index:2;left:50%;bottom:clamp(64px,9vh,100px);transform:translateX(-50%);width:min(900px,calc(100% - 2*var(--rand)));display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.tm12 .tm-titel{font-size:clamp(64px,9vw,160px)}
+.tm12-reihe{display:flex;align-items:center;gap:30px;text-align:left}
+.tm12 .tm-satz{max-width:420px}
+
+/* 13 Zurücktreten */
+.tm13-bild img{transform-origin:50% 40%}
+html.js:not(.ruhig) .tm13-bild img{transform:scale(1.75);transition:transform 7s cubic-bezier(.3,.1,.2,1)}
+html.js .tm13-bild.da img{transform:none}
+.tm13-text{position:absolute;z-index:2;left:var(--rand);right:var(--rand);bottom:clamp(34px,6vh,66px);display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.tm13-reihe{display:flex;align-items:center;gap:30px}
+html.js:not(.ruhig) .tm13 .zl .z>span{transition-delay:calc(2.2s + var(--i,0)*95ms)}
+
+/* Leiste: Gruppenbild wählen */
+.tm-bildwahl{display:flex;align-items:center;gap:12px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid rgba(250,244,244,.1)}
+.tm-bildwahl>b{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--kerze-hell);white-space:nowrap}
+.tm-bildknoepfe{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin}
+.tm-bildknoepfe button{flex:none;display:flex;align-items:center;gap:8px;padding:3px 10px 3px 3px;border:2px solid transparent;border-radius:8px;background:#1C1B21;color:#d8d2d6;cursor:pointer;font:400 12px/1.2 var(--text)}
+.tm-bildknoepfe img{width:58px;height:40px;object-fit:cover;border-radius:5px}
+.tm-bildknoepfe i{font-style:normal;color:var(--kerze-hell);margin-right:5px}
+.tm-bildknoepfe button.an{border-color:var(--kerze);color:#fff}
+
+@media (max-width:860px){
+  .tm{height:max(100svh,600px)}
+  .tm .tm-satz{font-size:16px}
+  .tm01-text,.tm02-unten,.tm06-balken,.tm06-r,.tm07-unten,.tm08-unten,.tm09-unten,.tm11-unten,.tm11-r{flex-direction:column;align-items:flex-start;gap:18px}
+  .tm03-oben{left:18px;right:18px;max-width:none}
+  .tm04,.tm10{display:flex;flex-direction:column-reverse}
+  .tm04-bild,.tm10-bild{flex:1;min-height:40vh}
+  .tm04-text,.tm10-text{padding:24px 18px 28px}
+  .tm04-bild{margin-top:56px}.tm10-bild{margin-top:56px}
+  .tm04-zeilen{display:none}
+  .tm05-abzug{width:92vw}
+  .tm05-titel{margin-top:18px!important}
+  .tm05-unten{flex-direction:column;gap:16px;text-align:center}
+  .tm07-titel{display:none}
+  .tm09-zitat{display:none}
+  .tm11-unten{left:calc(18px + 24px);right:calc(18px + 24px)}
+  .tm12-e.o-r,.tm12-e.u-r{display:none}
+  .tm12-reihe,.tm13-reihe{flex-direction:column;gap:16px}.tm12-reihe{text-align:center}
+  .tm-bildknoepfe span{display:none}.tm-bildknoepfe button{padding:3px}
+}

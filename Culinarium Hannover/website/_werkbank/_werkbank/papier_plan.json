@@ -1,0 +1,488 @@
+{
+ "druck": [
+  {
+   "id": "karte",
+   "name": "Die Karte am Platz",
+   "format": "A5 hoch, zwei Seiten",
+   "vorschau": [
+    [
+     "karte",
+     1
+    ],
+    [
+     "karte-r",
+     2
+    ]
+   ],
+   "satz": "Vorne Rudis Teller in seinen Zeilen, hinten Momos fünf Drinks und seine Techniken. Abend und Platz tragt ihr ein. Hier mit den Tellern, die auf eurer Startseite stehen.",
+   "quelle": "Startseite eurer Website: «Teller von Rudi» und «Das erste Glas»",
+   "seiten": 2
+  },
+  {
+   "id": "drinks",
+   "name": "Drink-Kärtchen",
+   "format": "A7 hoch, drei Motive, eine Rückseite",
+   "vorschau": [
+    [
+     "drink-1",
+     1
+    ],
+    [
+     "drink-2",
+     2
+    ],
+    [
+     "drink-3",
+     3
+    ],
+    [
+     "drink-r",
+     4
+    ]
+   ],
+   "satz": "Zu jeder Technik ein kleines Kärtchen, das Momo zum Drink legt: Fatwashing, Milkwashing und Enzyme, jede mit ihrem Satz. Zum Mitnehmen.",
+   "quelle": "Abschnitt «Das erste Glas» eurer Website",
+   "seiten": 4
+  },
+  {
+   "id": "ticket",
+   "name": "Ticket",
+   "format": "DIN lang quer, 210 × 99 mm, mit Abriss",
+   "vorschau": [
+    [
+     "ticket",
+     1
+    ],
+    [
+     "ticket-r",
+     2
+    ]
+   ],
+   "satz": "Das Ticket, das ein Gast nach der Buchung bekommt, als Blatt zum Ausdrucken: vorne Abend, Beginn, Name und Plätze, hinten der Weg zur Bar.",
+   "quelle": "Seite «Der Abend» und «Der Weg» eurer Website",
+   "seiten": 2
+  },
+  {
+   "id": "briefpapier",
+   "name": "Briefpapier",
+   "format": "Briefbogen A4, Umschlag DIN lang",
+   "vorschau": [
+    [
+     "briefbogen",
+     1
+    ],
+    [
+     "umschlag",
+     2
+    ]
+   ],
+   "satz": "Briefbogen und Umschlag mit der Wortmarke und der Zeile eurer Plakate.",
+   "quelle": "Plakate und Website",
+   "seiten": 2
+  },
+  {
+   "id": "menue",
+   "name": "Menükarte des Abends",
+   "format": "DL hoch, 99 × 210 mm",
+   "vorschau": [
+    [
+     "menue",
+     1
+    ]
+   ],
+   "satz": "Oben Rudis Wortmarke mit der Zeile der Plakate, darunter «Menü», das Datum und die Gänge, jeder mit seinem Drink. Hier mit der Karte vom Februar 2025.",
+   "quelle": "Menükarten der Abende (Website, «Alle Abende»)",
+   "seiten": 1
+  },
+  {
+   "id": "platzkarte",
+   "name": "Platzkarte",
+   "format": "A7 quer, 105 × 74 mm",
+   "vorschau": [
+    [
+     "platz-h",
+     1
+    ],
+    [
+     "platz-d",
+     2
+    ]
+   ],
+   "satz": "Eine Karte mit dem Namen jedes Gastes, hell oder auf der Nacht der Bar. Der Name trägt die Karte, darüber das C.",
+   "quelle": "Namen als Beispiel",
+   "seiten": 2
+  },
+  {
+   "id": "reserviert",
+   "name": "Die Tafel ist reserviert",
+   "format": "A6 hoch, als Aufsteller",
+   "vorschau": [
+    [
+     "reserviert",
+     1
+    ]
+   ],
+   "satz": "Steht am Nachmittag auf der langen Tafel, damit sich niemand an den gedeckten Platz setzt.",
+   "quelle": "Website, «Der Abend»",
+   "seiten": 1
+  },
+  {
+   "id": "willkommen",
+   "name": "Willkommen am Platz",
+   "format": "A6 hoch, 105 × 148 mm",
+   "vorschau": [
+    [
+     "willkommen",
+     1
+    ]
+   ],
+   "satz": "Liegt auf dem Teller, wenn die Gäste kommen: wie der Abend läuft, als kleine Zeitleiste.",
+   "quelle": "Website, «Der Abend»",
+   "seiten": 1
+  },
+  {
+   "id": "ausgebucht",
+   "name": "Heute ausgebucht",
+   "format": "A4 hoch, Aushang",
+   "vorschau": [
+    [
+     "ausgebucht",
+     1
+    ]
+   ],
+   "satz": "Für die Tür der Bar, aus drei Metern lesbar.",
+   "quelle": "Website, «Der Abend»",
+   "seiten": 1
+  },
+  {
+   "id": "warteliste",
+   "name": "Auf die Warteliste",
+   "format": "A4 hoch, Aushang",
+   "vorschau": [
+    [
+     "warteliste",
+     1
+    ]
+   ],
+   "satz": "Hängt an der Theke, wenn ein Abend voll ist.",
+   "quelle": "Website, Warteliste",
+   "seiten": 1
+  },
+  {
+   "id": "plakat-a3",
+   "name": "Plakat zum Aushang",
+   "format": "A3 hoch, 297 × 420 mm",
+   "vorschau": [
+    [
+     "plakat-a3",
+     1
+    ]
+   ],
+   "satz": "Rudis Plakat des Abends ganz, wie es auf Instagram stand, darunter Datum und ein Satz. Für den Eingang und die Wand mit den Plakaten.",
+   "quelle": "Plakat vom September 2026",
+   "seiten": 1
+  },
+  {
+   "id": "fuenf-drinks",
+   "name": "Die fünf Drinks",
+   "format": "DL hoch, 99 × 210 mm",
+   "vorschau": [
+    [
+     "fuenf-drinks",
+     1
+    ]
+   ],
+   "satz": "Die Drinks eines Abends mit dem, was darin steckt. Hier die fünf vom April 2024.",
+   "quelle": "Menükarte vom April 2024",
+   "seiten": 1
+  },
+  {
+   "id": "rudis-zeilen",
+   "name": "Rudis Zeilen",
+   "format": "A5 hoch, 148 × 210 mm",
+   "vorschau": [
+    [
+     "rudis-zeilen",
+     1
+    ]
+   ],
+   "satz": "Rudi schreibt seine Teller in drei, vier Wörtern. Hier stehen sie, wie er sie schreibt, als Einleger zur Karte.",
+   "quelle": "Startseite, «Teller von Rudi»",
+   "seiten": 1
+  },
+  {
+   "id": "flyer",
+   "name": "Flyer",
+   "format": "A5 hoch, zwei Seiten",
+   "vorschau": [
+    [
+     "flyer",
+     1
+    ],
+    [
+     "flyer-r",
+     2
+    ]
+   ],
+   "satz": "Vorne ein Foto vom Anstossen, hinten die nächsten Abende mit ihren Zeiten.",
+   "quelle": "Website, Termine (Beispieltermine)",
+   "seiten": 2
+  },
+  {
+   "id": "danke",
+   "name": "Danke für den Abend",
+   "format": "A6 hoch, zum Mitnehmen",
+   "vorschau": [
+    [
+     "danke",
+     1
+    ]
+   ],
+   "satz": "Liegt am Ende des Abends neben der Rechnung, zum Mitnehmen.",
+   "quelle": "Eigener Satz",
+   "seiten": 1
+  },
+  {
+   "id": "allergien",
+   "name": "Allergien am Platz",
+   "format": "A7 quer, 105 × 74 mm",
+   "vorschau": [
+    [
+     "allergien",
+     1
+    ]
+   ],
+   "satz": "Eine kleine Karte für die Buchungsbestätigung oder den Tisch.",
+   "quelle": "Eigener Satz",
+   "seiten": 1
+  },
+  {
+   "id": "visitenkarte",
+   "name": "Visitenkarte",
+   "format": "85 × 55 mm, zwei Seiten",
+   "vorschau": [
+    [
+     "visite",
+     1
+    ],
+    [
+     "visite-r",
+     2
+    ]
+   ],
+   "satz": "Vorne Rudis Wortmarke mit der Zeile, hinten der Ort und Instagram.",
+   "quelle": "Plakate und Website",
+   "seiten": 2
+  },
+  {
+   "id": "dc-karte",
+   "name": "Dirty Chicken: die Karte",
+   "format": "A5 hoch, 148 × 210 mm",
+   "vorschau": [
+    [
+     "dc-karte",
+     1
+    ]
+   ],
+   "satz": "Die Karte des Pop-ups in seinem Violett, mit dem D und seinen vier Posten.",
+   "quelle": "Vorlagen Dirty Chicken",
+   "seiten": 1
+  },
+  {
+   "id": "dc-flyer",
+   "name": "Dirty Chicken: Flyer",
+   "format": "A6 hoch, 105 × 148 mm",
+   "vorschau": [
+    [
+     "dc-flyer",
+     1
+    ]
+   ],
+   "satz": "Für die Theke an den Tagen des Pop-ups, vorne der Burger.",
+   "quelle": "Website, Dirty Chicken",
+   "seiten": 1
+  },
+  {
+   "id": "heute-abend",
+   "name": "Heute Abend an der Theke",
+   "format": "A6 hoch, als Aufsteller",
+   "vorschau": [
+    [
+     "heute-abend",
+     1
+    ]
+   ],
+   "satz": "Sagt den Gästen der Bar, dass hinten die Tafel gedeckt ist und vorne alles wie immer läuft.",
+   "quelle": "Website, «Die Bar»",
+   "seiten": 1
+  },
+  {
+   "id": "pressemappe",
+   "name": "Pressemappe",
+   "format": "A4 hoch, Deckblatt",
+   "vorschau": [
+    [
+     "presse",
+     1
+    ]
+   ],
+   "satz": "Die gedeckte Tafel, darunter Name und ein Satz.",
+   "quelle": "Website, «Geschichte»",
+   "seiten": 1
+  },
+  {
+   "id": "termine",
+   "name": "Die nächsten Abende",
+   "format": "DL hoch, 99 × 210 mm",
+   "vorschau": [
+    [
+     "termine",
+     1
+    ]
+   ],
+   "satz": "Die Termine zum Mitnehmen. Hier mit den Beispielterminen der Website.",
+   "quelle": "Website, Termine (Beispiele)",
+   "seiten": 1
+  },
+  {
+   "id": "ablauf-team",
+   "name": "Ablauf für das Team",
+   "format": "A4 hoch, intern",
+   "vorschau": [
+    [
+     "ablauf",
+     1
+    ]
+   ],
+   "satz": "Hängt in der Küche und hinter der Bar: jede Uhrzeit mit ihrem Schritt.",
+   "quelle": "Website, «Der Abend»; Zeiten als Beispiel",
+   "seiten": 1
+  },
+  {
+   "id": "einladung",
+   "name": "Einladung an Stammgäste",
+   "format": "Quadrat 148 × 148 mm, zwei Seiten",
+   "vorschau": [
+    [
+     "einladung",
+     1
+    ],
+    [
+     "einladung-r",
+     2
+    ]
+   ],
+   "satz": "Für die Gäste, die schon an der Tafel sassen: der Platz wird für sie zuerst freigehalten.",
+   "quelle": "Eigener Satz, Beispieltermin",
+   "seiten": 2
+  }
+ ],
+ "etiketten": [
+  {
+   "id": "u01",
+   "b": 94,
+   "h": 94,
+   "name": "Eisblau, 29./30.11.2024",
+   "satz": "Die Farbe des Plakats vom 29./30.11.2024 (Ski), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u02",
+   "b": 94,
+   "h": 94,
+   "name": "Orange, 21./22.02.2025",
+   "satz": "Die Farbe des Plakats vom 21./22.02.2025 (Panther auf dem Thron), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u03",
+   "b": 94,
+   "h": 94,
+   "name": "Grasgrün, 13./14.06.2025",
+   "satz": "Die Farbe des Plakats vom 13./14.06.2025 (Gärtnerin), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u04",
+   "b": 94,
+   "h": 94,
+   "name": "Nachtblau, 14./15.11.2025",
+   "satz": "Die Farbe des Plakats vom 14./15.11.2025 (Kürbis), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u05",
+   "b": 94,
+   "h": 94,
+   "name": "Ochsenblut, 27./28.03.2026",
+   "satz": "Die Farbe des Plakats vom 27./28.03.2026 (Panther mit Eisbecher), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u06",
+   "b": 94,
+   "h": 94,
+   "name": "Sepia, 25./26.09.2026",
+   "satz": "Die Farbe des Plakats vom 25./26.09.2026 (Mondfrau), in der Mitte das C aus Rudis Wortmarke.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u07",
+   "b": 94,
+   "h": 94,
+   "name": "Fatwashing",
+   "satz": "Die erste von Momos Techniken. Linie in Eisblau.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u08",
+   "b": 94,
+   "h": 94,
+   "name": "Milkwashing",
+   "satz": "Die zweite, klar und weich. Linie in Orange.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u09",
+   "b": 94,
+   "h": 94,
+   "name": "Enzyme",
+   "satz": "Die dritte, aus der Trübung wird Klarheit. Linie in Grasgrün.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u10",
+   "b": 94,
+   "h": 94,
+   "name": "Linden",
+   "satz": "Wo die Tafel steht. Linie in Nachtblau.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u11",
+   "b": 94,
+   "h": 94,
+   "name": "HAASEMANNSTR. 13",
+   "satz": "Die Adresse für den nächsten Abend. Linie in Ochsenblut.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  },
+  {
+   "id": "u12",
+   "b": 94,
+   "h": 94,
+   "name": "Seit 2023",
+   "satz": "Das erste Pop-up war im Mai 2023. Linie in Sepia.",
+   "form": "M47.0 0A47.0 47.0 0 1 1 46.99 0Z"
+  }
+ ],
+ "boegen": 2,
+ "meins": [
+  "Feldnamen auf Karte und Ticket",
+  "Die Sätze auf der Rückseite der Karte, des Tickets und der Drink-Kärtchen",
+  "Auswahl der Zeilen auf den Untersetzern"
+ ],
+ "masse": [
+  94,
+  94
+ ]
+}

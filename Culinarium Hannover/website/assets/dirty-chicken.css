@@ -1,0 +1,189 @@
+/* Dirty Chicken · die Seite nach Hero und Fenster (dc_neu.py), 27.10.2026.
+   Eine Geschichte in sechs Teilen: Drei Worte · Die Karte · Dirty Drinks · Opening 2026 · Familie · Wann wieder.
+   Farben wie der Hero: Violett #8953A9, Creme #FFF7EF, Flieder #C9A3E6. Nur transform, nativer Scroll. */
+
+.dcn{--lila:#C9A3E6;--lila-tief:#6E3F8C;--violett:#8953A9;--creme:#FFF7EF;--pflaume:#3B1F4D}
+.dcn[data-ton=hell]{--lila:#6E3F8C}
+.dcn .dcn-k{display:flex;align-items:center;gap:14px;margin:0;font:600 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--lila)}
+.dcn .dcn-k::before{content:"";flex:none;width:28px;height:1px;background:var(--lila)}
+.dcn .dcn-titel{margin:0;font-family:var(--titel);font-weight:340;font-size:clamp(50px,6.8vw,112px);line-height:.94;letter-spacing:-.022em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.dcn .vk .dcn-titel{font-size:clamp(50px,6.8vw,112px);line-height:.94}
+.dcn .dcn-text,.dcn .vk .dcn-text{font-size:clamp(17px,1.25vw,20px);line-height:1.58;max-width:46ch;color:var(--fg2)}
+.dcn .dcn-etikett{position:absolute;z-index:2;left:16px;bottom:14px;font:400 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#FAF4F4;text-shadow:0 1px 10px rgba(0,0,0,.7);pointer-events:none}
+.dcn .ueber.dcn-ueber{padding:0}
+.dcn .ueber.dcn-ueber::after{background:var(--lila)}
+.dcn .knopf i{background:var(--violett);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 6px 12px -6px rgba(59,31,77,.9)}
+.dcn .knopf.leise i{background:transparent;box-shadow:inset 0 0 0 1px var(--linie)}
+.dcn .knopf.violett i{background:#16151A}
+.dcn .vk{gap:18px}
+.dcn .paar .foto{height:100%}
+
+/* ---------- 1 Drei Worte: die Bühne steht, drei Bilder und drei Worte wechseln beim Scrollen ---------- */
+.dcn-drei{padding:0!important;background:#0F0E13!important}
+.dr-lauf{height:340svh;position:relative}
+.dr-buehne{position:sticky;top:0;height:100svh;overflow:hidden;background:#0F0E13}
+.dr-bilder{position:absolute;inset:0}
+.dr-bild{position:absolute;inset:0;transform:none;transition:transform 1.15s var(--k);will-change:transform}
+.dr-bild .foto{position:absolute;inset:0;height:100%;border-radius:0;transform:none!important}
+.dr-bild .foto img{transform:scale(1.12)!important;transition:transform 3s var(--k2)!important}
+.dr-buehne[data-schritt="0"] .dr-bild[data-s="1"],.dr-buehne[data-schritt="0"] .dr-bild[data-s="2"],.dr-buehne[data-schritt="1"] .dr-bild[data-s="2"]{transform:translateY(102%)}
+.dr-buehne[data-schritt="0"] .dr-bild[data-s="0"] img,.dr-buehne[data-schritt="1"] .dr-bild[data-s="1"] img,.dr-buehne[data-schritt="2"] .dr-bild[data-s="2"] img{transform:scale(1)!important}
+.dr-hof{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(12,10,14,.82),rgba(12,10,14,.32) 42%,transparent 68%),linear-gradient(to right,rgba(12,10,14,.42),transparent 55%)}
+.dr-schild{position:absolute;z-index:2;left:var(--rand);bottom:clamp(28px,6vh,64px);width:min(900px,calc(100% - 2*var(--rand)));padding:clamp(24px,3.2vh,36px) clamp(26px,3vw,48px) clamp(22px,3vh,32px);border-radius:10px;background:#8953A9 url(zeichen/tapete-dc.svg) 0 0/240px 240px;color:#FFF7EF;box-shadow:0 40px 90px -30px rgba(0,0,0,.9);display:flex;flex-direction:column;gap:clamp(10px,1.6vh,16px)}
+.dr-schild .dcn-k{color:#F3DDFF}.dr-schild .dcn-k::before{background:#F3DDFF}
+.dcn-k>span{min-width:0}
+.dr-zaehler{margin-left:auto;flex:none;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px;font:400 13px/1 var(--mono);letter-spacing:.1em;color:#F3DDFF}
+.dr-zaehler{display:inline-grid;grid-template-columns:auto auto;overflow:clip}
+.dr-nr{grid-area:1/1;transform:translateY(110%);transition:transform .7s var(--k)}
+.dr-von{grid-area:1/2;padding-left:6px;opacity:.75;white-space:nowrap}
+.dr-buehne[data-schritt="0"] .dr-nr[data-s="0"],.dr-buehne[data-schritt="1"] .dr-nr[data-s="1"],.dr-buehne[data-schritt="2"] .dr-nr[data-s="2"]{transform:none}
+.dr-buehne[data-schritt="1"] .dr-nr[data-s="0"],.dr-buehne[data-schritt="2"] .dr-nr[data-s="0"],.dr-buehne[data-schritt="2"] .dr-nr[data-s="1"]{transform:translateY(-110%)}
+.dr-worte{display:grid}
+.dr-wort{grid-area:1/1;margin:0;font-family:var(--titel);font-weight:380;font-size:clamp(60px,8.2vw,136px);line-height:.9;letter-spacing:-.03em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.dr-wort .z{display:block;overflow:clip;padding:.1em 0 .08em;margin:-.1em 0 -.08em}
+.dr-wort .z>span{display:inline-block;transform:translateY(112%);transition:transform 1.1s var(--k)}
+.dr-wort .z:nth-child(2)>span{transition-delay:.09s}
+.dr-buehne[data-schritt="0"] .dr-wort[data-s="0"] .z>span,.dr-buehne[data-schritt="1"] .dr-wort[data-s="1"] .z>span,.dr-buehne[data-schritt="2"] .dr-wort[data-s="2"] .z>span{transform:none}
+.dr-buehne[data-schritt="1"] .dr-wort[data-s="0"] .z>span,.dr-buehne[data-schritt="2"] .dr-wort[data-s="0"] .z>span,.dr-buehne[data-schritt="2"] .dr-wort[data-s="1"] .z>span{transform:translateY(-112%)}
+.dr-texte{display:grid}
+.dr-text{grid-area:1/1;margin:0;max-width:58ch;font-size:clamp(16px,1.3vw,20px);line-height:1.55;color:rgba(255,247,239,.94);visibility:hidden;transform:translateY(28px);transition:transform .9s var(--k),visibility 0s .9s}
+.dr-buehne[data-schritt="0"] .dr-text[data-s="0"],.dr-buehne[data-schritt="1"] .dr-text[data-s="1"],.dr-buehne[data-schritt="2"] .dr-text[data-s="2"]{visibility:visible;transform:none;transition:transform 1s var(--k) .3s,visibility 0s}
+.dr-punkte{display:flex;gap:8px;margin-top:4px}
+.dr-punkte i{position:relative;display:block;width:44px;height:2px;background:rgba(255,247,239,.28);overflow:hidden;border-radius:2px}
+.dr-punkte i::after{content:"";position:absolute;inset:0;background:#FFF7EF;transform:scaleX(0);transform-origin:left;transition:transform .6s var(--k)}
+.dr-buehne[data-schritt="0"] .dr-punkte i[data-s="0"]::after,.dr-buehne[data-schritt="1"] .dr-punkte i[data-s="0"]::after,.dr-buehne[data-schritt="1"] .dr-punkte i[data-s="1"]::after,.dr-buehne[data-schritt="2"] .dr-punkte i::after{transform:none}
+html.ruhig .dr-bild,html.ruhig .dr-wort .z>span,html.ruhig .dr-text,html.ruhig .dr-nr{transition:none}
+
+/* ---------- 2 Die Karte: helle Fläche wie das Blatt auf dem Tisch; die Teller kommen von oben auf den Tisch ---------- */
+.dcn-karte{background:#FAF4F4!important}
+.ka-oben{margin-bottom:clamp(28px,4.5vh,52px)}
+.ka-oben .vk{max-width:980px}
+.ka-tisch{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:clamp(480px,74vh,780px) clamp(320px,50vh,520px);gap:clamp(10px,1.2vw,18px)}
+.ka-blatt{grid-column:1/5;grid-row:1}
+.ka-t1{grid-column:5/9;grid-row:1}
+.ka-t2{grid-column:9/13;grid-row:1}
+.ka-t3{grid-column:1/8;grid-row:2}
+.ka-t4{grid-column:8/13;grid-row:2}
+.ka-teller{position:relative;min-height:0}
+.ka-teller .foto{height:100%;border-radius:6px;box-shadow:0 40px 60px -36px rgba(42,40,51,.45)}
+.ka-blatt{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:clamp(24px,2.6vw,40px);border-radius:6px;background:#FFFDFB;color:#2A2833;box-shadow:0 40px 70px -34px rgba(42,40,51,.4),0 1px 0 rgba(42,40,51,.08),inset 0 0 0 1px rgba(42,40,51,.05)}
+.ka-blatt::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:6px 6px 0 0;background:var(--violett)}
+.ka-kopf{display:flex;flex-direction:column;gap:10px}
+.ka-d{display:block;width:clamp(44px,4vw,60px);color:var(--violett)}
+.ka-d .fu-zn{width:100%;height:auto;color:var(--violett)}
+.ka-marke{margin:0;font-family:var(--titel);font-weight:380;font-size:clamp(30px,2.8vw,42px);line-height:1;letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--violett)}
+.ka-liste{display:flex;flex-direction:column}
+.ka-gericht{display:flex;gap:16px;align-items:baseline;padding:clamp(14px,1.8vh,22px) 0;border-top:1px solid rgba(42,40,51,.14)}
+.ka-gericht:last-child{border-bottom:1px solid rgba(42,40,51,.14)}
+.ka-gericht .ka-nr{color:var(--violett);font-size:12px;flex:none}
+.ka-gericht div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ka-gericht b{font:340 clamp(24px,2.1vw,34px)/1.05 var(--titel);letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.ka-gericht span:last-child{font-size:14.5px;line-height:1.4;color:#5B5763}
+.ka-fuss{margin:0;font:600 10.5px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;color:var(--violett)}
+html.js:not(.ruhig) .ka-teller{transform:translateY(-44px) rotate(-1.4deg);transition:transform 1.4s var(--feder) var(--d,0s)}
+html.js:not(.ruhig) .ka-blatt{transform:translateX(-34px) rotate(1.2deg);transition:transform 1.4s var(--feder)}
+html.js .ka-tisch.da .ka-teller,html.js .ka-tisch.da .ka-blatt{transform:none}
+.ka-t1{--d:.12s}.ka-t2{--d:.24s}.ka-t3{--d:.36s}.ka-t4{--d:.48s}
+.ka-teller .foto{--d:var(--d,0s)}
+
+/* ---------- 3 Dirty Drinks: dunkel wie die Bar, zwei Gläser stossen an der Naht an ---------- */
+.dcn-drinks{background:radial-gradient(ellipse 58% 46% at 28% 22%,rgba(137,83,169,.22),transparent 72%),#16151A!important}
+.dri-oben{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,3.6vw,64px);align-items:center}
+.dri-paar{height:clamp(440px,72vh,740px)}
+.dri-text{padding-right:clamp(0px,2vw,30px)}
+.dri-text .dcn-titel{font-size:clamp(44px,5.4vw,88px)}
+.dri-unten{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(10px,1.2vw,18px);margin-top:clamp(10px,1.2vw,18px);height:clamp(320px,50vh,540px)}
+.dri-u1,.dri-u2{position:relative;min-height:0}
+.dri-u1 .foto,.dri-u2 .foto{height:100%}
+.dri-u2 .foto{--d:.14s}
+
+/* ---------- 4 Opening 2026: violett mit Tapete; der Film steht unbeschnitten in der Mitte, die Sätze schweben drum herum ---------- */
+.op-raster{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,27vw,420px) minmax(0,1fr);gap:clamp(24px,3.4vw,60px);align-items:start}
+.op-text{padding-top:clamp(8px,3vh,40px)}
+.op-text .dcn-titel{font-size:clamp(56px,7.4vw,124px)}
+.op-vz{max-width:none;margin-top:10px}
+.op-vz div{padding:11px 0;gap:24px}
+.op-vz dt{color:#F3DDFF}
+.op-vz dd{font-size:clamp(17px,1.35vw,21px);text-align:right;max-width:72%}
+.op-film{position:relative}
+.op-f{width:100%;border-radius:12px;box-shadow:0 60px 90px -40px rgba(20,6,30,.95),0 0 0 1px rgba(255,247,239,.08)}
+.op-film .op-q{margin-top:clamp(22px,3.4vh,36px);padding-left:4px}
+.op-rechts{display:flex;flex-direction:column;gap:clamp(28px,5vh,56px);padding-top:clamp(36px,9vh,110px)}
+.op-plakat{position:relative;width:min(100%,380px);align-self:flex-end;transform:translateY(var(--g,0px))}
+.op-plakat .foto{aspect-ratio:9/16;border-radius:8px;box-shadow:0 50px 70px -40px rgba(20,6,30,.9)}
+.op-q{margin:0;transform:translateY(var(--g,0px))}
+.op-q p{margin:0;font-family:var(--titel);font-weight:340;font-size:clamp(30px,3.1vw,50px);line-height:1.04;letter-spacing:-.012em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96;color:#FFF7EF}
+.op-q cite{display:block;margin-top:10px;font-style:normal;font-size:11.5px;color:#F3DDFF}
+.op-rechts .op-q:last-child{align-self:flex-start;max-width:14ch}
+
+/* ---------- 5 Familie: der Film der Mannschaft und der Satz ---------- */
+.fa-oben{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(24px,4vw,72px);align-items:center}
+.fa-film{position:relative}
+.fa-f{width:100%;border-radius:8px;box-shadow:0 50px 80px -40px rgba(8,6,14,.9)}
+.fa-text .dcn-titel{font-size:clamp(44px,5.6vw,92px)}
+.fa-paar{margin-top:clamp(24px,4vh,48px);height:clamp(360px,60vh,640px)}
+
+/* ---------- 6 Wann wieder: Band wie am Hero, das Zeichen, Instagram, zwei Türen zurück ins Haus ---------- */
+.dcn-naechstes{padding-top:0!important}
+.dcn-band.am-band{position:relative;inset:auto;margin-bottom:clamp(56px,9vh,110px)}
+.na-mitte{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(24px,4vw,72px);align-items:center}
+.na-zeichen{display:grid;place-items:center;animation:na-schweben 7s ease-in-out infinite}
+@keyframes na-schweben{50%{transform:translateY(-12px) rotate(1.5deg)}}
+html.ruhig .na-zeichen{animation:none}
+.na-d{width:min(100%,400px);height:auto;color:#FFF7EF;filter:drop-shadow(0 30px 40px rgba(20,6,30,.55))}
+html.js:not(.ruhig) .na-d{transform:translateY(60px) rotate(-8deg) scale(.9);transition:transform 1.7s var(--feder)}
+html.js .na-mitte.da .na-d{transform:none}
+.na-text .dcn-titel{font-size:clamp(60px,8vw,132px)}
+.na-text .dcn-text{color:rgba(255,247,239,.9)}
+.na-tueren{margin-top:clamp(56px,9vh,110px)}
+.na-haus{margin:0 0 clamp(18px,3vh,30px);font-family:var(--titel);font-weight:340;font-size:clamp(30px,3.2vw,48px);line-height:1;letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.na-tuer-reihe{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
+.na-tuer{display:block;position:relative;text-decoration:none;color:#FFF7EF;border-radius:10px;overflow:hidden;background:var(--pflaume);box-shadow:0 40px 70px -36px rgba(20,6,30,.9)}
+.na-tuer .foto{height:clamp(260px,40vh,420px);border-radius:0}
+html.js:not(.ruhig) .na-tuer{transform:translateY(40px);transition:transform 1.4s var(--k) calc(var(--i,0)*120ms)}
+html.js .na-tuer.da{transform:none}
+.na-tuer-text{padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:8px}
+.na-tuer-text .dcn-k{color:#C9A3E6}.na-tuer-text .dcn-k::before{background:#C9A3E6}
+.na-tuer-name{margin:4px 0 0;font-family:var(--titel);font-weight:340;font-size:clamp(28px,2.6vw,40px);line-height:1;letter-spacing:-.015em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144}
+.na-tuer-satz{margin:0;font-size:15.5px;line-height:1.55;color:rgba(255,247,239,.82);max-width:42ch}
+.na-tuer-kn{margin-top:12px;display:inline-flex;align-items:center;gap:12px;font:500 14px/1 var(--text);letter-spacing:.03em}
+.na-tuer-kn i{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#FFF7EF;color:var(--pflaume);transition:transform .5s var(--k)}
+.na-tuer-kn svg{width:18px;height:18px}
+@media (hover:hover){.na-tuer:hover .na-tuer-kn i{transform:translateX(4px)}}
+
+/* ---------- Handy und schmale Fenster ---------- */
+@media (max-width:860px){
+  .dcn .dcn-titel,.dcn .vk .dcn-titel{font-size:clamp(40px,11vw,60px)}
+  .dcn .dcn-text,.dcn .vk .dcn-text{font-size:16px}
+  .dr-lauf{height:320svh}
+  .dr-schild{left:var(--rand);right:var(--rand);width:auto;bottom:18px;padding:18px 18px 16px;gap:10px}
+  .dr-wort{font-size:clamp(50px,14vw,74px)}
+  .dr-text{font-size:15px;max-width:none}
+  .dr-hof{background:linear-gradient(to top,rgba(12,10,14,.9),rgba(12,10,14,.4) 48%,transparent 74%)}
+  .ka-tisch{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .ka-blatt{grid-column:1/-1;grid-row:auto}
+  .ka-t1{grid-column:1;grid-row:auto}.ka-t2{grid-column:2;grid-row:auto}
+  .ka-t3,.ka-t4{grid-column:1/-1;grid-row:auto}
+  .ka-t1,.ka-t2{height:clamp(240px,54svh,420px)}.ka-t3{height:44svh}.ka-t4{height:40svh}
+  .dri-oben{grid-template-columns:1fr;gap:28px}
+  .dri-paar{height:56svh}
+  .dri-unten{grid-template-columns:1fr;height:auto}
+  .dri-u1,.dri-u2{height:44svh}
+  .op-raster{grid-template-columns:1fr;gap:32px}
+  .op-film{order:-1;width:min(100%,360px);margin:0 auto}
+  .op-rechts{padding-top:0;gap:28px}
+  .op-plakat{width:66%;align-self:flex-end}
+  .op-vz dd{font-size:17px}
+  .fa-oben{grid-template-columns:1fr;gap:28px}
+  .fa-paar{height:46svh}
+  .na-mitte{grid-template-columns:1fr;gap:20px}
+  .na-d{width:52%}
+  .na-text .dcn-titel{font-size:clamp(52px,15vw,76px)}
+  .na-tuer-reihe{grid-template-columns:1fr}
+  .na-tuer .foto{height:46svh}
+}
+@media (max-height:720px) and (min-width:861px){
+  .dr-wort{font-size:clamp(56px,7vw,108px)}
+  .dr-text{font-size:16px}
+  .dr-schild{bottom:22px}
+}

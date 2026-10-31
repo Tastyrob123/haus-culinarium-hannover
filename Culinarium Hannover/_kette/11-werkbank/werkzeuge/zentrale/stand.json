@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "La Maison / Die Stube",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "zentrale",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:43+08:00",
+  "ende": "2026-10-28T12:54+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": "http://localhost:9081/_werkzeuge/maison/",
+  "briefing": "briefing.html?teil=zentrale",
+  "notiz": "Der Tresen (Zentrale) fertig: http://localhost:9081/_werkzeuge/maison/ · Namen Satz A eingetragen · pruefe 80/80, democheck 151/0 in Chromium+WebKit · Bildschirme nach Umstellung der Werkzeuge neu",
+  "bestaetigt": null,
+  "rueckgaben": []
+}

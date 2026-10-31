@@ -1,0 +1,401 @@
+﻿Art;Tag;Uhrzeit;Land;Ort;Region;Gerät;Sprache des Browsers;Gekommen über;Geblieben (Sekunden);Seiten;Weg durch die Website;«Platz buchen» geöffnet;Platz gebucht;Auf die Warteliste gesetzt;Warteliste begonnen;Warteliste im Fuss;Bar angerufen;Instagram von Culinarium;Weiter zur Bar oder zu Dirty Chicken;Route geöffnet
+Beispiel;29.10.2026;21:37;Deutschland;Celle;NI;Handy;Deutsch;Google;289;4;Startseite (36 s) > Team (68 s) > Alle Abende (52 s) > Der Abend (133 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;20:51;Deutschland;Hannover;NI;Handy;Deutsch;Google;156;3;Der Weg (78 s) > Das Haus (44 s) > Der Weg (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;20:48;Deutschland;Göttingen;NI;Handy;Deutsch;Instagram;308;3;Startseite (79 s) > Alle Abende (198 s) > Impressum (31 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;17:02;Deutschland;Hildesheim;NI;Handy;Deutsch;Instagram;179;4;Startseite (31 s) > Das Haus (43 s) > Dirty Chicken (80 s) > Der Weg (25 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;29.10.2026;17:01;Deutschland;Hemmingen;NI;Rechner;Deutsch;Instagram;348;3;Dirty Chicken (42 s) > Alle Abende (207 s) > Der Weg (99 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;16:01;Deutschland;Hannover;NI;Handy;Englisch;Google;132;2;Startseite (63 s) > Der Weg (69 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;15:49;Deutschland;Langenhagen;NI;Handy;Deutsch;Hannover Marketing;13;1;Startseite (13 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;29.10.2026;15:31;Deutschland;Hannover;NI;Handy;Englisch;Google;151;2;Der Abend (85 s) > Team (66 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;15:25;Deutschland;Langenhagen;NI;Handy;Deutsch;Instagram;111;2;Startseite (32 s) > Datenschutz (79 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;29.10.2026;15:07;Deutschland;Hildesheim;NI;Rechner;Deutsch;DuckDuckGo;155;2;Alle Abende (91 s) > Das Haus (64 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;29.10.2026;14:58;Deutschland;Langenhagen;NI;Rechner;Deutsch;Instagram;469;4;Startseite (39 s) > Alle Abende (181 s) > Der Abend (151 s) > Dirty Chicken (98 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;13:36;Deutschland;Hildesheim;NI;Handy;Deutsch;Instagram;187;3;Startseite (24 s) > Der Weg (56 s) > Der Abend (107 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;12:39;Deutschland;Isernhagen;NI;Handy;Deutsch;Instagram;229;3;Startseite (69 s) > Impressum (79 s) > Alle Abende (81 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;29.10.2026;12:18;Deutschland;Braunschweig;NI;Handy;Deutsch;Direkt aufgerufen;84;1;Dirty Chicken (84 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;29.10.2026;00:40;Deutschland;Köln;NW;Handy;Deutsch;Direkt aufgerufen;540;4;Startseite (104 s) > Der Abend (134 s) > Alle Abende (134 s) > Der Abend (168 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;22:46;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;45;1;Startseite (45 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;20:53;Deutschland;Langenhagen;NI;Handy;Deutsch;Instagram;282;4;Dirty Chicken (28 s) > Der Abend (139 s) > Das Haus (52 s) > Alle Abende (63 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;19:05;Deutschland;Wunstorf;NI;Rechner;Deutsch;Instagram;139;1;Alle Abende (139 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;18:22;Deutschland;Hannover;NI;Handy;Deutsch;Google;486;4;Startseite (73 s) > Der Weg (31 s) > Team (133 s) > Alle Abende (249 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;18:07;Deutschland;München;BY;Rechner;Deutsch;Instagram;343;4;Alle Abende (167 s) > Team (28 s) > Das Haus (27 s) > Alle Abende (121 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;28.10.2026;17:02;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;287;3;Startseite (53 s) > Das Haus (56 s) > Der Abend (178 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;16:25;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;247;2;Startseite (75 s) > Alle Abende (172 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;16:01;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;26;1;Startseite (26 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;15:34;Türkei;Istanbul;34;Handy;Andere Sprache;Direkt aufgerufen;45;1;Der Weg (45 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;13:49;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;97;2;Startseite (58 s) > Dirty Chicken (39 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;11:31;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;190;1;Der Abend (190 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;10:01;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;28;1;Startseite (28 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;08:46;Deutschland;Isernhagen;NI;Handy;Deutsch;Instagram;133;3;Startseite (48 s) > Der Weg (26 s) > Dirty Chicken (59 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;28.10.2026;08:12;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;34;1;Startseite (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;28.10.2026;07:56;Deutschland;Hannover;NI;Tablet;Deutsch;Instagram;182;3;Alle Abende (78 s) > Das Haus (64 s) > Team (40 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;21:33;Deutschland;Hildesheim;NI;Tablet;Deutsch;Google;136;1;Der Abend (136 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;20:34;Deutschland;Hemmingen;NI;Handy;Deutsch;Instagram;489;4;Der Abend (201 s) > Das Haus (38 s) > Team (47 s) > Alle Abende (203 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;18:52;Österreich;Wien;9;Rechner;Deutsch;Direkt aufgerufen;113;1;Startseite (113 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;17:15;Deutschland;Braunschweig;NI;Rechner;Deutsch;Google;191;2;Der Abend (129 s) > Der Weg (62 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;17:09;Deutschland;Hildesheim;NI;Rechner;Deutsch;Tripadvisor;422;5;Startseite (46 s) > Das Haus (21 s) > Der Abend (251 s) > Team (25 s) > Der Weg (79 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;27.10.2026;16:14;Deutschland;Langenhagen;NI;Handy;Deutsch;Direkt aufgerufen;204;3;Startseite (32 s) > Dirty Chicken (21 s) > Alle Abende (151 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;27.10.2026;15:53;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;286;2;Der Abend (198 s) > Team (88 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;15:38;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;260;2;Alle Abende (108 s) > Der Abend (152 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;12:58;Türkei;Istanbul;34;Rechner;Andere Sprache;Google;219;3;Startseite (123 s) > Der Weg (55 s) > Datenschutz (41 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;12:06;Deutschland;Hannover;NI;Handy;Deutsch;Google;630;6;Startseite (70 s) > Alle Abende (125 s) > Datenschutz (56 s) > Der Abend (126 s) > Alle Abende (180 s) > Team (73 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;11:57;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;37;1;Startseite (37 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;11:15;Deutschland;Leipzig;SN;Handy;Deutsch;Direkt aufgerufen;188;3;Dirty Chicken (11 s) > Das Haus (119 s) > Der Weg (58 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;11:09;Deutschland;Köln;NW;Rechner;Deutsch;Direkt aufgerufen;34;1;Startseite (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;09:05;Deutschland;Hannover;NI;Handy;Deutsch;Google;150;1;Der Abend (150 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;08:26;Deutschland;Hamburg;HH;Handy;Deutsch;Google;404;4;Startseite (51 s) > Der Weg (126 s) > Datenschutz (101 s) > Der Abend (126 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;27.10.2026;04:01;Deutschland;Göttingen;NI;Rechner;Deutsch;Google;234;3;Startseite (24 s) > Alle Abende (159 s) > Datenschutz (51 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;21:16;Deutschland;Hemmingen;NI;Handy;Deutsch;Instagram;84;1;Startseite (84 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;19:02;Deutschland;Langenhagen;NI;Handy;Deutsch;Direkt aufgerufen;143;2;Startseite (79 s) > Das Haus (64 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;17:38;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;336;5;Startseite (41 s) > Team (54 s) > Der Weg (33 s) > Dirty Chicken (50 s) > Alle Abende (158 s);nein;nein;nein;nein;ja;nein;nein;nein;ja
+Beispiel;26.10.2026;17:27;Deutschland;Hannover;NI;Handy;Deutsch;Google;337;3;Startseite (94 s) > Team (112 s) > Der Abend (131 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;17:25;Deutschland;Hannover;NI;Handy;Deutsch;Google;124;2;Startseite (91 s) > Team (33 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;16:58;Deutschland;Hannover;NI;Rechner;Deutsch;Hannover Marketing;155;2;Startseite (113 s) > Das Haus (42 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;16:04;Deutschland;Bremen;HB;Handy;Deutsch;Direkt aufgerufen;80;2;Startseite (19 s) > Team (61 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;26.10.2026;14:13;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;68;2;Startseite (46 s) > Das Haus (22 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;12:19;Deutschland;Wolfsburg;NI;Rechner;Deutsch;Google;282;3;Alle Abende (72 s) > Der Weg (37 s) > Der Abend (173 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;07:56;Deutschland;Hannover;NI;Handy;Deutsch;Google;22;1;Dirty Chicken (22 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;07:51;Deutschland;Bremen;HB;Handy;Deutsch;Google;202;3;Startseite (91 s) > Impressum (46 s) > Alle Abende (65 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;07:50;Deutschland;Berlin;BE;Handy;Deutsch;Direkt aufgerufen;152;1;Alle Abende (152 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;06:02;Deutschland;Isernhagen;NI;Rechner;Deutsch;Direkt aufgerufen;173;3;Startseite (32 s) > Dirty Chicken (100 s) > Das Haus (41 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;26.10.2026;03:10;Deutschland;Berlin;BE;Handy;Deutsch;Google;220;1;Der Abend (220 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;22:51;Deutschland;Langenhagen;NI;Rechner;Deutsch;Direkt aufgerufen;96;1;Alle Abende (96 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;21:58;Deutschland;Hannover;NI;Handy;Deutsch;Ecosia;141;4;Startseite (46 s) > Das Haus (36 s) > Dirty Chicken (24 s) > Der Weg (35 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;21:43;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;265;4;Startseite (134 s) > Team (55 s) > Das Haus (25 s) > Dirty Chicken (51 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;20:46;Deutschland;Ronnenberg;NI;Handy;Deutsch;Instagram;378;4;Startseite (38 s) > Team (114 s) > Der Weg (27 s) > Der Abend (199 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;25.10.2026;20:34;Österreich;Wien;9;Handy;Deutsch;Direkt aufgerufen;123;1;Der Abend (123 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;19:28;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;26;1;Startseite (26 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;18:54;Deutschland;Berlin;BE;Handy;Deutsch;Direkt aufgerufen;247;2;Startseite (21 s) > Der Abend (226 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;17:57;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;93;2;Startseite (38 s) > Team (55 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;17:43;Deutschland;Göttingen;NI;Rechner;Deutsch;Google;234;3;Startseite (94 s) > Team (30 s) > Der Abend (110 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;16:56;Deutschland;Laatzen;NI;Handy;Deutsch;Direkt aufgerufen;210;3;Startseite (41 s) > Team (94 s) > Datenschutz (75 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;16:06;Deutschland;Bielefeld;NW;Rechner;Deutsch;Direkt aufgerufen;164;2;Startseite (31 s) > Dirty Chicken (133 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;14:34;Deutschland;München;BY;Handy;Deutsch;Instagram;350;5;Der Abend (81 s) > Alle Abende (88 s) > Das Haus (81 s) > Dirty Chicken (47 s) > Der Weg (53 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;25.10.2026;14:34;Deutschland;Leipzig;SN;Handy;Deutsch;Instagram;49;2;Startseite (16 s) > Der Weg (33 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;14:07;Deutschland;Hannover;NI;Handy;Englisch;Direkt aufgerufen;481;5;Startseite (75 s) > Das Haus (110 s) > Der Abend (155 s) > Alle Abende (101 s) > Das Haus (40 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;13:49;Deutschland;Garbsen;NI;Rechner;Deutsch;Google;17;1;Startseite (17 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;12:29;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;277;3;Startseite (35 s) > Team (56 s) > Der Abend (186 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;11:19;Deutschland;Hannover;NI;Handy;Deutsch;Google;49;1;Startseite (49 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;11:13;Deutschland;Celle;NI;Handy;Deutsch;Direkt aufgerufen;128;2;Startseite (63 s) > Dirty Chicken (65 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;10:27;Deutschland;Hameln;NI;Handy;Deutsch;Instagram;79;1;Startseite (79 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;07:00;Deutschland;Hannover;NI;Handy;Deutsch;Google;325;3;Alle Abende (160 s) > Dirty Chicken (82 s) > Der Abend (83 s);ja;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;25.10.2026;03:38;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;78;1;Dirty Chicken (78 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;25.10.2026;02:18;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;341;5;Der Weg (71 s) > Das Haus (39 s) > Team (69 s) > Das Haus (77 s) > Team (85 s);nein;nein;nein;nein;nein;ja;ja;nein;nein
+Beispiel;24.10.2026;21:54;Deutschland;Seelze;NI;Handy;Deutsch;Instagram;213;2;Dirty Chicken (117 s) > Alle Abende (96 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;20:23;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;369;5;Startseite (120 s) > Team (67 s) > Das Haus (64 s) > Der Weg (58 s) > Team (60 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;24.10.2026;20:02;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;43;1;Startseite (43 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;19:19;Deutschland;Göttingen;NI;Handy;Deutsch;Bing;210;3;Startseite (47 s) > Der Weg (25 s) > Der Abend (138 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;24.10.2026;17:49;Deutschland;Isernhagen;NI;Handy;Deutsch;Instagram;474;5;Der Abend (64 s) > Dirty Chicken (75 s) > Das Haus (34 s) > Alle Abende (186 s) > Das Haus (115 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;24.10.2026;16:54;Deutschland;Hannover;NI;Handy;Deutsch;Facebook;222;3;Alle Abende (130 s) > Das Haus (81 s) > Dirty Chicken (11 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;16:42;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;379;4;Der Abend (101 s) > Impressum (54 s) > Team (82 s) > Alle Abende (142 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;15:41;Deutschland;Hannover;NI;Handy;Deutsch;Google;72;1;Startseite (72 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;15:03;Deutschland;Langenhagen;NI;Handy;Deutsch;Direkt aufgerufen;146;2;Startseite (43 s) > Der Abend (103 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;14:43;Deutschland;Langenhagen;NI;Rechner;Deutsch;Google;129;2;Startseite (64 s) > Der Weg (65 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;24.10.2026;13:31;Deutschland;Hannover;NI;Rechner;Englisch;Direkt aufgerufen;292;5;Dirty Chicken (73 s) > Team (16 s) > Das Haus (108 s) > Dirty Chicken (21 s) > Team (74 s);nein;nein;nein;nein;nein;ja;nein;ja;nein
+Beispiel;24.10.2026;12:47;Deutschland;Hannover;NI;Tablet;Deutsch;Google;265;4;Der Weg (39 s) > Datenschutz (33 s) > Dirty Chicken (88 s) > Team (105 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;24.10.2026;12:07;Deutschland;Isernhagen;NI;Handy;Deutsch;Direkt aufgerufen;284;2;Der Abend (233 s) > Der Weg (51 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;10:39;Deutschland;Berlin;BE;Tablet;Deutsch;Direkt aufgerufen;315;3;Startseite (51 s) > Dirty Chicken (122 s) > Das Haus (142 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;09:34;Deutschland;München;BY;Handy;Deutsch;Instagram;217;2;Startseite (115 s) > Team (102 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;07:20;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;694;6;Startseite (75 s) > Das Haus (129 s) > Alle Abende (152 s) > Der Abend (175 s) > Dirty Chicken (84 s) > Das Haus (79 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;05:16;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;96;2;Startseite (17 s) > Impressum (79 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;24.10.2026;04:39;Deutschland;Isernhagen;NI;Tablet;Deutsch;Instagram;85;1;Der Weg (85 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;23.10.2026;22:41;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;256;3;Der Abend (104 s) > Dirty Chicken (87 s) > Das Haus (65 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;22:21;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;119;1;Der Abend (119 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;21:20;Deutschland;Lehrte;NI;Handy;Deutsch;Direkt aufgerufen;73;1;Der Abend (73 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;19:09;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;248;1;Der Abend (248 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;18:06;Deutschland;Hannover;NI;Rechner;Deutsch;Ecosia;177;3;Dirty Chicken (47 s) > Der Abend (58 s) > Der Weg (72 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;23.10.2026;16:43;Deutschland;Braunschweig;NI;Rechner;Deutsch;Direkt aufgerufen;124;1;Der Abend (124 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;16:33;Deutschland;Berlin;BE;Handy;Deutsch;Direkt aufgerufen;133;1;Startseite (133 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;16:19;Deutschland;Hannover;NI;Handy;Deutsch;Google;174;1;Der Abend (174 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;16:18;Deutschland;Wunstorf;NI;Handy;Deutsch;Direkt aufgerufen;230;5;Startseite (35 s) > Das Haus (108 s) > Der Weg (27 s) > Das Haus (24 s) > Der Weg (36 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;23.10.2026;16:09;Deutschland;Hannover;NI;Rechner;Deutsch;Google;11;1;Startseite (11 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;15:38;Deutschland;Hemmingen;NI;Handy;Deutsch;Facebook;183;2;Dirty Chicken (33 s) > Der Abend (150 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;11:48;Deutschland;Hamburg;HH;Handy;Deutsch;Direkt aufgerufen;82;1;Der Abend (82 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;23.10.2026;08:46;Deutschland;Bielefeld;NW;Handy;Deutsch;Direkt aufgerufen;147;2;Dirty Chicken (90 s) > Team (57 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;21:07;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;400;3;Der Weg (62 s) > Alle Abende (108 s) > Der Abend (230 s);nein;nein;ja;ja;ja;nein;nein;nein;ja
+Beispiel;22.10.2026;20:40;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;188;2;Startseite (29 s) > Der Abend (159 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;20:34;Deutschland;Köln;NW;Rechner;Deutsch;Instagram;330;4;Der Weg (77 s) > Impressum (36 s) > Alle Abende (127 s) > Der Weg (90 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;18:40;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;341;3;Startseite (61 s) > Alle Abende (105 s) > Der Abend (175 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;16:49;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;201;1;Der Abend (201 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;15:54;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;289;2;Alle Abende (156 s) > Das Haus (133 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;14:31;Deutschland;Hameln;NI;Handy;Deutsch;Direkt aufgerufen;117;2;Dirty Chicken (70 s) > Der Weg (47 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;14:18;Deutschland;Hannover;NI;Tablet;Deutsch;Facebook;114;2;Startseite (70 s) > Das Haus (44 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;13:03;Deutschland;Laatzen;NI;Handy;Deutsch;Ecosia;374;5;Der Abend (116 s) > Das Haus (24 s) > Der Weg (9 s) > Alle Abende (194 s) > Dirty Chicken (31 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;11:50;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;55;2;Startseite (22 s) > Dirty Chicken (33 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;11:44;Deutschland;Hildesheim;NI;Rechner;Deutsch;Instagram;210;2;Startseite (35 s) > Alle Abende (175 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;11:06;Großbritannien;London;ENG;Handy;Englisch;Instagram;12;1;Startseite (12 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;08:49;Deutschland;Berlin;BE;Handy;Deutsch;Google;52;1;Startseite (52 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;07:35;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;89;1;Startseite (89 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;07:19;Deutschland;Langenhagen;NI;Handy;Deutsch;ChatGPT;308;3;Startseite (81 s) > Der Weg (34 s) > Der Abend (193 s);ja;ja;nein;nein;nein;ja;nein;nein;nein
+Beispiel;22.10.2026;06:06;Deutschland;Hannover;NI;Handy;Englisch;Direkt aufgerufen;182;2;Alle Abende (113 s) > Team (69 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;22.10.2026;05:07;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;431;4;Der Weg (45 s) > Das Haus (109 s) > Der Abend (213 s) > Impressum (64 s);nein;nein;nein;ja;nein;ja;nein;nein;nein
+Beispiel;22.10.2026;05:01;Niederlande;Amsterdam;NH;Handy;Niederländisch;Instagram;163;3;Alle Abende (84 s) > Team (52 s) > Der Weg (27 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;21.10.2026;22:20;Deutschland;Osnabrück;NI;Handy;Deutsch;Instagram;91;1;Startseite (91 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;21:44;Deutschland;Garbsen;NI;Handy;Deutsch;Google;357;4;Startseite (121 s) > Dirty Chicken (52 s) > Der Weg (65 s) > Team (119 s);nein;nein;nein;nein;nein;nein;ja;nein;ja
+Beispiel;21.10.2026;21:04;Deutschland;Hamburg;HH;Rechner;Deutsch;Facebook;298;2;Alle Abende (162 s) > Der Abend (136 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;20:40;Deutschland;Hannover;NI;Rechner;Deutsch;Bing;103;3;Startseite (23 s) > Datenschutz (20 s) > Alle Abende (60 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;18:50;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;27;1;Dirty Chicken (27 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;17:25;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;144;2;Startseite (24 s) > Der Weg (120 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;21.10.2026;16:20;Deutschland;Hamburg;HH;Rechner;Deutsch;Instagram;204;1;Alle Abende (204 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;15:41;Deutschland;Berlin;BE;Tablet;Deutsch;Google;217;3;Startseite (93 s) > Team (51 s) > Das Haus (73 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;15:34;Deutschland;Hannover;NI;Rechner;Deutsch;Facebook;38;1;Startseite (38 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;15:10;Deutschland;Garbsen;NI;Handy;Deutsch;Google;66;1;Startseite (66 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;14:26;Deutschland;Langenhagen;NI;Handy;Deutsch;Direkt aufgerufen;268;4;Startseite (36 s) > Das Haus (68 s) > Dirty Chicken (38 s) > Der Weg (126 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;21.10.2026;14:01;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;174;2;Startseite (32 s) > Alle Abende (142 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;11:08;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;152;2;Startseite (125 s) > Dirty Chicken (27 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;08:29;Deutschland;Hannover;NI;Rechner;Deutsch;Google;281;2;Der Abend (195 s) > Alle Abende (86 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;04:14;Deutschland;München;BY;Handy;Deutsch;Instagram;201;2;Startseite (67 s) > Datenschutz (134 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;21.10.2026;04:00;Deutschland;Hildesheim;NI;Handy;Deutsch;Instagram;192;3;Startseite (60 s) > Der Weg (59 s) > Team (73 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;23:22;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;165;1;Der Abend (165 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;22:06;Deutschland;Hannover;NI;Handy;Deutsch;Google;592;6;Startseite (119 s) > Dirty Chicken (63 s) > Der Abend (119 s) > Das Haus (51 s) > Der Abend (217 s) > Das Haus (23 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;19:59;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;340;4;Startseite (82 s) > Alle Abende (64 s) > Der Abend (94 s) > Dirty Chicken (100 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;16:42;Deutschland;Hannover;NI;Handy;Deutsch;Google;191;1;Der Abend (191 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;16:15;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;470;4;Alle Abende (99 s) > Der Abend (107 s) > Das Haus (46 s) > Alle Abende (218 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;16:05;Deutschland;Frankfurt am Main;HE;Rechner;Deutsch;Direkt aufgerufen;264;3;Startseite (70 s) > Alle Abende (68 s) > Team (126 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;20.10.2026;15:21;Deutschland;Bremen;HB;Handy;Deutsch;Instagram;129;2;Dirty Chicken (76 s) > Team (53 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;14:22;Deutschland;Hannover;NI;Handy;Deutsch;Google;192;1;Der Abend (192 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;13:53;Deutschland;Hannover;NI;Handy;Deutsch;Google;41;1;Dirty Chicken (41 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;13:04;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;77;2;Startseite (58 s) > Dirty Chicken (19 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;11:00;Deutschland;Braunschweig;NI;Handy;Deutsch;Google;449;4;Startseite (136 s) > Der Weg (63 s) > Das Haus (102 s) > Der Abend (148 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;08:21;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;217;1;Der Abend (217 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;08:15;Deutschland;Hannover;NI;Handy;Deutsch;Google;146;2;Startseite (113 s) > Dirty Chicken (33 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;20.10.2026;03:48;Deutschland;Hannover;NI;Rechner;Deutsch;Google;239;3;Startseite (55 s) > Team (24 s) > Alle Abende (160 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;22:29;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;134;2;Der Abend (56 s) > Der Weg (78 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;20:40;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;140;3;Startseite (34 s) > Der Abend (62 s) > Der Weg (44 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;19:29;Deutschland;Hannover;NI;Handy;Deutsch;Google;70;1;Startseite (70 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;18:48;Deutschland;Celle;NI;Handy;Deutsch;Google;356;3;Der Abend (159 s) > Das Haus (40 s) > Alle Abende (157 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;17:05;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;271;2;Startseite (105 s) > Alle Abende (166 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;19.10.2026;16:44;Deutschland;Garbsen;NI;Handy;Deutsch;Instagram;453;6;Startseite (36 s) > Alle Abende (94 s) > Team (92 s) > Das Haus (130 s) > Der Weg (15 s) > Der Abend (86 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;19.10.2026;16:34;Deutschland;Langenhagen;NI;Tablet;Deutsch;Instagram;91;1;Startseite (91 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;15:13;Deutschland;Köln;NW;Handy;Deutsch;Direkt aufgerufen;36;1;Startseite (36 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;14:28;Deutschland;München;BY;Handy;Deutsch;Google;76;1;Startseite (76 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;14:07;Deutschland;Wolfsburg;NI;Handy;Deutsch;Google;260;2;Der Abend (174 s) > Team (86 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;10:11;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;89;2;Alle Abende (70 s) > Der Weg (19 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;19.10.2026;08:22;Deutschland;Hannover;NI;Handy;Deutsch;DuckDuckGo;602;6;Alle Abende (168 s) > Der Weg (23 s) > Dirty Chicken (127 s) > Der Weg (17 s) > Dirty Chicken (33 s) > Der Abend (234 s);nein;nein;ja;ja;nein;nein;nein;nein;ja
+Beispiel;19.10.2026;03:21;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;338;5;Startseite (6 s) > Alle Abende (177 s) > Der Weg (62 s) > Dirty Chicken (62 s) > Team (31 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;19.10.2026;03:15;Niederlande;Amsterdam;NH;Rechner;Niederländisch;Instagram;70;1;Startseite (70 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;22:23;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;75;2;Startseite (32 s) > Team (43 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;21:10;Deutschland;Frankfurt am Main;HE;Handy;Deutsch;Direkt aufgerufen;463;4;Der Abend (143 s) > Alle Abende (157 s) > Dirty Chicken (125 s) > Team (38 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;19:03;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;522;4;Der Abend (156 s) > Team (40 s) > Alle Abende (217 s) > Der Weg (109 s);ja;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;18.10.2026;18:50;Deutschland;Hildesheim;NI;Handy;Deutsch;Google;187;2;Dirty Chicken (77 s) > Der Abend (110 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;17:56;Deutschland;Ronnenberg;NI;Handy;Deutsch;Hannover Marketing;223;3;Alle Abende (156 s) > Der Weg (39 s) > Dirty Chicken (28 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;16:15;Niederlande;Amsterdam;NH;Rechner;Niederländisch;Instagram;855;6;Der Abend (165 s) > Das Haus (62 s) > Der Abend (183 s) > Alle Abende (234 s) > Das Haus (133 s) > Dirty Chicken (78 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;14:54;Deutschland;Garbsen;NI;Rechner;Deutsch;Instagram;435;4;Der Abend (112 s) > Alle Abende (155 s) > Der Abend (112 s) > Der Weg (56 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;12:56;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;231;2;Der Abend (180 s) > Team (51 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;12:05;Deutschland;Bremen;HB;Handy;Deutsch;Instagram;183;2;Startseite (99 s) > Team (84 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;11:23;Großbritannien;London;ENG;Handy;Englisch;Instagram;324;2;Alle Abende (174 s) > Der Abend (150 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;10:29;Deutschland;Hannover;NI;Handy;Deutsch;Google;200;1;Alle Abende (200 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;18.10.2026;09:06;Deutschland;Leipzig;SN;Handy;Deutsch;Direkt aufgerufen;203;3;Startseite (107 s) > Der Weg (12 s) > Das Haus (84 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;18.10.2026;07:26;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;590;5;Startseite (50 s) > Der Weg (82 s) > Der Abend (244 s) > Dirty Chicken (56 s) > Der Abend (158 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;18.10.2026;04:29;Deutschland;Hannover;NI;Handy;Englisch;Google;124;2;Startseite (113 s) > Das Haus (11 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;21:17;Deutschland;Isernhagen;NI;Handy;Deutsch;Google;167;1;Der Abend (167 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;20:35;Deutschland;Hannover;NI;Handy;Deutsch;Facebook;273;3;Startseite (124 s) > Der Abend (123 s) > Das Haus (26 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;20:19;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;299;3;Startseite (28 s) > Der Weg (59 s) > Alle Abende (212 s);nein;nein;nein;nein;ja;nein;nein;nein;ja
+Beispiel;17.10.2026;19:26;Deutschland;Hamburg;HH;Handy;Deutsch;Direkt aufgerufen;194;2;Der Abend (117 s) > Team (77 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;18:26;Deutschland;Hannover;NI;Rechner;Deutsch;Google;32;1;Startseite (32 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;17:52;Deutschland;Göttingen;NI;Handy;Deutsch;Direkt aufgerufen;621;6;Startseite (99 s) > Dirty Chicken (116 s) > Der Weg (88 s) > Dirty Chicken (116 s) > Das Haus (25 s) > Alle Abende (177 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;17:18;Deutschland;Hannover;NI;Handy;Englisch;Direkt aufgerufen;238;3;Alle Abende (95 s) > Team (103 s) > Dirty Chicken (40 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;17.10.2026;17:16;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;327;3;Dirty Chicken (99 s) > Alle Abende (179 s) > Der Weg (49 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;17.10.2026;16:33;Deutschland;Hannover;NI;Handy;Deutsch;Bing;76;1;Startseite (76 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;16:01;Deutschland;Hildesheim;NI;Handy;Deutsch;Direkt aufgerufen;174;2;Der Abend (127 s) > Team (47 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;15:47;Deutschland;Hannover;NI;Handy;Deutsch;Hannover Marketing;224;3;Startseite (135 s) > Der Weg (27 s) > Dirty Chicken (62 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;13:27;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;244;4;Startseite (26 s) > Der Weg (65 s) > Team (137 s) > Impressum (16 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;13:21;Deutschland;Hamburg;HH;Rechner;Deutsch;Direkt aufgerufen;586;7;Startseite (34 s) > Der Weg (41 s) > Dirty Chicken (126 s) > Alle Abende (73 s) > Dirty Chicken (64 s) > Der Abend (142 s) > Alle Abende (106 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;13:20;Deutschland;Wolfsburg;NI;Handy;Deutsch;Direkt aufgerufen;215;4;Dirty Chicken (36 s) > Alle Abende (144 s) > Dirty Chicken (19 s) > Datenschutz (16 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;12:47;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;14;1;Startseite (14 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;11:54;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;597;6;Startseite (37 s) > Alle Abende (163 s) > Dirty Chicken (107 s) > Der Weg (114 s) > Team (69 s) > Der Abend (107 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;11:47;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;487;5;Startseite (91 s) > Alle Abende (144 s) > Dirty Chicken (47 s) > Alle Abende (163 s) > Dirty Chicken (42 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;11:38;Deutschland;Hildesheim;NI;Handy;Deutsch;Google;82;2;Startseite (12 s) > Der Abend (70 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;11:16;Deutschland;Langenhagen;NI;Handy;Deutsch;Instagram;139;1;Der Abend (139 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;17.10.2026;05:17;Deutschland;Ronnenberg;NI;Handy;Deutsch;Google;107;2;Startseite (75 s) > Das Haus (32 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;17.10.2026;02:09;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;221;3;Startseite (48 s) > Der Weg (71 s) > Team (102 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;21:15;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;133;2;Startseite (38 s) > Impressum (95 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;21:14;Deutschland;Leipzig;SN;Handy;Deutsch;Instagram;60;2;Der Weg (14 s) > Impressum (46 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;20:53;Deutschland;Celle;NI;Handy;Deutsch;Direkt aufgerufen;428;4;Der Abend (148 s) > Der Weg (84 s) > Alle Abende (145 s) > Das Haus (51 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;19:58;Deutschland;Braunschweig;NI;Rechner;Deutsch;Instagram;632;6;Startseite (133 s) > Der Weg (120 s) > Dirty Chicken (49 s) > Team (48 s) > Alle Abende (74 s) > Der Abend (208 s);ja;ja;nein;nein;nein;nein;nein;nein;ja
+Beispiel;16.10.2026;18:09;Deutschland;Seelze;NI;Handy;Deutsch;Instagram;136;2;Startseite (56 s) > Der Weg (80 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;17:53;Deutschland;Isernhagen;NI;Rechner;Deutsch;Instagram;149;2;Der Weg (109 s) > Team (40 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;16.10.2026;17:40;Deutschland;Hannover;NI;Handy;Deutsch;Google;265;3;Dirty Chicken (13 s) > Der Abend (93 s) > Alle Abende (159 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;17:35;Deutschland;Göttingen;NI;Handy;Deutsch;Instagram;307;4;Dirty Chicken (58 s) > Das Haus (29 s) > Team (24 s) > Der Abend (196 s);ja;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;16.10.2026;16:49;Deutschland;Braunschweig;NI;Handy;Deutsch;Google;153;1;Alle Abende (153 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;16:10;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;196;2;Startseite (19 s) > Alle Abende (177 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;16:06;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;90;1;Dirty Chicken (90 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;15:48;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;193;1;Der Abend (193 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;15:38;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;385;5;Startseite (60 s) > Alle Abende (110 s) > Team (87 s) > Alle Abende (91 s) > Der Weg (37 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;16.10.2026;15:38;Deutschland;Hannover;NI;Handy;Deutsch;Google;324;5;Startseite (47 s) > Dirty Chicken (69 s) > Team (78 s) > Das Haus (52 s) > Dirty Chicken (78 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;15:13;Deutschland;Göttingen;NI;Rechner;Deutsch;Google;163;1;Der Abend (163 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;14:49;Deutschland;Hamburg;HH;Rechner;Deutsch;Direkt aufgerufen;406;4;Startseite (84 s) > Alle Abende (121 s) > Der Abend (164 s) > Der Weg (37 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;14:39;Deutschland;Hannover;NI;Rechner;Deutsch;Google;54;1;Dirty Chicken (54 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;11:38;Deutschland;Hemmingen;NI;Handy;Deutsch;Direkt aufgerufen;82;1;Dirty Chicken (82 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;16.10.2026;11:29;Deutschland;Hannover;NI;Handy;Deutsch;Bing;356;4;Alle Abende (114 s) > Das Haus (80 s) > Der Abend (95 s) > Dirty Chicken (67 s);nein;nein;nein;nein;ja;nein;nein;nein;nein
+Beispiel;16.10.2026;11:10;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;157;3;Startseite (60 s) > Team (17 s) > Der Weg (80 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;16.10.2026;10:39;Deutschland;Hannover;NI;Rechner;Deutsch;Google;389;5;Der Abend (163 s) > Team (36 s) > Der Abend (77 s) > Der Weg (59 s) > Das Haus (54 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;22:53;Deutschland;Hannover;NI;Handy;Englisch;Direkt aufgerufen;73;2;Startseite (56 s) > Dirty Chicken (17 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;21:58;Deutschland;Garbsen;NI;Tablet;Deutsch;Google;134;2;Startseite (40 s) > Der Abend (94 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;21:49;Deutschland;Hamburg;HH;Handy;Deutsch;Instagram;177;3;Startseite (54 s) > Team (88 s) > Der Weg (35 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;16:49;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;58;1;Dirty Chicken (58 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;15.10.2026;16:13;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;390;4;Startseite (99 s) > Der Weg (85 s) > Dirty Chicken (39 s) > Der Abend (167 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;15:59;Deutschland;Hemmingen;NI;Handy;Deutsch;Instagram;29;1;Startseite (29 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;15:29;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;180;1;Alle Abende (180 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;14:09;Deutschland;Hannover;NI;Tablet;Deutsch;Instagram;172;3;Startseite (55 s) > Das Haus (24 s) > Der Abend (93 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;12:41;Deutschland;Isernhagen;NI;Rechner;Deutsch;Direkt aufgerufen;191;2;Dirty Chicken (50 s) > Der Abend (141 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;11:30;Deutschland;Hannover;NI;Handy;Deutsch;Google;258;3;Startseite (31 s) > Alle Abende (143 s) > Team (84 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;11:05;Deutschland;Berlin;BE;Rechner;Deutsch;Instagram;852;7;Der Abend (114 s) > Team (133 s) > Der Abend (190 s) > Dirty Chicken (119 s) > Alle Abende (193 s) > Das Haus (80 s) > Dirty Chicken (23 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;07:12;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;162;2;Der Abend (99 s) > Der Weg (63 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;15.10.2026;04:03;Deutschland;Burgdorf;NI;Handy;Deutsch;Hannover Marketing;425;3;Startseite (91 s) > Der Abend (149 s) > Alle Abende (185 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;04:01;Deutschland;Hannover;NI;Handy;Englisch;Direkt aufgerufen;236;3;Startseite (44 s) > Alle Abende (137 s) > Das Haus (55 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;03:46;Deutschland;Celle;NI;Handy;Deutsch;Google;243;5;Startseite (40 s) > Team (32 s) > Das Haus (57 s) > Alle Abende (80 s) > Datenschutz (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;15.10.2026;02:22;Deutschland;Laatzen;NI;Handy;Deutsch;Google;167;2;Startseite (57 s) > Das Haus (110 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;14.10.2026;22:50;Deutschland;Göttingen;NI;Tablet;Deutsch;Google;347;3;Startseite (23 s) > Das Haus (110 s) > Alle Abende (214 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;20:47;Deutschland;Hamburg;HH;Handy;Deutsch;Google;134;1;Der Abend (134 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;20:38;Deutschland;Ronnenberg;NI;Rechner;Deutsch;Direkt aufgerufen;486;4;Alle Abende (140 s) > Team (92 s) > Das Haus (98 s) > Alle Abende (156 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;20:05;Deutschland;Langenhagen;NI;Handy;Deutsch;Instagram;139;1;Startseite (139 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;14.10.2026;19:50;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;190;2;Alle Abende (114 s) > Das Haus (76 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;19:08;Deutschland;Hildesheim;NI;Handy;Deutsch;Google;176;2;Startseite (85 s) > Team (91 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;18:57;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;515;6;Startseite (28 s) > Der Weg (29 s) > Alle Abende (213 s) > Team (90 s) > Dirty Chicken (107 s) > Das Haus (48 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;14.10.2026;18:20;Deutschland;Braunschweig;NI;Tablet;Deutsch;Hannover Marketing;40;1;Startseite (40 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;17:49;Deutschland;Wolfsburg;NI;Handy;Deutsch;Google;300;3;Startseite (119 s) > Das Haus (43 s) > Der Abend (138 s);ja;ja;nein;nein;nein;nein;nein;ja;nein
+Beispiel;14.10.2026;16:17;Deutschland;Göttingen;NI;Handy;Deutsch;Google;123;1;Der Abend (123 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;15:34;Deutschland;Garbsen;NI;Handy;Deutsch;Instagram;239;3;Der Abend (90 s) > Das Haus (19 s) > Alle Abende (130 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;11:00;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;387;2;Alle Abende (191 s) > Der Abend (196 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;14.10.2026;07:51;Deutschland;Hannover;NI;Handy;Deutsch;Google;67;1;Startseite (67 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;13.10.2026;22:43;Deutschland;Hannover;NI;Handy;Deutsch;Bing;36;1;Startseite (36 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;20:51;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;359;3;Der Abend (164 s) > Das Haus (118 s) > Dirty Chicken (77 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;20:47;Deutschland;Leipzig;SN;Rechner;Deutsch;Direkt aufgerufen;140;2;Alle Abende (104 s) > Team (36 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;20:23;Deutschland;Hannover;NI;Handy;Deutsch;Google;311;4;Der Abend (162 s) > Der Weg (26 s) > Team (108 s) > Das Haus (15 s);nein;nein;nein;ja;nein;ja;nein;nein;nein
+Beispiel;13.10.2026;18:30;Deutschland;Hannover;NI;Handy;Deutsch;Google;169;1;Der Abend (169 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;18:02;Deutschland;Ronnenberg;NI;Tablet;Deutsch;Google;168;2;Startseite (29 s) > Team (139 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;18:02;Türkei;Istanbul;34;Handy;Andere Sprache;Instagram;211;4;Dirty Chicken (69 s) > Der Weg (42 s) > Team (48 s) > Dirty Chicken (52 s);nein;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;13.10.2026;17:48;Deutschland;Hannover;NI;Handy;Deutsch;Google;140;2;Startseite (76 s) > Das Haus (64 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;16:28;Deutschland;Hildesheim;NI;Handy;Deutsch;Google;149;2;Startseite (62 s) > Der Abend (87 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;15:32;Deutschland;Hamburg;HH;Handy;Deutsch;Google;367;4;Startseite (93 s) > Impressum (73 s) > Der Abend (167 s) > Das Haus (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;14:25;Deutschland;Isernhagen;NI;Handy;Deutsch;Instagram;257;2;Der Abend (68 s) > Alle Abende (189 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;12:41;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;171;2;Startseite (17 s) > Der Abend (154 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;07:43;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;100;2;Startseite (25 s) > Der Abend (75 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;06:21;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;355;4;Startseite (106 s) > Der Abend (113 s) > Team (96 s) > Impressum (40 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;05:58;Deutschland;Seelze;NI;Handy;Deutsch;Tripadvisor;231;2;Alle Abende (139 s) > Der Abend (92 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;13.10.2026;03:16;Deutschland;Hannover;NI;Handy;Deutsch;ChatGPT;168;1;Der Abend (168 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;23:05;Österreich;Wien;9;Rechner;Deutsch;Direkt aufgerufen;84;1;Der Abend (84 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;22:42;Deutschland;Langenhagen;NI;Rechner;Deutsch;Direkt aufgerufen;309;3;Startseite (68 s) > Alle Abende (143 s) > Der Abend (98 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;21:32;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;163;2;Startseite (85 s) > Das Haus (78 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;21:09;Deutschland;Isernhagen;NI;Tablet;Deutsch;Direkt aufgerufen;94;1;Der Abend (94 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;20:59;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;234;2;Startseite (26 s) > Der Abend (208 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;20:25;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;318;2;Der Abend (121 s) > Alle Abende (197 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;20:07;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;216;1;Der Abend (216 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;19:12;Deutschland;Hannover;NI;Rechner;Deutsch;Google;277;4;Startseite (24 s) > Team (32 s) > Alle Abende (163 s) > Impressum (58 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;18:58;Deutschland;Hannover;NI;Rechner;Englisch;Google;253;2;Der Abend (178 s) > Das Haus (75 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;18:50;Deutschland;Wolfsburg;NI;Handy;Deutsch;Google;73;1;Alle Abende (73 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;18:47;Deutschland;Berlin;BE;Rechner;Deutsch;Direkt aufgerufen;81;1;Der Abend (81 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;15:54;Deutschland;Langenhagen;NI;Rechner;Deutsch;Hannover Marketing;596;5;Der Abend (168 s) > Das Haus (77 s) > Der Weg (34 s) > Alle Abende (140 s) > Der Abend (177 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;14:37;Deutschland;Seelze;NI;Handy;Deutsch;Instagram;94;1;Der Weg (94 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;13:49;Österreich;Wien;9;Handy;Deutsch;Instagram;183;2;Startseite (98 s) > Der Abend (85 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;10:08;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;676;6;Alle Abende (151 s) > Der Weg (96 s) > Alle Abende (132 s) > Der Weg (77 s) > Dirty Chicken (133 s) > Der Abend (87 s);ja;nein;nein;nein;nein;nein;nein;nein;ja
+Beispiel;12.10.2026;07:52;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;199;3;Startseite (39 s) > Team (36 s) > Der Abend (124 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;07:08;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;160;1;Der Abend (160 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;12.10.2026;05:10;Deutschland;Hildesheim;NI;Handy;Deutsch;Instagram;187;3;Startseite (22 s) > Der Weg (16 s) > Der Abend (149 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;21:19;Deutschland;Hannover;NI;Handy;Deutsch;Google;308;5;Dirty Chicken (14 s) > Das Haus (73 s) > Impressum (49 s) > Dirty Chicken (16 s) > Alle Abende (156 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;21:19;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;378;5;Startseite (41 s) > Der Weg (28 s) > Das Haus (44 s) > Alle Abende (166 s) > Das Haus (99 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;11.10.2026;20:49;Deutschland;Köln;NW;Handy;Deutsch;Instagram;130;2;Der Abend (66 s) > Das Haus (64 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;19:24;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;58;1;Startseite (58 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;19:15;Deutschland;Isernhagen;NI;Handy;Deutsch;Instagram;210;1;Der Abend (210 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;18:42;Großbritannien;London;ENG;Handy;Englisch;Direkt aufgerufen;303;3;Startseite (61 s) > Das Haus (110 s) > Dirty Chicken (132 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;18:28;Deutschland;Wunstorf;NI;Handy;Deutsch;Direkt aufgerufen;184;2;Startseite (90 s) > Der Abend (94 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;18:28;Deutschland;Frankfurt am Main;HE;Rechner;Deutsch;Google;221;2;Alle Abende (127 s) > Dirty Chicken (94 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;17:56;Deutschland;Isernhagen;NI;Rechner;Deutsch;Google;87;1;Der Abend (87 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;17:48;Deutschland;Hemmingen;NI;Handy;Deutsch;DuckDuckGo;118;1;Der Abend (118 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;16:50;Deutschland;Hemmingen;NI;Handy;Deutsch;Hannover Marketing;126;3;Startseite (84 s) > Team (20 s) > Der Weg (22 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;15:17;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;166;3;Startseite (34 s) > Datenschutz (31 s) > Team (101 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;14:49;Deutschland;Köln;NW;Tablet;Deutsch;Instagram;105;2;Dirty Chicken (41 s) > Team (64 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;14:49;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;415;3;Startseite (119 s) > Der Abend (194 s) > Das Haus (102 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;13:47;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;249;3;Der Abend (133 s) > Team (93 s) > Der Weg (23 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;11.10.2026;13:29;Deutschland;Berlin;BE;Rechner;Deutsch;Bing;387;3;Der Abend (126 s) > Das Haus (16 s) > Der Abend (245 s);ja;ja;nein;nein;nein;ja;nein;nein;nein
+Beispiel;11.10.2026;12:35;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;157;2;Startseite (25 s) > Team (132 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;11:42;Deutschland;Berlin;BE;Rechner;Deutsch;Instagram;141;3;Startseite (14 s) > Das Haus (36 s) > Impressum (91 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;08:35;Deutschland;Hannover;NI;Rechner;Deutsch;Instagram;113;2;Startseite (36 s) > Der Abend (77 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;07:10;Deutschland;Burgdorf;NI;Handy;Deutsch;Google;267;3;Startseite (75 s) > Impressum (32 s) > Der Abend (160 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;11.10.2026;06:49;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;855;6;Der Abend (218 s) > Dirty Chicken (113 s) > Team (19 s) > Alle Abende (162 s) > Der Weg (103 s) > Der Abend (240 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;23:10;Deutschland;Burgdorf;NI;Rechner;Deutsch;Google;250;2;Der Abend (189 s) > Impressum (61 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;19:55;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;17;1;Startseite (17 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;10.10.2026;18:28;Deutschland;Berlin;BE;Tablet;Deutsch;Instagram;443;6;Startseite (48 s) > Team (103 s) > Das Haus (34 s) > Der Weg (24 s) > Alle Abende (180 s) > Der Weg (54 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;10.10.2026;18:16;Deutschland;Ronnenberg;NI;Tablet;Deutsch;Google;127;2;Der Abend (53 s) > Dirty Chicken (74 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;17:59;Deutschland;Braunschweig;NI;Handy;Deutsch;Direkt aufgerufen;111;3;Startseite (20 s) > Impressum (27 s) > Der Weg (64 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;17:53;Deutschland;Wolfsburg;NI;Handy;Deutsch;Direkt aufgerufen;192;1;Alle Abende (192 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;17:21;Spanien;Barcelona;CT;Handy;Spanisch;Google;62;1;Startseite (62 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;17:19;Deutschland;Hannover;NI;Tablet;Deutsch;Direkt aufgerufen;129;3;Startseite (53 s) > Der Weg (47 s) > Team (29 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;16:43;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;220;1;Der Abend (220 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;16:23;Deutschland;Leipzig;SN;Rechner;Deutsch;Google;164;4;Alle Abende (72 s) > Der Weg (23 s) > Team (23 s) > Dirty Chicken (46 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;15:21;Deutschland;Köln;NW;Handy;Deutsch;Instagram;55;1;Startseite (55 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;14:07;Deutschland;Hannover;NI;Rechner;Deutsch;Direkt aufgerufen;265;4;Alle Abende (116 s) > Dirty Chicken (51 s) > Datenschutz (40 s) > Der Weg (58 s);nein;nein;nein;nein;nein;ja;nein;ja;nein
+Beispiel;10.10.2026;12:51;Deutschland;Hannover;NI;Handy;Deutsch;Google;128;1;Der Abend (128 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;12:32;Deutschland;Osnabrück;NI;Rechner;Deutsch;Direkt aufgerufen;154;1;Der Abend (154 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;12:18;Deutschland;Hemmingen;NI;Handy;Deutsch;Google;170;3;Dirty Chicken (37 s) > Der Weg (82 s) > Dirty Chicken (51 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;10.10.2026;09:06;Deutschland;Braunschweig;NI;Handy;Deutsch;Instagram;470;5;Startseite (26 s) > Das Haus (109 s) > Alle Abende (86 s) > Der Abend (184 s) > Team (65 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;10.10.2026;07:07;Deutschland;Wolfsburg;NI;Handy;Deutsch;Instagram;200;2;Startseite (40 s) > Der Abend (160 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;21:33;Deutschland;Berlin;BE;Handy;Deutsch;Direkt aufgerufen;97;1;Startseite (97 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;18:27;Deutschland;Hannover;NI;Rechner;Deutsch;Threads;504;5;Startseite (62 s) > Alle Abende (177 s) > Der Abend (147 s) > Der Weg (68 s) > Das Haus (50 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;09.10.2026;16:25;Deutschland;Hemmingen;NI;Rechner;Deutsch;Google;108;2;Startseite (76 s) > Team (32 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;16:08;Deutschland;Wolfsburg;NI;Handy;Deutsch;Instagram;287;3;Startseite (132 s) > Der Abend (100 s) > Team (55 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;15:10;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;143;1;Der Abend (143 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;13:49;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;146;2;Dirty Chicken (80 s) > Alle Abende (66 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;12:57;Deutschland;Bremen;HB;Handy;Deutsch;Google;143;2;Der Abend (118 s) > Team (25 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;12:21;Deutschland;Seelze;NI;Handy;Deutsch;Instagram;81;1;Der Abend (81 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;11:40;Deutschland;Braunschweig;NI;Handy;Deutsch;Direkt aufgerufen;198;2;Der Weg (54 s) > Der Abend (144 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;11:08;Deutschland;Celle;NI;Handy;Deutsch;Instagram;256;1;Alle Abende (256 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;10:14;Deutschland;Berlin;BE;Handy;Deutsch;Instagram;206;1;Der Abend (206 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;08:54;Deutschland;Hannover;NI;Handy;Deutsch;Google;206;2;Startseite (51 s) > Der Abend (155 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;08:50;Deutschland;Ronnenberg;NI;Handy;Deutsch;Google;484;5;Startseite (123 s) > Das Haus (46 s) > Team (90 s) > Alle Abende (168 s) > Der Weg (57 s);nein;nein;nein;nein;nein;nein;ja;nein;nein
+Beispiel;09.10.2026;06:46;Deutschland;Köln;NW;Rechner;Deutsch;Google;337;4;Startseite (47 s) > Dirty Chicken (76 s) > Der Weg (73 s) > Alle Abende (141 s);nein;nein;nein;nein;nein;ja;nein;ja;nein
+Beispiel;09.10.2026;05:01;Deutschland;Hannover;NI;Handy;Deutsch;Google;329;3;Startseite (46 s) > Dirty Chicken (110 s) > Der Abend (173 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;09.10.2026;02:00;Deutschland;Hannover;NI;Tablet;Deutsch;Direkt aufgerufen;248;2;Der Abend (157 s) > Dirty Chicken (91 s);nein;nein;nein;ja;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;22:32;Deutschland;Hildesheim;NI;Rechner;Deutsch;Google;256;2;Der Abend (171 s) > Dirty Chicken (85 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;22:32;Deutschland;Hannover;NI;Rechner;Deutsch;Google;82;1;Startseite (82 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;20:34;Deutschland;Hemmingen;NI;Rechner;Deutsch;Instagram;284;5;Startseite (24 s) > Das Haus (62 s) > Datenschutz (57 s) > Der Weg (26 s) > Team (115 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;20:16;Deutschland;Hannover;NI;Tablet;Deutsch;Threads;122;2;Der Abend (95 s) > Dirty Chicken (27 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;08.10.2026;18:10;Deutschland;Hildesheim;NI;Handy;Deutsch;Direkt aufgerufen;176;3;Startseite (27 s) > Dirty Chicken (86 s) > Team (63 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;17:22;Deutschland;Hannover;NI;Handy;Deutsch;Google;152;2;Startseite (81 s) > Team (71 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;17:06;Deutschland;Hannover;NI;Handy;Deutsch;Tripadvisor;521;4;Startseite (25 s) > Der Abend (205 s) > Alle Abende (174 s) > Dirty Chicken (117 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;16:55;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;106;1;Der Abend (106 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;16:30;Deutschland;Hannover;NI;Handy;Deutsch;Ecosia;422;3;Startseite (91 s) > Dirty Chicken (125 s) > Alle Abende (206 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;15:25;Deutschland;Burgdorf;NI;Handy;Deutsch;Google;242;2;Startseite (46 s) > Alle Abende (196 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;15:21;Deutschland;Langenhagen;NI;Handy;Deutsch;Instagram;291;3;Der Abend (105 s) > Impressum (61 s) > Das Haus (125 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;13:44;Deutschland;Berlin;BE;Rechner;Deutsch;Google;124;1;Startseite (124 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;12:45;Deutschland;Hannover;NI;Tablet;Deutsch;Hannover Marketing;254;3;Der Weg (64 s) > Dirty Chicken (46 s) > Der Abend (144 s);ja;ja;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;12:07;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;31;1;Startseite (31 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;11:29;Deutschland;Hildesheim;NI;Handy;Deutsch;Google;207;4;Startseite (52 s) > Der Weg (19 s) > Alle Abende (86 s) > Team (50 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;10:19;Deutschland;Isernhagen;NI;Handy;Deutsch;Google;314;3;Der Abend (99 s) > Das Haus (31 s) > Der Abend (184 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;08:17;Deutschland;München;BY;Tablet;Deutsch;Instagram;701;6;Der Abend (164 s) > Dirty Chicken (58 s) > Impressum (46 s) > Das Haus (89 s) > Der Abend (223 s) > Alle Abende (121 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;08:07;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;125;2;Dirty Chicken (89 s) > Das Haus (36 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;08.10.2026;07:29;Deutschland;Bremen;HB;Handy;Deutsch;Direkt aufgerufen;406;4;Startseite (76 s) > Alle Abende (175 s) > Der Abend (120 s) > Der Weg (35 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;23:20;Deutschland;Hannover;NI;Handy;Deutsch;Google;147;3;Startseite (30 s) > Dirty Chicken (79 s) > Team (38 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;22:47;Deutschland;Berlin;BE;Handy;Deutsch;Google;350;4;Der Abend (135 s) > Dirty Chicken (20 s) > Team (103 s) > Dirty Chicken (92 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;07.10.2026;20:27;Deutschland;Bremen;HB;Handy;Deutsch;Instagram;244;3;Startseite (28 s) > Alle Abende (157 s) > Das Haus (59 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;19:36;Deutschland;Langenhagen;NI;Handy;Deutsch;Google;451;5;Startseite (88 s) > Team (44 s) > Das Haus (56 s) > Alle Abende (135 s) > Der Abend (128 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;19:28;Deutschland;Celle;NI;Handy;Deutsch;Instagram;84;2;Startseite (22 s) > Dirty Chicken (62 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;19:23;Türkei;Istanbul;34;Handy;Andere Sprache;Direkt aufgerufen;748;7;Startseite (76 s) > Der Abend (181 s) > Dirty Chicken (48 s) > Das Haus (48 s) > Der Abend (128 s) > Dirty Chicken (90 s) > Alle Abende (177 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;07.10.2026;19:10;Deutschland;Bielefeld;NW;Handy;Deutsch;Google;344;3;Startseite (66 s) > Der Abend (162 s) > Team (116 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;18:38;Deutschland;Braunschweig;NI;Rechner;Deutsch;Instagram;188;4;Startseite (27 s) > Dirty Chicken (17 s) > Team (59 s) > Dirty Chicken (85 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;17:07;Deutschland;Frankfurt am Main;HE;Handy;Deutsch;Instagram;86;1;Der Abend (86 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;15:51;Deutschland;Berlin;BE;Rechner;Deutsch;Instagram;294;5;Startseite (30 s) > Das Haus (28 s) > Der Abend (124 s) > Das Haus (86 s) > Team (26 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;15:39;Deutschland;Isernhagen;NI;Handy;Deutsch;Direkt aufgerufen;16;1;Startseite (16 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;15:23;Deutschland;Frankfurt am Main;HE;Tablet;Deutsch;Instagram;446;5;Alle Abende (136 s) > Das Haus (78 s) > Datenschutz (76 s) > Alle Abende (121 s) > Dirty Chicken (35 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;07.10.2026;15:03;Deutschland;Hannover;NI;Rechner;Deutsch;Google;381;3;Startseite (16 s) > Der Abend (268 s) > Dirty Chicken (97 s);ja;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;09:43;Deutschland;Köln;NW;Handy;Deutsch;Instagram;196;2;Alle Abende (155 s) > Dirty Chicken (41 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;07.10.2026;08:11;Deutschland;Hildesheim;NI;Handy;Deutsch;Instagram;32;1;Dirty Chicken (32 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;21:29;Deutschland;Langenhagen;NI;Rechner;Deutsch;Instagram;282;3;Dirty Chicken (67 s) > Alle Abende (131 s) > Team (84 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;21:07;Deutschland;Braunschweig;NI;Handy;Deutsch;Instagram;287;2;Alle Abende (172 s) > Der Abend (115 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;19:18;Deutschland;Laatzen;NI;Handy;Deutsch;Instagram;239;2;Alle Abende (179 s) > Team (60 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;19:07;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;358;5;Startseite (135 s) > Dirty Chicken (45 s) > Der Weg (52 s) > Das Haus (16 s) > Alle Abende (110 s);nein;nein;nein;nein;nein;ja;nein;nein;nein
+Beispiel;06.10.2026;18:21;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;206;2;Startseite (101 s) > Alle Abende (105 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;17:54;Deutschland;Celle;NI;Rechner;Deutsch;Instagram;278;5;Startseite (65 s) > Der Abend (101 s) > Dirty Chicken (55 s) > Team (27 s) > Dirty Chicken (30 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;16:43;Deutschland;Göttingen;NI;Handy;Deutsch;Instagram;224;2;Alle Abende (117 s) > Der Abend (107 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;16:05;Deutschland;Seelze;NI;Handy;Deutsch;Google;233;4;Startseite (12 s) > Impressum (133 s) > Das Haus (41 s) > Dirty Chicken (47 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;15:12;Deutschland;Hannover;NI;Handy;Deutsch;Instagram;375;5;Startseite (94 s) > Das Haus (16 s) > Team (68 s) > Alle Abende (158 s) > Datenschutz (39 s);nein;nein;nein;nein;nein;nein;nein;ja;nein
+Beispiel;06.10.2026;15:00;Deutschland;Berlin;BE;Handy;Deutsch;Direkt aufgerufen;110;2;Startseite (90 s) > Der Weg (20 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;13:33;Deutschland;Hannover;NI;Handy;Deutsch;DuckDuckGo;207;2;Dirty Chicken (71 s) > Der Weg (136 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;11:36;Deutschland;Garbsen;NI;Handy;Deutsch;Direkt aufgerufen;324;3;Startseite (25 s) > Dirty Chicken (116 s) > Der Abend (183 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;06.10.2026;10:44;Spanien;Barcelona;CT;Handy;Spanisch;Instagram;374;4;Dirty Chicken (32 s) > Team (62 s) > Alle Abende (182 s) > Dirty Chicken (98 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;05.10.2026;21:24;Deutschland;Hannover;NI;Handy;Deutsch;Facebook;83;1;Startseite (83 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;05.10.2026;21:05;Deutschland;Hannover;NI;Handy;Deutsch;Google;34;1;Startseite (34 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;05.10.2026;20:35;Deutschland;Göttingen;NI;Handy;Deutsch;Hannover Marketing;611;5;Startseite (27 s) > Alle Abende (214 s) > Der Abend (173 s) > Team (24 s) > Der Abend (173 s);nein;nein;ja;ja;nein;nein;nein;nein;nein
+Beispiel;05.10.2026;20:32;Deutschland;Hannover;NI;Rechner;Deutsch;ChatGPT;191;2;Startseite (84 s) > Der Weg (107 s);nein;nein;nein;nein;nein;nein;nein;nein;nein
+Beispiel;05.10.2026;19:02;Deutschland;Hannover;NI;Handy;Deutsch;Direkt aufgerufen;312;3;Der Abend (233 s) > Dirty Chicken (26 s) > Team (53 s);nein;nein;nein;ja;nein;nein;nein;nein;nein

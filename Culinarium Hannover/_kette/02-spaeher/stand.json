@@ -1,0 +1,73 @@
+{
+  "station": "02",
+  "name": "Kunden analysieren",
+  "rolle": "Späher",
+  "haus": "Culinarium Hannover",
+  "zustand": "bestätigt",
+  "beginn": "2026-10-25T15:27+08:00",
+  "ende": "2026-10-25T15:50+08:00",
+  "verbrauch": {
+    "budget_vorher": 25.0,
+    "budget_nachher": 26.0,
+    "guthaben": []
+  },
+  "offen": [
+    {
+      "punkt": "Wer Vertragspartner ist und ins Impressum kommt; kein Rechtsträger unter dem Namen Culinarium",
+      "wo": "Kundenprofil Blatt 1 (North Data, DENIC, 24.10.2026); Instagram-Profil 25.10.2026"
+    },
+    {
+      "punkt": "Rechte an Fotos (Irina Voronov, focusonbiz_hannover, Recap 02/2025 ohne Namen), an den Plakat-Illustrationen und an der Schrift der Wortmarke",
+      "wo": "Kundenprofil Blatt 5 und 6; Bildangaben der Beiträge C9z2rj1MRb2, DFqZn2UMYMV, De1pn9ttMoX"
+    },
+    {
+      "punkt": "Wie Culinarium zur Bar Walk on the Wild Side steht und wer die Bar heute betreibt (Derya Ivkin nennt sich «Bar Owner», Register belegt nur die Gründer Elbert/Schindler)",
+      "wo": "Bio @derrisch__ 25.10.2026; Kundenprofil Blatt 1 und 4"
+    },
+    {
+      "punkt": "Plätze pro Abend: 14 laut Culinarium-Beiträgen gegen 8 bis 12 für die Tafel laut Verzeichnissen",
+      "wo": "Kundenprofil Blatt 3, 4, 5; Meininger, essen-in-hannover.de"
+    },
+    {
+      "punkt": "Momos Klarname nicht öffentlich",
+      "wo": "Profil @momo012027 (Bio leer), 25.10.2026"
+    },
+    {
+      "punkt": "Was «Schulungen, Events, Consulting» konkret anbieten; belegt ist nur die Schulung im Abend",
+      "wo": "Profilname @culinarium_hannover; Kundenprofil Blatt 3"
+    },
+    {
+      "punkt": "Ob Dirty Chicken (@dirtychicken.hannover) mitkommt",
+      "wo": "Bio @rudi__san 25.10.2026; haus.json Vorgeschichte"
+    },
+    {
+      "punkt": "Rudis 109 Dateien (zwei Mails vom 24.10.2026) liegen noch nicht im Ordner: Drive verlangt Anmeldung",
+      "wo": "_quelle/vom-kunden/eingang.json"
+    },
+    {
+      "punkt": "Anzahl der Google-Bewertungen der Bar in der eingeschränkten Ansicht nicht angezeigt; 76 nur laut Restaurant Guru; Falstaff 89 Punkte und Facebook 4,2 an der Quelle nicht geprüft",
+      "wo": "Google Maps 25.10.2026; Kundenprofil Blatt 4"
+    },
+    {
+      "punkt": "Nächster Termin nicht angekündigt",
+      "wo": "Profil @culinarium_hannover 25.10.2026"
+    },
+    {
+      "punkt": "Verbrauch: abgelesen ist das ganze Konto (Wochenbudget aller Modelle), erst nach der Lesephase; der Anteil dieser Station ist nicht genau messbar",
+      "wo": "Nutzungsanzeige 25.10.2026"
+    }
+  ],
+  "paket": [
+    "befund.md",
+    "seitenliste.json",
+    "einordnung.json"
+  ],
+  "adresse": "http://127.0.0.1:8978/haus/Culinarium%20Hannover/_kette/02-spaeher/befund.html",
+  "briefing": "briefing.html",
+  "notiz": "Befund liegt vor: passt als Auftrag (Robert will es ausdrücklich); fertige Marke, ausgebuchte Abende, aber keine Website, kein Impressum, Buchung per DM und PayPal; vor dem Bau klären: Vertragspartner, Bildrechte, Verhältnis zur Bar.",
+  "bestaetigt": {
+    "zeit": "2026-10-25T16:02+08:00",
+    "wort": "passt, weiter (Robert im Chat 25.10.2026: «Ja, okay, und jetzt weitermachen.»)"
+  },
+  "rueckgaben": []
+}

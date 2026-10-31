@@ -1,0 +1,20 @@
+{
+  "haus": "Culinarium Hannover",
+  "kurz": "culinarium",
+  "ordner": "Culinarium Hannover",
+  "tor_ziele": "_Werkzeuge/abnahme-tor/ziele-culinarium-t3.json",
+  "mess_ziele": "_Werkzeuge/messlauf/ziele-culinarium.json",
+  "tor_groessen": ["1280x800", "1000x650", "390x844"],
+  "mess_groessen": ["1440", "1280", "1000", "390"],
+  "browser": ["chromium", "webkit"],
+  "server": [
+    {"port": 9081, "wo": "_werkzeuge/maison", "befehl": "python3 server.py 9081", "pruef": "/_werkzeuge/maison/"},
+    {"port": 9082, "wo": ".", "befehl": "python3 _werkzeuge/bureau/serve.py 9082", "pruef": "/_werkzeuge/bureau/"},
+    {"port": 9083, "wo": ".", "befehl": "python3 _werkzeuge/carte/serve.py 9083", "pruef": "/_werkzeuge/carte/"},
+    {"port": 9084, "wo": ".", "befehl": "python3 _werkzeuge/reception/server.py 9084", "pruef": "/_werkzeuge/reception/"},
+    {"port": 9085, "wo": "_werkzeuge/livre", "befehl": "python3 server.py 9085", "pruef": "/_werkzeuge/livre/"},
+    {"port": 9086, "wo": ".", "befehl": "python3 _werkzeuge/registre/server.py 9086", "pruef": "/_werkzeuge/registre/"},
+    {"port": 9087, "wo": "_werkzeuge/imprimerie", "befehl": "python3 serve.py 9087", "pruef": "/_werkzeuge/imprimerie/"},
+    {"port": 9088, "wo": ".", "befehl": "python3 website/_werkbank/serve.py 9088", "pruef": "/werkbank/index.html"}
+  ]
+}

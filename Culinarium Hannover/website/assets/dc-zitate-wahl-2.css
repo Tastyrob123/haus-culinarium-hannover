@@ -1,0 +1,287 @@
+/* Dirty Chicken · Wahlseite «Zitate», Runde 2 (dc_zitate_wahl_2.py), 28.10.2026: 15 weitere Fassungen für «Wie Dirty Chicken von sich spricht».
+   Gemeinsame Teile (ek, et, ex, nx-kopf) aus culinarium.css. Nur transform und opacity, nativer Scroll. */
+
+.ess[data-ton=hell]{--lila:#8953A9}
+.zt-datum{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2)}
+
+/* 1 Das Essen spricht */
+.zu1-wand{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:repeat(2,clamp(300px,29vw,440px));gap:8px}
+.zu1-f{position:relative;min-width:0}
+.zu1-f>.foto{height:100%;border-radius:6px}
+.zu1-blase{--bg:#FFF7EF;position:absolute;max-width:min(84%,360px);background:var(--bg);color:#1B1A20;padding:14px 18px 12px;border-radius:22px;box-shadow:0 18px 40px -18px rgba(8,6,14,.8);display:flex;flex-direction:column;gap:6px;z-index:2}
+.zu1-blase p{margin:0;font:340 clamp(18px,1.6vw,26px)/1.18 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.zu1-blase .zt-datum{color:#6B6475;font-size:11px}
+.zu1-blase::after{content:"";position:absolute;width:26px;height:26px;background:var(--bg);clip-path:polygon(0 0,100% 0,30% 100%)}
+.zu1-blase.b-u-r{right:6%;bottom:18%;transform-origin:20% 110%}
+.zu1-blase.b-u-r::after{left:22px;bottom:-22px}
+.zu1-blase.b-u-l{left:6%;bottom:10%;transform-origin:80% 110%}
+.zu1-blase.b-u-l::after{right:26px;bottom:-22px;clip-path:polygon(0 0,100% 0,70% 100%)}
+.zu1-blase.b-o-l{left:5%;bottom:6%;transform-origin:70% -10%}
+.zu1-blase.b-o-l::after{right:30px;top:-22px;clip-path:polygon(70% 0,100% 100%,0 100%)}
+.zus01 .zu1-f:first-child .zu1-blase{bottom:auto;top:8%;right:auto;left:6%}
+.zus01 .zu1-f:first-child .zu1-blase p{font-size:clamp(24px,2.2vw,36px)}
+html.js:not(.ruhig) .zu1-blase{transform:scale(.55);transition:transform .9s cubic-bezier(.34,1.56,.64,1) calc(.5s + var(--i,0)*240ms)}
+html.js .da .zu1-blase{transform:none}
+
+/* 2 Die Neonschrift */
+.zu2-wand{margin-top:clamp(8px,2vh,20px);background-color:#1F2B29;
+  background-image:linear-gradient(rgba(8,10,10,.75) 2px,transparent 2px),linear-gradient(90deg,rgba(8,10,10,.75) 2px,transparent 2px),radial-gradient(ellipse at 50% 40%,rgba(120,160,150,.18),transparent 70%);
+  background-size:64px 64px,64px 64px,100% 100%;padding:clamp(48px,8vh,96px) var(--rand);box-shadow:inset 0 0 160px rgba(0,0,0,.75)}
+.zu2-innen{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(30px,5vh,56px) clamp(36px,5vw,90px);text-align:center}
+.zu2-s{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;max-width:min(100%,560px)}
+.zu2-s.n-gross{flex:1 1 100%;max-width:none}
+.zu2-s p{margin:0;font:300 clamp(28px,3vw,48px)/1.12 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96;letter-spacing:.005em}
+.zu2-s.n-gross p{font-size:clamp(56px,8vw,140px);line-height:1}
+.zu2-r{color:rgba(255,255,255,.13)}
+.zu2-l{position:absolute;left:0;right:0;top:0;--c:#FFF4E8;--g:#F5A689;color:var(--c);text-shadow:0 0 2px var(--c),0 0 10px var(--g),0 0 26px var(--g),0 0 60px var(--g)}
+.zu2-s.n-lila .zu2-l{--c:#F7E6FF;--g:#B66BE8}
+.zu2-s.n-kerze .zu2-l{--c:#FFE6D6;--g:#EF7649}
+.zu2-s .zt-datum{color:rgba(250,244,244,.45)}
+html.js:not(.ruhig) .zu2-l{opacity:0}
+html.js .da .zu2-l{animation:zu2-an 1.4s steps(1,end) calc(.4s + var(--i,0)*420ms) forwards}
+@keyframes zu2-an{0%{opacity:.85}12%{opacity:.1}22%{opacity:.9}30%{opacity:.25}42%{opacity:1}100%{opacity:1}}
+html.ruhig .zu2-l{opacity:1}
+
+/* 3 Die Schallplatte */
+.zu3{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(36px,5vw,96px);align-items:center}
+.zu3-spieler{position:relative;width:min(62%,430px);aspect-ratio:1/1}
+.zu3-huelle{position:absolute;inset:0;z-index:2;box-shadow:0 50px 80px -40px rgba(8,6,14,.95)}
+.zu3-huelle .foto{height:100%;border-radius:4px}
+.zu3-platte{position:absolute;top:3%;left:3%;width:94%;height:94%;z-index:1;border-radius:50%;will-change:transform;
+  background:radial-gradient(circle,#111 0 31%,transparent 31.2%),repeating-radial-gradient(circle,#0B0B0D 0 2px,#17171B 2.5px 3.5px),#0B0B0D;box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.zu3-rillen{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 30deg,transparent 0 10%,rgba(255,255,255,.07) 14%,transparent 20% 60%,rgba(255,255,255,.05) 64%,transparent 70%)}
+.zu3-etikett{position:absolute;left:50%;top:50%;width:34%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--violett);color:var(--creme);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%}
+.zu3-etikett::after{content:"";position:absolute;width:5%;aspect-ratio:1;border-radius:50%;background:#111;left:47.5%;top:47.5%}
+.zu3-z{width:34%;height:34%;color:var(--creme);margin-top:-10%}
+.zu3-etikett span{font:600 clamp(8px,.7vw,11px)/1.25 var(--etikett);letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-top:16%}
+.zu3-rechts{display:flex;flex-direction:column;gap:clamp(20px,3vh,32px)}
+.zu3-seite{display:flex;flex-direction:column}
+.zu3-s-kopf{font:600 11px/1 var(--etikett);letter-spacing:.22em;text-transform:uppercase;color:var(--lila);padding-bottom:12px}
+.zu3-t{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:clamp(12px,1.8vh,18px) 0;border-top:1px solid var(--linie)}
+.zu3-seite .zu3-t:last-child{border-bottom:1px solid var(--linie)}
+.zu3-t b{font:340 clamp(20px,1.7vw,28px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72}
+.zu3-t .zt-datum{flex:none}
+
+/* 4 Die Spiesse */
+.zu4-reihe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.zu4-f{position:relative;min-width:0}
+.zu4-f>.foto{aspect-ratio:3/4.6;border-radius:6px}
+.zu4-spiess{position:absolute;left:10%;right:10%;top:var(--o,5%);bottom:calc(100% - var(--y));z-index:2;display:flex;flex-direction:column;align-items:center;transform:rotate(var(--r));transform-origin:50% 100%}
+.zu4-spiess i{flex:1 1 auto;width:5px;margin-top:-10px;background:linear-gradient(90deg,#B98B57,#E2C08F 50%,#A57A47);border-radius:3px 3px 1px 1px;box-shadow:0 6px 12px rgba(0,0,0,.35)}
+.zu4-fahne{position:relative;width:100%;background:#FFF7EF;color:var(--pflaume);padding:12px 14px 10px;border-radius:2px 6px 6px 2px;box-shadow:0 14px 26px -14px rgba(0,0,0,.8);display:flex;flex-direction:column;gap:6px;z-index:1}
+.zu4-fahne p{margin:0;font:340 clamp(14px,1.15vw,19px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.zu4-fahne .zt-datum{color:var(--violett);font-size:10.5px}
+.zu4-fahne::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--violett);border-radius:2px 0 0 2px}
+html.js:not(.ruhig) .zu4-spiess{transform:rotate(var(--r)) translateY(-70px)}
+html.js:not(.ruhig) .zu4-spiess{transition:transform 1.1s var(--k) calc(.3s + var(--i,0)*170ms)}
+html.js .da .zu4-spiess{transform:rotate(var(--r))}
+
+/* 5 Die Sterne */
+.zu5-feld{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(10px,2vw,30px);margin-top:clamp(10px,2vh,24px)}
+.zu5-st{position:relative;width:var(--g);aspect-ratio:1;display:grid;place-items:center;transform:rotate(var(--r))}
+.zu5-st.k{--g:clamp(220px,20vw,300px)}.zu5-st.m{--g:clamp(250px,23vw,340px)}.zu5-st.g{--g:clamp(300px,29vw,430px)}
+.zu5-form{position:absolute;inset:0;width:100%;height:100%;fill:#F3EBD4;filter:drop-shadow(0 20px 26px rgba(30,10,40,.35))}
+.zu5-t{position:relative;width:62%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;transform:rotate(calc(var(--r) * -.6))}
+.zu5-t p{margin:0;font:800 clamp(16px,1.55vw,24px)/1.02 var(--etikett);letter-spacing:-.01em;text-transform:uppercase;color:var(--violett)}
+.zu5-st.g .zu5-t p{font-size:clamp(19px,1.8vw,28px)}
+.zu5-st.k .zu5-t p{font-size:clamp(18px,1.7vw,26px)}
+.zu5-t .zt-datum{color:var(--violett);font-size:10.5px;opacity:.8}
+.zu5-plakat{width:clamp(220px,22vw,320px)}
+.zu5-plakat .foto{aspect-ratio:4/5;border-radius:4px;box-shadow:0 40px 60px -30px rgba(30,10,40,.6)}
+html.js:not(.ruhig) .zu5-st{transform:rotate(calc(var(--r) - 40deg)) scale(.62);transition:transform 1.2s cubic-bezier(.34,1.45,.64,1) calc(.2s + var(--i,0)*150ms)}
+html.js .da .zu5-st{transform:rotate(var(--r))}
+
+/* 6 Die Tonspur */
+.zu6-spuren{display:flex;flex-direction:column;gap:clamp(34px,6vh,64px);margin-top:clamp(10px,2vh,20px)}
+.zu6-kopf{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.zu6-kopf b{font:600 13px/1 var(--etikett);letter-spacing:.04em}
+.zu6-bild{width:44px;height:44px;flex:none;border-radius:50%;overflow:clip}
+.zu6-bild .foto{height:100%;border-radius:50%}
+.zu6-welle{position:relative;display:flex;align-items:center;gap:3px;height:clamp(64px,9vh,96px)}
+.zu6-welle i{flex:1 1 0;min-width:2px;height:100%;border-radius:3px;background:rgba(250,244,244,.18);transform:scaleY(var(--h));transition:background-color .25s}
+.zu6-welle i.an{background:var(--lila)}
+.zu6-kopfl{position:absolute;left:0;top:-8px;bottom:-8px;width:2px;background:var(--kerze);border-radius:2px;will-change:transform;box-shadow:0 0 0 4px rgba(239,118,73,.18)}
+.zu6-text{margin:18px 0 0;font:340 clamp(26px,2.9vw,48px)/1.12 var(--titel);letter-spacing:-.012em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.zu6-text span{opacity:.28;transition:opacity .35s}
+.zu6-text span.an{opacity:1}
+html.ruhig .zu6-text span{opacity:1}
+
+/* 7 Die Postkarten */
+.zu7-tisch{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(18px,2.4vw,34px);margin-top:clamp(10px,2vh,24px)}
+.zu7-k{all:unset;cursor:pointer;width:clamp(300px,28vw,420px);aspect-ratio:3/2;perspective:1400px;display:block}
+.zu7-k:focus-visible{outline:2px solid var(--violett);outline-offset:6px;border-radius:6px}
+.zu7-innen{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform 1.1s var(--k) calc(var(--i,0)*160ms)}
+.zu7-v,.zu7-r{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px;overflow:clip;box-shadow:0 24px 44px -26px rgba(30,20,40,.55),0 0 0 1px rgba(38,36,45,.08)}
+.zu7-v .foto{height:100%;border-radius:0}
+.zu7-v em{position:absolute;left:14px;bottom:12px;font:600 11px/1 var(--etikett);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.zu7-r{transform:rotateY(180deg);background:#FBF7EF;display:grid;grid-template-columns:1.25fr 1fr;padding:18px 18px 18px 22px;gap:18px;color:#26242D}
+.zu7-text{display:flex;flex-direction:column;justify-content:center;gap:12px;border-right:1px solid rgba(38,36,45,.18);padding-right:16px}
+.zu7-text b{font:340 clamp(17px,1.45vw,23px)/1.22 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.zu7-gruss{font:340 15px/1 var(--titel);color:var(--violett)}
+.zu7-rand{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding-bottom:6px}
+.zu7-marke{position:absolute;right:0;top:0;width:54px;height:64px;background:var(--violett);display:grid;place-items:center;outline:3px dotted #FBF7EF;outline-offset:-3px}
+.zu7-z{width:30px;height:32px;color:#FFF7EF}
+.zu7-stempel{position:absolute;right:62px;top:46px;width:78px;height:78px;border:1.5px solid rgba(137,83,169,.75);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transform:rotate(-14deg);color:rgba(137,83,169,.85)}
+.zu7-stempel span{font:600 8.5px/1 var(--etikett);letter-spacing:.16em;text-transform:uppercase}
+.zu7-stempel b{font:400 12px/1 var(--mono)}
+.zu7-linie{display:block;height:1px;background:rgba(38,36,45,.25)}
+html.js .da .zu7-innen{transform:rotateY(180deg)}
+html.js .da .zu7-k.um .zu7-innen{transform:none;transition-delay:0s}
+html.ruhig .zu7-innen{transform:rotateY(180deg)}
+html.ruhig .zu7-k.um .zu7-innen{transform:none}
+
+/* 8 Ein Wort je Satz */
+.zu8-folge{display:flex;flex-direction:column;gap:clamp(40px,7vh,90px);margin-top:clamp(10px,2vh,20px)}
+.zu8-w{margin:0;font:300 clamp(80px,17vw,270px)/.86 var(--titel);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--fg)}
+.zu8-e.r .zu8-w{text-align:right}
+.zu8-unten{display:grid;grid-template-columns:clamp(220px,26vw,380px) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(14px,2.4vh,28px)}
+.zu8-e.r .zu8-unten{grid-template-columns:minmax(0,1fr) clamp(220px,26vw,380px)}
+.zu8-e.r .zu8-bild{order:2}
+.zu8-e.r .zu8-satz{text-align:right;align-items:flex-end}
+.zu8-bild .foto{aspect-ratio:4/5;border-radius:6px}
+.zu8-satz{display:flex;flex-direction:column;gap:10px;padding-bottom:6px}
+.zu8-satz p{margin:0;font:340 clamp(22px,2vw,32px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;max-width:26ch}
+.zu8-e.r .zu8-satz p{margin-left:auto}
+.zu8-e:nth-child(odd) .zu8-w{color:var(--lila)}
+
+/* 9 Die Drucke */
+.zu9-tisch{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,2vw,28px);margin-top:clamp(10px,2vh,24px)}
+.zu9-d{--p:#8953A9;--g:#F3EBD4;width:clamp(250px,24vw,360px);aspect-ratio:4/5;background:var(--g);color:var(--p);padding:clamp(18px,1.8vw,28px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(8px,1vw,14px);box-shadow:0 30px 50px -30px rgba(8,6,14,.85)}
+.zu9-d.d-lila{--p:#F3EBD4;--g:#8953A9}
+.zu9-d.d-nacht{--p:#EF7649;--g:#16151A}
+.zu9-d.d-kerze{--p:#1B1A20;--g:#EF7649}
+.zu9-d.d-pflaume{--p:#F7E6FF;--g:#3B1F4D}
+.zu9-bogen{width:84%;overflow:visible}
+.zu9-bogen text{font:800 27px var(--etikett);letter-spacing:.16em;fill:var(--p)}
+.zu9-z{width:clamp(44px,4.4vw,64px);height:clamp(48px,4.8vw,70px);color:var(--p);margin-top:-6px}
+.zu9-satz{margin:auto 0;font:340 clamp(20px,1.8vw,28px)/1.15 var(--titel);font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 72}
+.zu9-fuss{display:flex;align-items:center;gap:10px;width:100%;font:600 10.5px/1 var(--etikett);letter-spacing:.22em;text-transform:uppercase}
+.zu9-fuss i{flex:1;height:1px;background:var(--p);opacity:.6}
+html.js:not(.ruhig) .zu9-d{transform:scale(1.07) translateY(-10px);transition:transform .8s cubic-bezier(.2,.9,.3,1) calc(.2s + var(--i,0)*170ms)}
+html.js .da .zu9-d{transform:none}
+
+/* 10 Das Einschlagpapier */
+.zu10{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1fr);gap:clamp(12px,1.6vw,24px);align-items:stretch;margin-top:clamp(10px,2vh,24px)}
+.zu10-bild{grid-column:2;grid-row:1;z-index:1}
+.zu10-bild .foto{height:100%;min-height:clamp(420px,46vw,620px);border-radius:6px}
+.zu10-p{grid-row:1;z-index:2;will-change:transform;background:#F5EFE3;
+  background-image:linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(115deg,rgba(255,255,255,.5),transparent 40%,rgba(0,0,0,.05) 80%);
+  background-size:22px 22px,22px 22px,100% 100%;box-shadow:0 30px 50px -30px rgba(0,0,0,.9);padding:clamp(22px,2.4vw,36px);color:var(--violett);display:flex}
+.zu10-p.l{grid-column:1}.zu10-p.r{grid-column:3}
+.zu10-druck{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,26px);mix-blend-mode:multiply;width:100%}
+.zu10-z{width:46px;height:50px;color:var(--violett)}
+.zu10-zeile{font:600 10.5px/1 var(--etikett);letter-spacing:.22em;text-transform:uppercase;padding-bottom:12px;border-bottom:2px solid var(--violett)}
+.zu10-s{display:flex;flex-direction:column;gap:6px}
+.zu10-s p{margin:0;font:800 clamp(18px,1.75vw,28px)/1.02 var(--etikett);letter-spacing:-.01em}
+.zu10-s .zt-datum{color:var(--violett);opacity:.75;font-size:11px}
+.zu10-p.r .zu10-druck{text-align:right;align-items:flex-end}
+
+/* 11 Der Fotoautomat */
+.zu11-automat{margin-top:clamp(10px,2vh,24px)}
+.zu11-schlitz{position:relative;z-index:2;height:42px;border-radius:8px;background:linear-gradient(#2E2C35,#1B1A20);box-shadow:inset 0 -10px 0 #0A090C,0 14px 24px -14px rgba(0,0,0,.9);display:flex;align-items:center;justify-content:flex-end;padding:0 18px}
+.zu11-schlitz span{font:600 10px/1 var(--etikett);letter-spacing:.3em;text-transform:uppercase;color:var(--kerze-hell)}
+.zu11-reihe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.8vw,30px);padding:0 clamp(6px,2vw,30px);overflow:clip;margin-top:-10px;padding-top:10px}
+.zu11-st{background:#FBF8F2;padding:9px 9px 0;display:flex;flex-direction:column;gap:7px;box-shadow:0 30px 40px -28px rgba(0,0,0,.95)}
+.zu11-b .foto{aspect-ratio:1/1.02;border-radius:0}
+.zu11-rand{padding:12px 4px 16px;display:flex;flex-direction:column;gap:8px;color:#26242D}
+.zu11-rand p{margin:0;font:340 clamp(14px,1.15vw,18px)/1.22 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48}
+.zu11-rand .zt-datum{color:#6B6475;font-size:10.5px}
+html.js:not(.ruhig) .zu11-st{transform:translateY(-62%);transition:transform 2.2s cubic-bezier(.3,.7,.2,1) calc(.3s + var(--i,0)*260ms)}
+html.js .da .zu11-st{transform:none}
+
+/* 12 Die Lautschrift */
+.zu12-liste{display:flex;flex-direction:column;margin-top:clamp(10px,2vh,24px)}
+.zu12-e{display:grid;grid-template-columns:clamp(72px,7vw,104px) minmax(0,1fr) auto;gap:clamp(16px,2.6vw,40px);align-items:center;padding:clamp(18px,3vh,32px) 0;border-top:1px solid var(--linie)}
+.zu12-e:last-child{border-bottom:1px solid var(--linie)}
+.zu12-bild .foto{aspect-ratio:1;border-radius:50%}
+.zu12-zeile{display:flex;flex-wrap:wrap;gap:12px clamp(12px,1.3vw,22px);align-items:flex-start}
+.zu12-w{display:flex;flex-direction:column;gap:6px}
+.zu12-w b{font:340 clamp(26px,2.7vw,44px)/1 var(--titel);letter-spacing:-.012em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96;font-weight:340}
+.zu12-ipa{display:block;overflow:clip;padding:2px 0}
+.zu12-in{display:block;font:400 clamp(13px,1vw,16px)/1.2 var(--mono);color:var(--violett);letter-spacing:.01em}
+html.js:not(.ruhig) .zu12-in{transform:translateY(110%);transition:transform 1s var(--k) calc(.3s + var(--i,0)*80ms)}
+html.js .zu12-in.da{transform:none}
+.zu12-notiz{margin-top:clamp(18px,3vh,30px);font:340 clamp(18px,1.5vw,23px)/1.4 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 48;color:var(--fg2);max-width:60ch}
+
+/* 13 Der Abreisskalender */
+.zu13{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,5vw,96px);align-items:center}
+.zu13-links{display:flex;flex-direction:column;gap:clamp(20px,3vh,30px);align-items:flex-start}
+.zu13-block{cursor:pointer;width:min(100%,440px);background:#FBF8F2;border-radius:6px;box-shadow:0 40px 60px -34px rgba(0,0,0,.95);color:#26242D;outline:none}
+.zu13-block:focus-visible{outline:2px solid var(--lila);outline-offset:6px}
+.zu13-kopf{display:flex;align-items:center;justify-content:center;gap:clamp(60px,10vw,120px);height:54px;background:var(--violett);border-radius:6px 6px 0 0;color:#FFF7EF;position:relative}
+.zu13-kopf span{font:600 12px/1 var(--etikett);letter-spacing:.3em;text-transform:uppercase}
+.zu13-kopf i{width:14px;height:14px;border-radius:50%;background:#16151A;box-shadow:inset 0 2px 3px rgba(0,0,0,.6)}
+.zu13-stapel{display:grid;position:relative}
+.zu13-blatt{grid-area:1/1;background:#FBF8F2;padding:clamp(20px,2.6vw,34px);display:flex;flex-direction:column;gap:10px;z-index:var(--z);border-top:1px dashed rgba(38,36,45,.25);transform-origin:20% 0;transition:transform .9s cubic-bezier(.5,0,.7,.3),opacity .9s}
+.zu13-wt{color:#6B6475}
+.zu13-tag{margin:0;font:300 clamp(110px,11vw,170px)/.85 var(--titel);letter-spacing:-.04em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;color:var(--violett)}
+.zu13-satz{margin:8px 0 0;font:340 clamp(20px,1.8vw,28px)/1.2 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;min-height:3.6em}
+.zu13-fuss{color:#6B6475;font-size:11px}
+.zu13-blatt.weg{transform:translate(18%,-130%) rotate(16deg);opacity:0;pointer-events:none}
+.zu13-hinweis{color:var(--fg2)}
+.zu13-box{position:relative;width:min(100%,calc(76vh * .8));aspect-ratio:4/5;overflow:clip;border-radius:8px;box-shadow:0 50px 80px -40px rgba(8,6,14,.95)}
+.zu13-b{position:absolute;inset:0;transition:transform 1s var(--k)}
+.zu13-b .foto{height:100%;border-radius:0}
+.zu13-box[data-wahl="0"] .zu13-b:not([data-s="0"]),.zu13-box[data-wahl="1"] .zu13-b:not([data-s="1"]),.zu13-box[data-wahl="2"] .zu13-b:not([data-s="2"]),.zu13-box[data-wahl="3"] .zu13-b:not([data-s="3"]),.zu13-box[data-wahl="4"] .zu13-b:not([data-s="4"]){transform:translateY(101%)}
+html.ruhig .zu13-b,html.ruhig .zu13-blatt{transition:none}
+
+/* 14 Die Spur */
+.zu14{display:flex;flex-direction:column;margin-top:clamp(10px,2vh,20px)}
+.zu14-e{display:flex;flex-direction:column}
+.zu14-inhalt{display:grid;grid-template-columns:clamp(240px,28vw,400px) minmax(0,1fr);gap:clamp(24px,3.4vw,56px);align-items:center;width:min(100%,920px)}
+.zu14-e.r .zu14-inhalt{margin-left:auto;grid-template-columns:minmax(0,1fr) clamp(240px,28vw,400px)}
+.zu14-e.r .zu14-bild{order:2}
+.zu14-e.r .zu14-satz{text-align:right;align-items:flex-end}
+.zu14-bild .foto{aspect-ratio:4/5;border-radius:6px}
+.zu14-satz{display:flex;flex-direction:column;gap:10px}
+.zu14-satz p{margin:0;font:340 clamp(26px,2.6vw,42px)/1.12 var(--titel);letter-spacing:-.01em;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 96}
+.zu14-weg{position:relative;height:clamp(140px,18vh,200px);margin:8px 0}
+.zu14-e:last-child .zu14-weg{display:none}
+.zu14-t{position:absolute;top:calc(var(--j) * 12%);left:calc(22% + var(--j) * 8.5%);width:38px;transform:rotate(var(--rot,150deg))}
+.zu14-e.r .zu14-t{left:auto;right:calc(22% + var(--j) * 8.5%);--rot:210deg}
+.zu14-e.l .zu14-t{--rot:150deg}
+.zu14-t.a{margin-left:16px}.zu14-e.r .zu14-t.a{margin-left:0;margin-right:16px}
+.zu14-fuss{display:block;width:38px;height:50px;fill:none;stroke:#FFF7EF;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+html.js:not(.ruhig) .zu14-fuss{transform:scale(.5) translateY(-14px);transition:transform .5s cubic-bezier(.3,1.6,.6,1) calc(.3s + var(--j,0)*160ms)}
+html.js .zu14-weg.da .zu14-fuss{transform:none}
+
+/* 15 Das Herz */
+.zu15{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,4vw,72px);align-items:center}
+.zu15-herz{position:relative;width:min(100%,640px);aspect-ratio:1/.98;margin-left:auto}
+.zu15-linie{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.zu15-linie path{fill:none;stroke:var(--kerze);stroke-width:.35;vector-effect:non-scaling-stroke;stroke-width:1.4}
+.zu15-text{position:absolute;inset:0;padding-top:7.5%}
+.zu15-fl,.zu15-fr{width:50%;height:100%;shape-margin:12px}
+.zu15-fl{float:left}.zu15-fr{float:right}
+.zu15-text p{margin:0;font:340 clamp(20px,2.1vw,31px)/1.14 var(--titel);font-variation-settings:"SOFT" 100,"opsz" 72;text-align:center;color:var(--weiss)}
+.zu15-d{font:400 .48em/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--kerze-hell);vertical-align:.25em}
+html.js:not(.ruhig) .zu15-herz.da{animation:zu15-schlag 1.1s cubic-bezier(.3,.7,.3,1) .5s 1}
+@keyframes zu15-schlag{0%{transform:none}18%{transform:scale(1.05)}34%{transform:scale(.99)}50%{transform:scale(1.035)}100%{transform:none}}
+
+@media (max-width:860px){
+  .zu1-wand{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:clamp(220px,62vw,320px)}
+  .zu1-f{grid-column:auto!important;grid-row:auto!important}
+  .zu1-f:first-child{grid-column:1/-1!important}
+  .zu1-blase{max-width:88%;padding:10px 12px 9px;border-radius:16px}.zu1-blase p{font-size:15px}
+  .zus01 .zu1-f:first-child .zu1-blase p{font-size:20px}
+  .zu2-s.n-gross p{font-size:15vw}.zu2-s p{font-size:26px}
+  .zu3{grid-template-columns:1fr}.zu3-spieler{width:78%;margin-right:22%}
+  .zu4-reihe{grid-template-columns:1fr 1fr;gap:70px 10px}.zu4-f:last-child{grid-column:1/-1}.zu4-f:last-child>.foto{aspect-ratio:4/3}
+  .zu4-fahne{width:40vw}.zu4-f:nth-child(even) .zu4-fahne{left:auto;right:2px}.zu4-f:nth-child(odd) .zu4-fahne{left:2px;right:auto}
+  .zu5-st.k,.zu5-st.m{--g:44vw}.zu5-st.g{--g:72vw}.zu5-t p{font-size:14px!important}.zu5-plakat{width:52vw}
+  .zu6-welle{gap:2px;height:56px}.zu6-welle i:nth-child(n+44){display:none}
+  .zu7-k{width:100%}
+  .zu7-r{padding:14px;gap:12px}.zu7-text b{font-size:16px}.zu7-stempel{width:62px;height:62px;right:18px}
+  .zu8-w{font-size:22vw}.zu8-unten,.zu8-e.r .zu8-unten{grid-template-columns:38% minmax(0,1fr)}.zu8-e.r .zu8-unten{grid-template-columns:minmax(0,1fr) 38%}
+  .zu8-satz p{font-size:19px}
+  .zu9-d{width:calc(50% - 8px)}.zu9-d:last-child{width:100%;aspect-ratio:auto;padding:22px}.zu9-satz{font-size:16px}.zu9-bogen text{font-size:30px}
+  .zu10{grid-template-columns:1fr}.zu10-bild,.zu10-p.l,.zu10-p.r{grid-column:1;grid-row:auto}.zu10-bild{order:-1}.zu10-bild .foto{min-height:0;aspect-ratio:4/5}
+  .zu10-p{transform:none!important}
+  .zu11-reihe{grid-template-columns:repeat(5,64vw);overflow-x:auto;overflow-y:clip;scrollbar-width:none;padding-bottom:30px}.zu11-reihe::-webkit-scrollbar{display:none}
+  .zu12-e{grid-template-columns:56px minmax(0,1fr);gap:12px 14px}.zu12-e>.zt-datum{grid-column:2}.zu12-w b{font-size:22px}.zu12-in{font-size:11.5px}
+  .zu13{grid-template-columns:1fr}.zu13-bilder{order:-1}.zu13-box{width:min(100%,44vh * .8);margin:0 auto}
+  .zu14-inhalt,.zu14-e.r .zu14-inhalt{grid-template-columns:42% minmax(0,1fr)}.zu14-e.r .zu14-inhalt{grid-template-columns:minmax(0,1fr) 42%}
+  .zu14-satz p{font-size:20px}.zu14-weg{height:120px}
+  .zu15{grid-template-columns:1fr}.zu15-herz{margin:0 auto}.zu15-text p{font-size:clamp(13px,4.3vw,17px);line-height:1.14}.zu15-fl,.zu15-fr{shape-margin:6px}
+  .zu9-fuss{letter-spacing:.1em;font-size:9px;white-space:nowrap}.zu9-fuss i{min-width:8px}
+}

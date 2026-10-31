@@ -1,0 +1,488 @@
+{
+ "zeit": "2026-10-30T03:36:15.612Z",
+ "basis": "http://127.0.0.1:9081/_werkzeuge/maison/",
+ "gruen": 80,
+ "rot": 0,
+ "ergebnis": [
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: Antwort 200",
+   "gut": true,
+   "info": 200
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: keine kaputten Bilder",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: kein seitliches Überlaufen",
+   "gut": true,
+   "info": "0 px"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: Startfehler-Tür zu",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: alle Stücke aufgetreten",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: Konsole leer",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 1: kein roher Code im Text ({ undefined NaN None)",
+   "gut": true,
+   "info": null
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Erstes Bild: Titel, Zahlenzeile und alle sechs Werkzeuge ganz (10a)",
+   "gut": true,
+   "info": "900 / 900 / 224"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Leiste: Namen nie unter einem Knopf (10a)",
+   "gut": true,
+   "info": "nur Marke"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: Antwort 200",
+   "gut": true,
+   "info": 200
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: keine kaputten Bilder",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: kein seitliches Überlaufen",
+   "gut": true,
+   "info": "0 px"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: Startfehler-Tür zu",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: alle Stücke aufgetreten",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: Konsole leer",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laden 2: kein roher Code im Text ({ undefined NaN None)",
+   "gut": true,
+   "info": null
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Gruss morgen",
+   "gut": true,
+   "info": "Guten Morgen. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Gruss tag",
+   "gut": true,
+   "info": "Guten Tag. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Gruss abend",
+   "gut": true,
+   "info": "Guten Abend. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Sechs Werkzeuge in der Tafel",
+   "gut": true,
+   "info": 6
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 1: Zeiger hebt Werkzeug 1 hervor",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 1: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 2: Zeiger hebt Werkzeug 2 hervor",
+   "gut": true,
+   "info": 1
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 2: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 3: Zeiger hebt Werkzeug 3 hervor",
+   "gut": true,
+   "info": 2
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 3: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 4: Zeiger hebt Werkzeug 4 hervor",
+   "gut": true,
+   "info": 3
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 4: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 5: Zeiger hebt Werkzeug 5 hervor",
+   "gut": true,
+   "info": 4
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 5: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 6: Zeiger hebt Werkzeug 6 hervor",
+   "gut": true,
+   "info": 5
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeile 6: nichts hüpft",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Zeiger weg: kein Werkzeug hervorgehoben",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Tastatur-Fokus auf Zeile 3 hebt sie hervor",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Fünf Fenster nebeneinander: gleiche Oberkante, Höhe und Breite",
+   "gut": true,
+   "info": "[[0,900,288],[0,900,288],[0,900,288],[0,900,288],[0,900,288]]"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Namen der Fenster auf einer Linie (Kriterium 3)",
+   "gut": true,
+   "info": "731 / 731 / 731 / 731 / 731"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Empfang ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 1 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9082/_werkzeuge/bureau/"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 2 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9083/_werkzeuge/carte/#abend"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 3 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9087/_werkzeuge/imprimerie/"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 4 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9084/_werkzeuge/reception/"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 5 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9085/_werkzeuge/livre/"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Taste 6 öffnet das Werkzeug",
+   "gut": true,
+   "info": "http://127.0.0.1:9086/_werkzeuge/registre/"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laufzeile läuft im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Laufzeile hält ausserhalb",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Ecke führt nach oben",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Eck-Knöpfe ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Weniger Bewegung: nichts verschoben",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Startfehler-Tür öffnet bei fehlendem Skript",
+   "gut": true,
+   "info": "Die Datei maison.js liess sich nicht laden."
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Ohne Antwort: Sätze ohne Zahl",
+   "gut": true,
+   "info": "Die Website, Seite für Seite | Menü und Drinks je Abend | Vorlagen, druckfertig | Chat auf der Website | Fotos, Dateien, Markenprüfung | Vorlagen, druckfertig"
+  },
+  {
+   "w": "webkit 1440",
+   "name": "Ohne Antwort: Zahlenzeile «–»",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: Antwort 200",
+   "gut": true,
+   "info": 200
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: keine kaputten Bilder",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: kein seitliches Überlaufen",
+   "gut": true,
+   "info": "0 px"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: Startfehler-Tür zu",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: alle Stücke aufgetreten",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: Konsole leer",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 1: kein roher Code im Text ({ undefined NaN None)",
+   "gut": true,
+   "info": null
+  },
+  {
+   "w": "webkit 390",
+   "name": "Leiste: Namen nie unter einem Knopf (10a)",
+   "gut": true,
+   "info": "nur Marke"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: Antwort 200",
+   "gut": true,
+   "info": 200
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: keine kaputten Bilder",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: kein seitliches Überlaufen",
+   "gut": true,
+   "info": "0 px"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: Startfehler-Tür zu",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: alle Stücke aufgetreten",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: Konsole leer",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laden 2: kein roher Code im Text ({ undefined NaN None)",
+   "gut": true,
+   "info": null
+  },
+  {
+   "w": "webkit 390",
+   "name": "Gruss morgen",
+   "gut": true,
+   "info": "Guten Morgen. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Gruss tag",
+   "gut": true,
+   "info": "Guten Tag. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Gruss abend",
+   "gut": true,
+   "info": "Guten Abend. · Freitag, 30. Oktober 2026"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Sechs Werkzeuge in der Tafel",
+   "gut": true,
+   "info": 6
+  },
+  {
+   "w": "webkit 390",
+   "name": "Handy: Fenster untereinander, ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Empfang ohne Fehler",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laufzeile läuft im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Laufzeile hält ausserhalb",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Ecke führt nach oben",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Eck-Knöpfe ganz im Bild",
+   "gut": true,
+   "info": ""
+  },
+  {
+   "w": "webkit 390",
+   "name": "Weniger Bewegung: nichts verschoben",
+   "gut": true,
+   "info": 0
+  },
+  {
+   "w": "webkit 390",
+   "name": "Startfehler-Tür öffnet bei fehlendem Skript",
+   "gut": true,
+   "info": "Die Datei maison.js liess sich nicht laden."
+  },
+  {
+   "w": "webkit 390",
+   "name": "Ohne Antwort: Sätze ohne Zahl",
+   "gut": true,
+   "info": "Die Website, Seite für Seite | Menü und Drinks je Abend | Vorlagen, druckfertig | Chat auf der Website | Fotos, Dateien, Markenprüfung | Vorlagen, druckfertig"
+  },
+  {
+   "w": "webkit 390",
+   "name": "Ohne Antwort: Zahlenzeile «–»",
+   "gut": true,
+   "info": ""
+  }
+ ]
+}

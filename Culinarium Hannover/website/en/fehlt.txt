@@ -1,0 +1,1 @@
+# Deutsche Reste, die en/texte.json nicht kennt (bau_en.py, Version 26216)

@@ -1,0 +1,25 @@
+{
+  "station": "11",
+  "name": "Le Bureau / Der Schreibtisch",
+  "rolle": "Werkbank-Bauer + Werkzeug-Anpasser ×7",
+  "haus": "Culinarium Hannover",
+  "teil": "website",
+  "zustand": "liegt vor",
+  "beginn": "2026-10-28T11:43+08:00",
+  "ende": "2026-10-28T12:26+08:00",
+  "verbrauch": {
+    "budget_vorher": null,
+    "budget_nachher": null,
+    "guthaben": []
+  },
+  "offen": [],
+  "paket": [
+    "werkzeuge/<schlüssel>/STAND.md",
+    "../../werkbank/"
+  ],
+  "adresse": "http://127.0.0.1:9082/_werkzeuge/bureau/",
+  "briefing": "briefing.html?teil=website",
+  "notiz": "Le Bureau fertig gebaut und selbst bedient (bedienen.js Chromium/WebKit 1440/390/320 alle grün, masse.js 93/93 beide, Termine als eigene Ansicht); Lieferung _werkzeuge/bureau/LIEFERUNG.md; Abnahme durch neuen Chat",
+  "bestaetigt": null,
+  "rueckgaben": []
+}
