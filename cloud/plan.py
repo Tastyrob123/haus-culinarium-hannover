@@ -8,7 +8,7 @@ roh = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get('NUR', ''))
 nur = [x.strip() for x in roh.split(',') if x.strip()]
 nur += [H.get('namen', {})[n] for n in list(nur) if n in H.get('namen', {})] + [a for a, b in H.get('namen', {}).items() if b in nur]
 passt = lambda k: not nur or any(k == n or k.split('-')[0] == n for n in nur)
-tor = list(dict.fromkeys(z['k'] for z in json.load(open(os.path.join(WS, H['tor_ziele']), encoding='utf-8'))['ziele'] if passt(z['k'])))
+tor = list(dict.fromkeys(z['k'] for z in json.load(open(os.path.join(WS, H['tor_ziele']), encoding='utf-8'))['ziele'] if passt(z['k']) and z['k'] not in H.get('auslassen', [])))   # auslassen: Ziele, die ein anderes Ziel schon ganz abdeckt
 # Teilgrösse aus den zuletzt gemessenen Zuständen (haus.json «zustaende», nach jedem Lauf aus zeiten.json nachgeführt): höchstens «zustaende_je_teil» je Rechner
 import math
 JE = H.get('zustaende_je_teil', 16)

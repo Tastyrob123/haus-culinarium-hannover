@@ -12,6 +12,7 @@ for k, teile in ziele.items():
         j = json.load(open(os.path.join(t, 'inventar.json'), encoding='utf-8')); teil = os.path.basename(os.path.dirname(t))
         if ges is None: ges = dict(j, zustaende=[], kanten=[], nichtErreicht=[], fehler=[], voll=True, teile=[])
         for z in j['zustaende']:
+            if z.get('fremd'): weg.add(z['id']); continue   # nur besucht, ein anderer Teil hat gemessen
             if z.get('sig') and z['sig'] in sigs: weg.add(z['id']); continue
             sigs.add(z.get('sig')); ges['zustaende'].append(z)
         for f in ('kanten', 'nichtErreicht', 'fehler'): ges[f] += j.get(f, [])

@@ -16,7 +16,11 @@ const z = CFG.ziele.find(x => x.k === arg('nur')); if (!z) { console.error('--nu
 const BROWSER = arg('browser', 'webkit');
 const STICH = arg('stichprobe');
 const [W, H] = (STICH || arg('groesse', '1440x900')).split('x').map(Number);
-const [ZI, ZN] = (arg('zweig', '1/1')).split('/').map(Number);   // Cloud 31.10.2026: Teil-Inventar, nur jeder ZN-te Klick vom Start aus (ab ZI), eigener Rechner je Teil
+const [ZI, ZN] = (arg('zweig', '1/1')).split('/').map(Number);   // Cloud 31.10.2026: Teil-Inventar ZI von ZN, eigener Rechner je Teil
+// Gleichmässige Teilung: Start und erste Ebene (bis --teiltiefe) besucht jeder Teil, gemessen wird jeder Zustand nur von seinem Teil (Kennung reihum);
+// ab der Ebene darunter gehört jeder Zustand samt allem, was von ihm aus erreichbar ist, genau einem Teil.
+const ZTIEFE = +arg('teiltiefe', 1);
+const eigen = sg => { if (ZN <= 1) return true; let h = 0; for (const c of String(sg)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % ZN === ZI - 1; };
 const MAX = +arg('max', z.max || 450), TIEFE = +arg('tiefe', z.tiefe || 4);
 const GEFAHR = z.gefahrExtra ? CFG.gefahr + '|' + z.gefahrExtra : CFG.gefahr;   // je Ziel zusätzlich gesperrte Klicks (z. B. Schritte einer Führung, die das Tor festhalten)
 // K12 aus dem Stilblatt des Hauses (CFG.stilblatt): Versalien nur in Rollen mit «versalien: true» und den Bild-Rollen (plakat, plakatfett, kopf),
@@ -148,7 +152,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
   if (STICH) {
     const inv = JSON.parse(fs.readFileSync(path.join(ORDNER, 'inventar.json'), 'utf8')).zustaende;
     const IDS = arg('ids') ? new Set(arg('ids').split(',')) : null;   // gezielt nachholen (Oberchef 30.10.: am Handy nicht erreichte Zustände, kein Volllauf)
-    const wahl = IDS ? inv.filter(x => IDS.has(x.id)) : inv.filter((x, i) => ['start', 'navigation', 'reiter', 'unterseite'].includes(x.art) || i % (+arg('jede', 5)) === 0).slice(0, +arg('stichmax', 70));
+    const wahl = IDS ? inv.filter(x => IDS.has(x.id)) : inv.filter(x => !x.fremd).filter((x, i) => ['start', 'navigation', 'reiter', 'unterseite'].includes(x.art) || i % (+arg('jede', 5)) === 0).slice(0, +arg('stichmax', 70));
     const [ti, tn] = (arg('teil', '1/1')).split('/').map(Number);   // Stichprobe in Teilen parallel: --teil 2/4 nimmt jeden vierten Zustand ab dem zweiten
     const AB = +arg('ab', 0);   // Tor 3: ab dem N-ten Zustand weitermachen (nach Hänger)
     const wahlT = wahl.filter((x, i) => i % tn === ti - 1).slice(AB);
@@ -172,8 +176,10 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
     const id = (ZN > 1 ? `z${ZI}-` : '') + String(++nr).padStart(3, '0');
     const name = k ? (vorher.name === 'Start' ? '' : vorher.name + ' → ') + (k.ziel === 'dokklick' ? 'Leiste am Dokument' : k.text.split(' ').slice(0, 7).join(' ')) : 'Start';
     const zu = { id, k: z.k, werkzeug: z.name, name, art: art(k, vorher || s, s), tiefe, weg, sig: s.sig, url: page.url(), titel: s.titel, aktiv: s.aktiv, fenster: s.fenster, dok: s.dok, inhalt: s.inhalt, steuer: k ? { text: k.text, wo: k.wo, gruppe: k.gruppe } : null };
-    await messe(zu); bekannt.set(s.sig, zu); zustaende.push(zu);
-    log(id, zu.art, name.slice(0, 70), '·', zu.funde.length, 'Funde');
+    zu.fremd = ZN > 1 && tiefe <= ZTIEFE && !eigen(s.sig);   // nur besucht, gemessen von einem anderen Teil
+    if (zu.fremd) zu.funde = []; else await messe(zu);
+    bekannt.set(s.sig, zu); zustaende.push(zu);
+    log(id, zu.art, name.slice(0, 70), '·', zu.fremd ? 'nur besucht' : zu.funde.length + ' Funde');
     fs.writeFileSync(path.join(ORDNER, 'inventar.json'), JSON.stringify({ zeit: new Date().toISOString(), browser: BROWSER, groesse: [W, H], werkzeug: z, zustaende, kanten, nichtErreicht, fehler: fehler.slice(0, 50) }, null, 1));
     return zu;
   };
@@ -187,7 +193,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
 
   const schlange = [bekannt.get(s0.sig)];
   // weitere Einstiege (z. B. ?rundgang): je ein Startzustand, der wie der Start weiter erkundet wird
-  for (const [ui, u] of (z.startExtra || []).entries()) { if (ZN > 1 && ui % ZN !== ZI - 1) continue; const k = { ziel: 'seite', href: u, text: u.split('/').pop() || u, wo: 'haupt', gruppe: 'einstieg', key: 'einstieg|' + u };
+  for (const u of z.startExtra || []) { const k = { ziel: 'seite', href: u, text: u.split('/').pop() || u, wo: 'haupt', gruppe: 'einstieg', key: 'einstieg|' + u };
     if (await gehe([k])) { const s = await sig(); if (s && !bekannt.has(s.sig)) schlange.push(await neu([k], k, bekannt.get(s0.sig), s, 1)); } }
   while (schlange.length && zustaende.length < MAX) {
     const x = schlange.shift(); if (x.tiefe >= TIEFE || !x.weg) continue;
@@ -204,7 +210,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
       if (geklickt.has(key) && !kette) continue; k.key = key;
       if (k.gruppenZahl > 8 && k.wo === 'haupt') { proGruppe[k.gruppe] = (proGruppe[k.gruppe] || 0) + 1; if (proGruppe[k.gruppe] > 3) { (x.rest = x.rest || {})[k.gruppe] = (x.rest[k.gruppe] || []).concat([k]); continue; } }
       liste.push(k); }
-    if (ZN > 1 && x.tiefe === 0) { const alle = liste.splice(0); alle.forEach((k, i) => { if (i % ZN === ZI - 1) liste.push(k); }); for (const g of Object.keys(x.rest || {})) x.rest[g] = x.rest[g].filter((k, i) => i % ZN === ZI - 1); }
+    if (ZN > 1 && x.tiefe === ZTIEFE) { const alle = liste.splice(0); for (const k of alle) if (eigen(x.sig + '|' + k.key)) liste.push(k); for (const g of Object.keys(x.rest || {})) x.rest[g] = x.rest[g].filter(k => eigen(x.sig + '|' + (k.gruppe + '|' + k.text + '|' + k.nr))); }   // Klicks ab dieser Ebene reihum, vor dem Klick entschieden
     const dokGruppen = new Set();
     spur('liste', liste.length);
     const bediene = async k => {

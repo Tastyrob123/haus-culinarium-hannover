@@ -73,7 +73,7 @@
   "namen": {
     "markenbuch": "plakatarchiv"
   },
-  "zustaende_je_teil": 16,
+  "zustaende_je_teil": 24,
   "zustaende": {
     "besucherliste": 71,
     "besucherliste-anleitung": 60,
@@ -97,5 +97,9 @@
     "werkbank": 83,
     "werkbank-karte": 73,
     "werkbank-ki": 82
-  }
+  },
+  "auslassen": [
+    "gaestebuch-rundgang",
+    "plakatarchiv-rundgang"
+  ]
 }
