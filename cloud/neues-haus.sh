@@ -1,11 +1,12 @@
 #!/bin/zsh
 # Neues Haus in die Cloud schicken (läuft einmal auf Roberts Mac, dauert nur so lange wie das Hochladen).
-#   cloud/neues-haus.sh "Taverne zum Schäfli Wigoltingen" schaefli
+#   cloud/neues-haus.sh "Taverne zum Schäfli Wigoltingen" schaefli [--oeffentlich]
 # Privater Ordner (nie öffentlich ohne Roberts ausdrückliches Ja): nur dieses Haus und die Prüfwerkzeuge, keine Regelwerke (vorgaben), keine anderen Häuser.
 # Legt ~/Cloud-Haeuser/<kurz>/ an, kopiert Website, Werkbank, Werkzeuge (ohne alte Prüfbilder, Sicherungen, Schlüssel),
 # die Prüfwerkzeuge und den Cloud-Rahmen, legt den privaten GitHub-Ordner Tastyrob123/haus-<kurz> an und lädt hoch.
 # Das Kundenmaterial (_quelle) kommt in den Zweig «quelle», damit die Prüfrechner es nicht laden müssen.
 set -e
+SICHT=--private; [ "${3:-}" = "--oeffentlich" ] && SICHT=--public   # öffentlich nur mit Schalter (Prüfminuten dann kostenlos), Entscheid je Haus bei Robert
 HAUS="$1"; KURZ="$2"; [ -z "$HAUS" -o -z "$KURZ" ] && { echo 'Aufruf: neues-haus.sh "<Hausordner>" <kurz>'; exit 2; }
 WP=~/Desktop/Website-Projekte; Q="$WP/$HAUS"; [ -d "$Q" ] || { echo "Ordner fehlt: $Q"; exit 2; }
 VORLAGE=${0:A:h:h}; R=~/Cloud-Haeuser/$KURZ; REPO=Tastyrob123/haus-$KURZ
@@ -52,7 +53,7 @@ PY
 # Schlüssel-Suche: bricht ab, wenn etwas wie ein Schlüssel aussieht
 if grep -rIlE "sk-ant-[A-Za-z0-9_-]{10,}|ghp_[A-Za-z0-9]{20,}|github_pat_|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE)|vercel_[A-Za-z0-9]{20,}" "$R" | grep -v '/cloud/neues-haus.sh$'; then echo "Schlüssel gefunden, nichts hochgeladen"; exit 1; fi
 cd "$R"; [ -d .git ] || git init -q -b main; git config core.quotepath false; git add -A; git commit -qm "$HAUS: Stand für die Cloud" || true
-gh repo view $REPO >/dev/null 2>&1 || gh repo create $REPO --private --source . --remote origin
+gh repo view $REPO >/dev/null 2>&1 || gh repo create $REPO $SICHT --source . --remote origin
 git -c http.postBuffer=524288000 push -u origin main
 if [ -d "$Q/_quelle" ]; then T=$(mktemp -d); mkdir -p "$T/$HAUS"; rsync -a --exclude-from=$AUS "$Q/_quelle" "$T/$HAUS/"
   ( cd $T && git init -q -b quelle && git add -A && git commit -qm "Kundenmaterial" && git remote add origin https://github.com/$REPO.git && git -c http.postBuffer=524288000 push -f origin quelle ); rm -rf $T; fi
