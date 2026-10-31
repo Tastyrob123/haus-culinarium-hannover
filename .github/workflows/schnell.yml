@@ -24,7 +24,7 @@ permissions:
 
 concurrency:
   group: schnell-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
