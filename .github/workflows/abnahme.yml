@@ -1,0 +1,193 @@
+name: Abnahme in der Cloud
+
+# Voller Abnahmelauf eines Hauses ohne Roberts Mac. Alles gleichzeitig, jeder Rechner frisch:
+#  - Teil: je Werkzeug-Teil ein Rechner. Teil-Inventar (WebKit 1440 × 900, nur jeder n-te Klick vom Start aus),
+#          danach die Stichproben 1280 / 1000 / 390 desselben Teils parallel im selben Rechner.
+#  - Messlauf: je Werkzeug-Gruppe × Browser (Chromium, WebKit) × Breite (1440, 1280, 1000, 390) ein Rechner.
+#  - Bewegung: je Ziel ein Rechner (Kriterien 34/37).
+#  - Auswertung: Abdeckungstafel, Fundliste mit Bildern, Messlauf-Tafel, Zeiten und Rechner-Minuten.
+#    Ergebnis an den Commit gebunden: Zweig «ergebnis», Ordner ergebnis/laeufe/<zweig>/ mit lauf.json (Commit).
+# Start: Commit mit «[abnahme]» oder «[abnahme: markenbuch,gaestebuch]» in der Nachricht, oder Knopf «Run workflow».
+
+on:
+  push:
+    branches: ['**', '!ergebnis', '!quelle']
+  workflow_dispatch:
+    inputs:
+      nur:
+        description: 'Nur diese Werkzeuge (Komma, leer = alle)'
+        required: false
+        default: ''
+      titel:
+        description: 'Titel der Tafel'
+        required: false
+        default: 'Abnahme in der Cloud'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: abnahme-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
+  TOR_NEUSTART: '40'
+  TOR_HAENGER_MIN: '8'
+  TOR_KLICK_MIN: '4'
+  TOR_UHR: '2026-10-31T10:00:00+01:00'
+
+jobs:
+  plan:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[abnahme')
+    runs-on: ubuntu-24.04
+    outputs:
+      teile: ${{ steps.p.outputs.teile }}
+      mess: ${{ steps.p.outputs.mess }}
+      bewegung: ${{ steps.p.outputs.bewegung }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            cloud
+            _Werkzeuge/abnahme-tor
+            _Werkzeuge/messlauf
+      - id: p
+        env:
+          NACHRICHT: ${{ github.event.head_commit.message }}
+        run: |
+          NUR="${{ inputs.nur }}"
+          if [ -z "$NUR" ]; then NUR="$(python3 -c "import os,re;m=re.search(r'\[abnahme:\s*([^\]]+)\]',os.environ.get('NACHRICHT',''));print(m.group(1).strip() if m else '')")"; fi
+          echo "Werkzeuge: ${NUR:-alle}" >> "$GITHUB_STEP_SUMMARY"
+          python3 cloud/plan.py "$NUR" | grep anzahl >> "$GITHUB_STEP_SUMMARY"
+          python3 cloud/plan.py "$NUR" > /dev/null
+
+  teil:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.teile) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/ms-playwright
+          key: pw-1.62.1-webkit-chromium
+      - run: bash cloud/vorbereiten.sh "webkit chromium"
+      - run: bash cloud/server.sh
+      - name: Teil-Inventar ${{ matrix.name }} (WebKit 1440) und Stichproben
+        run: bash cloud/teil.sh "${{ matrix.k }}" "${{ matrix.zweig }}" "${{ matrix.name }}"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: teil-${{ matrix.name }}
+          path: aus
+          retention-days: 3
+          compression-level: 0
+
+  messlauf:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.mess) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/ms-playwright
+          key: pw-1.62.1-webkit-chromium
+      - run: bash cloud/vorbereiten.sh "webkit chromium"
+      - run: bash cloud/server.sh
+      - name: Messlauf ${{ matrix.gruppe }} · ${{ matrix.browser }} · ${{ matrix.w }}
+        run: |
+          M="$(python3 -c "import json;print(json.load(open('cloud/haus.json'))['mess_ziele'])")"
+          O="aus/messlauf/${{ matrix.gruppe }}-${{ matrix.browser }}-${{ matrix.w }}"
+          mkdir -p "$O" aus/_zeiten; t0=$(date +%s)
+          for v in 1 2; do
+            timeout 200m node _Werkzeuge/messlauf/messlauf.js "$M" "$O" --nur "${{ matrix.ks }}" --browser "${{ matrix.browser }}" --groesse "${{ matrix.w }}" > "$O/lauf.txt" 2>&1 && break
+            echo "Versuch $v endete mit Fehler, neu"; tail -5 "$O/lauf.txt"
+          done
+          tail -3 "$O/lauf.txt"
+          echo "{\"job\":\"messlauf\",\"k\":\"${{ matrix.gruppe }}\",\"browser\":\"${{ matrix.browser }}\",\"w\":\"${{ matrix.w }}\",\"sek\":$(( $(date +%s) - t0 ))}" > "aus/_zeiten/mess-${{ matrix.gruppe }}-${{ matrix.browser }}-${{ matrix.w }}.json"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mess-${{ matrix.gruppe }}-${{ matrix.browser }}-${{ matrix.w }}
+          path: aus
+          retention-days: 3
+          compression-level: 0
+
+  bewegung:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        k: ${{ fromJSON(needs.plan.outputs.bewegung) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/ms-playwright
+          key: pw-1.62.1-webkit-chromium
+      - run: bash cloud/vorbereiten.sh "webkit chromium"
+      - run: bash cloud/server.sh
+      - name: Bewegung ${{ matrix.k }}
+        run: |
+          H="$(python3 -c "import json;print(json.load(open('cloud/haus.json'))['tor_ziele'])")"
+          mkdir -p "aus/${{ matrix.k }}/bewegung" aus/_zeiten; t0=$(date +%s)
+          timeout 80m node _Werkzeuge/abnahme-tor/bewegung-tor.js "$H" "aus/${{ matrix.k }}/bewegung" --nur "${{ matrix.k }}" > "aus/${{ matrix.k }}/bewegung/lauf.txt" 2>&1 || echo "bewegung endete mit $?"
+          tail -3 "aus/${{ matrix.k }}/bewegung/lauf.txt"
+          echo "{\"job\":\"bewegung\",\"k\":\"${{ matrix.k }}\",\"sek\":$(( $(date +%s) - t0 ))}" > "aus/_zeiten/bew-${{ matrix.k }}.json"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bew-${{ matrix.k }}
+          path: aus
+          retention-days: 3
+          compression-level: 0
+
+  auswertung:
+    needs: [plan, teil, messlauf, bewegung]
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            cloud
+            _Werkzeuge
+      - uses: actions/download-artifact@v4
+        with:
+          path: lauf
+          merge-multiple: true
+      - run: pip install --quiet --break-system-packages numpy pillow
+      - name: Teile zusammenführen, Tafeln bauen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 cloud/teile_zusammen.py lauf
+          python3 cloud/zusammen.py lauf ergebnis --titel "${{ inputs.titel || 'Abnahme in der Cloud' }}" --run "${{ github.run_id }}"
+      - run: cat ergebnis/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ergebnis
+          path: ergebnis
+          retention-days: 14
+      - name: Ergebnis auf den Zweig «ergebnis» legen (an den Commit gebunden)
+        run: |
+          Z="ergebnis/laeufe/${GITHUB_REF_NAME//\//-}"
+          if git fetch --depth 1 origin ergebnis 2>/dev/null; then git worktree add -f /tmp/erg FETCH_HEAD; else git worktree add --detach /tmp/erg; (cd /tmp/erg && git rm -rqf . >/dev/null 2>&1 || true); fi
+          cd /tmp/erg && rm -rf "$Z" && mkdir -p "$Z" && cp -r "$GITHUB_WORKSPACE/ergebnis/." "$Z/"
+          echo "{\"zweig\":\"$GITHUB_REF_NAME\",\"stand\":\"$GITHUB_SHA\",\"lauf\":\"$GITHUB_RUN_ID\",\"zeit\":\"$(date -u +%FT%TZ)\"}" > "$Z/lauf.json"
+          python3 "$GITHUB_WORKSPACE/cloud/uebersicht.py" ergebnis/laeufe > index.html
+          git config user.name "Abnahme in der Cloud"; git config user.email "abnahme@users.noreply.github.com"
+          git checkout -q --orphan erg-neu && git add -A && git commit -qm "Abnahme $GITHUB_REF_NAME $GITHUB_SHA" && git push -f origin HEAD:refs/heads/ergebnis

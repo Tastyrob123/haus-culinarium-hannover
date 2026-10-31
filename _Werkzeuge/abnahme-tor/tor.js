@@ -16,6 +16,7 @@ const z = CFG.ziele.find(x => x.k === arg('nur')); if (!z) { console.error('--nu
 const BROWSER = arg('browser', 'webkit');
 const STICH = arg('stichprobe');
 const [W, H] = (STICH || arg('groesse', '1440x900')).split('x').map(Number);
+const [ZI, ZN] = (arg('zweig', '1/1')).split('/').map(Number);   // Cloud 31.10.2026: Teil-Inventar, nur jeder ZN-te Klick vom Start aus (ab ZI), eigener Rechner je Teil
 const MAX = +arg('max', z.max || 450), TIEFE = +arg('tiefe', z.tiefe || 4);
 const GEFAHR = z.gefahrExtra ? CFG.gefahr + '|' + z.gefahrExtra : CFG.gefahr;   // je Ziel zusätzlich gesperrte Klicks (z. B. Schritte einer Führung, die das Tor festhalten)
 // K12 aus dem Stilblatt des Hauses (CFG.stilblatt): Versalien nur in Rollen mit «versalien: true» und den Bild-Rollen (plakat, plakatfett, kopf),
@@ -52,6 +53,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
     if (ctx) await Promise.race([ctx.close().catch(() => { }), warte0(15000)]);
     if (++kontexte % NEUSTART === 0) await frisch();
     ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, locale: 'de-DE', timezoneId: 'Europe/Berlin', hasTouch: hand, acceptDownloads: false });
+    if (process.env.TOR_UHR) await ctx.clock.setFixedTime(new Date(process.env.TOR_UHR)).catch(() => { });   // Cloud 31.10.2026: feste Uhrzeit, Zustände bleiben nachspielbar
     await ctx.route('**/*', r => { const q = r.request(), u = q.url();
       if (/^(mailto|tel):/.test(u)) return r.abort();
       if (q.method() !== 'GET' && q.method() !== 'HEAD') return r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"tor":true}' });
@@ -157,7 +159,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
   // ---------- Inventar: Zustände aus dem Werkzeug lesen ----------
   const zustaende = [], bekannt = new Map(), geklickt = new Set(), kanten = [], nichtErreicht = [];
   const neu = async (weg, k, vorher, s, tiefe) => {
-    const id = String(++nr).padStart(3, '0');
+    const id = (ZN > 1 ? `z${ZI}-` : '') + String(++nr).padStart(3, '0');
     const name = k ? (vorher.name === 'Start' ? '' : vorher.name + ' → ') + (k.ziel === 'dokklick' ? 'Leiste am Dokument' : k.text.split(' ').slice(0, 7).join(' ')) : 'Start';
     const zu = { id, k: z.k, werkzeug: z.name, name, art: art(k, vorher || s, s), tiefe, weg, sig: s.sig, url: page.url(), titel: s.titel, aktiv: s.aktiv, fenster: s.fenster, dok: s.dok, inhalt: s.inhalt, steuer: k ? { text: k.text, wo: k.wo, gruppe: k.gruppe } : null };
     await messe(zu); bekannt.set(s.sig, zu); zustaende.push(zu);
@@ -175,7 +177,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
 
   const schlange = [bekannt.get(s0.sig)];
   // weitere Einstiege (z. B. ?rundgang): je ein Startzustand, der wie der Start weiter erkundet wird
-  for (const u of z.startExtra || []) { const k = { ziel: 'seite', href: u, text: u.split('/').pop() || u, wo: 'haupt', gruppe: 'einstieg', key: 'einstieg|' + u };
+  for (const [ui, u] of (z.startExtra || []).entries()) { if (ZN > 1 && ui % ZN !== ZI - 1) continue; const k = { ziel: 'seite', href: u, text: u.split('/').pop() || u, wo: 'haupt', gruppe: 'einstieg', key: 'einstieg|' + u };
     if (await gehe([k])) { const s = await sig(); if (s && !bekannt.has(s.sig)) schlange.push(await neu([k], k, bekannt.get(s0.sig), s, 1)); } }
   while (schlange.length && zustaende.length < MAX) {
     const x = schlange.shift(); if (x.tiefe >= TIEFE || !x.weg) continue;
@@ -192,6 +194,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
       if (geklickt.has(key) && !kette) continue; k.key = key;
       if (k.gruppenZahl > 8 && k.wo === 'haupt') { proGruppe[k.gruppe] = (proGruppe[k.gruppe] || 0) + 1; if (proGruppe[k.gruppe] > 3) { (x.rest = x.rest || {})[k.gruppe] = (x.rest[k.gruppe] || []).concat([k]); continue; } }
       liste.push(k); }
+    if (ZN > 1 && x.tiefe === 0) { const alle = liste.splice(0); alle.forEach((k, i) => { if (i % ZN === ZI - 1) liste.push(k); }); for (const g of Object.keys(x.rest || {})) x.rest[g] = x.rest[g].filter((k, i) => i % ZN === ZI - 1); }
     const dokGruppen = new Set();
     spur('liste', liste.length);
     const bediene = async k => {

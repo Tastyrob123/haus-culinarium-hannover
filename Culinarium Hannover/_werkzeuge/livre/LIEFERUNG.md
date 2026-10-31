@@ -143,3 +143,12 @@ RGB der Farbkarten in den Hausregeln nie umbrochen; Musterzeilen mit Trennern am
 - Passt sie nicht in eine Zeile: Name und Mass untereinander, ohne Trenner; bei der Story am Handy das Mass zusätzlich in zwei Zeilen («1080 auf» / «1920 px»). Liegt der Rahmen unter dem Knopf, rutscht sie unter ihn.
 - Geprüft «Am Pass werden die Teller angerichtet», alle vier Grössen, Rahmen mittig, ganz links, ganz rechts: 390 und 1440 (dort einzeilig wie bisher), kein Treffer am Knopf, nichts über den Rahmen hinaus.
 - Stempel: livre.js?v=c683ee6b6e, livre.css?v=eb1e39426a. Sicherungen `*.vor-fundT-2026-10-30`.
+
+## Tor 3 (31.10.2026): Knöpfe im Kopf der Anleitung
+- Die zwei Knöpfe stehen in einer Gruppe (`.kopf__kn`, flex-wrap, Abstand 10 px) statt `.kn+.kn{margin-left:10px}`; am Handy beide bündig links (18 px wie die Überschrift), 10 px untereinander; ab 1000 px nebeneinander wie bisher.
+- Geändert in anleitung.vorlage.html, neu gebaut mit anleitung_bau.py. anleitung.html sha1 ea6a9dd8c6. Sicherungen `*.vor-knoepfe-2026-10-31`.
+
+## Tor 3 (31.10.2026): Laden-Knopf «Druck» und Kachel «Fotos»
+- `.li-gr>.kn{flex-shrink:0}`: Laden-Knopf in der Grössen-Liste wird nie zusammengedrückt, der Text links bricht um. 390, «Das Team vor der Bar» (trio): alle vier Knöpfe 247–346, 100 px breit, Knauf ganz.
+- Kacheln unter «Arbeiten»: letztes Wort des Satzes mit festem Leerzeichen an das vorige gebunden. 1440/1280/1000/390: kein Wort allein in der letzten Zeile (1280 «den Druck.»).
+- Stempel: livre.js?v=1c794fd350, livre.css?v=9a07528fbf. Sicherungen `*.vor-fundU-2026-10-31`.

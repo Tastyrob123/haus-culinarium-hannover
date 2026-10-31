@@ -35,8 +35,8 @@ h1,h2,h3,.thema a span{font-family:var(--serif);font-weight:340;letter-spacing:-
 .kopf nav a:hover{color:#fff}
 .kopf h1{font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.02;max-width:14ch}.kopf h1 em{font-style:normal;color:var(--gold)}
 .kopf p{margin-top:22px;max-width:56ch;font-size:1.08rem;color:rgba(242,245,248,.84)}
-.kopf .kn{margin-top:30px}
-.kopf .kn+.kn{margin-left:10px}
+/* Tor 3 (31.10.2026): Knöpfe als Gruppe, beim Umbruch bündig links und mit normalem Abstand */
+.kopf__kn{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 /* Inhalt */
 main{max-width:1180px;margin:0 auto;padding:0 28px 120px}
 .inhalt{margin:58px 0 70px}
@@ -80,7 +80,7 @@ h1,h2,h3,h4,figcaption{text-wrap:balance}
   <nav><span>Anleitung · Culinarium Hannover</span><a href="./">%%NAME%% öffnen</a></nav>
   <h1>Fotos, Dateien <em>und die Prüfung.</em></h1>
   <p>%%ANZAHL%% kurze Kapitel. Wie du ein Foto in der richtigen Grösse lädst, wo Logo und Farben für die Agentur liegen und %%NAME_IN%% einen Entwurf prüft.</p>
-  <a class="kn" href="./">%%NAME%% öffnen<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></i></a><a class="kn kn--hell" href="#inhalt">Zu den Kapiteln<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></i></a>
+  <div class="kopf__kn"><a class="kn" href="./">%%NAME%% öffnen<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></i></a><a class="kn kn--hell" href="#inhalt">Zu den Kapiteln<i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></i></a></div>
 </div></header>
 <main>
   <section class="inhalt" id="inhalt"><span class="mono">00 · Inhalt</span><h2>%%ANZAHL%% Kapitel, <em>fünf Themen.</em></h2><p>Jedes Kapitel zeigt den Bereich und nennt die Schritte. Ein Klick macht das Bild gross, ein zweiter oder Esc bringt es zurück.</p>

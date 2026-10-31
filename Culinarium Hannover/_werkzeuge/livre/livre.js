@@ -213,7 +213,7 @@ function start() {
   const klein = k => esc(foto(k));
   const lg = (ic, mk, b, p, ziel) => `<div class="wo-lg"><i class="wo-lg__z">${WO.ic(ic)}</i><span class="wo-mk">${esc(mk)}</span><b>${b}</b><p>${esc(p)}</p><a class="wo-lk" href="#${ziel}" data-gehe="${ziel}">${esc(t('oeffnen'))}</a></div>`;
   const ag = (ziel, img, ic, name, satz, i, href) => `<${href ? `a href="${href}"` : `button type="button" data-gehe="${ziel}"`} class="wo-ag" data-r style="--i:${i}">
-      <span class="wo-ag__b">${img}</span><span class="wo-ag__t"><i class="wo-ag__z">${WO.ic(ic)}</i><b>${esc(name)}</b><span>${esc(satz)}</span></span></${href ? 'a' : 'button'}>`;
+      <span class="wo-ag__b">${img}</span><span class="wo-ag__t"><i class="wo-ag__z">${WO.ic(ic)}</i><b>${esc(name)}</b><span>${esc(satz).replace(/ (\S+)$/, '&nbsp;$1')}</span></span></${href ? 'a' : 'button'}>`;
   return `${umbenannt(WO.startbild({ werkzeug: 'marke', art: 'voll', h1: `${esc(gruss)} <em>${esc(t('frage'))}</em>`, satz: esc(t('start_satz')),
       knoepfe: WO.knopf(esc(t('anleitung')), 'buch', 'gold', { href: 'anleitung.html', neu: true }) + WO.knopf(esc(t('buch')), 'pfeil', 'glas', { href: MARKE }) }))}
     <div class="wo-lage" data-r>

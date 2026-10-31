@@ -617,3 +617,6 @@ small.li-teile>i::before{content:none}
 
 /* Tor 3 T (30.10.2026): Rahmen-Beschriftung zweizeilig möglich, Lage aus livre.js (--lt), nie über den Rahmen hinaus */
 .li-rahmen::after{top:var(--lt,10px);white-space:pre;max-width:calc(100% - 20px);overflow:hidden;text-overflow:clip;line-height:1.45}
+
+/* Tor 3 (31.10.2026): Laden-Knopf in der Grössen-Liste wird nie zusammengedrückt, der Text bricht davor um */
+.li-gr>.kn{flex-shrink:0}

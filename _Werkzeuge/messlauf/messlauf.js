@@ -47,6 +47,7 @@ const offeneDialoge = () => [...document.querySelectorAll('dialog[open],[role=di
       const hand = W < 700;
       for (const z of ziele) {
         const ctx = await browser.newContext({ viewport: { width: W, height: H }, locale: 'de-DE', timezoneId: 'Europe/Berlin', hasTouch: hand, isMobile: hand && bn === 'chromium', acceptDownloads: false });
+        if (process.env.TOR_UHR) await ctx.clock.setFixedTime(new Date(process.env.TOR_UHR)).catch(() => { });
         await ctx.route('**/*', r => { const q = r.request(); const u = q.url();
           if (/^(mailto|tel):/.test(u)) return r.abort();
           if (q.method() !== 'GET' && q.method() !== 'HEAD') return r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"messlauf":true}' });
