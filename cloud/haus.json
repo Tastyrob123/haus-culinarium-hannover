@@ -84,5 +84,8 @@
   },
   "namen": {
     "markenbuch": "plakatarchiv"
-  }
+  },
+  "vorbereitung": [
+    "python3 _Werkzeuge/werkzeuge/website/probe.py culinarium"
+  ]
 }

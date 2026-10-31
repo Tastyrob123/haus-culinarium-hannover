@@ -5,6 +5,8 @@ WS="${GITHUB_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 HJ="$WS/cloud/haus.json"
 ORD="$WS/$(python3 -c "import json;print(json.load(open('$HJ'))['ordner'])")"
 mkdir -p /tmp/server
+# Vorbereitung des Hauses (z. B. Arbeitskopie der Website für das Schaufenster), aus cloud/haus.json «vorbereitung»
+python3 -c "import json;[print(b) for b in json.load(open('$HJ')).get('vorbereitung',[])]" | while read -r b; do ( cd "$WS" && eval "$b" ) || echo "Vorbereitung fehlgeschlagen: $b"; done
 export BUREAU_PRUEFLAUF=1 RECEPTION_FORMULAR_GRENZE=999
 python3 - "$HJ" <<'PY' > /tmp/server/liste
 import json, sys
