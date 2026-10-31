@@ -110,6 +110,8 @@ for inv in sorted(glob.glob(os.path.join(LAUF, '*', 'inventar.json'))):
         S = json.load(open(f, encoding='utf-8')); stich[S['groesse'][0]] = {z['id']: z for z in S['zustaende']}
     for zu in I['zustaende']:   # Funde der Stichproben (1280/1000/390) gehören zum Zustand: Grün nur, wenn auch dort nichts offen ist
         zu['stichFunde'] = [dict(f, info=f"[{g}] " + (f.get('info') or '')) for g, S in stich.items() for f in (S.get(zu['id'], {}).get('funde') or []) if f.get('k')]
+        # tor-schnell.js: am Handy zusätzlich «Menü offen» (Kennung <id>m) gehört zum Zustand
+        zu['stichFunde'] += [dict(f, info=f"[{g} Menü offen] " + (f.get('info') or '')) for g, S in stich.items() for f in (S.get(zu['id'] + 'm', {}).get('funde') or []) if f.get('k')]
     werkzeuge.append({'k': k, 'I': I, 'ordner': ordner, 'stich': stich})
 
 # ---------- Augen-Urteile (Kriterien A), falls vorhanden ----------
@@ -213,10 +215,10 @@ for w in werkzeuge:
         roh = [f for f in zu['funde'] + zu.get('stichFunde', []) if f.get('k') and not verworfen(zu['k'], f)]
         for n, f in enumerate(roh):
             fundliste.append((w, zu, f, n))
-        rows.append(f"""<tr id="{w['k']}-{zu['id']}"><td class="nr">{zu['id']}</td><td class="nm"><b>{E(zu['name'])}</b><small>{E(zu['art'])}{' · ' + E(', '.join(st_txt)) if st_txt else ''}{' · gleichartig: ' + E(', '.join(str(g['zahl']) for g in zu.get('gleichartig', []))) + ' Stück, 3 bedient' if zu.get('gleichartig') else ''}</small></td>
+        rows.append(f"""<tr id="{w['k']}-{zu['id']}"><td class="nr">{zu['id']}</td><td class="nm"><b>{E(zu['name'])}</b><small>{E(zu['art'])}{' · ' + E(', '.join(st_txt)) if st_txt else ''}{' · gleichartig: ' + E(', '.join(str(g['zahl']) for g in zu.get('gleichartig', []))) + ' Stück, ' + E(', '.join(str(g.get('bedient', 3)) for g in zu.get('gleichartig', []))) + ' bedient' if zu.get('gleichartig') else ''}{' · gleiches Layout und gleiche Funde wie #' + E(zu['gleichWie']) if zu.get('gleichWie') else ''}</small></td>
 <td class="bi">{f'<a href="b/{voll}" target="_blank"><img loading="lazy" src="b/{klein}"></a>' if klein else '–'}</td>{''.join(zellen)}</tr>""")
     rot = sum(1 for zu in zs for k in range(1, max(KRIT) + 1) if zelle(zu, k)[0] == 'rot')
-    teile.append(f"""<section><h2>{E(I['werkzeug']['name'])} <small>{len(zs)} Zustände · {rot} rote Felder · {E(I['werkzeug']['url'])}{' · Inventar an der Obergrenze' if not I.get('voll', True) else ''}{' · ' + str(len(I.get('nichtErreicht', []))) + ' nicht erreicht' if I.get('nichtErreicht') else ''}</small></h2>
+    teile.append(f"""<section><h2>{E(I['werkzeug']['name'])} <small>{len(zs)} Zustände{' (' + str(sum(1 for q in zs if q.get('gleichWie'))) + ' davon gleiches Layout wie ein früherer)' if any(q.get('gleichWie') for q in zs) else ''} · {rot} rote Felder · {E(I['werkzeug']['url'])}{' · ' + str(I.get('dauerMin')) + ' min, jede Breite ' + E('/'.join(str(b) for b in I.get('breiten', []))) if I.get('tor') == 'schnell' else ''}{' · Inventar an der Obergrenze' if not I.get('voll', True) else ''}{' · ' + str(len(I.get('nichtErreicht', []))) + ' nicht erreicht' if I.get('nichtErreicht') else ''}</small></h2>
 <div class="tw"><table><thead><tr><th>#</th><th>Zustand</th><th>Bild WebKit {I['groesse'][0]}×{I['groesse'][1]}</th>{''.join(f'<th title="{E(KRIT.get(k, {}).get("satz", ""))}">{k}<i>{KRIT.get(k, {}).get("weise", "")}</i></th>' for k in range(1, max(KRIT) + 1))}</tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>""")
 
 json.dump([{'werkzeug': w['k'], 'zustand': zu['id'], 'name': zu['name'], 'k': f.get('k'), 'art': f.get('art'), 'text': f.get('text'), 'info': f.get('info'), 'sel': f.get('sel')} for w, zu, f, n in fundliste], open(os.path.join(TAFEL, 'funde.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)   # Fundliste zum Verteilen an die Bau-Chats
@@ -241,19 +243,25 @@ td.nm{{min-width:240px;max-width:340px}}td.nm small{{display:block;color:#777;fo
 .z-rot{{background:#ff1f5a}}.z-gruen{{background:#1f9d55}}.z-auge{{background:#d9cce4}}.z-np{{background:#9a9a9a}}.z-na{{background:#f2eeee}}
 .leg span{{display:inline-block;padding:2px 8px;margin-right:6px;border-radius:3px;color:#fff;font-size:12px}}.gpt td{{padding:8px}}.gpt img{{max-width:420px;max-height:260px}}.ok{{background:#1f9d55;color:#fff;font-weight:700}}.nein{{background:#ff1f5a;color:#fff;font-weight:700}}
 .gpt small{{display:block;color:#555}}.kz{{columns:2;font-size:12px;color:#444}}</style>
-<h1>{E(titel)}</h1><p>{alle_z} Zustände aus {len(werkzeuge)} Werkzeugen, je Zustand ein Bild in WebKit {werkzeuge[0]['I']['groesse'][0] if werkzeuge else ''} px, Stichproben 1280×800 und 390×844 in der Zeile. Felder: {zahl['rot']} rot · {zahl['gruen']} grün · {zahl['auge']} Auge (Kriterium A, mit dem Auge am Bild) · {zahl['np']} nicht prüfbar · {zahl['na']} entfällt (kein Dokument im Zustand).</p>
+<h1>{E(titel)}</h1><p>{alle_z} Zustände aus {len(werkzeuge)} Werkzeugen, je Zustand ein Bild in WebKit {werkzeuge[0]['I']['groesse'][0] if werkzeuge else ''} px, {'jeder Zustand auch in ' + E('/'.join(str(b) for b in werkzeuge[0]['I'].get('breiten', [])[1:])) + ' px (Funde in der Zeile)' if werkzeuge and werkzeuge[0]['I'].get('tor') == 'schnell' else 'Stichproben 1280×800 und 390×844 in der Zeile'}. Felder: {zahl['rot']} rot · {zahl['gruen']} grün · {zahl['auge']} Auge (Kriterium A, mit dem Auge am Bild) · {zahl['np']} nicht prüfbar · {zahl['na']} entfällt (kein Dokument im Zustand).</p>
 <p class="leg"><span style="background:#ff1f5a">rot = Fund</span><span style="background:#1f9d55">grün = gemessen, kein Fund</span><span style="background:#b9a6c9">Auge</span><span style="background:#9a9a9a">nicht prüfbar</span> · Mauszeiger auf ein Feld zeigt Kriterium und Funde · <a href="funde.html">Fundliste mit Bildern</a></p>
 <ol class="kz">{''.join(f'<li value="{k}">{E(v["satz"])} <b>{v["weise"]}</b></li>' for k, v in sorted(KRIT.items()))}</ol>
 {gp}{''.join(teile)}</html>"""
 open(os.path.join(TAFEL, 'index.html'), 'w', encoding='utf-8').write(seite)
 
-# Fundliste mit Bild (für den Oberchef)
-fl = []
+# Fundliste mit Bild (für den Oberchef): gleiche Fundstelle (Werkzeug, Kriterium, Art, Stelle, Meldung ohne Zahlen) nur einmal, mit Zahl der Zustände
+# (tor-schnell.js misst jeden Zustand in vier Breiten; ein Fehler im Grundgerüst steht sonst hunderttausendfach in der Liste)
+fl = []; gruppen = {}
 for w, zu, f, n in fundliste:
-    b = ausschnitt(w, zu, f, n)
-    fl.append(f"<tr><td>{f['k']}</td><td><b>{E(w['I']['werkzeug']['name'])}</b> #{zu['id']}<br><small>{E(zu['name'])}</small></td><td>{E(f.get('info') or '')}<br><small>{E(f.get('sel') or '')} {E((f.get('text') or '')[:60])}</small></td><td>{f'<img loading=lazy src=b/{b}>' if b else ''}</td></tr>")
+    key = (w['k'], f.get('k'), f.get('art'), re.sub(r'\d+', '#', f.get('sel') or ''), re.sub(r'[\d.,]+', '#', (f.get('info') or '')[:90]))
+    g = gruppen.get(key)
+    if g: g['n'] += 1; g['zu'].add(zu['id']); continue
+    gruppen[key] = {'w': w, 'zu': {zu['id']}, 'erst': (zu, f, n), 'n': 1}
+for g in gruppen.values():
+    w = g['w']; zu, f, n = g['erst']; b = ausschnitt(w, zu, f, n)
+    fl.append(f"<tr><td>{f['k']}</td><td><b>{E(w['I']['werkzeug']['name'])}</b> #{zu['id']}<br><small>{E(zu['name'])}{' · in ' + str(len(g['zu'])) + ' Zuständen, ' + str(g['n']) + ' Messungen' if g['n'] > 1 else ''}</small></td><td>{E(f.get('info') or '')}<br><small>{E(f.get('sel') or '')} {E((f.get('text') or '')[:60])}</small></td><td>{f'<img loading=lazy src=b/{b}>' if b else ''}</td></tr>")
 open(os.path.join(TAFEL, 'funde.html'), 'w', encoding='utf-8').write(f"""<!doctype html><html lang="de"><meta charset="utf-8"><title>{E(titel)} · Funde</title><style>body{{font:14px/1.4 -apple-system,system-ui,sans-serif;margin:24px}}table{{border-collapse:collapse}}td{{border:1px solid #ddd;padding:6px;vertical-align:top}}img{{max-width:460px;max-height:300px}}small{{color:#666}}</style>
-<h1>{E(titel)} · {len(fl)} Funde</h1><p><a href="index.html">zur Tafel</a></p><table><tr><th>K</th><th>Zustand</th><th>Fund</th><th>Bild</th></tr>{''.join(fl)}</table></html>""")
+<h1>{E(titel)} · {len(fl)} Fundstellen ({len(fundliste)} Messungen)</h1><p><a href="index.html">zur Tafel</a></p><table><tr><th>K</th><th>Zustand</th><th>Fund</th><th>Bild</th></tr>{''.join(fl)}</table></html>""")
 json.dump({'zustaende': alle_z, 'felder': zahl, 'funde': len(fl), 'gegenprobe': [{'name': x['g']['name'], 'gefunden': bool(x['treffer']), 'stellen': len(x['treffer'])} for x in gegen] if gegen is not None else None},
           open(os.path.join(TAFEL, 'ergebnis.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(json.dumps({'zustaende': alle_z, 'felder': zahl, 'funde': len(fl)}, ensure_ascii=False))

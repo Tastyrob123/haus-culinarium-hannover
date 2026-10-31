@@ -41,7 +41,7 @@ rsync -a --exclude-from=$AUS "$WP/_Werkbank-Kit" "$R/"
 for d in "$R/_Werkzeuge/daten" "$R/_Werkzeuge/haeuser" "$R/_Werkzeuge/werkzeuge/gaeste/kleid" "$R/_Werkzeuge/werkzeuge/karten/kleid"; do
   [ -d "$d" ] && for h in "$d"/*(N/); do [ "${h:t}" != "$KURZ" ] && rm -rf "$h"; done; done
 for f in "$R/_Werkzeuge/werkzeuge/karten/grundstand"/*.json(N) "$R/_Werkzeuge/werkzeuge/website/haeuser"/*.json(N); do [ "${f:t:r}" != "$KURZ" ] && rm -f "$f"; done
-cp "$VORLAGE/cloud/"*.{sh,py,md} "$R/cloud/" 2>/dev/null; cp "$VORLAGE/.github/workflows/abnahme.yml" "$R/.github/workflows/"
+cp "$VORLAGE/cloud/"*.{sh,py,md} "$R/cloud/" 2>/dev/null; cp "$VORLAGE/.github/workflows/"{abnahme,schnell}.yml "$R/.github/workflows/"
 sed "s/Culinarium Hannover/$HAUS/g" "$VORLAGE/CLAUDE.md" > "$R/CLAUDE.md"; sed "s#/Culinarium Hannover/_quelle/#/$HAUS/_quelle/#" "$VORLAGE/.gitignore" > "$R/.gitignore"
 [ -f "$R/cloud/haus.json" ] || python3 - "$HAUS" "$KURZ" "$R/cloud/haus.json" <<'PY'
 import json, sys

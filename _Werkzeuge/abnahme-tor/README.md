@@ -37,3 +37,35 @@ Gesperrt ist alles, was etwas verändert oder verschickt (`gefahr`). POST-Anfrag
 ## Gegenprobe
 Jeder Fund Roberts kommt als Zeile in `gegenprobe-<haus>.json`: Kriterium und Suchmuster. Das Tor muss ihn am Stand vor der Reparatur finden. Findet es ihn nicht, wird erst das Tor erweitert, dann die Reparatur gemeldet.
 Culinarium 29.10.: Der alte Stand der Plakatwerkstatt wurde aus den Sicherungen `*.vor-*-2026-10-29` unter `Culinarium Hannover/_qa/abnahme-tor/alt/` zusammengesetzt (Port 9187).
+
+## Schnelle Fassung (seit 31.10.2026): `lauf-schnell.sh`, `tor-schnell.js`
+
+**Warum.** Gemessen am Culinarium-Bestand (31.10.): Das alte Tor brauchte je Zustand rund 13 s, davon **0,3 s Messen** und 12 s Warten:
+frischer Browser und Nachspielen des ganzen Klickwegs für jeden Zustand (4,2 s Laden + 7–9 s Weg), dazu bei jedem Schritt bis 2,5 s Warten auf
+Einblend-Animationen. Die Plakatwerkstatt (464 Zustände) brauchte so 305 min allein für 1440 px, die Stichproben in anderen Breiten noch einmal 14–16 s je Zustand.
+Ein Volllauf aller Werkzeuge waren Tage; in der Cloud 5.538 Rechner-Minuten.
+
+**Was anders ist** (gleiche Messfunktionen `messen.js` und `seite.js`, gleiche Kriterien, gleiche Ausgabe für `auswertung.py`):
+1. Ein Browser bleibt offen. Jeder Zustand wird an Ort und Stelle erkundet und wieder zurückgenommen (Escape bei Fenstern, Zurück bei Adresswechsel,
+   Reiter erneut anklicken). Zum nächsten Zustand geht es über den gemeinsamen Vorfahren, nicht von vorn. Nur wenn der Rückweg nicht ankommt,
+   wird der Weg einmal frisch nachgespielt (steht als `zaehler.nachgespielt` im Inventar).
+2. Während der Messung sind Einblend-Animationen aus (`reducedMotion` + Stil mit 1-ms-Dauer). Gewartet wird auf Netz und DOM (150 ms Ruhe), nicht auf feste Fristen.
+   Bewegung (Kriterien 34, 37) misst wie bisher `bewegung-tor.js` mit Bewegung.
+3. **Jeder Zustand in jeder Breite**: 1440, 1280, 1000 (Roberts Safari) und 390 im selben Fenster durch Grössenwechsel, nicht mehr nur Stichproben.
+   Am Handy zusätzlich «Menü offen» in Start- und Navigationszuständen. Ausgabe: `inventar.json` + `bilder/` (1440), `stich-<W>.json` + `stich-<W>/` je weitere Breite.
+4. Gleiche Layouts werden erkannt (`skelett`: Gerüst der sichtbaren Elemente ohne Text; `gleichWie`, wenn Gerüst und Fundmenge gleich sind). Gemessen wird trotzdem
+   jeder Zustand, denn gleiches Gerüst heisst nicht gleiche Funde (Fotos derselben Sammlung haben verschiedene Seitenverhältnisse). Die Tafel zeigt es in der Zeile.
+5. Gleichartige Stücke ohne Dokument: die ersten drei und dazu das mit dem längsten und dem kürzesten Text.
+
+**Aufruf**
+```
+./lauf-schnell.sh <haus> <lauf-name> [P=3] [k1 k2 …]       # alles: Tore je Werkzeug (P gleichzeitig), Bewegung, Dokumente, Auswertung, Messwerte
+./lauf-schnell.sh culinarium 0111-werkbank 1 werkbank      # ein Werkzeug gleich nach dem Bau
+node tor-schnell.js ziele-<haus>.json <ausgabe> --nur <k> [--breiten 1440,1280,1000,390] [--max 700] [--tiefe 4]
+python3 vergleich.py <lauf-alt> <lauf-neu> [k …]            # findet der neue Lauf jede Fundstelle des alten? (Art + Stelle + Meldung, alle Breiten)
+python3 zeiten.py <lauf>                                    # Zustände, Minuten, Sekunden je Zustand, Rückwege je Werkzeug
+```
+Tafel: `http://localhost:8978/haus/_Oberchef/zeigen/<haus>/abnahme-tor/<lauf-name>/index.html`. Speicher: ein WebKit 400–800 MB, P=3 ist auf dem 24-GB-Mac sicher.
+`TOR_BEWEGUNG=1` lässt die Animationen an (nur zum Vergleich). `TOR_HAENGER_MIN`, `TOR_KLICK_MIN` wie beim alten Tor.
+
+**Gemessen am Culinarium (31.10.2026, gleicher Stand, altes gegen neues Tor):** siehe unten «Messwerte».

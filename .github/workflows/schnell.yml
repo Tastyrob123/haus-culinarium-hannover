@@ -1,0 +1,121 @@
+name: Schnelle Prüfung in der Cloud
+
+# Sinnvolle Abdeckung statt jeder Zustand (31.10.2026): je Werkzeug ein Rechner mit tor-schnell.js (höchstens 40 Zustände, zwei Ebenen,
+# alle vier Breiten im selben Fenster), danach Bewegung je Ziel und die Auswertung. Ergebnis wie bei abnahme.yml im Zweig «ergebnis».
+# Start: Commit mit «[schnell]» oder «[schnell: tresen,gaestebuch]» in der Nachricht, oder Knopf «Run workflow».
+
+on:
+  push:
+    branches: ['**', '!ergebnis', '!quelle']
+  workflow_dispatch:
+    inputs:
+      nur:
+        description: 'Nur diese Werkzeuge (Komma, leer = alle)'
+        required: false
+        default: ''
+      titel:
+        description: 'Titel der Tafel'
+        required: false
+        default: 'Schnelle Prüfung'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: schnell-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
+  TOR_HAENGER_MIN: '8'
+  TOR_KLICK_MIN: '3'
+
+jobs:
+  plan:
+    if: github.event_name != 'push' || contains(github.event.head_commit.message, '[schnell')
+    runs-on: ubuntu-24.04
+    outputs:
+      ks: ${{ steps.p.outputs.ks }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            cloud
+            _Werkzeuge/abnahme-tor
+      - id: p
+        env:
+          NACHRICHT: ${{ github.event.head_commit.message }}
+        run: |
+          NUR="${{ inputs.nur }}"
+          if [ -z "$NUR" ]; then NUR="$(python3 -c "import os,re;m=re.search(r'\[schnell:\s*([^\]]+)\]',os.environ.get('NACHRICHT',''));print(m.group(1).strip() if m else '')")"; fi
+          python3 - "$NUR" <<'PY' >> "$GITHUB_OUTPUT"
+          import json, sys, os
+          H = json.load(open('cloud/haus.json')); nur = [x.strip() for x in sys.argv[1].split(',') if x.strip()]
+          nur += [H.get('namen', {}).get(n, n) for n in nur]
+          ks = [z['k'] for z in json.load(open(H['tor_ziele']))['ziele'] if (not nur or z['k'] in nur or z['k'].split('-')[0] in nur) and z['k'] not in H.get('auslassen', [])]
+          print('ks=' + json.dumps(ks))
+          PY
+          echo "Werkzeuge: ${NUR:-alle}" >> "$GITHUB_STEP_SUMMARY"
+
+  tor:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        k: ${{ fromJSON(needs.plan.outputs.ks) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/ms-playwright
+          key: pw-1.62.1-webkit-chromium
+      - run: bash cloud/vorbereiten.sh "webkit"
+      - run: bash cloud/server.sh
+      - name: Schnelle Prüfung ${{ matrix.k }}
+        run: bash cloud/schnell.sh "${{ matrix.k }}"
+      - name: Bewegung ${{ matrix.k }}
+        run: node _Werkzeuge/abnahme-tor/bewegung-tor.js "$(python3 -c "import json;print(json.load(open('cloud/haus.json'))['tor_ziele'])")" "aus/${{ matrix.k }}/bewegung" --nur "${{ matrix.k }}" > "aus/${{ matrix.k }}-bewegung.out" 2>&1 || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schnell-${{ matrix.k }}
+          path: aus
+          retention-days: 3
+          compression-level: 0
+
+  auswertung:
+    needs: [plan, tor]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet --break-system-packages numpy pillow
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: schnell-*
+          path: teile
+      - name: Tafeln bauen
+        run: |
+          mkdir -p lauf ergebnis
+          for d in teile/schnell-*/; do cp -r "$d"/* lauf/ 2>/dev/null || true; done
+          python3 _Werkzeuge/abnahme-tor/auswertung.py lauf ergebnis/tor --titel "${{ inputs.titel || 'Schnelle Prüfung' }} · $GITHUB_REF_NAME" $( [ -f "_Werkzeuge/abnahme-tor/gegenprobe-$(python3 -c "import json;print(json.load(open('cloud/haus.json'))['kurz'])").json" ] && echo --gegenprobe "_Werkzeuge/abnahme-tor/gegenprobe-$(python3 -c "import json;print(json.load(open('cloud/haus.json'))['kurz'])").json" ) | tee ergebnis/auswertung.txt
+          python3 _Werkzeuge/abnahme-tor/zeiten.py lauf | tee ergebnis/zeiten.txt
+          echo "{\"commit\":\"$GITHUB_SHA\",\"zweig\":\"$GITHUB_REF_NAME\",\"run\":\"$GITHUB_RUN_ID\",\"art\":\"schnell\"}" > ergebnis/lauf.json
+          { echo "## Schnelle Prüfung $GITHUB_REF_NAME"; echo '```'; cat ergebnis/zeiten.txt; echo; tail -15 ergebnis/auswertung.txt; echo '```'; } > ergebnis/zusammenfassung.md
+          cat ergebnis/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ergebnis
+          path: ergebnis
+          retention-days: 14
+      - name: Ergebnis auf den Zweig «ergebnis» legen (an den Commit gebunden)
+        run: |
+          git config user.name "schnelle-pruefung"; git config user.email "pruefung@users.noreply.github.com"
+          Z="ergebnis/laeufe/${GITHUB_REF_NAME//\//-}-schnell"
+          if git fetch --depth 1 origin ergebnis 2>/dev/null; then git worktree add -f /tmp/erg FETCH_HEAD; else git worktree add --detach /tmp/erg; (cd /tmp/erg && git rm -rqf . >/dev/null 2>&1 || true); fi
+          cd /tmp/erg && rm -rf "$Z" && mkdir -p "$Z" && cp -r "$GITHUB_WORKSPACE/ergebnis/." "$Z/"
+          python3 "$GITHUB_WORKSPACE/cloud/uebersicht.py" ergebnis/laeufe > index.html || true
+          git checkout -q --orphan erg-neu && git add -A && git commit -qm "Schnelle Prüfung $GITHUB_REF_NAME $GITHUB_SHA" && git push -f origin HEAD:refs/heads/ergebnis
