@@ -91,6 +91,7 @@ jobs:
 
   messlauf:
     needs: plan
+    if: needs.plan.outputs.mess != '[]'
     runs-on: ubuntu-24.04
     timeout-minutes: 240
     strategy:
@@ -126,6 +127,7 @@ jobs:
 
   bewegung:
     needs: plan
+    if: needs.plan.outputs.bewegung != '[]'
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     strategy:
