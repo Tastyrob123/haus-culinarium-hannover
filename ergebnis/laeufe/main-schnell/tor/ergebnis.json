@@ -1,0 +1,68 @@
+{
+ "zustaende": 2,
+ "felder": {
+  "rot": 3,
+  "gruen": 33,
+  "auge": 33,
+  "np": 0,
+  "na": 5
+ },
+ "funde": 2,
+ "gegenprobe": [
+  {
+   "name": "Haus-Knopf oval",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "«PREISLISTE» abgeschnitten",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Feld «Etwas anderes für …»",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Vorlagen-Leiste versetzt",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "«2023» allein in der Zeile",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Menükarte mit Löchern",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "«Ausgebucht» mit Löchern",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Speisekarte nicht im Stil",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Plakatarchiv = Fotos (zwei Wege, ein Ziel)",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Tapete leer",
+   "gefunden": false,
+   "stellen": 0
+  },
+  {
+   "name": "Fuss der Leiste nicht auf einer Kante",
+   "gefunden": false,
+   "stellen": 0
+  }
+ ]
+}

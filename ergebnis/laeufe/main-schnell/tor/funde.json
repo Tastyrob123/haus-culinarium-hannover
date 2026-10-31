@@ -1,0 +1,22 @@
+[
+{
+"werkzeug": "tresen",
+"zustand": "001",
+"name": "Start",
+"k": 2,
+"art": "spalte",
+"text": "WEBSITE Das Schaufenster Die Website, Seite für Seite",
+"info": "[1000] Text zerfällt: 8 Wörter auf 5 Zeilen, Breite 200 px",
+"sel": "section#oben > nav.m-f5__reihe > ol.hz-tafel > li.hz-z"
+},
+{
+"werkzeug": "tresen",
+"zustand": "001",
+"name": "Start",
+"k": 2,
+"art": "spalte",
+"text": "WEBSITE Das Schaufenster Die Website, Seite für Seite",
+"info": "[1000] Text zerfällt: 8 Wörter auf 5 Zeilen, Breite 200 px",
+"sel": "nav.m-f5__reihe > ol.hz-tafel > li.hz-z > a.m-f5__k"
+}
+]
