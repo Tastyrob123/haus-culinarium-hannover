@@ -33,4 +33,5 @@ else:
     mpz = float(os.environ.get('MPZ', '1'))
     z = H.get('zustaende', {}); pw = sum(v for k, v in z.items() if k.startswith('plakatwerkstatt'))
     hoch = math.ceil(pw * mpz * 2.5 + 60)   # 1440 + 390 alle + 1280/1000 Stichproben ≈ 2,5 Messungen je Zustand, + Messlauf/Bewegung (heute gemessen ca. 40 min)
-    aus(weiter=str(verbraucht + hoch <= KONTINGENT).lower(), verbraucht=verbraucht, hochrechnung_plakatwerkstatt=hoch, kontingent=KONTINGENT)
+    oeff = os.environ.get('OEFFENTLICH') == 'true'   # öffentlicher Ordner: Minuten kostenlos, keine Grenze
+    aus(weiter=str(oeff or verbraucht + hoch <= KONTINGENT).lower(), oeffentlich=oeff, verbraucht=verbraucht, hochrechnung_plakatwerkstatt=hoch, kontingent=KONTINGENT)

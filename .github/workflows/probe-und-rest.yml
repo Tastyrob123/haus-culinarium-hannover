@@ -1,15 +1,15 @@
-name: Nachtlauf Culinarium (1.11., 00:10 UTC)
+name: Probe und Rest
 
-# Startet von selbst, ohne Roberts Mac, sobald die Gratis-Minuten zurück sind:
+# Probe zuerst, danach der Rest, alles in der Cloud. Start per Knopf oder Commit auf main mit «[probe-und-rest]»:
 #  1. Probe: Gästebuch, 3 Teile, nur Tor (gleichmässige Teilung)
 #  2. Nur wenn jeder Probe-Teil erfolgreich und ≤ 15 min: voller Lauf Markenbuch, Gästebuch, Schaufenster
-#  3. Danach die Plakatwerkstatt, nur wenn die bisher verbrauchten Minuten + Hochrechnung ins Kontingent (2.000) passen
+#  3. Parallel die Plakatwerkstatt (öffentlicher Ordner: ohne Minuten-Grenze; privat nur, wenn die Minuten reichen)
 # Ergebnisse: Zweig «ergebnis», Ordner ergebnis/laeufe/main-probe, main-voll1, main-voll2.
 
 on:
-  schedule:
-    - cron: '10 0 1 11 *'
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -17,6 +17,8 @@ permissions:
 
 jobs:
   probe:
+    # Start per Knopf oder Commit auf main mit «[probe-und-rest]» in der Nachricht
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[probe-und-rest]')
     uses: ./.github/workflows/abnahme.yml
     with:
       nur: 'gaestebuch,teile=3,nurtor'
@@ -54,7 +56,8 @@ jobs:
       kennung: 'voll1-'
 
   budget:
-    needs: [probe_pruefen, voll1]
+    # Privat: Plakatwerkstatt erst nach Voll 1 und nur, wenn die Minuten reichen. Öffentlich: sofort, ohne Grenze.
+    needs: [probe_pruefen]
     if: ${{ !cancelled() && needs.probe_pruefen.outputs.ok == 'true' }}
     runs-on: ubuntu-24.04
     outputs:
@@ -67,6 +70,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           MPZ: ${{ needs.probe_pruefen.outputs.mpz }}
+          OEFFENTLICH: ${{ github.event.repository.private == false }}
         run: python3 cloud/nacht_pruefen.py budget
 
   voll2:
