@@ -39,7 +39,7 @@ const messeScroll = async (p) => p.evaluate(async () => {
     const r = { k: z.k, name: z.name, url, funde: [] };
     for (const reduce of [false, true]) {
       const ctx = await b.newContext({ viewport: { width: W, height: H }, reducedMotion: reduce ? 'reduce' : 'no-preference', locale: 'de-DE' });
-      if (process.env.TOR_UHR) await ctx.clock.setFixedTime(new Date(process.env.TOR_UHR)).catch(() => { });
+      if (process.env.TOR_UHR) await ctx.clock.install({ time: new Date(process.env.TOR_UHR) }).catch(() => { });
       await ctx.route('**/*', q => q.request().method() === 'GET' || q.request().method() === 'HEAD' ? q.continue() : q.fulfill({ status: 200, body: '{}' }));
       await ctx.addInitScript(v => { try { for (const [k, w] of Object.entries(v || {})) localStorage.setItem(k, w); } catch (e) { } }, z.localStorage || {});
       const p = await ctx.newPage(); const t0 = Date.now();

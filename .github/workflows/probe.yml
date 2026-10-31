@@ -18,6 +18,11 @@ jobs:
       - run: bash cloud/vorbereiten.sh "webkit chromium"
       - run: bash cloud/server.sh
       - run: node cloud/probe.js _Werkzeuge/messlauf/ziele-culinarium.json probe
+      - name: Messlauf-Probe mit fester Uhr
+        env:
+          TOR_UHR: '2026-10-31T10:00:00+01:00'
+        run: |
+          node _Werkzeuge/messlauf/messlauf.js _Werkzeuge/messlauf/ziele-culinarium.json probe/ml --nur schaufenster,gaestebuch --browser webkit --groesse 1440 2>&1 | grep -E "Zustände|FERTIG"
       - if: always()
         run: mkdir -p probe && cp /tmp/server/*.log probe/ 2>/dev/null; true
       - if: always()

@@ -53,7 +53,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
     if (ctx) await Promise.race([ctx.close().catch(() => { }), warte0(15000)]);
     if (++kontexte % NEUSTART === 0) await frisch();
     ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, locale: 'de-DE', timezoneId: 'Europe/Berlin', hasTouch: hand, acceptDownloads: false });
-    if (process.env.TOR_UHR) await ctx.clock.setFixedTime(new Date(process.env.TOR_UHR)).catch(() => { });   // Cloud 31.10.2026: feste Uhrzeit, Zustände bleiben nachspielbar
+    if (process.env.TOR_UHR) await ctx.clock.install({ time: new Date(process.env.TOR_UHR) }).catch(() => { });   // Cloud 31.10.2026: feste Uhrzeit, Zustände bleiben nachspielbar
     await ctx.route('**/*', r => { const q = r.request(), u = q.url();
       if (/^(mailto|tel):/.test(u)) return r.abort();
       if (q.method() !== 'GET' && q.method() !== 'HEAD') return r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"tor":true}' });

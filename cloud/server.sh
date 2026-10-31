@@ -5,7 +5,7 @@ WS="${GITHUB_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 HJ="$WS/cloud/haus.json"
 ORD="$WS/$(python3 -c "import json;print(json.load(open('$HJ'))['ordner'])")"
 mkdir -p /tmp/server
-export WERKZEUGE_DATEN=/tmp/werkzeuge-daten BUREAU_PRUEFLAUF=1 RECEPTION_FORMULAR_GRENZE=999
+export BUREAU_PRUEFLAUF=1 RECEPTION_FORMULAR_GRENZE=999
 python3 - "$HJ" <<'PY' > /tmp/server/liste
 import json, sys
 for s in json.load(open(sys.argv[1]))['server']:
