@@ -67,8 +67,10 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
   await neuerKontext();
 
   const SP = (...a) => { zuletzt = Date.now(); if (process.env.TOR_SPUR) console.log(new Date().toISOString().slice(11, 19), 'SPUR', ...a); };
-  const ruhe = async () => { await page.evaluate(async () => { const t0 = Date.now();
-      while (Date.now() - t0 < 2500) { const a = document.getAnimations().filter(x => x.playState === 'running' && x.effect && x.effect.getTiming().iterations !== Infinity); if (!a.length) break; await new Promise(r => setTimeout(r, 100)); } }).catch(() => { }); await warte(120); };
+  // Ruhe (Cloud 31.10.2026, schneller bei gleichem Ergebnis): endliche Bewegungen springen an ihr Ende (finish = derselbe Endzustand wie nach dem Auslaufen),
+  // danach kurz warten, ob neue starten; höchstens 2,5 s wie vorher. TOR_RUHE_WARTEN=1 schaltet auf das alte Abwarten zurück.
+  const ruhe = async () => { await page.evaluate(async (springen) => { const t0 = Date.now();
+      while (Date.now() - t0 < 2500) { const a = document.getAnimations().filter(x => x.playState === 'running' && x.effect && x.effect.getTiming().iterations !== Infinity); if (!a.length) break; if (springen) a.filter(x => !x.timeline || x.timeline === document.timeline).forEach(x => { try { x.finish(); } catch (e) { } }); await new Promise(r => setTimeout(r, springen ? 60 : 100)); } }, !process.env.TOR_RUHE_WARTEN).catch(() => { }); await warte(120); };
   const lade = async url => { SP('  goto');
     const ok = await Promise.race([page.goto(url, { waitUntil: 'load', timeout: 30000 }).then(() => true).catch(() => true), warte0(60000).then(() => false)]);
     if (!ok) { SP('  goto hängt, Browser neu'); await frisch(); await neuerKontext(); await Promise.race([page.goto(url, { waitUntil: 'load', timeout: 30000 }).catch(() => { }), warte0(60000)]); }
@@ -88,18 +90,24 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
     catch (e) { const ok = await page.evaluate(() => { const e = document.querySelector('[data-tor="ziel"]'); if (!e) return false; e.click(); return true; }).catch(() => false); if (!ok) return false; }
     await warte(650); await ruhe(); return true;
   };
-  const gehe = async weg => { SP(' kontext'); await neuerKontext(); await lade(z.url); for (const s of weg) { SP(' schritt', (s.text || '').slice(0, 30)); const r = await Promise.race([schritt(s), warte0(90000).then(() => 'frist')]); if (r === 'frist') { SP(' schritt hängt, Browser neu'); console.log(new Date().toISOString().slice(11, 19), 'SCHRITT HÄNGT, Browser neu:', (s.text || '').slice(0, 40)); await frisch(); await neuerKontext(); return false; } if (!r) return false; } SP(' angekommen'); return true; };
+  const gehe = async weg => { const tG = Date.now(); try { return await geheI(weg); } finally { zt('gehe', tG); ZT.gehen = (ZT.gehen || 0) + 1; } };
+  const geheI = async weg => { SP(' kontext'); await neuerKontext(); await lade(z.url); for (const s of weg) { SP(' schritt', (s.text || '').slice(0, 30)); const r = await Promise.race([schritt(s), warte0(90000).then(() => 'frist')]); if (r === 'frist') { SP(' schritt hängt, Browser neu'); console.log(new Date().toISOString().slice(11, 19), 'SCHRITT HÄNGT, Browser neu:', (s.text || '').slice(0, 40)); await frisch(); await neuerKontext(); return false; } if (!r) return false; } SP(' angekommen'); return true; };
   const sig = async () => { SP(' signatur'); const r = await Promise.race([page.evaluate(S.signatur, OPT).catch(() => null), warte0(60000).then(() => null)]); SP(' signatur fertig'); return r; };
 
   let nr = 0;
-  const messe = async (zu) => {
+  const ZT = {}; const zt = (n, t0) => { ZT[n] = (ZT[n] || 0) + Date.now() - t0; };
+  if (process.env.TOR_ZEIT) process.on('exit', () => console.log('ZEIT', JSON.stringify(ZT)));
+  const messe = async (zu) => { const tM = Date.now();
     const y0 = await page.evaluate(() => scrollY).catch(() => 0);   // Lage des Zustands (z. B. Rundgang-Schritt weiter unten), für das Bild am Ort
     const hoch = await page.evaluate(() => document.documentElement.scrollHeight).catch(() => 0);
     for (let y = 0; y < Math.min(hoch, 14000); y += H * .8) { await page.evaluate(v => scrollTo(0, v), y).catch(() => { }); await warte(50); }
+    zt('m-rollen', tM); let t1 = Date.now();
     await page.evaluate(() => scrollTo(0, 0)).catch(() => { }); await ruhe();
+    zt('m-ruhe', t1); t1 = Date.now();
     await page.evaluate(S.verdeckte).catch(() => 0);
     const m = await page.evaluate(messen).catch(e => [{ art: 'fehler', sel: '', text: '', info: String(e).slice(0, 120), r: { x: 0, y: 0, w: 1, h: 1 } }]);
     const e = await page.evaluate(S.ergaenzung, OPT).catch(e => ({ funde: [{ k: 0, art: 'fehler', info: String(e).slice(0, 120) }], doks: [], bilder: [] }));
+    zt('m-messen', t1); t1 = Date.now();
     const sy = await page.evaluate(() => scrollY).catch(() => 0);
     // Messlauf-Funde, die keine Fehler im Sinn der Kriterien sind: Kapselformen (Breite > 2 × Höhe) sind keine Rundknöpfe;
     // Kacheln eines bewusst gemischten Rasters (Grössen um mehr als 40 % verschieden) sind keine Reihe gleicher Karten
@@ -112,6 +120,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
       await page.screenshot({ path: path.join(BILDER, zu.bildOrt), type: 'jpeg', quality: 70 }).catch(() => { zu.bildOrt = null; }); await page.evaluate(() => scrollTo(0, 0)).catch(() => { }); }
     const ph = await page.evaluate(() => document.documentElement.scrollHeight).catch(() => H);
     const clip = (r, rand) => { const x = Math.max(0, r.x - rand), y = Math.max(0, r.y - rand); return { x, y, width: Math.min(W - x, r.w + 2 * rand), height: Math.min(ph - y, r.h + 2 * rand) }; };
+    zt('m-bild', t1); t1 = Date.now();
     zu.doks = []; zu.kacheln = [];
     if (!STICH || true) {
       for (const [i, d] of e.doks.entries()) { if (d.r.h < 110 || d.r.w < 70 || d.r.x < 0 || d.r.x + d.r.w > W + 2) continue; const f = `${zu.id}-d${i}.png`; const c = clip(d.r, 0); if (c.width < 20 || c.height < 20) continue;
@@ -119,6 +128,7 @@ setInterval(() => { if (Date.now() - zuletzt > HMIN * 60e3) { console.log(new Da
       for (const [i, d] of e.bilder.entries()) { if (d.r.x < 0 || d.r.x + d.r.w > W + 2) continue; const f = `${zu.id}-k${i}.png`; const c = clip(d.r, 0); if (c.width < 20 || c.height < 20) continue;
         await page.screenshot({ path: path.join(BILDER, f), clip: c, fullPage: true }).then(() => zu.kacheln.push({ datei: f, r: d.r, sel: d.sel })).catch(() => { }); }
     }
+    zt('m-ausschnitte', t1); ZT.ausschnitte = (ZT.ausschnitte || 0) + zu.doks.length + zu.kacheln.length; ZT.messungen = (ZT.messungen || 0) + 1;
     await page.evaluate(() => document.querySelectorAll('[data-messlauf-aus="verdeckt"]').forEach(e => e.removeAttribute('data-messlauf-aus'))).catch(() => { });
     await page.evaluate(() => scrollTo(0, 0)).catch(() => { });
   };
