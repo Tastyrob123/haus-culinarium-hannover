@@ -22,14 +22,26 @@ on:
         description: 'Titel der Tafel'
         required: false
         default: 'Abnahme in der Cloud'
+  workflow_call:
+    inputs:
+      nur:
+        type: string
+        default: ''
+      titel:
+        type: string
+        default: 'Abnahme in der Cloud'
+      kennung:
+        description: 'Vorsilbe der Pakete und Ablage, wenn mehrere Läufe in einem Durchgang laufen (z. B. probe-, voll1-)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
   actions: read
 
 concurrency:
-  group: abnahme-${{ github.ref }}
-  cancel-in-progress: true
+  group: abnahme-${{ github.ref }}-${{ inputs.kennung || github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 env:
   PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
@@ -40,7 +52,7 @@ env:
 
 jobs:
   plan:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[abnahme')
+    if: github.event_name != 'push' || contains(github.event.head_commit.message, '[abnahme')
     runs-on: ubuntu-24.04
     outputs:
       teile: ${{ steps.p.outputs.teile }}
@@ -84,7 +96,7 @@ jobs:
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: teil-${{ matrix.name }}
+          name: ${{ inputs.kennung }}teil-${{ matrix.name }}
           path: aus
           retention-days: 3
           compression-level: 0
@@ -120,7 +132,7 @@ jobs:
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: mess-${{ matrix.gruppe }}-${{ matrix.browser }}-${{ matrix.w }}
+          name: ${{ inputs.kennung }}mess-${{ matrix.gruppe }}-${{ matrix.browser }}-${{ matrix.w }}
           path: aus
           retention-days: 3
           compression-level: 0
@@ -152,7 +164,7 @@ jobs:
       - if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bew-${{ matrix.k }}
+          name: ${{ inputs.kennung }}bew-${{ matrix.k }}
           path: aus
           retention-days: 3
           compression-level: 0
@@ -170,6 +182,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: lauf
+          pattern: ${{ inputs.kennung }}*
           merge-multiple: true
       - run: pip install --quiet --break-system-packages numpy pillow
       - name: Teile zusammenführen, Tafeln bauen
@@ -181,12 +194,12 @@ jobs:
       - run: cat ergebnis/zusammenfassung.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:
-          name: ergebnis
+          name: ${{ inputs.kennung }}ergebnis
           path: ergebnis
           retention-days: 14
       - name: Ergebnis auf den Zweig «ergebnis» legen (an den Commit gebunden)
         run: |
-          Z="ergebnis/laeufe/${GITHUB_REF_NAME//\//-}"
+          K="${{ inputs.kennung }}"; Z="ergebnis/laeufe/${GITHUB_REF_NAME//\//-}${K:+-${K%-}}"
           if git fetch --depth 1 origin ergebnis 2>/dev/null; then git worktree add -f /tmp/erg FETCH_HEAD; else git worktree add --detach /tmp/erg; (cd /tmp/erg && git rm -rqf . >/dev/null 2>&1 || true); fi
           cd /tmp/erg && rm -rf "$Z" && mkdir -p "$Z" && cp -r "$GITHUB_WORKSPACE/ergebnis/." "$Z/"
           echo "{\"zweig\":\"$GITHUB_REF_NAME\",\"stand\":\"$GITHUB_SHA\",\"lauf\":\"$GITHUB_RUN_ID\",\"zeit\":\"$(date -u +%FT%TZ)\"}" > "$Z/lauf.json"

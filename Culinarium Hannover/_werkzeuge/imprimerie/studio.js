@@ -137,7 +137,7 @@
     wirt.classList.toggle('ohneHilfen', !$('#zeigeHilfen').checked);
     zeichneAuswahl();
     if ($('#docName').value !== doc.name) { $('#docName').value = doc.name; nameEinpassen(); }
-    $('#formatInfo').textContent = `${DS.FORMATE[doc.formatKey]?.name || ''} · ${f.b} auf ${f.h} mm${dg ? '' : ' · Beschnitt 3 mm'}`;
+    $('#formatInfo').textContent = innerWidth < 700 ? (DS.FORMATE[doc.formatKey]?.name || '') : `${DS.FORMATE[doc.formatKey]?.name || ''} · ${f.b} auf ${f.h} mm${dg ? '' : ' · Beschnitt 3 mm'}`;   // Tor 1, 31.10.: am Handy nur der Name, sonst abgeschnitten
     $('#zoomWert').textContent = Math.round(S / PX_MM * 100) + ' %';
     $('#btnZurueck').disabled = !ST.hist.length; $('#btnVor').disabled = !ST.zukunft.length;
     zeichneSeitenwahl(); zeichneEigenschaften(); zeichnePruefung();
@@ -223,7 +223,7 @@
     let h = `<div class="rechts__kopf"><small>Gestalten</small>${ZU_KNOPF}</div><h2>${{ text: 'Text', bild: 'Foto', flaeche: 'Fläche', linie: 'Linie', rahmen: 'Rahmen', zeichen: 'Zeichen' }[el.typ]}</h2>`;
     const masseZeile = (felder) => `<div class="gruppe"><label>Lage in mm</label>${masse(el, felder)}</div>`;
     if (el.typ === 'text') {
-      h += `<div class="gruppe gestalten"><label>Schrift</label><div class="segment segment--schrift">${SCHRIFTEN.filter(([k]) => M.schriften[k]).map(([k, t]) => `<button data-rolle="${k}" class="${(el.rolle === 'kursiv' ? 'text' : el.rolle) === k ? 'an' : ''}" style="font-family:'DS-${k}'">${esc(M.schriften[k].familie || t)}</button>`).join('')}</div></div>
+      h += `<div class="gruppe gestalten"><label>Schrift</label><div class="segment segment--schrift">${SCHRIFTEN.filter(([k]) => M.schriften[k]).map(([k, t]) => `<button data-rolle="${k}" class="${(el.rolle === 'kursiv' ? 'text' : el.rolle) === k ? 'an' : ''}" style="font-family:'DS-${k}'">${esc(M.schriften[k].familie || t).replace(/ (\S+)$/, '\u00a0$1')}</button>`).join('')}</div></div>
         <div class="gruppe"><label>Grösse</label><div class="groesse"><button data-grschritt="-1" aria-label="Kleiner">−</button><input type="number" min="4" max="400" step="0.5" data-grpt="1" value="${r2(el.gr * PT)}"><span>pt</span><button data-grschritt="1" aria-label="Grösser">+</button></div>
           ${regler('gr', el.gr, .8, Math.max(40, el.gr), .05, r2(el.gr * PT) + ' pt')}</div>
         <div class="gruppe"><label>Textart</label><div class="segment">${[['normal', 'Normal'], ['kursiv', 'Betont'], ['versal', 'Versalien gesperrt']].map(([k, t]) => `<button data-textart="${k}" class="${textart(el) === k ? 'an' : ''}" ${k === 'kursiv' && !kursivGeht(el) ? 'disabled title="Kursiv gibt es in der Hausschrift nur für Instrument Sans"' : ''}>${t}</button>`).join('')}</div></div>

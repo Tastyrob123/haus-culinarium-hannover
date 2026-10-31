@@ -1,0 +1,79 @@
+name: Nachtlauf Culinarium (1.11., 00:10 UTC)
+
+# Startet von selbst, ohne Roberts Mac, sobald die Gratis-Minuten zurück sind:
+#  1. Probe: Gästebuch, 3 Teile, nur Tor (gleichmässige Teilung)
+#  2. Nur wenn jeder Probe-Teil erfolgreich und ≤ 15 min: voller Lauf Markenbuch, Gästebuch, Schaufenster
+#  3. Danach die Plakatwerkstatt, nur wenn die bisher verbrauchten Minuten + Hochrechnung ins Kontingent (2.000) passen
+# Ergebnisse: Zweig «ergebnis», Ordner ergebnis/laeufe/main-probe, main-voll1, main-voll2.
+
+on:
+  schedule:
+    - cron: '10 0 1 11 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  probe:
+    uses: ./.github/workflows/abnahme.yml
+    with:
+      nur: 'gaestebuch,teile=3,nurtor'
+      titel: 'Probe gleichmässige Teilung'
+      kennung: 'probe-'
+
+  probe_pruefen:
+    needs: probe
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    outputs:
+      ok: ${{ steps.p.outputs.ok }}
+      mpz: ${{ steps.p.outputs.minuten_je_zustand }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: cloud
+      - uses: actions/download-artifact@v4
+        with:
+          path: probe
+          pattern: probe-teil-*
+          merge-multiple: true
+      - id: p
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 cloud/nacht_pruefen.py probe probe
+
+  voll1:
+    needs: probe_pruefen
+    if: needs.probe_pruefen.outputs.ok == 'true'
+    uses: ./.github/workflows/abnahme.yml
+    with:
+      nur: 'markenbuch,gaestebuch,schaufenster'
+      titel: 'Abnahme Markenbuch, Gästebuch, Schaufenster'
+      kennung: 'voll1-'
+
+  budget:
+    needs: [probe_pruefen, voll1]
+    if: ${{ !cancelled() && needs.probe_pruefen.outputs.ok == 'true' }}
+    runs-on: ubuntu-24.04
+    outputs:
+      weiter: ${{ steps.b.outputs.weiter }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: cloud
+      - id: b
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MPZ: ${{ needs.probe_pruefen.outputs.mpz }}
+        run: python3 cloud/nacht_pruefen.py budget
+
+  voll2:
+    needs: budget
+    if: needs.budget.outputs.weiter == 'true'
+    uses: ./.github/workflows/abnahme.yml
+    with:
+      nur: 'plakatwerkstatt'
+      titel: 'Abnahme Plakatwerkstatt'
+      kennung: 'voll2-'

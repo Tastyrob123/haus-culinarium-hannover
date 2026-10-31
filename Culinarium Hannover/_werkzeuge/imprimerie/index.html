@@ -42,7 +42,7 @@ addEventListener('DOMContentLoaded',function(){setTimeout(function(){var s=docum
 <script src="katalog.js?v=37-cu1"></script>
 <script>(function(){try{var K=window.DSKATALOG;if(!K||/[?&]haus=(?!culinarium)/.test(location.search))return;var h=new Date();h.setHours(0,0,0,0);var k=K.ANLAESSE.filter(function(a){return new Date(a.bis+"T00:00")>=h}).sort(function(x,y){return((new Date(x.von+"T00:00")<h)-(new Date(y.von+"T00:00")<h))||x.von.localeCompare(y.von)}).slice(0,4).map(function(a){return a.fotos[0]}).concat(K.ABTEILUNGEN.slice(0,3).map(function(a){return a.foto}));k.filter(function(f,i){return f&&k.indexOf(f)===i}).forEach(function(f){var l=document.createElement("link");l.rel="preload";l.as="image";l.href="haeuser/culinarium/mini/"+f+".webp";document.head.appendChild(l)})}catch(e){}})();</script>
 <link rel="stylesheet" href="lib/auswahl.css?v=36-cu1">
-<link rel="stylesheet" href="studio.css?v=85-cu1">
+<link rel="stylesheet" href="studio.css?v=86-cu1">
 <link rel="stylesheet" href="ms-bureau.css?v=27-cu1">
 <script>/* Hauseigene Stilschicht (Robert 15./16.10.2026: GBR hell mit Bühne und Schweben wie die übrigen Werkzeuge des Hauses). Ein Haus ohne Eintrag bleibt beim Kern. */
 (function(){var HAUS_STIL={culinarium:1},h=new URLSearchParams(location.search).get('haus')||'culinarium';if(!HAUS_STIL[h])return;var b='haeuser/'+h+'/';var o='/assets/oberflaeche/';
@@ -109,7 +109,7 @@ document.write('<link rel="stylesheet" href="'+b+'hell.css?v=14-cu1"><link rel="
     </section>
 
     <section class="tab" data-tab="vorlagen">
-      <h2>Mit einer Vorlage beginnen</h2>
+      <h2>Mit einer <span style="white-space:nowrap">Vorlage beginnen</span></h2>
       <div class="zeile2">
         <label>Format<select id="vorlageFormat"></select></label>
         <label>Grund<select id="vorlageTon"><option value="dunkel">Nacht mit Raster</option><option value="hell">Warmweiss</option><option value="creme">Plakatpapier mit Raster</option><option value="dc">Violett (Dirty Chicken)</option></select></label>
@@ -275,7 +275,7 @@ document.write('<link rel="stylesheet" href="'+b+'hell.css?v=14-cu1"><link rel="
       </div>
       <div id="msDetail" hidden></div>
       <div id="msFotos" hidden>
-        <div class="ms-titel"><h1>Fotos des Hauses</h1><span class="ms-leise" id="fotoSatz"></span></div>
+        <div class="ms-titel"><h1>Fotos <span style="white-space:nowrap">des Hauses</span></h1><span class="ms-leise" id="fotoSatz"></span></div>
         <div class="ms-chips" id="fotoGruppen"></div>
         <div class="ms-fotos" id="fotoRaster"></div>
       </div>
@@ -315,7 +315,7 @@ document.write('<link rel="stylesheet" href="'+b+'hell.css?v=14-cu1"><link rel="
 <script src="vorlagen.js?v=49-cu1"></script>
 <script src="haeuser/culinarium/dokumente.js?v=105"></script>
 <script src="druck.js?v=60-cu1"></script>
-<script src="studio.js?v=69-cu1"></script>
+<script src="studio.js?v=70-cu1"></script>
 <script src="vorschaubild.js?v=7-cu1"></script>
 <script src="instagram.js?v=39-cu1"></script>
 <script src="lelivre.js?v=c4-cu1"></script>

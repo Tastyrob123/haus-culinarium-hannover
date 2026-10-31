@@ -1680,3 +1680,5 @@ textarea.kopf__name.zwei{font-size:16px;line-height:1.2;padding:3px 10px}
 .wo__n b,.vk b{-webkit-hyphens:manual!important;hyphens:manual!important}
 #eTon button{flex:1 1 auto;padding-inline:9px;letter-spacing:.05em}
 .tab[data-tab="vorlagen"] .zeile2{flex-wrap:wrap}.tab[data-tab="vorlagen"] .zeile2>*{flex:1 1 100%}
+/* Tor 1, 31.10.2026 (gezielt): Schriftknöpfe dürfen zweizeilig werden, nichts ragt heraus */
+.segment--schrift button{height:auto;min-height:36px;padding:6px 6px;line-height:1.15;text-wrap:balance}

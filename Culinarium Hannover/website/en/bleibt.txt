@@ -1,4 +1,4 @@
-# Bewusst nicht übersetzt (bau_en.py, Version 26216): Text	Grund	Seiten
+# Bewusst nicht übersetzt (bau_en.py, Version 26218): Text	Grund	Seiten
 30449 Hannover	Adresse	weg
 30449 Hannover-Linden	Adresse	abend, abende, bar, datenschutz, dirty-chicken, impressum, index, leute, termine-pflege, weg
 Haasemannstraße	Adresse	weg
