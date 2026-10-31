@@ -1,10 +1,13 @@
 name: Probe (Werkzeuge laden?)
 on:
+  push:
+    branches: ['**', '!ergebnis', '!quelle']
   workflow_dispatch:
 env:
   PLAYWRIGHT_BROWSERS_PATH: /home/runner/ms-playwright
 jobs:
   probe:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[probe]')
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
