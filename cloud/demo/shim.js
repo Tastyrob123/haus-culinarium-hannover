@@ -32,6 +32,16 @@
     l.forEach(function (x) { if (!best || (x[0] >= w) && (best[0] < w || x[0] < best[0]) || best[0] < w && x[0] > best[0]) best = x; });
     return best && best[1];
   }
+  var VORHANDEN = {};
+  Object.keys(KARTE).forEach(function (k) { VORHANDEN[KARTE[k]] = 1; });
+  function groesse(abs) {                                  // volle Adresse in der Demo → vorhandene Größe (oder null)
+    try { abs = new URL(abs, location.href).href; } catch (e) { return null; }
+    if (abs.indexOf(BASE) !== 0) return null;
+    var rel = abs.slice(BASE.length).split(/[?#]/)[0];
+    try { rel = decodeURIComponent(rel); } catch (e) {}
+    if (VORHANDEN[rel]) return null;
+    var v = variante(rel); return v ? BASE + v : null;
+  }
   function ziel(p) {                                       // Datei in der Demo für einen Weg (oder null)
     var n = norm(p); if (!n) return null; if (n.aussen) return n.aussen;
     var w = n.weg, d = decodeURIComponent;
@@ -117,10 +127,25 @@
       }
     }
     var st = el.getAttribute('style');
+    /* Hintergrundbild per Skript mit voller Adresse in der Demo, aber diese Größe fehlt: vorhandene Größe nehmen */
+    if (st && st.indexOf(BASE) >= 0 && /-\d{2,4}\.(webp|jpe?g|png|avif)/.test(st)) {
+      var st2 = st.replace(/url\(\s*(['"]?)([^'")]+)\1\s*\)/g, function (g, q, u) { var x = groesse(u); return x ? 'url(' + q + x + q + ')' : g; });
+      if (st2 !== st) { setA.call(el, 'style', st2); st = st2; }
+    }
     if (st && /url\(\s*['"]?\/(?!\/)/.test(st)) setA.call(el, 'style', st.replace(/url\(\s*(['"]?)(\/(?!\/)[^'")]+)\1\s*\)/g, function (_, q, p) { return 'url(' + q + ziel(p) + q + ')'; }));
     if (el.tagName === 'STYLE' && /url\(\s*['"]?\/(?!\/)/.test(el.textContent)) el.textContent = el.textContent.replace(/url\(\s*(['"]?)(\/(?!\/)[^'")]+)\1\s*\)/g, function (_, q, p) { return 'url(' + q + ziel(p) + q + ')'; });
     var ss = el.getAttribute('srcset');
     if (ss && /(^|,)\s*\//.test(ss)) el.setAttribute('srcset', ss.replace(/(^|,\s*)(\/[^\s,]+)/g, function (_, a, p) { return a + ziel(p); }));
+    /* Bilder mit fehlender Größe (auch relative Wege): vorhandene Größe nehmen */
+    if (el.tagName === 'IMG' || el.tagName === 'SOURCE') {
+      var s = el.getAttribute('src'), g = s && /-\d{2,4}\.(webp|jpe?g|png|avif)/.test(s) && groesse(s);
+      if (g) setA.call(el, 'src', g);
+      var ss2 = el.getAttribute('srcset');
+      if (ss2 && /-\d{2,4}\.(webp|jpe?g|png|avif)/.test(ss2)) {
+        var neu = ss2.split(',').map(function (c) { var t = c.trim().split(/\s+/); var x = groesse(t[0]); return (x || t[0]) + (t[1] ? ' ' + t[1] : ''); }).join(', ');
+        if (neu !== ss2) setA.call(el, 'srcset', neu);
+      }
+    }
   }
   function alle(root) { if (root.nodeType !== 1) return; biege(root); var l = root.querySelectorAll('[src],[href],[srcset],[poster],[data-src],[style],style'); for (var i = 0; i < l.length; i++) biege(l[i]); }
   new MutationObserver(function (ms) {
