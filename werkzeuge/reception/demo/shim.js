@@ -160,7 +160,10 @@
   /* Seitenwechsel per Skript auf andere Wege («location.href = '/…'») */
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
-    var h = a.getAttribute('href'); if (h && (h.charAt(0) === '/' || /^https?:\/\/(127\.0\.0\.1|localhost)[:\/]/.test(h))) { e.preventDefault(); var z = ziel(h); if (/^https?:/.test(z) && z.indexOf(ORIGIN) !== 0) window.open(z, '_blank', 'noopener'); else location.href = z; }
+    var h = a.getAttribute('href');
+    /* Ordner-Links («x/») auf «x/index.html»: manche Hoster liefern keine index.html von selbst */
+    if (h && !/^(#|[a-z][a-z0-9+.-]*:|\/\/)/i.test(h) && h.charAt(0) !== '/') { var hu = new URL(h, location.href); if (hu.origin === ORIGIN && /\/$/.test(hu.pathname)) { e.preventDefault(); hu.pathname += 'index.html'; location.href = hu.href; return; } }
+    if (h && (h.charAt(0) === '/' || /^https?:\/\/(127\.0\.0\.1|localhost)[:\/]/.test(h))) { e.preventDefault(); var z = ziel(h); if (/^https?:/.test(z) && z.indexOf(ORIGIN) !== 0) window.open(z, '_blank', 'noopener'); else location.href = z; }
   }, true);
   var asg = window.Location && Location.prototype.assign;
   if (asg) Location.prototype.assign = function (u) { var n = norm(u); return asg.call(this, n ? ziel(u) : u); };
