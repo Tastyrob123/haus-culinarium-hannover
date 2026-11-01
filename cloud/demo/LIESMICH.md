@@ -1,0 +1,13 @@
+# Online-Demos der Werkzeuge (ohne Server)
+
+Robert 1.11.2026: «Das sind alles Demos, die online laufen, keinen Impact auf die echte Seite haben und dazu dienen, dass der Kunde das Erlebnis hat … der Kunde soll erstmal die Versionen bekommen, die online MIT dem Werkbank-Link laufen und ihm erstmal Dummy-Werte anzeigen.»
+
+Weg (in der Cloud, ohne Vercel):
+1. **Aufnehmen:** Server des Hauses laufen (`bash cloud/server.sh`). Je Werkzeug-Port einen Aufnahme-Proxy starten:
+   `python3 cloud/demo/proxy.py <proxyport> <werkzeugport> <aufnahme-ordner>`
+   Dann die Zielliste mit den Proxy-Ports kopieren (`sed 's/:92\([0-9][0-9]\)/:93\1/g'`) und je Werkzeug `tor-schnell.js … --nur <k> --max 40 --tiefe 2 --breiten 1440` laufen lassen. Jede Anfrage samt Antwort landet im Aufnahme-Ordner.
+2. **Bauen:** `python3 cloud/demo/bau.py <aufnahme> _werkzeuge/<werkzeug>/index.html <ausgabe> [links.json] "<hausordner>/_werkzeuge/<werkzeug>=_werkzeuge/<werkzeug>,<hausordner>/_werkzeuge/oberflaeche=assets/oberflaeche"`
+   Ergebnis: statischer Ordner mit `index.html` (leitet zum Werkzeug), `_demo/karte.js` (aufgenommene Antworten), `_demo/shim.js` (Weiche: beantwortet Server-Anfragen mit den Beispielwerten, Speichern/Veröffentlichen sagen «geklappt», ändern nichts; Wege mit «/» vorn werden auf den Demo-Ordner gebogen; Band «Demo mit Beispielwerten»).
+   `links.json` = {"9281": "<Adresse der Tresen-Demo>", …}: Verweise zwischen den Werkzeugen und aus der Werkbank.
+3. **Prüfen:** Ordner unter einem Unterweg bereitstellen (`python3 -m http.server 9500` im Elternordner, Adresse mit `127.0.0.2`, nicht 127.0.0.1) und `node cloud/demo/test.js http://127.0.0.2:9500/<weg>/index.html bild.jpg` – Bild ansehen, fehlende Dateien nachziehen.
+4. **Online:** je Werkzeug ein Artifact (claude.ai, höchstens 511 Dateien / 256 MB, je Veröffentlichung 255 Dateien, Datei ≤ 15 MB), danach die Werkbank mit `links.json` neu bauen, damit «Bedienen» die Demos öffnet.
