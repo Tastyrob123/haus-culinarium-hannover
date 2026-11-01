@@ -36,7 +36,7 @@ for w in wege:
     nach_hash[hashlib.sha1(open(os.path.join(QUELLE, w), 'rb').read()).hexdigest()].append(w)
 for l in nach_hash.values():
     if len(l) > 1:
-        bleibt = sorted(l, key=lambda w: (not w.startswith('material/'), len(w)))[0]   # Material-Namen sind die lesbaren Dateinamen
+        bleibt = sorted(l, key=lambda w: (bool(re.search(r'[:*?"<>|\\]', w)), not w.startswith('material/'), len(w)))[0]   # «:» u. ä. nimmt das Artifact nicht   # Material-Namen sind die lesbaren Dateinamen
         for w in l:
             if w != bleibt:
                 umleiten[w] = bleibt
