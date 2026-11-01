@@ -1,0 +1,34 @@
+# Kunden-Demo online (Robert 1.11.2026): EIN Link, keine Freigaben, keine Anmeldung.
+# Inhalt kommt aus dem Zweig «demo-seite» (Werkbank + die sieben Werkzeug-Demos mit Beispielwerten, gebaut mit cloud/demo/).
+# Start: Push auf main mit «[seite]» in der Nachricht, oder per Knopf.
+name: Kunden-Demo (GitHub Pages)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: seite
+  cancel-in-progress: false
+jobs:
+  seite:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[seite]')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo-seite
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4

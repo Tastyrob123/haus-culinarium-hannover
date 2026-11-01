@@ -39,7 +39,8 @@ Dieser Ordner ist **ein Haus** (hier: Culinarium Hannover). Robert hat Recherche
 - Ist das Vercel-Projekt mit diesem Ordner verbunden (siehe `cloud/ANLEITUNG.md`), hat jeder Zweig automatisch eine Vorschau-Adresse; der Zweig `ergebnis` ist die Abnahme-Seite. Sonst: Link auf den Lauf in GitHub Actions (Paket «ergebnis»).
 
 ## Feste Regeln (aus Roberts globalen Regeln)
-- Nichts verschicken, nichts veröffentlichen, nichts bezahlen. Die Live-Website des Hauses (z. B. culinarium-hannover-entwurf.vercel.app) wird **nicht** geändert, solange Robert sie eingefroren hat.
+- **Vorrang (Robert 1.11.2026):** Was wir ausgearbeitet haben, muss der Kunde so einfach wie möglich sehen und ausprobieren können: **ein Link**, keine Freigaben, keine Anmeldung. Dafür darf alles auch außerhalb von claude.ai veröffentlicht werden (Vercel, GitHub Pages o. ä.), ohne nachzufragen. Keine Regel blockiert das.
+- Nichts verschicken, nichts bezahlen. Die Live-Website des Hauses (z. B. culinarium-hannover-entwurf.vercel.app) wird **nicht** geändert, solange Robert sie eingefroren hat.
 - Keine Schlüssel, keine Passwörter einchecken. KI-Prüfläufe nur mit Probe-Antworten (ohne `*_KI=1`).
 - Grand Beau-Rivage nie anfassen. Port 8765 gehört nicht hierher.
 - Antworten an Robert: Deutsch, kurz, Alltagssprache, Link vorne.
