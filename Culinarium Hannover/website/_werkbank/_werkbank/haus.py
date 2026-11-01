@@ -297,7 +297,7 @@ GEPRUEFT_PUNKTE = [
     ('Eure Daten', 'Gäste bekommen keine Kekse in den Browser. Was sie buchen oder auf die Warteliste schreiben, landet bei euch, und im Entwurf nie beim echten Haus.'),
 ]
 GEPRUEFT_TRIO = [(bild('pass'), 1.6, (.5, .5), 'Am Pass'), (bild('klaeren'), 1.6, (.5, .5), 'An der Bar'), (bild('schildnacht'), 1.6, (.5, .5), 'An der Ecke')]
-GEPRUEFT_OFFEN = 'Ein paar Fragen könnt nur ihr beantworten: wessen Angaben ins Impressum kommen, wer an welchem Foto und Plakat die Rechte hat und wer welches Werkzeug bekommt.'   # ohne «Vertragspartner» (Robert 1.11.2026)
+GEPRUEFT_OFFEN = 'Ein paar Fragen könnt nur ihr beantworten: wessen Angaben ins Impressum kommen, wer an welchem Foto und Plakat die Rechte hat und wer welches Werkzeug bekommt.'   # Robert 1.11.2026
 GEPRUEFT_EIN = 'Hier steht in einfachen Worten, was an Website, Karten und Werkzeugen angesehen und ausprobiert wurde, und was danach noch bei euch liegt.'
 GEPRUEFT_NAV = ['Website', 'Karten', 'Werkzeuge', 'Daten', 'Offen']
 GEPRUEFT_MEHR = [
@@ -483,6 +483,8 @@ def nach_bau():
     text_mitte.anwenden(ROOT)
     import bild_mass   # Bilder in der gezeigten Grösse, damit der Tab in WebKit nicht am Speicher scheitert (Abnahme-Tor 4, 30.10.2026)
     bild_mass.anwenden(ROOT)
+    import ruecksprung   # beim Zurück im Browser wieder auf der Höhe, von der man kam, auf jeder Seite der Werkbank (Robert 1.11.2026)
+    ruecksprung.anwenden(ROOT)
 
 
 TITEL_NEU = {   # eigene Überschriften von Culinarium (Werkbank-Regel 14), keine gleich wie beim Schäfli oder Schlössli

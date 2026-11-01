@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Werkbank Culinarium, Kapitel VIII «Die Übergabe» (Robert 1.11.2026, für Culinarium und Walk on the Wild Side gleich: «Das Angebot» ist gestrichen).
 Robert hat alles umsonst für sein Portfolio gemacht. Botschaft klar und kurz: ihr bekommt alles (Website, Werkzeuge, Drucksachen, Dateien), es läuft so;
-wenn etwas nicht klappt, meldet ihr euch; keine Bindung, kein Vertrag. Auf Wunsch eine Wartung im Monat (Sicherheitsupdates, Datenschutz und Ähnliches),
-freiwillig. Keine Preise, keine Wochenpläne, keine Leistungstabelle. Kleid und Bausteine wie zuvor (helle Blätter auf der Nacht, Karte als Menükarte):
-Register → Kurz gesagt (mit Hausfoto) → Was ihr bekommt → Karte «Die Übergabe.» (Was euch gehört, Wenn etwas hakt, Auf Wunsch, Link zur Seite
+wenn etwas nicht klappt, meldet ihr euch; keine Bindung, kein Vertrag. Laufende Betreuung optional, aber empfohlen (Sicherheitsupdates, Datenschutz, Server,
+Domain und Sicherungen, kleine Fehler). Keine Preise, keine Wochenpläne, keine Leistungstabelle. Kleid und Bausteine wie zuvor (helle Blätter auf der Nacht, Karte als Menükarte):
+Register → Kurz gesagt (mit Hausfoto) → Was ihr bekommt → Karte «Die Übergabe.» (Was euch gehört, Wenn etwas hakt, Laufende Betreuung, Link zur Seite
 «KI und eure Daten», PDF). Zahlen gezählt aus dem gebauten Stand. Vorher: Aufbau aus sb_angebot.py des Schäfli (dort nach dem Schlössli und dem
 Grand Beau-Rivage, nur gelesen und kopiert)."""
 import html, json, os
@@ -60,7 +60,10 @@ def inhalt(z):
 EIGENTUM = ['Was entstanden ist, gehört Culinarium: Website, Code, Karten, Drucksachen, Beiträge und Fotos.', 'Domain, Server und Zugänge kommen auf euren Namen.',
             'Die Rechte an Fotos und Plakaten bleiben bei euch und euren Fotografen.']
 HAKT = ['Klappt etwas nicht, meldet euch einfach bei mir.']
-WARTUNG = ['Eine Wartung im Monat: Sicherheitsupdates, Anpassungen beim Datenschutz und Ähnliches.', 'Freiwillig, nicht verpflichtend.']
+BETREUUNG = [   # Robert 1.11.2026: optional, aber empfohlen; keine Preise, keine Bindung
+    'Optional, aber empfohlen.',
+    'Jeden Monat: Sicherheitsupdates, Anpassungen beim Datenschutz, Server, Domain und Sicherungen im Blick, kleine Fehler behoben.',
+    'Keine Bindung, ihr könnt jederzeit aufhören.']
 KI_SATZ = 'An vier Stellen arbeitet KI mit. Was sie dort tut und wo eure Daten bleiben, steht auf einer eigenen Seite.'
 
 
@@ -104,7 +107,7 @@ def karte_html():
         </header>
         {ORN}{gang('I', 'Was euch gehört')}{zeilen(EIGENTUM)}
         {ORN}{gang('II', 'Wenn etwas hakt')}{zeilen(HAKT)}
-        {ORN}{gang('III', 'Auf Wunsch')}{zeilen(WARTUNG)}
+        {ORN}{gang('III', 'Laufende Betreuung')}{zeilen(BETREUUNG)}
         {ORN}<p class="mn-ki-satz">{e(KI_SATZ)}</p>
         <p class="mn-ki"><a class="kn kn--klein" href="ki.html">KI und eure Daten<i>{PF}</i></a></p>
         <footer class="mn-ende"><i></i><span>{e(DATUM)}</span><i></i></footer>

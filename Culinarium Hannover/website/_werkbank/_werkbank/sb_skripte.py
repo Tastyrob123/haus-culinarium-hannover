@@ -26,7 +26,6 @@ function merk(ev){var a=ev.target.closest&&ev.target.closest('a[href]');if(!a)re
  ev.preventDefault();if(werkzeug)window.open(a.href,'_blank');else location.href=a.href}
 document.addEventListener('click',merk,true);document.addEventListener('auxclick',merk,true);
 var q=new URLSearchParams(location.search),y=q.get('y'),zur=false;
-try{var nav=performance.getEntriesByType('navigation')[0];if(y===null&&nav&&nav.type==='back_forward'){y=sessionStorage.getItem('wb-y');zur=true}}catch(e){}
 if(y===null||!/^\d+$/.test(y))return;y=+y;
 try{history.scrollRestoration='manual'}catch(e){}
 var st=document.createElement('style');st.textContent='html.wb-sofort,html.wb-sofort *{transition:none!important;animation-duration:0s!important;animation-delay:0s!important;scroll-behavior:auto!important}';document.head.appendChild(st);

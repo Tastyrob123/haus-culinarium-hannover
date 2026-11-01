@@ -41,7 +41,7 @@ BEFUNDE = [  # nr, was, wo, für die Gäste, fürs Haus, was wir tun würden, Au
          wo='Beitrag vom 7. März 2026 und vom 29. Juli 2026: Tickets werden «nicht rückerstattet». Ein Impressum, Datenschutz oder Bedingungen gibt es zum Profil nicht.',
          gaeste='Wer im Voraus bezahlt, findet die Regel zur Rückgabe nur im Text eines Beitrags.',
          haus='Wo Geld fließt, gehören Impressum, Datenschutz und Bedingungen dazu. Sie schützen euch, wenn jemand nachfragt.',
-         tun='Impressum, Datenschutz und eure Bedingungen auf der eigenen Seite, mit euren Angaben, sobald sie online geht.',   # ohne «Vertragspartner» (Robert 1.11.2026)
+         tun='Impressum, Datenschutz und eure Bedingungen auf der eigenen Seite, mit euren Angaben, sobald sie online geht.',   # Robert 1.11.2026
          ganz='ig-p-DVjkofijp6R-handy.jpg', nah=None),
 ]
 

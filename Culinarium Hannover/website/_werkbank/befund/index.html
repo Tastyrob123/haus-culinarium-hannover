@@ -44,5 +44,29 @@
 .rund[aria-label^="Zur"] svg,.rund[aria-label^="Vorig"] svg,.pf[aria-label^="Vorig"] svg{transform:translateX(.5px)}
 .rund[aria-label^="Weiter"] svg,.rund[aria-label^="Nächst"] svg,.pf[aria-label^="Nächst"] svg{transform:translateX(-.5px)}
 @supports (font:-apple-system-body){.pf[aria-label^="Vorig"] svg{transform:translate(.6px,.5px)}.pf[aria-label^="Nächst"] svg{transform:translate(-.6px,.5px)}}
-@supports not (font:-apple-system-body){.pf[aria-label^="Vorig"] svg{transform:translateX(.6px)}.pf[aria-label^="Nächst"] svg{transform:translateX(-.6px)}}</style><script id="text-mitte-js">(function(){function t(){document.querySelectorAll('.kn,.sbf-z,.wahl button,.vh-wahl button,.uwahl button,.uschalter button').forEach(function(k){var n=k.firstChild;if(n&&n.nodeType===3&&n.textContent.trim()){var s=document.createElement('span');s.className='tm';s.textContent=n.textContent;k.replaceChild(s,n)}})}t();addEventListener('load',t)})();</script></body>
+@supports not (font:-apple-system-body){.pf[aria-label^="Vorig"] svg{transform:translateX(.6px)}.pf[aria-label^="Nächst"] svg{transform:translateX(-.6px)}}</style><script id="text-mitte-js">(function(){function t(){document.querySelectorAll('.kn,.sbf-z,.wahl button,.vh-wahl button,.uwahl button,.uschalter button').forEach(function(k){var n=k.firstChild;if(n&&n.nodeType===3&&n.textContent.trim()){var s=document.createElement('span');s.className='tm';s.textContent=n.textContent;k.replaceChild(s,n)}})}t();addEventListener('load',t)})();</script><script id="ruecksprung">(function(){
+var id=null;try{id=history.state&&history.state.rs;if(!id){id=Date.now().toString(36)+Math.random().toString(36).slice(2,6);history.replaceState(Object.assign({},history.state||{},{rs:id}),'')}}catch(e){}
+var K='rs:'+location.pathname+(id?':'+id:'');   /* je Eintrag im Verlauf: dieselbe Seite zweimal im Verlauf behält zwei Höhen */
+function merk(){try{sessionStorage.setItem(K,String(Math.round(window.scrollY||0)))}catch(e){}}
+function hol(){try{var v=sessionStorage.getItem(K);return v&&/^\d+$/.test(v)?+v:null}catch(e){return null}}
+addEventListener('pagehide',merk);
+document.addEventListener('click',function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest('a[href]');if(a&&(a.getAttribute('href')||'').charAt(0)!=='#')merk()},true);
+function gezeigt(y){var g=y+innerHeight*1.2;[].forEach.call(document.querySelectorAll('[data-a],.odo,.zt,.roll,img.ld'),function(e){if(e.classList.contains('da'))return;var r=e.getBoundingClientRect();if(r.top+scrollY<g)e.classList.add('da')})}
+addEventListener('pageshow',function(ev){if(!ev.persisted)return;var y=hol();if(y===null)return;gezeigt(y);if(Math.abs(scrollY-y)>40)scrollTo(0,y)});
+var nav=null;try{nav=performance.getEntriesByType('navigation')[0]}catch(e){}
+var typ=nav?nav.type:(performance.navigation&&performance.navigation.type===2?'back_forward':'');
+if(typ!=='back_forward')return;
+var y=hol();if(y===null||y<40)return;
+try{history.scrollRestoration='manual'}catch(e){}
+var H=document.documentElement,st=document.createElement('style');
+st.textContent='html.rs-sofort,html.rs-sofort *{transition:none!important;animation-duration:0s!important;animation-delay:0s!important;scroll-behavior:auto!important}';
+document.head.appendChild(st);H.classList.add('rs-sofort');
+var weg=false;['wheel','touchstart','keydown','mousedown'].forEach(function(k){addEventListener(k,function(){weg=true},{once:true,passive:true})});
+function geh(){if(weg)return;scrollTo(0,y);gezeigt(y)}
+function los(){geh();requestAnimationFrame(function(){geh();requestAnimationFrame(function(){H.classList.remove('rs-sofort')})});
+ var n=0,t=setInterval(function(){n++;if(Math.abs(scrollY-y)>40)geh();if(n>=14||weg)clearInterval(t)},150)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',los);else los();
+addEventListener('load',function(){if(Math.abs(scrollY-y)>40)geh()});
+})();</script>
+</body>
 </html>
