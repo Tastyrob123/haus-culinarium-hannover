@@ -29,6 +29,7 @@ const SEITEN = ['index.html', 'werkbank/index.html', 'werkbank/ki.html', 'werkba
         return out.slice(0, 8);
       }).catch(() => []);
       const text = await p.evaluate(() => document.body ? document.body.innerText.trim().length : 0).catch(() => 0);
+      if (br === 1440) console.log('   TEXT ' + s + ' :: ' + (await p.evaluate(() => document.title + ' | ' + location.href + ' | ' + (document.body ? document.body.innerText.trim().replace(/\s+/g, ' ').slice(0, 300) : '')).catch(() => '')));
       const kurz = u => u.replace(BASIS, '');
       const probleme = [...fehl].length + kaputt.length + leer.length + err.size + (text < 50 ? 1 : 0) + (st >= 400 ? 1 : 0);
       fehlerGesamt += probleme;
