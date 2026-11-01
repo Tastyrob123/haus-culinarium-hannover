@@ -7,6 +7,8 @@ import sys, os, json, re, hashlib, shutil, posixpath
 AUF, START, AUS = sys.argv[1], sys.argv[2].lstrip('/'), sys.argv[3]
 LINKS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 and os.path.exists(sys.argv[4]) else {}
 HIER = os.path.dirname(os.path.abspath(__file__))
+# Schlüssel, Passwörter, Zugänge: nie in eine Demo (Culinarium 1.11.: online/schluessel.txt)
+GEHEIM = re.compile(r'schl(ue|ü)ssel|secret|token|passw|credential|zugang|\.env$|\.pem$|\.key$|api[-_]?key', re.I)
 STATISCH = {'css', 'js', 'mjs', 'woff2', 'woff', 'ttf', 'otf', 'webp', 'jpg', 'jpeg', 'png', 'svg', 'gif', 'ico', 'pdf', 'mp4', 'webm', 'json', 'html', 'htm', 'txt', 'xml', 'wasm', 'map', 'avif', 'mp3', 'csv', 'md'}
 
 def U(f):
@@ -39,6 +41,8 @@ for zeile in open(os.path.join(AUF, 'log.jsonl'), encoding='utf-8'):
             art = 'html' if 'html' in ct else 'json' if 'json' in ct else 'js' if 'javascript' in ct else 'css' if 'css' in ct else 'svg' if 'svg' in ct else \
                 'webp' if 'webp' in ct else 'png' if 'png' in ct else 'jpg' if 'jpeg' in ct else 'pdf' if 'pdf' in ct else 'woff2' if 'woff2' in ct else 'txt'
             f = 'demo/d/' + hashlib.sha1(p.encode()).hexdigest()[:14] + '.' + art
+        if GEHEIM.search(pn):
+            continue
         dateien[f] = e['k']
         karte[p] = f
         if pn not in karte or not q:
@@ -63,7 +67,7 @@ if len(sys.argv) > 5 and sys.argv[5]:
             for x in sorted(fs):
                 if len(dateien) >= GRENZE:
                     break
-                if x.endswith(('.py', '.pyc', '.md', '.sh', '.log', '.bak')) or '.vor-' in x or os.path.getsize(os.path.join(d, x)) > 8e6:
+                if x.endswith(('.py', '.pyc', '.md', '.sh', '.log', '.bak', '.ase')) or '.' not in x or GEHEIM.search(x) or '.vor-' in x or os.path.getsize(os.path.join(d, x)) > 8e6:
                     continue
                 w = posixpath.join(web.strip('/'), os.path.relpath(os.path.join(d, x), ordner).replace(os.sep, '/'))
                 f = U(w)
@@ -74,6 +78,30 @@ if len(sys.argv) > 5 and sys.argv[5]:
                 shutil.copyfile(os.path.join(d, x), ziel)
                 dateien[f] = None
                 karte.setdefault(w, f)
+
+# Nachziehen: Anfragen, die der Server nicht beantwortet hat (403/404), aber auf der Platte liegen.
+# Umgebung DEMO_NACHZIEHEN="webweg-anfang=ordner,…" z. B. "assets/schrift/=website/assets/schrift/"
+for paar in filter(None, os.environ.get('DEMO_NACHZIEHEN', '').split(',')):
+    vorn, _, ordner = paar.partition('=')
+    for zeile in open(os.path.join(AUF, 'log.jsonl'), encoding='utf-8'):
+        try:
+            e = json.loads(zeile)
+        except Exception:
+            continue
+        p = e['p'].lstrip('/')
+        pn = p.partition('?')[0]
+        if e['m'] != 'GET' or e['st'] < 400 or not pn.startswith(vorn) or pn in karte or GEHEIM.search(pn):
+            continue
+        quelle = os.path.join(ordner, pn[len(vorn):])
+        if not os.path.isfile(quelle):
+            continue
+        f = U(pn)
+        ziel = os.path.join(AUS, f)
+        os.makedirs(os.path.dirname(ziel), exist_ok=True)
+        shutil.copyfile(quelle, ziel)
+        dateien[f] = None
+        karte[pn] = f
+        karte[p] = f
 
 open(os.path.join(AUS, 'demo', 'ok.json'), 'w').write('{"ok":true,"demo":true}')
 open(os.path.join(AUS, 'demo', 'karte.js'), 'w', encoding='utf-8').write(
@@ -110,7 +138,19 @@ def biege_html(von, t):
     return t
 
 
+def eingebettet(weg):
+    """Kleine Datei als data:-Adresse (url() in CSS-Variablen löst der Browser dort auf, wo die Variable benutzt wird)."""
+    import base64, mimetypes
+    pn = weg.lstrip('/').partition('?')[0].partition('#')[0]
+    f = karte.get(pn) or U(pn)
+    p = os.path.join(AUS, f)
+    if not os.path.isfile(p) or os.path.getsize(p) > 300e3:
+        return None
+    return 'data:' + (mimetypes.guess_type(pn)[0] or 'application/octet-stream') + ';base64,' + base64.b64encode(open(p, 'rb').read()).decode()
+
+
 def biege_css(von, t):
+    t = re.sub(r'--[\w-]+\s*:[^;{}]*url\([^;{}]*', lambda m: re.sub(r'url\((["\']?)(/(?!/)[^)"\']+)\1\)', lambda u: 'url(' + u.group(1) + (eingebettet(u.group(2)) or rel(von, u.group(2))) + u.group(1) + ')', m.group(0)), t)
     t = re.sub(r'url\((["\']?)(/(?!/)[^)"\']+)\1\)', lambda m: 'url(' + m.group(1) + rel(von, m.group(2)) + m.group(1) + ')', t)
     t = re.sub(r'@import\s+(["\'])(/(?!/)[^"\']+)\1', lambda m: '@import ' + m.group(1) + rel(von, m.group(2)) + m.group(1), t)
     return t
@@ -127,8 +167,15 @@ for f in list(dateien):
         open(p, 'w', encoding='utf-8').write(t)
 
 start = karte.get(START) or U(START)
+titel = os.environ.get('DEMO_TITEL', '')
+if not titel:
+    try:
+        m = re.search(r'<title>([^<]+)</title>', open(os.path.join(AUS, start), encoding='utf-8', errors='replace').read())
+        titel = (m.group(1).split('·')[0].strip() + ' · Demo') if m else 'Demo'
+    except Exception:
+        titel = 'Demo'
 open(os.path.join(AUS, 'index.html'), 'w', encoding='utf-8').write(
-    '<title>' + os.environ.get('DEMO_TITEL', 'Demo') + '</title><meta name="claude:viewport-fit-sides" content="cover">'
+    '<title>' + titel + '</title><meta name="claude:viewport-fit-sides" content="cover">'
     '<style>:root{--bg:#130e0d;--fg:#f2e9dc;color-scheme:dark}body{background:var(--bg);color:var(--fg);font-family:Georgia,serif;min-height:100vh;display:grid;place-items:center;'
     'padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}a{color:#d8b264}</style>'
     f'<p><a href="{start}">Demo öffnen</a></p><script>try{{location.replace({json.dumps(start)})}}catch(e){{}}</script>')

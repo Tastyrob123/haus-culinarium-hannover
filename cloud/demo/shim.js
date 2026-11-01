@@ -26,6 +26,8 @@
     if (!f) { try { f = KARTE[d(w)] || KARTE[d(n.nur)]; } catch (e) {} }
     if (!f && /^u/.test(n.nur)) f = KARTE['_' + w.slice(1)] || KARTE['_' + n.nur.slice(1)];
     if (!f && /\/$/.test(n.nur)) f = KARTE[n.nur + 'index.html'];
+    /* Seiten der Website (oberste Ebene, nicht in der Demo): zur öffentlichen Website, wenn links.json «website» nennt */
+    if (!f && LINKS.website && /^([\w-]+\.html)?$/.test(n.nur)) return LINKS.website.replace(/\/?$/, '/') + n.nur + (n.weg.slice(n.nur.length) || '');
     return BASE + (f || n.nur.replace(/^_/, 'u'));
   }
   window.__demoZiel = ziel;
@@ -96,7 +98,7 @@
       if (!v || el.__demoGebogen === v) continue;
       if (/^(#|data:|blob:|mailto:|tel:|javascript:|https?:\/\/(?!127\.0\.0\.1|localhost))/i.test(v)) continue;
       if (v.charAt(0) === '/' || /^https?:\/\/(127\.0\.0\.1|localhost)/.test(v)) {
-        var z = ziel(v); if (z) { el.__demoGebogen = z; el.setAttribute(a, z); if (a === 'href' && el.tagName === 'A' && /^https:\/\/claude\.ai/.test(z)) el.target = '_blank'; }
+        var z = ziel(v); if (z) { el.__demoGebogen = z; el.setAttribute(a, z); if (a === 'href' && el.tagName === 'A' && /^https?:/.test(z) && z.indexOf(ORIGIN) !== 0) el.target = '_blank'; }
       }
     }
     var st = el.getAttribute('style');
@@ -118,7 +120,7 @@
   /* Seitenwechsel per Skript auf andere Wege («location.href = '/…'») */
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
-    var h = a.getAttribute('href'); if (h && h.charAt(0) === '/') { e.preventDefault(); location.href = ziel(h); }
+    var h = a.getAttribute('href'); if (h && (h.charAt(0) === '/' || /^https?:\/\/(127\.0\.0\.1|localhost)[:\/]/.test(h))) { e.preventDefault(); var z = ziel(h); if (/^https?:/.test(z) && z.indexOf(ORIGIN) !== 0) window.open(z, '_blank', 'noopener'); else location.href = z; }
   }, true);
   var asg = window.Location && Location.prototype.assign;
   if (asg) Location.prototype.assign = function (u) { var n = norm(u); return asg.call(this, n ? ziel(u) : u); };
