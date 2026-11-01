@@ -19,6 +19,19 @@
       return { weg: pfad + u.search, nur: pfad };
     } catch (e) { return null; }
   }
+  /* Bildgrößen: aufgenommen wurde nur eine Breite. Fehlt «name-640.webp», nimm die nächste vorhandene Größe desselben Bildes. */
+  var GROESSEN = {};
+  Object.keys(KARTE).forEach(function (k) {
+    var m = /^(.*)-(\d{2,4})\.(webp|jpe?g|png|avif)$/.exec(k.split('?')[0]);
+    if (m) (GROESSEN[m[1] + '|' + m[3]] = GROESSEN[m[1] + '|' + m[3]] || []).push([+m[2], KARTE[k]]);
+  });
+  function variante(nur) {
+    var m = /^(.*)-(\d{2,4})\.(webp|jpe?g|png|avif)$/.exec(nur); if (!m) return null;
+    var l = GROESSEN[m[1] + '|' + m[3]]; if (!l) return null;
+    var w = +m[2], best = null;
+    l.forEach(function (x) { if (!best || (x[0] >= w) && (best[0] < w || x[0] < best[0]) || best[0] < w && x[0] > best[0]) best = x; });
+    return best && best[1];
+  }
   function ziel(p) {                                       // Datei in der Demo für einen Weg (oder null)
     var n = norm(p); if (!n) return null; if (n.aussen) return n.aussen;
     var w = n.weg, d = decodeURIComponent;
@@ -26,6 +39,7 @@
     if (!f) { try { f = KARTE[d(w)] || KARTE[d(n.nur)]; } catch (e) {} }
     if (!f && /^u/.test(n.nur)) f = KARTE['_' + w.slice(1)] || KARTE['_' + n.nur.slice(1)];
     if (!f && /\/$/.test(n.nur)) f = KARTE[n.nur + 'index.html'];
+    if (!f) f = variante(n.nur);
     /* Seiten der Website (oberste Ebene, nicht in der Demo): zur öffentlichen Website, wenn links.json «website» nennt */
     if (!f && LINKS.website && /^([\w-]+\.html)?$/.test(n.nur)) return LINKS.website.replace(/\/?$/, '/') + n.nur + (n.weg.slice(n.nur.length) || '');
     return BASE + (f || n.nur.replace(/^_/, 'u'));
