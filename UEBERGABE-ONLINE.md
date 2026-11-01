@@ -11,6 +11,15 @@ Der Kunde bekommt **einen Link** zur Werkbank. Darüber öffnet er alle sieben W
 - Das Hochladen läuft in der Cloud-Sitzung «Wild Side: Kunden-Demo auf Vercel hochladen», Umgebung «Vercel», im Account robert@tasty-studios.de. Ihr Ergebnis steht in deren Verlauf.
 - Die eingefrorene Live-Seite `culinarium-hannover-entwurf.vercel.app` **nicht anfassen**.
 
+## Neuer Chat in einem anderen Account: so geht es ohne Hin und Her
+1. Der neue Chat braucht eine Cloud-Umgebung mit **Netzwerkzugriff «Full»** und der Umgebungsvariable **`VERCEL_TOKEN`**. Einrichten: unten in der Sitzungsleiste auf die Umgebung klicken → «Neue Umgebung» → Reiter **Cloud** → Name `Vercel` → Netzwerk «Full» → Umgebungsvariablen `VERCEL_TOKEN=<Schlüssel von vercel.com/account/settings/tokens, Scope «All Projects»>` → erstellen.
+2. Repository `Tastyrob123/haus-wildside` als Quelle wählen, Zweig `main`. Der Account muss Zugriff auf GitHub `Tastyrob123` haben.
+3. Erst prüfen, ob die Links schon laufen. Die alte Sitzung hat das Hochladen eventuell geschafft:
+   - `curl -s -o /dev/null -w "%{http_code}" https://wildside-hannover-entwurf.vercel.app/werkbank/index.html`
+   - `curl -s -o /dev/null -w "%{http_code}" https://culinarium-hannover-demo.vercel.app/werkbank/index.html`
+   - Bei 200 nur noch kurz mit Playwright ansehen, bei 1440 und 390, und Robert die Links schicken.
+4. Sonst die Schritte unten ausführen, für beide Häuser.
+
 ## Falls neu hochladen nötig (Mac mit Vercel-CLI oder Cloud-Umgebung mit Netz und `VERCEL_TOKEN`)
 ```
 git clone --depth 1 -b demo-seite https://github.com/Tastyrob123/haus-wildside /tmp/wildside-hannover-entwurf
