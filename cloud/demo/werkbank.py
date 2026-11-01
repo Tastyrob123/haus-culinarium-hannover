@@ -68,8 +68,8 @@ def neu(von, ref):
         if os.path.splitext(ziel)[1]:
             fehlend[ziel] += 1
         return None
-    if ziel2 == ziel and not pfad.startswith('/'):
-        return None
+    if ziel2 == ziel and not pfad.startswith('/') and not pfad.endswith('/'):
+        return None   # Ordner-Links («x/») immer auf «x/index.html»: manche Hoster liefern keine index.html von selbst
     return quote(posixpath.relpath(ziel2, posixpath.dirname(von) or '.'), safe='/-_.~') + rest
 
 

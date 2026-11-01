@@ -1,0 +1,21 @@
+# Prüft die Kunden-Demo ONLINE (echter Browser im Netz): alle Werkbank-Seiten und die sieben Werkzeuge bei 1440/1000/700/390.
+# Start: Push auf main mit «[demo-pruefen]» in der Nachricht, oder per Knopf.
+name: Kunden-Demo online prüfen
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      basis:
+        description: 'Adresse der Demo'
+        default: 'https://raw.githack.com/Tastyrob123/haus-culinarium-hannover/demo-seite/'
+jobs:
+  pruefen:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[demo-pruefen]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: cloud/demo
+      - run: npm i playwright@1.49.1 --no-audit --no-fund --silent && npx playwright install --with-deps chromium > /dev/null
+      - run: node cloud/demo/online-pruef.js "${{ github.event.inputs.basis || 'https://raw.githack.com/Tastyrob123/haus-culinarium-hannover/demo-seite/' }}"
