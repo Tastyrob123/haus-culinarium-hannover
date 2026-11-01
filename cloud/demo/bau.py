@@ -9,8 +9,13 @@ LINKS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 and os.path.exists(sys
 HIER = os.path.dirname(os.path.abspath(__file__))
 STATISCH = {'css', 'js', 'mjs', 'woff2', 'woff', 'ttf', 'otf', 'webp', 'jpg', 'jpeg', 'png', 'svg', 'gif', 'ico', 'pdf', 'mp4', 'webm', 'json', 'html', 'htm', 'txt', 'xml', 'wasm', 'map', 'avif', 'mp3', 'csv', 'md'}
 
+def U(f):
+    """Oberste Ordner mit «_» vorn sind im Artifact reserviert: «_werkzeuge» → «uwerkzeuge»."""
+    return 'u' + f[1:] if f.startswith('_') else f
+
+
 shutil.rmtree(AUS, ignore_errors=True)
-os.makedirs(os.path.join(AUS, '_demo', 'd'), exist_ok=True)
+os.makedirs(os.path.join(AUS, 'demo', 'd'), exist_ok=True)
 
 karte, post, dateien = {}, {}, {}
 for zeile in open(os.path.join(AUF, 'log.jsonl'), encoding='utf-8'):
@@ -28,18 +33,18 @@ for zeile in open(os.path.join(AUF, 'log.jsonl'), encoding='utf-8'):
         letzt = pn.rsplit('/', 1)[-1]
         ext = letzt.rsplit('.', 1)[-1].lower() if '.' in letzt else ''
         ct = e['ct'] or ''
-        if ext in STATISCH and not (q and ext in ('json', 'html') and 'api/' in pn):
-            f = pn
+        if ext in STATISCH and not (q and ext in ('json', 'html') and 'api/' in pn) and not ('json' in ct and ext != 'json'):
+            f = U(pn)
         else:
             art = 'html' if 'html' in ct else 'json' if 'json' in ct else 'js' if 'javascript' in ct else 'css' if 'css' in ct else 'svg' if 'svg' in ct else \
                 'webp' if 'webp' in ct else 'png' if 'png' in ct else 'jpg' if 'jpeg' in ct else 'pdf' if 'pdf' in ct else 'woff2' if 'woff2' in ct else 'txt'
-            f = '_demo/d/' + hashlib.sha1(p.encode()).hexdigest()[:14] + '.' + art
+            f = 'demo/d/' + hashlib.sha1(p.encode()).hexdigest()[:14] + '.' + art
         dateien[f] = e['k']
         karte[p] = f
         if pn not in karte or not q:
             karte[pn] = f
     else:
-        f = '_demo/d/' + hashlib.sha1((e['m'] + p + e['k']).encode()).hexdigest()[:14] + '.json'
+        f = 'demo/d/' + hashlib.sha1((e['m'] + p + e['k']).encode()).hexdigest()[:14] + '.json'
         dateien[f] = e['k']
         post[e['m'] + ' ' + pn] = {'f': f, 'ct': e['ct'] or 'application/json', 'st': e['st']}
 
@@ -60,20 +65,21 @@ if len(sys.argv) > 5 and sys.argv[5]:
                     break
                 if x.endswith(('.py', '.pyc', '.md', '.sh', '.log', '.bak')) or '.vor-' in x or os.path.getsize(os.path.join(d, x)) > 8e6:
                     continue
-                f = posixpath.join(web.strip('/'), os.path.relpath(os.path.join(d, x), ordner).replace(os.sep, '/'))
+                w = posixpath.join(web.strip('/'), os.path.relpath(os.path.join(d, x), ordner).replace(os.sep, '/'))
+                f = U(w)
                 if f in dateien:
                     continue
                 ziel = os.path.join(AUS, f)
                 os.makedirs(os.path.dirname(ziel), exist_ok=True)
                 shutil.copyfile(os.path.join(d, x), ziel)
                 dateien[f] = None
-                karte.setdefault(f, f)
+                karte.setdefault(w, f)
 
-open(os.path.join(AUS, '_demo', 'ok.json'), 'w').write('{"ok":true,"demo":true}')
-open(os.path.join(AUS, '_demo', 'karte.js'), 'w', encoding='utf-8').write(
+open(os.path.join(AUS, 'demo', 'ok.json'), 'w').write('{"ok":true,"demo":true}')
+open(os.path.join(AUS, 'demo', 'karte.js'), 'w', encoding='utf-8').write(
     'window.__DEMO_KARTE=' + json.dumps(karte, ensure_ascii=False) + ';\nwindow.__DEMO_POST=' + json.dumps(post, ensure_ascii=False) +
     ';\nwindow.__DEMO_LINKS=' + json.dumps(LINKS) + ';\n')
-shutil.copyfile(os.path.join(HIER, 'shim.js'), os.path.join(AUS, '_demo', 'shim.js'))
+shutil.copyfile(os.path.join(HIER, 'shim.js'), os.path.join(AUS, 'demo', 'shim.js'))
 
 
 def rel(von, weg):
@@ -84,7 +90,7 @@ def rel(von, weg):
         pfad, _, h = pfad.partition('#'); hash_ = '#' + h
     if pfad == '' or pfad.endswith('/'):
         pfad += 'index.html'
-    f = karte.get(weg.lstrip('/')) or karte.get(pfad) or pfad
+    f = karte.get(weg.lstrip('/')) or karte.get(pfad) or U(pfad)
     r = posixpath.relpath(f, posixpath.dirname(von) or '.')
     return r + hash_
 
@@ -94,7 +100,7 @@ def biege_html(von, t):
     t = re.sub(r'url\((["\']?)(/(?!/)[^)"\']+)\1\)', lambda m: 'url(' + m.group(1) + rel(von, m.group(2)) + m.group(1) + ')', t)
     for port, url in LINKS.items():
         t = re.sub(r'https?://(?:127\.0\.0\.1|localhost):' + port + r'[^"\'\s<>)]*', url, t)
-    vor = posixpath.relpath('_demo', posixpath.dirname(von) or '.')
+    vor = posixpath.relpath('demo', posixpath.dirname(von) or '.')
     kopf = f'<script src="{vor}/karte.js"></script><script src="{vor}/shim.js"></script>'
     m = re.search(r'<head[^>]*>', t, re.I)
     if m:
@@ -120,9 +126,9 @@ for f in list(dateien):
         t = biege_css(f, open(p, encoding='utf-8', errors='replace').read())
         open(p, 'w', encoding='utf-8').write(t)
 
-start = karte.get(START) or START
+start = karte.get(START) or U(START)
 open(os.path.join(AUS, 'index.html'), 'w', encoding='utf-8').write(
-    '<title>Demo</title><meta name="claude:viewport-fit-sides" content="cover">'
+    '<title>' + os.environ.get('DEMO_TITEL', 'Demo') + '</title><meta name="claude:viewport-fit-sides" content="cover">'
     '<style>:root{--bg:#130e0d;--fg:#f2e9dc;color-scheme:dark}body{background:var(--bg);color:var(--fg);font-family:Georgia,serif;min-height:100vh;display:grid;place-items:center;'
     'padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}a{color:#d8b264}</style>'
     f'<p><a href="{start}">Demo öffnen</a></p><script>try{{location.replace({json.dumps(start)})}}catch(e){{}}</script>')

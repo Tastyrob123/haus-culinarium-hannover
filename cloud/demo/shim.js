@@ -5,7 +5,7 @@
   'use strict';
   var KARTE = window.__DEMO_KARTE || {}, POST = window.__DEMO_POST || {}, LINKS = window.__DEMO_LINKS || {};
   var me = document.currentScript && document.currentScript.src || '';
-  var BASE = me.replace(/_demo\/shim\.js.*$/, '');           // Wurzel der Demo, endet mit «/»
+  var BASE = me.replace(/demo\/shim\.js.*$/, '');           // Wurzel der Demo, endet mit «/»
   var U = new URL(BASE, location.href), ORIGIN = U.origin, BPATH = U.pathname;
   window.__DEMO = { BASE: BASE };
 
@@ -24,8 +24,9 @@
     var w = n.weg, d = decodeURIComponent;
     var f = KARTE[w] || KARTE[n.nur];
     if (!f) { try { f = KARTE[d(w)] || KARTE[d(n.nur)]; } catch (e) {} }
+    if (!f && /^u/.test(n.nur)) f = KARTE['_' + w.slice(1)] || KARTE['_' + n.nur.slice(1)];
     if (!f && /\/$/.test(n.nur)) f = KARTE[n.nur + 'index.html'];
-    return BASE + (f || n.nur);
+    return BASE + (f || n.nur.replace(/^_/, 'u'));
   }
   window.__demoZiel = ziel;
 
@@ -55,7 +56,7 @@
   XMLHttpRequest.prototype.open = function (m, url) {
     var a = [].slice.call(arguments); this.__m = String(m).toUpperCase();
     if (norm(url) && this.__m === 'GET') a[1] = ziel(url);
-    else if (norm(url) && this.__m !== 'GET') { this.__demoPost = url; a[0] = 'GET'; a[1] = BASE + '_demo/ok.json'; }
+    else if (norm(url) && this.__m !== 'GET') { this.__demoPost = url; a[0] = 'GET'; a[1] = BASE + 'demo/ok.json'; }
     return XO.apply(this, a);
   };
   XMLHttpRequest.prototype.send = function (b) { return XS.call(this, this.__demoPost ? null : b); };
@@ -70,9 +71,19 @@
     var d = Object.getOwnPropertyDescriptor(K.prototype, z[1]); if (!d || !d.set) return;
     Object.defineProperty(K.prototype, z[1], { configurable: true, enumerable: d.enumerable, get: d.get, set: function (v) { d.set.call(this, lokal(v) ? ziel(v) : v); } });
   });
+  function fixHtml(s) {
+    return typeof s !== 'string' ? s : s.replace(/(\s(?:src|href|poster)=)(["'])(\/(?!\/)[^"']*)\2/g, function (_, a, q, p) { return a + q + ziel(p) + q; })
+      .replace(/url\(\s*(['"]?)(\/(?!\/)[^'")]+)\1\s*\)/g, function (_, q, p) { return 'url(' + q + ziel(p) + q + ')'; });
+  }
+  var dw = document.write, dwl = document.writeln;
+  document.write = function () { return dw.apply(document, [].map.call(arguments, fixHtml)); };
+  document.writeln = function () { return dwl.apply(document, [].map.call(arguments, fixHtml)); };
+  var sd = Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, 'srcdoc');
+  if (sd && sd.set) Object.defineProperty(HTMLIFrameElement.prototype, 'srcdoc', { configurable: true, get: sd.get, set: function (v) { sd.set.call(this, fixHtml(v)); } });
   var setA = Element.prototype.setAttribute;
   Element.prototype.setAttribute = function (n, v) {
     if ((n === 'src' || n === 'href' || n === 'poster') && lokal(v)) v = ziel(v);
+    if (n === 'srcdoc') v = fixHtml(v);
     return setA.call(this, n, v);
   };
 
@@ -120,7 +131,7 @@
     if (window.top !== window || document.getElementById('demoBand')) return;
     var b = document.createElement('div'); b.id = 'demoBand';
     b.textContent = 'Demo mit Beispielwerten · nichts wird wirklich geändert';
-    b.setAttribute('style', 'position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:2147483646;pointer-events:none;padding:6px 14px;border-radius:999px;font:500 10px/1.2 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f8f3eb;background:rgba(19,14,13,.78);box-shadow:0 0 0 1px rgba(216,178,100,.5);white-space:nowrap;max-width:calc(100vw - 24px);overflow:hidden;text-overflow:ellipsis');
+    b.setAttribute('style', 'position:fixed;left:10px;bottom:10px;z-index:2147483646;pointer-events:none;padding:6px 14px;border-radius:999px;font:500 10px/1.2 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f8f3eb;background:rgba(19,14,13,.78);box-shadow:0 0 0 1px rgba(216,178,100,.5);white-space:nowrap;max-width:calc(100vw - 24px);overflow:hidden;text-overflow:ellipsis');
     document.body.appendChild(b);
   });
 })();

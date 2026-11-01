@@ -11,3 +11,10 @@ Weg (in der Cloud, ohne Vercel):
    `links.json` = {"9281": "<Adresse der Tresen-Demo>", …}: Verweise zwischen den Werkzeugen und aus der Werkbank.
 3. **Prüfen:** Ordner unter einem Unterweg bereitstellen (`python3 -m http.server 9500` im Elternordner, Adresse mit `127.0.0.2`, nicht 127.0.0.1) und `node cloud/demo/test.js http://127.0.0.2:9500/<weg>/index.html bild.jpg` – Bild ansehen, fehlende Dateien nachziehen.
 4. **Online:** je Werkzeug ein Artifact (claude.ai, höchstens 511 Dateien / 256 MB, je Veröffentlichung 255 Dateien, Datei ≤ 15 MB), danach die Werkbank mit `links.json` neu bauen, damit «Bedienen» die Demos öffnet.
+
+## Gelernt beim Hochladen (Wild Side, 1.11.2026)
+- Oberste Ordner mit «_» sind im Artifact reserviert: bau.py macht aus «_werkzeuge» → «uwerkzeuge» (Weiche findet beides).
+- Antworten mit JSON auf Wegen mit «.html» (Schaufenster: api/x/website/seite/…) sind Daten, keine Seiten (bau.py legt sie unter demo/d/ ab).
+- Website-Vorschau im Schaufenster kommt per iframe srcdoc: die Weiche biegt auch srcdoc-Wege um; Bilder der Vorschau aus den aufgenommenen Seiten nachziehen.
+- Dateien mit ESC-Bytes oder U+FFFD (pdf-lib, fontkit) nimmt das Artifact nicht: in druck.js auf cdnjs/jsdelivr umstellen (pdf-lib 1.17.1, @pdf-lib/fontkit 1.1.1) und die lokalen Dateien weglassen.
+- Dateien ohne Endung und .ase weglassen. Je Veröffentlichung ≤ 255 Dateien, dann mit `url` und neuem Paket nachladen.
