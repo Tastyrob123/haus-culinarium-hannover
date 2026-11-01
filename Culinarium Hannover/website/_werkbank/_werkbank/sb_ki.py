@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""werkbank/ki.html «KI und Ihre Daten» und werkbank/karte.html + PDF «Ein Vorschlag.» (Taverne zum Schäfli, 21.10.2026, Vorlage sb_ki.py des Schlössli).
+"""werkbank/ki.html «KI und Ihre Daten» und werkbank/karte.html + PDF «Die Übergabe.» (Robert 1.11.2026, vorher «Ein Vorschlag.»; Taverne zum Schäfli, 21.10.2026, Vorlage sb_ki.py des Schlössli).
 
 Robert 20.10.2026: «… dass unten auch noch das Angebot ist, dieser ganzen KI-Sache, dieser KI-Seite» (Vorbild ki_seite.py des Grand Beau-Rivage,
-nur gelesen; hier eigene, kürzere Fassung im Kleid des Schäfli). Verlinkt aus Gang IV der Karte «Ein Vorschlag.» (sb_angebot.py).
+nur gelesen; hier eigene, kürzere Fassung im Kleid des Schäfli). Verlinkt aus der Karte «Die Übergabe.» (sb_angebot.py).
 
 Nur Belegtes:
   · Vier Stellen und «ohne KI»: reception/gast/gast.py (Chat und Antwort-Entwurf, Wissen nur aus Seiten und Unterlagen), reception/reception.js
@@ -26,13 +26,13 @@ CLAUDE = '<svg class="ki-claude" viewBox="0 0 24 24" role="img" aria-label="Clau
 KOSTEN_OFFEN = 'Nach Verbrauch über euer eigenes Konto. Den Betrag je Aufruf messe ich beim ersten Lauf mit eurem Konto und trage ihn hier ein.'
 
 # Aufbau wie ki_seite.py des Grand Beau-Rivage über das Schäfli: Auftakt → Zahlen + Kosten → vier Stellen (Gerät + helle Karte) → Sorge → Fenster → Daten
-# → Ohne KI → In eurer Hand. Kosten stehen nur hier, nicht auf der Karte «Ein Vorschlag.» (Robert 20.10.2026, Memory «KI-Kosten nur auf KI-Seite»).
+# → Ohne KI → In eurer Hand. Kosten stehen nur hier, nicht auf der Karte «Die Übergabe.» (Robert 20.10.2026, Memory «KI-Kosten nur auf KI-Seite»).
 AUFTAKT = ('Wo die KI hilft.', 'Und wo eure Daten bleiben.',
            'In drei Werkzeugen von Culinarium hilft an vier Stellen KI mit: dreimal Claude, das Sprachmodell von Anthropic, und einmal beim Malen neuer Plakate. Für jede Stelle steht hier, was sie macht, welche Daten wohin gehen und was ohne KI bleibt. Im Entwurf antworten alle vier mit beschrifteten Proben; die KI arbeitet erst über euer eigenes Konto.')
 ZAHLEN = [('4', 'Stellen nutzen KI, alles andere arbeitet ohne.'), ('0', 'eurer Daten gehen ins Training des Modells.'),
           ('30', 'Tage, dann löscht der Anbieter jede Eingabe.'), ('12', 'Monate bewahrt ihr Anfragen auf, dann sind sie weg.')]
 BLICK = ('Was es kostet', ['Die KI läuft über ein eigenes Konto von Culinarium beim Anbieter. Ihr zahlt dort direkt nach Verbrauch, ich richte das Konto ein und setze eine Obergrenze je Monat.',
-                           'In der Betreuung ist das nicht enthalten. Die fertigen Vorlagen, das Bildarchiv und alles Übrige kosten nichts.'])
+                           'Die fertigen Vorlagen, das Bildarchiv und alles Übrige kosten nichts.'])
 STELLEN_KOPF = ('Vier Stellen,', 'genau beschrieben.', 'Was die KI dort tut, was dabei zum Anbieter geht, was ihr aufbewahrt und was ohne sie bleibt.')
 REIHEN = ('Was sie tut', 'Was zum Anbieter geht', 'Was gespeichert wird', 'Ohne KI')   # ohne Zeile «Kosten» (Robert 29.10.2026)
 import rh_werkzeuge as _WK
@@ -79,7 +79,7 @@ OFFEN = ('Was ihr noch festlegt', 'Eure Datenschutzerklärung bekommt vor dem St
 QUELLEN = [('Anthropic: Training mit Daten', 'https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training'),
            ('Anthropic: Aufbewahrung', 'https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data')]
 NAV = ('<nav aria-label="Kapitel"><a href="#ki-blick">KI</a><a href="#ki-zahlen">In Zahlen</a><a href="#ki-stellen">Vier Stellen</a><a href="#ki-daten">Eure Daten</a>'
-       '<a href="#ki-ohne">Ohne KI</a><a href="#ki-hand">In eurer Hand</a><a href="index.html#sag-vorschlag">Zurück zum Vorschlag</a></nav>')
+       '<a href="#ki-ohne">Ohne KI</a><a href="#ki-hand">In eurer Hand</a><a href="index.html#sag-uebergabe">Zurück zur Übergabe</a></nav>')
 
 
 def titel(z1, z2, cls='t2', tag='h2'):
@@ -149,7 +149,7 @@ def hauptteil():
     </div>
     <div class="ag-blatt ki-offen" data-a="heben"><h3 class="ki-k__t">{e(OFFEN[0])}</h3><p>{e(OFFEN[1])}</p>
       <p class="ki-knoepfe"><a class="kn kn--klein" href="../datenschutz.html" target="_blank" rel="noopener">Datenschutz auf der neuen Seite<i>{PF}</i></a>
-      <a class="kn kn--klein" href="index.html#sag-vorschlag">Zurück zum Vorschlag<i>{PF}</i></a></p>
+      <a class="kn kn--klein" href="index.html#sag-uebergabe">Zurück zur Übergabe<i>{PF}</i></a></p>
       <p class="ki-quellen">Angaben des Anbieters, gelesen am {STAND}:</p><ul class="ki-quellen__l">{quellen}</ul></div>
   </div>
 </section>
@@ -196,7 +196,7 @@ def karte_seite(t):
     if not m:
         return None
     karte = m.group(0).replace('<article class="mn" data-a="heben">', '<article class="mn da">')
-    return _kopf(t, 'Ein Vorschlag') + '''
+    return _kopf(t, 'Die Übergabe') + '''
 <style>
 html,body{margin:0;background:var(--nacht,#0b1d3d)}
 body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:clamp(20px,4vw,64px) 16px}
@@ -212,9 +212,9 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:flex-start
 
 PDF_JS = r'''
 const path = require('path');
-const { chromium } = require(process.env.HOME + '/Desktop/Apps & Tools/Tasty Website Builder/node_modules/playwright');
+const { chromium } = (() => { try { return require(process.env.HOME + '/Desktop/Apps & Tools/Tasty Website Builder/node_modules/playwright'); } catch (_) { return require('playwright'); } })();
 (async () => { const b = await chromium.launch(); const p = await b.newPage();
-  await p.goto('http://127.0.0.1:9088/werkbank/karte.html', { waitUntil: 'load' }); await p.evaluate(() => document.fonts && document.fonts.ready);
+  await p.goto('http://127.0.0.1:' + (process.env.WB_PORT || 9088) + '/werkbank/karte.html', { waitUntil: 'load' }); await p.evaluate(() => document.fonts && document.fonts.ready);
   // feste TrueType-Schnitte für den Druck (variable Schriften landen sonst als «Type 3» in der PDF, Apple-Vorschau zeichnet sie weich)
   await p.addStyleTag({ content: "@font-face{font-family:'PDruck';font-weight:100 380;src:url(/_werkbank/fonts/Fraunces-Light.ttf)}@font-face{font-family:'PDruck';font-weight:381 900;src:url(/_werkbank/fonts/Fraunces-Regular.ttf)}" +
     "@font-face{font-family:'IDruck';font-weight:400;src:url(/_werkbank/fonts/InstrumentSans-Regular.ttf)}@font-face{font-family:'IDruck';font-weight:500;src:url(/_werkbank/fonts/InstrumentSans-Medium.ttf)}@font-face{font-family:'IDruck';font-weight:600 900;src:url(/_werkbank/fonts/InstrumentSans-SemiBold.ttf)}" +

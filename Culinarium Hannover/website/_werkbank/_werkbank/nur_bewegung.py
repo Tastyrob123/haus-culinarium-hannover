@@ -5,7 +5,7 @@
   (--gp) fallen weg; der neue Zustand steht sofort, transform/opacity/visibility bleiben.
 - Glanzkante («Zur Website» in der Leiste): statt eines gemalten Verlaufs, der jedes Bild neu gezeichnet wird, dreht sich ein Verlauf
   hinter dem Knopf (transform), der Knopf deckt ihn bis auf die Kante ab.
-- Die Karte «Ein Vorschlag.» (karte.html) kommt wie die Werkbank herein: Kopf und Gänge steigen gestaffelt auf (nur am Bildschirm, nie im PDF).
+- Die Karte «Die Übergabe.» (karte.html) kommt wie die Werkbank herein: Kopf und Gänge steigen gestaffelt auf (nur am Bildschirm, nie im PDF).
 Läuft in haus.nach_bau vor text_mitte, wiederholbar.   python3 _werkbank/nur_bewegung.py [<website/_werkbank>]"""
 import glob, os, re, sys
 

@@ -12,8 +12,8 @@ MASS = {                          # Datei (Muster) unter werkbank/: grösste Bre
     'img/ins-bild-*.webp': 1280,  # Werkzeug-Schirme, gezeigt bis 620 px
     'img/ins-geraet.webp': 1560,  # Gerät um die Schirme, gezeigt bis 769 px
     'img/ml-*.webp': 420,         # Mail-Abzüge im Fächer, gezeigt bis 133 px
-    'img/sag-haus.webp': 1000,    # Haus im Vorschlag, gezeigt bis 481 px
-    'img/pdf-*.webp': 560,        # PDF-Seiten im Vorschlag, gezeigt bis 266 px
+    'img/sag-haus.webp': 1000,    # Haus in der Übergabe, gezeigt bis 481 px
+    'img/pdf-*.webp': 560,        # PDF-Seiten der Karten, gezeigt bis 266 px
 }
 
 

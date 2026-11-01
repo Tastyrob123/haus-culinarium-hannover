@@ -3,7 +3,7 @@
 Werkbank Taverne zum Schäfli in acht Kapiteln (Vorlage Schlössli, dort Ruedihus) (Werkbank-Chat 17.10.2026; Aufbau wie die Werkbank des Carlton-Europe vom 15.10.2026, Technik über das
 Waldhotel Doldenhorn (dh_kapitel.py, nur gelesen und kopiert), Kleid und Worte des Ruedihus):
 Auftakt, Brief, «Worum es geht», Register → Was wir gefunden haben → Ihre Marke → Ihre Website → Karten und Unterlagen → Ihre Werkzeuge
-→ Für draussen → Geprüft → Das Angebot → Schluss und «Alles auf einen Blick».
+→ Für draussen → Geprüft → Die Übergabe → Schluss und «Alles auf einen Blick».
 
   KAPITEL     Anker, Name, eine Zeile fürs Register, Name in der Leiste, Objekt. Leiste und Register lesen von hier.
               Der Befund (k1) zählt erst mit, wenn er gebaut ist (BEFUND_DA, setzt wb_kapitel.py): bis «Die Lupe» eingebaut ist, bleibt er draussen
@@ -24,7 +24,7 @@ KAPITEL_ALLE = [  # Anker, Name, Zeile im Register, Name in der Leiste, Objekt
     ('k5', 'Eure Werkzeuge', 'Sieben Werkzeuge für Termine, Menüs, Plakate und Gäste, eines davon als Eingang zu allen.', 'Werkzeuge', 'maison'),
     ('k6', 'Für draußen', f'24 Drucksachen, zwölf Untersetzer, elf Mails, {_PK} Postkarten von euren Plakaten, 40 Sticker und fünf Beigaben, darunter ein Gutschein für einen Abend.', 'Draußen', 'drucksachen'),
     ('k7', 'Geprüft', 'Wie alles ausprobiert wurde, und welche Fragen bei euch liegen.', 'Geprüft', 'geprueft'),
-    ('k8', 'Das Angebot', 'Der ganze Umfang, die Wochen bis zum Start und am Ende der Vorschlag als Menükarte.', 'Angebot', 'vorschlag'),
+    ('k8', 'Die Übergabe', 'Ihr bekommt alles, und es läuft so. Keine Bindung, kein Vertrag; auf Wunsch eine Wartung im Monat.', 'Übergabe', 'vorschlag'),   # Robert 1.11.2026: statt «Das Angebot»
 ]
 BEFUND_DA = False   # setzt wb_kapitel.py, sobald der Befund («Die Lupe») gebaut ist
 

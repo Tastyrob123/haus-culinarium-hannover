@@ -297,7 +297,7 @@ GEPRUEFT_PUNKTE = [
     ('Eure Daten', 'Gäste bekommen keine Kekse in den Browser. Was sie buchen oder auf die Warteliste schreiben, landet bei euch, und im Entwurf nie beim echten Haus.'),
 ]
 GEPRUEFT_TRIO = [(bild('pass'), 1.6, (.5, .5), 'Am Pass'), (bild('klaeren'), 1.6, (.5, .5), 'An der Bar'), (bild('schildnacht'), 1.6, (.5, .5), 'An der Ecke')]
-GEPRUEFT_OFFEN = 'Ein paar Fragen könnt nur ihr beantworten: wer Vertragspartner ist und ins Impressum kommt, wer an welchem Foto und Plakat die Rechte hat und wer welches Werkzeug bekommt.'
+GEPRUEFT_OFFEN = 'Ein paar Fragen könnt nur ihr beantworten: wessen Angaben ins Impressum kommen, wer an welchem Foto und Plakat die Rechte hat und wer welches Werkzeug bekommt.'   # ohne «Vertragspartner» (Robert 1.11.2026)
 GEPRUEFT_EIN = 'Hier steht in einfachen Worten, was an Website, Karten und Werkzeugen angesehen und ausprobiert wurde, und was danach noch bei euch liegt.'
 GEPRUEFT_NAV = ['Website', 'Karten', 'Werkzeuge', 'Daten', 'Offen']
 GEPRUEFT_MEHR = [
@@ -316,7 +316,7 @@ GEPRUEFT_MEHR = [
         'Buchung und Warteliste laufen im Entwurf nur zur Probe; es fließt kein Geld, und nichts davon erreicht das echte Haus.',
         'Suchmaschinen sehen den Entwurf nicht, bis ihr ihn freigebt.']),
     ('Was offen bleibt', 'auge', 'Das könnt nur ihr entscheiden.', [
-        'Wer Vertragspartner ist und im Impressum steht, und wie Culinarium und die Bar zueinander stehen.',
+        'Wessen Angaben im Impressum stehen, und wie Culinarium und die Bar zueinander stehen.',
         'Wer an welchem Foto und an den Plakaten die Rechte hat.',
         'Im Entwurf öffnen sich die Werkzeuge ohne Anmeldung. Zum Umzug bekommt jede Person ihren eigenen Zugang.'])]
 PRUEFDATUM = _dt.date(2026, 10, 30)
@@ -461,7 +461,7 @@ def nach_bau():
         _fl.mach()
     import sb_farbe
     sb_farbe.anwenden()
-    # Das Zeichen in Kerze als Datei für die Karte «Ein Vorschlag.» (als <img> wäre currentColor schwarz)
+    # Das Zeichen in Kerze als Datei für die Karte «Die Übergabe.» (als <img> wäre currentColor schwarz)
     vb, innen = ZEICHEN
     open(os.path.join(_WB, 'eigen', 'zeichen-kerze.svg'), 'w', encoding='utf-8').write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" fill="{FARBEN["messing"]}">{innen}</svg>')
     open(os.path.join(_WB, 'eigen', 'zeichen-c.svg'), 'w', encoding='utf-8').write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" fill="#000">{innen}</svg>')   # Maske für Schmuck im CSS (Listen, Namenszug)
@@ -471,7 +471,7 @@ def nach_bau():
         if 'noindex' not in _s:
             _s = _s.replace('<head>', '<head><meta name="robots" content="noindex, nofollow">', 1) if '<head>' in _s else '<meta name="robots" content="noindex, nofollow">' + _s
             open(_ft, 'w', encoding='utf-8').write(_s)
-    import sb_ki   # Seite «KI und eure Daten», Karte «Ein Vorschlag.» allein und als PDF (Robert 20.10.2026)
+    import sb_ki   # Seite «KI und eure Daten», Karte «Die Übergabe.» allein und als PDF (Robert 20.10.2026, 1.11.2026)
     sb_ki.bau()
     import du_gang   # zuletzt: die Sätze aus Kit und Vorlage von der Sie- in die Ihr-Form, deutsche Schreibung
     du_gang.anwenden()

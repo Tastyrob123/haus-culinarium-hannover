@@ -125,7 +125,7 @@
   .ki-daten{grid-template-columns:repeat(2,minmax(0,1fr))}.ki-ohne{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.ki-daten,.ki-ohne{grid-template-columns:1fr}.ki-paar__n{flex-direction:column;gap:6px}.ki-zahl__n{font-size:3.4rem}}
 
-/* Schlössli (sb_ki.py, 20.10.2026): Laptop als Bild mit echtem Bildschirm, Karten heben sich wie im Angebot */
+/* Schlössli (sb_ki.py, 20.10.2026): Laptop als Bild mit echtem Bildschirm, Karten heben sich wie auf der Karte der Übergabe */
 .ki-geraet img{display:block;width:100%;height:auto;filter:drop-shadow(0 40px 46px rgba(0,0,0,.5))}
 .ki [data-a="heben"]{opacity:1;transform:translate3d(0,100px,0) scale(.975);transition:transform 2.1s cubic-bezier(.16,1,.3,1)}
 .ki [data-a="heben"].da{transform:none}

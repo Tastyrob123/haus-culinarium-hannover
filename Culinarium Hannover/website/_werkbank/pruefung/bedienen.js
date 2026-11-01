@@ -64,8 +64,8 @@ const an = (p, sel) => p.evaluate(s => [...document.querySelectorAll(s)].findInd
       await schritt(m, w, 'Mails', async () => {
         await p.goto(B + 'mails/index.html', { waitUntil: 'load' }); await p.waitForTimeout(800); await p.click('.mb .mb-kn'); await p.waitForTimeout(400);
         ok(m, w, 'Mails: «Ganze Mail» klappt auf', await p.evaluate(() => document.querySelector('.mb').classList.contains('auf'))); });
-      await schritt(m, w, 'Vorschlag', async () => {
-        const r = await p.request.get(B + 'werkbank/vorschlag-culinarium.pdf'); ok(m, w, 'Vorschlag: PDF lädt', r.status() === 200 && (await r.body()).length > 20000, r.status()); });
+      await schritt(m, w, 'Übergabe', async () => {
+        const r = await p.request.get(B + 'werkbank/uebergabe-culinarium.pdf'); ok(m, w, 'Übergabe: PDF lädt', r.status() === 200 && (await r.body()).length > 20000, r.status()); });
       await ctx.close();
     }
     await b.close();

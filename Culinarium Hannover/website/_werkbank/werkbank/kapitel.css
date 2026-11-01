@@ -393,7 +393,7 @@ html.ins-ruhe :is(.stapel .tel,.runter i,.zeile__z,.namenzug div,.wb-band__zug,.
 @media(max-width:700px){.sbf-bild{min-height:0;padding:10px 0 30px}.sbf-handy{width:56vw}.sbf-nah{width:58vw;bottom:0}.sbf-ziffern{display:none}}
 @media(prefers-reduced-motion:reduce){.sbf-p,.sbf-p.an .sbf-handy,.sbf-p.an .sbf-nah{transition:none;animation:none}}
 
-/* ---------- Kapitel VIII «Das Angebot» (sb_angebot.py, 20.10.2026, Aufbau nach dem Rivage, Kleid von Culinarium): helle Blätter auf der Nacht ---------- */
+/* ---------- Kapitel VIII «Die Übergabe» (sb_angebot.py, Robert 1.11.2026; Kleid wie zuvor, Aufbau nach dem Rivage): helle Blätter auf der Nacht ---------- */
 .sag .kopfzeile{margin-bottom:clamp(30px,3.4vw,54px)}
 .sag-reg{display:flex;flex-wrap:wrap;gap:8px clamp(18px,2.6vw,44px);justify-content:center;margin:0 auto clamp(40px,4.6vw,72px);padding-bottom:18px;border-bottom:1px solid rgba(175,173,181,.28)}
 .sag-reg a{display:inline-flex;align-items:baseline;gap:9px;font:400 12.5px/1.2 var(--serif);letter-spacing:.22em;text-transform:uppercase;color:var(--creme);text-decoration:none;opacity:.82;transition:opacity .4s}
@@ -485,19 +485,43 @@ html.ins-ruhe :is(.stapel .tel,.runter i,.zeile__z,.namenzug div,.wb-band__zug,.
 .mn-ende span{font:400 10.5px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--blau)}
 .mn-ki,.mn-pdf{margin:clamp(18px,2vw,28px) 0 0}
 @media(max-width:600px){.mn-p__z{flex-wrap:wrap;justify-content:center;text-align:center}.mn-p__z i{display:none}.mn-p__z span{width:100%;white-space:normal}.mn-preise{text-align:center}}
+/* Übergabe (1.11.2026): die Liste «Was ihr bekommt» ohne Spaltentitel, Satz zur KI über dem Knopf */
+.sag-umf .sag-sp--1{padding-bottom:0}
+.mn-ki-satz{margin:0 auto;max-width:52ch;font-size:clamp(1.04rem,1.16vw,1.2rem);line-height:1.55;color:rgba(18,17,21,.88)}
 .sag [data-a="heben"]{opacity:1;transform:translate3d(0,120px,0) scale(.975);transition:transform 2.1s cubic-bezier(.16,1,.3,1)}
 .sag [data-a="heben"].da{transform:none}
 @media(prefers-reduced-motion:reduce){.sag [data-a="heben"]{transform:none;transition:none}}
 
-/* ---------- «Meine drei Orte» im Kleid des Culinarium (orte_kurs.py, 29.10.2026): Block und Animation aus dem Kit, Farben des Hauses ---------- */
-.karte3.ok{background:var(--navy);color:#fdf9f9;text-align:left;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(239,118,73,.26),0 30px 40px -26px rgba(8,7,10,.8)}
-.karte3.ok h3{color:#fdf9f9}
-.karte3.ok p{color:rgba(253,249,249,.76)}
-.ok .kurs text{fill:rgba(253,249,249,.72)}
-.ok .kurs .ort{fill:#fdf9f9}
+/* ---------- «Meine drei Orte» als Ticket im Kleid des Culinarium (orte_kurs.py, Robert 1.11.2026): Kursblatt aus dem Kit, Form wie im Walk on the Wild Side ---------- */
+.ok .kurs text{fill:rgba(250,244,244,.72)}
+.ok .kurs .ort{fill:#faf4f4}
 .ok .kurs .weg,.ok .kurs .welle{stroke:var(--gold)}
-.ok .kurs .pkt{fill:#fdf9f9}.ok .kurs .da0{fill:var(--gold)}
-.ok--schluss{width:min(100%,520px);margin:clamp(22px,2.6vw,36px) auto 0;background:rgba(28,27,33,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ok .kurs .pkt{fill:#faf4f4}.ok .kurs .da0{fill:var(--gold)}
+/* Schatten an der Hülle (drop-shadow folgt der Maske), Fläche Nacht mit Kerben an der Naht, Abriss Warmweiss */
+.tk{--ab:clamp(112px,22%,168px);--k:12px;color:#faf4f4;text-align:left;filter:drop-shadow(0 22px 26px rgba(8,7,10,.55)) drop-shadow(0 3px 6px rgba(8,7,10,.38))}
+.tk__f{display:grid;grid-template-columns:minmax(0,1fr) var(--ab);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#1c1b21,#16151a);
+  -webkit-mask:radial-gradient(circle at calc(100% - var(--ab)) 0,#0000 var(--k),#000000 calc(var(--k) + .6px)) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - var(--ab)) 100%,#0000 var(--k),#000000 calc(var(--k) + .6px)) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle at calc(100% - var(--ab)) 0,#0000 var(--k),#000000 calc(var(--k) + .6px)) top/100% 51% no-repeat,radial-gradient(circle at calc(100% - var(--ab)) 100%,#0000 var(--k),#000000 calc(var(--k) + .6px)) bottom/100% 51% no-repeat}
+.tk__h{padding:clamp(20px,2.4vw,32px);min-width:0}
+.tk__kopf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px;padding-bottom:11px;border-bottom:1px solid rgba(239,118,73,.32);font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tk h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.14;margin:0 0 6px;color:#faf4f4}
+.tk h3+p{color:rgba(250,244,244,.76);font-size:1rem;margin:0}
+.tk__a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:22px 12px;text-align:center;background:#faf4f4;color:#16151a}
+.tk__a::before{content:'';position:absolute;left:0;top:calc(var(--k) + 6px);bottom:calc(var(--k) + 6px);border-left:2px dashed rgba(22,21,26,.3)}
+.tk__nr{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#b15736}
+.tk__a b{font-family:var(--serif);font-weight:400;font-size:clamp(46px,5vw,64px);line-height:1;margin-top:6px;color:#ef7649}
+.tk__a small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+.tk__l{margin-top:10px;padding-top:10px;border-top:1px solid rgba(22,21,26,.16);font-family:var(--mono);font-size:9.5px;line-height:1.7;letter-spacing:.12em;text-transform:uppercase;color:rgba(22,21,26,.72)}
+.ok--schluss{width:min(100%,560px);margin:clamp(22px,2.6vw,36px) auto 0}
+@media (max-width:620px){
+  .tk{--abh:96px}
+  .tk__f{grid-template-columns:1fr;
+    -webkit-mask:radial-gradient(circle at 0 calc(100% - var(--abh)),#0000 var(--k),#000000 calc(var(--k) + .6px)) left/51% 100% no-repeat,radial-gradient(circle at 100% calc(100% - var(--abh)),#0000 var(--k),#000000 calc(var(--k) + .6px)) right/51% 100% no-repeat;
+    mask:radial-gradient(circle at 0 calc(100% - var(--abh)),#0000 var(--k),#000000 calc(var(--k) + .6px)) left/51% 100% no-repeat,radial-gradient(circle at 100% calc(100% - var(--abh)),#0000 var(--k),#000000 calc(var(--k) + .6px)) right/51% 100% no-repeat}
+  .tk__a{height:var(--abh);box-sizing:border-box;flex-direction:row;flex-wrap:wrap;gap:4px 14px;padding:12px 20px}
+  .tk__a::before{left:calc(var(--k) + 6px);right:calc(var(--k) + 6px);top:0;bottom:auto;border-left:0;border-top:2px dashed rgba(22,21,26,.3)}
+  .tk__a b{font-size:40px;margin:0}.tk__nr{width:100%}.tk__l{margin:0;padding:0 0 0 14px;border-top:0;border-left:1px solid rgba(22,21,26,.16)}
+}
 
 /* Werkbank-Regel 1 (Robert 17.10.2026): seitliches Scrollen und Wischen in Bändern und Kacheln bleibt wie im Kit. Behoben ist nur das Hängenbleiben:
    was seitlich scrollt, hat kein eigenes senkrechtes Scrollen (overflow-x:auto macht overflow-y sonst zu auto) und hält das Mausrad nicht fest,

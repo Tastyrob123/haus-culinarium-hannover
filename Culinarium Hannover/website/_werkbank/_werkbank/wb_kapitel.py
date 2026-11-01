@@ -10,7 +10,7 @@ Schlössli und dem Ruedihus), nur kopiert und umgeschrieben; Kleid und Worte von
   V Eure Werkzeuge           Laptop mit La Maison und sechs Werkzeugen, «Einmal ändern, überall richtig.»
   VI Für draußen             Papier mit drei Karten (Untersetzer, Drucksachen, Mails), Feed, Dateien
   VII Geprüft
-  VIII Das Angebot           Was Sie bekommen, Woche für Woche, «Ein Vorschlag.» (sb_angebot.py)
+  VIII Die Übergabe          Ihr bekommt alles, keine Bindung, Wartung auf Wunsch, Karte «Die Übergabe.» (sb_angebot.py, Robert 1.11.2026)
   Schluss · Fuss «Alles auf einen Blick» · Impressum
 Kein Laufband (seitwärts laufende Bänder sind abgelehnt, Tasty-Sprache E), keine Rezeption im Chat (die Website hat keinen), keine Vision."""
 import base64, datetime, html, io, json, os, re
@@ -246,7 +246,7 @@ def anwenden(pfad):
     auftakt = nimm('auftakt').replace('Diese Werkbank ist', 'Diese Seite ist')
     brief = nimm('brief')
     worum = SW.blatt(k)
-    register = KP.register(kopf(0, 'Register', ['Acht Kapitel,', 'ein Abend.'], 'Vom Befund, wie Culinarium heute im Netz steht, bis zum Vorschlag am Ende. Jedes Kapitel lässt sich direkt öffnen.'))
+    register = KP.register(kopf(0, 'Register', ['Acht Kapitel,', 'ein Abend.'], 'Vom Befund, wie Culinarium heute im Netz steht, bis zur Übergabe am Ende. Jedes Kapitel lässt sich direkt öffnen.'))
     k1 = BE.abschnitt(k, kopfk)
     hs = kapitel('k2', nimm('handschrift'))
     livre = [w for w in WK.WERKZEUGE if w[0] == 'livre'][0]

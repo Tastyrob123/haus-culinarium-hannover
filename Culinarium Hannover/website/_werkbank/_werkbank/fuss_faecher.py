@@ -29,7 +29,7 @@ WEGE_OBJEKTE = {   # Weg → (Datei in objekte/, Bildbeschreibung, Satz)
     'registre': ('registre', 'Ein Laptop mit dem Werkzeug für die Besuche', 'Woher die Gäste kommen und was sie ansehen, ohne Cookies, hier mit Beispielwerten.'),
     'imprimerie': ('imprimerie', 'Ein Laptop mit dem Werkzeug für Plakate und Papier', 'Das Plakat für den nächsten Abend, geändert auf dem Blatt, die PDF für die Druckerei.'),
     'analyse': ('analyse-h', 'Ein Laptop mit dem Befund', 'Wie Culinarium heute im Netz steht, mit allen Punkten und ihren Bildern.'),
-    'vorschlag': ('vorschlag', 'Culinarium auf einem hellen Blatt', 'Ein Vorschlag: was euch gehört, die Betreuung und wo die KI arbeitet.'),
+    'vorschlag': ('vorschlag', 'Culinarium auf einem hellen Blatt', 'Die Übergabe: was euch gehört, und wenn etwas hakt.'),
 }
 BEREIT = os.path.exists(os.path.join(OBJ, 'website.png'))
 
