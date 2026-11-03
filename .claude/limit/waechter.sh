@@ -8,7 +8,7 @@ try: s = json.load(open(os.path.join(d, "stand.json")))
 except Exception: sys.exit(0)
 fh = (s.get("five_hour") or {}).get("prozent") or 0
 sd = (s.get("seven_day") or {}).get("prozent") or 0
-stufe = 2 if (fh >= 95 or sd >= 97) else 1 if (fh >= 88 or sd >= 93) else 0
+stufe = 2 if (fh >= 98 or sd >= 99) else 1 if (fh >= 95 or sd >= 97) else 0
 if not stufe: sys.exit(0)
 merk = os.path.join(d, f"gewarnt-{stufe}")
 if os.path.exists(merk) and time.time() - os.path.getmtime(merk) < 1800: sys.exit(0)
